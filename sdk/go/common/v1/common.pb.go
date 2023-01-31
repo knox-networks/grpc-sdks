@@ -20,7 +20,8 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
+// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these
+// enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
 type ServiceType int32
 
 const (
@@ -113,7 +114,8 @@ func (ServiceType) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{0}
 }
 
-// Used to denote the cryptographic signing & verifying algorithm associated with a particular digital signature or verifier (public key).
+// Used to denote the cryptographic signing & verifying algorithm associated with a particular digital signature or
+// verifier (public key).
 type SignatureSystem int32
 
 const (
@@ -331,7 +333,8 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{22, 1}
 }
 
-// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm indicated by the `signature_system`.
+// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
+// indicated by the `signature_system`.
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -389,7 +392,9 @@ func (x *DynamicVerifier) GetVerifier() []byte {
 	return nil
 }
 
-// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of 12345 and `decimals` of 2 is equivalent to "123.45".
+// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
+// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of
+// 12345 and `decimals` of 2 is equivalent to "123.45".
 type Amount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -399,7 +404,9 @@ type Amount struct {
 	CurrencyCode string `protobuf:"bytes,1,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	// Signed 64 bit representation of the significand
 	Amount int64 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
-	// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10, decimals = 2 => value 0.01
+	// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is
+	// determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10,
+	// decimals = 2 => value 0.01
 	Decimals uint32 `protobuf:"varint,3,opt,name=decimals,proto3" json:"decimals,omitempty"`
 }
 
@@ -593,7 +600,8 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{4}
 }
 
-// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway connection.
+// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
+// connection.
 type ManyConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -642,7 +650,8 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 	return nil
 }
 
-// The message sent during an already established connection allowing the addition or removal of an `associated_verifier` tied to connection held by the `primary_verifier`
+// The message sent during an already established connection allowing the addition or removal of an
+// `associated_verifier` tied to connection held by the `primary_verifier`
 type AssociatedConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -700,7 +709,9 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 	return nil
 }
 
-// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is represented by the `signature.verifier` field.
+// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more
+// verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is
+// represented by the `signature.verifier` field.
 type ConnectionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -795,7 +806,8 @@ func (*ConnectionRequest_One) isConnectionRequest_RequestType() {}
 
 func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 
-// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
+// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the
+// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
 type AuthenticationSignature struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -951,7 +963,8 @@ func (x *AuthorizedSignatureResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Media - Mime type and binary data encoding For common MIME types see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+// Media - Mime type and binary data encoding For common MIME types see:
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 type Media struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1009,7 +1022,8 @@ func (x *Media) GetData() []byte {
 	return nil
 }
 
-// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to create issuance requests
+// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
+// create issuance requests
 type Role struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1091,7 +1105,8 @@ type isRole_RoleEnum interface {
 }
 
 type Role_Authorized struct {
-	// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role permissions to use signed challenge nonce.
+	// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role
+	// permissions to use signed challenge nonce.
 	Authorized bool `protobuf:"varint,3,opt,name=authorized,proto3,oneof"`
 }
 
@@ -1143,7 +1158,8 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{13}
 }
 
-// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and multibase encoded formats.
+// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and
+// multibase encoded formats.
 type GetVerifierResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1365,7 +1381,8 @@ func (x *StartSimplePaymentRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
+// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
+// transaction.
 type StartSimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1414,7 +1431,8 @@ func (x *StartSimplePaymentResponse) GetUetr() string {
 	return ""
 }
 
-// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is the well known Treasury verifier provided at startup.
+// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
+// the well known Treasury verifier provided at startup.
 type StartFundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1422,7 +1440,8 @@ type StartFundsChangeRequest struct {
 
 	// The specific amount that the returned change must be able to make a payment of. Inclusive of currency.
 	Amount *Amount `protobuf:"bytes,1,opt,name=amount,proto3" json:"amount,omitempty"`
-	// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital banknotes totalling the same value as this digital bank note.
+	// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital
+	// banknotes totalling the same value as this digital bank note.
 	Promissory string `protobuf:"bytes,2,opt,name=promissory,proto3" json:"promissory,omitempty"`
 	// User provided reference.
 	UserReference string `protobuf:"bytes,3,opt,name=user_reference,json=userReference,proto3" json:"user_reference,omitempty"`
@@ -1481,7 +1500,8 @@ func (x *StartFundsChangeRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change transaction.
+// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+// transaction.
 type StartFundsChangeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1606,7 +1626,8 @@ func (x *TransactionSnapshot) GetMessage() string {
 	return ""
 }
 
-// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message only has local significance. On the wire messages use various packet types
+// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
+// only has local significance. On the wire messages use various packet types
 type Transaction struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1626,9 +1647,11 @@ type Transaction struct {
 	Updated string `protobuf:"bytes,6,opt,name=updated,proto3" json:"updated,omitempty"`
 	// User Reference field.
 	Memo string `protobuf:"bytes,7,opt,name=memo,proto3" json:"memo,omitempty"`
-	// The entity owning this data record, a public key in multibase format. The initiator and responder each get their own separate entry, also distinguished by role.
+	// The entity owning this data record, a public key in multibase format. The initiator and responder each get their
+	// own separate entry, also distinguished by role.
 	Owner string `protobuf:"bytes,8,opt,name=owner,proto3" json:"owner,omitempty"`
-	// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase format.
+	// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase
+	// format.
 	Counterparty string `protobuf:"bytes,9,opt,name=counterparty,proto3" json:"counterparty,omitempty"`
 	// The status of the transaction.
 	Status TransactionStatus `protobuf:"varint,10,opt,name=status,proto3,enum=common.TransactionStatus" json:"status,omitempty"`
@@ -1983,30 +2006,7 @@ var file_common_v1_common_proto_rawDesc = []byte{
 	0x4e, 0x47, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x52, 0x45,
 	0x43, 0x45, 0x49, 0x56, 0x49, 0x4e, 0x47, 0x10, 0x05, 0x12, 0x12, 0x0a, 0x0e, 0x53, 0x54, 0x41,
 	0x54, 0x45, 0x5f, 0x43, 0x4f, 0x4d, 0x50, 0x4c, 0x45, 0x54, 0x45, 0x10, 0x03, 0x12, 0x10, 0x0a,
-	0x0c, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45, 0x44, 0x10, 0x04, 0x32,
-	0xa6, 0x01, 0x0a, 0x0b, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x12,
-	0x46, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x65, 0x72, 0x12, 0x1a,
-	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x65, 0x72, 0x69, 0x66,
-	0x69, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x63, 0x6f, 0x6d,
-	0x6d, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x56, 0x65, 0x72, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4f, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
-	0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
-	0x6e, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xc4, 0x01, 0x0a, 0x12, 0x54, 0x72, 0x61,
-	0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
-	0x59, 0x0a, 0x10, 0x4e, 0x65, 0x77, 0x53, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x79, 0x6d,
-	0x65, 0x6e, 0x74, 0x12, 0x21, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x61,
-	0x72, 0x74, 0x53, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
-	0x53, 0x74, 0x61, 0x72, 0x74, 0x53, 0x69, 0x6d, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x79, 0x6d, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x53, 0x0a, 0x0e, 0x4e, 0x65,
-	0x77, 0x46, 0x75, 0x6e, 0x64, 0x73, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x12, 0x1f, 0x2e, 0x63,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x61, 0x72, 0x74, 0x46, 0x75, 0x6e, 0x64, 0x73,
-	0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e,
-	0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x61, 0x72, 0x74, 0x46, 0x75, 0x6e, 0x64,
-	0x73, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
+	0x0c, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45, 0x44, 0x10, 0x04, 0x42,
 	0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b, 0x6e,
 	0x6f, 0x78, 0x2d, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x2f, 0x67, 0x72, 0x70, 0x63,
 	0x2d, 0x73, 0x64, 0x6b, 0x73, 0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d,
@@ -2080,16 +2080,8 @@ var file_common_v1_common_proto_depIdxs = []int32{
 	6,  // 18: common.Transaction.amount:type_name -> common.Amount
 	2,  // 19: common.Transaction.status:type_name -> common.TransactionStatus
 	6,  // 20: common.Role.IssuePermissions.inner:type_name -> common.Amount
-	18, // 21: common.ServiceInfo.GetVerifier:input_type -> common.GetVerifierRequest
-	20, // 22: common.ServiceInfo.GetServiceType:input_type -> common.GetServiceTypeRequest
-	22, // 23: common.TransactionService.NewSimplePayment:input_type -> common.StartSimplePaymentRequest
-	24, // 24: common.TransactionService.NewFundsChange:input_type -> common.StartFundsChangeRequest
-	19, // 25: common.ServiceInfo.GetVerifier:output_type -> common.GetVerifierResponse
-	21, // 26: common.ServiceInfo.GetServiceType:output_type -> common.GetServiceTypeResponse
-	23, // 27: common.TransactionService.NewSimplePayment:output_type -> common.StartSimplePaymentResponse
-	25, // 28: common.TransactionService.NewFundsChange:output_type -> common.StartFundsChangeResponse
-	25, // [25:29] is the sub-list for method output_type
-	21, // [21:25] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for method output_type
+	21, // [21:21] is the sub-list for method input_type
 	21, // [21:21] is the sub-list for extension type_name
 	21, // [21:21] is the sub-list for extension extendee
 	0,  // [0:21] is the sub-list for field type_name
@@ -2406,7 +2398,7 @@ func file_common_v1_common_proto_init() {
 			NumEnums:      5,
 			NumMessages:   24,
 			NumExtensions: 0,
-			NumServices:   2,
+			NumServices:   0,
 		},
 		GoTypes:           file_common_v1_common_proto_goTypes,
 		DependencyIndexes: file_common_v1_common_proto_depIdxs,

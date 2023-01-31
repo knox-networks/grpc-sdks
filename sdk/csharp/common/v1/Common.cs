@@ -82,16 +82,8 @@ namespace Common {
             "VHJhbnNhY3Rpb25TdGF0dXMSFgoSU1RBVEVfSU5JVElBTElaSU5HEAASFQoR",
             "U1RBVEVfQVVUSE9SSVpJTkcQARIRCg1TVEFURV9TRU5ESU5HEAISEwoPU1RB",
             "VEVfUkVDRUlWSU5HEAUSEgoOU1RBVEVfQ09NUExFVEUQAxIQCgxTVEFURV9G",
-            "QUlMRUQQBDKmAQoLU2VydmljZUluZm8SRgoLR2V0VmVyaWZpZXISGi5jb21t",
-            "b24uR2V0VmVyaWZpZXJSZXF1ZXN0GhsuY29tbW9uLkdldFZlcmlmaWVyUmVz",
-            "cG9uc2USTwoOR2V0U2VydmljZVR5cGUSHS5jb21tb24uR2V0U2VydmljZVR5",
-            "cGVSZXF1ZXN0Gh4uY29tbW9uLkdldFNlcnZpY2VUeXBlUmVzcG9uc2UyxAEK",
-            "ElRyYW5zYWN0aW9uU2VydmljZRJZChBOZXdTaW1wbGVQYXltZW50EiEuY29t",
-            "bW9uLlN0YXJ0U2ltcGxlUGF5bWVudFJlcXVlc3QaIi5jb21tb24uU3RhcnRT",
-            "aW1wbGVQYXltZW50UmVzcG9uc2USUwoOTmV3RnVuZHNDaGFuZ2USHy5jb21t",
-            "b24uU3RhcnRGdW5kc0NoYW5nZVJlcXVlc3QaIC5jb21tb24uU3RhcnRGdW5k",
-            "c0NoYW5nZVJlc3BvbnNlQjVaM2dpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9n",
-            "cnBjLXNka3Mvc2RrL2dvL2NvbW1vbi92MWIGcHJvdG8z"));
+            "QUlMRUQQBEI1WjNnaXRodWIuY29tL2tub3gtbmV0d29ya3MvZ3JwYy1zZGtz",
+            "L3Nkay9nby9jb21tb24vdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Common.ServiceType), typeof(global::Common.SignatureSystem), typeof(global::Common.TransactionStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -125,7 +117,8 @@ namespace Common {
   }
   #region Enums
   /// <summary>
-  /// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
+  /// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these
+  /// enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
   /// </summary>
   public enum ServiceType {
     /// <summary>
@@ -183,7 +176,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Used to denote the cryptographic signing &amp; verifying algorithm associated with a particular digital signature or verifier (public key).
+  /// Used to denote the cryptographic signing &amp; verifying algorithm associated with a particular digital signature or
+  /// verifier (public key).
   /// </summary>
   public enum SignatureSystem {
     /// <summary>
@@ -234,7 +228,8 @@ namespace Common {
 
   #region Messages
   /// <summary>
-  /// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm indicated by the `signature_system`.
+  /// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
+  /// indicated by the `signature_system`.
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -469,7 +464,9 @@ namespace Common {
   }
 
   /// <summary>
-  /// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of 12345 and `decimals` of 2 is equivalent to "123.45".
+  /// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
+  /// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of
+  /// 12345 and `decimals` of 2 is equivalent to "123.45".
   /// </summary>
   public sealed partial class Amount : pb::IMessage<Amount>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -551,7 +548,9 @@ namespace Common {
     public const int DecimalsFieldNumber = 3;
     private uint decimals_;
     /// <summary>
-    /// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10, decimals = 2 => value 0.01
+    /// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is
+    /// determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10,
+    /// decimals = 2 => value 0.01
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1298,7 +1297,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway connection.
+  /// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
+  /// connection.
   /// </summary>
   public sealed partial class ManyConnection : pb::IMessage<ManyConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1482,7 +1482,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// The message sent during an already established connection allowing the addition or removal of an `associated_verifier` tied to connection held by the `primary_verifier`
+  /// The message sent during an already established connection allowing the addition or removal of an
+  /// `associated_verifier` tied to connection held by the `primary_verifier`
   /// </summary>
   public sealed partial class AssociatedConnection : pb::IMessage<AssociatedConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1735,7 +1736,9 @@ namespace Common {
   }
 
   /// <summary>
-  /// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is represented by the `signature.verifier` field.
+  /// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more
+  /// verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is
+  /// represented by the `signature.verifier` field.
   /// </summary>
   public sealed partial class ConnectionRequest : pb::IMessage<ConnectionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2078,7 +2081,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
+  /// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the
+  /// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
   /// </summary>
   public sealed partial class AuthenticationSignature : pb::IMessage<AuthenticationSignature>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2712,7 +2716,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Media - Mime type and binary data encoding For common MIME types see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+  /// Media - Mime type and binary data encoding For common MIME types see:
+  /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
   /// </summary>
   public sealed partial class Media : pb::IMessage<Media>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2947,7 +2952,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to create issuance requests
+  /// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
+  /// create issuance requests
   /// </summary>
   public sealed partial class Role : pb::IMessage<Role>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3020,7 +3026,8 @@ namespace Common {
     /// <summary>Field number for the "authorized" field.</summary>
     public const int AuthorizedFieldNumber = 3;
     /// <summary>
-    /// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role permissions to use signed challenge nonce.
+    /// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role
+    /// permissions to use signed challenge nonce.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3271,7 +3278,6 @@ namespace Common {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
-      /// 
       /// </summary>
       public sealed partial class IssuePermissions : pb::IMessage<IssuePermissions>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3615,7 +3621,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and multibase encoded formats.
+  /// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and
+  /// multibase encoded formats.
   /// </summary>
   public sealed partial class GetVerifierResponse : pb::IMessage<GetVerifierResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4306,7 +4313,7 @@ namespace Common {
     public const int UserReferenceFieldNumber = 4;
     private string userReference_ = "";
     /// <summary>
-    /// User provided reference. 
+    /// User provided reference.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4522,7 +4529,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
+  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
+  /// transaction.
   /// </summary>
   public sealed partial class StartSimplePaymentResponse : pb::IMessage<StartSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4717,7 +4725,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is the well known Treasury verifier provided at startup.
+  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
+  /// the well known Treasury verifier provided at startup.
   /// </summary>
   public sealed partial class StartFundsChangeRequest : pb::IMessage<StartFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4784,7 +4793,8 @@ namespace Common {
     public const int PromissoryFieldNumber = 2;
     private string promissory_ = "";
     /// <summary>
-    /// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital banknotes totalling the same value as this digital bank note.
+    /// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital
+    /// banknotes totalling the same value as this digital bank note.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4799,7 +4809,7 @@ namespace Common {
     public const int UserReferenceFieldNumber = 3;
     private string userReference_ = "";
     /// <summary>
-    /// User provided reference. 
+    /// User provided reference.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5001,7 +5011,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change transaction.
+  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+  /// transaction.
   /// </summary>
   public sealed partial class StartFundsChangeResponse : pb::IMessage<StartFundsChangeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5509,7 +5520,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message only has local significance. On the wire messages use various packet types
+  /// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
+  /// only has local significance. On the wire messages use various packet types
   /// </summary>
   public sealed partial class Transaction : pb::IMessage<Transaction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5673,7 +5685,8 @@ namespace Common {
     public const int OwnerFieldNumber = 8;
     private string owner_ = "";
     /// <summary>
-    /// The entity owning this data record, a public key in multibase format. The initiator and responder each get their own separate entry, also distinguished by role.
+    /// The entity owning this data record, a public key in multibase format. The initiator and responder each get their
+    /// own separate entry, also distinguished by role.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5688,7 +5701,8 @@ namespace Common {
     public const int CounterpartyFieldNumber = 9;
     private string counterparty_ = "";
     /// <summary>
-    /// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase format.
+    /// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase
+    /// format.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5703,7 +5717,7 @@ namespace Common {
     public const int StatusFieldNumber = 10;
     private global::Common.TransactionStatus status_ = global::Common.TransactionStatus.StateInitializing;
     /// <summary>
-    /// The status of the transaction. 
+    /// The status of the transaction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -1,5 +1,6 @@
 // @generated
-/// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm indicated by the `signature_system`.
+/// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
+/// indicated by the `signature_system`.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DynamicVerifier {
     /// Signature system of the verifying key
@@ -9,7 +10,9 @@ pub struct DynamicVerifier {
     #[prost(bytes="vec", tag="2")]
     pub verifier: ::prost::alloc::vec::Vec<u8>,
 }
-/// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of 12345 and `decimals` of 2 is equivalent to "123.45".
+/// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
+/// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of
+/// 12345 and `decimals` of 2 is equivalent to "123.45".
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Amount {
     /// ISO-4217 currency code to denote remitting Digital Banknotes in a specific currency
@@ -18,7 +21,9 @@ pub struct Amount {
     /// Signed 64 bit representation of the significand
     #[prost(int64, tag="2")]
     pub amount: i64,
-    /// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10, decimals = 2 => value 0.01
+    /// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is
+    /// determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10,
+    /// decimals = 2 => value 0.01
     #[prost(uint32, tag="3")]
     pub decimals: u32,
 }
@@ -40,14 +45,16 @@ pub struct AuthenticationResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OneConnection {
 }
-/// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway connection.
+/// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
+/// connection.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ManyConnection {
     /// associated verifiers
     #[prost(message, repeated, tag="2")]
     pub associated_verifiers: ::prost::alloc::vec::Vec<DynamicVerifier>,
 }
-/// The message sent during an already established connection allowing the addition or removal of an `associated_verifier` tied to connection held by the `primary_verifier`
+/// The message sent during an already established connection allowing the addition or removal of an
+/// `associated_verifier` tied to connection held by the `primary_verifier`
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AssociatedConnection {
     /// verifier holding a gateway connection
@@ -57,7 +64,9 @@ pub struct AssociatedConnection {
     #[prost(message, optional, tag="2")]
     pub associated_verifier: ::core::option::Option<DynamicVerifier>,
 }
-/// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is represented by the `signature.verifier` field.
+/// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more
+/// verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is
+/// represented by the `signature.verifier` field.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConnectionRequest {
     /// The crypto signature and signers publick key
@@ -80,7 +89,8 @@ pub mod connection_request {
         Many(super::ManyConnection),
     }
 }
-/// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
+/// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the
+/// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticationSignature {
     /// Verifier of the reqeuestor
@@ -104,7 +114,8 @@ pub struct AuthorizedSignatureResponse {
     #[prost(bytes="vec", tag="1")]
     pub promissory_file: ::prost::alloc::vec::Vec<u8>,
 }
-/// Media - Mime type and binary data encoding For common MIME types see: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types>
+/// Media - Mime type and binary data encoding For common MIME types see:
+/// <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types>
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Media {
     /// Mime type URI
@@ -114,29 +125,31 @@ pub struct Media {
     #[prost(bytes="vec", tag="2")]
     pub data: ::prost::alloc::vec::Vec<u8>,
 }
-/// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to create issuance requests
+/// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
+/// create issuance requests
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Role {
     /// MultibaseEncodedVerifier
     #[prost(string, tag="1")]
     pub verifier: ::prost::alloc::string::String,
-    /// The role granted by an issuer to an entity to make issuance requests. 
+    /// The role granted by an issuer to an entity to make issuance requests.
     #[prost(oneof="role::RoleEnum", tags="3, 4")]
     pub role_enum: ::core::option::Option<role::RoleEnum>,
 }
 /// Nested message and enum types in `Role`.
 pub mod role {
-    /// 
+    ///
     #[derive(Clone, PartialEq, ::prost::Message)]
     pub struct IssuePermissions {
         /// The amounts up to which issuance is authorized in respective currencies
         #[prost(message, repeated, tag="2")]
         pub inner: ::prost::alloc::vec::Vec<super::Amount>,
     }
-    /// The role granted by an issuer to an entity to make issuance requests. 
+    /// The role granted by an issuer to an entity to make issuance requests.
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum RoleEnum {
-        /// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role permissions to use signed challenge nonce.
+        /// Authorized Role allows authorized keys to request a challenge nonce. Authorized keys must have additional role
+        /// permissions to use signed challenge nonce.
         #[prost(bool, tag="3")]
         Authorized(bool),
         /// Issuer Role Permissions.
@@ -148,7 +161,8 @@ pub mod role {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetVerifierRequest {
 }
-/// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and multibase encoded formats.
+/// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and
+/// multibase encoded formats.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetVerifierResponse {
     /// Verifier (public key) in Dynamic verifier format.
@@ -181,31 +195,35 @@ pub struct StartSimplePaymentRequest {
     /// The Digital Banknotes that make up the Simple Payment.
     #[prost(string, repeated, tag="3")]
     pub promissories: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    /// User provided reference. 
+    /// User provided reference.
     #[prost(string, tag="4")]
     pub user_reference: ::prost::alloc::string::String,
 }
-/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
+/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
+/// transaction.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartSimplePaymentResponse {
     /// Universal E2E Tranasaction Reference (UUID v4 format)
     #[prost(string, tag="1")]
     pub uetr: ::prost::alloc::string::String,
 }
-/// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is the well known Treasury verifier provided at startup.
+/// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
+/// the well known Treasury verifier provided at startup.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartFundsChangeRequest {
     /// The specific amount that the returned change must be able to make a payment of. Inclusive of currency.
     #[prost(message, optional, tag="1")]
     pub amount: ::core::option::Option<Amount>,
-    /// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital banknotes totalling the same value as this digital bank note.
+    /// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital
+    /// banknotes totalling the same value as this digital bank note.
     #[prost(string, tag="2")]
     pub promissory: ::prost::alloc::string::String,
-    /// User provided reference. 
+    /// User provided reference.
     #[prost(string, tag="3")]
     pub user_reference: ::prost::alloc::string::String,
 }
-/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change transaction.
+/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+/// transaction.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartFundsChangeResponse {
     /// Universal E2E Tranasaction Reference (UUID v4 format)
@@ -228,7 +246,8 @@ pub struct TransactionSnapshot {
     #[prost(string, tag="5")]
     pub message: ::prost::alloc::string::String,
 }
-/// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message only has local significance. On the wire messages use various packet types
+/// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
+/// only has local significance. On the wire messages use various packet types
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Transaction {
     /// The Type of the transaction.
@@ -252,13 +271,15 @@ pub struct Transaction {
     /// User Reference field.
     #[prost(string, tag="7")]
     pub memo: ::prost::alloc::string::String,
-    /// The entity owning this data record, a public key in multibase format. The initiator and responder each get their own separate entry, also distinguished by role.
+    /// The entity owning this data record, a public key in multibase format. The initiator and responder each get their
+    /// own separate entry, also distinguished by role.
     #[prost(string, tag="8")]
     pub owner: ::prost::alloc::string::String,
-    /// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase format.
+    /// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase
+    /// format.
     #[prost(string, tag="9")]
     pub counterparty: ::prost::alloc::string::String,
-    /// The status of the transaction. 
+    /// The status of the transaction.
     #[prost(enumeration="TransactionStatus", tag="10")]
     pub status: i32,
 }
@@ -308,7 +329,8 @@ pub mod transaction {
         }
     }
 }
-/// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
+/// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these
+/// enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum ServiceType {
@@ -362,7 +384,8 @@ impl ServiceType {
         }
     }
 }
-/// Used to denote the cryptographic signing & verifying algorithm associated with a particular digital signature or verifier (public key).
+/// Used to denote the cryptographic signing & verifying algorithm associated with a particular digital signature or
+/// verifier (public key).
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum SignatureSystem {
