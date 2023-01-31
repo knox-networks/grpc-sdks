@@ -26,21 +26,21 @@ pub struct AuthorizeRequest {
     #[prost(bytes="vec", tag="1")]
     pub promissory_file: ::prost::alloc::vec::Vec<u8>,
 }
-/// A single promissory file with an updated authorized signature as part of a stream response.
+/// A single digital banknote with an updated authorized signature as part of a stream response.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthorizeResponse {
     /// Stream of a digital banknote with authorized signature.
     #[prost(bytes="vec", tag="1")]
     pub promissory_file: ::prost::alloc::vec::Vec<u8>,
 }
-/// Authorization challenge nonce.
+/// Authentication challenge nonce.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticateRequest {
     /// Verifier of the requester.
     #[prost(message, optional, tag="1")]
     pub verifier: ::core::option::Option<super::super::common::DynamicVerifier>,
 }
-/// Responds to request with authorization challenge nonce.
+/// Responds to request with athentication challenge nonce.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticateResponse {
     /// Random unique string to be signed by the authorized key.

@@ -94,7 +94,7 @@ pub mod gateway_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Authenticates the connection and opens a Bidirectional Stream.
+        /** Authenticates the connection and opens a bidirectional stream.
 */
         pub async fn data(
             &mut self,
@@ -118,7 +118,7 @@ pub mod gateway_client {
             let path = http::uri::PathAndQuery::from_static("/gateway.Gateway/Data");
             self.inner.streaming(request.into_streaming_request(), path, codec).await
         }
-        /** Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+        /** Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 */
         pub async fn get_connections(
             &mut self,
@@ -163,13 +163,13 @@ pub mod gateway_server {
             >
             + Send
             + 'static;
-        /** Authenticates the connection and opens a Bidirectional Stream.
+        /** Authenticates the connection and opens a bidirectional stream.
 */
         async fn data(
             &self,
             request: tonic::Request<tonic::Streaming<super::super::common::Packet>>,
         ) -> Result<tonic::Response<Self::DataStream>, tonic::Status>;
-        /** Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+        /** Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 */
         async fn get_connections(
             &self,

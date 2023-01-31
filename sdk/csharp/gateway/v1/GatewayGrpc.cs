@@ -106,7 +106,7 @@ namespace Gateway {
       }
 
       /// <summary>
-      /// Authenticates the connection and opens a Bidirectional Stream.
+      /// Authenticates the connection and opens a bidirectional stream.
       /// </summary>
       /// <param name="requestStream">Used for reading requests from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
@@ -119,7 +119,7 @@ namespace Gateway {
       }
 
       /// <summary>
-      /// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+      /// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -208,7 +208,7 @@ namespace Gateway {
         return CallInvoker.AsyncUnaryCall(__Method_Authenticate, null, options, request);
       }
       /// <summary>
-      /// Authenticates the connection and opens a Bidirectional Stream.
+      /// Authenticates the connection and opens a bidirectional stream.
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
@@ -220,7 +220,7 @@ namespace Gateway {
         return Data(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Authenticates the connection and opens a Bidirectional Stream.
+      /// Authenticates the connection and opens a bidirectional stream.
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
@@ -230,7 +230,7 @@ namespace Gateway {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Data, null, options);
       }
       /// <summary>
-      /// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+      /// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -243,7 +243,7 @@ namespace Gateway {
         return GetConnections(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+      /// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -254,7 +254,7 @@ namespace Gateway {
         return CallInvoker.BlockingUnaryCall(__Method_GetConnections, null, options, request);
       }
       /// <summary>
-      /// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+      /// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -267,7 +267,7 @@ namespace Gateway {
         return GetConnectionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+      /// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

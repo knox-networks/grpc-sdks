@@ -186,7 +186,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 	return nil
 }
 
-// A single promissory file with an updated authorized signature as part of a stream response.
+// A single digital banknote with an updated authorized signature as part of a stream response.
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -235,7 +235,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Authorization challenge nonce.
+// Authentication challenge nonce.
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -284,7 +284,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 	return nil
 }
 
-// Responds to request with authorization challenge nonce.
+// Responds to request with athentication challenge nonce.
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

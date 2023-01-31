@@ -21,17 +21,17 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// A log entry for a gateway connection event.
+// A log entry for a Gateway connection event.
 type LogEntry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Public Key.
+	// Public Key
 	Verifier string `protobuf:"bytes,1,opt,name=verifier,proto3" json:"verifier,omitempty"`
 	// Specific action being recorded.
 	Note string `protobuf:"bytes,2,opt,name=note,proto3" json:"note,omitempty"`
-	// Timestamp.
+	// RFC3339 timestamp of the log entry.
 	Timestamp string `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 }
 
@@ -88,7 +88,7 @@ func (x *LogEntry) GetTimestamp() string {
 	return ""
 }
 
-// GetConnections requests a list of connections known to the gateway.
+// Requests a list of connections known to the Gateway.
 type ConnectionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -127,13 +127,13 @@ func (*ConnectionsRequest) Descriptor() ([]byte, []int) {
 	return file_gateway_v1_gateway_proto_rawDescGZIP(), []int{1}
 }
 
-// The response for GetConnections, containing a list of active connections, as well as lists of log entries for all created connections and for all removed connections.
+// Contains a list of active connections, as well as lists of log entries for all created connections and for all removed connections.
 type ConnectionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Currently active Connections.
+	// Currently active connections.
 	Active []string `protobuf:"bytes,1,rep,name=active,proto3" json:"active,omitempty"`
 	// The number of connections that have been created.
 	Created []*LogEntry `protobuf:"bytes,2,rep,name=created,proto3" json:"created,omitempty"`

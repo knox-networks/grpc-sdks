@@ -21,9 +21,9 @@ const _ = grpc.SupportPackageIsVersion7
 type GatewayClient interface {
 	// Start a new authenticated session and get a challenge nonce.
 	Authenticate(ctx context.Context, in *v1.AuthenticationRequest, opts ...grpc.CallOption) (*v1.AuthenticationResponse, error)
-	// Authenticates the connection and opens a Bidirectional Stream.
+	// Authenticates the connection and opens a bidirectional stream.
 	Data(ctx context.Context, opts ...grpc.CallOption) (Gateway_DataClient, error)
-	// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+	// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 	GetConnections(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error)
 }
 
@@ -90,9 +90,9 @@ func (c *gatewayClient) GetConnections(ctx context.Context, in *ConnectionsReque
 type GatewayServer interface {
 	// Start a new authenticated session and get a challenge nonce.
 	Authenticate(context.Context, *v1.AuthenticationRequest) (*v1.AuthenticationResponse, error)
-	// Authenticates the connection and opens a Bidirectional Stream.
+	// Authenticates the connection and opens a bidirectional stream.
 	Data(Gateway_DataServer) error
-	// Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+	// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 	GetConnections(context.Context, *ConnectionsRequest) (*ConnectionsResponse, error)
 	mustEmbedUnimplementedGatewayServer()
 }

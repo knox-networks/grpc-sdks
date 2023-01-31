@@ -30,14 +30,14 @@ class GatewayServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Data(self, request_iterator, context):
-        """Authenticates the connection and opens a Bidirectional Stream.
+        """Authenticates the connection and opens a bidirectional stream.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetConnections(self, request, context):
-        """Get a list of connections to the gateway, including the active connections, and connections that have been removed.
+        """Get a list of connections to the Gateway, including the active connections and connections that have been removed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

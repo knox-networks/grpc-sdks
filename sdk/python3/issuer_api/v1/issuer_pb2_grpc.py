@@ -3,7 +3,8 @@ import grpc
 from ...issuer_api.v1 import issuer_pb2 as issuer__api_dot_v1_dot_issuer__pb2
 
 class IssuerStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -18,7 +19,8 @@ class IssuerStub(object):
         self.SetRole = channel.unary_unary('/issuer_api.v1.Issuer/SetRole', request_serializer=issuer__api_dot_v1_dot_issuer__pb2.SetRoleRequest.SerializeToString, response_deserializer=issuer__api_dot_v1_dot_issuer__pb2.SetRoleResponse.FromString)
 
 class IssuerServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """
 
     def Authenticate(self, request, context):
         """Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
@@ -49,7 +51,7 @@ class IssuerServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetRole(self, request, context):
-        """Sets the roles configured for the Issuer- Ex list of the currency limits.
+        """Sets the roles configured for the Issuer- Ex List of the currency limits.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -61,7 +63,8 @@ def add_IssuerServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class Issuer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """
 
     @staticmethod
     def Authenticate(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):

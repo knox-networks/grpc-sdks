@@ -762,7 +762,7 @@ namespace IssuerApi.V1 {
   }
 
   /// <summary>
-  /// A single promissory file with an updated authorized signature as part of a stream response.
+  /// A single digital banknote with an updated authorized signature as part of a stream response.
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -957,7 +957,7 @@ namespace IssuerApi.V1 {
   }
 
   /// <summary>
-  /// Authorization challenge nonce.
+  /// Authentication challenge nonce.
   /// </summary>
   public sealed partial class AuthenticateRequest : pb::IMessage<AuthenticateRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1161,7 +1161,7 @@ namespace IssuerApi.V1 {
   }
 
   /// <summary>
-  /// Responds to request with authorization challenge nonce.
+  /// Responds to request with athentication challenge nonce.
   /// </summary>
   public sealed partial class AuthenticateResponse : pb::IMessage<AuthenticateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

@@ -26,7 +26,7 @@ type IssuerClient interface {
 	Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (Issuer_IssueClient, error)
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
-	// Sets the roles configured for the Issuer- Ex list of the currency limits.
+	// Sets the roles configured for the Issuer- Ex List of the currency limits.
 	SetRole(ctx context.Context, in *SetRoleRequest, opts ...grpc.CallOption) (*SetRoleResponse, error)
 }
 
@@ -140,7 +140,7 @@ type IssuerServer interface {
 	Issue(*IssueRequest, Issuer_IssueServer) error
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
-	// Sets the roles configured for the Issuer- Ex list of the currency limits.
+	// Sets the roles configured for the Issuer- Ex List of the currency limits.
 	SetRole(context.Context, *SetRoleRequest) (*SetRoleResponse, error)
 	mustEmbedUnimplementedIssuerServer()
 }

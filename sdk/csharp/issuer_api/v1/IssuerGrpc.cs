@@ -8,6 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace IssuerApi.V1 {
+  /// <summary>
+  /// Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+  /// </summary>
   public static partial class Issuer
   {
     static readonly string __ServiceName = "issuer_api.v1.Issuer";
@@ -167,7 +170,7 @@ namespace IssuerApi.V1 {
       }
 
       /// <summary>
-      /// Sets the roles configured for the Issuer- Ex list of the currency limits.
+      /// Sets the roles configured for the Issuer- Ex List of the currency limits.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -350,7 +353,7 @@ namespace IssuerApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetRoles, null, options, request);
       }
       /// <summary>
-      /// Sets the roles configured for the Issuer- Ex list of the currency limits.
+      /// Sets the roles configured for the Issuer- Ex List of the currency limits.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -363,7 +366,7 @@ namespace IssuerApi.V1 {
         return SetRole(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sets the roles configured for the Issuer- Ex list of the currency limits.
+      /// Sets the roles configured for the Issuer- Ex List of the currency limits.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -374,7 +377,7 @@ namespace IssuerApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SetRole, null, options, request);
       }
       /// <summary>
-      /// Sets the roles configured for the Issuer- Ex list of the currency limits.
+      /// Sets the roles configured for the Issuer- Ex List of the currency limits.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -387,7 +390,7 @@ namespace IssuerApi.V1 {
         return SetRoleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sets the roles configured for the Issuer- Ex list of the currency limits.
+      /// Sets the roles configured for the Issuer- Ex List of the currency limits.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

@@ -4,7 +4,8 @@ pub mod issuer_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    ///
+    /** Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+*/
     #[derive(Debug, Clone)]
     pub struct IssuerClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -159,7 +160,7 @@ pub mod issuer_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Sets the roles configured for the Issuer- Ex list of the currency limits.
+        /** Sets the roles configured for the Issuer- Ex List of the currency limits.
 */
         pub async fn set_role(
             &mut self,
@@ -225,14 +226,15 @@ pub mod issuer_server {
             &self,
             request: tonic::Request<super::GetRolesRequest>,
         ) -> Result<tonic::Response<super::GetRolesResponse>, tonic::Status>;
-        /** Sets the roles configured for the Issuer- Ex list of the currency limits.
+        /** Sets the roles configured for the Issuer- Ex List of the currency limits.
 */
         async fn set_role(
             &self,
             request: tonic::Request<super::SetRoleRequest>,
         ) -> Result<tonic::Response<super::SetRoleResponse>, tonic::Status>;
     }
-    ///
+    /** Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+*/
     #[derive(Debug)]
     pub struct IssuerServer<T: Issuer> {
         inner: _Inner<T>,

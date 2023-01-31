@@ -50,7 +50,7 @@ namespace Gateway {
   }
   #region Messages
   /// <summary>
-  /// A log entry for a gateway connection event.
+  /// A log entry for a Gateway connection event.
   /// </summary>
   public sealed partial class LogEntry : pb::IMessage<LogEntry>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +102,7 @@ namespace Gateway {
     public const int VerifierFieldNumber = 1;
     private string verifier_ = "";
     /// <summary>
-    /// Public Key.
+    /// Public Key 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,7 +132,7 @@ namespace Gateway {
     public const int TimestampFieldNumber = 3;
     private string timestamp_ = "";
     /// <summary>
-    /// Timestamp.
+    /// RFC3339 timestamp of the log entry.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -325,7 +325,7 @@ namespace Gateway {
   }
 
   /// <summary>
-  /// GetConnections requests a list of connections known to the gateway.
+  /// Requests a list of connections known to the Gateway.
   /// </summary>
   public sealed partial class ConnectionsRequest : pb::IMessage<ConnectionsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -480,7 +480,7 @@ namespace Gateway {
   }
 
   /// <summary>
-  /// The response for GetConnections, containing a list of active connections, as well as lists of log entries for all created connections and for all removed connections.
+  /// Contains a list of active connections, as well as lists of log entries for all created connections and for all removed connections.
   /// </summary>
   public sealed partial class ConnectionsResponse : pb::IMessage<ConnectionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -534,7 +534,7 @@ namespace Gateway {
         = pb::FieldCodec.ForString(10);
     private readonly pbc::RepeatedField<string> active_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Currently active Connections.
+    /// Currently active connections.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
