@@ -2,13 +2,13 @@
 /// A log entry for a gateway connection event.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LogEntry {
-    /// Public Key 
+    /// Public Key.
     #[prost(string, tag="1")]
     pub verifier: ::prost::alloc::string::String,
     /// Specific action being recorded.
     #[prost(string, tag="2")]
     pub note: ::prost::alloc::string::String,
-    /// Timestamp
+    /// Timestamp.
     #[prost(string, tag="3")]
     pub timestamp: ::prost::alloc::string::String,
 }

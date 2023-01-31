@@ -27,11 +27,11 @@ type LogEntry struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Public Key
+	// Public Key.
 	Verifier string `protobuf:"bytes,1,opt,name=verifier,proto3" json:"verifier,omitempty"`
 	// Specific action being recorded.
 	Note string `protobuf:"bytes,2,opt,name=note,proto3" json:"note,omitempty"`
-	// Timestamp
+	// Timestamp.
 	Timestamp string `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 }
 

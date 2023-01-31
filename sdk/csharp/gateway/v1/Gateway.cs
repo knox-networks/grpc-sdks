@@ -102,7 +102,7 @@ namespace Gateway {
     public const int VerifierFieldNumber = 1;
     private string verifier_ = "";
     /// <summary>
-    /// Public Key 
+    /// Public Key.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,7 +132,7 @@ namespace Gateway {
     public const int TimestampFieldNumber = 3;
     private string timestamp_ = "";
     /// <summary>
-    /// Timestamp
+    /// Timestamp.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
