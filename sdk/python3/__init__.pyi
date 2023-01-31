@@ -1,5 +1,6 @@
 from . import authority_api
 from . import common
+from . import common_private
 from . import emissary_api
 from . import faucet_api
 from . import gateway
