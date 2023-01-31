@@ -3,7 +3,7 @@ import grpc
 from ...common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
 
 class ServiceInfoStub(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+    """@exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
     """
 
     def __init__(self, channel):
@@ -16,7 +16,7 @@ class ServiceInfoStub(object):
         self.GetServiceType = channel.unary_unary('/common.ServiceInfo/GetServiceType', request_serializer=common_dot_v1_dot_common__pb2.GetServiceTypeRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.GetServiceTypeResponse.FromString)
 
 class ServiceInfoServicer(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+    """@exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
     """
 
     def GetVerifier(self, request, context):
@@ -39,7 +39,7 @@ def add_ServiceInfoServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class ServiceInfo(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+    """@exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
     """
 
     @staticmethod
@@ -51,7 +51,7 @@ class ServiceInfo(object):
         return grpc.experimental.unary_unary(request, target, '/common.ServiceInfo/GetServiceType', common_dot_v1_dot_common__pb2.GetServiceTypeRequest.SerializeToString, common_dot_v1_dot_common__pb2.GetServiceTypeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 class TransactionServiceStub(object):
-    """The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+    """@exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
     """
 
     def __init__(self, channel):
@@ -64,7 +64,7 @@ class TransactionServiceStub(object):
         self.NewFundsChange = channel.unary_unary('/common.TransactionService/NewFundsChange', request_serializer=common_dot_v1_dot_common__pb2.StartFundsChangeRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.StartFundsChangeResponse.FromString)
 
 class TransactionServiceServicer(object):
-    """The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+    """@exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
     """
 
     def NewSimplePayment(self, request, context):
@@ -87,7 +87,7 @@ def add_TransactionServiceServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class TransactionService(object):
-    """The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+    """@exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
     """
 
     @staticmethod

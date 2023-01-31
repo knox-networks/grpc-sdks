@@ -4,7 +4,7 @@ pub mod service_info_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /** ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+    /** @exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
 */
     #[derive(Debug, Clone)]
     pub struct ServiceInfoClient<T> {
@@ -134,7 +134,7 @@ pub mod service_info_server {
             request: tonic::Request<super::GetServiceTypeRequest>,
         ) -> Result<tonic::Response<super::GetServiceTypeResponse>, tonic::Status>;
     }
-    /** ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+    /** @exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
 */
     #[derive(Debug)]
     pub struct ServiceInfoServer<T: ServiceInfo> {
@@ -319,7 +319,7 @@ pub mod transaction_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /** The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+    /** @exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
 */
     #[derive(Debug, Clone)]
     pub struct TransactionServiceClient<T> {
@@ -449,7 +449,7 @@ pub mod transaction_service_server {
             request: tonic::Request<super::StartFundsChangeRequest>,
         ) -> Result<tonic::Response<super::StartFundsChangeResponse>, tonic::Status>;
     }
-    /** The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+    /** @exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
 */
     #[derive(Debug)]
     pub struct TransactionServiceServer<T: TransactionService> {

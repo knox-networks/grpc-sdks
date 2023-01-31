@@ -9,7 +9,7 @@ using grpc = global::Grpc.Core;
 
 namespace Common {
   /// <summary>
-  /// ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
+  /// @exclude ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to determine the type of service and its public key (i.e. verifier).
   /// </summary>
   public static partial class ServiceInfo
   {
@@ -263,7 +263,7 @@ namespace Common {
 
   }
   /// <summary>
-  /// The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
+  /// @exclude The Transaction Service is a common service implemented by applications that play a role in payment transactions. For example, the Wallet application and the Treasury application both implement the Transaction service.
   /// </summary>
   public static partial class TransactionService
   {
