@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// RemittanceRequest defines the input to a remittance operation in same or different currencies, including the recipient, the amount inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional exchange rate.
+// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional exchange rate.
 type RemittanceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -33,7 +33,7 @@ type RemittanceRequest struct {
 	Amount *v1.Amount `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	// Batch of promissory files to be remitted; Promissory files need to be signed to treasury service. Promissory files of a batch must be of the same currency.
 	PromissoryFiles [][]byte `protobuf:"bytes,3,rep,name=promissory_files,json=promissoryFiles,proto3" json:"promissory_files,omitempty"`
-	// Optional exchange rate required to perform conversion, otherwise will use spot rate If the batch of promissory files is of a different currency than the currency of the remittance request, then the exchange rate is required to convert the promissory files to the currency of the remittance request.
+	// Optional exchange rate required to perform conversion, otherwise will use spot rate if the batch of promissory files is of a different currency than the currency of the remittance request, then the exchange rate is required to convert the promissory files to the currency of the remittance request.
 	ExchangeRate float64 `protobuf:"fixed64,4,opt,name=exchange_rate,json=exchangeRate,proto3" json:"exchange_rate,omitempty"`
 }
 
@@ -97,7 +97,7 @@ func (x *RemittanceRequest) GetExchangeRate() float64 {
 	return 0
 }
 
-// RemittanceResponse is returned in response to a RemittanceRequest and includes the files sent to recipient at the applicable exchange rate, files representing a residual amount  left after the conversion if any and a fee.
+// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left after the conversion if any, and a fee.
 type RemittanceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -173,7 +173,7 @@ func (x *RemittanceResponse) GetRefundedPromissoryFiles() [][]byte {
 	return nil
 }
 
-// GetSupplyRequest requests the count of files of various denominations for a given currency.
+// Requests the count of files of various denominations for a given currency.
 type GetSupplyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -222,7 +222,7 @@ func (x *GetSupplyRequest) GetCurrencyCode() string {
 	return ""
 }
 
-// The Denomination count object lists the count of the files of specific denominations held in the treasury vault, and the total value held in files of that denomination.
+// Lists the count of the files of specific denominations held in the Treasury service's vault, and the total value held in files of that denomination.
 type DenominationCount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -230,9 +230,9 @@ type DenominationCount struct {
 
 	// The amount of the denomination.
 	Denomination *v1.Amount `protobuf:"bytes,1,opt,name=denomination,proto3" json:"denomination,omitempty"`
-	// The number of promissories of this amount held in supply.
+	// The number of digital banknotes of this amount held in supply.
 	Count uint32 `protobuf:"varint,2,opt,name=count,proto3" json:"count,omitempty"`
-	// The total value represented by promissories of this denomination.
+	// The total value represented by digital banknotes of this denomination.
 	Total *v1.Amount `protobuf:"bytes,3,opt,name=total,proto3" json:"total,omitempty"`
 }
 
@@ -289,13 +289,13 @@ func (x *DenominationCount) GetTotal() *v1.Amount {
 	return nil
 }
 
-// GetSupplyResponse provides a list of file denominations in the Treasury service's Vault.
+// Provides a list of file denominations in the Treasury service's Vault.
 type GetSupplyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// A list of denomination counts of the promissories held in supply.
+	// A list of denomination counts of the digital banknotes held in supply.
 	Supply []*DenominationCount `protobuf:"bytes,1,rep,name=supply,proto3" json:"supply,omitempty"`
 }
 

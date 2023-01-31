@@ -18,9 +18,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TreasuryClient interface {
-	// Start a new remittance, passing in a streamed request and getting back a streamed response.
+	// Start a new remittance, passing in a streamed request and gets back a streamed response.
 	Remit(ctx context.Context, opts ...grpc.CallOption) (Treasury_RemitClient, error)
-	// Get a list of denomination counts of the promissories held in the treasury vault.
+	// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 	GetSupply(ctx context.Context, in *GetSupplyRequest, opts ...grpc.CallOption) (*GetSupplyResponse, error)
 }
 
@@ -76,9 +76,9 @@ func (c *treasuryClient) GetSupply(ctx context.Context, in *GetSupplyRequest, op
 // All implementations must embed UnimplementedTreasuryServer
 // for forward compatibility
 type TreasuryServer interface {
-	// Start a new remittance, passing in a streamed request and getting back a streamed response.
+	// Start a new remittance, passing in a streamed request and gets back a streamed response.
 	Remit(Treasury_RemitServer) error
-	// Get a list of denomination counts of the promissories held in the treasury vault.
+	// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 	GetSupply(context.Context, *GetSupplyRequest) (*GetSupplyResponse, error)
 	mustEmbedUnimplementedTreasuryServer()
 }

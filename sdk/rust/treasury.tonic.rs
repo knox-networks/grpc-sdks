@@ -4,7 +4,7 @@ pub mod treasury_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury Service, e.g. APIs to manage currency supply of the treasury and APIs for Remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transactoin Service.
+    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
 */
     #[derive(Debug, Clone)]
     pub struct TreasuryClient<T> {
@@ -70,7 +70,7 @@ pub mod treasury_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
-        /** Start a new remittance, passing in a streamed request and getting back a streamed response.
+        /** Start a new remittance, passing in a streamed request and gets back a streamed response.
 */
         pub async fn remit(
             &mut self,
@@ -92,7 +92,7 @@ pub mod treasury_client {
             let path = http::uri::PathAndQuery::from_static("/treasury.Treasury/Remit");
             self.inner.streaming(request.into_streaming_request(), path, codec).await
         }
-        /** Get a list of denomination counts of the promissories held in the treasury vault.
+        /** Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 */
         pub async fn get_supply(
             &mut self,
@@ -128,20 +128,20 @@ pub mod treasury_server {
             >
             + Send
             + 'static;
-        /** Start a new remittance, passing in a streamed request and getting back a streamed response.
+        /** Start a new remittance, passing in a streamed request and gets back a streamed response.
 */
         async fn remit(
             &self,
             request: tonic::Request<tonic::Streaming<super::RemittanceRequest>>,
         ) -> Result<tonic::Response<Self::RemitStream>, tonic::Status>;
-        /** Get a list of denomination counts of the promissories held in the treasury vault.
+        /** Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 */
         async fn get_supply(
             &self,
             request: tonic::Request<super::GetSupplyRequest>,
         ) -> Result<tonic::Response<super::GetSupplyResponse>, tonic::Status>;
     }
-    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury Service, e.g. APIs to manage currency supply of the treasury and APIs for Remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transactoin Service.
+    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
 */
     #[derive(Debug)]
     pub struct TreasuryServer<T: Treasury> {

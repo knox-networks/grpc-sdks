@@ -9,7 +9,7 @@ using grpc = global::Grpc.Core;
 
 namespace Treasury {
   /// <summary>
-  /// The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury Service, e.g. APIs to manage currency supply of the treasury and APIs for Remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transactoin Service.
+  /// The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
   /// </summary>
   public static partial class Treasury
   {
@@ -84,7 +84,7 @@ namespace Treasury {
     public abstract partial class TreasuryBase
     {
       /// <summary>
-      /// Start a new remittance, passing in a streamed request and getting back a streamed response.
+      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
       /// </summary>
       /// <param name="requestStream">Used for reading requests from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
@@ -97,7 +97,7 @@ namespace Treasury {
       }
 
       /// <summary>
-      /// Get a list of denomination counts of the promissories held in the treasury vault.
+      /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -138,7 +138,7 @@ namespace Treasury {
       }
 
       /// <summary>
-      /// Start a new remittance, passing in a streamed request and getting back a streamed response.
+      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
@@ -150,7 +150,7 @@ namespace Treasury {
         return Remit(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Start a new remittance, passing in a streamed request and getting back a streamed response.
+      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
@@ -160,7 +160,7 @@ namespace Treasury {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Remit, null, options);
       }
       /// <summary>
-      /// Get a list of denomination counts of the promissories held in the treasury vault.
+      /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -173,7 +173,7 @@ namespace Treasury {
         return GetSupply(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Get a list of denomination counts of the promissories held in the treasury vault.
+      /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -184,7 +184,7 @@ namespace Treasury {
         return CallInvoker.BlockingUnaryCall(__Method_GetSupply, null, options, request);
       }
       /// <summary>
-      /// Get a list of denomination counts of the promissories held in the treasury vault.
+      /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -197,7 +197,7 @@ namespace Treasury {
         return GetSupplyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Get a list of denomination counts of the promissories held in the treasury vault.
+      /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

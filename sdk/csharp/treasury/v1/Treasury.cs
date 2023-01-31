@@ -57,7 +57,7 @@ namespace Treasury {
   }
   #region Messages
   /// <summary>
-  /// RemittanceRequest defines the input to a remittance operation in same or different currencies, including the recipient, the amount inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional exchange rate.
+  /// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional exchange rate.
   /// </summary>
   public sealed partial class RemittanceRequest : pb::IMessage<RemittanceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -154,7 +154,7 @@ namespace Treasury {
     public const int ExchangeRateFieldNumber = 4;
     private double exchangeRate_;
     /// <summary>
-    /// Optional exchange rate required to perform conversion, otherwise will use spot rate If the batch of promissory files is of a different currency than the currency of the remittance request, then the exchange rate is required to convert the promissory files to the currency of the remittance request.
+    /// Optional exchange rate required to perform conversion, otherwise will use spot rate if the batch of promissory files is of a different currency than the currency of the remittance request, then the exchange rate is required to convert the promissory files to the currency of the remittance request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -379,7 +379,7 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// RemittanceResponse is returned in response to a RemittanceRequest and includes the files sent to recipient at the applicable exchange rate, files representing a residual amount  left after the conversion if any and a fee.
+  /// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left after the conversion if any, and a fee.
   /// </summary>
   public sealed partial class RemittanceResponse : pb::IMessage<RemittanceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -681,7 +681,7 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// GetSupplyRequest requests the count of files of various denominations for a given currency.
+  /// Requests the count of files of various denominations for a given currency.
   /// </summary>
   public sealed partial class GetSupplyRequest : pb::IMessage<GetSupplyRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -876,7 +876,7 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// The Denomination count object lists the count of the files of specific denominations held in the treasury vault, and the total value held in files of that denomination.
+  /// Lists the count of the files of specific denominations held in the Treasury service's vault, and the total value held in files of that denomination.
   /// </summary>
   public sealed partial class DenominationCount : pb::IMessage<DenominationCount>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -943,7 +943,7 @@ namespace Treasury {
     public const int CountFieldNumber = 2;
     private uint count_;
     /// <summary>
-    /// The number of promissories of this amount held in supply.
+    /// The number of digital banknotes of this amount held in supply.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -958,7 +958,7 @@ namespace Treasury {
     public const int TotalFieldNumber = 3;
     private global::Common.Amount total_;
     /// <summary>
-    /// The total value represented by promissories of this denomination.
+    /// The total value represented by digital banknotes of this denomination.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1169,7 +1169,7 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// GetSupplyResponse provides a list of file denominations in the Treasury service's Vault.
+  /// Provides a list of file denominations in the Treasury service's Vault.
   /// </summary>
   public sealed partial class GetSupplyResponse : pb::IMessage<GetSupplyResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1221,7 +1221,7 @@ namespace Treasury {
         = pb::FieldCodec.ForMessage(10, global::Treasury.DenominationCount.Parser);
     private readonly pbc::RepeatedField<global::Treasury.DenominationCount> supply_ = new pbc::RepeatedField<global::Treasury.DenominationCount>();
     /// <summary>
-    /// A list of denomination counts of the promissories held in supply.
+    /// A list of denomination counts of the digital banknotes held in supply.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
