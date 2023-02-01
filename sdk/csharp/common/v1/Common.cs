@@ -219,7 +219,7 @@ namespace Common {
     /// </summary>
     [pbr::OriginalName("STATE_COMPLETE")] StateComplete = 3,
     /// <summary>
-    /// Transacton has been terminated due to some failure.
+    /// Transaction has been terminated due to some failure.
     /// </summary>
     [pbr::OriginalName("STATE_FAILED")] StateFailed = 4,
   }
@@ -793,7 +793,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private global::Common.DynamicVerifier verifier_;
     /// <summary>
-    /// Verifier of the reqeuestor
+    /// Verifier of the requester
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -947,7 +947,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// The response to `AuthenticationRequest` holding a challenge nonc meant to be signed by the requestor's private key.
+  /// The response to `AuthenticationRequest` holding a challenge nonce meant to be signed by the requestor's private key.
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1796,7 +1796,7 @@ namespace Common {
     /// <summary>Field number for the "one" field.</summary>
     public const int OneFieldNumber = 1;
     /// <summary>
-    /// the connection request is of type OneOnnection
+    /// the connection request is of type OneConnection
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1827,7 +1827,7 @@ namespace Common {
     public const int SignatureFieldNumber = 3;
     private global::Common.AuthenticationSignature signature_;
     /// <summary>
-    /// The crypto signature and signers publick key
+    /// The crypto signature and signers public key
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2133,7 +2133,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private global::Common.DynamicVerifier verifier_;
     /// <summary>
-    /// Verifier of the reqeuestor
+    /// Verifier of the requester
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3688,7 +3688,7 @@ namespace Common {
     public const int MultibaseFieldNumber = 2;
     private string multibase_ = "";
     /// <summary>
-    /// Verifier (public key) in multbase encoding.
+    /// Verifier (public key) in multibase encoding.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4216,7 +4216,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissories to be sent.
+  /// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissory files to be sent.
   /// </summary>
   public sealed partial class StartSimplePaymentRequest : pb::IMessage<StartSimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4529,8 +4529,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-  /// transaction.
+  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
   /// </summary>
   public sealed partial class StartSimplePaymentResponse : pb::IMessage<StartSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4580,7 +4579,7 @@ namespace Common {
     public const int UetrFieldNumber = 1;
     private string uetr_ = "";
     /// <summary>
-    /// Universal E2E Tranasaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4725,8 +4724,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
-  /// the well known Treasury verifier provided at startup.
+  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissory files to be sent. Recipient is the well known Treasury verifier provided at startup.
   /// </summary>
   public sealed partial class StartFundsChangeRequest : pb::IMessage<StartFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5011,7 +5009,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Funds Change
   /// transaction.
   /// </summary>
   public sealed partial class StartFundsChangeResponse : pb::IMessage<StartFundsChangeResponse>
@@ -5062,7 +5060,7 @@ namespace Common {
     public const int UetrFieldNumber = 1;
     private string uetr_ = "";
     /// <summary>
-    /// Universal E2E Tranasaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5260,7 +5258,7 @@ namespace Common {
     public const int StatusFieldNumber = 1;
     private global::Common.TransactionStatus status_ = global::Common.TransactionStatus.StateInitializing;
     /// <summary>
-    /// Status of the trasnaction.
+    /// Status of the transaction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5610,7 +5608,7 @@ namespace Common {
     public const int UetrFieldNumber = 3;
     private string uetr_ = "";
     /// <summary>
-    /// The Univeral E2E Identifier (UUID v4) of this transaction.
+    /// The Universal E2E Identifier (UUID v4) of this transaction.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5640,7 +5638,7 @@ namespace Common {
     public const int CreatedFieldNumber = 5;
     private string created_ = "";
     /// <summary>
-    /// RFC 3339 Timestamnp at which this entry was created.
+    /// RFC 3339 Timestamp at which this entry was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5655,7 +5653,7 @@ namespace Common {
     public const int UpdatedFieldNumber = 6;
     private string updated_ = "";
     /// <summary>
-    /// RFC 3339 Timestamnp at whcih this entry was last updated.
+    /// RFC 3339 Timestamp at which this entry was last updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6091,7 +6089,7 @@ namespace Common {
     public static partial class Types {
       public enum Role {
         /// <summary>
-        /// Initator of the transaction.
+        /// Initiator of the transaction.
         /// </summary>
         [pbr::OriginalName("ROLE_STARTER")] Starter = 0,
         /// <summary>

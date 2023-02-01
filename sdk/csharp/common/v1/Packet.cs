@@ -737,7 +737,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Encasulates all cross-network metadata that associates
+  /// Encapsulates all cross-network metadata that associates
   /// a `Packet` with a given transaction.
   /// </summary>
   public sealed partial class TransactionHeader : pb::IMessage<TransactionHeader>
@@ -841,7 +841,7 @@ namespace Common {
     public const int TimestampFieldNumber = 4;
     private ulong timestamp_;
     /// <summary>
-    /// Seconds (minus leapsconds) since epoch 1970 - Unix timestamp - always
+    /// Seconds (minus leapseconds) since epoch 1970 - Unix timestamp - always
     /// interpreted as being in the UTC timezone. Internal operations will convert
     /// this to UTC time.
     /// </summary>
@@ -1803,7 +1803,7 @@ namespace Common {
   /// * Sent by the responder.
   /// * Paired with a `PacketType::SPStatus`.
   /// * Always sent after the end of a simple payment flow
-  /// * Acts as confimation of full or partial funds transfer
+  /// * Acts as confirmation of full or partial funds transfer
   /// </summary>
   public sealed partial class SimplePaymentResponse : pb::IMessage<SimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

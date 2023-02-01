@@ -12,7 +12,7 @@ using grpc = global::Grpc.Core;
 
 namespace AuthApi.V1 {
   /// <summary>
-  ///This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
+  ///This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosystem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
   /// </summary>
   public static partial class UserManagement
   {

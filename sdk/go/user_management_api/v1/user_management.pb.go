@@ -392,7 +392,7 @@ type RegisterUserResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// User object of the registeree.
+	// User object of the registrant.
 	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
@@ -2406,7 +2406,7 @@ type GetAppSettingsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Appsettings object configured in the environment.
+	// AppSettings object configured in the environment.
 	AppSettings *AppSettings `protobuf:"bytes,1,opt,name=app_settings,json=appSettings,proto3" json:"app_settings,omitempty"`
 }
 

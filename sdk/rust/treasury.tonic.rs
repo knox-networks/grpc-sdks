@@ -4,7 +4,7 @@ pub mod treasury_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
 */
     #[derive(Debug, Clone)]
     pub struct TreasuryClient<T> {
@@ -141,7 +141,7 @@ pub mod treasury_server {
             request: tonic::Request<super::GetSupplyRequest>,
         ) -> Result<tonic::Response<super::GetSupplyResponse>, tonic::Status>;
     }
-    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remitatnce. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+    /** The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
 */
     #[derive(Debug)]
     pub struct TreasuryServer<T: Treasury> {

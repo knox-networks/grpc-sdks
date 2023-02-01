@@ -1548,7 +1548,7 @@ namespace AuthApi.V1 {
     public const int UserFieldNumber = 1;
     private global::AuthApi.V1.User user_;
     /// <summary>
-    ///User object of the registeree.
+    ///User object of the registrant.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9761,7 +9761,7 @@ namespace AuthApi.V1 {
     public const int AppSettingsFieldNumber = 1;
     private global::AuthApi.V1.AppSettings appSettings_;
     /// <summary>
-    ///Appsettings object configured in the environment.
+    ///AppSettings object configured in the environment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

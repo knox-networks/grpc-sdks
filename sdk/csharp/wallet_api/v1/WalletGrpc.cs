@@ -9,7 +9,7 @@ using grpc = global::Grpc.Core;
 
 namespace WalletApi.V1 {
   /// <summary>
-  /// Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial instituion vault.
+  /// Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
   /// </summary>
   public static partial class Wallet
   {
@@ -276,7 +276,7 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -545,7 +545,7 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Transfer, null, options, request);
       }
       /// <summary>
-      /// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -558,7 +558,7 @@ namespace WalletApi.V1 {
         return CreateOwner(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -569,7 +569,7 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateOwner, null, options, request);
       }
       /// <summary>
-      /// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -582,7 +582,7 @@ namespace WalletApi.V1 {
         return CreateOwnerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

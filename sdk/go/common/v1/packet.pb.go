@@ -500,7 +500,7 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 	return nil
 }
 
-// Encasulates all cross-network metadata that associates
+// Encapsulates all cross-network metadata that associates
 // a `Packet` with a given transaction.
 type TransactionHeader struct {
 	state         protoimpl.MessageState
@@ -515,7 +515,7 @@ type TransactionHeader struct {
 	// Universal e2e transaction reference. Term used for UUIDv4 in financial
 	// messaging such as ISO20022.
 	Uetr string `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	// Seconds (minus leapsconds) since epoch 1970 - Unix timestamp - always
+	// Seconds (minus leapseconds) since epoch 1970 - Unix timestamp - always
 	// interpreted as being in the UTC timezone. Internal operations will convert
 	// this to UTC time.
 	Timestamp uint64 `protobuf:"varint,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
@@ -758,7 +758,7 @@ func (x *SimplePaymentNack) GetOther() string {
 // * Sent by the responder.
 // * Paired with a `PacketType::SPStatus`.
 // * Always sent after the end of a simple payment flow
-// * Acts as confimation of full or partial funds transfer
+// * Acts as confirmation of full or partial funds transfer
 type SimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -36,7 +36,7 @@ pub struct GetIssuerLimitsResponse {
     #[prost(string, tag="2")]
     pub issuer_public_key: ::prost::alloc::string::String,
 }
-/// A digital banknote that is to be authorized. Severel such requests may be sent in a stream.
+/// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthorizeRequest {
     /// Digital banknote to authorize.
@@ -50,13 +50,13 @@ pub struct AuthorizeResponse {
     #[prost(bytes="vec", tag="1")]
     pub promissory_file: ::prost::alloc::vec::Vec<u8>,
 }
-/// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer idetified by its Verifier (aka public key).
+/// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified by its Verifier (aka public key).
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RedeemRequest {
     /// Digital banknote to redeem.
     #[prost(bytes="vec", tag="1")]
     pub promissory_file: ::prost::alloc::vec::Vec<u8>,
-    /// Verifier of the Issuer in multibase format.
+    /// Verifier of the Issuer in multi-base format.
     #[prost(string, tag="2")]
     pub verifier: ::prost::alloc::string::String,
 }

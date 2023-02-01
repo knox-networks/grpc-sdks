@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 type WalletClient interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*TransferResponse, error)
-	// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+	// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
 	CreateOwner(ctx context.Context, in *CreateOwnerRequest, opts ...grpc.CallOption) (*CreateOwnerResponse, error)
 	// Creates a wallet for a given owner, which can manage the wallet.
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
@@ -221,7 +221,7 @@ func (c *walletClient) ListTransactionSnapshots(ctx context.Context, in *ListTra
 type WalletServer interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(context.Context, *TransferRequest) (*TransferResponse, error)
-	// Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+	// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
 	CreateOwner(context.Context, *CreateOwnerRequest) (*CreateOwnerResponse, error)
 	// Creates a wallet for a given owner, which can manage the wallet.
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)

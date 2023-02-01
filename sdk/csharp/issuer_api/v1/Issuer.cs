@@ -1161,7 +1161,7 @@ namespace IssuerApi.V1 {
   }
 
   /// <summary>
-  /// Responds to request with athentication challenge nonce.
+  /// Responds to request with authentication challenge nonce.
   /// </summary>
   public sealed partial class AuthenticateResponse : pb::IMessage<AuthenticateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1563,7 +1563,7 @@ namespace IssuerApi.V1 {
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 10);
     private readonly pbc::MapField<string, string> roles_ = new pbc::MapField<string, string>();
     /// <summary>
-    /// Key is the verifier and the Value is &lt;authorizied/unauthorized>: &lt;currency limits>.
+    /// Key is the verifier and the Value is &lt;authorized/unauthorized>: &lt;currency limits>.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

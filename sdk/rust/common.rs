@@ -30,11 +30,11 @@ pub struct Amount {
 /// Used to start an authentication flow
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticationRequest {
-    /// Verifier of the reqeuestor
+    /// Verifier of the requester
     #[prost(message, optional, tag="1")]
     pub verifier: ::core::option::Option<DynamicVerifier>,
 }
-/// The response to `AuthenticationRequest` holding a challenge nonc meant to be signed by the requestor's private key.
+/// The response to `AuthenticationRequest` holding a challenge nonce meant to be signed by the requestor's private key.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticationResponse {
     /// random unique string to be signed by the authorized key
@@ -69,7 +69,7 @@ pub struct AssociatedConnection {
 /// represented by the `signature.verifier` field.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConnectionRequest {
-    /// The crypto signature and signers publick key
+    /// The crypto signature and signers public key
     #[prost(message, optional, tag="3")]
     pub signature: ::core::option::Option<AuthenticationSignature>,
     /// The connection request may include  a connection type that is of type OneConnection or ManyConnection
@@ -81,7 +81,7 @@ pub mod connection_request {
     /// The connection request may include  a connection type that is of type OneConnection or ManyConnection
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum RequestType {
-        /// the connection request is of type OneOnnection
+        /// the connection request is of type OneConnection
         #[prost(message, tag="1")]
         One(super::OneConnection),
         /// the connection request is of type ManyConnection
@@ -93,7 +93,7 @@ pub mod connection_request {
 /// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticationSignature {
-    /// Verifier of the reqeuestor
+    /// Verifier of the requester
     #[prost(message, optional, tag="1")]
     pub verifier: ::core::option::Option<DynamicVerifier>,
     /// cryptographic signature of the challenge nonce
@@ -168,7 +168,7 @@ pub struct GetVerifierResponse {
     /// Verifier (public key) in Dynamic verifier format.
     #[prost(message, optional, tag="1")]
     pub bytes: ::core::option::Option<DynamicVerifier>,
-    /// Verifier (public key) in multbase encoding.
+    /// Verifier (public key) in multibase encoding.
     #[prost(string, tag="2")]
     pub multibase: ::prost::alloc::string::String,
 }
@@ -183,7 +183,7 @@ pub struct GetServiceTypeResponse {
     #[prost(enumeration="ServiceType", tag="1")]
     pub service_type: i32,
 }
-/// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissories to be sent.
+/// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissory files to be sent.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartSimplePaymentRequest {
     /// The amount of the payment inclusive of currency.
@@ -199,16 +199,14 @@ pub struct StartSimplePaymentRequest {
     #[prost(string, tag="4")]
     pub user_reference: ::prost::alloc::string::String,
 }
-/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-/// transaction.
+/// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartSimplePaymentResponse {
-    /// Universal E2E Tranasaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format)
     #[prost(string, tag="1")]
     pub uetr: ::prost::alloc::string::String,
 }
-/// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
-/// the well known Treasury verifier provided at startup.
+/// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissory files to be sent. Recipient is the well known Treasury verifier provided at startup.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartFundsChangeRequest {
     /// The specific amount that the returned change must be able to make a payment of. Inclusive of currency.
@@ -222,18 +220,18 @@ pub struct StartFundsChangeRequest {
     #[prost(string, tag="3")]
     pub user_reference: ::prost::alloc::string::String,
 }
-/// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+/// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Funds Change
 /// transaction.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StartFundsChangeResponse {
-    /// Universal E2E Tranasaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format)
     #[prost(string, tag="1")]
     pub uetr: ::prost::alloc::string::String,
 }
 /// Represents the status of a transaction with pertinent metadata attached.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TransactionSnapshot {
-    /// Status of the trasnaction.
+    /// Status of the transaction.
     #[prost(enumeration="TransactionStatus", tag="1")]
     pub status: i32,
     /// Digital Banknote UUIDs.
@@ -256,16 +254,16 @@ pub struct Transaction {
     /// The role of the entity represented in this record.
     #[prost(enumeration="transaction::Role", tag="2")]
     pub role: i32,
-    /// The Univeral E2E Identifier (UUID v4) of this transaction.
+    /// The Universal E2E Identifier (UUID v4) of this transaction.
     #[prost(string, tag="3")]
     pub uetr: ::prost::alloc::string::String,
     /// The Amount inclusive of currency code.
     #[prost(message, optional, tag="4")]
     pub amount: ::core::option::Option<Amount>,
-    /// RFC 3339 Timestamnp at which this entry was created.
+    /// RFC 3339 Timestamp at which this entry was created.
     #[prost(string, tag="5")]
     pub created: ::prost::alloc::string::String,
-    /// RFC 3339 Timestamnp at whcih this entry was last updated.
+    /// RFC 3339 Timestamp at which this entry was last updated.
     #[prost(string, tag="6")]
     pub updated: ::prost::alloc::string::String,
     /// User Reference field.
@@ -288,7 +286,7 @@ pub mod transaction {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum Role {
-        /// Initator of the transaction.
+        /// Initiator of the transaction.
         Starter = 0,
         /// Responder in a transaction.
         Responder = 1,
@@ -423,7 +421,7 @@ pub enum TransactionStatus {
     StateReceiving = 5,
     /// The transaction has successfully completed.
     StateComplete = 3,
-    /// Transacton has been terminated due to some failure.
+    /// Transaction has been terminated due to some failure.
     StateFailed = 4,
 }
 impl TransactionStatus {
@@ -467,7 +465,7 @@ pub struct Packet {
     #[prost(message, optional, tag="7")]
     pub transaction_header: ::core::option::Option<TransactionHeader>,
 }
-/// Encasulates all cross-network metadata that associates
+/// Encapsulates all cross-network metadata that associates
 /// a `Packet` with a given transaction.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TransactionHeader {
@@ -482,7 +480,7 @@ pub struct TransactionHeader {
     /// messaging such as ISO20022.
     #[prost(string, tag="3")]
     pub uetr: ::prost::alloc::string::String,
-    /// Seconds (minus leapsconds) since epoch 1970 - Unix timestamp - always
+    /// Seconds (minus leapseconds) since epoch 1970 - Unix timestamp - always
     /// interpreted as being in the UTC timezone. Internal operations will convert
     /// this to UTC time.
     #[prost(uint64, tag="4")]
@@ -551,7 +549,7 @@ pub mod simple_payment_nack {
 /// * Sent by the responder.
 /// * Paired with a `PacketType::SPStatus`.
 /// * Always sent after the end of a simple payment flow
-/// * Acts as confimation of full or partial funds transfer
+/// * Acts as confirmation of full or partial funds transfer
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SimplePaymentResponse {
     #[prost(message, optional, tag="1")]

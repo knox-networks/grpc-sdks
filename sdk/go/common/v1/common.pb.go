@@ -182,7 +182,7 @@ const (
 	TransactionStatus_STATE_RECEIVING TransactionStatus = 5
 	// The transaction has successfully completed.
 	TransactionStatus_STATE_COMPLETE TransactionStatus = 3
-	// Transacton has been terminated due to some failure.
+	// Transaction has been terminated due to some failure.
 	TransactionStatus_STATE_FAILED TransactionStatus = 4
 )
 
@@ -236,7 +236,7 @@ func (TransactionStatus) EnumDescriptor() ([]byte, []int) {
 type Transaction_Role int32
 
 const (
-	// Initator of the transaction.
+	// Initiator of the transaction.
 	Transaction_ROLE_STARTER Transaction_Role = 0
 	// Responder in a transaction.
 	Transaction_ROLE_RESPONDER Transaction_Role = 1
@@ -469,7 +469,7 @@ type AuthenticationRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Verifier of the reqeuestor
+	// Verifier of the requester
 	Verifier *DynamicVerifier `protobuf:"bytes,1,opt,name=verifier,proto3" json:"verifier,omitempty"`
 }
 
@@ -512,7 +512,7 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 	return nil
 }
 
-// The response to `AuthenticationRequest` holding a challenge nonc meant to be signed by the requestor's private key.
+// The response to `AuthenticationRequest` holding a challenge nonce meant to be signed by the requestor's private key.
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -724,7 +724,7 @@ type ConnectionRequest struct {
 	//	*ConnectionRequest_One
 	//	*ConnectionRequest_Many
 	RequestType isConnectionRequest_RequestType `protobuf_oneof:"request_type"`
-	// The crypto signature and signers publick key
+	// The crypto signature and signers public key
 	Signature *AuthenticationSignature `protobuf:"bytes,3,opt,name=signature,proto3" json:"signature,omitempty"`
 }
 
@@ -793,7 +793,7 @@ type isConnectionRequest_RequestType interface {
 }
 
 type ConnectionRequest_One struct {
-	// the connection request is of type OneOnnection
+	// the connection request is of type OneConnection
 	One *OneConnection `protobuf:"bytes,1,opt,name=one,proto3,oneof"`
 }
 
@@ -813,7 +813,7 @@ type AuthenticationSignature struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Verifier of the reqeuestor
+	// Verifier of the requester
 	Verifier *DynamicVerifier `protobuf:"bytes,1,opt,name=verifier,proto3" json:"verifier,omitempty"`
 	// cryptographic signature of the challenge nonce
 	Signature []byte `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
@@ -1167,7 +1167,7 @@ type GetVerifierResponse struct {
 
 	// Verifier (public key) in Dynamic verifier format.
 	Bytes *DynamicVerifier `protobuf:"bytes,1,opt,name=bytes,proto3" json:"bytes,omitempty"`
-	// Verifier (public key) in multbase encoding.
+	// Verifier (public key) in multibase encoding.
 	Multibase string `protobuf:"bytes,2,opt,name=multibase,proto3" json:"multibase,omitempty"`
 }
 
@@ -1305,7 +1305,7 @@ func (x *GetServiceTypeResponse) GetServiceType() ServiceType {
 	return ServiceType_UnknownService
 }
 
-// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissories to be sent.
+// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissory files to be sent.
 type StartSimplePaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1381,14 +1381,13 @@ func (x *StartSimplePaymentRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-// transaction.
+// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
 type StartSimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Universal E2E Tranasaction Reference (UUID v4 format)
+	// Universal E2E Transaction Reference (UUID v4 format)
 	Uetr string `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
 }
 
@@ -1431,8 +1430,7 @@ func (x *StartSimplePaymentResponse) GetUetr() string {
 	return ""
 }
 
-// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
-// the well known Treasury verifier provided at startup.
+// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissory files to be sent. Recipient is the well known Treasury verifier provided at startup.
 type StartFundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1500,14 +1498,14 @@ func (x *StartFundsChangeRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Tranasaction Reference (UUID v4 format) of a successfully initiated Funds Change
+// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Funds Change
 // transaction.
 type StartFundsChangeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Universal E2E Tranasaction Reference (UUID v4 format)
+	// Universal E2E Transaction Reference (UUID v4 format)
 	Uetr string `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
 }
 
@@ -1556,7 +1554,7 @@ type TransactionSnapshot struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Status of the trasnaction.
+	// Status of the transaction.
 	Status TransactionStatus `protobuf:"varint,1,opt,name=status,proto3,enum=common.TransactionStatus" json:"status,omitempty"`
 	// Digital Banknote UUIDs.
 	Promissories []string `protobuf:"bytes,3,rep,name=promissories,proto3" json:"promissories,omitempty"`
@@ -1637,13 +1635,13 @@ type Transaction struct {
 	Type Transaction_Type `protobuf:"varint,1,opt,name=type,proto3,enum=common.Transaction_Type" json:"type,omitempty"`
 	// The role of the entity represented in this record.
 	Role Transaction_Role `protobuf:"varint,2,opt,name=role,proto3,enum=common.Transaction_Role" json:"role,omitempty"`
-	// The Univeral E2E Identifier (UUID v4) of this transaction.
+	// The Universal E2E Identifier (UUID v4) of this transaction.
 	Uetr string `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`
 	// The Amount inclusive of currency code.
 	Amount *Amount `protobuf:"bytes,4,opt,name=amount,proto3" json:"amount,omitempty"`
-	// RFC 3339 Timestamnp at which this entry was created.
+	// RFC 3339 Timestamp at which this entry was created.
 	Created string `protobuf:"bytes,5,opt,name=created,proto3" json:"created,omitempty"`
-	// RFC 3339 Timestamnp at whcih this entry was last updated.
+	// RFC 3339 Timestamp at which this entry was last updated.
 	Updated string `protobuf:"bytes,6,opt,name=updated,proto3" json:"updated,omitempty"`
 	// User Reference field.
 	Memo string `protobuf:"bytes,7,opt,name=memo,proto3" json:"memo,omitempty"`

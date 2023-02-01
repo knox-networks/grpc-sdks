@@ -284,7 +284,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 	return nil
 }
 
-// Responds to request with athentication challenge nonce.
+// Responds to request with authentication challenge nonce.
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -378,7 +378,7 @@ type GetRolesResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Key is the verifier and the Value is <authorizied/unauthorized>: <currency limits>.
+	// Key is the verifier and the Value is <authorized/unauthorized>: <currency limits>.
 	Roles map[string]string `protobuf:"bytes,1,rep,name=roles,proto3" json:"roles,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 

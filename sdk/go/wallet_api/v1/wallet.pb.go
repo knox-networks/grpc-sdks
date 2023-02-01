@@ -1484,7 +1484,7 @@ type RequestPresentationRequest struct {
 
 	// W3C Decentralized Identifier (DID) of the wallet.
 	Did string `protobuf:"bytes,1,opt,name=did,proto3" json:"did,omitempty"`
-	// Type of Verifiable Crdential- Ex "BankAccount", "PermanentResidentCard".
+	// Type of Verifiable Credential- Ex "BankAccount", "PermanentResidentCard".
 	CredentialType string `protobuf:"bytes,2,opt,name=credential_type,json=credentialType,proto3" json:"credential_type,omitempty"`
 	// API key given to the wallet owner at the time of owner creation.
 	ApiKey string `protobuf:"bytes,3,opt,name=api_key,json=apiKey,proto3" json:"api_key,omitempty"`
@@ -1598,7 +1598,7 @@ type PrepareSimplePaymentRequest struct {
 
 	// Amount object representing the transfer amount.
 	Amount *v1.Amount `protobuf:"bytes,1,opt,name=amount,proto3" json:"amount,omitempty"`
-	// Public key of the receipient.
+	// Public key of the recipient.
 	Recipient string `protobuf:"bytes,2,opt,name=recipient,proto3" json:"recipient,omitempty"`
 	// A Unique End-to-end Transaction Reference, string of 36 unique characters.
 	UserReference string `protobuf:"bytes,3,opt,name=user_reference,json=userReference,proto3" json:"user_reference,omitempty"`

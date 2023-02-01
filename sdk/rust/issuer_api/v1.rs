@@ -40,7 +40,7 @@ pub struct AuthenticateRequest {
     #[prost(message, optional, tag="1")]
     pub verifier: ::core::option::Option<super::super::common::DynamicVerifier>,
 }
-/// Responds to request with athentication challenge nonce.
+/// Responds to request with authentication challenge nonce.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthenticateResponse {
     /// Random unique string to be signed by the authorized key.
@@ -56,7 +56,7 @@ pub struct GetRolesRequest {
 /// Returns roles set in the Issuer for configuring access.
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetRolesResponse {
-    /// Key is the verifier and the Value is <authorizied/unauthorized>: <currency limits>.
+    /// Key is the verifier and the Value is <authorized/unauthorized>: <currency limits>.
     #[prost(map="string, string", tag="1")]
     pub roles: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }

@@ -73,7 +73,7 @@ pub struct AuthToken {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RegisterUserResponse {
-    /// User object of the registeree.
+    /// User object of the registrant.
     #[prost(message, optional, tag="1")]
     pub user: ::core::option::Option<User>,
 }
@@ -385,7 +385,7 @@ pub struct AuthnProvider {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetAppSettingsResponse {
-    /// Appsettings object configured in the environment.
+    /// AppSettings object configured in the environment.
     #[prost(message, optional, tag="1")]
     pub app_settings: ::core::option::Option<AppSettings>,
 }

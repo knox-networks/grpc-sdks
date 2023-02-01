@@ -299,7 +299,7 @@ pub struct RequestPresentationRequest {
     /// W3C Decentralized Identifier (DID) of the wallet.
     #[prost(string, tag="1")]
     pub did: ::prost::alloc::string::String,
-    /// Type of Verifiable Crdential- Ex "BankAccount", "PermanentResidentCard". 
+    /// Type of Verifiable Credential- Ex "BankAccount", "PermanentResidentCard". 
     #[prost(string, tag="2")]
     pub credential_type: ::prost::alloc::string::String,
     /// API key given to the wallet owner at the time of owner creation.
@@ -317,7 +317,7 @@ pub struct PrepareSimplePaymentRequest {
     /// Amount object representing the transfer amount.
     #[prost(message, optional, tag="1")]
     pub amount: ::core::option::Option<super::super::common::Amount>,
-    /// Public key of the receipient.
+    /// Public key of the recipient.
     #[prost(string, tag="2")]
     pub recipient: ::prost::alloc::string::String,
     /// A Unique End-to-end Transaction Reference, string of 36 unique characters.

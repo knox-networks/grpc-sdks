@@ -4,7 +4,7 @@ pub mod wallet_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /** Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial instituion vault.
+    /** Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
 */
     #[derive(Debug, Clone)]
     pub struct WalletClient<T> {
@@ -91,7 +91,7 @@ pub mod wallet_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+        /** Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
 */
         pub async fn create_owner(
             &mut self,
@@ -451,7 +451,7 @@ pub mod wallet_server {
             &self,
             request: tonic::Request<super::TransferRequest>,
         ) -> Result<tonic::Response<super::TransferResponse>, tonic::Status>;
-        /** Creates an owne and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+        /** Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
 */
         async fn create_owner(
             &self,
@@ -554,7 +554,7 @@ pub mod wallet_server {
             tonic::Status,
         >;
     }
-    /** Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial instituion vault.
+    /** Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
 */
     #[derive(Debug)]
     pub struct WalletServer<T: Wallet> {

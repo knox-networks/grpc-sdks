@@ -6888,7 +6888,7 @@ namespace WalletApi.V1 {
     public const int CredentialTypeFieldNumber = 2;
     private string credentialType_ = "";
     /// <summary>
-    /// Type of Verifiable Crdential- Ex "BankAccount", "PermanentResidentCard". 
+    /// Type of Verifiable Credential- Ex "BankAccount", "PermanentResidentCard". 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7354,7 +7354,7 @@ namespace WalletApi.V1 {
     public const int RecipientFieldNumber = 2;
     private string recipient_ = "";
     /// <summary>
-    /// Public key of the receipient.
+    /// Public key of the recipient.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

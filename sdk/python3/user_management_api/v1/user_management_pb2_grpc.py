@@ -3,7 +3,7 @@ import grpc
 from ...user_management_api.v1 import user_management_pb2 as user__management__api_dot_v1_dot_user__management__pb2
 
 class UserManagementStub(object):
-    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
+    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosystem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
     """
 
     def __init__(self, channel):
@@ -34,7 +34,7 @@ class UserManagementStub(object):
         self.GetUserByDID = channel.unary_unary('/auth_api.v1.UserManagement/GetUserByDID', request_serializer=user__management__api_dot_v1_dot_user__management__pb2.GetUserByDIDRequest.SerializeToString, response_deserializer=user__management__api_dot_v1_dot_user__management__pb2.GetUserByDIDResponse.FromString)
 
 class UserManagementServicer(object):
-    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
+    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosystem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
     """
 
     def AuthnWithPassword(self, request, context):
@@ -183,7 +183,7 @@ def add_UserManagementServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class UserManagement(object):
-    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
+    """This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosystem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
     """
 
     @staticmethod

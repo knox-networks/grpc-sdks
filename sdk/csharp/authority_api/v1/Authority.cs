@@ -972,7 +972,7 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// A digital banknote that is to be authorized. Severel such requests may be sent in a stream.
+  /// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1362,7 +1362,7 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer idetified by its Verifier (aka public key).
+  /// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified by its Verifier (aka public key).
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1428,7 +1428,7 @@ namespace AuthorityApi.V1 {
     public const int VerifierFieldNumber = 2;
     private string verifier_ = "";
     /// <summary>
-    /// Verifier of the Issuer in multibase format.
+    /// Verifier of the Issuer in multi-base format.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
