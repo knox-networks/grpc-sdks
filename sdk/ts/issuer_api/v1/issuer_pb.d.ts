@@ -22,6 +22,11 @@ export class IssueRequest extends jspb.Message {
   getAuthority(): common_v1_common_pb.DynamicVerifier | undefined;
   setAuthority(value?: common_v1_common_pb.DynamicVerifier): void;
 
+  hasDistribution(): boolean;
+  clearDistribution(): void;
+  getDistribution(): common_v1_common_pb.Distribution | undefined;
+  setDistribution(value?: common_v1_common_pb.Distribution): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IssueRequest.AsObject;
   static toObject(includeInstance: boolean, msg: IssueRequest): IssueRequest.AsObject;
@@ -37,6 +42,7 @@ export namespace IssueRequest {
     authenticationSignature?: common_v1_common_pb.AuthenticationSignature.AsObject,
     amount?: common_v1_common_pb.Amount.AsObject,
     authority?: common_v1_common_pb.DynamicVerifier.AsObject,
+    distribution?: common_v1_common_pb.Distribution.AsObject,
   }
 }
 

@@ -9,7 +9,10 @@ using grpc = global::Grpc.Core;
 
 namespace WalletApi.V1 {
   /// <summary>
-  /// Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
+  /// Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
+  /// a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of
+  /// a mobile wallet, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions,
+  /// e.g. a financial institution vault.
   /// </summary>
   public static partial class Wallet
   {
@@ -276,7 +279,8 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+      /// manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -336,7 +340,8 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+      /// issuance limit.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -360,7 +365,8 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+      /// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -396,7 +402,8 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+      /// be used to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -408,7 +415,8 @@ namespace WalletApi.V1 {
       }
 
       /// <summary>
-      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -545,7 +553,8 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Transfer, null, options, request);
       }
       /// <summary>
-      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+      /// manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -558,7 +567,8 @@ namespace WalletApi.V1 {
         return CreateOwner(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+      /// manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -569,7 +579,8 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateOwner, null, options, request);
       }
       /// <summary>
-      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+      /// manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -582,7 +593,8 @@ namespace WalletApi.V1 {
         return CreateOwnerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+      /// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+      /// manage many customer custodial wallets.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -785,7 +797,8 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListWalletBalances, null, options, request);
       }
       /// <summary>
-      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+      /// issuance limit.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -798,7 +811,8 @@ namespace WalletApi.V1 {
         return Redeem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+      /// issuance limit.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -809,7 +823,8 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_Redeem, null, options, request);
       }
       /// <summary>
-      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+      /// issuance limit.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -822,7 +837,8 @@ namespace WalletApi.V1 {
         return RedeemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+      /// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+      /// issuance limit.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -881,7 +897,8 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListCredentials, null, options, request);
       }
       /// <summary>
-      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+      /// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -894,7 +911,8 @@ namespace WalletApi.V1 {
         return AddCredential(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+      /// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -905,7 +923,8 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_AddCredential, null, options, request);
       }
       /// <summary>
-      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+      /// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -918,7 +937,8 @@ namespace WalletApi.V1 {
         return AddCredentialAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+      /// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+      /// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1025,7 +1045,8 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RequestPresentation, null, options, request);
       }
       /// <summary>
-      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+      /// be used to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1038,7 +1059,8 @@ namespace WalletApi.V1 {
         return PrepareSimplePayment(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+      /// be used to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1049,7 +1071,8 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_PrepareSimplePayment, null, options, request);
       }
       /// <summary>
-      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+      /// be used to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1062,7 +1085,8 @@ namespace WalletApi.V1 {
         return PrepareSimplePaymentAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+      /// be used to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1073,7 +1097,8 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PrepareSimplePayment, null, options, request);
       }
       /// <summary>
-      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1086,7 +1111,8 @@ namespace WalletApi.V1 {
         return PrepareFundsChange(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1097,7 +1123,8 @@ namespace WalletApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_PrepareFundsChange, null, options, request);
       }
       /// <summary>
-      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1110,7 +1137,8 @@ namespace WalletApi.V1 {
         return PrepareFundsChangeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+      /// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

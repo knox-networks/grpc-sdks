@@ -28,73 +28,78 @@ namespace Common {
             "cmlmaWVyEjEKEHNpZ25hdHVyZV9zeXN0ZW0YASABKA4yFy5jb21tb24uU2ln",
             "bmF0dXJlU3lzdGVtEhAKCHZlcmlmaWVyGAIgASgMIkEKBkFtb3VudBIVCg1j",
             "dXJyZW5jeV9jb2RlGAEgASgJEg4KBmFtb3VudBgCIAEoAxIQCghkZWNpbWFs",
-            "cxgDIAEoDSJCChVBdXRoZW50aWNhdGlvblJlcXVlc3QSKQoIdmVyaWZpZXIY",
-            "ASABKAsyFy5jb21tb24uRHluYW1pY1ZlcmlmaWVyIisKFkF1dGhlbnRpY2F0",
-            "aW9uUmVzcG9uc2USEQoJY2hhbGxlbmdlGAEgASgMIg8KDU9uZUNvbm5lY3Rp",
-            "b24iRwoOTWFueUNvbm5lY3Rpb24SNQoUYXNzb2NpYXRlZF92ZXJpZmllcnMY",
-            "AiADKAsyFy5jb21tb24uRHluYW1pY1ZlcmlmaWVyIn8KFEFzc29jaWF0ZWRD",
-            "b25uZWN0aW9uEjEKEHByaW1hcnlfdmVyaWZpZXIYASABKAsyFy5jb21tb24u",
-            "RHluYW1pY1ZlcmlmaWVyEjQKE2Fzc29jaWF0ZWRfdmVyaWZpZXIYAiABKAsy",
-            "Fy5jb21tb24uRHluYW1pY1ZlcmlmaWVyIqUBChFDb25uZWN0aW9uUmVxdWVz",
-            "dBIkCgNvbmUYASABKAsyFS5jb21tb24uT25lQ29ubmVjdGlvbkgAEiYKBG1h",
-            "bnkYAiABKAsyFi5jb21tb24uTWFueUNvbm5lY3Rpb25IABIyCglzaWduYXR1",
-            "cmUYAyABKAsyHy5jb21tb24uQXV0aGVudGljYXRpb25TaWduYXR1cmVCDgoM",
-            "cmVxdWVzdF90eXBlIlcKF0F1dGhlbnRpY2F0aW9uU2lnbmF0dXJlEikKCHZl",
-            "cmlmaWVyGAEgASgLMhcuY29tbW9uLkR5bmFtaWNWZXJpZmllchIRCglzaWdu",
-            "YXR1cmUYAiABKAwiNQoaQXV0aG9yaXplZFNpZ25hdHVyZVJlcXVlc3QSFwoP",
-            "cHJvbWlzc29yeV9maWxlGAEgASgMIjYKG0F1dGhvcml6ZWRTaWduYXR1cmVS",
-            "ZXNwb25zZRIXCg9wcm9taXNzb3J5X2ZpbGUYASABKAwiKAoFTWVkaWESEQoJ",
-            "bWltZV90eXBlGAEgASgJEgwKBGRhdGEYAiABKAwiqgEKBFJvbGUSEAoIdmVy",
-            "aWZpZXIYASABKAkSFAoKYXV0aG9yaXplZBgDIAEoCEgAEjoKEWlzc3VlX3Bl",
-            "cm1pc3Npb25zGAQgASgLMh0uY29tbW9uLlJvbGUuSXNzdWVQZXJtaXNzaW9u",
-            "c0gAGjEKEElzc3VlUGVybWlzc2lvbnMSHQoFaW5uZXIYAiADKAsyDi5jb21t",
-            "b24uQW1vdW50QgsKCXJvbGVfZW51bSIUChJHZXRWZXJpZmllclJlcXVlc3Qi",
-            "UAoTR2V0VmVyaWZpZXJSZXNwb25zZRImCgVieXRlcxgBIAEoCzIXLmNvbW1v",
-            "bi5EeW5hbWljVmVyaWZpZXISEQoJbXVsdGliYXNlGAIgASgJIhcKFUdldFNl",
-            "cnZpY2VUeXBlUmVxdWVzdCJDChZHZXRTZXJ2aWNlVHlwZVJlc3BvbnNlEikK",
-            "DHNlcnZpY2VfdHlwZRgBIAEoDjITLmNvbW1vbi5TZXJ2aWNlVHlwZSJ8ChlT",
-            "dGFydFNpbXBsZVBheW1lbnRSZXF1ZXN0Eh4KBmFtb3VudBgBIAEoCzIOLmNv",
-            "bW1vbi5BbW91bnQSEQoJcmVjaXBpZW50GAIgASgJEhQKDHByb21pc3Nvcmll",
-            "cxgDIAMoCRIWCg51c2VyX3JlZmVyZW5jZRgEIAEoCSIqChpTdGFydFNpbXBs",
-            "ZVBheW1lbnRSZXNwb25zZRIMCgR1ZXRyGAEgASgJImUKF1N0YXJ0RnVuZHND",
-            "aGFuZ2VSZXF1ZXN0Eh4KBmFtb3VudBgBIAEoCzIOLmNvbW1vbi5BbW91bnQS",
-            "EgoKcHJvbWlzc29yeRgCIAEoCRIWCg51c2VyX3JlZmVyZW5jZRgDIAEoCSIo",
-            "ChhTdGFydEZ1bmRzQ2hhbmdlUmVzcG9uc2USDAoEdWV0chgBIAEoCSKTAQoT",
-            "VHJhbnNhY3Rpb25TbmFwc2hvdBIpCgZzdGF0dXMYASABKA4yGS5jb21tb24u",
-            "VHJhbnNhY3Rpb25TdGF0dXMSFAoMcHJvbWlzc29yaWVzGAMgAygJEioKEmFt",
-            "b3VudF90cmFuc2ZlcnJlZBgEIAEoCzIOLmNvbW1vbi5BbW91bnQSDwoHbWVz",
-            "c2FnZRgFIAEoCSKDAwoLVHJhbnNhY3Rpb24SJgoEdHlwZRgBIAEoDjIYLmNv",
-            "bW1vbi5UcmFuc2FjdGlvbi5UeXBlEiYKBHJvbGUYAiABKA4yGC5jb21tb24u",
-            "VHJhbnNhY3Rpb24uUm9sZRIMCgR1ZXRyGAMgASgJEh4KBmFtb3VudBgEIAEo",
-            "CzIOLmNvbW1vbi5BbW91bnQSDwoHY3JlYXRlZBgFIAEoCRIPCgd1cGRhdGVk",
-            "GAYgASgJEgwKBG1lbW8YByABKAkSDQoFb3duZXIYCCABKAkSFAoMY291bnRl",
-            "cnBhcnR5GAkgASgJEikKBnN0YXR1cxgKIAEoDjIZLmNvbW1vbi5UcmFuc2Fj",
-            "dGlvblN0YXR1cyIsCgRSb2xlEhAKDFJPTEVfU1RBUlRFUhAAEhIKDlJPTEVf",
-            "UkVTUE9OREVSEAEiSAoEVHlwZRIQCgxUWVBFX1VOS05PV04QABIXChNUWVBF",
-            "X1NJTVBMRV9QQVlNRU5UEAESFQoRVFlQRV9GVU5EU19DSEFOR0UQAirFAQoL",
-            "U2VydmljZVR5cGUSEgoOVW5rbm93blNlcnZpY2UQABILCgdHYXRld2F5EAES",
-            "CgoGTm90YXJ5EAISDQoJQXV0aG9yaXR5EAMSDAoIVHJlYXN1cnkQBBIMCghF",
-            "bWlzc2FyeRAFEgoKBlNoYXJlZBAGEgwKCElkZW50aXR5EAcSCQoFVmF1bHQQ",
-            "CBITCg9DdXN0b2RpYWxXYWxsZXQQCRIKCgZJc3N1ZXIQChIMCghPdmVybG9h",
-            "ZBALEgoKBkZhdWNldBAMKnEKD1NpZ25hdHVyZVN5c3RlbRIgChxTSUdOQVRV",
-            "UkVfU1lTVEVNX1VOU1BFQ0lGSUVEEAASHAoYU0lHTkFUVVJFX1NZU1RFTV9F",
-            "RDI1NTE5EAESHgoaU0lHTkFUVVJFX1NZU1RFTV9TRUNQMjU2SzEQAiqQAQoR",
-            "VHJhbnNhY3Rpb25TdGF0dXMSFgoSU1RBVEVfSU5JVElBTElaSU5HEAASFQoR",
-            "U1RBVEVfQVVUSE9SSVpJTkcQARIRCg1TVEFURV9TRU5ESU5HEAISEwoPU1RB",
-            "VEVfUkVDRUlWSU5HEAUSEgoOU1RBVEVfQ09NUExFVEUQAxIQCgxTVEFURV9G",
-            "QUlMRUQQBEI1WjNnaXRodWIuY29tL2tub3gtbmV0d29ya3MvZ3JwYy1zZGtz",
-            "L3Nkay9nby9jb21tb24vdjFiBnByb3RvMw=="));
+            "cxgDIAEoDSJsCgxEaXN0cmlidXRpb24SLgoFdmFsdWUYASADKAsyHy5jb21t",
+            "b24uRGlzdHJpYnV0aW9uLlZhbHVlRW50cnkaLAoKVmFsdWVFbnRyeRILCgNr",
+            "ZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBIkIKFUF1dGhlbnRpY2F0aW9u",
+            "UmVxdWVzdBIpCgh2ZXJpZmllchgBIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVy",
+            "aWZpZXIiKwoWQXV0aGVudGljYXRpb25SZXNwb25zZRIRCgljaGFsbGVuZ2UY",
+            "ASABKAwiDwoNT25lQ29ubmVjdGlvbiJHCg5NYW55Q29ubmVjdGlvbhI1ChRh",
+            "c3NvY2lhdGVkX3ZlcmlmaWVycxgCIAMoCzIXLmNvbW1vbi5EeW5hbWljVmVy",
+            "aWZpZXIifwoUQXNzb2NpYXRlZENvbm5lY3Rpb24SMQoQcHJpbWFyeV92ZXJp",
+            "ZmllchgBIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVyaWZpZXISNAoTYXNzb2Np",
+            "YXRlZF92ZXJpZmllchgCIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVyaWZpZXIi",
+            "vAEKEUNvbm5lY3Rpb25SZXF1ZXN0EiQKA29uZRgBIAEoCzIVLmNvbW1vbi5P",
+            "bmVDb25uZWN0aW9uSAASJgoEbWFueRgCIAEoCzIWLmNvbW1vbi5NYW55Q29u",
+            "bmVjdGlvbkgAEjIKCXNpZ25hdHVyZRgDIAEoCzIfLmNvbW1vbi5BdXRoZW50",
+            "aWNhdGlvblNpZ25hdHVyZRIVCg1jb25uZWN0aW9uX2lkGAQgASgJQg4KDHJl",
+            "cXVlc3RfdHlwZSJXChdBdXRoZW50aWNhdGlvblNpZ25hdHVyZRIpCgh2ZXJp",
+            "ZmllchgBIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVyaWZpZXISEQoJc2lnbmF0",
+            "dXJlGAIgASgMIjUKGkF1dGhvcml6ZWRTaWduYXR1cmVSZXF1ZXN0EhcKD3By",
+            "b21pc3NvcnlfZmlsZRgBIAEoDCI2ChtBdXRob3JpemVkU2lnbmF0dXJlUmVz",
+            "cG9uc2USFwoPcHJvbWlzc29yeV9maWxlGAEgASgMIigKBU1lZGlhEhEKCW1p",
+            "bWVfdHlwZRgBIAEoCRIMCgRkYXRhGAIgASgMIqoBCgRSb2xlEhAKCHZlcmlm",
+            "aWVyGAEgASgJEhQKCmF1dGhvcml6ZWQYAyABKAhIABI6ChFpc3N1ZV9wZXJt",
+            "aXNzaW9ucxgEIAEoCzIdLmNvbW1vbi5Sb2xlLklzc3VlUGVybWlzc2lvbnNI",
+            "ABoxChBJc3N1ZVBlcm1pc3Npb25zEh0KBWlubmVyGAIgAygLMg4uY29tbW9u",
+            "LkFtb3VudEILCglyb2xlX2VudW0iFAoSR2V0VmVyaWZpZXJSZXF1ZXN0IlAK",
+            "E0dldFZlcmlmaWVyUmVzcG9uc2USJgoFYnl0ZXMYASABKAsyFy5jb21tb24u",
+            "RHluYW1pY1ZlcmlmaWVyEhEKCW11bHRpYmFzZRgCIAEoCSIXChVHZXRTZXJ2",
+            "aWNlVHlwZVJlcXVlc3QiQwoWR2V0U2VydmljZVR5cGVSZXNwb25zZRIpCgxz",
+            "ZXJ2aWNlX3R5cGUYASABKA4yEy5jb21tb24uU2VydmljZVR5cGUiFAoSR2V0",
+            "SW5zdGFuY2VSZXF1ZXN0IioKE0dldEluc3RhbmNlUmVzcG9uc2USEwoLaW5z",
+            "dGFuY2VfaWQYASABKAkifAoZU3RhcnRTaW1wbGVQYXltZW50UmVxdWVzdBIe",
+            "CgZhbW91bnQYASABKAsyDi5jb21tb24uQW1vdW50EhEKCXJlY2lwaWVudBgC",
+            "IAEoCRIUCgxwcm9taXNzb3JpZXMYAyADKAkSFgoOdXNlcl9yZWZlcmVuY2UY",
+            "BCABKAkiKgoaU3RhcnRTaW1wbGVQYXltZW50UmVzcG9uc2USDAoEdWV0chgB",
+            "IAEoCSJlChdTdGFydEZ1bmRzQ2hhbmdlUmVxdWVzdBIeCgZhbW91bnQYASAB",
+            "KAsyDi5jb21tb24uQW1vdW50EhIKCnByb21pc3NvcnkYAiABKAkSFgoOdXNl",
+            "cl9yZWZlcmVuY2UYAyABKAkiKAoYU3RhcnRGdW5kc0NoYW5nZVJlc3BvbnNl",
+            "EgwKBHVldHIYASABKAkikwEKE1RyYW5zYWN0aW9uU25hcHNob3QSKQoGc3Rh",
+            "dHVzGAEgASgOMhkuY29tbW9uLlRyYW5zYWN0aW9uU3RhdHVzEhQKDHByb21p",
+            "c3NvcmllcxgDIAMoCRIqChJhbW91bnRfdHJhbnNmZXJyZWQYBCABKAsyDi5j",
+            "b21tb24uQW1vdW50Eg8KB21lc3NhZ2UYBSABKAkigwMKC1RyYW5zYWN0aW9u",
+            "EiYKBHR5cGUYASABKA4yGC5jb21tb24uVHJhbnNhY3Rpb24uVHlwZRImCgRy",
+            "b2xlGAIgASgOMhguY29tbW9uLlRyYW5zYWN0aW9uLlJvbGUSDAoEdWV0chgD",
+            "IAEoCRIeCgZhbW91bnQYBCABKAsyDi5jb21tb24uQW1vdW50Eg8KB2NyZWF0",
+            "ZWQYBSABKAkSDwoHdXBkYXRlZBgGIAEoCRIMCgRtZW1vGAcgASgJEg0KBW93",
+            "bmVyGAggASgJEhQKDGNvdW50ZXJwYXJ0eRgJIAEoCRIpCgZzdGF0dXMYCiAB",
+            "KA4yGS5jb21tb24uVHJhbnNhY3Rpb25TdGF0dXMiLAoEUm9sZRIQCgxST0xF",
+            "X1NUQVJURVIQABISCg5ST0xFX1JFU1BPTkRFUhABIkgKBFR5cGUSEAoMVFlQ",
+            "RV9VTktOT1dOEAASFwoTVFlQRV9TSU1QTEVfUEFZTUVOVBABEhUKEVRZUEVf",
+            "RlVORFNfQ0hBTkdFEAIqxQEKC1NlcnZpY2VUeXBlEhIKDlVua25vd25TZXJ2",
+            "aWNlEAASCwoHR2F0ZXdheRABEgoKBk5vdGFyeRACEg0KCUF1dGhvcml0eRAD",
+            "EgwKCFRyZWFzdXJ5EAQSDAoIRW1pc3NhcnkQBRIKCgZTaGFyZWQQBhIMCghJ",
+            "ZGVudGl0eRAHEgkKBVZhdWx0EAgSEwoPQ3VzdG9kaWFsV2FsbGV0EAkSCgoG",
+            "SXNzdWVyEAoSDAoIT3ZlcmxvYWQQCxIKCgZGYXVjZXQQDCpxCg9TaWduYXR1",
+            "cmVTeXN0ZW0SIAocU0lHTkFUVVJFX1NZU1RFTV9VTlNQRUNJRklFRBAAEhwK",
+            "GFNJR05BVFVSRV9TWVNURU1fRUQyNTUxORABEh4KGlNJR05BVFVSRV9TWVNU",
+            "RU1fU0VDUDI1NksxEAIqkAEKEVRyYW5zYWN0aW9uU3RhdHVzEhYKElNUQVRF",
+            "X0lOSVRJQUxJWklORxAAEhUKEVNUQVRFX0FVVEhPUklaSU5HEAESEQoNU1RB",
+            "VEVfU0VORElORxACEhMKD1NUQVRFX1JFQ0VJVklORxAFEhIKDlNUQVRFX0NP",
+            "TVBMRVRFEAMSEAoMU1RBVEVfRkFJTEVEEARCNVozZ2l0aHViLmNvbS9rbm94",
+            "LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vY29tbW9uL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Common.ServiceType), typeof(global::Common.SignatureSystem), typeof(global::Common.TransactionStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.DynamicVerifier), global::Common.DynamicVerifier.Parser, new[]{ "SignatureSystem", "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Amount), global::Common.Amount.Parser, new[]{ "CurrencyCode", "Amount_", "Decimals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Distribution), global::Common.Distribution.Parser, new[]{ "Value" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AuthenticationRequest), global::Common.AuthenticationRequest.Parser, new[]{ "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AuthenticationResponse), global::Common.AuthenticationResponse.Parser, new[]{ "Challenge" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.OneConnection), global::Common.OneConnection.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.ManyConnection), global::Common.ManyConnection.Parser, new[]{ "AssociatedVerifiers" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AssociatedConnection), global::Common.AssociatedConnection.Parser, new[]{ "PrimaryVerifier", "AssociatedVerifier" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.ConnectionRequest), global::Common.ConnectionRequest.Parser, new[]{ "One", "Many", "Signature" }, new[]{ "RequestType" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.ConnectionRequest), global::Common.ConnectionRequest.Parser, new[]{ "One", "Many", "Signature", "ConnectionId" }, new[]{ "RequestType" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AuthenticationSignature), global::Common.AuthenticationSignature.Parser, new[]{ "Verifier", "Signature" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AuthorizedSignatureRequest), global::Common.AuthorizedSignatureRequest.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.AuthorizedSignatureResponse), global::Common.AuthorizedSignatureResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
@@ -104,6 +109,8 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.GetVerifierResponse), global::Common.GetVerifierResponse.Parser, new[]{ "Bytes", "Multibase" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.GetServiceTypeRequest), global::Common.GetServiceTypeRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.GetServiceTypeResponse), global::Common.GetServiceTypeResponse.Parser, new[]{ "ServiceType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.GetInstanceRequest), global::Common.GetInstanceRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.GetInstanceResponse), global::Common.GetInstanceResponse.Parser, new[]{ "InstanceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.StartSimplePaymentRequest), global::Common.StartSimplePaymentRequest.Parser, new[]{ "Amount", "Recipient", "Promissories", "UserReference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.StartSimplePaymentResponse), global::Common.StartSimplePaymentResponse.Parser, new[]{ "Uetr" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.StartFundsChangeRequest), global::Common.StartFundsChangeRequest.Parser, new[]{ "Amount", "Promissory", "UserReference" }, null, null, null, null),
@@ -117,8 +124,8 @@ namespace Common {
   }
   #region Enums
   /// <summary>
-  /// Indicates the inter-bank service type associated with a particular endpoint or routable identifier - these
-  /// enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used
+  /// Indicates the interbank service type associated with a particular endpoint or routable identifier - these
+  /// enumerations are returned in Service info calls. Any service type marked 'Reserved' should not be directly used.
   /// </summary>
   public enum ServiceType {
     /// <summary>
@@ -181,7 +188,7 @@ namespace Common {
   /// </summary>
   public enum SignatureSystem {
     /// <summary>
-    /// The unspecified value is used to guard against accidental use of a zero value
+    /// The unspecified value is used to guard against accidental use of a zero value.
     /// </summary>
     [pbr::OriginalName("SIGNATURE_SYSTEM_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
@@ -203,15 +210,15 @@ namespace Common {
     /// </summary>
     [pbr::OriginalName("STATE_INITIALIZING")] StateInitializing = 0,
     /// <summary>
-    /// Digital Banknotes are being authorized.
+    /// Digital banknotes are being authorized.
     /// </summary>
     [pbr::OriginalName("STATE_AUTHORIZING")] StateAuthorizing = 1,
     /// <summary>
-    /// Digital Banknotes are being sent.
+    /// Digital banknotes are being sent.
     /// </summary>
     [pbr::OriginalName("STATE_SENDING")] StateSending = 2,
     /// <summary>
-    /// Digital Banknotes are being received.
+    /// Digital banknotes are being received.
     /// </summary>
     [pbr::OriginalName("STATE_RECEIVING")] StateReceiving = 5,
     /// <summary>
@@ -280,7 +287,7 @@ namespace Common {
     public const int SignatureSystemFieldNumber = 1;
     private global::Common.SignatureSystem signatureSystem_ = global::Common.SignatureSystem.Unspecified;
     /// <summary>
-    /// Signature system of the verifying key
+    /// Signature system of the verifying key.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -295,7 +302,7 @@ namespace Common {
     public const int VerifierFieldNumber = 2;
     private pb::ByteString verifier_ = pb::ByteString.Empty;
     /// <summary>
-    /// Public key used in verifying digital signature authenticity
+    /// Public key used in verifying digital signature authenticity.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -465,7 +472,7 @@ namespace Common {
 
   /// <summary>
   /// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
-  /// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. e.g. An `amount` of
+  /// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. Ex. An `amount` of
   /// 12345 and `decimals` of 2 is equivalent to "123.45".
   /// </summary>
   public sealed partial class Amount : pb::IMessage<Amount>
@@ -518,7 +525,7 @@ namespace Common {
     public const int CurrencyCodeFieldNumber = 1;
     private string currencyCode_ = "";
     /// <summary>
-    /// ISO-4217 currency code to denote remitting Digital Banknotes in a specific currency
+    /// ISO-4217 currency code to denote remitting Digital Banknotes in a specific currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -533,7 +540,7 @@ namespace Common {
     public const int Amount_FieldNumber = 2;
     private long amount_;
     /// <summary>
-    /// Signed 64 bit representation of the significand
+    /// Signed 64 bit representation of the significand.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -550,7 +557,7 @@ namespace Common {
     /// <summary>
     /// Unsigned 32 bit representation of the decimal precision, i.e. the inverse of the exponent. The allowed value is
     /// determined by the rust_decimal crate, which allows a scale (decimal) between 0-28 inclusive. e.g. amount = 10,
-    /// decimals = 2 => value 0.01
+    /// decimals = 2 => value 0.01.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -743,6 +750,189 @@ namespace Common {
   }
 
   /// <summary>
+  /// Represents a desired denomination distribution.
+  /// map&lt;mantissa, quantity>
+  /// sum must match corresponding amount.amount
+  /// </summary>
+  public sealed partial class Distribution : pb::IMessage<Distribution>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Distribution> _parser = new pb::MessageParser<Distribution>(() => new Distribution());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Distribution> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Distribution() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Distribution(Distribution other) : this() {
+      value_ = other.value_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Distribution Clone() {
+      return new Distribution(this);
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 1;
+    private static readonly pbc::MapField<long, int>.Codec _map_value_codec
+        = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 10);
+    private readonly pbc::MapField<long, int> value_ = new pbc::MapField<long, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<long, int> Value {
+      get { return value_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Distribution);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Distribution other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Value.Equals(other.Value)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Value.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      value_.WriteTo(output, _map_value_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      value_.WriteTo(ref output, _map_value_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += value_.CalculateSize(_map_value_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Distribution other) {
+      if (other == null) {
+        return;
+      }
+      value_.Add(other.value_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            value_.AddEntriesFrom(input, _map_value_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            value_.AddEntriesFrom(ref input, _map_value_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// Used to start an authentication flow
   /// </summary>
   public sealed partial class AuthenticationRequest : pb::IMessage<AuthenticationRequest>
@@ -759,7 +949,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -793,7 +983,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private global::Common.DynamicVerifier verifier_;
     /// <summary>
-    /// Verifier of the requester
+    /// Verifier of the requestor.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -947,7 +1137,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// The response to `AuthenticationRequest` holding a challenge nonce meant to be signed by the requestor's private key.
+  /// The returns a challenge nonce meant to be signed by the requestor's private key.
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -963,7 +1153,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -997,7 +1187,7 @@ namespace Common {
     public const int ChallengeFieldNumber = 1;
     private pb::ByteString challenge_ = pb::ByteString.Empty;
     /// <summary>
-    /// random unique string to be signed by the authorized key
+    /// Random unique string to be signed by the authorized key.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1158,7 +1348,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1314,7 +1504,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1483,7 +1673,7 @@ namespace Common {
 
   /// <summary>
   /// The message sent during an already established connection allowing the addition or removal of an
-  /// `associated_verifier` tied to connection held by the `primary_verifier`
+  /// `associated_verifier` tied to connection held by the `primary_verifier`.
   /// </summary>
   public sealed partial class AssociatedConnection : pb::IMessage<AssociatedConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1499,7 +1689,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1754,7 +1944,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1775,6 +1965,7 @@ namespace Common {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ConnectionRequest(ConnectionRequest other) : this() {
       signature_ = other.signature_ != null ? other.signature_.Clone() : null;
+      connectionId_ = other.connectionId_;
       switch (other.RequestTypeCase) {
         case RequestTypeOneofCase.One:
           One = other.One.Clone();
@@ -1796,7 +1987,7 @@ namespace Common {
     /// <summary>Field number for the "one" field.</summary>
     public const int OneFieldNumber = 1;
     /// <summary>
-    /// the connection request is of type OneConnection
+    /// The connection request is of type OneConnection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1811,7 +2002,7 @@ namespace Common {
     /// <summary>Field number for the "many" field.</summary>
     public const int ManyFieldNumber = 2;
     /// <summary>
-    /// the connection request is of type ManyConnection
+    /// The connection request is of type ManyConnection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1827,7 +2018,7 @@ namespace Common {
     public const int SignatureFieldNumber = 3;
     private global::Common.AuthenticationSignature signature_;
     /// <summary>
-    /// The crypto signature and signers public key
+    /// The crypto signature and signers public key.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1835,6 +2026,21 @@ namespace Common {
       get { return signature_; }
       set {
         signature_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "connection_id" field.</summary>
+    public const int ConnectionIdFieldNumber = 4;
+    private string connectionId_ = "";
+    /// <summary>
+    /// UUID representing a distinct gateway client.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ConnectionId {
+      get { return connectionId_; }
+      set {
+        connectionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1877,6 +2083,7 @@ namespace Common {
       if (!object.Equals(One, other.One)) return false;
       if (!object.Equals(Many, other.Many)) return false;
       if (!object.Equals(Signature, other.Signature)) return false;
+      if (ConnectionId != other.ConnectionId) return false;
       if (RequestTypeCase != other.RequestTypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1888,6 +2095,7 @@ namespace Common {
       if (requestTypeCase_ == RequestTypeOneofCase.One) hash ^= One.GetHashCode();
       if (requestTypeCase_ == RequestTypeOneofCase.Many) hash ^= Many.GetHashCode();
       if (signature_ != null) hash ^= Signature.GetHashCode();
+      if (ConnectionId.Length != 0) hash ^= ConnectionId.GetHashCode();
       hash ^= (int) requestTypeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1919,6 +2127,10 @@ namespace Common {
         output.WriteRawTag(26);
         output.WriteMessage(Signature);
       }
+      if (ConnectionId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ConnectionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1941,6 +2153,10 @@ namespace Common {
         output.WriteRawTag(26);
         output.WriteMessage(Signature);
       }
+      if (ConnectionId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ConnectionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1960,6 +2176,9 @@ namespace Common {
       if (signature_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Signature);
       }
+      if (ConnectionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ConnectionId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1977,6 +2196,9 @@ namespace Common {
           Signature = new global::Common.AuthenticationSignature();
         }
         Signature.MergeFrom(other.Signature);
+      }
+      if (other.ConnectionId.Length != 0) {
+        ConnectionId = other.ConnectionId;
       }
       switch (other.RequestTypeCase) {
         case RequestTypeOneofCase.One:
@@ -2033,6 +2255,10 @@ namespace Common {
             input.ReadMessage(Signature);
             break;
           }
+          case 34: {
+            ConnectionId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2073,6 +2299,10 @@ namespace Common {
             input.ReadMessage(Signature);
             break;
           }
+          case 34: {
+            ConnectionId = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -2098,7 +2328,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2133,7 +2363,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private global::Common.DynamicVerifier verifier_;
     /// <summary>
-    /// Verifier of the requester
+    /// Verifier of the requestor.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2148,7 +2378,7 @@ namespace Common {
     public const int SignatureFieldNumber = 2;
     private pb::ByteString signature_ = pb::ByteString.Empty;
     /// <summary>
-    /// cryptographic signature of the challenge nonce
+    /// Cryptographic signature of the challenge nonce.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2326,7 +2556,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Digital Banknote to be authorized in the Notary service flow.
+  /// Digital banknote to be authorized in the Notary service flow.
   /// </summary>
   public sealed partial class AuthorizedSignatureRequest : pb::IMessage<AuthorizedSignatureRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2342,7 +2572,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2376,7 +2606,7 @@ namespace Common {
     public const int PromissoryFileFieldNumber = 1;
     private pb::ByteString promissoryFile_ = pb::ByteString.Empty;
     /// <summary>
-    /// Digital Banknotes to authorize
+    /// Digital banknote to authorize.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2521,7 +2751,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Authorized promissory returned in the Notary service flow.
+  /// Authorized digital banknote returned in the Notary service flow.
   /// </summary>
   public sealed partial class AuthorizedSignatureResponse : pb::IMessage<AuthorizedSignatureResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2537,7 +2767,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2571,7 +2801,7 @@ namespace Common {
     public const int PromissoryFileFieldNumber = 1;
     private pb::ByteString promissoryFile_ = pb::ByteString.Empty;
     /// <summary>
-    /// Return Digital Banknotes with authorized signatures
+    /// Return digital banknote with authorized signature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2733,7 +2963,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2768,7 +2998,7 @@ namespace Common {
     public const int MimeTypeFieldNumber = 1;
     private string mimeType_ = "";
     /// <summary>
-    /// Mime type URI
+    /// Mime type URI.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2783,7 +3013,7 @@ namespace Common {
     public const int DataFieldNumber = 2;
     private pb::ByteString data_ = pb::ByteString.Empty;
     /// <summary>
-    /// Media data
+    /// Media data.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2953,7 +3183,7 @@ namespace Common {
 
   /// <summary>
   /// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
-  /// create issuance requests
+  /// create issuance requests.
   /// </summary>
   public sealed partial class Role : pb::IMessage<Role>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2969,7 +3199,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3012,7 +3242,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private string verifier_ = "";
     /// <summary>
-    /// MultibaseEncodedVerifier
+    /// MultibaseEncodedVerifier.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3278,6 +3508,7 @@ namespace Common {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
+      /// Issuer Role Permissions.
       /// </summary>
       public sealed partial class IssuePermissions : pb::IMessage<IssuePermissions>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3329,7 +3560,7 @@ namespace Common {
             = pb::FieldCodec.ForMessage(18, global::Common.Amount.Parser);
         private readonly pbc::RepeatedField<global::Common.Amount> inner_ = new pbc::RepeatedField<global::Common.Amount>();
         /// <summary>
-        /// The amounts up to which issuance is authorized in respective currencies
+        /// The amounts up to which issuance is authorized in respective currencies.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3482,7 +3713,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3638,7 +3869,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3882,7 +4113,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4037,7 +4268,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4216,7 +4447,355 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Simple Payment transaction. Sender is implied to be the owner of the promissory files to be sent.
+  /// GetInstanceRequest - Request the Instance of the service, a value generated each time a service
+  /// is started, can be correlated to a gateway connection_id
+  /// </summary>
+  public sealed partial class GetInstanceRequest : pb::IMessage<GetInstanceRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetInstanceRequest> _parser = new pb::MessageParser<GetInstanceRequest>(() => new GetInstanceRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetInstanceRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceRequest(GetInstanceRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceRequest Clone() {
+      return new GetInstanceRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetInstanceRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetInstanceRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetInstanceRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// GetInstanceResponse - Respond with a UUID of the particular instance
+  /// </summary>
+  public sealed partial class GetInstanceResponse : pb::IMessage<GetInstanceResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetInstanceResponse> _parser = new pb::MessageParser<GetInstanceResponse>(() => new GetInstanceResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetInstanceResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceResponse(GetInstanceResponse other) : this() {
+      instanceId_ = other.instanceId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetInstanceResponse Clone() {
+      return new GetInstanceResponse(this);
+    }
+
+    /// <summary>Field number for the "instance_id" field.</summary>
+    public const int InstanceIdFieldNumber = 1;
+    private string instanceId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetInstanceResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetInstanceResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InstanceId != other.InstanceId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InstanceId.Length != 0) hash ^= InstanceId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (InstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InstanceId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (InstanceId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(InstanceId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (InstanceId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InstanceId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetInstanceResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InstanceId.Length != 0) {
+        InstanceId = other.InstanceId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            InstanceId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            InstanceId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Initiates a Simple Payment transaction. Sender is implied to be the owner of the digital banknotes to be sent.
   /// </summary>
   public sealed partial class StartSimplePaymentRequest : pb::IMessage<StartSimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4232,7 +4811,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4284,7 +4863,7 @@ namespace Common {
     public const int RecipientFieldNumber = 2;
     private string recipient_ = "";
     /// <summary>
-    /// The recipients public key in multibase format
+    /// The recipient public key in multibase format.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4301,7 +4880,7 @@ namespace Common {
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> promissories_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// The Digital Banknotes that make up the Simple Payment.
+    /// Digital banknotes that make up the Simple Payment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4529,7 +5108,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment transaction.
+  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment
+  /// transaction.
   /// </summary>
   public sealed partial class StartSimplePaymentResponse : pb::IMessage<StartSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4545,7 +5125,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4579,7 +5159,7 @@ namespace Common {
     public const int UetrFieldNumber = 1;
     private string uetr_ = "";
     /// <summary>
-    /// Universal E2E Transaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4724,7 +5304,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissory files to be sent. Recipient is the well known Treasury verifier provided at startup.
+  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
+  /// the well known Treasury verifier provided at startup.
   /// </summary>
   public sealed partial class StartFundsChangeRequest : pb::IMessage<StartFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4740,7 +5321,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4792,7 +5373,7 @@ namespace Common {
     private string promissory_ = "";
     /// <summary>
     /// The Digital Banknote to be replaced by other denominations. The  change returned will be a number of digital
-    /// banknotes totalling the same value as this digital bank note.
+    /// banknotes totalling the same value as this digital banknote.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5026,7 +5607,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5060,7 +5641,7 @@ namespace Common {
     public const int UetrFieldNumber = 1;
     private string uetr_ = "";
     /// <summary>
-    /// Universal E2E Transaction Reference (UUID v4 format)
+    /// Universal E2E Transaction Reference (UUID v4 format).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5221,7 +5802,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5275,7 +5856,7 @@ namespace Common {
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> promissories_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Digital Banknote UUIDs.
+    /// Digital banknote UUIDs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5519,7 +6100,7 @@ namespace Common {
 
   /// <summary>
   /// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
-  /// only has local significance. On the wire messages use various packet types
+  /// only has local significance. On the wire messages use various packet types.
   /// </summary>
   public sealed partial class Transaction : pb::IMessage<Transaction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5535,7 +6116,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6100,7 +6681,7 @@ namespace Common {
 
       public enum Type {
         /// <summary>
-        /// The unknown type is used to guard against accidental use of a zero value.
+        /// The Unknown type is used to guard against accidental use of a zero value.
         /// </summary>
         [pbr::OriginalName("TYPE_UNKNOWN")] Unknown = 0,
         /// <summary>

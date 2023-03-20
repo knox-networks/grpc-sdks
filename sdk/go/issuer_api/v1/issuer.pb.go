@@ -33,6 +33,8 @@ type IssueRequest struct {
 	Amount *v1.Amount `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	// Verifier of the Authority.
 	Authority *v1.DynamicVerifier `protobuf:"bytes,3,opt,name=authority,proto3" json:"authority,omitempty"`
+	// sum must match corresponding amount.amount
+	Distribution *v1.Distribution `protobuf:"bytes,4,opt,name=distribution,proto3,oneof" json:"distribution,omitempty"`
 }
 
 func (x *IssueRequest) Reset() {
@@ -84,6 +86,13 @@ func (x *IssueRequest) GetAmount() *v1.Amount {
 func (x *IssueRequest) GetAuthority() *v1.DynamicVerifier {
 	if x != nil {
 		return x.Authority
+	}
+	return nil
+}
+
+func (x *IssueRequest) GetDistribution() *v1.Distribution {
+	if x != nil {
+		return x.Distribution
 	}
 	return nil
 }
@@ -516,7 +525,7 @@ var file_issuer_api_v1_issuer_proto_rawDesc = []byte{
 	0x69, 0x73, 0x73, 0x75, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0d, 0x69, 0x73,
 	0x73, 0x75, 0x65, 0x72, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x76, 0x31, 0x1a, 0x16, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x22, 0xc9, 0x01, 0x0a, 0x0c, 0x49, 0x73, 0x73, 0x75, 0x65, 0x52, 0x65, 0x71,
+	0x6f, 0x74, 0x6f, 0x22, 0x99, 0x02, 0x0a, 0x0c, 0x49, 0x73, 0x73, 0x75, 0x65, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x12, 0x5a, 0x0a, 0x18, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69,
 	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
@@ -528,7 +537,12 @@ var file_issuer_api_v1_issuer_proto_rawDesc = []byte{
 	0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x35, 0x0a, 0x09, 0x61, 0x75, 0x74, 0x68,
 	0x6f, 0x72, 0x69, 0x74, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x63, 0x6f,
 	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44, 0x79, 0x6e, 0x61, 0x6d, 0x69, 0x63, 0x56, 0x65, 0x72, 0x69,
-	0x66, 0x69, 0x65, 0x72, 0x52, 0x09, 0x61, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x69, 0x74, 0x79, 0x22,
+	0x66, 0x69, 0x65, 0x72, 0x52, 0x09, 0x61, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x69, 0x74, 0x79, 0x12,
+	0x3d, 0x0a, 0x0c, 0x64, 0x69, 0x73, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x44,
+	0x69, 0x73, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x48, 0x00, 0x52, 0x0c, 0x64,
+	0x69, 0x73, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x88, 0x01, 0x01, 0x42, 0x0f,
+	0x0a, 0x0d, 0x5f, 0x64, 0x69, 0x73, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x22,
 	0x38, 0x0a, 0x0d, 0x49, 0x73, 0x73, 0x75, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x27, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x6d, 0x69, 0x73, 0x73, 0x6f, 0x72, 0x79, 0x5f, 0x66,
 	0x69, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x0e, 0x70, 0x72, 0x6f, 0x6d, 0x69,
@@ -623,30 +637,32 @@ var file_issuer_api_v1_issuer_proto_goTypes = []interface{}{
 	(*v1.AuthenticationSignature)(nil), // 11: common.AuthenticationSignature
 	(*v1.Amount)(nil),                  // 12: common.Amount
 	(*v1.DynamicVerifier)(nil),         // 13: common.DynamicVerifier
-	(*v1.Role)(nil),                    // 14: common.Role
+	(*v1.Distribution)(nil),            // 14: common.Distribution
+	(*v1.Role)(nil),                    // 15: common.Role
 }
 var file_issuer_api_v1_issuer_proto_depIdxs = []int32{
 	11, // 0: issuer_api.v1.IssueRequest.authentication_signature:type_name -> common.AuthenticationSignature
 	12, // 1: issuer_api.v1.IssueRequest.amount:type_name -> common.Amount
 	13, // 2: issuer_api.v1.IssueRequest.authority:type_name -> common.DynamicVerifier
-	13, // 3: issuer_api.v1.AuthenticateRequest.verifier:type_name -> common.DynamicVerifier
-	10, // 4: issuer_api.v1.GetRolesResponse.roles:type_name -> issuer_api.v1.GetRolesResponse.RolesEntry
-	14, // 5: issuer_api.v1.SetRoleRequest.role:type_name -> common.Role
-	4,  // 6: issuer_api.v1.Issuer.Authenticate:input_type -> issuer_api.v1.AuthenticateRequest
-	2,  // 7: issuer_api.v1.Issuer.Authorize:input_type -> issuer_api.v1.AuthorizeRequest
-	0,  // 8: issuer_api.v1.Issuer.Issue:input_type -> issuer_api.v1.IssueRequest
-	6,  // 9: issuer_api.v1.Issuer.GetRoles:input_type -> issuer_api.v1.GetRolesRequest
-	8,  // 10: issuer_api.v1.Issuer.SetRole:input_type -> issuer_api.v1.SetRoleRequest
-	5,  // 11: issuer_api.v1.Issuer.Authenticate:output_type -> issuer_api.v1.AuthenticateResponse
-	3,  // 12: issuer_api.v1.Issuer.Authorize:output_type -> issuer_api.v1.AuthorizeResponse
-	1,  // 13: issuer_api.v1.Issuer.Issue:output_type -> issuer_api.v1.IssueResponse
-	7,  // 14: issuer_api.v1.Issuer.GetRoles:output_type -> issuer_api.v1.GetRolesResponse
-	9,  // 15: issuer_api.v1.Issuer.SetRole:output_type -> issuer_api.v1.SetRoleResponse
-	11, // [11:16] is the sub-list for method output_type
-	6,  // [6:11] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	14, // 3: issuer_api.v1.IssueRequest.distribution:type_name -> common.Distribution
+	13, // 4: issuer_api.v1.AuthenticateRequest.verifier:type_name -> common.DynamicVerifier
+	10, // 5: issuer_api.v1.GetRolesResponse.roles:type_name -> issuer_api.v1.GetRolesResponse.RolesEntry
+	15, // 6: issuer_api.v1.SetRoleRequest.role:type_name -> common.Role
+	4,  // 7: issuer_api.v1.Issuer.Authenticate:input_type -> issuer_api.v1.AuthenticateRequest
+	2,  // 8: issuer_api.v1.Issuer.Authorize:input_type -> issuer_api.v1.AuthorizeRequest
+	0,  // 9: issuer_api.v1.Issuer.Issue:input_type -> issuer_api.v1.IssueRequest
+	6,  // 10: issuer_api.v1.Issuer.GetRoles:input_type -> issuer_api.v1.GetRolesRequest
+	8,  // 11: issuer_api.v1.Issuer.SetRole:input_type -> issuer_api.v1.SetRoleRequest
+	5,  // 12: issuer_api.v1.Issuer.Authenticate:output_type -> issuer_api.v1.AuthenticateResponse
+	3,  // 13: issuer_api.v1.Issuer.Authorize:output_type -> issuer_api.v1.AuthorizeResponse
+	1,  // 14: issuer_api.v1.Issuer.Issue:output_type -> issuer_api.v1.IssueResponse
+	7,  // 15: issuer_api.v1.Issuer.GetRoles:output_type -> issuer_api.v1.GetRolesResponse
+	9,  // 16: issuer_api.v1.Issuer.SetRole:output_type -> issuer_api.v1.SetRoleResponse
+	12, // [12:17] is the sub-list for method output_type
+	7,  // [7:12] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_issuer_api_v1_issuer_proto_init() }
@@ -776,6 +792,7 @@ func file_issuer_api_v1_issuer_proto_init() {
 			}
 		}
 	}
+	file_issuer_api_v1_issuer_proto_msgTypes[0].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

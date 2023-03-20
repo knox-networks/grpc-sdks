@@ -11,7 +11,7 @@ using grpc = global::Grpc.Core;
 
 namespace VcApi.V1 {
   /// <summary>
-  ///Enables existing systems to support W3C Verifiable Credential (VC) interactions between holders, VC issuers and verifiers as per https://www.w3.org/TR/vc-data-model/.  It is either used by credential providers (VC Issuer) or verifiers as required.  It provides predefined interfaces to expose (Example Bank customer info APIs) but allows for custom integrations as required.
+  /// Enables existing systems to support W3C Verifiable Credential (VC) interactions between holders, VC issuers and verifiers as per https://www.w3.org/TR/vc-data-model/.  It is either used by credential providers (VC Issuer) or verifiers as required.  It provides predefined interfaces to expose (Example Bank customer info APIs) but allows for custom integrations as required.
   /// </summary>
   public static partial class CredentialAdapter
   {

@@ -146,6 +146,11 @@ export class GetSupplyResponse extends jspb.Message {
   setSupplyList(value: Array<DenominationCount>): void;
   addSupply(value?: DenominationCount, index?: number): DenominationCount;
 
+  hasTotal(): boolean;
+  clearTotal(): void;
+  getTotal(): common_v1_common_pb.Amount | undefined;
+  setTotal(value?: common_v1_common_pb.Amount): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetSupplyResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetSupplyResponse): GetSupplyResponse.AsObject;
@@ -159,6 +164,7 @@ export class GetSupplyResponse extends jspb.Message {
 export namespace GetSupplyResponse {
   export type AsObject = {
     supplyList: Array<DenominationCount.AsObject>,
+    total?: common_v1_common_pb.Amount.AsObject,
   }
 }
 

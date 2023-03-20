@@ -3,11 +3,7 @@
 package v1
 
 import (
-	context "context"
-	v1 "github.com/knox-networks/grpc-sdks/sdk/go/common/v1"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -19,7 +15,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NotaryClient interface {
-	Authorize(ctx context.Context, opts ...grpc.CallOption) (Notary_AuthorizeClient, error)
 }
 
 type notaryClient struct {
@@ -30,42 +25,10 @@ func NewNotaryClient(cc grpc.ClientConnInterface) NotaryClient {
 	return &notaryClient{cc}
 }
 
-func (c *notaryClient) Authorize(ctx context.Context, opts ...grpc.CallOption) (Notary_AuthorizeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Notary_ServiceDesc.Streams[0], "/notary.Notary/Authorize", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &notaryAuthorizeClient{stream}
-	return x, nil
-}
-
-type Notary_AuthorizeClient interface {
-	Send(*v1.AuthorizedSignatureRequest) error
-	Recv() (*v1.AuthorizedSignatureResponse, error)
-	grpc.ClientStream
-}
-
-type notaryAuthorizeClient struct {
-	grpc.ClientStream
-}
-
-func (x *notaryAuthorizeClient) Send(m *v1.AuthorizedSignatureRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *notaryAuthorizeClient) Recv() (*v1.AuthorizedSignatureResponse, error) {
-	m := new(v1.AuthorizedSignatureResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
 // NotaryServer is the server API for Notary service.
 // All implementations must embed UnimplementedNotaryServer
 // for forward compatibility
 type NotaryServer interface {
-	Authorize(Notary_AuthorizeServer) error
 	mustEmbedUnimplementedNotaryServer()
 }
 
@@ -73,9 +36,6 @@ type NotaryServer interface {
 type UnimplementedNotaryServer struct {
 }
 
-func (UnimplementedNotaryServer) Authorize(Notary_AuthorizeServer) error {
-	return status.Errorf(codes.Unimplemented, "method Authorize not implemented")
-}
 func (UnimplementedNotaryServer) mustEmbedUnimplementedNotaryServer() {}
 
 // UnsafeNotaryServer may be embedded to opt out of forward compatibility for this service.
@@ -89,32 +49,6 @@ func RegisterNotaryServer(s grpc.ServiceRegistrar, srv NotaryServer) {
 	s.RegisterService(&Notary_ServiceDesc, srv)
 }
 
-func _Notary_Authorize_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(NotaryServer).Authorize(&notaryAuthorizeServer{stream})
-}
-
-type Notary_AuthorizeServer interface {
-	Send(*v1.AuthorizedSignatureResponse) error
-	Recv() (*v1.AuthorizedSignatureRequest, error)
-	grpc.ServerStream
-}
-
-type notaryAuthorizeServer struct {
-	grpc.ServerStream
-}
-
-func (x *notaryAuthorizeServer) Send(m *v1.AuthorizedSignatureResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *notaryAuthorizeServer) Recv() (*v1.AuthorizedSignatureRequest, error) {
-	m := new(v1.AuthorizedSignatureRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
 // Notary_ServiceDesc is the grpc.ServiceDesc for Notary service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -122,13 +56,6 @@ var Notary_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "notary.Notary",
 	HandlerType: (*NotaryServer)(nil),
 	Methods:     []grpc.MethodDesc{},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "Authorize",
-			Handler:       _Notary_Authorize_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
-		},
-	},
-	Metadata: "notary_api/v1/notary.proto",
+	Streams:     []grpc.StreamDesc{},
+	Metadata:    "notary_api/v1/notary.proto",
 }

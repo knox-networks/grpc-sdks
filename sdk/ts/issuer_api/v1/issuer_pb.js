@@ -273,7 +273,8 @@ proto.issuer_api.v1.IssueRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     authenticationSignature: (f = msg.getAuthenticationSignature()) && common_v1_common_pb.AuthenticationSignature.toObject(includeInstance, f),
     amount: (f = msg.getAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
-    authority: (f = msg.getAuthority()) && common_v1_common_pb.DynamicVerifier.toObject(includeInstance, f)
+    authority: (f = msg.getAuthority()) && common_v1_common_pb.DynamicVerifier.toObject(includeInstance, f),
+    distribution: (f = msg.getDistribution()) && common_v1_common_pb.Distribution.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -324,6 +325,11 @@ proto.issuer_api.v1.IssueRequest.deserializeBinaryFromReader = function(msg, rea
       var value = new common_v1_common_pb.DynamicVerifier;
       reader.readMessage(value,common_v1_common_pb.DynamicVerifier.deserializeBinaryFromReader);
       msg.setAuthority(value);
+      break;
+    case 4:
+      var value = new common_v1_common_pb.Distribution;
+      reader.readMessage(value,common_v1_common_pb.Distribution.deserializeBinaryFromReader);
+      msg.setDistribution(value);
       break;
     default:
       reader.skipField();
@@ -376,6 +382,14 @@ proto.issuer_api.v1.IssueRequest.serializeBinaryToWriter = function(message, wri
       3,
       f,
       common_v1_common_pb.DynamicVerifier.serializeBinaryToWriter
+    );
+  }
+  f = message.getDistribution();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_v1_common_pb.Distribution.serializeBinaryToWriter
     );
   }
 };
@@ -489,6 +503,43 @@ proto.issuer_api.v1.IssueRequest.prototype.clearAuthority = function() {
  */
 proto.issuer_api.v1.IssueRequest.prototype.hasAuthority = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional common.Distribution distribution = 4;
+ * @return {?proto.common.Distribution}
+ */
+proto.issuer_api.v1.IssueRequest.prototype.getDistribution = function() {
+  return /** @type{?proto.common.Distribution} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Distribution, 4));
+};
+
+
+/**
+ * @param {?proto.common.Distribution|undefined} value
+ * @return {!proto.issuer_api.v1.IssueRequest} returns this
+*/
+proto.issuer_api.v1.IssueRequest.prototype.setDistribution = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.issuer_api.v1.IssueRequest} returns this
+ */
+proto.issuer_api.v1.IssueRequest.prototype.clearDistribution = function() {
+  return this.setDistribution(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.issuer_api.v1.IssueRequest.prototype.hasDistribution = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

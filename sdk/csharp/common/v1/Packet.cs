@@ -121,7 +121,7 @@ namespace Common {
     [pbr::OriginalName("ReturnToSender")] ReturnToSender = 3,
     /// <summary>
     /// Terminate data stream
-    /// TODO: decide if this is necessary after "Acknowledgement" type is implemented
+    /// @exclude: TODO: decide if this is necessary after "Acknowledgement" type is implemented
     /// </summary>
     [pbr::OriginalName("TerminateStream")] TerminateStream = 4,
     /// <summary>
@@ -178,7 +178,7 @@ namespace Common {
     /// <summary>
     /// Promissory receipt acknowledgement
     /// Respond with promissory receipt to a promissory request
-    /// TODO: Decide if this msg or a general acknowledgement message should be used.
+    /// @exclude: TODO: Decide if this msg or a general acknowledgement message should be used.
     /// </summary>
     [pbr::OriginalName("PromissoryReceipt")] PromissoryReceipt = 104,
     /// <summary>
@@ -737,7 +737,7 @@ namespace Common {
   }
 
   /// <summary>
-  /// Encapsulates all cross-network metadata that associates
+  /// Encasulates all cross-network metadata that associates
   /// a `Packet` with a given transaction.
   /// </summary>
   public sealed partial class TransactionHeader : pb::IMessage<TransactionHeader>
@@ -841,7 +841,7 @@ namespace Common {
     public const int TimestampFieldNumber = 4;
     private ulong timestamp_;
     /// <summary>
-    /// Seconds (minus leapseconds) since epoch 1970 - Unix timestamp - always
+    /// Seconds (minus leapsconds) since epoch 1970 - Unix timestamp - always
     /// interpreted as being in the UTC timezone. Internal operations will convert
     /// this to UTC time.
     /// </summary>
@@ -860,7 +860,7 @@ namespace Common {
     /// <summary>
     /// Signature on all fields in Transaction header (except signature field itself)
     /// and Routing header + (sha256 on serialized(payload).
-    /// TODO investigate viability
+    /// @exclude: TODO investigate viability
     /// should be sent by the emitter of the transaction
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

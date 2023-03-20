@@ -152,7 +152,7 @@ namespace VcApi.V1 {
     public const int TypeFieldNumber = 1;
     private string type_ = "";
     /// <summary>
-    ///The cryptographic suite used for the proof.
+    /// The cryptographic suite used for the proof.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,7 +167,7 @@ namespace VcApi.V1 {
     public const int CreatedFieldNumber = 2;
     private string created_ = "";
     /// <summary>
-    ///Timestamp of when the cryptographic proof was created.
+    /// Timestamp of when the cryptographic proof was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -182,7 +182,7 @@ namespace VcApi.V1 {
     public const int VerificationMethodFieldNumber = 3;
     private string verificationMethod_ = "";
     /// <summary>
-    ///Link to the public key required for verification process.
+    /// Link to the public key required for verification process.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -197,7 +197,7 @@ namespace VcApi.V1 {
     public const int ProofPurposeFieldNumber = 4;
     private string proofPurpose_ = "";
     /// <summary>
-    ///The reason the proof was created.
+    /// The reason the proof was created.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -212,7 +212,7 @@ namespace VcApi.V1 {
     public const int ProofValueFieldNumber = 5;
     private string proofValue_ = "";
     /// <summary>
-    ///Multibase-encoded binary value that represents the hash of the payload upon decryption through verification_method.
+    /// Multibase-encoded binary value that represents the hash of the payload upon decryption through verification_method.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -501,7 +501,7 @@ namespace VcApi.V1 {
     public const int CredentialTypeFieldNumber = 1;
     private global::VcApi.V1.CredentialType credentialType_ = global::VcApi.V1.CredentialType.Unspecified;
     /// <summary>
-    ///Type of the verifiable credential being requested for issuance.
+    /// Type of the verifiable credential being requested for issuance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -516,7 +516,7 @@ namespace VcApi.V1 {
     public const int DidFieldNumber = 2;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -734,7 +734,7 @@ namespace VcApi.V1 {
     public const int NonceFieldNumber = 1;
     private string nonce_ = "";
     /// <summary>
-    ///Value used for the challenge.
+    /// Value used for the challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -749,7 +749,7 @@ namespace VcApi.V1 {
     public const int EndpointFieldNumber = 2;
     private string endpoint_ = "";
     /// <summary>
-    ///Used by browser to construct URL for QR generation.
+    /// Used by browser to construct URL for QR generation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -764,7 +764,7 @@ namespace VcApi.V1 {
     public const int CredentialTypeFieldNumber = 3;
     private global::VcApi.V1.CredentialType credentialType_ = global::VcApi.V1.CredentialType.Unspecified;
     /// <summary>
-    ///Type of the verifiable credential being requested for issuance.
+    /// Type of the verifiable credential being requested for issuance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1007,7 +1007,7 @@ namespace VcApi.V1 {
     public const int CredentialTypeFieldNumber = 1;
     private global::VcApi.V1.CredentialType credentialType_ = global::VcApi.V1.CredentialType.Unspecified;
     /// <summary>
-    ///Type of the verifiable credential being requested for issuance.
+    /// Type of the verifiable credential being requested for issuance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1022,7 +1022,7 @@ namespace VcApi.V1 {
     public const int NonceFieldNumber = 2;
     private string nonce_ = "";
     /// <summary>
-    ///Value used for the challenge.
+    /// Value used for the challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1037,7 +1037,7 @@ namespace VcApi.V1 {
     public const int SignatureFieldNumber = 3;
     private pb::ByteString signature_ = pb::ByteString.Empty;
     /// <summary>
-    ///Signed value of the challenge by the wallet.
+    /// Signed value of the challenge by the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1052,7 +1052,7 @@ namespace VcApi.V1 {
     public const int DidFieldNumber = 4;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1316,7 +1316,7 @@ namespace VcApi.V1 {
     public const int CredentialFieldNumber = 1;
     private string credential_ = "";
     /// <summary>
-    ///Type of the verifiable credential being issued.
+    /// Type of the verifiable credential being issued.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1510,7 +1510,7 @@ namespace VcApi.V1 {
         = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::VcApi.V1.CredentialType) x);
     private readonly pbc::RepeatedField<global::VcApi.V1.CredentialType> credentialTypes_ = new pbc::RepeatedField<global::VcApi.V1.CredentialType>();
     /// <summary>
-    ///Type(s) of the verifiable credential(s) being presented.
+    /// Type(s) of the verifiable credential(s) being presented.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1693,7 +1693,7 @@ namespace VcApi.V1 {
     public const int NonceFieldNumber = 1;
     private string nonce_ = "";
     /// <summary>
-    ///Value used for the challenge.
+    /// Value used for the challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1708,7 +1708,7 @@ namespace VcApi.V1 {
     public const int EndpointFieldNumber = 2;
     private string endpoint_ = "";
     /// <summary>
-    ///Used by browser to construct URL for QR generation.
+    /// Used by browser to construct URL for QR generation.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1725,7 +1725,7 @@ namespace VcApi.V1 {
         = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::VcApi.V1.CredentialType) x);
     private readonly pbc::RepeatedField<global::VcApi.V1.CredentialType> credentialTypes_ = new pbc::RepeatedField<global::VcApi.V1.CredentialType>();
     /// <summary>
-    ///Type(s) of the verifiable credential(s) being presented.
+    /// Type(s) of the verifiable credential(s) being presented.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1958,7 +1958,7 @@ namespace VcApi.V1 {
     public const int PresentationFieldNumber = 1;
     private string presentation_ = "";
     /// <summary>
-    ///The presentation to be verified.
+    /// The presentation to be verified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1973,7 +1973,7 @@ namespace VcApi.V1 {
     public const int NonceFieldNumber = 2;
     private string nonce_ = "";
     /// <summary>
-    ///Value used for the challenge.
+    /// Value used for the challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1988,7 +1988,7 @@ namespace VcApi.V1 {
     public const int SignatureFieldNumber = 3;
     private pb::ByteString signature_ = pb::ByteString.Empty;
     /// <summary>
-    ///Signed value of the challenge by the wallet.
+    /// Signed value of the challenge by the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2003,7 +2003,7 @@ namespace VcApi.V1 {
     public const int DidFieldNumber = 4;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2020,7 +2020,7 @@ namespace VcApi.V1 {
         = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::VcApi.V1.CredentialType) x);
     private readonly pbc::RepeatedField<global::VcApi.V1.CredentialType> credentialType_ = new pbc::RepeatedField<global::VcApi.V1.CredentialType>();
     /// <summary>
-    ///Type(s) of the verifiable credential(s) being presented.
+    /// Type(s) of the verifiable credential(s) being presented.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2250,7 +2250,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// Empty body.
   /// </summary>
   public sealed partial class PresentVerifiableCredentialResponse : pb::IMessage<PresentVerifiableCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2452,7 +2452,7 @@ namespace VcApi.V1 {
     public const int NonceFieldNumber = 1;
     private string nonce_ = "";
     /// <summary>
-    ///Value used for the challenge.
+    /// Value used for the challenge.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2645,7 +2645,7 @@ namespace VcApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2660,7 +2660,7 @@ namespace VcApi.V1 {
     public const int DataFieldNumber = 2;
     private string data_ = "";
     /// <summary>
-    ///JSON representation of the credential.
+    /// JSON representation of the credential.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

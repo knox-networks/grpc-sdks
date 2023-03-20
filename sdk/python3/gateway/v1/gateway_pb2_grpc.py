@@ -5,7 +5,8 @@ from ...common.v1 import packet_pb2 as common_dot_v1_dot_packet__pb2
 from ...gateway.v1 import gateway_pb2 as gateway_dot_v1_dot_gateway__pb2
 
 class GatewayStub(object):
-    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
+    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their
+    public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
     """
 
     def __init__(self, channel):
@@ -19,7 +20,8 @@ class GatewayStub(object):
         self.GetConnections = channel.unary_unary('/gateway.Gateway/GetConnections', request_serializer=gateway_dot_v1_dot_gateway__pb2.ConnectionsRequest.SerializeToString, response_deserializer=gateway_dot_v1_dot_gateway__pb2.ConnectionsResponse.FromString)
 
 class GatewayServicer(object):
-    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
+    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their
+    public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
     """
 
     def Authenticate(self, request, context):
@@ -49,7 +51,8 @@ def add_GatewayServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class Gateway(object):
-    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
+    """The Gateway service allows fast switching of streaming messages between senders and recipients identified by their
+    public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
     """
 
     @staticmethod

@@ -149,6 +149,8 @@ type ServiceInfoClient interface {
 	GetVerifier(ctx context.Context, in *v1.GetVerifierRequest, opts ...grpc.CallOption) (*v1.GetVerifierResponse, error)
 	// GetServiceType returns the type of service provided by the endpoint.
 	GetServiceType(ctx context.Context, in *v1.GetServiceTypeRequest, opts ...grpc.CallOption) (*v1.GetServiceTypeResponse, error)
+	// GetInstance returns an instance UUID that is distinct per startup
+	GetInstance(ctx context.Context, in *v1.GetInstanceRequest, opts ...grpc.CallOption) (*v1.GetInstanceResponse, error)
 }
 
 type serviceInfoClient struct {
@@ -177,6 +179,15 @@ func (c *serviceInfoClient) GetServiceType(ctx context.Context, in *v1.GetServic
 	return out, nil
 }
 
+func (c *serviceInfoClient) GetInstance(ctx context.Context, in *v1.GetInstanceRequest, opts ...grpc.CallOption) (*v1.GetInstanceResponse, error) {
+	out := new(v1.GetInstanceResponse)
+	err := c.cc.Invoke(ctx, "/common.ServiceInfo/GetInstance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ServiceInfoServer is the server API for ServiceInfo service.
 // All implementations must embed UnimplementedServiceInfoServer
 // for forward compatibility
@@ -185,6 +196,8 @@ type ServiceInfoServer interface {
 	GetVerifier(context.Context, *v1.GetVerifierRequest) (*v1.GetVerifierResponse, error)
 	// GetServiceType returns the type of service provided by the endpoint.
 	GetServiceType(context.Context, *v1.GetServiceTypeRequest) (*v1.GetServiceTypeResponse, error)
+	// GetInstance returns an instance UUID that is distinct per startup
+	GetInstance(context.Context, *v1.GetInstanceRequest) (*v1.GetInstanceResponse, error)
 	mustEmbedUnimplementedServiceInfoServer()
 }
 
@@ -197,6 +210,9 @@ func (UnimplementedServiceInfoServer) GetVerifier(context.Context, *v1.GetVerifi
 }
 func (UnimplementedServiceInfoServer) GetServiceType(context.Context, *v1.GetServiceTypeRequest) (*v1.GetServiceTypeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetServiceType not implemented")
+}
+func (UnimplementedServiceInfoServer) GetInstance(context.Context, *v1.GetInstanceRequest) (*v1.GetInstanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInstance not implemented")
 }
 func (UnimplementedServiceInfoServer) mustEmbedUnimplementedServiceInfoServer() {}
 
@@ -247,6 +263,24 @@ func _ServiceInfo_GetServiceType_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ServiceInfo_GetInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(v1.GetInstanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ServiceInfoServer).GetInstance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/common.ServiceInfo/GetInstance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ServiceInfoServer).GetInstance(ctx, req.(*v1.GetInstanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ServiceInfo_ServiceDesc is the grpc.ServiceDesc for ServiceInfo service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -261,6 +295,96 @@ var ServiceInfo_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetServiceType",
 			Handler:    _ServiceInfo_GetServiceType_Handler,
+		},
+		{
+			MethodName: "GetInstance",
+			Handler:    _ServiceInfo_GetInstance_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "common_private/v1/service.proto",
+}
+
+// StatusServiceClient is the client API for StatusService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type StatusServiceClient interface {
+	IsProvisioned(ctx context.Context, in *IsProvisionedRequest, opts ...grpc.CallOption) (*IsProvisionedResponse, error)
+}
+
+type statusServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewStatusServiceClient(cc grpc.ClientConnInterface) StatusServiceClient {
+	return &statusServiceClient{cc}
+}
+
+func (c *statusServiceClient) IsProvisioned(ctx context.Context, in *IsProvisionedRequest, opts ...grpc.CallOption) (*IsProvisionedResponse, error) {
+	out := new(IsProvisionedResponse)
+	err := c.cc.Invoke(ctx, "/common.StatusService/IsProvisioned", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// StatusServiceServer is the server API for StatusService service.
+// All implementations must embed UnimplementedStatusServiceServer
+// for forward compatibility
+type StatusServiceServer interface {
+	IsProvisioned(context.Context, *IsProvisionedRequest) (*IsProvisionedResponse, error)
+	mustEmbedUnimplementedStatusServiceServer()
+}
+
+// UnimplementedStatusServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedStatusServiceServer struct {
+}
+
+func (UnimplementedStatusServiceServer) IsProvisioned(context.Context, *IsProvisionedRequest) (*IsProvisionedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsProvisioned not implemented")
+}
+func (UnimplementedStatusServiceServer) mustEmbedUnimplementedStatusServiceServer() {}
+
+// UnsafeStatusServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to StatusServiceServer will
+// result in compilation errors.
+type UnsafeStatusServiceServer interface {
+	mustEmbedUnimplementedStatusServiceServer()
+}
+
+func RegisterStatusServiceServer(s grpc.ServiceRegistrar, srv StatusServiceServer) {
+	s.RegisterService(&StatusService_ServiceDesc, srv)
+}
+
+func _StatusService_IsProvisioned_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IsProvisionedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StatusServiceServer).IsProvisioned(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/common.StatusService/IsProvisioned",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StatusServiceServer).IsProvisioned(ctx, req.(*IsProvisionedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// StatusService_ServiceDesc is the grpc.ServiceDesc for StatusService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var StatusService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "common.StatusService",
+	HandlerType: (*StatusServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "IsProvisioned",
+			Handler:    _StatusService_IsProvisioned_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

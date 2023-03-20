@@ -35,13 +35,14 @@ namespace Treasury {
             "KAwiKQoQR2V0U3VwcGx5UmVxdWVzdBIVCg1jdXJyZW5jeV9jb2RlGAEgASgJ",
             "ImcKEURlbm9taW5hdGlvbkNvdW50EiQKDGRlbm9taW5hdGlvbhgBIAEoCzIO",
             "LmNvbW1vbi5BbW91bnQSDQoFY291bnQYAiABKA0SHQoFdG90YWwYAyABKAsy",
-            "Di5jb21tb24uQW1vdW50IkAKEUdldFN1cHBseVJlc3BvbnNlEisKBnN1cHBs",
-            "eRgBIAMoCzIbLnRyZWFzdXJ5LkRlbm9taW5hdGlvbkNvdW50MpgBCghUcmVh",
-            "c3VyeRJGCgVSZW1pdBIbLnRyZWFzdXJ5LlJlbWl0dGFuY2VSZXF1ZXN0Ghwu",
-            "dHJlYXN1cnkuUmVtaXR0YW5jZVJlc3BvbnNlKAEwARJECglHZXRTdXBwbHkS",
-            "Gi50cmVhc3VyeS5HZXRTdXBwbHlSZXF1ZXN0GhsudHJlYXN1cnkuR2V0U3Vw",
-            "cGx5UmVzcG9uc2VCN1o1Z2l0aHViLmNvbS9rbm94LW5ldHdvcmtzL2dycGMt",
-            "c2Rrcy9zZGsvZ28vdHJlYXN1cnkvdjFiBnByb3RvMw=="));
+            "Di5jb21tb24uQW1vdW50Il8KEUdldFN1cHBseVJlc3BvbnNlEisKBnN1cHBs",
+            "eRgBIAMoCzIbLnRyZWFzdXJ5LkRlbm9taW5hdGlvbkNvdW50Eh0KBXRvdGFs",
+            "GAIgASgLMg4uY29tbW9uLkFtb3VudDKYAQoIVHJlYXN1cnkSRgoFUmVtaXQS",
+            "Gy50cmVhc3VyeS5SZW1pdHRhbmNlUmVxdWVzdBocLnRyZWFzdXJ5LlJlbWl0",
+            "dGFuY2VSZXNwb25zZSgBMAESRAoJR2V0U3VwcGx5EhoudHJlYXN1cnkuR2V0",
+            "U3VwcGx5UmVxdWVzdBobLnRyZWFzdXJ5LkdldFN1cHBseVJlc3BvbnNlQjda",
+            "NWdpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3Ry",
+            "ZWFzdXJ5L3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -49,7 +50,7 @@ namespace Treasury {
             new pbr::GeneratedClrTypeInfo(typeof(global::Treasury.RemittanceResponse), global::Treasury.RemittanceResponse.Parser, new[]{ "ExchangedPromissoryFiles", "FeeAmount", "ExchangeRate", "RefundedPromissoryFiles" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Treasury.GetSupplyRequest), global::Treasury.GetSupplyRequest.Parser, new[]{ "CurrencyCode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Treasury.DenominationCount), global::Treasury.DenominationCount.Parser, new[]{ "Denomination", "Count", "Total" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Treasury.GetSupplyResponse), global::Treasury.GetSupplyResponse.Parser, new[]{ "Supply" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Treasury.GetSupplyResponse), global::Treasury.GetSupplyResponse.Parser, new[]{ "Supply", "Total" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +58,9 @@ namespace Treasury {
   }
   #region Messages
   /// <summary>
-  /// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional exchange rate.
+  /// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount
+  /// inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional
+  /// exchange rate.
   /// </summary>
   public sealed partial class RemittanceRequest : pb::IMessage<RemittanceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -142,7 +145,8 @@ namespace Treasury {
         = pb::FieldCodec.ForBytes(26);
     private readonly pbc::RepeatedField<pb::ByteString> promissoryFiles_ = new pbc::RepeatedField<pb::ByteString>();
     /// <summary>
-    /// Batch of promissory files to be remitted; Promissory files need to be signed to treasury service. Promissory files of a batch must be of the same currency.
+    /// Batch of promissory files to be remitted; Promissory files need to be signed to treasury service. Promissory files
+    /// of a batch must be of the same currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,7 +158,9 @@ namespace Treasury {
     public const int ExchangeRateFieldNumber = 4;
     private double exchangeRate_;
     /// <summary>
-    /// Optional exchange rate required to perform conversion, otherwise will use spot rate if the batch of promissory files is of a different currency than the currency of the remittance request, then the exchange rate is required to convert the promissory files to the currency of the remittance request.
+    /// Optional exchange rate required to perform conversion, otherwise will use spot rate if the batch of promissory
+    /// files is of a different currency than the currency of the remittance request, then the exchange rate is required to
+    /// convert the promissory files to the currency of the remittance request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -379,7 +385,8 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left after the conversion if any, and a fee.
+  /// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left
+  /// after the conversion if any, and a fee.
   /// </summary>
   public sealed partial class RemittanceResponse : pb::IMessage<RemittanceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -876,7 +883,8 @@ namespace Treasury {
   }
 
   /// <summary>
-  /// Lists the count of the files of specific denominations held in the Treasury service's vault, and the total value held in files of that denomination.
+  /// Lists the count of the files of specific denominations held in the Treasury service's vault, and the total value held
+  /// in files of that denomination.
   /// </summary>
   public sealed partial class DenominationCount : pb::IMessage<DenominationCount>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1206,6 +1214,7 @@ namespace Treasury {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetSupplyResponse(GetSupplyResponse other) : this() {
       supply_ = other.supply_.Clone();
+      total_ = other.total_ != null ? other.total_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1229,6 +1238,21 @@ namespace Treasury {
       get { return supply_; }
     }
 
+    /// <summary>Field number for the "total" field.</summary>
+    public const int TotalFieldNumber = 2;
+    private global::Common.Amount total_;
+    /// <summary>
+    /// grand total sum of all promissories
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.Amount Total {
+      get { return total_; }
+      set {
+        total_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1245,6 +1269,7 @@ namespace Treasury {
         return true;
       }
       if(!supply_.Equals(other.supply_)) return false;
+      if (!object.Equals(Total, other.Total)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1253,6 +1278,7 @@ namespace Treasury {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= supply_.GetHashCode();
+      if (total_ != null) hash ^= Total.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1272,6 +1298,10 @@ namespace Treasury {
       output.WriteRawMessage(this);
     #else
       supply_.WriteTo(output, _repeated_supply_codec);
+      if (total_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Total);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1283,6 +1313,10 @@ namespace Treasury {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       supply_.WriteTo(ref output, _repeated_supply_codec);
+      if (total_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Total);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1294,6 +1328,9 @@ namespace Treasury {
     public int CalculateSize() {
       int size = 0;
       size += supply_.CalculateSize(_repeated_supply_codec);
+      if (total_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Total);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1307,6 +1344,12 @@ namespace Treasury {
         return;
       }
       supply_.Add(other.supply_);
+      if (other.total_ != null) {
+        if (total_ == null) {
+          Total = new global::Common.Amount();
+        }
+        Total.MergeFrom(other.Total);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1326,6 +1369,13 @@ namespace Treasury {
             supply_.AddEntriesFrom(input, _repeated_supply_codec);
             break;
           }
+          case 18: {
+            if (total_ == null) {
+              Total = new global::Common.Amount();
+            }
+            input.ReadMessage(Total);
+            break;
+          }
         }
       }
     #endif
@@ -1343,6 +1393,13 @@ namespace Treasury {
             break;
           case 10: {
             supply_.AddEntriesFrom(ref input, _repeated_supply_codec);
+            break;
+          }
+          case 18: {
+            if (total_ == null) {
+              Total = new global::Common.Amount();
+            }
+            input.ReadMessage(Total);
             break;
           }
         }

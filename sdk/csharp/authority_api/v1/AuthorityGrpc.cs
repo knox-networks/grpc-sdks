@@ -9,7 +9,9 @@ using grpc = global::Grpc.Core;
 
 namespace AuthorityApi.V1 {
   /// <summary>
-  /// Entity that is the approving monetary authority- Ex Central bank or commercial bank. It can create Issuers with limits, approve additional issuance limits, authorize issuing of digital banknotes, and replace digital banknotes in circulation.
+  /// Entity that is the approving monetary authority- Ex Central bank or commercial bank. It can create Issuers with
+  /// limits, approve additional issuance limits, authorize issuing of digital banknotes, and replace digital banknotes in
+  /// circulation.
   /// </summary>
   public static partial class Authority
   {
@@ -64,6 +66,14 @@ namespace AuthorityApi.V1 {
     static readonly grpc::Marshaller<global::AuthorityApi.V1.RedeemRequest> __Marshaller_authority_api_v1_RedeemRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.RedeemRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::AuthorityApi.V1.RedeemResponse> __Marshaller_authority_api_v1_RedeemResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.RedeemResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetEmissaryRequest> __Marshaller_authority_api_v1_GetEmissaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetEmissaryRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetEmissaryResponse> __Marshaller_authority_api_v1_GetEmissaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetEmissaryResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetNotaryRequest> __Marshaller_authority_api_v1_GetNotaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetNotaryRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetNotaryResponse> __Marshaller_authority_api_v1_GetNotaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetNotaryResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::AuthorityApi.V1.SetIssuerLimitRequest, global::AuthorityApi.V1.SetIssuerLimitResponse> __Method_SetIssuerLimit = new grpc::Method<global::AuthorityApi.V1.SetIssuerLimitRequest, global::AuthorityApi.V1.SetIssuerLimitResponse>(
@@ -96,6 +106,22 @@ namespace AuthorityApi.V1 {
         "Redeem",
         __Marshaller_authority_api_v1_RedeemRequest,
         __Marshaller_authority_api_v1_RedeemResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse> __Method_GetEmissary = new grpc::Method<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetEmissary",
+        __Marshaller_authority_api_v1_GetEmissaryRequest,
+        __Marshaller_authority_api_v1_GetEmissaryResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse> __Method_GetNotary = new grpc::Method<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetNotary",
+        __Marshaller_authority_api_v1_GetNotaryRequest,
+        __Marshaller_authority_api_v1_GetNotaryResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -145,13 +171,38 @@ namespace AuthorityApi.V1 {
       }
 
       /// <summary>
-      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+      /// digital banknote.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::AuthorityApi.V1.RedeemResponse> Redeem(global::AuthorityApi.V1.RedeemRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Gets the verifier of the Emissary for this Authority.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Gets the signature of the Notary for this Authority/Notary.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AuthorityApi.V1.GetNotaryResponse> GetNotary(global::AuthorityApi.V1.GetNotaryRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -304,7 +355,8 @@ namespace AuthorityApi.V1 {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Authorize, null, options);
       }
       /// <summary>
-      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+      /// digital banknote.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -317,7 +369,8 @@ namespace AuthorityApi.V1 {
         return Redeem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+      /// digital banknote.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -328,7 +381,8 @@ namespace AuthorityApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_Redeem, null, options, request);
       }
       /// <summary>
-      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+      /// digital banknote.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -341,7 +395,8 @@ namespace AuthorityApi.V1 {
         return RedeemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+      /// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+      /// digital banknote.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -350,6 +405,102 @@ namespace AuthorityApi.V1 {
       public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.RedeemResponse> RedeemAsync(global::AuthorityApi.V1.RedeemRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_Redeem, null, options, request);
+      }
+      /// <summary>
+      /// Gets the verifier of the Emissary for this Authority.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AuthorityApi.V1.GetEmissaryResponse GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEmissary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets the verifier of the Emissary for this Authority.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AuthorityApi.V1.GetEmissaryResponse GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetEmissary, null, options, request);
+      }
+      /// <summary>
+      /// Gets the verifier of the Emissary for this Authority.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissaryAsync(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEmissaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets the verifier of the Emissary for this Authority.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissaryAsync(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetEmissary, null, options, request);
+      }
+      /// <summary>
+      /// Gets the signature of the Notary for this Authority/Notary.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AuthorityApi.V1.GetNotaryResponse GetNotary(global::AuthorityApi.V1.GetNotaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetNotary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets the signature of the Notary for this Authority/Notary.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AuthorityApi.V1.GetNotaryResponse GetNotary(global::AuthorityApi.V1.GetNotaryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetNotary, null, options, request);
+      }
+      /// <summary>
+      /// Gets the signature of the Notary for this Authority/Notary.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetNotaryResponse> GetNotaryAsync(global::AuthorityApi.V1.GetNotaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetNotaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets the signature of the Notary for this Authority/Notary.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetNotaryResponse> GetNotaryAsync(global::AuthorityApi.V1.GetNotaryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetNotary, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -368,7 +519,9 @@ namespace AuthorityApi.V1 {
           .AddMethod(__Method_SetIssuerLimit, serviceImpl.SetIssuerLimit)
           .AddMethod(__Method_GetIssuerLimits, serviceImpl.GetIssuerLimits)
           .AddMethod(__Method_Authorize, serviceImpl.Authorize)
-          .AddMethod(__Method_Redeem, serviceImpl.Redeem).Build();
+          .AddMethod(__Method_Redeem, serviceImpl.Redeem)
+          .AddMethod(__Method_GetEmissary, serviceImpl.GetEmissary)
+          .AddMethod(__Method_GetNotary, serviceImpl.GetNotary).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -382,6 +535,8 @@ namespace AuthorityApi.V1 {
       serviceBinder.AddMethod(__Method_GetIssuerLimits, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetIssuerLimitsRequest, global::AuthorityApi.V1.GetIssuerLimitsResponse>(serviceImpl.GetIssuerLimits));
       serviceBinder.AddMethod(__Method_Authorize, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::AuthorityApi.V1.AuthorizeRequest, global::AuthorityApi.V1.AuthorizeResponse>(serviceImpl.Authorize));
       serviceBinder.AddMethod(__Method_Redeem, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.RedeemRequest, global::AuthorityApi.V1.RedeemResponse>(serviceImpl.Redeem));
+      serviceBinder.AddMethod(__Method_GetEmissary, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse>(serviceImpl.GetEmissary));
+      serviceBinder.AddMethod(__Method_GetNotary, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse>(serviceImpl.GetNotary));
     }
 
   }

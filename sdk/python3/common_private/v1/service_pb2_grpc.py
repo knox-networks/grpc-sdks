@@ -1,6 +1,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 from ...common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
+from ...common_private.v1 import service_pb2 as common__private_dot_v1_dot_service__pb2
 
 class TransactionServiceStub(object):
     """The Transaction Service is a common service implemented by applications that play a role in payment transactions. For
@@ -66,6 +67,7 @@ class ServiceInfoStub(object):
         """
         self.GetVerifier = channel.unary_unary('/common.ServiceInfo/GetVerifier', request_serializer=common_dot_v1_dot_common__pb2.GetVerifierRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.GetVerifierResponse.FromString)
         self.GetServiceType = channel.unary_unary('/common.ServiceInfo/GetServiceType', request_serializer=common_dot_v1_dot_common__pb2.GetServiceTypeRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.GetServiceTypeResponse.FromString)
+        self.GetInstance = channel.unary_unary('/common.ServiceInfo/GetInstance', request_serializer=common_dot_v1_dot_common__pb2.GetInstanceRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.GetInstanceResponse.FromString)
 
 class ServiceInfoServicer(object):
     """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
@@ -86,8 +88,15 @@ class ServiceInfoServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetInstance(self, request, context):
+        """GetInstance returns an instance UUID that is distinct per startup
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_ServiceInfoServicer_to_server(servicer, server):
-    rpc_method_handlers = {'GetVerifier': grpc.unary_unary_rpc_method_handler(servicer.GetVerifier, request_deserializer=common_dot_v1_dot_common__pb2.GetVerifierRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.GetVerifierResponse.SerializeToString), 'GetServiceType': grpc.unary_unary_rpc_method_handler(servicer.GetServiceType, request_deserializer=common_dot_v1_dot_common__pb2.GetServiceTypeRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.GetServiceTypeResponse.SerializeToString)}
+    rpc_method_handlers = {'GetVerifier': grpc.unary_unary_rpc_method_handler(servicer.GetVerifier, request_deserializer=common_dot_v1_dot_common__pb2.GetVerifierRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.GetVerifierResponse.SerializeToString), 'GetServiceType': grpc.unary_unary_rpc_method_handler(servicer.GetServiceType, request_deserializer=common_dot_v1_dot_common__pb2.GetServiceTypeRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.GetServiceTypeResponse.SerializeToString), 'GetInstance': grpc.unary_unary_rpc_method_handler(servicer.GetInstance, request_deserializer=common_dot_v1_dot_common__pb2.GetInstanceRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.GetInstanceResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('common.ServiceInfo', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -103,3 +112,39 @@ class ServiceInfo(object):
     @staticmethod
     def GetServiceType(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/common.ServiceInfo/GetServiceType', common_dot_v1_dot_common__pb2.GetServiceTypeRequest.SerializeToString, common_dot_v1_dot_common__pb2.GetServiceTypeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetInstance(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/common.ServiceInfo/GetInstance', common_dot_v1_dot_common__pb2.GetInstanceRequest.SerializeToString, common_dot_v1_dot_common__pb2.GetInstanceResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+class StatusServiceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.IsProvisioned = channel.unary_unary('/common.StatusService/IsProvisioned', request_serializer=common__private_dot_v1_dot_service__pb2.IsProvisionedRequest.SerializeToString, response_deserializer=common__private_dot_v1_dot_service__pb2.IsProvisionedResponse.FromString)
+
+class StatusServiceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def IsProvisioned(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+def add_StatusServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {'IsProvisioned': grpc.unary_unary_rpc_method_handler(servicer.IsProvisioned, request_deserializer=common__private_dot_v1_dot_service__pb2.IsProvisionedRequest.FromString, response_serializer=common__private_dot_v1_dot_service__pb2.IsProvisionedResponse.SerializeToString)}
+    generic_handler = grpc.method_handlers_generic_handler('common.StatusService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+class StatusService(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def IsProvisioned(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/common.StatusService/IsProvisioned', common__private_dot_v1_dot_service__pb2.IsProvisionedRequest.SerializeToString, common__private_dot_v1_dot_service__pb2.IsProvisionedResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -20,7 +20,8 @@ const _ = grpc.SupportPackageIsVersion7
 type WalletClient interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*TransferResponse, error)
-	// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+	// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+	// manage many customer custodial wallets.
 	CreateOwner(ctx context.Context, in *CreateOwnerRequest, opts ...grpc.CallOption) (*CreateOwnerResponse, error)
 	// Creates a wallet for a given owner, which can manage the wallet.
 	CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error)
@@ -30,19 +31,23 @@ type WalletClient interface {
 	ListFunds(ctx context.Context, in *ListFundsRequest, opts ...grpc.CallOption) (*ListFundsResponse, error)
 	// List the balances of each currency in the wallet.
 	ListWalletBalances(ctx context.Context, in *ListWalletBalancesRequest, opts ...grpc.CallOption) (*ListWalletBalancesResponse, error)
-	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+	// issuance limit.
 	Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error)
 	// Lists the W3C Verifiable Credentials of the wallet subject.
 	ListCredentials(ctx context.Context, in *ListCredentialsRequest, opts ...grpc.CallOption) (*ListCredentialsResponse, error)
-	// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+	// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+	// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
 	AddCredential(ctx context.Context, in *AddCredentialRequest, opts ...grpc.CallOption) (*AddCredentialResponse, error)
 	// Associates the wallet with the account specified in the bearer JWT token provided by User Management.
 	AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error)
 	// Returns the JSON Verifiable Presentation containing the PII of the subject.
 	RequestPresentation(ctx context.Context, in *RequestPresentationRequest, opts ...grpc.CallOption) (*RequestPresentationResponse, error)
-	// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+	// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+	// be used to query more information about the transaction.
 	PrepareSimplePayment(ctx context.Context, in *PrepareSimplePaymentRequest, opts ...grpc.CallOption) (*PrepareSimplePaymentResponse, error)
-	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+	// to query more information about the transaction.
 	PrepareFundsChange(ctx context.Context, in *PrepareFundsChangeRequest, opts ...grpc.CallOption) (*PrepareFundsChangeResponse, error)
 	// Obtains metadata about a transaction.
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
@@ -221,7 +226,8 @@ func (c *walletClient) ListTransactionSnapshots(ctx context.Context, in *ListTra
 type WalletServer interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(context.Context, *TransferRequest) (*TransferResponse, error)
-	// Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+	// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+	// manage many customer custodial wallets.
 	CreateOwner(context.Context, *CreateOwnerRequest) (*CreateOwnerResponse, error)
 	// Creates a wallet for a given owner, which can manage the wallet.
 	CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error)
@@ -231,19 +237,23 @@ type WalletServer interface {
 	ListFunds(context.Context, *ListFundsRequest) (*ListFundsResponse, error)
 	// List the balances of each currency in the wallet.
 	ListWalletBalances(context.Context, *ListWalletBalancesRequest) (*ListWalletBalancesResponse, error)
-	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+	// issuance limit.
 	Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error)
 	// Lists the W3C Verifiable Credentials of the wallet subject.
 	ListCredentials(context.Context, *ListCredentialsRequest) (*ListCredentialsResponse, error)
-	// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+	// Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+	// the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
 	AddCredential(context.Context, *AddCredentialRequest) (*AddCredentialResponse, error)
 	// Associates the wallet with the account specified in the bearer JWT token provided by User Management.
 	AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error)
 	// Returns the JSON Verifiable Presentation containing the PII of the subject.
 	RequestPresentation(context.Context, *RequestPresentationRequest) (*RequestPresentationResponse, error)
-	// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+	// Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+	// be used to query more information about the transaction.
 	PrepareSimplePayment(context.Context, *PrepareSimplePaymentRequest) (*PrepareSimplePaymentResponse, error)
-	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+	// to query more information about the transaction.
 	PrepareFundsChange(context.Context, *PrepareFundsChangeRequest) (*PrepareFundsChangeResponse, error)
 	// Obtains metadata about a transaction.
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)

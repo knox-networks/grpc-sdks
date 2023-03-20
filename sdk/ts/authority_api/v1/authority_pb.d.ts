@@ -198,3 +198,81 @@ export namespace RedeemResponse {
   }
 }
 
+export class GetEmissaryRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetEmissaryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetEmissaryRequest): GetEmissaryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetEmissaryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetEmissaryRequest;
+  static deserializeBinaryFromReader(message: GetEmissaryRequest, reader: jspb.BinaryReader): GetEmissaryRequest;
+}
+
+export namespace GetEmissaryRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetEmissaryResponse extends jspb.Message {
+  getVerifier(): string;
+  setVerifier(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetEmissaryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetEmissaryResponse): GetEmissaryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetEmissaryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetEmissaryResponse;
+  static deserializeBinaryFromReader(message: GetEmissaryResponse, reader: jspb.BinaryReader): GetEmissaryResponse;
+}
+
+export namespace GetEmissaryResponse {
+  export type AsObject = {
+    verifier: string,
+  }
+}
+
+export class GetNotaryRequest extends jspb.Message {
+  getVerifier(): string;
+  setVerifier(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNotaryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNotaryRequest): GetNotaryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNotaryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNotaryRequest;
+  static deserializeBinaryFromReader(message: GetNotaryRequest, reader: jspb.BinaryReader): GetNotaryRequest;
+}
+
+export namespace GetNotaryRequest {
+  export type AsObject = {
+    verifier: string,
+  }
+}
+
+export class GetNotaryResponse extends jspb.Message {
+  getSignature(): Uint8Array | string;
+  getSignature_asU8(): Uint8Array;
+  getSignature_asB64(): string;
+  setSignature(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetNotaryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNotaryResponse): GetNotaryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetNotaryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNotaryResponse;
+  static deserializeBinaryFromReader(message: GetNotaryResponse, reader: jspb.BinaryReader): GetNotaryResponse;
+}
+
+export namespace GetNotaryResponse {
+  export type AsObject = {
+    signature: Uint8Array | string,
+  }
+}
+

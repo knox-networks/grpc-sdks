@@ -9,7 +9,8 @@ using grpc = global::Grpc.Core;
 
 namespace Gateway {
   /// <summary>
-  /// The Gateway service allows fast switching of streaming messages between senders and recipients identified by their public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
+  /// The Gateway service allows fast switching of streaming messages between senders and recipients identified by their
+  /// public key, over authenticated connections. It exposes the APIs needed to connect, authenticate and send data.
   /// </summary>
   public static partial class Gateway
   {

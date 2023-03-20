@@ -48,6 +48,24 @@ Authority.Redeem = {
   responseType: authority_api_v1_authority_pb.RedeemResponse
 };
 
+Authority.GetEmissary = {
+  methodName: "GetEmissary",
+  service: Authority,
+  requestStream: false,
+  responseStream: false,
+  requestType: authority_api_v1_authority_pb.GetEmissaryRequest,
+  responseType: authority_api_v1_authority_pb.GetEmissaryResponse
+};
+
+Authority.GetNotary = {
+  methodName: "GetNotary",
+  service: Authority,
+  requestStream: false,
+  responseStream: false,
+  requestType: authority_api_v1_authority_pb.GetNotaryRequest,
+  responseType: authority_api_v1_authority_pb.GetNotaryResponse
+};
+
 exports.Authority = Authority;
 
 function AuthorityClient(serviceHost, options) {
@@ -167,6 +185,68 @@ AuthorityClient.prototype.redeem = function redeem(requestMessage, metadata, cal
     callback = arguments[1];
   }
   var client = grpc.unary(Authority.Redeem, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AuthorityClient.prototype.getEmissary = function getEmissary(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Authority.GetEmissary, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AuthorityClient.prototype.getNotary = function getNotary(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(Authority.GetNotary, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

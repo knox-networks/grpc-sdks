@@ -24,8 +24,13 @@ type AuthorityClient interface {
 	GetIssuerLimits(ctx context.Context, in *GetIssuerLimitsRequest, opts ...grpc.CallOption) (*GetIssuerLimitsResponse, error)
 	// Accepts digital banknotes in a stream, authorizes them and returns authorized digital banknotes in a stream.
 	Authorize(ctx context.Context, opts ...grpc.CallOption) (Authority_AuthorizeClient, error)
-	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+	// digital banknote.
 	Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error)
+	// Gets the verifier of the Emissary for this Authority.
+	GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error)
+	// Gets the signature of the Notary for this Authority/Notary.
+	GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error)
 }
 
 type authorityClient struct {
@@ -94,6 +99,24 @@ func (c *authorityClient) Redeem(ctx context.Context, in *RedeemRequest, opts ..
 	return out, nil
 }
 
+func (c *authorityClient) GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error) {
+	out := new(GetEmissaryResponse)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/GetEmissary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authorityClient) GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error) {
+	out := new(GetNotaryResponse)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/GetNotary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthorityServer is the server API for Authority service.
 // All implementations must embed UnimplementedAuthorityServer
 // for forward compatibility
@@ -104,8 +127,13 @@ type AuthorityServer interface {
 	GetIssuerLimits(context.Context, *GetIssuerLimitsRequest) (*GetIssuerLimitsResponse, error)
 	// Accepts digital banknotes in a stream, authorizes them and returns authorized digital banknotes in a stream.
 	Authorize(Authority_AuthorizeServer) error
-	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed digital banknote.
+	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
+	// digital banknote.
 	Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error)
+	// Gets the verifier of the Emissary for this Authority.
+	GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error)
+	// Gets the signature of the Notary for this Authority/Notary.
+	GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error)
 	mustEmbedUnimplementedAuthorityServer()
 }
 
@@ -124,6 +152,12 @@ func (UnimplementedAuthorityServer) Authorize(Authority_AuthorizeServer) error {
 }
 func (UnimplementedAuthorityServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Redeem not implemented")
+}
+func (UnimplementedAuthorityServer) GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEmissary not implemented")
+}
+func (UnimplementedAuthorityServer) GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNotary not implemented")
 }
 func (UnimplementedAuthorityServer) mustEmbedUnimplementedAuthorityServer() {}
 
@@ -218,6 +252,42 @@ func _Authority_Redeem_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Authority_GetEmissary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEmissaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthorityServer).GetEmissary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authority_api.v1.Authority/GetEmissary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthorityServer).GetEmissary(ctx, req.(*GetEmissaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Authority_GetNotary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNotaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthorityServer).GetNotary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/authority_api.v1.Authority/GetNotary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthorityServer).GetNotary(ctx, req.(*GetNotaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Authority_ServiceDesc is the grpc.ServiceDesc for Authority service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -236,6 +306,14 @@ var Authority_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Redeem",
 			Handler:    _Authority_Redeem_Handler,
+		},
+		{
+			MethodName: "GetEmissary",
+			Handler:    _Authority_GetEmissary_Handler,
+		},
+		{
+			MethodName: "GetNotary",
+			Handler:    _Authority_GetNotary_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

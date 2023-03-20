@@ -42,108 +42,110 @@ namespace WalletApi.V1 {
             "Cgt3YWxsZXRfbmFtZRgBIAEoCRIRCgl3YWxsZXRfaWQYAiABKAkSEgoKcHVi",
             "bGljX2tleRgDIAEoCRILCgNkaWQYBCABKAkiPwoZTGlzdFdhbGxldEJhbGFu",
             "Y2VzUmVxdWVzdBIRCgl3YWxsZXRfaWQYASABKAkSDwoHYXBpX2tleRgCIAEo",
-            "CSI9ChpMaXN0V2FsbGV0QmFsYW5jZXNSZXNwb25zZRIfCgdiYWxhbmNlGAEg",
-            "AygLMg4uY29tbW9uLkFtb3VudCJXChBMaXN0RnVuZHNSZXF1ZXN0EgwKBHBh",
-            "Z2UYASABKAUSEQoJcGFnZV9zaXplGAIgASgFEhEKCXdhbGxldF9pZBgDIAEo",
-            "CRIPCgdhcGlfa2V5GAQgASgJIo0DChFMaXN0RnVuZHNSZXNwb25zZRI0CgVm",
-            "dW5kcxgBIAMoCzIlLndhbGxldF9hcGkudjEuTGlzdEZ1bmRzUmVzcG9uc2Uu",
-            "RnVuZBIZChF0b3RhbF9vd25lZF9mdW5kcxgCIAEoDRrKAQoKUHJvbWlzc29y",
-            "eRIPCgd2ZXJzaW9uGAEgASgJEgoKAmlkGAMgASgJEhAKCGN1cnJlbmN5GAQg",
-            "ASgJEg4KBmFtb3VudBgFIAEoAxIQCghkZWNpbWFscxgGIAEoDRIRCglhdXRo",
-            "b3JpdHkYByABKAkSDgoGaXNzdWVyGAggASgJEhUKDWlzc3VhbmNlX2RhdGUY",
-            "CSABKAkSEwoLYmxvY2tfZGVwdGgYCiABKA0SHAoUYXV0aG9yaXplZF9zaWdu",
-            "YXR1cmUYCyABKAwaWgoERnVuZBIRCgl3YWxsZXRfaWQYASABKAkSPwoKcHJv",
-            "bWlzc29yeRgCIAEoCzIrLndhbGxldF9hcGkudjEuTGlzdEZ1bmRzUmVzcG9u",
-            "c2UuUHJvbWlzc29yeSJqCg1SZWRlZW1SZXF1ZXN0EhYKDmZyb21fd2FsbGV0",
-            "X2lkGAEgASgJEhkKEWlzc3Vlcl9wdWJsaWNfa2V5GAIgASgJEhUKDXByb21p",
-            "c3NvcnlfaWQYAyABKAkSDwoHYXBpX2tleRgEIAEoCSIzCg5SZWRlZW1SZXNw",
-            "b25zZRIhCgluZXdfbGltaXQYASABKAsyDi5jb21tb24uQW1vdW50Il0KFkxp",
-            "c3RDcmVkZW50aWFsc1JlcXVlc3QSDAoEcGFnZRgBIAEoBRIRCglwYWdlX3Np",
-            "emUYAiABKAUSEQoJd2FsbGV0X2lkGAMgASgJEg8KB2FwaV9rZXkYBCABKAki",
-            "TwoXTGlzdENyZWRlbnRpYWxzUmVzcG9uc2USEwoLY3JlZGVudGlhbHMYASAD",
-            "KAkSHwoXdG90YWxfb3duZWRfY3JlZGVudGlhbHMYAiABKA0iUwoUQWRkQ3Jl",
-            "ZGVudGlhbFJlcXVlc3QSFwoPY3JlZGVudGlhbF90eXBlGAEgASgJEhEKCXdh",
-            "bGxldF9pZBgCIAEoCRIPCgdhcGlfa2V5GAMgASgJIisKFUFkZENyZWRlbnRp",
-            "YWxSZXNwb25zZRISCgpjcmVkZW50aWFsGAEgASgJIjwKFkFzc29jaWF0ZVdh",
-            "bGxldFJlcXVlc3QSEQoJd2FsbGV0X2lkGAEgASgJEg8KB2FwaV9rZXkYAiAB",
-            "KAkiTQoXQXNzb2NpYXRlV2FsbGV0UmVzcG9uc2USEQoJd2FsbGV0X2lkGAEg",
-            "ASgJEgsKA2RpZBgCIAEoCRISCgpwdWJsaWNfa2V5GAMgASgJIlYKH0NyZWF0",
-            "ZUFuZEFzc29jaWF0ZVdhbGxldFJlcXVlc3QSEwoLd2FsbGV0X25hbWUYASAB",
-            "KAkSDwoHYXBpX2tleRgCIAEoCRINCgV0b2tlbhgDIAEoCSJrCiBDcmVhdGVB",
-            "bmRBc3NvY2lhdGVXYWxsZXRSZXNwb25zZRIRCgl3YWxsZXRfaWQYASABKAkS",
-            "EwoLd2FsbGV0X25hbWUYAiABKAkSEgoKcHVibGljX2tleRgDIAEoCRILCgNk",
-            "aWQYBCABKAkiUwoaUmVxdWVzdFByZXNlbnRhdGlvblJlcXVlc3QSCwoDZGlk",
-            "GAEgASgJEhcKD2NyZWRlbnRpYWxfdHlwZRgCIAEoCRIPCgdhcGlfa2V5GAMg",
-            "ASgJIjMKG1JlcXVlc3RQcmVzZW50YXRpb25SZXNwb25zZRIUCgxwcmVzZW50",
-            "YXRpb24YASABKAkijAEKG1ByZXBhcmVTaW1wbGVQYXltZW50UmVxdWVzdBIe",
-            "CgZhbW91bnQYASABKAsyDi5jb21tb24uQW1vdW50EhEKCXJlY2lwaWVudBgC",
-            "IAEoCRIWCg51c2VyX3JlZmVyZW5jZRgDIAEoCRIRCgl3YWxsZXRfaWQYBCAB",
-            "KAkSDwoHYXBpX2tleRgFIAEoCSLdAQocUHJlcGFyZVNpbXBsZVBheW1lbnRS",
-            "ZXNwb25zZRJCCgZzdGF0dXMYASABKA4yMi53YWxsZXRfYXBpLnYxLlByZXBh",
-            "cmVTaW1wbGVQYXltZW50UmVzcG9uc2UuU3RhdHVzEgwKBHVldHIYAiABKAki",
-            "awoGU3RhdHVzEhYKElNUQVRVU19VTlNQRUNJRklFRBAAEhIKDlNUQVRVU19T",
-            "VUNDRVNTEAESFgoSU1RBVFVTX05FRURfQ0hBTkdFEAISHQoZU1RBVFVTX0lO",
-            "U1VGRklDSUVOVF9GVU5EUxADIncKGVByZXBhcmVGdW5kc0NoYW5nZVJlcXVl",
-            "c3QSHgoGYW1vdW50GAEgASgLMg4uY29tbW9uLkFtb3VudBIWCg51c2VyX3Jl",
-            "ZmVyZW5jZRgEIAEoCRIRCgl3YWxsZXRfaWQYAiABKAkSDwoHYXBpX2tleRgD",
-            "IAEoCSLgAQoaUHJlcGFyZUZ1bmRzQ2hhbmdlUmVzcG9uc2USQAoGc3RhdHVz",
-            "GAEgASgOMjAud2FsbGV0X2FwaS52MS5QcmVwYXJlRnVuZHNDaGFuZ2VSZXNw",
-            "b25zZS5TdGF0dXMSDAoEdWV0chgCIAEoCSJyCgZTdGF0dXMSFgoSU1RBVFVT",
-            "X1VOU1BFQ0lGSUVEEAASEgoOU1RBVFVTX1NVQ0NFU1MQARIdChlTVEFUVVNf",
-            "SU5TVUZGSUNJRU5UX0ZVTkRTEAISHQoZU1RBVFVTX0ZVTkRTX1BSRVNFTlRf",
-            "Tk9PUBADIkkKFUdldFRyYW5zYWN0aW9uUmVxdWVzdBIMCgR1ZXRyGAEgASgJ",
-            "EhEKCXdhbGxldF9pZBgCIAEoCRIPCgdhcGlfa2V5GAMgASgJIkIKFkdldFRy",
-            "YW5zYWN0aW9uUmVzcG9uc2USKAoLdHJhbnNhY3Rpb24YASABKAsyEy5jb21t",
-            "b24uVHJhbnNhY3Rpb24iNgoXTGlzdFRyYW5zYWN0aW9uc1JlcXVlc3QSCgoC",
-            "aWQYASABKAkSDwoHYXBpX2tleRgCIAEoCSJFChhMaXN0VHJhbnNhY3Rpb25z",
-            "UmVzcG9uc2USKQoMdHJhbnNhY3Rpb25zGAEgAygLMhMuY29tbW9uLlRyYW5z",
-            "YWN0aW9uIlEKHUdldFRyYW5zYWN0aW9uU25hcHNob3RSZXF1ZXN0EgwKBHVl",
-            "dHIYASABKAkSEQoJd2FsbGV0X2lkGAIgASgJEg8KB2FwaV9rZXkYAyABKAki",
-            "TwoeR2V0VHJhbnNhY3Rpb25TbmFwc2hvdFJlc3BvbnNlEi0KCHNuYXBzaG90",
-            "GAEgASgLMhsuY29tbW9uLlRyYW5zYWN0aW9uU25hcHNob3QiUwofTGlzdFRy",
-            "YW5zYWN0aW9uU25hcHNob3RzUmVxdWVzdBIMCgR1ZXRyGAEgASgJEhEKCXdh",
-            "bGxldF9pZBgCIAEoCRIPCgdhcGlfa2V5GAMgASgJIlIKIExpc3RUcmFuc2Fj",
-            "dGlvblNuYXBzaG90c1Jlc3BvbnNlEi4KCXNuYXBzaG90cxgBIAMoCzIbLmNv",
-            "bW1vbi5UcmFuc2FjdGlvblNuYXBzaG90Mv4MCgZXYWxsZXQSSwoIVHJhbnNm",
-            "ZXISHi53YWxsZXRfYXBpLnYxLlRyYW5zZmVyUmVxdWVzdBofLndhbGxldF9h",
-            "cGkudjEuVHJhbnNmZXJSZXNwb25zZRJUCgtDcmVhdGVPd25lchIhLndhbGxl",
-            "dF9hcGkudjEuQ3JlYXRlT3duZXJSZXF1ZXN0GiIud2FsbGV0X2FwaS52MS5D",
-            "cmVhdGVPd25lclJlc3BvbnNlElcKDENyZWF0ZVdhbGxldBIiLndhbGxldF9h",
-            "cGkudjEuQ3JlYXRlV2FsbGV0UmVxdWVzdBojLndhbGxldF9hcGkudjEuQ3Jl",
-            "YXRlV2FsbGV0UmVzcG9uc2USVAoLTGlzdFdhbGxldHMSIS53YWxsZXRfYXBp",
-            "LnYxLkxpc3RXYWxsZXRzUmVxdWVzdBoiLndhbGxldF9hcGkudjEuTGlzdFdh",
-            "bGxldHNSZXNwb25zZRJOCglMaXN0RnVuZHMSHy53YWxsZXRfYXBpLnYxLkxp",
-            "c3RGdW5kc1JlcXVlc3QaIC53YWxsZXRfYXBpLnYxLkxpc3RGdW5kc1Jlc3Bv",
-            "bnNlEmkKEkxpc3RXYWxsZXRCYWxhbmNlcxIoLndhbGxldF9hcGkudjEuTGlz",
-            "dFdhbGxldEJhbGFuY2VzUmVxdWVzdBopLndhbGxldF9hcGkudjEuTGlzdFdh",
-            "bGxldEJhbGFuY2VzUmVzcG9uc2USRQoGUmVkZWVtEhwud2FsbGV0X2FwaS52",
-            "MS5SZWRlZW1SZXF1ZXN0Gh0ud2FsbGV0X2FwaS52MS5SZWRlZW1SZXNwb25z",
-            "ZRJgCg9MaXN0Q3JlZGVudGlhbHMSJS53YWxsZXRfYXBpLnYxLkxpc3RDcmVk",
-            "ZW50aWFsc1JlcXVlc3QaJi53YWxsZXRfYXBpLnYxLkxpc3RDcmVkZW50aWFs",
-            "c1Jlc3BvbnNlEloKDUFkZENyZWRlbnRpYWwSIy53YWxsZXRfYXBpLnYxLkFk",
-            "ZENyZWRlbnRpYWxSZXF1ZXN0GiQud2FsbGV0X2FwaS52MS5BZGRDcmVkZW50",
-            "aWFsUmVzcG9uc2USYAoPQXNzb2NpYXRlV2FsbGV0EiUud2FsbGV0X2FwaS52",
-            "MS5Bc3NvY2lhdGVXYWxsZXRSZXF1ZXN0GiYud2FsbGV0X2FwaS52MS5Bc3Nv",
-            "Y2lhdGVXYWxsZXRSZXNwb25zZRJsChNSZXF1ZXN0UHJlc2VudGF0aW9uEiku",
-            "d2FsbGV0X2FwaS52MS5SZXF1ZXN0UHJlc2VudGF0aW9uUmVxdWVzdBoqLndh",
-            "bGxldF9hcGkudjEuUmVxdWVzdFByZXNlbnRhdGlvblJlc3BvbnNlEm8KFFBy",
-            "ZXBhcmVTaW1wbGVQYXltZW50Eioud2FsbGV0X2FwaS52MS5QcmVwYXJlU2lt",
-            "cGxlUGF5bWVudFJlcXVlc3QaKy53YWxsZXRfYXBpLnYxLlByZXBhcmVTaW1w",
-            "bGVQYXltZW50UmVzcG9uc2USaQoSUHJlcGFyZUZ1bmRzQ2hhbmdlEigud2Fs",
-            "bGV0X2FwaS52MS5QcmVwYXJlRnVuZHNDaGFuZ2VSZXF1ZXN0Gikud2FsbGV0",
-            "X2FwaS52MS5QcmVwYXJlRnVuZHNDaGFuZ2VSZXNwb25zZRJdCg5HZXRUcmFu",
-            "c2FjdGlvbhIkLndhbGxldF9hcGkudjEuR2V0VHJhbnNhY3Rpb25SZXF1ZXN0",
-            "GiUud2FsbGV0X2FwaS52MS5HZXRUcmFuc2FjdGlvblJlc3BvbnNlEmMKEExp",
-            "c3RUcmFuc2FjdGlvbnMSJi53YWxsZXRfYXBpLnYxLkxpc3RUcmFuc2FjdGlv",
-            "bnNSZXF1ZXN0Gicud2FsbGV0X2FwaS52MS5MaXN0VHJhbnNhY3Rpb25zUmVz",
-            "cG9uc2USdQoWR2V0VHJhbnNhY3Rpb25TbmFwc2hvdBIsLndhbGxldF9hcGku",
-            "djEuR2V0VHJhbnNhY3Rpb25TbmFwc2hvdFJlcXVlc3QaLS53YWxsZXRfYXBp",
-            "LnYxLkdldFRyYW5zYWN0aW9uU25hcHNob3RSZXNwb25zZRJ7ChhMaXN0VHJh",
-            "bnNhY3Rpb25TbmFwc2hvdHMSLi53YWxsZXRfYXBpLnYxLkxpc3RUcmFuc2Fj",
-            "dGlvblNuYXBzaG90c1JlcXVlc3QaLy53YWxsZXRfYXBpLnYxLkxpc3RUcmFu",
-            "c2FjdGlvblNuYXBzaG90c1Jlc3BvbnNlQjlaN2dpdGh1Yi5jb20va25veC1u",
-            "ZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3dhbGxldF9hcGkvdjFiBnByb3Rv",
-            "Mw=="));
+            "CSJDCg1XYWxsZXRCYWxhbmNlEh4KBmFtb3VudBgBIAEoCzIOLmNvbW1vbi5B",
+            "bW91bnQSEgoKZmlsZV9jb3VudBgCIAEoAyJMChpMaXN0V2FsbGV0QmFsYW5j",
+            "ZXNSZXNwb25zZRIuCghiYWxhbmNlcxgBIAMoCzIcLndhbGxldF9hcGkudjEu",
+            "V2FsbGV0QmFsYW5jZSJXChBMaXN0RnVuZHNSZXF1ZXN0EgwKBHBhZ2UYASAB",
+            "KAUSEQoJcGFnZV9zaXplGAIgASgFEhEKCXdhbGxldF9pZBgDIAEoCRIPCgdh",
+            "cGlfa2V5GAQgASgJIqwDChFMaXN0RnVuZHNSZXNwb25zZRI0CgVmdW5kcxgB",
+            "IAMoCzIlLndhbGxldF9hcGkudjEuTGlzdEZ1bmRzUmVzcG9uc2UuRnVuZBIZ",
+            "ChF0b3RhbF9vd25lZF9mdW5kcxgCIAEoDRrpAQoKUHJvbWlzc29yeRIPCgd2",
+            "ZXJzaW9uGAEgASgJEgoKAmlkGAMgASgJEhAKCGN1cnJlbmN5GAQgASgJEg4K",
+            "BmFtb3VudBgFIAEoAxIQCghkZWNpbWFscxgGIAEoDRIRCglhdXRob3JpdHkY",
+            "ByABKAkSDgoGaXNzdWVyGAggASgJEhUKDWlzc3VhbmNlX2RhdGUYCSABKAkS",
+            "EwoLYmxvY2tfZGVwdGgYCiABKA0SHwoXYXV0aG9yaXphdGlvbl9zaWduYXR1",
+            "cmUYCyABKAwSGgoSdHJhbnNmZXJfc2lnbmF0dXJlGAwgASgMGloKBEZ1bmQS",
+            "EQoJd2FsbGV0X2lkGAEgASgJEj8KCnByb21pc3NvcnkYAiABKAsyKy53YWxs",
+            "ZXRfYXBpLnYxLkxpc3RGdW5kc1Jlc3BvbnNlLlByb21pc3NvcnkiagoNUmVk",
+            "ZWVtUmVxdWVzdBIWCg5mcm9tX3dhbGxldF9pZBgBIAEoCRIZChFpc3N1ZXJf",
+            "cHVibGljX2tleRgCIAEoCRIVCg1wcm9taXNzb3J5X2lkGAMgASgJEg8KB2Fw",
+            "aV9rZXkYBCABKAkiMwoOUmVkZWVtUmVzcG9uc2USIQoJbmV3X2xpbWl0GAEg",
+            "ASgLMg4uY29tbW9uLkFtb3VudCJdChZMaXN0Q3JlZGVudGlhbHNSZXF1ZXN0",
+            "EgwKBHBhZ2UYASABKAUSEQoJcGFnZV9zaXplGAIgASgFEhEKCXdhbGxldF9p",
+            "ZBgDIAEoCRIPCgdhcGlfa2V5GAQgASgJIk8KF0xpc3RDcmVkZW50aWFsc1Jl",
+            "c3BvbnNlEhMKC2NyZWRlbnRpYWxzGAEgAygJEh8KF3RvdGFsX293bmVkX2Ny",
+            "ZWRlbnRpYWxzGAIgASgNIlMKFEFkZENyZWRlbnRpYWxSZXF1ZXN0EhcKD2Ny",
+            "ZWRlbnRpYWxfdHlwZRgBIAEoCRIRCgl3YWxsZXRfaWQYAiABKAkSDwoHYXBp",
+            "X2tleRgDIAEoCSIrChVBZGRDcmVkZW50aWFsUmVzcG9uc2USEgoKY3JlZGVu",
+            "dGlhbBgBIAEoCSI8ChZBc3NvY2lhdGVXYWxsZXRSZXF1ZXN0EhEKCXdhbGxl",
+            "dF9pZBgBIAEoCRIPCgdhcGlfa2V5GAIgASgJIk0KF0Fzc29jaWF0ZVdhbGxl",
+            "dFJlc3BvbnNlEhEKCXdhbGxldF9pZBgBIAEoCRILCgNkaWQYAiABKAkSEgoK",
+            "cHVibGljX2tleRgDIAEoCSJWCh9DcmVhdGVBbmRBc3NvY2lhdGVXYWxsZXRS",
+            "ZXF1ZXN0EhMKC3dhbGxldF9uYW1lGAEgASgJEg8KB2FwaV9rZXkYAiABKAkS",
+            "DQoFdG9rZW4YAyABKAkiawogQ3JlYXRlQW5kQXNzb2NpYXRlV2FsbGV0UmVz",
+            "cG9uc2USEQoJd2FsbGV0X2lkGAEgASgJEhMKC3dhbGxldF9uYW1lGAIgASgJ",
+            "EhIKCnB1YmxpY19rZXkYAyABKAkSCwoDZGlkGAQgASgJIlMKGlJlcXVlc3RQ",
+            "cmVzZW50YXRpb25SZXF1ZXN0EgsKA2RpZBgBIAEoCRIXCg9jcmVkZW50aWFs",
+            "X3R5cGUYAiABKAkSDwoHYXBpX2tleRgDIAEoCSIzChtSZXF1ZXN0UHJlc2Vu",
+            "dGF0aW9uUmVzcG9uc2USFAoMcHJlc2VudGF0aW9uGAEgASgJIowBChtQcmVw",
+            "YXJlU2ltcGxlUGF5bWVudFJlcXVlc3QSHgoGYW1vdW50GAEgASgLMg4uY29t",
+            "bW9uLkFtb3VudBIRCglyZWNpcGllbnQYAiABKAkSFgoOdXNlcl9yZWZlcmVu",
+            "Y2UYAyABKAkSEQoJd2FsbGV0X2lkGAQgASgJEg8KB2FwaV9rZXkYBSABKAki",
+            "3QEKHFByZXBhcmVTaW1wbGVQYXltZW50UmVzcG9uc2USQgoGc3RhdHVzGAEg",
+            "ASgOMjIud2FsbGV0X2FwaS52MS5QcmVwYXJlU2ltcGxlUGF5bWVudFJlc3Bv",
+            "bnNlLlN0YXR1cxIMCgR1ZXRyGAIgASgJImsKBlN0YXR1cxIWChJTVEFUVVNf",
+            "VU5TUEVDSUZJRUQQABISCg5TVEFUVVNfU1VDQ0VTUxABEhYKElNUQVRVU19O",
+            "RUVEX0NIQU5HRRACEh0KGVNUQVRVU19JTlNVRkZJQ0lFTlRfRlVORFMQAyJ3",
+            "ChlQcmVwYXJlRnVuZHNDaGFuZ2VSZXF1ZXN0Eh4KBmFtb3VudBgBIAEoCzIO",
+            "LmNvbW1vbi5BbW91bnQSFgoOdXNlcl9yZWZlcmVuY2UYBCABKAkSEQoJd2Fs",
+            "bGV0X2lkGAIgASgJEg8KB2FwaV9rZXkYAyABKAki4AEKGlByZXBhcmVGdW5k",
+            "c0NoYW5nZVJlc3BvbnNlEkAKBnN0YXR1cxgBIAEoDjIwLndhbGxldF9hcGku",
+            "djEuUHJlcGFyZUZ1bmRzQ2hhbmdlUmVzcG9uc2UuU3RhdHVzEgwKBHVldHIY",
+            "AiABKAkicgoGU3RhdHVzEhYKElNUQVRVU19VTlNQRUNJRklFRBAAEhIKDlNU",
+            "QVRVU19TVUNDRVNTEAESHQoZU1RBVFVTX0lOU1VGRklDSUVOVF9GVU5EUxAC",
+            "Eh0KGVNUQVRVU19GVU5EU19QUkVTRU5UX05PT1AQAyJJChVHZXRUcmFuc2Fj",
+            "dGlvblJlcXVlc3QSDAoEdWV0chgBIAEoCRIRCgl3YWxsZXRfaWQYAiABKAkS",
+            "DwoHYXBpX2tleRgDIAEoCSJCChZHZXRUcmFuc2FjdGlvblJlc3BvbnNlEigK",
+            "C3RyYW5zYWN0aW9uGAEgASgLMhMuY29tbW9uLlRyYW5zYWN0aW9uIjYKF0xp",
+            "c3RUcmFuc2FjdGlvbnNSZXF1ZXN0EgoKAmlkGAEgASgJEg8KB2FwaV9rZXkY",
+            "AiABKAkiRQoYTGlzdFRyYW5zYWN0aW9uc1Jlc3BvbnNlEikKDHRyYW5zYWN0",
+            "aW9ucxgBIAMoCzITLmNvbW1vbi5UcmFuc2FjdGlvbiJRCh1HZXRUcmFuc2Fj",
+            "dGlvblNuYXBzaG90UmVxdWVzdBIMCgR1ZXRyGAEgASgJEhEKCXdhbGxldF9p",
+            "ZBgCIAEoCRIPCgdhcGlfa2V5GAMgASgJIk8KHkdldFRyYW5zYWN0aW9uU25h",
+            "cHNob3RSZXNwb25zZRItCghzbmFwc2hvdBgBIAEoCzIbLmNvbW1vbi5UcmFu",
+            "c2FjdGlvblNuYXBzaG90IlMKH0xpc3RUcmFuc2FjdGlvblNuYXBzaG90c1Jl",
+            "cXVlc3QSDAoEdWV0chgBIAEoCRIRCgl3YWxsZXRfaWQYAiABKAkSDwoHYXBp",
+            "X2tleRgDIAEoCSJSCiBMaXN0VHJhbnNhY3Rpb25TbmFwc2hvdHNSZXNwb25z",
+            "ZRIuCglzbmFwc2hvdHMYASADKAsyGy5jb21tb24uVHJhbnNhY3Rpb25TbmFw",
+            "c2hvdDL+DAoGV2FsbGV0EksKCFRyYW5zZmVyEh4ud2FsbGV0X2FwaS52MS5U",
+            "cmFuc2ZlclJlcXVlc3QaHy53YWxsZXRfYXBpLnYxLlRyYW5zZmVyUmVzcG9u",
+            "c2USVAoLQ3JlYXRlT3duZXISIS53YWxsZXRfYXBpLnYxLkNyZWF0ZU93bmVy",
+            "UmVxdWVzdBoiLndhbGxldF9hcGkudjEuQ3JlYXRlT3duZXJSZXNwb25zZRJX",
+            "CgxDcmVhdGVXYWxsZXQSIi53YWxsZXRfYXBpLnYxLkNyZWF0ZVdhbGxldFJl",
+            "cXVlc3QaIy53YWxsZXRfYXBpLnYxLkNyZWF0ZVdhbGxldFJlc3BvbnNlElQK",
+            "C0xpc3RXYWxsZXRzEiEud2FsbGV0X2FwaS52MS5MaXN0V2FsbGV0c1JlcXVl",
+            "c3QaIi53YWxsZXRfYXBpLnYxLkxpc3RXYWxsZXRzUmVzcG9uc2USTgoJTGlz",
+            "dEZ1bmRzEh8ud2FsbGV0X2FwaS52MS5MaXN0RnVuZHNSZXF1ZXN0GiAud2Fs",
+            "bGV0X2FwaS52MS5MaXN0RnVuZHNSZXNwb25zZRJpChJMaXN0V2FsbGV0QmFs",
+            "YW5jZXMSKC53YWxsZXRfYXBpLnYxLkxpc3RXYWxsZXRCYWxhbmNlc1JlcXVl",
+            "c3QaKS53YWxsZXRfYXBpLnYxLkxpc3RXYWxsZXRCYWxhbmNlc1Jlc3BvbnNl",
+            "EkUKBlJlZGVlbRIcLndhbGxldF9hcGkudjEuUmVkZWVtUmVxdWVzdBodLndh",
+            "bGxldF9hcGkudjEuUmVkZWVtUmVzcG9uc2USYAoPTGlzdENyZWRlbnRpYWxz",
+            "EiUud2FsbGV0X2FwaS52MS5MaXN0Q3JlZGVudGlhbHNSZXF1ZXN0GiYud2Fs",
+            "bGV0X2FwaS52MS5MaXN0Q3JlZGVudGlhbHNSZXNwb25zZRJaCg1BZGRDcmVk",
+            "ZW50aWFsEiMud2FsbGV0X2FwaS52MS5BZGRDcmVkZW50aWFsUmVxdWVzdBok",
+            "LndhbGxldF9hcGkudjEuQWRkQ3JlZGVudGlhbFJlc3BvbnNlEmAKD0Fzc29j",
+            "aWF0ZVdhbGxldBIlLndhbGxldF9hcGkudjEuQXNzb2NpYXRlV2FsbGV0UmVx",
+            "dWVzdBomLndhbGxldF9hcGkudjEuQXNzb2NpYXRlV2FsbGV0UmVzcG9uc2US",
+            "bAoTUmVxdWVzdFByZXNlbnRhdGlvbhIpLndhbGxldF9hcGkudjEuUmVxdWVz",
+            "dFByZXNlbnRhdGlvblJlcXVlc3QaKi53YWxsZXRfYXBpLnYxLlJlcXVlc3RQ",
+            "cmVzZW50YXRpb25SZXNwb25zZRJvChRQcmVwYXJlU2ltcGxlUGF5bWVudBIq",
+            "LndhbGxldF9hcGkudjEuUHJlcGFyZVNpbXBsZVBheW1lbnRSZXF1ZXN0Gisu",
+            "d2FsbGV0X2FwaS52MS5QcmVwYXJlU2ltcGxlUGF5bWVudFJlc3BvbnNlEmkK",
+            "ElByZXBhcmVGdW5kc0NoYW5nZRIoLndhbGxldF9hcGkudjEuUHJlcGFyZUZ1",
+            "bmRzQ2hhbmdlUmVxdWVzdBopLndhbGxldF9hcGkudjEuUHJlcGFyZUZ1bmRz",
+            "Q2hhbmdlUmVzcG9uc2USXQoOR2V0VHJhbnNhY3Rpb24SJC53YWxsZXRfYXBp",
+            "LnYxLkdldFRyYW5zYWN0aW9uUmVxdWVzdBolLndhbGxldF9hcGkudjEuR2V0",
+            "VHJhbnNhY3Rpb25SZXNwb25zZRJjChBMaXN0VHJhbnNhY3Rpb25zEiYud2Fs",
+            "bGV0X2FwaS52MS5MaXN0VHJhbnNhY3Rpb25zUmVxdWVzdBonLndhbGxldF9h",
+            "cGkudjEuTGlzdFRyYW5zYWN0aW9uc1Jlc3BvbnNlEnUKFkdldFRyYW5zYWN0",
+            "aW9uU25hcHNob3QSLC53YWxsZXRfYXBpLnYxLkdldFRyYW5zYWN0aW9uU25h",
+            "cHNob3RSZXF1ZXN0Gi0ud2FsbGV0X2FwaS52MS5HZXRUcmFuc2FjdGlvblNu",
+            "YXBzaG90UmVzcG9uc2USewoYTGlzdFRyYW5zYWN0aW9uU25hcHNob3RzEi4u",
+            "d2FsbGV0X2FwaS52MS5MaXN0VHJhbnNhY3Rpb25TbmFwc2hvdHNSZXF1ZXN0",
+            "Gi8ud2FsbGV0X2FwaS52MS5MaXN0VHJhbnNhY3Rpb25TbmFwc2hvdHNSZXNw",
+            "b25zZUI5WjdnaXRodWIuY29tL2tub3gtbmV0d29ya3MvZ3JwYy1zZGtzL3Nk",
+            "ay9nby93YWxsZXRfYXBpL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -156,9 +158,10 @@ namespace WalletApi.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletsRequest), global::WalletApi.V1.ListWalletsRequest.Parser, new[]{ "Page", "PageSize", "ApiKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletsResponse), global::WalletApi.V1.ListWalletsResponse.Parser, new[]{ "Wallets", "TotalOwnedWallets" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletsResponse.Types.Wallet), global::WalletApi.V1.ListWalletsResponse.Types.Wallet.Parser, new[]{ "WalletName", "WalletId", "PublicKey", "Did" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletBalancesRequest), global::WalletApi.V1.ListWalletBalancesRequest.Parser, new[]{ "WalletId", "ApiKey" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletBalancesResponse), global::WalletApi.V1.ListWalletBalancesResponse.Parser, new[]{ "Balance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.WalletBalance), global::WalletApi.V1.WalletBalance.Parser, new[]{ "Amount", "FileCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListWalletBalancesResponse), global::WalletApi.V1.ListWalletBalancesResponse.Parser, new[]{ "Balances" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsRequest), global::WalletApi.V1.ListFundsRequest.Parser, new[]{ "Page", "PageSize", "WalletId", "ApiKey" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsResponse), global::WalletApi.V1.ListFundsResponse.Parser, new[]{ "Funds", "TotalOwnedFunds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsResponse.Types.Promissory), global::WalletApi.V1.ListFundsResponse.Types.Promissory.Parser, new[]{ "Version", "Id", "Currency", "Amount", "Decimals", "Authority", "Issuer", "IssuanceDate", "BlockDepth", "AuthorizedSignature" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsResponse), global::WalletApi.V1.ListFundsResponse.Parser, new[]{ "Funds", "TotalOwnedFunds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsResponse.Types.Promissory), global::WalletApi.V1.ListFundsResponse.Types.Promissory.Parser, new[]{ "Version", "Id", "Currency", "Amount", "Decimals", "Authority", "Issuer", "IssuanceDate", "BlockDepth", "AuthorizationSignature", "TransferSignature" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.ListFundsResponse.Types.Fund), global::WalletApi.V1.ListFundsResponse.Types.Fund.Parser, new[]{ "WalletId", "Promissory" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.RedeemRequest), global::WalletApi.V1.RedeemRequest.Parser, new[]{ "FromWalletId", "IssuerPublicKey", "PromissoryId", "ApiKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WalletApi.V1.RedeemResponse), global::WalletApi.V1.RedeemResponse.Parser, new[]{ "NewLimit" }, null, null, null, null),
@@ -2710,6 +2713,247 @@ namespace WalletApi.V1 {
 
   }
 
+  public sealed partial class WalletBalance : pb::IMessage<WalletBalance>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WalletBalance> _parser = new pb::MessageParser<WalletBalance>(() => new WalletBalance());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WalletBalance> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WalletBalance() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WalletBalance(WalletBalance other) : this() {
+      amount_ = other.amount_ != null ? other.amount_.Clone() : null;
+      fileCount_ = other.fileCount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WalletBalance Clone() {
+      return new WalletBalance(this);
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 1;
+    private global::Common.Amount amount_;
+    /// <summary>
+    /// Sum of a particular currency available in the wallet.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.Amount Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "file_count" field.</summary>
+    public const int FileCountFieldNumber = 2;
+    private long fileCount_;
+    /// <summary>
+    /// Total count of a particular banknote
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long FileCount {
+      get { return fileCount_; }
+      set {
+        fileCount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WalletBalance);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WalletBalance other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Amount, other.Amount)) return false;
+      if (FileCount != other.FileCount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (amount_ != null) hash ^= Amount.GetHashCode();
+      if (FileCount != 0L) hash ^= FileCount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (amount_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Amount);
+      }
+      if (FileCount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(FileCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (amount_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Amount);
+      }
+      if (FileCount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(FileCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (amount_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Amount);
+      }
+      if (FileCount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(FileCount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WalletBalance other) {
+      if (other == null) {
+        return;
+      }
+      if (other.amount_ != null) {
+        if (amount_ == null) {
+          Amount = new global::Common.Amount();
+        }
+        Amount.MergeFrom(other.Amount);
+      }
+      if (other.FileCount != 0L) {
+        FileCount = other.FileCount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (amount_ == null) {
+              Amount = new global::Common.Amount();
+            }
+            input.ReadMessage(Amount);
+            break;
+          }
+          case 16: {
+            FileCount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (amount_ == null) {
+              Amount = new global::Common.Amount();
+            }
+            input.ReadMessage(Amount);
+            break;
+          }
+          case 16: {
+            FileCount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class ListWalletBalancesResponse : pb::IMessage<ListWalletBalancesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2724,7 +2968,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[9]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2744,7 +2988,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListWalletBalancesResponse(ListWalletBalancesResponse other) : this() {
-      balance_ = other.balance_.Clone();
+      balances_ = other.balances_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2754,18 +2998,15 @@ namespace WalletApi.V1 {
       return new ListWalletBalancesResponse(this);
     }
 
-    /// <summary>Field number for the "balance" field.</summary>
-    public const int BalanceFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Common.Amount> _repeated_balance_codec
-        = pb::FieldCodec.ForMessage(10, global::Common.Amount.Parser);
-    private readonly pbc::RepeatedField<global::Common.Amount> balance_ = new pbc::RepeatedField<global::Common.Amount>();
-    /// <summary>
-    /// List of amounts for the currencies available in the wallet.
-    /// </summary>
+    /// <summary>Field number for the "balances" field.</summary>
+    public const int BalancesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::WalletApi.V1.WalletBalance> _repeated_balances_codec
+        = pb::FieldCodec.ForMessage(10, global::WalletApi.V1.WalletBalance.Parser);
+    private readonly pbc::RepeatedField<global::WalletApi.V1.WalletBalance> balances_ = new pbc::RepeatedField<global::WalletApi.V1.WalletBalance>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Common.Amount> Balance {
-      get { return balance_; }
+    public pbc::RepeatedField<global::WalletApi.V1.WalletBalance> Balances {
+      get { return balances_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2783,7 +3024,7 @@ namespace WalletApi.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!balance_.Equals(other.balance_)) return false;
+      if(!balances_.Equals(other.balances_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2791,7 +3032,7 @@ namespace WalletApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= balance_.GetHashCode();
+      hash ^= balances_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2810,7 +3051,7 @@ namespace WalletApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      balance_.WriteTo(output, _repeated_balance_codec);
+      balances_.WriteTo(output, _repeated_balances_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2821,7 +3062,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      balance_.WriteTo(ref output, _repeated_balance_codec);
+      balances_.WriteTo(ref output, _repeated_balances_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2832,7 +3073,7 @@ namespace WalletApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += balance_.CalculateSize(_repeated_balance_codec);
+      size += balances_.CalculateSize(_repeated_balances_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2845,7 +3086,7 @@ namespace WalletApi.V1 {
       if (other == null) {
         return;
       }
-      balance_.Add(other.balance_);
+      balances_.Add(other.balances_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2862,7 +3103,7 @@ namespace WalletApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            balance_.AddEntriesFrom(input, _repeated_balance_codec);
+            balances_.AddEntriesFrom(input, _repeated_balances_codec);
             break;
           }
         }
@@ -2881,7 +3122,7 @@ namespace WalletApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            balance_.AddEntriesFrom(ref input, _repeated_balance_codec);
+            balances_.AddEntriesFrom(ref input, _repeated_balances_codec);
             break;
           }
         }
@@ -2905,7 +3146,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[10]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3217,7 +3458,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[11]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3470,7 +3711,8 @@ namespace WalletApi.V1 {
           issuer_ = other.issuer_;
           issuanceDate_ = other.issuanceDate_;
           blockDepth_ = other.blockDepth_;
-          authorizedSignature_ = other.authorizedSignature_;
+          authorizationSignature_ = other.authorizationSignature_;
+          transferSignature_ = other.transferSignature_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -3544,7 +3786,7 @@ namespace WalletApi.V1 {
         public const int DecimalsFieldNumber = 6;
         private uint decimals_;
         /// <summary>
-        /// Decimal precision. 
+        /// Decimal precision.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3615,18 +3857,33 @@ namespace WalletApi.V1 {
           }
         }
 
-        /// <summary>Field number for the "authorized_signature" field.</summary>
-        public const int AuthorizedSignatureFieldNumber = 11;
-        private pb::ByteString authorizedSignature_ = pb::ByteString.Empty;
+        /// <summary>Field number for the "authorization_signature" field.</summary>
+        public const int AuthorizationSignatureFieldNumber = 11;
+        private pb::ByteString authorizationSignature_ = pb::ByteString.Empty;
         /// <summary>
         /// Signature of the latest block hash from the Authority.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pb::ByteString AuthorizedSignature {
-          get { return authorizedSignature_; }
+        public pb::ByteString AuthorizationSignature {
+          get { return authorizationSignature_; }
           set {
-            authorizedSignature_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            authorizationSignature_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "transfer_signature" field.</summary>
+        public const int TransferSignatureFieldNumber = 12;
+        private pb::ByteString transferSignature_ = pb::ByteString.Empty;
+        /// <summary>
+        /// Signature of the previous owner.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pb::ByteString TransferSignature {
+          get { return transferSignature_; }
+          set {
+            transferSignature_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
@@ -3654,7 +3911,8 @@ namespace WalletApi.V1 {
           if (Issuer != other.Issuer) return false;
           if (IssuanceDate != other.IssuanceDate) return false;
           if (BlockDepth != other.BlockDepth) return false;
-          if (AuthorizedSignature != other.AuthorizedSignature) return false;
+          if (AuthorizationSignature != other.AuthorizationSignature) return false;
+          if (TransferSignature != other.TransferSignature) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -3671,7 +3929,8 @@ namespace WalletApi.V1 {
           if (Issuer.Length != 0) hash ^= Issuer.GetHashCode();
           if (IssuanceDate.Length != 0) hash ^= IssuanceDate.GetHashCode();
           if (BlockDepth != 0) hash ^= BlockDepth.GetHashCode();
-          if (AuthorizedSignature.Length != 0) hash ^= AuthorizedSignature.GetHashCode();
+          if (AuthorizationSignature.Length != 0) hash ^= AuthorizationSignature.GetHashCode();
+          if (TransferSignature.Length != 0) hash ^= TransferSignature.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -3726,9 +3985,13 @@ namespace WalletApi.V1 {
             output.WriteRawTag(80);
             output.WriteUInt32(BlockDepth);
           }
-          if (AuthorizedSignature.Length != 0) {
+          if (AuthorizationSignature.Length != 0) {
             output.WriteRawTag(90);
-            output.WriteBytes(AuthorizedSignature);
+            output.WriteBytes(AuthorizationSignature);
+          }
+          if (TransferSignature.Length != 0) {
+            output.WriteRawTag(98);
+            output.WriteBytes(TransferSignature);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -3776,9 +4039,13 @@ namespace WalletApi.V1 {
             output.WriteRawTag(80);
             output.WriteUInt32(BlockDepth);
           }
-          if (AuthorizedSignature.Length != 0) {
+          if (AuthorizationSignature.Length != 0) {
             output.WriteRawTag(90);
-            output.WriteBytes(AuthorizedSignature);
+            output.WriteBytes(AuthorizationSignature);
+          }
+          if (TransferSignature.Length != 0) {
+            output.WriteRawTag(98);
+            output.WriteBytes(TransferSignature);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -3817,8 +4084,11 @@ namespace WalletApi.V1 {
           if (BlockDepth != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlockDepth);
           }
-          if (AuthorizedSignature.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeBytesSize(AuthorizedSignature);
+          if (AuthorizationSignature.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeBytesSize(AuthorizationSignature);
+          }
+          if (TransferSignature.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeBytesSize(TransferSignature);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -3859,8 +4129,11 @@ namespace WalletApi.V1 {
           if (other.BlockDepth != 0) {
             BlockDepth = other.BlockDepth;
           }
-          if (other.AuthorizedSignature.Length != 0) {
-            AuthorizedSignature = other.AuthorizedSignature;
+          if (other.AuthorizationSignature.Length != 0) {
+            AuthorizationSignature = other.AuthorizationSignature;
+          }
+          if (other.TransferSignature.Length != 0) {
+            TransferSignature = other.TransferSignature;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -3914,7 +4187,11 @@ namespace WalletApi.V1 {
                 break;
               }
               case 90: {
-                AuthorizedSignature = input.ReadBytes();
+                AuthorizationSignature = input.ReadBytes();
+                break;
+              }
+              case 98: {
+                TransferSignature = input.ReadBytes();
                 break;
               }
             }
@@ -3969,7 +4246,11 @@ namespace WalletApi.V1 {
                 break;
               }
               case 90: {
-                AuthorizedSignature = input.ReadBytes();
+                AuthorizationSignature = input.ReadBytes();
+                break;
+              }
+              case 98: {
+                TransferSignature = input.ReadBytes();
                 break;
               }
             }
@@ -4028,7 +4309,7 @@ namespace WalletApi.V1 {
         public const int WalletIdFieldNumber = 1;
         private string walletId_ = "";
         /// <summary>
-        /// UUID of the wallet. 
+        /// UUID of the wallet.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4239,7 +4520,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[12]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4551,7 +4832,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[13]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4585,7 +4866,7 @@ namespace WalletApi.V1 {
     public const int NewLimitFieldNumber = 1;
     private global::Common.Amount newLimit_;
     /// <summary>
-    ///Amount representation of the updated issuance limit.
+    /// Amount representation of the updated issuance limit.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4752,7 +5033,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[14]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5064,7 +5345,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[15]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5285,7 +5566,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[16]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5557,7 +5838,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[17]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5749,7 +6030,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[18]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5981,7 +6262,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[19]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6253,7 +6534,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[20]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6525,7 +6806,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[21]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6837,7 +7118,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[22]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6888,7 +7169,7 @@ namespace WalletApi.V1 {
     public const int CredentialTypeFieldNumber = 2;
     private string credentialType_ = "";
     /// <summary>
-    /// Type of Verifiable Credential- Ex "BankAccount", "PermanentResidentCard". 
+    /// Type of Verifiable Credential - Ex "BankAccount", "PermanentResidentCard".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7109,7 +7390,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[23]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7301,7 +7582,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[24]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7662,7 +7943,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[25]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7909,7 +8190,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[26]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7961,7 +8242,7 @@ namespace WalletApi.V1 {
     public const int UserReferenceFieldNumber = 4;
     private string userReference_ = "";
     /// <summary>
-    /// A Unique End-to-end Transaction Reference, string of 36 unique characters. 
+    /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8230,7 +8511,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[27]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8477,7 +8758,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[28]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8749,7 +9030,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[29]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8950,7 +9231,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[30]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9182,7 +9463,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[31]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9363,7 +9644,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[32]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9635,7 +9916,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[33]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9836,7 +10117,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[34]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10108,7 +10389,7 @@ namespace WalletApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[35]; }
+      get { return global::WalletApi.V1.WalletReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

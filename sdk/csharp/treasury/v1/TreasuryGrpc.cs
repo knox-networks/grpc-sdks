@@ -9,7 +9,10 @@ using grpc = global::Grpc.Core;
 
 namespace Treasury {
   /// <summary>
-  /// The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+  /// The Treasury application implements value added functions that may be offered by the financial institution. APIs
+  /// defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency
+  /// supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the
+  /// APIs can be found under the Transaction Service.
   /// </summary>
   public static partial class Treasury
   {

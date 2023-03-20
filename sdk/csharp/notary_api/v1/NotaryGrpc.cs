@@ -12,51 +12,6 @@ namespace Notary {
   {
     static readonly string __ServiceName = "notary.Notary";
 
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
-    {
-      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-      if (message is global::Google.Protobuf.IBufferMessage)
-      {
-        context.SetPayloadLength(message.CalculateSize());
-        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
-        context.Complete();
-        return;
-      }
-      #endif
-      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static class __Helper_MessageCache<T>
-    {
-      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
-    {
-      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-      if (__Helper_MessageCache<T>.IsBufferMessage)
-      {
-        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
-      }
-      #endif
-      return parser.ParseFrom(context.PayloadAsNewBuffer());
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Common.AuthorizedSignatureRequest> __Marshaller_common_AuthorizedSignatureRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Common.AuthorizedSignatureRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Common.AuthorizedSignatureResponse> __Marshaller_common_AuthorizedSignatureResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Common.AuthorizedSignatureResponse.Parser));
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Common.AuthorizedSignatureRequest, global::Common.AuthorizedSignatureResponse> __Method_Authorize = new grpc::Method<global::Common.AuthorizedSignatureRequest, global::Common.AuthorizedSignatureResponse>(
-        grpc::MethodType.DuplexStreaming,
-        __ServiceName,
-        "Authorize",
-        __Marshaller_common_AuthorizedSignatureRequest,
-        __Marshaller_common_AuthorizedSignatureResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -68,12 +23,6 @@ namespace Notary {
     [grpc::BindServiceMethod(typeof(Notary), "BindService")]
     public abstract partial class NotaryBase
     {
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task Authorize(grpc::IAsyncStreamReader<global::Common.AuthorizedSignatureRequest> requestStream, grpc::IServerStreamWriter<global::Common.AuthorizedSignatureResponse> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
     }
 
     /// <summary>Client for Notary</summary>
@@ -103,16 +52,6 @@ namespace Notary {
       {
       }
 
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::Common.AuthorizedSignatureRequest, global::Common.AuthorizedSignatureResponse> Authorize(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return Authorize(new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::Common.AuthorizedSignatureRequest, global::Common.AuthorizedSignatureResponse> Authorize(grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncDuplexStreamingCall(__Method_Authorize, null, options);
-      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override NotaryClient NewInstance(ClientBaseConfiguration configuration)
@@ -126,8 +65,7 @@ namespace Notary {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static grpc::ServerServiceDefinition BindService(NotaryBase serviceImpl)
     {
-      return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Authorize, serviceImpl.Authorize).Build();
+      return grpc::ServerServiceDefinition.CreateBuilder().Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -137,7 +75,6 @@ namespace Notary {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, NotaryBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_Authorize, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Common.AuthorizedSignatureRequest, global::Common.AuthorizedSignatureResponse>(serviceImpl.Authorize));
     }
 
   }

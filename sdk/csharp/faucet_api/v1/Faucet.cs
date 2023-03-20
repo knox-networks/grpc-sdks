@@ -25,17 +25,18 @@ namespace FaucetApi.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpmYXVjZXRfYXBpL3YxL2ZhdWNldC5wcm90bxINZmF1Y2V0X2FwaS52MRoW",
-            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byJCCg1GYXVjZXRSZXF1ZXN0Eh4KBmFt",
-            "b3VudBgBIAEoCzIOLmNvbW1vbi5BbW91bnQSEQoJcmVjaXBpZW50GAIgASgJ",
-            "Ii4KDkZhdWNldFJlc3BvbnNlEhwKFG51bV9wcm9taXNzb3J5X2ZpbGVzGAEg",
-            "ASgNMk8KBkZhdWNldBJFCgZGYXVjZXQSHC5mYXVjZXRfYXBpLnYxLkZhdWNl",
-            "dFJlcXVlc3QaHS5mYXVjZXRfYXBpLnYxLkZhdWNldFJlc3BvbnNlQjlaN2dp",
-            "dGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL2ZhdWNl",
-            "dF9hcGkvdjFiBnByb3RvMw=="));
+            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byKEAQoNRmF1Y2V0UmVxdWVzdBIeCgZh",
+            "bW91bnQYASABKAsyDi5jb21tb24uQW1vdW50EhEKCXJlY2lwaWVudBgCIAEo",
+            "CRIvCgxkaXN0cmlidXRpb24YAyABKAsyFC5jb21tb24uRGlzdHJpYnV0aW9u",
+            "SACIAQFCDwoNX2Rpc3RyaWJ1dGlvbiIuCg5GYXVjZXRSZXNwb25zZRIcChRu",
+            "dW1fcHJvbWlzc29yeV9maWxlcxgBIAEoDTJPCgZGYXVjZXQSRQoGRmF1Y2V0",
+            "EhwuZmF1Y2V0X2FwaS52MS5GYXVjZXRSZXF1ZXN0Gh0uZmF1Y2V0X2FwaS52",
+            "MS5GYXVjZXRSZXNwb25zZUI5WjdnaXRodWIuY29tL2tub3gtbmV0d29ya3Mv",
+            "Z3JwYy1zZGtzL3Nkay9nby9mYXVjZXRfYXBpL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::FaucetApi.V1.FaucetRequest), global::FaucetApi.V1.FaucetRequest.Parser, new[]{ "Amount", "Recipient" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::FaucetApi.V1.FaucetRequest), global::FaucetApi.V1.FaucetRequest.Parser, new[]{ "Amount", "Recipient", "Distribution" }, new[]{ "Distribution" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::FaucetApi.V1.FaucetResponse), global::FaucetApi.V1.FaucetResponse.Parser, new[]{ "NumPromissoryFiles" }, null, null, null, null)
           }));
     }
@@ -82,6 +83,7 @@ namespace FaucetApi.V1 {
     public FaucetRequest(FaucetRequest other) : this() {
       amount_ = other.amount_ != null ? other.amount_.Clone() : null;
       recipient_ = other.recipient_;
+      distribution_ = other.distribution_ != null ? other.distribution_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -122,6 +124,21 @@ namespace FaucetApi.V1 {
       }
     }
 
+    /// <summary>Field number for the "distribution" field.</summary>
+    public const int DistributionFieldNumber = 3;
+    private global::Common.Distribution distribution_;
+    /// <summary>
+    /// sum must match corresponding amount.amount
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.Distribution Distribution {
+      get { return distribution_; }
+      set {
+        distribution_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -139,6 +156,7 @@ namespace FaucetApi.V1 {
       }
       if (!object.Equals(Amount, other.Amount)) return false;
       if (Recipient != other.Recipient) return false;
+      if (!object.Equals(Distribution, other.Distribution)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -148,6 +166,7 @@ namespace FaucetApi.V1 {
       int hash = 1;
       if (amount_ != null) hash ^= Amount.GetHashCode();
       if (Recipient.Length != 0) hash ^= Recipient.GetHashCode();
+      if (distribution_ != null) hash ^= Distribution.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,6 +193,10 @@ namespace FaucetApi.V1 {
         output.WriteRawTag(18);
         output.WriteString(Recipient);
       }
+      if (distribution_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Distribution);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -192,6 +215,10 @@ namespace FaucetApi.V1 {
         output.WriteRawTag(18);
         output.WriteString(Recipient);
       }
+      if (distribution_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Distribution);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -207,6 +234,9 @@ namespace FaucetApi.V1 {
       }
       if (Recipient.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Recipient);
+      }
+      if (distribution_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Distribution);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -228,6 +258,12 @@ namespace FaucetApi.V1 {
       }
       if (other.Recipient.Length != 0) {
         Recipient = other.Recipient;
+      }
+      if (other.distribution_ != null) {
+        if (distribution_ == null) {
+          Distribution = new global::Common.Distribution();
+        }
+        Distribution.MergeFrom(other.Distribution);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,6 +291,13 @@ namespace FaucetApi.V1 {
             Recipient = input.ReadString();
             break;
           }
+          case 26: {
+            if (distribution_ == null) {
+              Distribution = new global::Common.Distribution();
+            }
+            input.ReadMessage(Distribution);
+            break;
+          }
         }
       }
     #endif
@@ -279,6 +322,13 @@ namespace FaucetApi.V1 {
           }
           case 18: {
             Recipient = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (distribution_ == null) {
+              Distribution = new global::Common.Distribution();
+            }
+            input.ReadMessage(Distribution);
             break;
           }
         }

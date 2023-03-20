@@ -20,9 +20,13 @@ const _ = grpc.SupportPackageIsVersion7
 type IssuerClient interface {
 	// Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
 	Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error)
-	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+	// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+	// future double spends. The newly authorized promissory files are returned as a stream.
 	Authorize(ctx context.Context, opts ...grpc.CallOption) (Issuer_AuthorizeClient, error)
-	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+	// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+	// along with the verifier of the Authority.
 	Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (Issuer_IssueClient, error)
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
@@ -134,9 +138,13 @@ func (c *issuerClient) SetRole(ctx context.Context, in *SetRoleRequest, opts ...
 type IssuerServer interface {
 	// Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
 	Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error)
-	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+	// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+	// future double spends. The newly authorized promissory files are returned as a stream.
 	Authorize(Issuer_AuthorizeServer) error
-	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+	// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+	// along with the verifier of the Authority.
 	Issue(*IssueRequest, Issuer_IssueServer) error
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)

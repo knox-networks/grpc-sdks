@@ -70,7 +70,7 @@ func NewUserManagementClient(cc grpc.ClientConnInterface) UserManagementClient {
 
 func (c *userManagementClient) AuthnWithPassword(ctx context.Context, in *AuthnWithPasswordRequest, opts ...grpc.CallOption) (*AuthnWithPasswordResponse, error) {
 	out := new(AuthnWithPasswordResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/AuthnWithPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWithPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,7 +79,7 @@ func (c *userManagementClient) AuthnWithPassword(ctx context.Context, in *AuthnW
 
 func (c *userManagementClient) RefreshAccessToken(ctx context.Context, in *RefreshAccessTokenRequest, opts ...grpc.CallOption) (*RefreshAccessTokenResponse, error) {
 	out := new(RefreshAccessTokenResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/RefreshAccessToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RefreshAccessToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (c *userManagementClient) RefreshAccessToken(ctx context.Context, in *Refre
 
 func (c *userManagementClient) AuthnWithProvider(ctx context.Context, in *AuthnWithProviderRequest, opts ...grpc.CallOption) (*AuthnWithProviderResponse, error) {
 	out := new(AuthnWithProviderResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/AuthnWithProvider", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWithProvider", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +97,7 @@ func (c *userManagementClient) AuthnWithProvider(ctx context.Context, in *AuthnW
 
 func (c *userManagementClient) HandleOIDCCallback(ctx context.Context, in *HandleOIDCCallbackRequest, opts ...grpc.CallOption) (*HandleOIDCCallbackResponse, error) {
 	out := new(HandleOIDCCallbackResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/HandleOIDCCallback", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/HandleOIDCCallback", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func (c *userManagementClient) HandleOIDCCallback(ctx context.Context, in *Handl
 
 func (c *userManagementClient) HandleSAMLCallback(ctx context.Context, in *HandleSAMLCallbackRequest, opts ...grpc.CallOption) (*HandleSAMLCallbackResponse, error) {
 	out := new(HandleSAMLCallbackResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/HandleSAMLCallback", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/HandleSAMLCallback", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -115,7 +115,7 @@ func (c *userManagementClient) HandleSAMLCallback(ctx context.Context, in *Handl
 
 func (c *userManagementClient) SAMLSPMetadata(ctx context.Context, in *SAMLSPMetadataRequest, opts ...grpc.CallOption) (*SAMLSPMetadataResponse, error) {
 	out := new(SAMLSPMetadataResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/SAMLSPMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/SAMLSPMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -123,7 +123,7 @@ func (c *userManagementClient) SAMLSPMetadata(ctx context.Context, in *SAMLSPMet
 }
 
 func (c *userManagementClient) CreateAuthnBrowserWithWalletChallenge(ctx context.Context, in *CreateAuthnBrowserWithWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateAuthnBrowserWithWalletChallengeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[0], "/auth_api.v1.UserManagement/CreateAuthnBrowserWithWalletChallenge", opts...)
+	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[0], "/user_api.v1.UserManagement/CreateAuthnBrowserWithWalletChallenge", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -156,7 +156,7 @@ func (x *userManagementCreateAuthnBrowserWithWalletChallengeClient) Recv() (*Cre
 
 func (c *userManagementClient) AuthnBrowserWithWallet(ctx context.Context, in *AuthnBrowserWithWalletRequest, opts ...grpc.CallOption) (*AuthnBrowserWithWalletResponse, error) {
 	out := new(AuthnBrowserWithWalletResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/AuthnBrowserWithWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnBrowserWithWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -165,7 +165,7 @@ func (c *userManagementClient) AuthnBrowserWithWallet(ctx context.Context, in *A
 
 func (c *userManagementClient) CreateAuthnWalletChallenge(ctx context.Context, in *CreateAuthnWalletChallengeRequest, opts ...grpc.CallOption) (*CreateAuthnWalletChallengeResponse, error) {
 	out := new(CreateAuthnWalletChallengeResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/CreateAuthnWalletChallenge", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/CreateAuthnWalletChallenge", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -174,7 +174,7 @@ func (c *userManagementClient) CreateAuthnWalletChallenge(ctx context.Context, i
 
 func (c *userManagementClient) AuthnWallet(ctx context.Context, in *AuthnWalletRequest, opts ...grpc.CallOption) (*AuthnWalletResponse, error) {
 	out := new(AuthnWalletResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/AuthnWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -182,7 +182,7 @@ func (c *userManagementClient) AuthnWallet(ctx context.Context, in *AuthnWalletR
 }
 
 func (c *userManagementClient) CreateRegisterWalletChallenge(ctx context.Context, in *CreateRegisterWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateRegisterWalletChallengeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[1], "/auth_api.v1.UserManagement/CreateRegisterWalletChallenge", opts...)
+	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[1], "/user_api.v1.UserManagement/CreateRegisterWalletChallenge", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -215,7 +215,7 @@ func (x *userManagementCreateRegisterWalletChallengeClient) Recv() (*CreateRegis
 
 func (c *userManagementClient) RegisterWallet(ctx context.Context, in *RegisterWalletRequest, opts ...grpc.CallOption) (*RegisterWalletResponse, error) {
 	out := new(RegisterWalletResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/RegisterWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RegisterWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -224,7 +224,7 @@ func (c *userManagementClient) RegisterWallet(ctx context.Context, in *RegisterW
 
 func (c *userManagementClient) AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error) {
 	out := new(AssociateWalletResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/AssociateWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AssociateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -233,7 +233,7 @@ func (c *userManagementClient) AssociateWallet(ctx context.Context, in *Associat
 
 func (c *userManagementClient) GetAppSettings(ctx context.Context, in *GetAppSettingsRequest, opts ...grpc.CallOption) (*GetAppSettingsResponse, error) {
 	out := new(GetAppSettingsResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/GetAppSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetAppSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -242,7 +242,7 @@ func (c *userManagementClient) GetAppSettings(ctx context.Context, in *GetAppSet
 
 func (c *userManagementClient) RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error) {
 	out := new(RegisterUserResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/RegisterUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RegisterUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -251,7 +251,7 @@ func (c *userManagementClient) RegisterUser(ctx context.Context, in *RegisterUse
 
 func (c *userManagementClient) ConfirmUser(ctx context.Context, in *ConfirmUserRequest, opts ...grpc.CallOption) (*ConfirmUserResponse, error) {
 	out := new(ConfirmUserResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/ConfirmUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/ConfirmUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -260,7 +260,7 @@ func (c *userManagementClient) ConfirmUser(ctx context.Context, in *ConfirmUserR
 
 func (c *userManagementClient) FindByEmail(ctx context.Context, in *FindByEmailRequest, opts ...grpc.CallOption) (*FindByEmailResponse, error) {
 	out := new(FindByEmailResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/FindByEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/FindByEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -269,7 +269,7 @@ func (c *userManagementClient) FindByEmail(ctx context.Context, in *FindByEmailR
 
 func (c *userManagementClient) FindByID(ctx context.Context, in *FindByIDRequest, opts ...grpc.CallOption) (*FindByIDResponse, error) {
 	out := new(FindByIDResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/FindByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/FindByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -278,7 +278,7 @@ func (c *userManagementClient) FindByID(ctx context.Context, in *FindByIDRequest
 
 func (c *userManagementClient) GetMe(ctx context.Context, in *GetMeRequest, opts ...grpc.CallOption) (*GetMeResponse, error) {
 	out := new(GetMeResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/GetMe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetMe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -287,7 +287,7 @@ func (c *userManagementClient) GetMe(ctx context.Context, in *GetMeRequest, opts
 
 func (c *userManagementClient) GetUserByDID(ctx context.Context, in *GetUserByDIDRequest, opts ...grpc.CallOption) (*GetUserByDIDResponse, error) {
 	out := new(GetUserByDIDResponse)
-	err := c.cc.Invoke(ctx, "/auth_api.v1.UserManagement/GetUserByDID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetUserByDID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -428,7 +428,7 @@ func _UserManagement_AuthnWithPassword_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/AuthnWithPassword",
+		FullMethod: "/user_api.v1.UserManagement/AuthnWithPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).AuthnWithPassword(ctx, req.(*AuthnWithPasswordRequest))
@@ -446,7 +446,7 @@ func _UserManagement_RefreshAccessToken_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/RefreshAccessToken",
+		FullMethod: "/user_api.v1.UserManagement/RefreshAccessToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).RefreshAccessToken(ctx, req.(*RefreshAccessTokenRequest))
@@ -464,7 +464,7 @@ func _UserManagement_AuthnWithProvider_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/AuthnWithProvider",
+		FullMethod: "/user_api.v1.UserManagement/AuthnWithProvider",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).AuthnWithProvider(ctx, req.(*AuthnWithProviderRequest))
@@ -482,7 +482,7 @@ func _UserManagement_HandleOIDCCallback_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/HandleOIDCCallback",
+		FullMethod: "/user_api.v1.UserManagement/HandleOIDCCallback",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).HandleOIDCCallback(ctx, req.(*HandleOIDCCallbackRequest))
@@ -500,7 +500,7 @@ func _UserManagement_HandleSAMLCallback_Handler(srv interface{}, ctx context.Con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/HandleSAMLCallback",
+		FullMethod: "/user_api.v1.UserManagement/HandleSAMLCallback",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).HandleSAMLCallback(ctx, req.(*HandleSAMLCallbackRequest))
@@ -518,7 +518,7 @@ func _UserManagement_SAMLSPMetadata_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/SAMLSPMetadata",
+		FullMethod: "/user_api.v1.UserManagement/SAMLSPMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).SAMLSPMetadata(ctx, req.(*SAMLSPMetadataRequest))
@@ -557,7 +557,7 @@ func _UserManagement_AuthnBrowserWithWallet_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/AuthnBrowserWithWallet",
+		FullMethod: "/user_api.v1.UserManagement/AuthnBrowserWithWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).AuthnBrowserWithWallet(ctx, req.(*AuthnBrowserWithWalletRequest))
@@ -575,7 +575,7 @@ func _UserManagement_CreateAuthnWalletChallenge_Handler(srv interface{}, ctx con
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/CreateAuthnWalletChallenge",
+		FullMethod: "/user_api.v1.UserManagement/CreateAuthnWalletChallenge",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).CreateAuthnWalletChallenge(ctx, req.(*CreateAuthnWalletChallengeRequest))
@@ -593,7 +593,7 @@ func _UserManagement_AuthnWallet_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/AuthnWallet",
+		FullMethod: "/user_api.v1.UserManagement/AuthnWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).AuthnWallet(ctx, req.(*AuthnWalletRequest))
@@ -632,7 +632,7 @@ func _UserManagement_RegisterWallet_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/RegisterWallet",
+		FullMethod: "/user_api.v1.UserManagement/RegisterWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).RegisterWallet(ctx, req.(*RegisterWalletRequest))
@@ -650,7 +650,7 @@ func _UserManagement_AssociateWallet_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/AssociateWallet",
+		FullMethod: "/user_api.v1.UserManagement/AssociateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).AssociateWallet(ctx, req.(*AssociateWalletRequest))
@@ -668,7 +668,7 @@ func _UserManagement_GetAppSettings_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/GetAppSettings",
+		FullMethod: "/user_api.v1.UserManagement/GetAppSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).GetAppSettings(ctx, req.(*GetAppSettingsRequest))
@@ -686,7 +686,7 @@ func _UserManagement_RegisterUser_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/RegisterUser",
+		FullMethod: "/user_api.v1.UserManagement/RegisterUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).RegisterUser(ctx, req.(*RegisterUserRequest))
@@ -704,7 +704,7 @@ func _UserManagement_ConfirmUser_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/ConfirmUser",
+		FullMethod: "/user_api.v1.UserManagement/ConfirmUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).ConfirmUser(ctx, req.(*ConfirmUserRequest))
@@ -722,7 +722,7 @@ func _UserManagement_FindByEmail_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/FindByEmail",
+		FullMethod: "/user_api.v1.UserManagement/FindByEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).FindByEmail(ctx, req.(*FindByEmailRequest))
@@ -740,7 +740,7 @@ func _UserManagement_FindByID_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/FindByID",
+		FullMethod: "/user_api.v1.UserManagement/FindByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).FindByID(ctx, req.(*FindByIDRequest))
@@ -758,7 +758,7 @@ func _UserManagement_GetMe_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/GetMe",
+		FullMethod: "/user_api.v1.UserManagement/GetMe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).GetMe(ctx, req.(*GetMeRequest))
@@ -776,7 +776,7 @@ func _UserManagement_GetUserByDID_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/auth_api.v1.UserManagement/GetUserByDID",
+		FullMethod: "/user_api.v1.UserManagement/GetUserByDID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserManagementServer).GetUserByDID(ctx, req.(*GetUserByDIDRequest))
@@ -788,7 +788,7 @@ func _UserManagement_GetUserByDID_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserManagement_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "auth_api.v1.UserManagement",
+	ServiceName: "user_api.v1.UserManagement",
 	HandlerType: (*UserManagementServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

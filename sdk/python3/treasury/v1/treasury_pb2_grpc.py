@@ -3,7 +3,10 @@ import grpc
 from ...treasury.v1 import treasury_pb2 as treasury_dot_v1_dot_treasury__pb2
 
 class TreasuryStub(object):
-    """The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+    """The Treasury application implements value added functions that may be offered by the financial institution. APIs
+    defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency
+    supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the
+    APIs can be found under the Transaction Service.
     """
 
     def __init__(self, channel):
@@ -16,7 +19,10 @@ class TreasuryStub(object):
         self.GetSupply = channel.unary_unary('/treasury.Treasury/GetSupply', request_serializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyRequest.SerializeToString, response_deserializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyResponse.FromString)
 
 class TreasuryServicer(object):
-    """The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+    """The Treasury application implements value added functions that may be offered by the financial institution. APIs
+    defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency
+    supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the
+    APIs can be found under the Transaction Service.
     """
 
     def Remit(self, request_iterator, context):
@@ -39,7 +45,10 @@ def add_TreasuryServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class Treasury(object):
-    """The Treasury application implements value added functions that may be offered by the financial institution. APIs defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the APIs can be found under the Transaction Service.
+    """The Treasury application implements value added functions that may be offered by the financial institution. APIs
+    defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency
+    supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the
+    APIs can be found under the Transaction Service.
     """
 
     @staticmethod

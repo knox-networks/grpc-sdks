@@ -25,35 +25,37 @@ namespace IssuerApi.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chppc3N1ZXJfYXBpL3YxL2lzc3Vlci5wcm90bxINaXNzdWVyX2FwaS52MRoW",
-            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byKdAQoMSXNzdWVSZXF1ZXN0EkEKGGF1",
+            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byLfAQoMSXNzdWVSZXF1ZXN0EkEKGGF1",
             "dGhlbnRpY2F0aW9uX3NpZ25hdHVyZRgBIAEoCzIfLmNvbW1vbi5BdXRoZW50",
             "aWNhdGlvblNpZ25hdHVyZRIeCgZhbW91bnQYAiABKAsyDi5jb21tb24uQW1v",
             "dW50EioKCWF1dGhvcml0eRgDIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVyaWZp",
-            "ZXIiKAoNSXNzdWVSZXNwb25zZRIXCg9wcm9taXNzb3J5X2ZpbGUYASABKAwi",
-            "KwoQQXV0aG9yaXplUmVxdWVzdBIXCg9wcm9taXNzb3J5X2ZpbGUYASABKAwi",
-            "LAoRQXV0aG9yaXplUmVzcG9uc2USFwoPcHJvbWlzc29yeV9maWxlGAEgASgM",
-            "IkAKE0F1dGhlbnRpY2F0ZVJlcXVlc3QSKQoIdmVyaWZpZXIYASABKAsyFy5j",
-            "b21tb24uRHluYW1pY1ZlcmlmaWVyIikKFEF1dGhlbnRpY2F0ZVJlc3BvbnNl",
-            "EhEKCWNoYWxsZW5nZRgBIAEoDCIRCg9HZXRSb2xlc1JlcXVlc3QiewoQR2V0",
-            "Um9sZXNSZXNwb25zZRI5CgVyb2xlcxgBIAMoCzIqLmlzc3Vlcl9hcGkudjEu",
-            "R2V0Um9sZXNSZXNwb25zZS5Sb2xlc0VudHJ5GiwKClJvbGVzRW50cnkSCwoD",
-            "a2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASIsCg5TZXRSb2xlUmVxdWVz",
-            "dBIaCgRyb2xlGAEgASgLMgwuY29tbW9uLlJvbGUiEQoPU2V0Um9sZVJlc3Bv",
-            "bnNlMpIDCgZJc3N1ZXISVwoMQXV0aGVudGljYXRlEiIuaXNzdWVyX2FwaS52",
-            "MS5BdXRoZW50aWNhdGVSZXF1ZXN0GiMuaXNzdWVyX2FwaS52MS5BdXRoZW50",
-            "aWNhdGVSZXNwb25zZRJSCglBdXRob3JpemUSHy5pc3N1ZXJfYXBpLnYxLkF1",
-            "dGhvcml6ZVJlcXVlc3QaIC5pc3N1ZXJfYXBpLnYxLkF1dGhvcml6ZVJlc3Bv",
-            "bnNlKAEwARJECgVJc3N1ZRIbLmlzc3Vlcl9hcGkudjEuSXNzdWVSZXF1ZXN0",
-            "GhwuaXNzdWVyX2FwaS52MS5Jc3N1ZVJlc3BvbnNlMAESSwoIR2V0Um9sZXMS",
-            "Hi5pc3N1ZXJfYXBpLnYxLkdldFJvbGVzUmVxdWVzdBofLmlzc3Vlcl9hcGku",
-            "djEuR2V0Um9sZXNSZXNwb25zZRJICgdTZXRSb2xlEh0uaXNzdWVyX2FwaS52",
-            "MS5TZXRSb2xlUmVxdWVzdBoeLmlzc3Vlcl9hcGkudjEuU2V0Um9sZVJlc3Bv",
-            "bnNlQjlaN2dpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2Rr",
-            "L2dvL2lzc3Vlcl9hcGkvdjFiBnByb3RvMw=="));
+            "ZXISLwoMZGlzdHJpYnV0aW9uGAQgASgLMhQuY29tbW9uLkRpc3RyaWJ1dGlv",
+            "bkgAiAEBQg8KDV9kaXN0cmlidXRpb24iKAoNSXNzdWVSZXNwb25zZRIXCg9w",
+            "cm9taXNzb3J5X2ZpbGUYASABKAwiKwoQQXV0aG9yaXplUmVxdWVzdBIXCg9w",
+            "cm9taXNzb3J5X2ZpbGUYASABKAwiLAoRQXV0aG9yaXplUmVzcG9uc2USFwoP",
+            "cHJvbWlzc29yeV9maWxlGAEgASgMIkAKE0F1dGhlbnRpY2F0ZVJlcXVlc3QS",
+            "KQoIdmVyaWZpZXIYASABKAsyFy5jb21tb24uRHluYW1pY1ZlcmlmaWVyIikK",
+            "FEF1dGhlbnRpY2F0ZVJlc3BvbnNlEhEKCWNoYWxsZW5nZRgBIAEoDCIRCg9H",
+            "ZXRSb2xlc1JlcXVlc3QiewoQR2V0Um9sZXNSZXNwb25zZRI5CgVyb2xlcxgB",
+            "IAMoCzIqLmlzc3Vlcl9hcGkudjEuR2V0Um9sZXNSZXNwb25zZS5Sb2xlc0Vu",
+            "dHJ5GiwKClJvbGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJ",
+            "OgI4ASIsCg5TZXRSb2xlUmVxdWVzdBIaCgRyb2xlGAEgASgLMgwuY29tbW9u",
+            "LlJvbGUiEQoPU2V0Um9sZVJlc3BvbnNlMpIDCgZJc3N1ZXISVwoMQXV0aGVu",
+            "dGljYXRlEiIuaXNzdWVyX2FwaS52MS5BdXRoZW50aWNhdGVSZXF1ZXN0GiMu",
+            "aXNzdWVyX2FwaS52MS5BdXRoZW50aWNhdGVSZXNwb25zZRJSCglBdXRob3Jp",
+            "emUSHy5pc3N1ZXJfYXBpLnYxLkF1dGhvcml6ZVJlcXVlc3QaIC5pc3N1ZXJf",
+            "YXBpLnYxLkF1dGhvcml6ZVJlc3BvbnNlKAEwARJECgVJc3N1ZRIbLmlzc3Vl",
+            "cl9hcGkudjEuSXNzdWVSZXF1ZXN0GhwuaXNzdWVyX2FwaS52MS5Jc3N1ZVJl",
+            "c3BvbnNlMAESSwoIR2V0Um9sZXMSHi5pc3N1ZXJfYXBpLnYxLkdldFJvbGVz",
+            "UmVxdWVzdBofLmlzc3Vlcl9hcGkudjEuR2V0Um9sZXNSZXNwb25zZRJICgdT",
+            "ZXRSb2xlEh0uaXNzdWVyX2FwaS52MS5TZXRSb2xlUmVxdWVzdBoeLmlzc3Vl",
+            "cl9hcGkudjEuU2V0Um9sZVJlc3BvbnNlQjlaN2dpdGh1Yi5jb20va25veC1u",
+            "ZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL2lzc3Vlcl9hcGkvdjFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueRequest), global::IssuerApi.V1.IssueRequest.Parser, new[]{ "AuthenticationSignature", "Amount", "Authority" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueRequest), global::IssuerApi.V1.IssueRequest.Parser, new[]{ "AuthenticationSignature", "Amount", "Authority", "Distribution" }, new[]{ "Distribution" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueResponse), global::IssuerApi.V1.IssueResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthorizeRequest), global::IssuerApi.V1.AuthorizeRequest.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthorizeResponse), global::IssuerApi.V1.AuthorizeResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
@@ -109,6 +111,7 @@ namespace IssuerApi.V1 {
       authenticationSignature_ = other.authenticationSignature_ != null ? other.authenticationSignature_.Clone() : null;
       amount_ = other.amount_ != null ? other.amount_.Clone() : null;
       authority_ = other.authority_ != null ? other.authority_.Clone() : null;
+      distribution_ = other.distribution_ != null ? other.distribution_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -163,6 +166,21 @@ namespace IssuerApi.V1 {
       }
     }
 
+    /// <summary>Field number for the "distribution" field.</summary>
+    public const int DistributionFieldNumber = 4;
+    private global::Common.Distribution distribution_;
+    /// <summary>
+    /// sum must match corresponding amount.amount
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.Distribution Distribution {
+      get { return distribution_; }
+      set {
+        distribution_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -181,6 +199,7 @@ namespace IssuerApi.V1 {
       if (!object.Equals(AuthenticationSignature, other.AuthenticationSignature)) return false;
       if (!object.Equals(Amount, other.Amount)) return false;
       if (!object.Equals(Authority, other.Authority)) return false;
+      if (!object.Equals(Distribution, other.Distribution)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,6 +210,7 @@ namespace IssuerApi.V1 {
       if (authenticationSignature_ != null) hash ^= AuthenticationSignature.GetHashCode();
       if (amount_ != null) hash ^= Amount.GetHashCode();
       if (authority_ != null) hash ^= Authority.GetHashCode();
+      if (distribution_ != null) hash ^= Distribution.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -221,6 +241,10 @@ namespace IssuerApi.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(Authority);
       }
+      if (distribution_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Distribution);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -243,6 +267,10 @@ namespace IssuerApi.V1 {
         output.WriteRawTag(26);
         output.WriteMessage(Authority);
       }
+      if (distribution_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Distribution);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -261,6 +289,9 @@ namespace IssuerApi.V1 {
       }
       if (authority_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Authority);
+      }
+      if (distribution_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Distribution);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -291,6 +322,12 @@ namespace IssuerApi.V1 {
           Authority = new global::Common.DynamicVerifier();
         }
         Authority.MergeFrom(other.Authority);
+      }
+      if (other.distribution_ != null) {
+        if (distribution_ == null) {
+          Distribution = new global::Common.Distribution();
+        }
+        Distribution.MergeFrom(other.Distribution);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -328,6 +365,13 @@ namespace IssuerApi.V1 {
             input.ReadMessage(Authority);
             break;
           }
+          case 34: {
+            if (distribution_ == null) {
+              Distribution = new global::Common.Distribution();
+            }
+            input.ReadMessage(Distribution);
+            break;
+          }
         }
       }
     #endif
@@ -362,6 +406,13 @@ namespace IssuerApi.V1 {
               Authority = new global::Common.DynamicVerifier();
             }
             input.ReadMessage(Authority);
+            break;
+          }
+          case 34: {
+            if (distribution_ == null) {
+              Distribution = new global::Common.Distribution();
+            }
+            input.ReadMessage(Distribution);
             break;
           }
         }

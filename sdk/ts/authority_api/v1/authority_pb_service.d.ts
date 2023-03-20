@@ -42,12 +42,32 @@ type AuthorityRedeem = {
   readonly responseType: typeof authority_api_v1_authority_pb.RedeemResponse;
 };
 
+type AuthorityGetEmissary = {
+  readonly methodName: string;
+  readonly service: typeof Authority;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof authority_api_v1_authority_pb.GetEmissaryRequest;
+  readonly responseType: typeof authority_api_v1_authority_pb.GetEmissaryResponse;
+};
+
+type AuthorityGetNotary = {
+  readonly methodName: string;
+  readonly service: typeof Authority;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof authority_api_v1_authority_pb.GetNotaryRequest;
+  readonly responseType: typeof authority_api_v1_authority_pb.GetNotaryResponse;
+};
+
 export class Authority {
   static readonly serviceName: string;
   static readonly SetIssuerLimit: AuthoritySetIssuerLimit;
   static readonly GetIssuerLimits: AuthorityGetIssuerLimits;
   static readonly Authorize: AuthorityAuthorize;
   static readonly Redeem: AuthorityRedeem;
+  static readonly GetEmissary: AuthorityGetEmissary;
+  static readonly GetNotary: AuthorityGetNotary;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -109,6 +129,24 @@ export class AuthorityClient {
   redeem(
     requestMessage: authority_api_v1_authority_pb.RedeemRequest,
     callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.RedeemResponse|null) => void
+  ): UnaryResponse;
+  getEmissary(
+    requestMessage: authority_api_v1_authority_pb.GetEmissaryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetEmissaryResponse|null) => void
+  ): UnaryResponse;
+  getEmissary(
+    requestMessage: authority_api_v1_authority_pb.GetEmissaryRequest,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetEmissaryResponse|null) => void
+  ): UnaryResponse;
+  getNotary(
+    requestMessage: authority_api_v1_authority_pb.GetNotaryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetNotaryResponse|null) => void
+  ): UnaryResponse;
+  getNotary(
+    requestMessage: authority_api_v1_authority_pb.GetNotaryRequest,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetNotaryResponse|null) => void
   ): UnaryResponse;
 }
 

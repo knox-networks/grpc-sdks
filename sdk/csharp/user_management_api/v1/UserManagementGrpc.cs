@@ -10,13 +10,13 @@
 
 using grpc = global::Grpc.Core;
 
-namespace AuthApi.V1 {
+namespace UserApi.V1 {
   /// <summary>
-  ///This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosystem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
+  ///This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
   /// </summary>
   public static partial class UserManagement
   {
-    static readonly string __ServiceName = "auth_api.v1.UserManagement";
+    static readonly string __ServiceName = "user_api.v1.UserManagement";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -52,250 +52,250 @@ namespace AuthApi.V1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWithPasswordRequest> __Marshaller_auth_api_v1_AuthnWithPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWithPasswordRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWithPasswordRequest> __Marshaller_user_api_v1_AuthnWithPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWithPasswordRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWithPasswordResponse> __Marshaller_auth_api_v1_AuthnWithPasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWithPasswordResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWithPasswordResponse> __Marshaller_user_api_v1_AuthnWithPasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWithPasswordResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RefreshAccessTokenRequest> __Marshaller_auth_api_v1_RefreshAccessTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RefreshAccessTokenRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RefreshAccessTokenRequest> __Marshaller_user_api_v1_RefreshAccessTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RefreshAccessTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RefreshAccessTokenResponse> __Marshaller_auth_api_v1_RefreshAccessTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RefreshAccessTokenResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RefreshAccessTokenResponse> __Marshaller_user_api_v1_RefreshAccessTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RefreshAccessTokenResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWithProviderRequest> __Marshaller_auth_api_v1_AuthnWithProviderRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWithProviderRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWithProviderRequest> __Marshaller_user_api_v1_AuthnWithProviderRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWithProviderRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWithProviderResponse> __Marshaller_auth_api_v1_AuthnWithProviderResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWithProviderResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWithProviderResponse> __Marshaller_user_api_v1_AuthnWithProviderResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWithProviderResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.HandleOIDCCallbackRequest> __Marshaller_auth_api_v1_HandleOIDCCallbackRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.HandleOIDCCallbackRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.HandleOIDCCallbackRequest> __Marshaller_user_api_v1_HandleOIDCCallbackRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.HandleOIDCCallbackRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.HandleOIDCCallbackResponse> __Marshaller_auth_api_v1_HandleOIDCCallbackResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.HandleOIDCCallbackResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.HandleOIDCCallbackResponse> __Marshaller_user_api_v1_HandleOIDCCallbackResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.HandleOIDCCallbackResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.HandleSAMLCallbackRequest> __Marshaller_auth_api_v1_HandleSAMLCallbackRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.HandleSAMLCallbackRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.HandleSAMLCallbackRequest> __Marshaller_user_api_v1_HandleSAMLCallbackRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.HandleSAMLCallbackRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.HandleSAMLCallbackResponse> __Marshaller_auth_api_v1_HandleSAMLCallbackResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.HandleSAMLCallbackResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.HandleSAMLCallbackResponse> __Marshaller_user_api_v1_HandleSAMLCallbackResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.HandleSAMLCallbackResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.SAMLSPMetadataRequest> __Marshaller_auth_api_v1_SAMLSPMetadataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.SAMLSPMetadataRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.SAMLSPMetadataRequest> __Marshaller_user_api_v1_SAMLSPMetadataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.SAMLSPMetadataRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.SAMLSPMetadataResponse> __Marshaller_auth_api_v1_SAMLSPMetadataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.SAMLSPMetadataResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.SAMLSPMetadataResponse> __Marshaller_user_api_v1_SAMLSPMetadataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.SAMLSPMetadataResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest> __Marshaller_auth_api_v1_CreateAuthnBrowserWithWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest> __Marshaller_user_api_v1_CreateAuthnBrowserWithWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> __Marshaller_auth_api_v1_CreateAuthnBrowserWithWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> __Marshaller_user_api_v1_CreateAuthnBrowserWithWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnBrowserWithWalletRequest> __Marshaller_auth_api_v1_AuthnBrowserWithWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnBrowserWithWalletRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnBrowserWithWalletRequest> __Marshaller_user_api_v1_AuthnBrowserWithWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnBrowserWithWalletRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnBrowserWithWalletResponse> __Marshaller_auth_api_v1_AuthnBrowserWithWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnBrowserWithWalletResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnBrowserWithWalletResponse> __Marshaller_user_api_v1_AuthnBrowserWithWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnBrowserWithWalletResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateAuthnWalletChallengeRequest> __Marshaller_auth_api_v1_CreateAuthnWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateAuthnWalletChallengeRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateAuthnWalletChallengeRequest> __Marshaller_user_api_v1_CreateAuthnWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateAuthnWalletChallengeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateAuthnWalletChallengeResponse> __Marshaller_auth_api_v1_CreateAuthnWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateAuthnWalletChallengeResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateAuthnWalletChallengeResponse> __Marshaller_user_api_v1_CreateAuthnWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateAuthnWalletChallengeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWalletRequest> __Marshaller_auth_api_v1_AuthnWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWalletRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWalletRequest> __Marshaller_user_api_v1_AuthnWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWalletRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AuthnWalletResponse> __Marshaller_auth_api_v1_AuthnWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AuthnWalletResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AuthnWalletResponse> __Marshaller_user_api_v1_AuthnWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AuthnWalletResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateRegisterWalletChallengeRequest> __Marshaller_auth_api_v1_CreateRegisterWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateRegisterWalletChallengeRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateRegisterWalletChallengeRequest> __Marshaller_user_api_v1_CreateRegisterWalletChallengeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateRegisterWalletChallengeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.CreateRegisterWalletChallengeResponse> __Marshaller_auth_api_v1_CreateRegisterWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.CreateRegisterWalletChallengeResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateRegisterWalletChallengeResponse> __Marshaller_user_api_v1_CreateRegisterWalletChallengeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateRegisterWalletChallengeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RegisterWalletRequest> __Marshaller_auth_api_v1_RegisterWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RegisterWalletRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RegisterWalletRequest> __Marshaller_user_api_v1_RegisterWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RegisterWalletRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RegisterWalletResponse> __Marshaller_auth_api_v1_RegisterWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RegisterWalletResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RegisterWalletResponse> __Marshaller_user_api_v1_RegisterWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RegisterWalletResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AssociateWalletRequest> __Marshaller_auth_api_v1_AssociateWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AssociateWalletRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AssociateWalletRequest> __Marshaller_user_api_v1_AssociateWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AssociateWalletRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.AssociateWalletResponse> __Marshaller_auth_api_v1_AssociateWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.AssociateWalletResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.AssociateWalletResponse> __Marshaller_user_api_v1_AssociateWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AssociateWalletResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetAppSettingsRequest> __Marshaller_auth_api_v1_GetAppSettingsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetAppSettingsRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetAppSettingsRequest> __Marshaller_user_api_v1_GetAppSettingsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetAppSettingsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetAppSettingsResponse> __Marshaller_auth_api_v1_GetAppSettingsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetAppSettingsResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetAppSettingsResponse> __Marshaller_user_api_v1_GetAppSettingsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetAppSettingsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RegisterUserRequest> __Marshaller_auth_api_v1_RegisterUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RegisterUserRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RegisterUserRequest> __Marshaller_user_api_v1_RegisterUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RegisterUserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.RegisterUserResponse> __Marshaller_auth_api_v1_RegisterUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.RegisterUserResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.RegisterUserResponse> __Marshaller_user_api_v1_RegisterUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.RegisterUserResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.ConfirmUserRequest> __Marshaller_auth_api_v1_ConfirmUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.ConfirmUserRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.ConfirmUserRequest> __Marshaller_user_api_v1_ConfirmUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.ConfirmUserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.ConfirmUserResponse> __Marshaller_auth_api_v1_ConfirmUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.ConfirmUserResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.ConfirmUserResponse> __Marshaller_user_api_v1_ConfirmUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.ConfirmUserResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.FindByEmailRequest> __Marshaller_auth_api_v1_FindByEmailRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.FindByEmailRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.FindByEmailRequest> __Marshaller_user_api_v1_FindByEmailRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.FindByEmailRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.FindByEmailResponse> __Marshaller_auth_api_v1_FindByEmailResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.FindByEmailResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.FindByEmailResponse> __Marshaller_user_api_v1_FindByEmailResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.FindByEmailResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.FindByIDRequest> __Marshaller_auth_api_v1_FindByIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.FindByIDRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.FindByIDRequest> __Marshaller_user_api_v1_FindByIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.FindByIDRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.FindByIDResponse> __Marshaller_auth_api_v1_FindByIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.FindByIDResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.FindByIDResponse> __Marshaller_user_api_v1_FindByIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.FindByIDResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetMeRequest> __Marshaller_auth_api_v1_GetMeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetMeRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetMeRequest> __Marshaller_user_api_v1_GetMeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetMeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetMeResponse> __Marshaller_auth_api_v1_GetMeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetMeResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetMeResponse> __Marshaller_user_api_v1_GetMeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetMeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetUserByDIDRequest> __Marshaller_auth_api_v1_GetUserByDIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetUserByDIDRequest.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetUserByDIDRequest> __Marshaller_user_api_v1_GetUserByDIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetUserByDIDRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthApi.V1.GetUserByDIDResponse> __Marshaller_auth_api_v1_GetUserByDIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthApi.V1.GetUserByDIDResponse.Parser));
+    static readonly grpc::Marshaller<global::UserApi.V1.GetUserByDIDResponse> __Marshaller_user_api_v1_GetUserByDIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetUserByDIDResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.AuthnWithPasswordRequest, global::AuthApi.V1.AuthnWithPasswordResponse> __Method_AuthnWithPassword = new grpc::Method<global::AuthApi.V1.AuthnWithPasswordRequest, global::AuthApi.V1.AuthnWithPasswordResponse>(
+    static readonly grpc::Method<global::UserApi.V1.AuthnWithPasswordRequest, global::UserApi.V1.AuthnWithPasswordResponse> __Method_AuthnWithPassword = new grpc::Method<global::UserApi.V1.AuthnWithPasswordRequest, global::UserApi.V1.AuthnWithPasswordResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AuthnWithPassword",
-        __Marshaller_auth_api_v1_AuthnWithPasswordRequest,
-        __Marshaller_auth_api_v1_AuthnWithPasswordResponse);
+        __Marshaller_user_api_v1_AuthnWithPasswordRequest,
+        __Marshaller_user_api_v1_AuthnWithPasswordResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.RefreshAccessTokenRequest, global::AuthApi.V1.RefreshAccessTokenResponse> __Method_RefreshAccessToken = new grpc::Method<global::AuthApi.V1.RefreshAccessTokenRequest, global::AuthApi.V1.RefreshAccessTokenResponse>(
+    static readonly grpc::Method<global::UserApi.V1.RefreshAccessTokenRequest, global::UserApi.V1.RefreshAccessTokenResponse> __Method_RefreshAccessToken = new grpc::Method<global::UserApi.V1.RefreshAccessTokenRequest, global::UserApi.V1.RefreshAccessTokenResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RefreshAccessToken",
-        __Marshaller_auth_api_v1_RefreshAccessTokenRequest,
-        __Marshaller_auth_api_v1_RefreshAccessTokenResponse);
+        __Marshaller_user_api_v1_RefreshAccessTokenRequest,
+        __Marshaller_user_api_v1_RefreshAccessTokenResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.AuthnWithProviderRequest, global::AuthApi.V1.AuthnWithProviderResponse> __Method_AuthnWithProvider = new grpc::Method<global::AuthApi.V1.AuthnWithProviderRequest, global::AuthApi.V1.AuthnWithProviderResponse>(
+    static readonly grpc::Method<global::UserApi.V1.AuthnWithProviderRequest, global::UserApi.V1.AuthnWithProviderResponse> __Method_AuthnWithProvider = new grpc::Method<global::UserApi.V1.AuthnWithProviderRequest, global::UserApi.V1.AuthnWithProviderResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AuthnWithProvider",
-        __Marshaller_auth_api_v1_AuthnWithProviderRequest,
-        __Marshaller_auth_api_v1_AuthnWithProviderResponse);
+        __Marshaller_user_api_v1_AuthnWithProviderRequest,
+        __Marshaller_user_api_v1_AuthnWithProviderResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.HandleOIDCCallbackRequest, global::AuthApi.V1.HandleOIDCCallbackResponse> __Method_HandleOIDCCallback = new grpc::Method<global::AuthApi.V1.HandleOIDCCallbackRequest, global::AuthApi.V1.HandleOIDCCallbackResponse>(
+    static readonly grpc::Method<global::UserApi.V1.HandleOIDCCallbackRequest, global::UserApi.V1.HandleOIDCCallbackResponse> __Method_HandleOIDCCallback = new grpc::Method<global::UserApi.V1.HandleOIDCCallbackRequest, global::UserApi.V1.HandleOIDCCallbackResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "HandleOIDCCallback",
-        __Marshaller_auth_api_v1_HandleOIDCCallbackRequest,
-        __Marshaller_auth_api_v1_HandleOIDCCallbackResponse);
+        __Marshaller_user_api_v1_HandleOIDCCallbackRequest,
+        __Marshaller_user_api_v1_HandleOIDCCallbackResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.HandleSAMLCallbackRequest, global::AuthApi.V1.HandleSAMLCallbackResponse> __Method_HandleSAMLCallback = new grpc::Method<global::AuthApi.V1.HandleSAMLCallbackRequest, global::AuthApi.V1.HandleSAMLCallbackResponse>(
+    static readonly grpc::Method<global::UserApi.V1.HandleSAMLCallbackRequest, global::UserApi.V1.HandleSAMLCallbackResponse> __Method_HandleSAMLCallback = new grpc::Method<global::UserApi.V1.HandleSAMLCallbackRequest, global::UserApi.V1.HandleSAMLCallbackResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "HandleSAMLCallback",
-        __Marshaller_auth_api_v1_HandleSAMLCallbackRequest,
-        __Marshaller_auth_api_v1_HandleSAMLCallbackResponse);
+        __Marshaller_user_api_v1_HandleSAMLCallbackRequest,
+        __Marshaller_user_api_v1_HandleSAMLCallbackResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.SAMLSPMetadataRequest, global::AuthApi.V1.SAMLSPMetadataResponse> __Method_SAMLSPMetadata = new grpc::Method<global::AuthApi.V1.SAMLSPMetadataRequest, global::AuthApi.V1.SAMLSPMetadataResponse>(
+    static readonly grpc::Method<global::UserApi.V1.SAMLSPMetadataRequest, global::UserApi.V1.SAMLSPMetadataResponse> __Method_SAMLSPMetadata = new grpc::Method<global::UserApi.V1.SAMLSPMetadataRequest, global::UserApi.V1.SAMLSPMetadataResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SAMLSPMetadata",
-        __Marshaller_auth_api_v1_SAMLSPMetadataRequest,
-        __Marshaller_auth_api_v1_SAMLSPMetadataResponse);
+        __Marshaller_user_api_v1_SAMLSPMetadataRequest,
+        __Marshaller_user_api_v1_SAMLSPMetadataResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> __Method_CreateAuthnBrowserWithWalletChallenge = new grpc::Method<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse>(
+    static readonly grpc::Method<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> __Method_CreateAuthnBrowserWithWalletChallenge = new grpc::Method<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "CreateAuthnBrowserWithWalletChallenge",
-        __Marshaller_auth_api_v1_CreateAuthnBrowserWithWalletChallengeRequest,
-        __Marshaller_auth_api_v1_CreateAuthnBrowserWithWalletChallengeResponse);
+        __Marshaller_user_api_v1_CreateAuthnBrowserWithWalletChallengeRequest,
+        __Marshaller_user_api_v1_CreateAuthnBrowserWithWalletChallengeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.AuthnBrowserWithWalletRequest, global::AuthApi.V1.AuthnBrowserWithWalletResponse> __Method_AuthnBrowserWithWallet = new grpc::Method<global::AuthApi.V1.AuthnBrowserWithWalletRequest, global::AuthApi.V1.AuthnBrowserWithWalletResponse>(
+    static readonly grpc::Method<global::UserApi.V1.AuthnBrowserWithWalletRequest, global::UserApi.V1.AuthnBrowserWithWalletResponse> __Method_AuthnBrowserWithWallet = new grpc::Method<global::UserApi.V1.AuthnBrowserWithWalletRequest, global::UserApi.V1.AuthnBrowserWithWalletResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AuthnBrowserWithWallet",
-        __Marshaller_auth_api_v1_AuthnBrowserWithWalletRequest,
-        __Marshaller_auth_api_v1_AuthnBrowserWithWalletResponse);
+        __Marshaller_user_api_v1_AuthnBrowserWithWalletRequest,
+        __Marshaller_user_api_v1_AuthnBrowserWithWalletResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.CreateAuthnWalletChallengeRequest, global::AuthApi.V1.CreateAuthnWalletChallengeResponse> __Method_CreateAuthnWalletChallenge = new grpc::Method<global::AuthApi.V1.CreateAuthnWalletChallengeRequest, global::AuthApi.V1.CreateAuthnWalletChallengeResponse>(
+    static readonly grpc::Method<global::UserApi.V1.CreateAuthnWalletChallengeRequest, global::UserApi.V1.CreateAuthnWalletChallengeResponse> __Method_CreateAuthnWalletChallenge = new grpc::Method<global::UserApi.V1.CreateAuthnWalletChallengeRequest, global::UserApi.V1.CreateAuthnWalletChallengeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateAuthnWalletChallenge",
-        __Marshaller_auth_api_v1_CreateAuthnWalletChallengeRequest,
-        __Marshaller_auth_api_v1_CreateAuthnWalletChallengeResponse);
+        __Marshaller_user_api_v1_CreateAuthnWalletChallengeRequest,
+        __Marshaller_user_api_v1_CreateAuthnWalletChallengeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.AuthnWalletRequest, global::AuthApi.V1.AuthnWalletResponse> __Method_AuthnWallet = new grpc::Method<global::AuthApi.V1.AuthnWalletRequest, global::AuthApi.V1.AuthnWalletResponse>(
+    static readonly grpc::Method<global::UserApi.V1.AuthnWalletRequest, global::UserApi.V1.AuthnWalletResponse> __Method_AuthnWallet = new grpc::Method<global::UserApi.V1.AuthnWalletRequest, global::UserApi.V1.AuthnWalletResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AuthnWallet",
-        __Marshaller_auth_api_v1_AuthnWalletRequest,
-        __Marshaller_auth_api_v1_AuthnWalletResponse);
+        __Marshaller_user_api_v1_AuthnWalletRequest,
+        __Marshaller_user_api_v1_AuthnWalletResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.CreateRegisterWalletChallengeRequest, global::AuthApi.V1.CreateRegisterWalletChallengeResponse> __Method_CreateRegisterWalletChallenge = new grpc::Method<global::AuthApi.V1.CreateRegisterWalletChallengeRequest, global::AuthApi.V1.CreateRegisterWalletChallengeResponse>(
+    static readonly grpc::Method<global::UserApi.V1.CreateRegisterWalletChallengeRequest, global::UserApi.V1.CreateRegisterWalletChallengeResponse> __Method_CreateRegisterWalletChallenge = new grpc::Method<global::UserApi.V1.CreateRegisterWalletChallengeRequest, global::UserApi.V1.CreateRegisterWalletChallengeResponse>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "CreateRegisterWalletChallenge",
-        __Marshaller_auth_api_v1_CreateRegisterWalletChallengeRequest,
-        __Marshaller_auth_api_v1_CreateRegisterWalletChallengeResponse);
+        __Marshaller_user_api_v1_CreateRegisterWalletChallengeRequest,
+        __Marshaller_user_api_v1_CreateRegisterWalletChallengeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.RegisterWalletRequest, global::AuthApi.V1.RegisterWalletResponse> __Method_RegisterWallet = new grpc::Method<global::AuthApi.V1.RegisterWalletRequest, global::AuthApi.V1.RegisterWalletResponse>(
+    static readonly grpc::Method<global::UserApi.V1.RegisterWalletRequest, global::UserApi.V1.RegisterWalletResponse> __Method_RegisterWallet = new grpc::Method<global::UserApi.V1.RegisterWalletRequest, global::UserApi.V1.RegisterWalletResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RegisterWallet",
-        __Marshaller_auth_api_v1_RegisterWalletRequest,
-        __Marshaller_auth_api_v1_RegisterWalletResponse);
+        __Marshaller_user_api_v1_RegisterWalletRequest,
+        __Marshaller_user_api_v1_RegisterWalletResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.AssociateWalletRequest, global::AuthApi.V1.AssociateWalletResponse> __Method_AssociateWallet = new grpc::Method<global::AuthApi.V1.AssociateWalletRequest, global::AuthApi.V1.AssociateWalletResponse>(
+    static readonly grpc::Method<global::UserApi.V1.AssociateWalletRequest, global::UserApi.V1.AssociateWalletResponse> __Method_AssociateWallet = new grpc::Method<global::UserApi.V1.AssociateWalletRequest, global::UserApi.V1.AssociateWalletResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AssociateWallet",
-        __Marshaller_auth_api_v1_AssociateWalletRequest,
-        __Marshaller_auth_api_v1_AssociateWalletResponse);
+        __Marshaller_user_api_v1_AssociateWalletRequest,
+        __Marshaller_user_api_v1_AssociateWalletResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.GetAppSettingsRequest, global::AuthApi.V1.GetAppSettingsResponse> __Method_GetAppSettings = new grpc::Method<global::AuthApi.V1.GetAppSettingsRequest, global::AuthApi.V1.GetAppSettingsResponse>(
+    static readonly grpc::Method<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse> __Method_GetAppSettings = new grpc::Method<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAppSettings",
-        __Marshaller_auth_api_v1_GetAppSettingsRequest,
-        __Marshaller_auth_api_v1_GetAppSettingsResponse);
+        __Marshaller_user_api_v1_GetAppSettingsRequest,
+        __Marshaller_user_api_v1_GetAppSettingsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.RegisterUserRequest, global::AuthApi.V1.RegisterUserResponse> __Method_RegisterUser = new grpc::Method<global::AuthApi.V1.RegisterUserRequest, global::AuthApi.V1.RegisterUserResponse>(
+    static readonly grpc::Method<global::UserApi.V1.RegisterUserRequest, global::UserApi.V1.RegisterUserResponse> __Method_RegisterUser = new grpc::Method<global::UserApi.V1.RegisterUserRequest, global::UserApi.V1.RegisterUserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RegisterUser",
-        __Marshaller_auth_api_v1_RegisterUserRequest,
-        __Marshaller_auth_api_v1_RegisterUserResponse);
+        __Marshaller_user_api_v1_RegisterUserRequest,
+        __Marshaller_user_api_v1_RegisterUserResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.ConfirmUserRequest, global::AuthApi.V1.ConfirmUserResponse> __Method_ConfirmUser = new grpc::Method<global::AuthApi.V1.ConfirmUserRequest, global::AuthApi.V1.ConfirmUserResponse>(
+    static readonly grpc::Method<global::UserApi.V1.ConfirmUserRequest, global::UserApi.V1.ConfirmUserResponse> __Method_ConfirmUser = new grpc::Method<global::UserApi.V1.ConfirmUserRequest, global::UserApi.V1.ConfirmUserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ConfirmUser",
-        __Marshaller_auth_api_v1_ConfirmUserRequest,
-        __Marshaller_auth_api_v1_ConfirmUserResponse);
+        __Marshaller_user_api_v1_ConfirmUserRequest,
+        __Marshaller_user_api_v1_ConfirmUserResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.FindByEmailRequest, global::AuthApi.V1.FindByEmailResponse> __Method_FindByEmail = new grpc::Method<global::AuthApi.V1.FindByEmailRequest, global::AuthApi.V1.FindByEmailResponse>(
+    static readonly grpc::Method<global::UserApi.V1.FindByEmailRequest, global::UserApi.V1.FindByEmailResponse> __Method_FindByEmail = new grpc::Method<global::UserApi.V1.FindByEmailRequest, global::UserApi.V1.FindByEmailResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "FindByEmail",
-        __Marshaller_auth_api_v1_FindByEmailRequest,
-        __Marshaller_auth_api_v1_FindByEmailResponse);
+        __Marshaller_user_api_v1_FindByEmailRequest,
+        __Marshaller_user_api_v1_FindByEmailResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.FindByIDRequest, global::AuthApi.V1.FindByIDResponse> __Method_FindByID = new grpc::Method<global::AuthApi.V1.FindByIDRequest, global::AuthApi.V1.FindByIDResponse>(
+    static readonly grpc::Method<global::UserApi.V1.FindByIDRequest, global::UserApi.V1.FindByIDResponse> __Method_FindByID = new grpc::Method<global::UserApi.V1.FindByIDRequest, global::UserApi.V1.FindByIDResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "FindByID",
-        __Marshaller_auth_api_v1_FindByIDRequest,
-        __Marshaller_auth_api_v1_FindByIDResponse);
+        __Marshaller_user_api_v1_FindByIDRequest,
+        __Marshaller_user_api_v1_FindByIDResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.GetMeRequest, global::AuthApi.V1.GetMeResponse> __Method_GetMe = new grpc::Method<global::AuthApi.V1.GetMeRequest, global::AuthApi.V1.GetMeResponse>(
+    static readonly grpc::Method<global::UserApi.V1.GetMeRequest, global::UserApi.V1.GetMeResponse> __Method_GetMe = new grpc::Method<global::UserApi.V1.GetMeRequest, global::UserApi.V1.GetMeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetMe",
-        __Marshaller_auth_api_v1_GetMeRequest,
-        __Marshaller_auth_api_v1_GetMeResponse);
+        __Marshaller_user_api_v1_GetMeRequest,
+        __Marshaller_user_api_v1_GetMeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthApi.V1.GetUserByDIDRequest, global::AuthApi.V1.GetUserByDIDResponse> __Method_GetUserByDID = new grpc::Method<global::AuthApi.V1.GetUserByDIDRequest, global::AuthApi.V1.GetUserByDIDResponse>(
+    static readonly grpc::Method<global::UserApi.V1.GetUserByDIDRequest, global::UserApi.V1.GetUserByDIDResponse> __Method_GetUserByDID = new grpc::Method<global::UserApi.V1.GetUserByDIDRequest, global::UserApi.V1.GetUserByDIDResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetUserByDID",
-        __Marshaller_auth_api_v1_GetUserByDIDRequest,
-        __Marshaller_auth_api_v1_GetUserByDIDResponse);
+        __Marshaller_user_api_v1_GetUserByDIDRequest,
+        __Marshaller_user_api_v1_GetUserByDIDResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.Services[0]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of UserManagement</summary>
@@ -309,7 +309,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.AuthnWithPasswordResponse> AuthnWithPassword(global::AuthApi.V1.AuthnWithPasswordRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AuthnWithPasswordResponse> AuthnWithPassword(global::UserApi.V1.AuthnWithPasswordRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -321,7 +321,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.RefreshAccessTokenResponse> RefreshAccessToken(global::AuthApi.V1.RefreshAccessTokenRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.RefreshAccessTokenResponse> RefreshAccessToken(global::UserApi.V1.RefreshAccessTokenRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -333,7 +333,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.AuthnWithProviderResponse> AuthnWithProvider(global::AuthApi.V1.AuthnWithProviderRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AuthnWithProviderResponse> AuthnWithProvider(global::UserApi.V1.AuthnWithProviderRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -345,7 +345,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallback(global::AuthApi.V1.HandleOIDCCallbackRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallback(global::UserApi.V1.HandleOIDCCallbackRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -357,7 +357,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallback(global::AuthApi.V1.HandleSAMLCallbackRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallback(global::UserApi.V1.HandleSAMLCallbackRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -369,7 +369,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.SAMLSPMetadataResponse> SAMLSPMetadata(global::AuthApi.V1.SAMLSPMetadataRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.SAMLSPMetadataResponse> SAMLSPMetadata(global::UserApi.V1.SAMLSPMetadataRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -382,7 +382,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task CreateAuthnBrowserWithWalletChallenge(global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::IServerStreamWriter<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task CreateAuthnBrowserWithWalletChallenge(global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::IServerStreamWriter<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -394,7 +394,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWallet(global::AuthApi.V1.AuthnBrowserWithWalletRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWallet(global::UserApi.V1.AuthnBrowserWithWalletRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -406,7 +406,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallenge(global::AuthApi.V1.CreateAuthnWalletChallengeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallenge(global::UserApi.V1.CreateAuthnWalletChallengeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -418,7 +418,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.AuthnWalletResponse> AuthnWallet(global::AuthApi.V1.AuthnWalletRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AuthnWalletResponse> AuthnWallet(global::UserApi.V1.AuthnWalletRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -431,7 +431,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task CreateRegisterWalletChallenge(global::AuthApi.V1.CreateRegisterWalletChallengeRequest request, grpc::IServerStreamWriter<global::AuthApi.V1.CreateRegisterWalletChallengeResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task CreateRegisterWalletChallenge(global::UserApi.V1.CreateRegisterWalletChallengeRequest request, grpc::IServerStreamWriter<global::UserApi.V1.CreateRegisterWalletChallengeResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -443,7 +443,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.RegisterWalletResponse> RegisterWallet(global::AuthApi.V1.RegisterWalletRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.RegisterWalletResponse> RegisterWallet(global::UserApi.V1.RegisterWalletRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -455,7 +455,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.AssociateWalletResponse> AssociateWallet(global::AuthApi.V1.AssociateWalletRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AssociateWalletResponse> AssociateWallet(global::UserApi.V1.AssociateWalletRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -467,7 +467,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.GetAppSettingsResponse> GetAppSettings(global::AuthApi.V1.GetAppSettingsRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.GetAppSettingsResponse> GetAppSettings(global::UserApi.V1.GetAppSettingsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -479,7 +479,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.RegisterUserResponse> RegisterUser(global::AuthApi.V1.RegisterUserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.RegisterUserResponse> RegisterUser(global::UserApi.V1.RegisterUserRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -491,7 +491,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.ConfirmUserResponse> ConfirmUser(global::AuthApi.V1.ConfirmUserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.ConfirmUserResponse> ConfirmUser(global::UserApi.V1.ConfirmUserRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -503,7 +503,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.FindByEmailResponse> FindByEmail(global::AuthApi.V1.FindByEmailRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.FindByEmailResponse> FindByEmail(global::UserApi.V1.FindByEmailRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -515,7 +515,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.FindByIDResponse> FindByID(global::AuthApi.V1.FindByIDRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.FindByIDResponse> FindByID(global::UserApi.V1.FindByIDRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -527,7 +527,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.GetMeResponse> GetMe(global::AuthApi.V1.GetMeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.GetMeResponse> GetMe(global::UserApi.V1.GetMeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -539,7 +539,7 @@ namespace AuthApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthApi.V1.GetUserByDIDResponse> GetUserByDID(global::AuthApi.V1.GetUserByDIDRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.GetUserByDIDResponse> GetUserByDID(global::UserApi.V1.GetUserByDIDRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -582,7 +582,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWithPasswordResponse AuthnWithPassword(global::AuthApi.V1.AuthnWithPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.AuthnWithPasswordResponse AuthnWithPassword(global::UserApi.V1.AuthnWithPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWithPassword(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -593,7 +593,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWithPasswordResponse AuthnWithPassword(global::AuthApi.V1.AuthnWithPasswordRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.AuthnWithPasswordResponse AuthnWithPassword(global::UserApi.V1.AuthnWithPasswordRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AuthnWithPassword, null, options, request);
       }
@@ -606,7 +606,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWithPasswordResponse> AuthnWithPasswordAsync(global::AuthApi.V1.AuthnWithPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWithPasswordResponse> AuthnWithPasswordAsync(global::UserApi.V1.AuthnWithPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWithPasswordAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -617,7 +617,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWithPasswordResponse> AuthnWithPasswordAsync(global::AuthApi.V1.AuthnWithPasswordRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWithPasswordResponse> AuthnWithPasswordAsync(global::UserApi.V1.AuthnWithPasswordRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AuthnWithPassword, null, options, request);
       }
@@ -630,7 +630,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RefreshAccessTokenResponse RefreshAccessToken(global::AuthApi.V1.RefreshAccessTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.RefreshAccessTokenResponse RefreshAccessToken(global::UserApi.V1.RefreshAccessTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RefreshAccessToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -641,7 +641,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RefreshAccessTokenResponse RefreshAccessToken(global::AuthApi.V1.RefreshAccessTokenRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.RefreshAccessTokenResponse RefreshAccessToken(global::UserApi.V1.RefreshAccessTokenRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RefreshAccessToken, null, options, request);
       }
@@ -654,7 +654,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RefreshAccessTokenResponse> RefreshAccessTokenAsync(global::AuthApi.V1.RefreshAccessTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RefreshAccessTokenResponse> RefreshAccessTokenAsync(global::UserApi.V1.RefreshAccessTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RefreshAccessTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -665,7 +665,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RefreshAccessTokenResponse> RefreshAccessTokenAsync(global::AuthApi.V1.RefreshAccessTokenRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RefreshAccessTokenResponse> RefreshAccessTokenAsync(global::UserApi.V1.RefreshAccessTokenRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshAccessToken, null, options, request);
       }
@@ -678,7 +678,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWithProviderResponse AuthnWithProvider(global::AuthApi.V1.AuthnWithProviderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.AuthnWithProviderResponse AuthnWithProvider(global::UserApi.V1.AuthnWithProviderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWithProvider(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -689,7 +689,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWithProviderResponse AuthnWithProvider(global::AuthApi.V1.AuthnWithProviderRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.AuthnWithProviderResponse AuthnWithProvider(global::UserApi.V1.AuthnWithProviderRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AuthnWithProvider, null, options, request);
       }
@@ -702,7 +702,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWithProviderResponse> AuthnWithProviderAsync(global::AuthApi.V1.AuthnWithProviderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWithProviderResponse> AuthnWithProviderAsync(global::UserApi.V1.AuthnWithProviderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWithProviderAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -713,7 +713,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWithProviderResponse> AuthnWithProviderAsync(global::AuthApi.V1.AuthnWithProviderRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWithProviderResponse> AuthnWithProviderAsync(global::UserApi.V1.AuthnWithProviderRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AuthnWithProvider, null, options, request);
       }
@@ -726,7 +726,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.HandleOIDCCallbackResponse HandleOIDCCallback(global::AuthApi.V1.HandleOIDCCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.HandleOIDCCallbackResponse HandleOIDCCallback(global::UserApi.V1.HandleOIDCCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return HandleOIDCCallback(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -737,7 +737,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.HandleOIDCCallbackResponse HandleOIDCCallback(global::AuthApi.V1.HandleOIDCCallbackRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.HandleOIDCCallbackResponse HandleOIDCCallback(global::UserApi.V1.HandleOIDCCallbackRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_HandleOIDCCallback, null, options, request);
       }
@@ -750,7 +750,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallbackAsync(global::AuthApi.V1.HandleOIDCCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallbackAsync(global::UserApi.V1.HandleOIDCCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return HandleOIDCCallbackAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -761,7 +761,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallbackAsync(global::AuthApi.V1.HandleOIDCCallbackRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.HandleOIDCCallbackResponse> HandleOIDCCallbackAsync(global::UserApi.V1.HandleOIDCCallbackRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_HandleOIDCCallback, null, options, request);
       }
@@ -774,7 +774,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.HandleSAMLCallbackResponse HandleSAMLCallback(global::AuthApi.V1.HandleSAMLCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.HandleSAMLCallbackResponse HandleSAMLCallback(global::UserApi.V1.HandleSAMLCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return HandleSAMLCallback(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -785,7 +785,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.HandleSAMLCallbackResponse HandleSAMLCallback(global::AuthApi.V1.HandleSAMLCallbackRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.HandleSAMLCallbackResponse HandleSAMLCallback(global::UserApi.V1.HandleSAMLCallbackRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_HandleSAMLCallback, null, options, request);
       }
@@ -798,7 +798,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallbackAsync(global::AuthApi.V1.HandleSAMLCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallbackAsync(global::UserApi.V1.HandleSAMLCallbackRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return HandleSAMLCallbackAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -809,7 +809,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallbackAsync(global::AuthApi.V1.HandleSAMLCallbackRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.HandleSAMLCallbackResponse> HandleSAMLCallbackAsync(global::UserApi.V1.HandleSAMLCallbackRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_HandleSAMLCallback, null, options, request);
       }
@@ -822,7 +822,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.SAMLSPMetadataResponse SAMLSPMetadata(global::AuthApi.V1.SAMLSPMetadataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.SAMLSPMetadataResponse SAMLSPMetadata(global::UserApi.V1.SAMLSPMetadataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SAMLSPMetadata(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -833,7 +833,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.SAMLSPMetadataResponse SAMLSPMetadata(global::AuthApi.V1.SAMLSPMetadataRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.SAMLSPMetadataResponse SAMLSPMetadata(global::UserApi.V1.SAMLSPMetadataRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SAMLSPMetadata, null, options, request);
       }
@@ -846,7 +846,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.SAMLSPMetadataResponse> SAMLSPMetadataAsync(global::AuthApi.V1.SAMLSPMetadataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.SAMLSPMetadataResponse> SAMLSPMetadataAsync(global::UserApi.V1.SAMLSPMetadataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SAMLSPMetadataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -857,7 +857,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.SAMLSPMetadataResponse> SAMLSPMetadataAsync(global::AuthApi.V1.SAMLSPMetadataRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.SAMLSPMetadataResponse> SAMLSPMetadataAsync(global::UserApi.V1.SAMLSPMetadataRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SAMLSPMetadata, null, options, request);
       }
@@ -870,7 +870,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> CreateAuthnBrowserWithWalletChallenge(global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> CreateAuthnBrowserWithWalletChallenge(global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateAuthnBrowserWithWalletChallenge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -881,7 +881,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> CreateAuthnBrowserWithWalletChallenge(global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse> CreateAuthnBrowserWithWalletChallenge(global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_CreateAuthnBrowserWithWalletChallenge, null, options, request);
       }
@@ -894,7 +894,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnBrowserWithWalletResponse AuthnBrowserWithWallet(global::AuthApi.V1.AuthnBrowserWithWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.AuthnBrowserWithWalletResponse AuthnBrowserWithWallet(global::UserApi.V1.AuthnBrowserWithWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnBrowserWithWallet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -905,7 +905,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnBrowserWithWalletResponse AuthnBrowserWithWallet(global::AuthApi.V1.AuthnBrowserWithWalletRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.AuthnBrowserWithWalletResponse AuthnBrowserWithWallet(global::UserApi.V1.AuthnBrowserWithWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AuthnBrowserWithWallet, null, options, request);
       }
@@ -918,7 +918,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWalletAsync(global::AuthApi.V1.AuthnBrowserWithWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWalletAsync(global::UserApi.V1.AuthnBrowserWithWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnBrowserWithWalletAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -929,7 +929,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWalletAsync(global::AuthApi.V1.AuthnBrowserWithWalletRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnBrowserWithWalletResponse> AuthnBrowserWithWalletAsync(global::UserApi.V1.AuthnBrowserWithWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AuthnBrowserWithWallet, null, options, request);
       }
@@ -942,7 +942,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.CreateAuthnWalletChallengeResponse CreateAuthnWalletChallenge(global::AuthApi.V1.CreateAuthnWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.CreateAuthnWalletChallengeResponse CreateAuthnWalletChallenge(global::UserApi.V1.CreateAuthnWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateAuthnWalletChallenge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -953,7 +953,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.CreateAuthnWalletChallengeResponse CreateAuthnWalletChallenge(global::AuthApi.V1.CreateAuthnWalletChallengeRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.CreateAuthnWalletChallengeResponse CreateAuthnWalletChallenge(global::UserApi.V1.CreateAuthnWalletChallengeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_CreateAuthnWalletChallenge, null, options, request);
       }
@@ -966,7 +966,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallengeAsync(global::AuthApi.V1.CreateAuthnWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallengeAsync(global::UserApi.V1.CreateAuthnWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateAuthnWalletChallengeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -977,7 +977,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallengeAsync(global::AuthApi.V1.CreateAuthnWalletChallengeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CreateAuthnWalletChallengeResponse> CreateAuthnWalletChallengeAsync(global::UserApi.V1.CreateAuthnWalletChallengeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateAuthnWalletChallenge, null, options, request);
       }
@@ -990,7 +990,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWalletResponse AuthnWallet(global::AuthApi.V1.AuthnWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.AuthnWalletResponse AuthnWallet(global::UserApi.V1.AuthnWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWallet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1001,7 +1001,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AuthnWalletResponse AuthnWallet(global::AuthApi.V1.AuthnWalletRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.AuthnWalletResponse AuthnWallet(global::UserApi.V1.AuthnWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AuthnWallet, null, options, request);
       }
@@ -1014,7 +1014,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWalletResponse> AuthnWalletAsync(global::AuthApi.V1.AuthnWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWalletResponse> AuthnWalletAsync(global::UserApi.V1.AuthnWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AuthnWalletAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1025,7 +1025,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AuthnWalletResponse> AuthnWalletAsync(global::AuthApi.V1.AuthnWalletRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AuthnWalletResponse> AuthnWalletAsync(global::UserApi.V1.AuthnWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AuthnWallet, null, options, request);
       }
@@ -1038,7 +1038,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::AuthApi.V1.CreateRegisterWalletChallengeResponse> CreateRegisterWalletChallenge(global::AuthApi.V1.CreateRegisterWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::UserApi.V1.CreateRegisterWalletChallengeResponse> CreateRegisterWalletChallenge(global::UserApi.V1.CreateRegisterWalletChallengeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateRegisterWalletChallenge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1049,7 +1049,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::AuthApi.V1.CreateRegisterWalletChallengeResponse> CreateRegisterWalletChallenge(global::AuthApi.V1.CreateRegisterWalletChallengeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::UserApi.V1.CreateRegisterWalletChallengeResponse> CreateRegisterWalletChallenge(global::UserApi.V1.CreateRegisterWalletChallengeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_CreateRegisterWalletChallenge, null, options, request);
       }
@@ -1062,7 +1062,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RegisterWalletResponse RegisterWallet(global::AuthApi.V1.RegisterWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.RegisterWalletResponse RegisterWallet(global::UserApi.V1.RegisterWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RegisterWallet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1073,7 +1073,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RegisterWalletResponse RegisterWallet(global::AuthApi.V1.RegisterWalletRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.RegisterWalletResponse RegisterWallet(global::UserApi.V1.RegisterWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RegisterWallet, null, options, request);
       }
@@ -1086,7 +1086,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RegisterWalletResponse> RegisterWalletAsync(global::AuthApi.V1.RegisterWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RegisterWalletResponse> RegisterWalletAsync(global::UserApi.V1.RegisterWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RegisterWalletAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1097,7 +1097,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RegisterWalletResponse> RegisterWalletAsync(global::AuthApi.V1.RegisterWalletRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RegisterWalletResponse> RegisterWalletAsync(global::UserApi.V1.RegisterWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RegisterWallet, null, options, request);
       }
@@ -1110,7 +1110,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AssociateWalletResponse AssociateWallet(global::AuthApi.V1.AssociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.AssociateWalletResponse AssociateWallet(global::UserApi.V1.AssociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AssociateWallet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1121,7 +1121,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.AssociateWalletResponse AssociateWallet(global::AuthApi.V1.AssociateWalletRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.AssociateWalletResponse AssociateWallet(global::UserApi.V1.AssociateWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AssociateWallet, null, options, request);
       }
@@ -1134,7 +1134,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AssociateWalletResponse> AssociateWalletAsync(global::AuthApi.V1.AssociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AssociateWalletResponse> AssociateWalletAsync(global::UserApi.V1.AssociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AssociateWalletAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1145,7 +1145,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.AssociateWalletResponse> AssociateWalletAsync(global::AuthApi.V1.AssociateWalletRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.AssociateWalletResponse> AssociateWalletAsync(global::UserApi.V1.AssociateWalletRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AssociateWallet, null, options, request);
       }
@@ -1158,7 +1158,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetAppSettingsResponse GetAppSettings(global::AuthApi.V1.GetAppSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.GetAppSettingsResponse GetAppSettings(global::UserApi.V1.GetAppSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAppSettings(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1169,7 +1169,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetAppSettingsResponse GetAppSettings(global::AuthApi.V1.GetAppSettingsRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.GetAppSettingsResponse GetAppSettings(global::UserApi.V1.GetAppSettingsRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetAppSettings, null, options, request);
       }
@@ -1182,7 +1182,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetAppSettingsResponse> GetAppSettingsAsync(global::AuthApi.V1.GetAppSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetAppSettingsResponse> GetAppSettingsAsync(global::UserApi.V1.GetAppSettingsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAppSettingsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1193,7 +1193,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetAppSettingsResponse> GetAppSettingsAsync(global::AuthApi.V1.GetAppSettingsRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetAppSettingsResponse> GetAppSettingsAsync(global::UserApi.V1.GetAppSettingsRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetAppSettings, null, options, request);
       }
@@ -1206,7 +1206,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RegisterUserResponse RegisterUser(global::AuthApi.V1.RegisterUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.RegisterUserResponse RegisterUser(global::UserApi.V1.RegisterUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RegisterUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1217,7 +1217,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.RegisterUserResponse RegisterUser(global::AuthApi.V1.RegisterUserRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.RegisterUserResponse RegisterUser(global::UserApi.V1.RegisterUserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RegisterUser, null, options, request);
       }
@@ -1230,7 +1230,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RegisterUserResponse> RegisterUserAsync(global::AuthApi.V1.RegisterUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RegisterUserResponse> RegisterUserAsync(global::UserApi.V1.RegisterUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RegisterUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1241,7 +1241,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.RegisterUserResponse> RegisterUserAsync(global::AuthApi.V1.RegisterUserRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.RegisterUserResponse> RegisterUserAsync(global::UserApi.V1.RegisterUserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RegisterUser, null, options, request);
       }
@@ -1254,7 +1254,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.ConfirmUserResponse ConfirmUser(global::AuthApi.V1.ConfirmUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.ConfirmUserResponse ConfirmUser(global::UserApi.V1.ConfirmUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ConfirmUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1265,7 +1265,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.ConfirmUserResponse ConfirmUser(global::AuthApi.V1.ConfirmUserRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.ConfirmUserResponse ConfirmUser(global::UserApi.V1.ConfirmUserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ConfirmUser, null, options, request);
       }
@@ -1278,7 +1278,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.ConfirmUserResponse> ConfirmUserAsync(global::AuthApi.V1.ConfirmUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.ConfirmUserResponse> ConfirmUserAsync(global::UserApi.V1.ConfirmUserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ConfirmUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1289,7 +1289,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.ConfirmUserResponse> ConfirmUserAsync(global::AuthApi.V1.ConfirmUserRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.ConfirmUserResponse> ConfirmUserAsync(global::UserApi.V1.ConfirmUserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ConfirmUser, null, options, request);
       }
@@ -1302,7 +1302,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.FindByEmailResponse FindByEmail(global::AuthApi.V1.FindByEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.FindByEmailResponse FindByEmail(global::UserApi.V1.FindByEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindByEmail(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1313,7 +1313,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.FindByEmailResponse FindByEmail(global::AuthApi.V1.FindByEmailRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.FindByEmailResponse FindByEmail(global::UserApi.V1.FindByEmailRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_FindByEmail, null, options, request);
       }
@@ -1326,7 +1326,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.FindByEmailResponse> FindByEmailAsync(global::AuthApi.V1.FindByEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.FindByEmailResponse> FindByEmailAsync(global::UserApi.V1.FindByEmailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindByEmailAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1337,7 +1337,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.FindByEmailResponse> FindByEmailAsync(global::AuthApi.V1.FindByEmailRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.FindByEmailResponse> FindByEmailAsync(global::UserApi.V1.FindByEmailRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_FindByEmail, null, options, request);
       }
@@ -1350,7 +1350,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.FindByIDResponse FindByID(global::AuthApi.V1.FindByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.FindByIDResponse FindByID(global::UserApi.V1.FindByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindByID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1361,7 +1361,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.FindByIDResponse FindByID(global::AuthApi.V1.FindByIDRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.FindByIDResponse FindByID(global::UserApi.V1.FindByIDRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_FindByID, null, options, request);
       }
@@ -1374,7 +1374,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.FindByIDResponse> FindByIDAsync(global::AuthApi.V1.FindByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.FindByIDResponse> FindByIDAsync(global::UserApi.V1.FindByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindByIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1385,7 +1385,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.FindByIDResponse> FindByIDAsync(global::AuthApi.V1.FindByIDRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.FindByIDResponse> FindByIDAsync(global::UserApi.V1.FindByIDRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_FindByID, null, options, request);
       }
@@ -1398,7 +1398,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetMeResponse GetMe(global::AuthApi.V1.GetMeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.GetMeResponse GetMe(global::UserApi.V1.GetMeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetMe(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1409,7 +1409,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetMeResponse GetMe(global::AuthApi.V1.GetMeRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.GetMeResponse GetMe(global::UserApi.V1.GetMeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetMe, null, options, request);
       }
@@ -1422,7 +1422,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetMeResponse> GetMeAsync(global::AuthApi.V1.GetMeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetMeResponse> GetMeAsync(global::UserApi.V1.GetMeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetMeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1433,7 +1433,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetMeResponse> GetMeAsync(global::AuthApi.V1.GetMeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetMeResponse> GetMeAsync(global::UserApi.V1.GetMeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetMe, null, options, request);
       }
@@ -1446,7 +1446,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetUserByDIDResponse GetUserByDID(global::AuthApi.V1.GetUserByDIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::UserApi.V1.GetUserByDIDResponse GetUserByDID(global::UserApi.V1.GetUserByDIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetUserByDID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1457,7 +1457,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthApi.V1.GetUserByDIDResponse GetUserByDID(global::AuthApi.V1.GetUserByDIDRequest request, grpc::CallOptions options)
+      public virtual global::UserApi.V1.GetUserByDIDResponse GetUserByDID(global::UserApi.V1.GetUserByDIDRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetUserByDID, null, options, request);
       }
@@ -1470,7 +1470,7 @@ namespace AuthApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetUserByDIDResponse> GetUserByDIDAsync(global::AuthApi.V1.GetUserByDIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetUserByDIDResponse> GetUserByDIDAsync(global::UserApi.V1.GetUserByDIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetUserByDIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -1481,7 +1481,7 @@ namespace AuthApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthApi.V1.GetUserByDIDResponse> GetUserByDIDAsync(global::AuthApi.V1.GetUserByDIDRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetUserByDIDResponse> GetUserByDIDAsync(global::UserApi.V1.GetUserByDIDRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetUserByDID, null, options, request);
       }
@@ -1528,26 +1528,26 @@ namespace AuthApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserManagementBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_AuthnWithPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.AuthnWithPasswordRequest, global::AuthApi.V1.AuthnWithPasswordResponse>(serviceImpl.AuthnWithPassword));
-      serviceBinder.AddMethod(__Method_RefreshAccessToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.RefreshAccessTokenRequest, global::AuthApi.V1.RefreshAccessTokenResponse>(serviceImpl.RefreshAccessToken));
-      serviceBinder.AddMethod(__Method_AuthnWithProvider, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.AuthnWithProviderRequest, global::AuthApi.V1.AuthnWithProviderResponse>(serviceImpl.AuthnWithProvider));
-      serviceBinder.AddMethod(__Method_HandleOIDCCallback, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.HandleOIDCCallbackRequest, global::AuthApi.V1.HandleOIDCCallbackResponse>(serviceImpl.HandleOIDCCallback));
-      serviceBinder.AddMethod(__Method_HandleSAMLCallback, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.HandleSAMLCallbackRequest, global::AuthApi.V1.HandleSAMLCallbackResponse>(serviceImpl.HandleSAMLCallback));
-      serviceBinder.AddMethod(__Method_SAMLSPMetadata, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.SAMLSPMetadataRequest, global::AuthApi.V1.SAMLSPMetadataResponse>(serviceImpl.SAMLSPMetadata));
-      serviceBinder.AddMethod(__Method_CreateAuthnBrowserWithWalletChallenge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse>(serviceImpl.CreateAuthnBrowserWithWalletChallenge));
-      serviceBinder.AddMethod(__Method_AuthnBrowserWithWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.AuthnBrowserWithWalletRequest, global::AuthApi.V1.AuthnBrowserWithWalletResponse>(serviceImpl.AuthnBrowserWithWallet));
-      serviceBinder.AddMethod(__Method_CreateAuthnWalletChallenge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.CreateAuthnWalletChallengeRequest, global::AuthApi.V1.CreateAuthnWalletChallengeResponse>(serviceImpl.CreateAuthnWalletChallenge));
-      serviceBinder.AddMethod(__Method_AuthnWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.AuthnWalletRequest, global::AuthApi.V1.AuthnWalletResponse>(serviceImpl.AuthnWallet));
-      serviceBinder.AddMethod(__Method_CreateRegisterWalletChallenge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::AuthApi.V1.CreateRegisterWalletChallengeRequest, global::AuthApi.V1.CreateRegisterWalletChallengeResponse>(serviceImpl.CreateRegisterWalletChallenge));
-      serviceBinder.AddMethod(__Method_RegisterWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.RegisterWalletRequest, global::AuthApi.V1.RegisterWalletResponse>(serviceImpl.RegisterWallet));
-      serviceBinder.AddMethod(__Method_AssociateWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.AssociateWalletRequest, global::AuthApi.V1.AssociateWalletResponse>(serviceImpl.AssociateWallet));
-      serviceBinder.AddMethod(__Method_GetAppSettings, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.GetAppSettingsRequest, global::AuthApi.V1.GetAppSettingsResponse>(serviceImpl.GetAppSettings));
-      serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.RegisterUserRequest, global::AuthApi.V1.RegisterUserResponse>(serviceImpl.RegisterUser));
-      serviceBinder.AddMethod(__Method_ConfirmUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.ConfirmUserRequest, global::AuthApi.V1.ConfirmUserResponse>(serviceImpl.ConfirmUser));
-      serviceBinder.AddMethod(__Method_FindByEmail, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.FindByEmailRequest, global::AuthApi.V1.FindByEmailResponse>(serviceImpl.FindByEmail));
-      serviceBinder.AddMethod(__Method_FindByID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.FindByIDRequest, global::AuthApi.V1.FindByIDResponse>(serviceImpl.FindByID));
-      serviceBinder.AddMethod(__Method_GetMe, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.GetMeRequest, global::AuthApi.V1.GetMeResponse>(serviceImpl.GetMe));
-      serviceBinder.AddMethod(__Method_GetUserByDID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthApi.V1.GetUserByDIDRequest, global::AuthApi.V1.GetUserByDIDResponse>(serviceImpl.GetUserByDID));
+      serviceBinder.AddMethod(__Method_AuthnWithPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AuthnWithPasswordRequest, global::UserApi.V1.AuthnWithPasswordResponse>(serviceImpl.AuthnWithPassword));
+      serviceBinder.AddMethod(__Method_RefreshAccessToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RefreshAccessTokenRequest, global::UserApi.V1.RefreshAccessTokenResponse>(serviceImpl.RefreshAccessToken));
+      serviceBinder.AddMethod(__Method_AuthnWithProvider, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AuthnWithProviderRequest, global::UserApi.V1.AuthnWithProviderResponse>(serviceImpl.AuthnWithProvider));
+      serviceBinder.AddMethod(__Method_HandleOIDCCallback, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.HandleOIDCCallbackRequest, global::UserApi.V1.HandleOIDCCallbackResponse>(serviceImpl.HandleOIDCCallback));
+      serviceBinder.AddMethod(__Method_HandleSAMLCallback, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.HandleSAMLCallbackRequest, global::UserApi.V1.HandleSAMLCallbackResponse>(serviceImpl.HandleSAMLCallback));
+      serviceBinder.AddMethod(__Method_SAMLSPMetadata, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.SAMLSPMetadataRequest, global::UserApi.V1.SAMLSPMetadataResponse>(serviceImpl.SAMLSPMetadata));
+      serviceBinder.AddMethod(__Method_CreateAuthnBrowserWithWalletChallenge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest, global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse>(serviceImpl.CreateAuthnBrowserWithWalletChallenge));
+      serviceBinder.AddMethod(__Method_AuthnBrowserWithWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AuthnBrowserWithWalletRequest, global::UserApi.V1.AuthnBrowserWithWalletResponse>(serviceImpl.AuthnBrowserWithWallet));
+      serviceBinder.AddMethod(__Method_CreateAuthnWalletChallenge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.CreateAuthnWalletChallengeRequest, global::UserApi.V1.CreateAuthnWalletChallengeResponse>(serviceImpl.CreateAuthnWalletChallenge));
+      serviceBinder.AddMethod(__Method_AuthnWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AuthnWalletRequest, global::UserApi.V1.AuthnWalletResponse>(serviceImpl.AuthnWallet));
+      serviceBinder.AddMethod(__Method_CreateRegisterWalletChallenge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::UserApi.V1.CreateRegisterWalletChallengeRequest, global::UserApi.V1.CreateRegisterWalletChallengeResponse>(serviceImpl.CreateRegisterWalletChallenge));
+      serviceBinder.AddMethod(__Method_RegisterWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RegisterWalletRequest, global::UserApi.V1.RegisterWalletResponse>(serviceImpl.RegisterWallet));
+      serviceBinder.AddMethod(__Method_AssociateWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AssociateWalletRequest, global::UserApi.V1.AssociateWalletResponse>(serviceImpl.AssociateWallet));
+      serviceBinder.AddMethod(__Method_GetAppSettings, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse>(serviceImpl.GetAppSettings));
+      serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RegisterUserRequest, global::UserApi.V1.RegisterUserResponse>(serviceImpl.RegisterUser));
+      serviceBinder.AddMethod(__Method_ConfirmUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.ConfirmUserRequest, global::UserApi.V1.ConfirmUserResponse>(serviceImpl.ConfirmUser));
+      serviceBinder.AddMethod(__Method_FindByEmail, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.FindByEmailRequest, global::UserApi.V1.FindByEmailResponse>(serviceImpl.FindByEmail));
+      serviceBinder.AddMethod(__Method_FindByID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.FindByIDRequest, global::UserApi.V1.FindByIDResponse>(serviceImpl.FindByID));
+      serviceBinder.AddMethod(__Method_GetMe, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetMeRequest, global::UserApi.V1.GetMeResponse>(serviceImpl.GetMe));
+      serviceBinder.AddMethod(__Method_GetUserByDID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetUserByDIDRequest, global::UserApi.V1.GetUserByDIDResponse>(serviceImpl.GetUserByDID));
     }
 
   }

@@ -3,7 +3,9 @@ import grpc
 from ...issuer_api.v1 import issuer_pb2 as issuer__api_dot_v1_dot_issuer__pb2
 
 class IssuerStub(object):
-    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and
+    other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance
+    limits.  It holds digital banknotes in its own vault.
     """
 
     def __init__(self, channel):
@@ -19,7 +21,9 @@ class IssuerStub(object):
         self.SetRole = channel.unary_unary('/issuer_api.v1.Issuer/SetRole', request_serializer=issuer__api_dot_v1_dot_issuer__pb2.SetRoleRequest.SerializeToString, response_deserializer=issuer__api_dot_v1_dot_issuer__pb2.SetRoleResponse.FromString)
 
 class IssuerServicer(object):
-    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and
+    other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance
+    limits.  It holds digital banknotes in its own vault.
     """
 
     def Authenticate(self, request, context):
@@ -30,14 +34,18 @@ class IssuerServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Authorize(self, request_iterator, context):
-        """Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+        """Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+        to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+        future double spends. The newly authorized promissory files are returned as a stream.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Issue(self, request, context):
-        """Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+        """Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+        Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+        along with the verifier of the Authority.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -63,7 +71,9 @@ def add_IssuerServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class Issuer(object):
-    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+    """Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and
+    other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance
+    limits.  It holds digital banknotes in its own vault.
     """
 
     @staticmethod

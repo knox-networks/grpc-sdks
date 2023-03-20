@@ -39,7 +39,7 @@ const (
 	// default behavior is to inverse the sender and recipient fields
 	PacketType_ReturnToSender PacketType = 3
 	// Terminate data stream
-	// TODO: decide if this is necessary after "Acknowledgement" type is implemented
+	// @exclude: TODO: decide if this is necessary after "Acknowledgement" type is implemented
 	PacketType_TerminateStream PacketType = 4
 	// Life signal packet
 	// Used to signal the gateway and/or client that the connection is still alive
@@ -74,7 +74,7 @@ const (
 	PacketType_ArchivePromissory PacketType = 103
 	// Promissory receipt acknowledgement
 	// Respond with promissory receipt to a promissory request
-	// TODO: Decide if this msg or a general acknowledgement message should be used.
+	// @exclude: TODO: Decide if this msg or a general acknowledgement message should be used.
 	PacketType_PromissoryReceipt PacketType = 104
 	// Identity Request
 	// Request identity of a verifier in the network
@@ -500,7 +500,7 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 	return nil
 }
 
-// Encapsulates all cross-network metadata that associates
+// Encasulates all cross-network metadata that associates
 // a `Packet` with a given transaction.
 type TransactionHeader struct {
 	state         protoimpl.MessageState
@@ -515,13 +515,13 @@ type TransactionHeader struct {
 	// Universal e2e transaction reference. Term used for UUIDv4 in financial
 	// messaging such as ISO20022.
 	Uetr string `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	// Seconds (minus leapseconds) since epoch 1970 - Unix timestamp - always
+	// Seconds (minus leapsconds) since epoch 1970 - Unix timestamp - always
 	// interpreted as being in the UTC timezone. Internal operations will convert
 	// this to UTC time.
 	Timestamp uint64 `protobuf:"varint,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	// Signature on all fields in Transaction header (except signature field itself)
 	// and Routing header + (sha256 on serialized(payload).
-	// TODO investigate viability
+	// @exclude: TODO investigate viability
 	// should be sent by the emitter of the transaction
 	Signature []byte `protobuf:"bytes,5,opt,name=signature,proto3" json:"signature,omitempty"`
 	// User reference string for transactions acting as a memo field

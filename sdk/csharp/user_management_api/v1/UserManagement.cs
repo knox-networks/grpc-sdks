@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace AuthApi.V1 {
+namespace UserApi.V1 {
 
   /// <summary>Holder for reflection information generated from user_management_api/v1/user_management.proto</summary>
   public static partial class UserManagementReflection {
@@ -25,180 +25,182 @@ namespace AuthApi.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cix1c2VyX21hbmFnZW1lbnRfYXBpL3YxL3VzZXJfbWFuYWdlbWVudC5wcm90",
-            "bxILYXV0aF9hcGkudjEaHGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8i",
-            "ngIKBFVzZXISDAoEdXVpZBgBIAEoCRISCgpmaXJzdF9uYW1lGAIgASgJEhEK",
-            "CWxhc3RfbmFtZRgDIAEoCRINCgVlbWFpbBgGIAEoCRIMCgRyb2xlGAcgASgJ",
-            "Eg4KBmF2YXRhchgIIAEoCRINCgVwaG9uZRgJIAEoCRIMCgRkaWRzGAogAygJ",
-            "EjgKDGV4dGVybmFsX2lkcxgLIAMoCzIiLmF1dGhfYXBpLnYxLlVzZXIuRXh0",
-            "ZXJuYWxJZHNFbnRyeRIpCghtZXRhZGF0YRgMIAEoCzIXLmdvb2dsZS5wcm90",
-            "b2J1Zi5TdHJ1Y3QaMgoQRXh0ZXJuYWxJZHNFbnRyeRILCgNrZXkYASABKAkS",
-            "DQoFdmFsdWUYAiABKAk6AjgBIooBChNSZWdpc3RlclVzZXJSZXF1ZXN0Eg0K",
-            "BWVtYWlsGAEgASgJEhIKCmZpcnN0X25hbWUYAiABKAkSEQoJbGFzdF9uYW1l",
-            "GAMgASgJEhAKCHBhc3N3b3JkGAUgASgJEgwKBHJvbGUYBiABKAkSDgoGYXZh",
-            "dGFyGAcgASgJEg0KBXBob25lGAggASgJIlkKCUF1dGhUb2tlbhINCgV0b2tl",
-            "bhgBIAEoCRISCgp0b2tlbl90eXBlGAIgASgJEhIKCmV4cGlyZXNfaW4YAyAB",
-            "KAUSFQoNcmVmcmVzaF90b2tlbhgEIAEoCSI3ChRSZWdpc3RlclVzZXJSZXNw",
-            "b25zZRIfCgR1c2VyGAEgASgLMhEuYXV0aF9hcGkudjEuVXNlciI7ChJDb25m",
-            "aXJtVXNlclJlcXVlc3QSFgoOZW1haWxfb3JfcGhvbmUYASABKAkSDQoFdG9r",
-            "ZW4YAiABKAkiFQoTQ29uZmlybVVzZXJSZXNwb25zZSKhAQoYQXV0aG5XaXRo",
-            "UHJvdmlkZXJSZXF1ZXN0EicKCHByb3ZpZGVyGAEgASgOMhUuYXV0aF9hcGku",
-            "djEuUHJvdmlkZXISFQoNaW5zdGFuY2VfbmFtZRgCIAEoCRIWCg5yZXF1ZXN0",
-            "X29yaWdpbhgDIAEoCRItCgxjbGllbnRfc3RhdGUYBCABKAsyFy5nb29nbGUu",
-            "cHJvdG9idWYuU3RydWN0IjEKGUF1dGhuV2l0aFByb3ZpZGVyUmVzcG9uc2US",
-            "FAoMcHJvdmlkZXJfdXJsGAEgASgJIjgKGUhhbmRsZU9JRENDYWxsYmFja1Jl",
-            "cXVlc3QSDAoEY29kZRgBIAEoCRINCgVzdGF0ZRgCIAEoCSLHAQoaSGFuZGxl",
-            "T0lEQ0NhbGxiYWNrUmVzcG9uc2USHwoEdXNlchgBIAEoCzIRLmF1dGhfYXBp",
-            "LnYxLlVzZXISKgoKYXV0aF90b2tlbhgCIAEoCzIWLmF1dGhfYXBpLnYxLkF1",
-            "dGhUb2tlbhIVCg1pbnN0YW5jZV9uYW1lGAMgASgJEhYKDnJlcXVlc3Rfb3Jp",
-            "Z2luGAQgASgJEi0KDGNsaWVudF9zdGF0ZRgFIAEoCzIXLmdvb2dsZS5wcm90",
-            "b2J1Zi5TdHJ1Y3QiIwoSRmluZEJ5RW1haWxSZXF1ZXN0Eg0KBWVtYWlsGAEg",
-            "ASgJIjYKE0ZpbmRCeUVtYWlsUmVzcG9uc2USHwoEdXNlchgBIAEoCzIRLmF1",
-            "dGhfYXBpLnYxLlVzZXIiHwoPRmluZEJ5SURSZXF1ZXN0EgwKBHV1aWQYASAB",
-            "KAkiMwoQRmluZEJ5SURSZXNwb25zZRIfCgR1c2VyGAEgASgLMhEuYXV0aF9h",
-            "cGkudjEuVXNlciI7ChhBdXRobldpdGhQYXNzd29yZFJlcXVlc3QSDQoFZW1h",
-            "aWwYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiaAoZQXV0aG5XaXRoUGFzc3dv",
-            "cmRSZXNwb25zZRIfCgR1c2VyGAEgASgLMhEuYXV0aF9hcGkudjEuVXNlchIq",
-            "CgphdXRoX3Rva2VuGAIgASgLMhYuYXV0aF9hcGkudjEuQXV0aFRva2VuIjIK",
-            "GVJlZnJlc2hBY2Nlc3NUb2tlblJlcXVlc3QSFQoNcmVmcmVzaF90b2tlbhgB",
-            "IAEoCSJpChpSZWZyZXNoQWNjZXNzVG9rZW5SZXNwb25zZRIfCgR1c2VyGAEg",
-            "ASgLMhEuYXV0aF9hcGkudjEuVXNlchIqCgphdXRoX3Rva2VuGAIgASgLMhYu",
-            "YXV0aF9hcGkudjEuQXV0aFRva2VuIg4KDEdldE1lUmVxdWVzdCIwCg1HZXRN",
-            "ZVJlc3BvbnNlEh8KBHVzZXIYASABKAsyES5hdXRoX2FwaS52MS5Vc2VyImAK",
-            "EUF1dGhUb2tlblJlc3BvbnNlEh8KBHVzZXIYASABKAsyES5hdXRoX2FwaS52",
-            "MS5Vc2VyEioKCmF1dGhfdG9rZW4YAiABKAsyFi5hdXRoX2FwaS52MS5BdXRo",
-            "VG9rZW4iLgosQ3JlYXRlQXV0aG5Ccm93c2VyV2l0aFdhbGxldENoYWxsZW5n",
-            "ZVJlcXVlc3QigwEKLUNyZWF0ZUF1dGhuQnJvd3NlcldpdGhXYWxsZXRDaGFs",
-            "bGVuZ2VSZXNwb25zZRIPCgVub25jZRgBIAEoCUgAEjQKCmF1dGhfdG9rZW4Y",
-            "AiABKAsyHi5hdXRoX2FwaS52MS5BdXRoVG9rZW5SZXNwb25zZUgAQgsKCWRp",
-            "ZF9zdGFydCJOCh1BdXRobkJyb3dzZXJXaXRoV2FsbGV0UmVxdWVzdBIRCglz",
-            "aWduYXR1cmUYASABKAwSDQoFbm9uY2UYAiABKAkSCwoDZGlkGAMgASgJIiAK",
-            "HkF1dGhuQnJvd3NlcldpdGhXYWxsZXRSZXNwb25zZSImCiRDcmVhdGVSZWdp",
-            "c3RlcldhbGxldENoYWxsZW5nZVJlcXVlc3QiXAolQ3JlYXRlUmVnaXN0ZXJX",
-            "YWxsZXRDaGFsbGVuZ2VSZXNwb25zZRIPCgVub25jZRgBIAEoCUgAEgwKAm9r",
-            "GAIgASgJSABCFAoScmVnaXN0cmF0aW9uX3N0YXJ0IkYKFVJlZ2lzdGVyV2Fs",
-            "bGV0UmVxdWVzdBIRCglzaWduYXR1cmUYASABKAwSDQoFbm9uY2UYAiABKAkS",
-            "CwoDZGlkGAMgASgJImUKFlJlZ2lzdGVyV2FsbGV0UmVzcG9uc2USHwoEdXNl",
-            "chgBIAEoCzIRLmF1dGhfYXBpLnYxLlVzZXISKgoKYXV0aF90b2tlbhgCIAEo",
-            "CzIWLmF1dGhfYXBpLnYxLkF1dGhUb2tlbiIwCiFDcmVhdGVBdXRobldhbGxl",
-            "dENoYWxsZW5nZVJlcXVlc3QSCwoDZGlkGAEgASgJIjMKIkNyZWF0ZUF1dGhu",
-            "V2FsbGV0Q2hhbGxlbmdlUmVzcG9uc2USDQoFbm9uY2UYASABKAkiQwoSQXV0",
-            "aG5XYWxsZXRSZXF1ZXN0EhEKCXNpZ25hdHVyZRgBIAEoDBINCgVub25jZRgC",
-            "IAEoCRILCgNkaWQYAyABKAkiYgoTQXV0aG5XYWxsZXRSZXNwb25zZRIfCgR1",
-            "c2VyGAEgASgLMhEuYXV0aF9hcGkudjEuVXNlchIqCgphdXRoX3Rva2VuGAIg",
-            "ASgLMhYuYXV0aF9hcGkudjEuQXV0aFRva2VuIkcKGUhhbmRsZVNBTUxDYWxs",
-            "YmFja1JlcXVlc3QSFQoNc2FtbF9yZXNwb25zZRgBIAEoCRITCgtyZWxheV9z",
-            "dGF0ZRgCIAEoCSKYAQoaSGFuZGxlU0FNTENhbGxiYWNrUmVzcG9uc2USHwoE",
-            "dXNlchgBIAEoCzIRLmF1dGhfYXBpLnYxLlVzZXISKgoKYXV0aF90b2tlbhgC",
-            "IAEoCzIWLmF1dGhfYXBpLnYxLkF1dGhUb2tlbhIVCg1pbnN0YW5jZV9uYW1l",
-            "GAMgASgJEhYKDnJlcXVlc3Rfb3JpZ2luGAQgASgJIhcKFVNBTUxTUE1ldGFk",
-            "YXRhUmVxdWVzdCItChZTQU1MU1BNZXRhZGF0YVJlc3BvbnNlEhMKC3NwX21l",
-            "dGFkYXRhGAEgASgMIhcKFUdldEFwcFNldHRpbmdzUmVxdWVzdCJCCgtBcHBT",
-            "ZXR0aW5ncxIzCg9hdXRobl9wcm92aWRlcnMYASADKAsyGi5hdXRoX2FwaS52",
-            "MS5BdXRoblByb3ZpZGVyIkkKDUF1dGhuUHJvdmlkZXISJwoIcHJvdmlkZXIY",
-            "ASABKA4yFS5hdXRoX2FwaS52MS5Qcm92aWRlchIPCgdlbmFibGVkGAIgASgI",
-            "IkgKFkdldEFwcFNldHRpbmdzUmVzcG9uc2USLgoMYXBwX3NldHRpbmdzGAEg",
-            "ASgLMhguYXV0aF9hcGkudjEuQXBwU2V0dGluZ3MiIgoTR2V0VXNlckJ5RElE",
-            "UmVxdWVzdBILCgNkaWQYASABKAkiNwoUR2V0VXNlckJ5RElEUmVzcG9uc2US",
-            "HwoEdXNlchgBIAEoCzIRLmF1dGhfYXBpLnYxLlVzZXIiJQoWQXNzb2NpYXRl",
-            "V2FsbGV0UmVxdWVzdBILCgNkaWQYASABKAkiGQoXQXNzb2NpYXRlV2FsbGV0",
-            "UmVzcG9uc2UqjgEKCFByb3ZpZGVyEhgKFFBST1ZJREVSX1VOU1BFQ0lGSUVE",
-            "EAASEwoPUFJPVklERVJfR0lUSFVCEAESFQoRUFJPVklERVJfRkFDRUJPT0sQ",
-            "AhITCg9QUk9WSURFUl9HT09HTEUQAxIRCg1QUk9WSURFUl9TQU1MEAQSFAoQ",
-            "UFJPVklERVJfQ09HTklUTxAFMsUPCg5Vc2VyTWFuYWdlbWVudBJiChFBdXRo",
-            "bldpdGhQYXNzd29yZBIlLmF1dGhfYXBpLnYxLkF1dGhuV2l0aFBhc3N3b3Jk",
-            "UmVxdWVzdBomLmF1dGhfYXBpLnYxLkF1dGhuV2l0aFBhc3N3b3JkUmVzcG9u",
-            "c2USZQoSUmVmcmVzaEFjY2Vzc1Rva2VuEiYuYXV0aF9hcGkudjEuUmVmcmVz",
-            "aEFjY2Vzc1Rva2VuUmVxdWVzdBonLmF1dGhfYXBpLnYxLlJlZnJlc2hBY2Nl",
-            "c3NUb2tlblJlc3BvbnNlEmIKEUF1dGhuV2l0aFByb3ZpZGVyEiUuYXV0aF9h",
-            "cGkudjEuQXV0aG5XaXRoUHJvdmlkZXJSZXF1ZXN0GiYuYXV0aF9hcGkudjEu",
-            "QXV0aG5XaXRoUHJvdmlkZXJSZXNwb25zZRJlChJIYW5kbGVPSURDQ2FsbGJh",
-            "Y2sSJi5hdXRoX2FwaS52MS5IYW5kbGVPSURDQ2FsbGJhY2tSZXF1ZXN0Gicu",
-            "YXV0aF9hcGkudjEuSGFuZGxlT0lEQ0NhbGxiYWNrUmVzcG9uc2USZQoSSGFu",
-            "ZGxlU0FNTENhbGxiYWNrEiYuYXV0aF9hcGkudjEuSGFuZGxlU0FNTENhbGxi",
-            "YWNrUmVxdWVzdBonLmF1dGhfYXBpLnYxLkhhbmRsZVNBTUxDYWxsYmFja1Jl",
-            "c3BvbnNlElkKDlNBTUxTUE1ldGFkYXRhEiIuYXV0aF9hcGkudjEuU0FNTFNQ",
-            "TWV0YWRhdGFSZXF1ZXN0GiMuYXV0aF9hcGkudjEuU0FNTFNQTWV0YWRhdGFS",
-            "ZXNwb25zZRKgAQolQ3JlYXRlQXV0aG5Ccm93c2VyV2l0aFdhbGxldENoYWxs",
-            "ZW5nZRI5LmF1dGhfYXBpLnYxLkNyZWF0ZUF1dGhuQnJvd3NlcldpdGhXYWxs",
-            "ZXRDaGFsbGVuZ2VSZXF1ZXN0GjouYXV0aF9hcGkudjEuQ3JlYXRlQXV0aG5C",
-            "cm93c2VyV2l0aFdhbGxldENoYWxsZW5nZVJlc3BvbnNlMAEScQoWQXV0aG5C",
-            "cm93c2VyV2l0aFdhbGxldBIqLmF1dGhfYXBpLnYxLkF1dGhuQnJvd3Nlcldp",
-            "dGhXYWxsZXRSZXF1ZXN0GisuYXV0aF9hcGkudjEuQXV0aG5Ccm93c2VyV2l0",
-            "aFdhbGxldFJlc3BvbnNlEn0KGkNyZWF0ZUF1dGhuV2FsbGV0Q2hhbGxlbmdl",
-            "Ei4uYXV0aF9hcGkudjEuQ3JlYXRlQXV0aG5XYWxsZXRDaGFsbGVuZ2VSZXF1",
-            "ZXN0Gi8uYXV0aF9hcGkudjEuQ3JlYXRlQXV0aG5XYWxsZXRDaGFsbGVuZ2VS",
-            "ZXNwb25zZRJQCgtBdXRobldhbGxldBIfLmF1dGhfYXBpLnYxLkF1dGhuV2Fs",
-            "bGV0UmVxdWVzdBogLmF1dGhfYXBpLnYxLkF1dGhuV2FsbGV0UmVzcG9uc2US",
-            "iAEKHUNyZWF0ZVJlZ2lzdGVyV2FsbGV0Q2hhbGxlbmdlEjEuYXV0aF9hcGku",
-            "djEuQ3JlYXRlUmVnaXN0ZXJXYWxsZXRDaGFsbGVuZ2VSZXF1ZXN0GjIuYXV0",
-            "aF9hcGkudjEuQ3JlYXRlUmVnaXN0ZXJXYWxsZXRDaGFsbGVuZ2VSZXNwb25z",
-            "ZTABElkKDlJlZ2lzdGVyV2FsbGV0EiIuYXV0aF9hcGkudjEuUmVnaXN0ZXJX",
-            "YWxsZXRSZXF1ZXN0GiMuYXV0aF9hcGkudjEuUmVnaXN0ZXJXYWxsZXRSZXNw",
-            "b25zZRJcCg9Bc3NvY2lhdGVXYWxsZXQSIy5hdXRoX2FwaS52MS5Bc3NvY2lh",
-            "dGVXYWxsZXRSZXF1ZXN0GiQuYXV0aF9hcGkudjEuQXNzb2NpYXRlV2FsbGV0",
-            "UmVzcG9uc2USWQoOR2V0QXBwU2V0dGluZ3MSIi5hdXRoX2FwaS52MS5HZXRB",
-            "cHBTZXR0aW5nc1JlcXVlc3QaIy5hdXRoX2FwaS52MS5HZXRBcHBTZXR0aW5n",
-            "c1Jlc3BvbnNlElMKDFJlZ2lzdGVyVXNlchIgLmF1dGhfYXBpLnYxLlJlZ2lz",
-            "dGVyVXNlclJlcXVlc3QaIS5hdXRoX2FwaS52MS5SZWdpc3RlclVzZXJSZXNw",
-            "b25zZRJQCgtDb25maXJtVXNlchIfLmF1dGhfYXBpLnYxLkNvbmZpcm1Vc2Vy",
-            "UmVxdWVzdBogLmF1dGhfYXBpLnYxLkNvbmZpcm1Vc2VyUmVzcG9uc2USUAoL",
-            "RmluZEJ5RW1haWwSHy5hdXRoX2FwaS52MS5GaW5kQnlFbWFpbFJlcXVlc3Qa",
-            "IC5hdXRoX2FwaS52MS5GaW5kQnlFbWFpbFJlc3BvbnNlEkcKCEZpbmRCeUlE",
-            "EhwuYXV0aF9hcGkudjEuRmluZEJ5SURSZXF1ZXN0Gh0uYXV0aF9hcGkudjEu",
-            "RmluZEJ5SURSZXNwb25zZRI+CgVHZXRNZRIZLmF1dGhfYXBpLnYxLkdldE1l",
-            "UmVxdWVzdBoaLmF1dGhfYXBpLnYxLkdldE1lUmVzcG9uc2USUwoMR2V0VXNl",
-            "ckJ5RElEEiAuYXV0aF9hcGkudjEuR2V0VXNlckJ5RElEUmVxdWVzdBohLmF1",
-            "dGhfYXBpLnYxLkdldFVzZXJCeURJRFJlc3BvbnNlQkJaQGdpdGh1Yi5jb20v",
-            "a25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3VzZXJfbWFuYWdlbWVu",
-            "dF9hcGkvdjFiBnByb3RvMw=="));
+            "bxILdXNlcl9hcGkudjEaHGdvb2dsZS9wcm90b2J1Zi9zdHJ1Y3QucHJvdG8i",
+            "sQIKBFVzZXISDAoEdXVpZBgBIAEoCRISCgpmaXJzdF9uYW1lGAIgASgJEhEK",
+            "CWxhc3RfbmFtZRgDIAEoCRINCgVlbWFpbBgGIAEoCRIfCgRyb2xlGAcgASgO",
+            "MhEudXNlcl9hcGkudjEuUm9sZRIOCgZhdmF0YXIYCCABKAkSDQoFcGhvbmUY",
+            "CSABKAkSDAoEZGlkcxgKIAMoCRI4CgxleHRlcm5hbF9pZHMYCyADKAsyIi51",
+            "c2VyX2FwaS52MS5Vc2VyLkV4dGVybmFsSWRzRW50cnkSKQoIbWV0YWRhdGEY",
+            "DCABKAsyFy5nb29nbGUucHJvdG9idWYuU3RydWN0GjIKEEV4dGVybmFsSWRz",
+            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASKdAQoTUmVn",
+            "aXN0ZXJVc2VyUmVxdWVzdBINCgVlbWFpbBgBIAEoCRISCgpmaXJzdF9uYW1l",
+            "GAIgASgJEhEKCWxhc3RfbmFtZRgDIAEoCRIQCghwYXNzd29yZBgFIAEoCRIf",
+            "CgRyb2xlGAYgASgOMhEudXNlcl9hcGkudjEuUm9sZRIOCgZhdmF0YXIYByAB",
+            "KAkSDQoFcGhvbmUYCCABKAkiWQoJQXV0aFRva2VuEg0KBXRva2VuGAEgASgJ",
+            "EhIKCnRva2VuX3R5cGUYAiABKAkSEgoKZXhwaXJlc19pbhgDIAEoBRIVCg1y",
+            "ZWZyZXNoX3Rva2VuGAQgASgJIjcKFFJlZ2lzdGVyVXNlclJlc3BvbnNlEh8K",
+            "BHVzZXIYASABKAsyES51c2VyX2FwaS52MS5Vc2VyIjsKEkNvbmZpcm1Vc2Vy",
+            "UmVxdWVzdBIWCg5lbWFpbF9vcl9waG9uZRgBIAEoCRINCgV0b2tlbhgCIAEo",
+            "CSIVChNDb25maXJtVXNlclJlc3BvbnNlIqEBChhBdXRobldpdGhQcm92aWRl",
+            "clJlcXVlc3QSJwoIcHJvdmlkZXIYASABKA4yFS51c2VyX2FwaS52MS5Qcm92",
+            "aWRlchIVCg1pbnN0YW5jZV9uYW1lGAIgASgJEhYKDnJlcXVlc3Rfb3JpZ2lu",
+            "GAMgASgJEi0KDGNsaWVudF9zdGF0ZRgEIAEoCzIXLmdvb2dsZS5wcm90b2J1",
+            "Zi5TdHJ1Y3QiMQoZQXV0aG5XaXRoUHJvdmlkZXJSZXNwb25zZRIUCgxwcm92",
+            "aWRlcl91cmwYASABKAkiOAoZSGFuZGxlT0lEQ0NhbGxiYWNrUmVxdWVzdBIM",
+            "CgRjb2RlGAEgASgJEg0KBXN0YXRlGAIgASgJIscBChpIYW5kbGVPSURDQ2Fs",
+            "bGJhY2tSZXNwb25zZRIfCgR1c2VyGAEgASgLMhEudXNlcl9hcGkudjEuVXNl",
+            "chIqCgphdXRoX3Rva2VuGAIgASgLMhYudXNlcl9hcGkudjEuQXV0aFRva2Vu",
+            "EhUKDWluc3RhbmNlX25hbWUYAyABKAkSFgoOcmVxdWVzdF9vcmlnaW4YBCAB",
+            "KAkSLQoMY2xpZW50X3N0YXRlGAUgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0",
+            "cnVjdCIjChJGaW5kQnlFbWFpbFJlcXVlc3QSDQoFZW1haWwYASABKAkiNgoT",
+            "RmluZEJ5RW1haWxSZXNwb25zZRIfCgR1c2VyGAEgASgLMhEudXNlcl9hcGku",
+            "djEuVXNlciIfCg9GaW5kQnlJRFJlcXVlc3QSDAoEdXVpZBgBIAEoCSIzChBG",
+            "aW5kQnlJRFJlc3BvbnNlEh8KBHVzZXIYASABKAsyES51c2VyX2FwaS52MS5V",
+            "c2VyIjsKGEF1dGhuV2l0aFBhc3N3b3JkUmVxdWVzdBINCgVlbWFpbBgBIAEo",
+            "CRIQCghwYXNzd29yZBgCIAEoCSJoChlBdXRobldpdGhQYXNzd29yZFJlc3Bv",
+            "bnNlEh8KBHVzZXIYASABKAsyES51c2VyX2FwaS52MS5Vc2VyEioKCmF1dGhf",
+            "dG9rZW4YAiABKAsyFi51c2VyX2FwaS52MS5BdXRoVG9rZW4iMgoZUmVmcmVz",
+            "aEFjY2Vzc1Rva2VuUmVxdWVzdBIVCg1yZWZyZXNoX3Rva2VuGAEgASgJImkK",
+            "GlJlZnJlc2hBY2Nlc3NUb2tlblJlc3BvbnNlEh8KBHVzZXIYASABKAsyES51",
+            "c2VyX2FwaS52MS5Vc2VyEioKCmF1dGhfdG9rZW4YAiABKAsyFi51c2VyX2Fw",
+            "aS52MS5BdXRoVG9rZW4iDgoMR2V0TWVSZXF1ZXN0IjAKDUdldE1lUmVzcG9u",
+            "c2USHwoEdXNlchgBIAEoCzIRLnVzZXJfYXBpLnYxLlVzZXIiYAoRQXV0aFRv",
+            "a2VuUmVzcG9uc2USHwoEdXNlchgBIAEoCzIRLnVzZXJfYXBpLnYxLlVzZXIS",
+            "KgoKYXV0aF90b2tlbhgCIAEoCzIWLnVzZXJfYXBpLnYxLkF1dGhUb2tlbiIu",
+            "CixDcmVhdGVBdXRobkJyb3dzZXJXaXRoV2FsbGV0Q2hhbGxlbmdlUmVxdWVz",
+            "dCKDAQotQ3JlYXRlQXV0aG5Ccm93c2VyV2l0aFdhbGxldENoYWxsZW5nZVJl",
+            "c3BvbnNlEg8KBW5vbmNlGAEgASgJSAASNAoKYXV0aF90b2tlbhgCIAEoCzIe",
+            "LnVzZXJfYXBpLnYxLkF1dGhUb2tlblJlc3BvbnNlSABCCwoJZGlkX3N0YXJ0",
+            "Ik4KHUF1dGhuQnJvd3NlcldpdGhXYWxsZXRSZXF1ZXN0EhEKCXNpZ25hdHVy",
+            "ZRgBIAEoDBINCgVub25jZRgCIAEoCRILCgNkaWQYAyABKAkiIAoeQXV0aG5C",
+            "cm93c2VyV2l0aFdhbGxldFJlc3BvbnNlIiYKJENyZWF0ZVJlZ2lzdGVyV2Fs",
+            "bGV0Q2hhbGxlbmdlUmVxdWVzdCJcCiVDcmVhdGVSZWdpc3RlcldhbGxldENo",
+            "YWxsZW5nZVJlc3BvbnNlEg8KBW5vbmNlGAEgASgJSAASDAoCb2sYAiABKAlI",
+            "AEIUChJyZWdpc3RyYXRpb25fc3RhcnQiRgoVUmVnaXN0ZXJXYWxsZXRSZXF1",
+            "ZXN0EhEKCXNpZ25hdHVyZRgBIAEoDBINCgVub25jZRgCIAEoCRILCgNkaWQY",
+            "AyABKAkiZQoWUmVnaXN0ZXJXYWxsZXRSZXNwb25zZRIfCgR1c2VyGAEgASgL",
+            "MhEudXNlcl9hcGkudjEuVXNlchIqCgphdXRoX3Rva2VuGAIgASgLMhYudXNl",
+            "cl9hcGkudjEuQXV0aFRva2VuIjAKIUNyZWF0ZUF1dGhuV2FsbGV0Q2hhbGxl",
+            "bmdlUmVxdWVzdBILCgNkaWQYASABKAkiMwoiQ3JlYXRlQXV0aG5XYWxsZXRD",
+            "aGFsbGVuZ2VSZXNwb25zZRINCgVub25jZRgBIAEoCSJDChJBdXRobldhbGxl",
+            "dFJlcXVlc3QSEQoJc2lnbmF0dXJlGAEgASgMEg0KBW5vbmNlGAIgASgJEgsK",
+            "A2RpZBgDIAEoCSJiChNBdXRobldhbGxldFJlc3BvbnNlEh8KBHVzZXIYASAB",
+            "KAsyES51c2VyX2FwaS52MS5Vc2VyEioKCmF1dGhfdG9rZW4YAiABKAsyFi51",
+            "c2VyX2FwaS52MS5BdXRoVG9rZW4iRwoZSGFuZGxlU0FNTENhbGxiYWNrUmVx",
+            "dWVzdBIVCg1zYW1sX3Jlc3BvbnNlGAEgASgJEhMKC3JlbGF5X3N0YXRlGAIg",
+            "ASgJIpgBChpIYW5kbGVTQU1MQ2FsbGJhY2tSZXNwb25zZRIfCgR1c2VyGAEg",
+            "ASgLMhEudXNlcl9hcGkudjEuVXNlchIqCgphdXRoX3Rva2VuGAIgASgLMhYu",
+            "dXNlcl9hcGkudjEuQXV0aFRva2VuEhUKDWluc3RhbmNlX25hbWUYAyABKAkS",
+            "FgoOcmVxdWVzdF9vcmlnaW4YBCABKAkiFwoVU0FNTFNQTWV0YWRhdGFSZXF1",
+            "ZXN0Ii0KFlNBTUxTUE1ldGFkYXRhUmVzcG9uc2USEwoLc3BfbWV0YWRhdGEY",
+            "ASABKAwiFwoVR2V0QXBwU2V0dGluZ3NSZXF1ZXN0IkIKC0FwcFNldHRpbmdz",
+            "EjMKD2F1dGhuX3Byb3ZpZGVycxgBIAMoCzIaLnVzZXJfYXBpLnYxLkF1dGhu",
+            "UHJvdmlkZXIiSQoNQXV0aG5Qcm92aWRlchInCghwcm92aWRlchgBIAEoDjIV",
+            "LnVzZXJfYXBpLnYxLlByb3ZpZGVyEg8KB2VuYWJsZWQYAiABKAgiSAoWR2V0",
+            "QXBwU2V0dGluZ3NSZXNwb25zZRIuCgxhcHBfc2V0dGluZ3MYASABKAsyGC51",
+            "c2VyX2FwaS52MS5BcHBTZXR0aW5ncyIiChNHZXRVc2VyQnlESURSZXF1ZXN0",
+            "EgsKA2RpZBgBIAEoCSI3ChRHZXRVc2VyQnlESURSZXNwb25zZRIfCgR1c2Vy",
+            "GAEgASgLMhEudXNlcl9hcGkudjEuVXNlciIlChZBc3NvY2lhdGVXYWxsZXRS",
+            "ZXF1ZXN0EgsKA2RpZBgBIAEoCSIZChdBc3NvY2lhdGVXYWxsZXRSZXNwb25z",
+            "ZSqOAQoIUHJvdmlkZXISGAoUUFJPVklERVJfVU5TUEVDSUZJRUQQABITCg9Q",
+            "Uk9WSURFUl9HSVRIVUIQARIVChFQUk9WSURFUl9GQUNFQk9PSxACEhMKD1BS",
+            "T1ZJREVSX0dPT0dMRRADEhEKDVBST1ZJREVSX1NBTUwQBBIUChBQUk9WSURF",
+            "Ul9DT0dOSVRPEAUqOwoEUm9sZRIUChBST0xFX1VOU1BFQ0lGSUVEEAASDQoJ",
+            "Uk9MRV9VU0VSEAESDgoKUk9MRV9BRE1JThACMsUPCg5Vc2VyTWFuYWdlbWVu",
+            "dBJiChFBdXRobldpdGhQYXNzd29yZBIlLnVzZXJfYXBpLnYxLkF1dGhuV2l0",
+            "aFBhc3N3b3JkUmVxdWVzdBomLnVzZXJfYXBpLnYxLkF1dGhuV2l0aFBhc3N3",
+            "b3JkUmVzcG9uc2USZQoSUmVmcmVzaEFjY2Vzc1Rva2VuEiYudXNlcl9hcGku",
+            "djEuUmVmcmVzaEFjY2Vzc1Rva2VuUmVxdWVzdBonLnVzZXJfYXBpLnYxLlJl",
+            "ZnJlc2hBY2Nlc3NUb2tlblJlc3BvbnNlEmIKEUF1dGhuV2l0aFByb3ZpZGVy",
+            "EiUudXNlcl9hcGkudjEuQXV0aG5XaXRoUHJvdmlkZXJSZXF1ZXN0GiYudXNl",
+            "cl9hcGkudjEuQXV0aG5XaXRoUHJvdmlkZXJSZXNwb25zZRJlChJIYW5kbGVP",
+            "SURDQ2FsbGJhY2sSJi51c2VyX2FwaS52MS5IYW5kbGVPSURDQ2FsbGJhY2tS",
+            "ZXF1ZXN0GicudXNlcl9hcGkudjEuSGFuZGxlT0lEQ0NhbGxiYWNrUmVzcG9u",
+            "c2USZQoSSGFuZGxlU0FNTENhbGxiYWNrEiYudXNlcl9hcGkudjEuSGFuZGxl",
+            "U0FNTENhbGxiYWNrUmVxdWVzdBonLnVzZXJfYXBpLnYxLkhhbmRsZVNBTUxD",
+            "YWxsYmFja1Jlc3BvbnNlElkKDlNBTUxTUE1ldGFkYXRhEiIudXNlcl9hcGku",
+            "djEuU0FNTFNQTWV0YWRhdGFSZXF1ZXN0GiMudXNlcl9hcGkudjEuU0FNTFNQ",
+            "TWV0YWRhdGFSZXNwb25zZRKgAQolQ3JlYXRlQXV0aG5Ccm93c2VyV2l0aFdh",
+            "bGxldENoYWxsZW5nZRI5LnVzZXJfYXBpLnYxLkNyZWF0ZUF1dGhuQnJvd3Nl",
+            "cldpdGhXYWxsZXRDaGFsbGVuZ2VSZXF1ZXN0GjoudXNlcl9hcGkudjEuQ3Jl",
+            "YXRlQXV0aG5Ccm93c2VyV2l0aFdhbGxldENoYWxsZW5nZVJlc3BvbnNlMAES",
+            "cQoWQXV0aG5Ccm93c2VyV2l0aFdhbGxldBIqLnVzZXJfYXBpLnYxLkF1dGhu",
+            "QnJvd3NlcldpdGhXYWxsZXRSZXF1ZXN0GisudXNlcl9hcGkudjEuQXV0aG5C",
+            "cm93c2VyV2l0aFdhbGxldFJlc3BvbnNlEn0KGkNyZWF0ZUF1dGhuV2FsbGV0",
+            "Q2hhbGxlbmdlEi4udXNlcl9hcGkudjEuQ3JlYXRlQXV0aG5XYWxsZXRDaGFs",
+            "bGVuZ2VSZXF1ZXN0Gi8udXNlcl9hcGkudjEuQ3JlYXRlQXV0aG5XYWxsZXRD",
+            "aGFsbGVuZ2VSZXNwb25zZRJQCgtBdXRobldhbGxldBIfLnVzZXJfYXBpLnYx",
+            "LkF1dGhuV2FsbGV0UmVxdWVzdBogLnVzZXJfYXBpLnYxLkF1dGhuV2FsbGV0",
+            "UmVzcG9uc2USiAEKHUNyZWF0ZVJlZ2lzdGVyV2FsbGV0Q2hhbGxlbmdlEjEu",
+            "dXNlcl9hcGkudjEuQ3JlYXRlUmVnaXN0ZXJXYWxsZXRDaGFsbGVuZ2VSZXF1",
+            "ZXN0GjIudXNlcl9hcGkudjEuQ3JlYXRlUmVnaXN0ZXJXYWxsZXRDaGFsbGVu",
+            "Z2VSZXNwb25zZTABElkKDlJlZ2lzdGVyV2FsbGV0EiIudXNlcl9hcGkudjEu",
+            "UmVnaXN0ZXJXYWxsZXRSZXF1ZXN0GiMudXNlcl9hcGkudjEuUmVnaXN0ZXJX",
+            "YWxsZXRSZXNwb25zZRJcCg9Bc3NvY2lhdGVXYWxsZXQSIy51c2VyX2FwaS52",
+            "MS5Bc3NvY2lhdGVXYWxsZXRSZXF1ZXN0GiQudXNlcl9hcGkudjEuQXNzb2Np",
+            "YXRlV2FsbGV0UmVzcG9uc2USWQoOR2V0QXBwU2V0dGluZ3MSIi51c2VyX2Fw",
+            "aS52MS5HZXRBcHBTZXR0aW5nc1JlcXVlc3QaIy51c2VyX2FwaS52MS5HZXRB",
+            "cHBTZXR0aW5nc1Jlc3BvbnNlElMKDFJlZ2lzdGVyVXNlchIgLnVzZXJfYXBp",
+            "LnYxLlJlZ2lzdGVyVXNlclJlcXVlc3QaIS51c2VyX2FwaS52MS5SZWdpc3Rl",
+            "clVzZXJSZXNwb25zZRJQCgtDb25maXJtVXNlchIfLnVzZXJfYXBpLnYxLkNv",
+            "bmZpcm1Vc2VyUmVxdWVzdBogLnVzZXJfYXBpLnYxLkNvbmZpcm1Vc2VyUmVz",
+            "cG9uc2USUAoLRmluZEJ5RW1haWwSHy51c2VyX2FwaS52MS5GaW5kQnlFbWFp",
+            "bFJlcXVlc3QaIC51c2VyX2FwaS52MS5GaW5kQnlFbWFpbFJlc3BvbnNlEkcK",
+            "CEZpbmRCeUlEEhwudXNlcl9hcGkudjEuRmluZEJ5SURSZXF1ZXN0Gh0udXNl",
+            "cl9hcGkudjEuRmluZEJ5SURSZXNwb25zZRI+CgVHZXRNZRIZLnVzZXJfYXBp",
+            "LnYxLkdldE1lUmVxdWVzdBoaLnVzZXJfYXBpLnYxLkdldE1lUmVzcG9uc2US",
+            "UwoMR2V0VXNlckJ5RElEEiAudXNlcl9hcGkudjEuR2V0VXNlckJ5RElEUmVx",
+            "dWVzdBohLnVzZXJfYXBpLnYxLkdldFVzZXJCeURJRFJlc3BvbnNlQkJaQGdp",
+            "dGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3VzZXJf",
+            "bWFuYWdlbWVudF9hcGkvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::AuthApi.V1.Provider), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.User), global::AuthApi.V1.User.Parser, new[]{ "Uuid", "FirstName", "LastName", "Email", "Role", "Avatar", "Phone", "Dids", "ExternalIds", "Metadata" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RegisterUserRequest), global::AuthApi.V1.RegisterUserRequest.Parser, new[]{ "Email", "FirstName", "LastName", "Password", "Role", "Avatar", "Phone" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthToken), global::AuthApi.V1.AuthToken.Parser, new[]{ "Token", "TokenType", "ExpiresIn", "RefreshToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RegisterUserResponse), global::AuthApi.V1.RegisterUserResponse.Parser, new[]{ "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.ConfirmUserRequest), global::AuthApi.V1.ConfirmUserRequest.Parser, new[]{ "EmailOrPhone", "Token" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.ConfirmUserResponse), global::AuthApi.V1.ConfirmUserResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWithProviderRequest), global::AuthApi.V1.AuthnWithProviderRequest.Parser, new[]{ "Provider", "InstanceName", "RequestOrigin", "ClientState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWithProviderResponse), global::AuthApi.V1.AuthnWithProviderResponse.Parser, new[]{ "ProviderUrl" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.HandleOIDCCallbackRequest), global::AuthApi.V1.HandleOIDCCallbackRequest.Parser, new[]{ "Code", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.HandleOIDCCallbackResponse), global::AuthApi.V1.HandleOIDCCallbackResponse.Parser, new[]{ "User", "AuthToken", "InstanceName", "RequestOrigin", "ClientState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.FindByEmailRequest), global::AuthApi.V1.FindByEmailRequest.Parser, new[]{ "Email" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.FindByEmailResponse), global::AuthApi.V1.FindByEmailResponse.Parser, new[]{ "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.FindByIDRequest), global::AuthApi.V1.FindByIDRequest.Parser, new[]{ "Uuid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.FindByIDResponse), global::AuthApi.V1.FindByIDResponse.Parser, new[]{ "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWithPasswordRequest), global::AuthApi.V1.AuthnWithPasswordRequest.Parser, new[]{ "Email", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWithPasswordResponse), global::AuthApi.V1.AuthnWithPasswordResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RefreshAccessTokenRequest), global::AuthApi.V1.RefreshAccessTokenRequest.Parser, new[]{ "RefreshToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RefreshAccessTokenResponse), global::AuthApi.V1.RefreshAccessTokenResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetMeRequest), global::AuthApi.V1.GetMeRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetMeResponse), global::AuthApi.V1.GetMeResponse.Parser, new[]{ "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthTokenResponse), global::AuthApi.V1.AuthTokenResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest), global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse), global::AuthApi.V1.CreateAuthnBrowserWithWalletChallengeResponse.Parser, new[]{ "Nonce", "AuthToken" }, new[]{ "DidStart" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnBrowserWithWalletRequest), global::AuthApi.V1.AuthnBrowserWithWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnBrowserWithWalletResponse), global::AuthApi.V1.AuthnBrowserWithWalletResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateRegisterWalletChallengeRequest), global::AuthApi.V1.CreateRegisterWalletChallengeRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateRegisterWalletChallengeResponse), global::AuthApi.V1.CreateRegisterWalletChallengeResponse.Parser, new[]{ "Nonce", "Ok" }, new[]{ "RegistrationStart" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RegisterWalletRequest), global::AuthApi.V1.RegisterWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.RegisterWalletResponse), global::AuthApi.V1.RegisterWalletResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateAuthnWalletChallengeRequest), global::AuthApi.V1.CreateAuthnWalletChallengeRequest.Parser, new[]{ "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.CreateAuthnWalletChallengeResponse), global::AuthApi.V1.CreateAuthnWalletChallengeResponse.Parser, new[]{ "Nonce" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWalletRequest), global::AuthApi.V1.AuthnWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnWalletResponse), global::AuthApi.V1.AuthnWalletResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.HandleSAMLCallbackRequest), global::AuthApi.V1.HandleSAMLCallbackRequest.Parser, new[]{ "SamlResponse", "RelayState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.HandleSAMLCallbackResponse), global::AuthApi.V1.HandleSAMLCallbackResponse.Parser, new[]{ "User", "AuthToken", "InstanceName", "RequestOrigin" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.SAMLSPMetadataRequest), global::AuthApi.V1.SAMLSPMetadataRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.SAMLSPMetadataResponse), global::AuthApi.V1.SAMLSPMetadataResponse.Parser, new[]{ "SpMetadata" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetAppSettingsRequest), global::AuthApi.V1.GetAppSettingsRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AppSettings), global::AuthApi.V1.AppSettings.Parser, new[]{ "AuthnProviders" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AuthnProvider), global::AuthApi.V1.AuthnProvider.Parser, new[]{ "Provider", "Enabled" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetAppSettingsResponse), global::AuthApi.V1.GetAppSettingsResponse.Parser, new[]{ "AppSettings" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetUserByDIDRequest), global::AuthApi.V1.GetUserByDIDRequest.Parser, new[]{ "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.GetUserByDIDResponse), global::AuthApi.V1.GetUserByDIDResponse.Parser, new[]{ "User" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AssociateWalletRequest), global::AuthApi.V1.AssociateWalletRequest.Parser, new[]{ "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthApi.V1.AssociateWalletResponse), global::AuthApi.V1.AssociateWalletResponse.Parser, null, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UserApi.V1.Provider), typeof(global::UserApi.V1.Role), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.User), global::UserApi.V1.User.Parser, new[]{ "Uuid", "FirstName", "LastName", "Email", "Role", "Avatar", "Phone", "Dids", "ExternalIds", "Metadata" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RegisterUserRequest), global::UserApi.V1.RegisterUserRequest.Parser, new[]{ "Email", "FirstName", "LastName", "Password", "Role", "Avatar", "Phone" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthToken), global::UserApi.V1.AuthToken.Parser, new[]{ "Token", "TokenType", "ExpiresIn", "RefreshToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RegisterUserResponse), global::UserApi.V1.RegisterUserResponse.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.ConfirmUserRequest), global::UserApi.V1.ConfirmUserRequest.Parser, new[]{ "EmailOrPhone", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.ConfirmUserResponse), global::UserApi.V1.ConfirmUserResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWithProviderRequest), global::UserApi.V1.AuthnWithProviderRequest.Parser, new[]{ "Provider", "InstanceName", "RequestOrigin", "ClientState" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWithProviderResponse), global::UserApi.V1.AuthnWithProviderResponse.Parser, new[]{ "ProviderUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.HandleOIDCCallbackRequest), global::UserApi.V1.HandleOIDCCallbackRequest.Parser, new[]{ "Code", "State" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.HandleOIDCCallbackResponse), global::UserApi.V1.HandleOIDCCallbackResponse.Parser, new[]{ "User", "AuthToken", "InstanceName", "RequestOrigin", "ClientState" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.FindByEmailRequest), global::UserApi.V1.FindByEmailRequest.Parser, new[]{ "Email" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.FindByEmailResponse), global::UserApi.V1.FindByEmailResponse.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.FindByIDRequest), global::UserApi.V1.FindByIDRequest.Parser, new[]{ "Uuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.FindByIDResponse), global::UserApi.V1.FindByIDResponse.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWithPasswordRequest), global::UserApi.V1.AuthnWithPasswordRequest.Parser, new[]{ "Email", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWithPasswordResponse), global::UserApi.V1.AuthnWithPasswordResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RefreshAccessTokenRequest), global::UserApi.V1.RefreshAccessTokenRequest.Parser, new[]{ "RefreshToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RefreshAccessTokenResponse), global::UserApi.V1.RefreshAccessTokenResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetMeRequest), global::UserApi.V1.GetMeRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetMeResponse), global::UserApi.V1.GetMeResponse.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthTokenResponse), global::UserApi.V1.AuthTokenResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest), global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse), global::UserApi.V1.CreateAuthnBrowserWithWalletChallengeResponse.Parser, new[]{ "Nonce", "AuthToken" }, new[]{ "DidStart" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnBrowserWithWalletRequest), global::UserApi.V1.AuthnBrowserWithWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnBrowserWithWalletResponse), global::UserApi.V1.AuthnBrowserWithWalletResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateRegisterWalletChallengeRequest), global::UserApi.V1.CreateRegisterWalletChallengeRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateRegisterWalletChallengeResponse), global::UserApi.V1.CreateRegisterWalletChallengeResponse.Parser, new[]{ "Nonce", "Ok" }, new[]{ "RegistrationStart" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RegisterWalletRequest), global::UserApi.V1.RegisterWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.RegisterWalletResponse), global::UserApi.V1.RegisterWalletResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateAuthnWalletChallengeRequest), global::UserApi.V1.CreateAuthnWalletChallengeRequest.Parser, new[]{ "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.CreateAuthnWalletChallengeResponse), global::UserApi.V1.CreateAuthnWalletChallengeResponse.Parser, new[]{ "Nonce" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWalletRequest), global::UserApi.V1.AuthnWalletRequest.Parser, new[]{ "Signature", "Nonce", "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnWalletResponse), global::UserApi.V1.AuthnWalletResponse.Parser, new[]{ "User", "AuthToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.HandleSAMLCallbackRequest), global::UserApi.V1.HandleSAMLCallbackRequest.Parser, new[]{ "SamlResponse", "RelayState" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.HandleSAMLCallbackResponse), global::UserApi.V1.HandleSAMLCallbackResponse.Parser, new[]{ "User", "AuthToken", "InstanceName", "RequestOrigin" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.SAMLSPMetadataRequest), global::UserApi.V1.SAMLSPMetadataRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.SAMLSPMetadataResponse), global::UserApi.V1.SAMLSPMetadataResponse.Parser, new[]{ "SpMetadata" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetAppSettingsRequest), global::UserApi.V1.GetAppSettingsRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AppSettings), global::UserApi.V1.AppSettings.Parser, new[]{ "AuthnProviders" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AuthnProvider), global::UserApi.V1.AuthnProvider.Parser, new[]{ "Provider", "Enabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetAppSettingsResponse), global::UserApi.V1.GetAppSettingsResponse.Parser, new[]{ "AppSettings" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetUserByDIDRequest), global::UserApi.V1.GetUserByDIDRequest.Parser, new[]{ "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetUserByDIDResponse), global::UserApi.V1.GetUserByDIDResponse.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AssociateWalletRequest), global::UserApi.V1.AssociateWalletRequest.Parser, new[]{ "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AssociateWalletResponse), global::UserApi.V1.AssociateWalletResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -212,6 +214,12 @@ namespace AuthApi.V1 {
     [pbr::OriginalName("PROVIDER_GOOGLE")] Google = 3,
     [pbr::OriginalName("PROVIDER_SAML")] Saml = 4,
     [pbr::OriginalName("PROVIDER_COGNITO")] Cognito = 5,
+  }
+
+  public enum Role {
+    [pbr::OriginalName("ROLE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("ROLE_USER")] User = 1,
+    [pbr::OriginalName("ROLE_ADMIN")] Admin = 2,
   }
 
   #endregion
@@ -231,7 +239,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[0]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -332,16 +340,16 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "role" field.</summary>
     public const int RoleFieldNumber = 7;
-    private string role_ = "";
+    private global::UserApi.V1.Role role_ = global::UserApi.V1.Role.Unspecified;
     /// <summary>
     ///Role of the user, either but not limited to Admin or User.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Role {
+    public global::UserApi.V1.Role Role {
       get { return role_; }
       set {
-        role_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        role_ = value;
       }
     }
 
@@ -454,7 +462,7 @@ namespace AuthApi.V1 {
       if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
-      if (Role.Length != 0) hash ^= Role.GetHashCode();
+      if (Role != global::UserApi.V1.Role.Unspecified) hash ^= Role.GetHashCode();
       if (Avatar.Length != 0) hash ^= Avatar.GetHashCode();
       if (Phone.Length != 0) hash ^= Phone.GetHashCode();
       hash ^= dids_.GetHashCode();
@@ -494,9 +502,9 @@ namespace AuthApi.V1 {
         output.WriteRawTag(50);
         output.WriteString(Email);
       }
-      if (Role.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Role);
       }
       if (Avatar.Length != 0) {
         output.WriteRawTag(66);
@@ -538,9 +546,9 @@ namespace AuthApi.V1 {
         output.WriteRawTag(50);
         output.WriteString(Email);
       }
-      if (Role.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Role);
       }
       if (Avatar.Length != 0) {
         output.WriteRawTag(66);
@@ -578,8 +586,8 @@ namespace AuthApi.V1 {
       if (Email.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
-      if (Role.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Role);
       }
       if (Avatar.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Avatar);
@@ -616,7 +624,7 @@ namespace AuthApi.V1 {
       if (other.Email.Length != 0) {
         Email = other.Email;
       }
-      if (other.Role.Length != 0) {
+      if (other.Role != global::UserApi.V1.Role.Unspecified) {
         Role = other.Role;
       }
       if (other.Avatar.Length != 0) {
@@ -664,8 +672,8 @@ namespace AuthApi.V1 {
             Email = input.ReadString();
             break;
           }
-          case 58: {
-            Role = input.ReadString();
+          case 56: {
+            Role = (global::UserApi.V1.Role) input.ReadEnum();
             break;
           }
           case 66: {
@@ -722,8 +730,8 @@ namespace AuthApi.V1 {
             Email = input.ReadString();
             break;
           }
-          case 58: {
-            Role = input.ReadString();
+          case 56: {
+            Role = (global::UserApi.V1.Role) input.ReadEnum();
             break;
           }
           case 66: {
@@ -770,7 +778,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[1]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -868,16 +876,16 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "role" field.</summary>
     public const int RoleFieldNumber = 6;
-    private string role_ = "";
+    private global::UserApi.V1.Role role_ = global::UserApi.V1.Role.Unspecified;
     /// <summary>
     ///Role of the user, either but not limited to Admin or User.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Role {
+    public global::UserApi.V1.Role Role {
       get { return role_; }
       set {
-        role_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        role_ = value;
       }
     }
 
@@ -944,7 +952,7 @@ namespace AuthApi.V1 {
       if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
-      if (Role.Length != 0) hash ^= Role.GetHashCode();
+      if (Role != global::UserApi.V1.Role.Unspecified) hash ^= Role.GetHashCode();
       if (Avatar.Length != 0) hash ^= Avatar.GetHashCode();
       if (Phone.Length != 0) hash ^= Phone.GetHashCode();
       if (_unknownFields != null) {
@@ -981,9 +989,9 @@ namespace AuthApi.V1 {
         output.WriteRawTag(42);
         output.WriteString(Password);
       }
-      if (Role.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Role);
       }
       if (Avatar.Length != 0) {
         output.WriteRawTag(58);
@@ -1019,9 +1027,9 @@ namespace AuthApi.V1 {
         output.WriteRawTag(42);
         output.WriteString(Password);
       }
-      if (Role.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Role);
       }
       if (Avatar.Length != 0) {
         output.WriteRawTag(58);
@@ -1053,8 +1061,8 @@ namespace AuthApi.V1 {
       if (Password.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
-      if (Role.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Role);
+      if (Role != global::UserApi.V1.Role.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Role);
       }
       if (Avatar.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Avatar);
@@ -1086,7 +1094,7 @@ namespace AuthApi.V1 {
       if (other.Password.Length != 0) {
         Password = other.Password;
       }
-      if (other.Role.Length != 0) {
+      if (other.Role != global::UserApi.V1.Role.Unspecified) {
         Role = other.Role;
       }
       if (other.Avatar.Length != 0) {
@@ -1126,8 +1134,8 @@ namespace AuthApi.V1 {
             Password = input.ReadString();
             break;
           }
-          case 50: {
-            Role = input.ReadString();
+          case 48: {
+            Role = (global::UserApi.V1.Role) input.ReadEnum();
             break;
           }
           case 58: {
@@ -1169,8 +1177,8 @@ namespace AuthApi.V1 {
             Password = input.ReadString();
             break;
           }
-          case 50: {
-            Role = input.ReadString();
+          case 48: {
+            Role = (global::UserApi.V1.Role) input.ReadEnum();
             break;
           }
           case 58: {
@@ -1202,7 +1210,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[2]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1514,7 +1522,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[3]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1546,13 +1554,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
-    ///User object of the registrant.
+    ///User object of the registeree.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -1646,7 +1654,7 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
@@ -1667,7 +1675,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -1689,7 +1697,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -1715,7 +1723,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[4]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1950,7 +1958,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[5]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2102,7 +2110,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[6]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2137,13 +2145,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "provider" field.</summary>
     public const int ProviderFieldNumber = 1;
-    private global::AuthApi.V1.Provider provider_ = global::AuthApi.V1.Provider.Unspecified;
+    private global::UserApi.V1.Provider provider_ = global::UserApi.V1.Provider.Unspecified;
     /// <summary>
     ///Identity Provider to authenticate against via OIDC or SAML.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.Provider Provider {
+    public global::UserApi.V1.Provider Provider {
       get { return provider_; }
       set {
         provider_ = value;
@@ -2221,7 +2229,7 @@ namespace AuthApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) hash ^= Provider.GetHashCode();
+      if (Provider != global::UserApi.V1.Provider.Unspecified) hash ^= Provider.GetHashCode();
       if (InstanceName.Length != 0) hash ^= InstanceName.GetHashCode();
       if (RequestOrigin.Length != 0) hash ^= RequestOrigin.GetHashCode();
       if (clientState_ != null) hash ^= ClientState.GetHashCode();
@@ -2243,7 +2251,7 @@ namespace AuthApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Provider);
       }
@@ -2269,7 +2277,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Provider);
       }
@@ -2295,7 +2303,7 @@ namespace AuthApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Provider);
       }
       if (InstanceName.Length != 0) {
@@ -2319,7 +2327,7 @@ namespace AuthApi.V1 {
       if (other == null) {
         return;
       }
-      if (other.Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (other.Provider != global::UserApi.V1.Provider.Unspecified) {
         Provider = other.Provider;
       }
       if (other.InstanceName.Length != 0) {
@@ -2350,7 +2358,7 @@ namespace AuthApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Provider = (global::AuthApi.V1.Provider) input.ReadEnum();
+            Provider = (global::UserApi.V1.Provider) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2384,7 +2392,7 @@ namespace AuthApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Provider = (global::AuthApi.V1.Provider) input.ReadEnum();
+            Provider = (global::UserApi.V1.Provider) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2423,7 +2431,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[7]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2615,7 +2623,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[8]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2847,7 +2855,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[9]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2883,13 +2891,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -2898,13 +2906,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -3095,13 +3103,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -3134,14 +3142,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -3178,14 +3186,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -3226,7 +3234,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[10]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3418,7 +3426,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[11]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3450,13 +3458,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -3550,7 +3558,7 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
@@ -3571,7 +3579,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -3593,7 +3601,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -3619,7 +3627,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[12]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3811,7 +3819,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[13]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3843,13 +3851,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -3943,7 +3951,7 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
@@ -3964,7 +3972,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -3986,7 +3994,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -4012,7 +4020,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[14]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4244,7 +4252,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[15]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4277,13 +4285,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -4292,13 +4300,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -4405,13 +4413,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -4432,14 +4440,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -4461,14 +4469,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -4494,7 +4502,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[16]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4686,7 +4694,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[17]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4719,13 +4727,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -4734,13 +4742,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -4847,13 +4855,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -4874,14 +4882,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -4903,14 +4911,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -4939,7 +4947,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[18]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5091,7 +5099,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[19]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5123,13 +5131,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -5223,7 +5231,7 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
@@ -5244,7 +5252,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -5266,7 +5274,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -5292,7 +5300,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[20]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5325,13 +5333,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -5340,13 +5348,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -5453,13 +5461,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -5480,14 +5488,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -5509,14 +5517,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -5545,7 +5553,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[21]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5697,7 +5705,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[22]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5757,8 +5765,8 @@ namespace AuthApi.V1 {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthTokenResponse AuthToken {
-      get { return didStartCase_ == DidStartOneofCase.AuthToken ? (global::AuthApi.V1.AuthTokenResponse) didStart_ : null; }
+    public global::UserApi.V1.AuthTokenResponse AuthToken {
+      get { return didStartCase_ == DidStartOneofCase.AuthToken ? (global::UserApi.V1.AuthTokenResponse) didStart_ : null; }
       set {
         didStart_ = value;
         didStartCase_ = value == null ? DidStartOneofCase.None : DidStartOneofCase.AuthToken;
@@ -5892,7 +5900,7 @@ namespace AuthApi.V1 {
           break;
         case DidStartOneofCase.AuthToken:
           if (AuthToken == null) {
-            AuthToken = new global::AuthApi.V1.AuthTokenResponse();
+            AuthToken = new global::UserApi.V1.AuthTokenResponse();
           }
           AuthToken.MergeFrom(other.AuthToken);
           break;
@@ -5918,7 +5926,7 @@ namespace AuthApi.V1 {
             break;
           }
           case 18: {
-            global::AuthApi.V1.AuthTokenResponse subBuilder = new global::AuthApi.V1.AuthTokenResponse();
+            global::UserApi.V1.AuthTokenResponse subBuilder = new global::UserApi.V1.AuthTokenResponse();
             if (didStartCase_ == DidStartOneofCase.AuthToken) {
               subBuilder.MergeFrom(AuthToken);
             }
@@ -5946,7 +5954,7 @@ namespace AuthApi.V1 {
             break;
           }
           case 18: {
-            global::AuthApi.V1.AuthTokenResponse subBuilder = new global::AuthApi.V1.AuthTokenResponse();
+            global::UserApi.V1.AuthTokenResponse subBuilder = new global::UserApi.V1.AuthTokenResponse();
             if (didStartCase_ == DidStartOneofCase.AuthToken) {
               subBuilder.MergeFrom(AuthToken);
             }
@@ -5975,7 +5983,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[23]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6250,7 +6258,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[24]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6405,7 +6413,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[25]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6557,7 +6565,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[26]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6822,7 +6830,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[27]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7094,7 +7102,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[28]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7127,13 +7135,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -7142,13 +7150,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -7255,13 +7263,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -7282,14 +7290,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -7311,14 +7319,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -7344,7 +7352,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[29]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7536,7 +7544,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[30]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7728,7 +7736,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[31]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8000,7 +8008,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[32]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8033,13 +8041,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -8048,13 +8056,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access TokenUser user = 1;
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -8161,13 +8169,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -8188,14 +8196,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -8217,14 +8225,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -8250,7 +8258,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[33]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8482,7 +8490,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[34]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8517,13 +8525,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -8532,13 +8540,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "auth_token" field.</summary>
     public const int AuthTokenFieldNumber = 2;
-    private global::AuthApi.V1.AuthToken authToken_;
+    private global::UserApi.V1.AuthToken authToken_;
     /// <summary>
     ///OAuth2 RFC6749 Access Token
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AuthToken AuthToken {
+    public global::UserApi.V1.AuthToken AuthToken {
       get { return authToken_; }
       set {
         authToken_ = value;
@@ -8701,13 +8709,13 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
       if (other.authToken_ != null) {
         if (authToken_ == null) {
-          AuthToken = new global::AuthApi.V1.AuthToken();
+          AuthToken = new global::UserApi.V1.AuthToken();
         }
         AuthToken.MergeFrom(other.AuthToken);
       }
@@ -8734,14 +8742,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -8771,14 +8779,14 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
           }
           case 18: {
             if (authToken_ == null) {
-              AuthToken = new global::AuthApi.V1.AuthToken();
+              AuthToken = new global::UserApi.V1.AuthToken();
             }
             input.ReadMessage(AuthToken);
             break;
@@ -8815,7 +8823,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[35]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8967,7 +8975,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[36]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9162,7 +9170,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[37]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9314,7 +9322,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[38]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9346,15 +9354,15 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "authn_providers" field.</summary>
     public const int AuthnProvidersFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::AuthApi.V1.AuthnProvider> _repeated_authnProviders_codec
-        = pb::FieldCodec.ForMessage(10, global::AuthApi.V1.AuthnProvider.Parser);
-    private readonly pbc::RepeatedField<global::AuthApi.V1.AuthnProvider> authnProviders_ = new pbc::RepeatedField<global::AuthApi.V1.AuthnProvider>();
+    private static readonly pb::FieldCodec<global::UserApi.V1.AuthnProvider> _repeated_authnProviders_codec
+        = pb::FieldCodec.ForMessage(10, global::UserApi.V1.AuthnProvider.Parser);
+    private readonly pbc::RepeatedField<global::UserApi.V1.AuthnProvider> authnProviders_ = new pbc::RepeatedField<global::UserApi.V1.AuthnProvider>();
     /// <summary>
     ///Supported identity providers used for authentication.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::AuthApi.V1.AuthnProvider> AuthnProviders {
+    public pbc::RepeatedField<global::UserApi.V1.AuthnProvider> AuthnProviders {
       get { return authnProviders_; }
     }
 
@@ -9495,7 +9503,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[39]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9528,13 +9536,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "provider" field.</summary>
     public const int ProviderFieldNumber = 1;
-    private global::AuthApi.V1.Provider provider_ = global::AuthApi.V1.Provider.Unspecified;
+    private global::UserApi.V1.Provider provider_ = global::UserApi.V1.Provider.Unspecified;
     /// <summary>
     ///Identity provider used for authentication.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.Provider Provider {
+    public global::UserApi.V1.Provider Provider {
       get { return provider_; }
       set {
         provider_ = value;
@@ -9580,7 +9588,7 @@ namespace AuthApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) hash ^= Provider.GetHashCode();
+      if (Provider != global::UserApi.V1.Provider.Unspecified) hash ^= Provider.GetHashCode();
       if (Enabled != false) hash ^= Enabled.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -9600,7 +9608,7 @@ namespace AuthApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Provider);
       }
@@ -9618,7 +9626,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Provider);
       }
@@ -9636,7 +9644,7 @@ namespace AuthApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (Provider != global::UserApi.V1.Provider.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Provider);
       }
       if (Enabled != false) {
@@ -9654,7 +9662,7 @@ namespace AuthApi.V1 {
       if (other == null) {
         return;
       }
-      if (other.Provider != global::AuthApi.V1.Provider.Unspecified) {
+      if (other.Provider != global::UserApi.V1.Provider.Unspecified) {
         Provider = other.Provider;
       }
       if (other.Enabled != false) {
@@ -9676,7 +9684,7 @@ namespace AuthApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Provider = (global::AuthApi.V1.Provider) input.ReadEnum();
+            Provider = (global::UserApi.V1.Provider) input.ReadEnum();
             break;
           }
           case 16: {
@@ -9699,7 +9707,7 @@ namespace AuthApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Provider = (global::AuthApi.V1.Provider) input.ReadEnum();
+            Provider = (global::UserApi.V1.Provider) input.ReadEnum();
             break;
           }
           case 16: {
@@ -9727,7 +9735,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[40]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9759,13 +9767,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "app_settings" field.</summary>
     public const int AppSettingsFieldNumber = 1;
-    private global::AuthApi.V1.AppSettings appSettings_;
+    private global::UserApi.V1.AppSettings appSettings_;
     /// <summary>
     ///AppSettings object configured in the environment.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.AppSettings AppSettings {
+    public global::UserApi.V1.AppSettings AppSettings {
       get { return appSettings_; }
       set {
         appSettings_ = value;
@@ -9859,7 +9867,7 @@ namespace AuthApi.V1 {
       }
       if (other.appSettings_ != null) {
         if (appSettings_ == null) {
-          AppSettings = new global::AuthApi.V1.AppSettings();
+          AppSettings = new global::UserApi.V1.AppSettings();
         }
         AppSettings.MergeFrom(other.AppSettings);
       }
@@ -9880,7 +9888,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (appSettings_ == null) {
-              AppSettings = new global::AuthApi.V1.AppSettings();
+              AppSettings = new global::UserApi.V1.AppSettings();
             }
             input.ReadMessage(AppSettings);
             break;
@@ -9902,7 +9910,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (appSettings_ == null) {
-              AppSettings = new global::AuthApi.V1.AppSettings();
+              AppSettings = new global::UserApi.V1.AppSettings();
             }
             input.ReadMessage(AppSettings);
             break;
@@ -9928,7 +9936,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[41]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10120,7 +10128,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[42]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10152,13 +10160,13 @@ namespace AuthApi.V1 {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::AuthApi.V1.User user_;
+    private global::UserApi.V1.User user_;
     /// <summary>
     ///User object of the subject.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::AuthApi.V1.User User {
+    public global::UserApi.V1.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -10252,7 +10260,7 @@ namespace AuthApi.V1 {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::AuthApi.V1.User();
+          User = new global::UserApi.V1.User();
         }
         User.MergeFrom(other.User);
       }
@@ -10273,7 +10281,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -10295,7 +10303,7 @@ namespace AuthApi.V1 {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::AuthApi.V1.User();
+              User = new global::UserApi.V1.User();
             }
             input.ReadMessage(User);
             break;
@@ -10321,7 +10329,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[43]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10516,7 +10524,7 @@ namespace AuthApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::AuthApi.V1.UserManagementReflection.Descriptor.MessageTypes[44]; }
+      get { return global::UserApi.V1.UserManagementReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

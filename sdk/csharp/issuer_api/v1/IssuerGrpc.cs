@@ -9,7 +9,9 @@ using grpc = global::Grpc.Core;
 
 namespace IssuerApi.V1 {
   /// <summary>
-  /// Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance limits.  It holds digital banknotes in its own vault.
+  /// Financial intermediary with a reserve account with the Authority. A role typically played by commercial banks and
+  /// other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance
+  /// limits.  It holds digital banknotes in its own vault.
   /// </summary>
   public static partial class Issuer
   {
@@ -132,7 +134,9 @@ namespace IssuerApi.V1 {
       }
 
       /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+      /// future double spends. The newly authorized promissory files are returned as a stream.
       /// </summary>
       /// <param name="requestStream">Used for reading requests from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
@@ -145,7 +149,9 @@ namespace IssuerApi.V1 {
       }
 
       /// <summary>
-      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+      /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+      /// along with the verifier of the Authority.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
@@ -259,7 +265,9 @@ namespace IssuerApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Authenticate, null, options, request);
       }
       /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+      /// future double spends. The newly authorized promissory files are returned as a stream.
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
@@ -271,7 +279,9 @@ namespace IssuerApi.V1 {
         return Authorize(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for future double spends. The newly authorized promissory files are returned as a stream.
+      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
+      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
+      /// future double spends. The newly authorized promissory files are returned as a stream.
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
@@ -281,7 +291,9 @@ namespace IssuerApi.V1 {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Authorize, null, options);
       }
       /// <summary>
-      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+      /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+      /// along with the verifier of the Authority.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -294,7 +306,9 @@ namespace IssuerApi.V1 {
         return Issue(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code, along with the verifier of the Authority.
+      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+      /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+      /// along with the verifier of the Authority.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

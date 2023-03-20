@@ -25,22 +25,23 @@ namespace Gateway {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhnYXRld2F5L3YxL2dhdGV3YXkucHJvdG8SB2dhdGV3YXkaFmNvbW1vbi92",
-            "MS9jb21tb24ucHJvdG8aFmNvbW1vbi92MS9wYWNrZXQucHJvdG8iPQoITG9n",
+            "MS9jb21tb24ucHJvdG8aFmNvbW1vbi92MS9wYWNrZXQucHJvdG8iZAoITG9n",
             "RW50cnkSEAoIdmVyaWZpZXIYASABKAkSDAoEbm90ZRgCIAEoCRIRCgl0aW1l",
-            "c3RhbXAYAyABKAkiFAoSQ29ubmVjdGlvbnNSZXF1ZXN0Im0KE0Nvbm5lY3Rp",
-            "b25zUmVzcG9uc2USDgoGYWN0aXZlGAEgAygJEiIKB2NyZWF0ZWQYAiADKAsy",
-            "ES5nYXRld2F5LkxvZ0VudHJ5EiIKB3JlbW92ZWQYAyADKAsyES5nYXRld2F5",
-            "LkxvZ0VudHJ5MtEBCgdHYXRld2F5Ek0KDEF1dGhlbnRpY2F0ZRIdLmNvbW1v",
-            "bi5BdXRoZW50aWNhdGlvblJlcXVlc3QaHi5jb21tb24uQXV0aGVudGljYXRp",
-            "b25SZXNwb25zZRIqCgREYXRhEg4uY29tbW9uLlBhY2tldBoOLmNvbW1vbi5Q",
-            "YWNrZXQoATABEksKDkdldENvbm5lY3Rpb25zEhsuZ2F0ZXdheS5Db25uZWN0",
-            "aW9uc1JlcXVlc3QaHC5nYXRld2F5LkNvbm5lY3Rpb25zUmVzcG9uc2VCNlo0",
-            "Z2l0aHViLmNvbS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vZ2F0",
-            "ZXdheS92MWIGcHJvdG8z"));
+            "c3RhbXAYAyABKAkSDgoGb3JpZ2luGAQgASgJEhUKDWNvbm5lY3Rpb25faWQY",
+            "BSABKAkiFAoSQ29ubmVjdGlvbnNSZXF1ZXN0Im0KE0Nvbm5lY3Rpb25zUmVz",
+            "cG9uc2USDgoGYWN0aXZlGAEgAygJEiIKB2NyZWF0ZWQYAiADKAsyES5nYXRl",
+            "d2F5LkxvZ0VudHJ5EiIKB3JlbW92ZWQYAyADKAsyES5nYXRld2F5LkxvZ0Vu",
+            "dHJ5MtEBCgdHYXRld2F5Ek0KDEF1dGhlbnRpY2F0ZRIdLmNvbW1vbi5BdXRo",
+            "ZW50aWNhdGlvblJlcXVlc3QaHi5jb21tb24uQXV0aGVudGljYXRpb25SZXNw",
+            "b25zZRIqCgREYXRhEg4uY29tbW9uLlBhY2tldBoOLmNvbW1vbi5QYWNrZXQo",
+            "ATABEksKDkdldENvbm5lY3Rpb25zEhsuZ2F0ZXdheS5Db25uZWN0aW9uc1Jl",
+            "cXVlc3QaHC5nYXRld2F5LkNvbm5lY3Rpb25zUmVzcG9uc2VCNlo0Z2l0aHVi",
+            "LmNvbS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vZ2F0ZXdheS92",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, global::Common.PacketReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Gateway.LogEntry), global::Gateway.LogEntry.Parser, new[]{ "Verifier", "Note", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Gateway.LogEntry), global::Gateway.LogEntry.Parser, new[]{ "Verifier", "Note", "Timestamp", "Origin", "ConnectionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gateway.ConnectionsRequest), global::Gateway.ConnectionsRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gateway.ConnectionsResponse), global::Gateway.ConnectionsResponse.Parser, new[]{ "Active", "Created", "Removed" }, null, null, null, null)
           }));
@@ -89,6 +90,8 @@ namespace Gateway {
       verifier_ = other.verifier_;
       note_ = other.note_;
       timestamp_ = other.timestamp_;
+      origin_ = other.origin_;
+      connectionId_ = other.connectionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -102,7 +105,7 @@ namespace Gateway {
     public const int VerifierFieldNumber = 1;
     private string verifier_ = "";
     /// <summary>
-    /// Public Key 
+    /// Public Key
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,6 +146,33 @@ namespace Gateway {
       }
     }
 
+    /// <summary>Field number for the "origin" field.</summary>
+    public const int OriginFieldNumber = 4;
+    private string origin_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Origin {
+      get { return origin_; }
+      set {
+        origin_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "connection_id" field.</summary>
+    public const int ConnectionIdFieldNumber = 5;
+    private string connectionId_ = "";
+    /// <summary>
+    /// UUID representing a unique client connection
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ConnectionId {
+      get { return connectionId_; }
+      set {
+        connectionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -161,6 +191,8 @@ namespace Gateway {
       if (Verifier != other.Verifier) return false;
       if (Note != other.Note) return false;
       if (Timestamp != other.Timestamp) return false;
+      if (Origin != other.Origin) return false;
+      if (ConnectionId != other.ConnectionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -171,6 +203,8 @@ namespace Gateway {
       if (Verifier.Length != 0) hash ^= Verifier.GetHashCode();
       if (Note.Length != 0) hash ^= Note.GetHashCode();
       if (Timestamp.Length != 0) hash ^= Timestamp.GetHashCode();
+      if (Origin.Length != 0) hash ^= Origin.GetHashCode();
+      if (ConnectionId.Length != 0) hash ^= ConnectionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -201,6 +235,14 @@ namespace Gateway {
         output.WriteRawTag(26);
         output.WriteString(Timestamp);
       }
+      if (Origin.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Origin);
+      }
+      if (ConnectionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(ConnectionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -223,6 +265,14 @@ namespace Gateway {
         output.WriteRawTag(26);
         output.WriteString(Timestamp);
       }
+      if (Origin.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Origin);
+      }
+      if (ConnectionId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(ConnectionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -241,6 +291,12 @@ namespace Gateway {
       }
       if (Timestamp.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Timestamp);
+      }
+      if (Origin.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Origin);
+      }
+      if (ConnectionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ConnectionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -262,6 +318,12 @@ namespace Gateway {
       }
       if (other.Timestamp.Length != 0) {
         Timestamp = other.Timestamp;
+      }
+      if (other.Origin.Length != 0) {
+        Origin = other.Origin;
+      }
+      if (other.ConnectionId.Length != 0) {
+        ConnectionId = other.ConnectionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -290,6 +352,14 @@ namespace Gateway {
             Timestamp = input.ReadString();
             break;
           }
+          case 34: {
+            Origin = input.ReadString();
+            break;
+          }
+          case 42: {
+            ConnectionId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -315,6 +385,14 @@ namespace Gateway {
           }
           case 26: {
             Timestamp = input.ReadString();
+            break;
+          }
+          case 34: {
+            Origin = input.ReadString();
+            break;
+          }
+          case 42: {
+            ConnectionId = input.ReadString();
             break;
           }
         }
@@ -480,7 +558,8 @@ namespace Gateway {
   }
 
   /// <summary>
-  /// Contains a list of active connections, as well as lists of log entries for all created connections and for all removed connections.
+  /// Contains a list of active connections, as well as lists of log entries for all created connections and for all
+  /// removed connections.
   /// </summary>
   public sealed partial class ConnectionsResponse : pb::IMessage<ConnectionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

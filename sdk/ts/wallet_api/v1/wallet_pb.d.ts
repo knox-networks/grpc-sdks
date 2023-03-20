@@ -268,11 +268,37 @@ export namespace ListWalletBalancesRequest {
   }
 }
 
+export class WalletBalance extends jspb.Message {
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  getFileCount(): number;
+  setFileCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WalletBalance.AsObject;
+  static toObject(includeInstance: boolean, msg: WalletBalance): WalletBalance.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: WalletBalance, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WalletBalance;
+  static deserializeBinaryFromReader(message: WalletBalance, reader: jspb.BinaryReader): WalletBalance;
+}
+
+export namespace WalletBalance {
+  export type AsObject = {
+    amount?: common_v1_common_pb.Amount.AsObject,
+    fileCount: number,
+  }
+}
+
 export class ListWalletBalancesResponse extends jspb.Message {
-  clearBalanceList(): void;
-  getBalanceList(): Array<common_v1_common_pb.Amount>;
-  setBalanceList(value: Array<common_v1_common_pb.Amount>): void;
-  addBalance(value?: common_v1_common_pb.Amount, index?: number): common_v1_common_pb.Amount;
+  clearBalancesList(): void;
+  getBalancesList(): Array<WalletBalance>;
+  setBalancesList(value: Array<WalletBalance>): void;
+  addBalances(value?: WalletBalance, index?: number): WalletBalance;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWalletBalancesResponse.AsObject;
@@ -286,7 +312,7 @@ export class ListWalletBalancesResponse extends jspb.Message {
 
 export namespace ListWalletBalancesResponse {
   export type AsObject = {
-    balanceList: Array<common_v1_common_pb.Amount.AsObject>,
+    balancesList: Array<WalletBalance.AsObject>,
   }
 }
 
@@ -375,10 +401,15 @@ export namespace ListFundsResponse {
     getBlockDepth(): number;
     setBlockDepth(value: number): void;
 
-    getAuthorizedSignature(): Uint8Array | string;
-    getAuthorizedSignature_asU8(): Uint8Array;
-    getAuthorizedSignature_asB64(): string;
-    setAuthorizedSignature(value: Uint8Array | string): void;
+    getAuthorizationSignature(): Uint8Array | string;
+    getAuthorizationSignature_asU8(): Uint8Array;
+    getAuthorizationSignature_asB64(): string;
+    setAuthorizationSignature(value: Uint8Array | string): void;
+
+    getTransferSignature(): Uint8Array | string;
+    getTransferSignature_asU8(): Uint8Array;
+    getTransferSignature_asB64(): string;
+    setTransferSignature(value: Uint8Array | string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Promissory.AsObject;
@@ -401,7 +432,8 @@ export namespace ListFundsResponse {
       issuer: string,
       issuanceDate: string,
       blockDepth: number,
-      authorizedSignature: Uint8Array | string,
+      authorizationSignature: Uint8Array | string,
+      transferSignature: Uint8Array | string,
     }
   }
 

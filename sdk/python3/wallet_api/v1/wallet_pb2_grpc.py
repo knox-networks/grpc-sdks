@@ -3,7 +3,10 @@ import grpc
 from ...wallet_api.v1 import wallet_pb2 as wallet__api_dot_v1_dot_wallet__pb2
 
 class WalletStub(object):
-    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
+    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
+    a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of
+    a mobile wallet, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions,
+    e.g. a financial institution vault.
     """
 
     def __init__(self, channel):
@@ -31,7 +34,10 @@ class WalletStub(object):
         self.ListTransactionSnapshots = channel.unary_unary('/wallet_api.v1.Wallet/ListTransactionSnapshots', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsResponse.FromString)
 
 class WalletServicer(object):
-    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
+    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
+    a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of
+    a mobile wallet, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions,
+    e.g. a financial institution vault.
     """
 
     def Transfer(self, request, context):
@@ -42,7 +48,8 @@ class WalletServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateOwner(self, request, context):
-        """Creates an owner and API key for access to future custodial wallet interactions.  Ex Could be a bank that may manage many customer custodial wallets.
+        """Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
+        manage many customer custodial wallets.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,7 +84,8 @@ class WalletServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Redeem(self, request, context):
-        """Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase issuance limit.
+        """Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
+        issuance limit.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -91,7 +99,8 @@ class WalletServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddCredential(self, request, context):
-        """Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
+        """Adds the specified W3C Verifiable Credential type for the wallet by calling out to the Credential Adapter. Based on
+        the bearer JWT token provided by User Management to ensure the caller has been authenticated and authorized.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -112,14 +121,16 @@ class WalletServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PrepareSimplePayment(self, request, context):
-        """Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+        """Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
+        be used to query more information about the transaction.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PrepareFundsChange(self, request, context):
-        """Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used to query more information about the transaction.
+        """Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+        to query more information about the transaction.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -159,7 +170,10 @@ def add_WalletServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class Wallet(object):
-    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of mobile wallet option, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions- ex a financial institution vault.
+    """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
+    a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of
+    a mobile wallet, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions,
+    e.g. a financial institution vault.
     """
 
     @staticmethod

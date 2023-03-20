@@ -59,6 +59,25 @@ export namespace Amount {
   }
 }
 
+export class Distribution extends jspb.Message {
+  getValueMap(): jspb.Map<number, number>;
+  clearValueMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Distribution.AsObject;
+  static toObject(includeInstance: boolean, msg: Distribution): Distribution.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Distribution, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Distribution;
+  static deserializeBinaryFromReader(message: Distribution, reader: jspb.BinaryReader): Distribution;
+}
+
+export namespace Distribution {
+  export type AsObject = {
+    valueMap: Array<[number, number]>,
+  }
+}
+
 export class AuthenticationRequest extends jspb.Message {
   hasVerifier(): boolean;
   clearVerifier(): void;
@@ -185,6 +204,9 @@ export class ConnectionRequest extends jspb.Message {
   getSignature(): AuthenticationSignature | undefined;
   setSignature(value?: AuthenticationSignature): void;
 
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
   getRequestTypeCase(): ConnectionRequest.RequestTypeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectionRequest.AsObject;
@@ -201,6 +223,7 @@ export namespace ConnectionRequest {
     one?: OneConnection.AsObject,
     many?: ManyConnection.AsObject,
     signature?: AuthenticationSignature.AsObject,
+    connectionId: string,
   }
 
   export enum RequestTypeCase {
@@ -444,6 +467,42 @@ export class GetServiceTypeResponse extends jspb.Message {
 export namespace GetServiceTypeResponse {
   export type AsObject = {
     serviceType: ServiceTypeMap[keyof ServiceTypeMap],
+  }
+}
+
+export class GetInstanceRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInstanceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInstanceRequest): GetInstanceRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInstanceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInstanceRequest;
+  static deserializeBinaryFromReader(message: GetInstanceRequest, reader: jspb.BinaryReader): GetInstanceRequest;
+}
+
+export namespace GetInstanceRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetInstanceResponse extends jspb.Message {
+  getInstanceId(): string;
+  setInstanceId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetInstanceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetInstanceResponse): GetInstanceResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetInstanceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetInstanceResponse;
+  static deserializeBinaryFromReader(message: GetInstanceResponse, reader: jspb.BinaryReader): GetInstanceResponse;
+}
+
+export namespace GetInstanceResponse {
+  export type AsObject = {
+    instanceId: string,
   }
 }
 

@@ -17,6 +17,12 @@ export class LogEntry extends jspb.Message {
   getTimestamp(): string;
   setTimestamp(value: string): void;
 
+  getOrigin(): string;
+  setOrigin(value: string): void;
+
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LogEntry.AsObject;
   static toObject(includeInstance: boolean, msg: LogEntry): LogEntry.AsObject;
@@ -32,6 +38,8 @@ export namespace LogEntry {
     verifier: string,
     note: string,
     timestamp: string,
+    origin: string,
+    connectionId: string,
   }
 }
 

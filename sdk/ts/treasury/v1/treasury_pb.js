@@ -1177,7 +1177,8 @@ proto.treasury.GetSupplyResponse.prototype.toObject = function(opt_includeInstan
 proto.treasury.GetSupplyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     supplyList: jspb.Message.toObjectList(msg.getSupplyList(),
-    proto.treasury.DenominationCount.toObject, includeInstance)
+    proto.treasury.DenominationCount.toObject, includeInstance),
+    total: (f = msg.getTotal()) && common_v1_common_pb.Amount.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1219,6 +1220,11 @@ proto.treasury.GetSupplyResponse.deserializeBinaryFromReader = function(msg, rea
       reader.readMessage(value,proto.treasury.DenominationCount.deserializeBinaryFromReader);
       msg.addSupply(value);
       break;
+    case 2:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setTotal(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1254,6 +1260,14 @@ proto.treasury.GetSupplyResponse.serializeBinaryToWriter = function(message, wri
       1,
       f,
       proto.treasury.DenominationCount.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotal();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
     );
   }
 };
@@ -1294,6 +1308,43 @@ proto.treasury.GetSupplyResponse.prototype.addSupply = function(opt_value, opt_i
  */
 proto.treasury.GetSupplyResponse.prototype.clearSupplyList = function() {
   return this.setSupplyList([]);
+};
+
+
+/**
+ * optional common.Amount total = 2;
+ * @return {?proto.common.Amount}
+ */
+proto.treasury.GetSupplyResponse.prototype.getTotal = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 2));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.treasury.GetSupplyResponse} returns this
+*/
+proto.treasury.GetSupplyResponse.prototype.setTotal = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.treasury.GetSupplyResponse} returns this
+ */
+proto.treasury.GetSupplyResponse.prototype.clearTotal = function() {
+  return this.setTotal(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.treasury.GetSupplyResponse.prototype.hasTotal = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

@@ -6,13 +6,29 @@ from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 from ...common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fcommon_private/v1/service.proto\x12\x06common\x1a\x16common/v1/common.proto2\xc4\x01\n\x12TransactionService\x12Y\n\x10NewSimplePayment\x12!.common.StartSimplePaymentRequest\x1a".common.StartSimplePaymentResponse\x12S\n\x0eNewFundsChange\x12\x1f.common.StartFundsChangeRequest\x1a .common.StartFundsChangeResponse2\xa6\x01\n\x0bServiceInfo\x12F\n\x0bGetVerifier\x12\x1a.common.GetVerifierRequest\x1a\x1b.common.GetVerifierResponse\x12O\n\x0eGetServiceType\x12\x1d.common.GetServiceTypeRequest\x1a\x1e.common.GetServiceTypeResponseB=Z;github.com/knox-networks/grpc-sdks/sdk/go/common_private/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fcommon_private/v1/service.proto\x12\x06common\x1a\x16common/v1/common.proto"\x16\n\x14IsProvisionedRequest"\xaf\x01\n\x15IsProvisionedResponse\x124\n\x06status\x18\x01 \x01(\x0e2$.common.IsProvisionedResponse.Status\x12\x0e\n\x06reason\x18\x02 \x01(\t"P\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x16\n\x12STATUS_PROVISIONED\x10\x01\x12\x1a\n\x16STATUS_NOT_PROVISIONED\x10\x022\xc4\x01\n\x12TransactionService\x12Y\n\x10NewSimplePayment\x12!.common.StartSimplePaymentRequest\x1a".common.StartSimplePaymentResponse\x12S\n\x0eNewFundsChange\x12\x1f.common.StartFundsChangeRequest\x1a .common.StartFundsChangeResponse2\xee\x01\n\x0bServiceInfo\x12F\n\x0bGetVerifier\x12\x1a.common.GetVerifierRequest\x1a\x1b.common.GetVerifierResponse\x12O\n\x0eGetServiceType\x12\x1d.common.GetServiceTypeRequest\x1a\x1e.common.GetServiceTypeResponse\x12F\n\x0bGetInstance\x12\x1a.common.GetInstanceRequest\x1a\x1b.common.GetInstanceResponse2]\n\rStatusService\x12L\n\rIsProvisioned\x12\x1c.common.IsProvisionedRequest\x1a\x1d.common.IsProvisionedResponseB=Z;github.com/knox-networks/grpc-sdks/sdk/go/common_private/v1b\x06proto3')
+_ISPROVISIONEDREQUEST = DESCRIPTOR.message_types_by_name['IsProvisionedRequest']
+_ISPROVISIONEDRESPONSE = DESCRIPTOR.message_types_by_name['IsProvisionedResponse']
+_ISPROVISIONEDRESPONSE_STATUS = _ISPROVISIONEDRESPONSE.enum_types_by_name['Status']
+IsProvisionedRequest = _reflection.GeneratedProtocolMessageType('IsProvisionedRequest', (_message.Message,), {'DESCRIPTOR': _ISPROVISIONEDREQUEST, '__module__': 'common_private.v1.service_pb2'})
+_sym_db.RegisterMessage(IsProvisionedRequest)
+IsProvisionedResponse = _reflection.GeneratedProtocolMessageType('IsProvisionedResponse', (_message.Message,), {'DESCRIPTOR': _ISPROVISIONEDRESPONSE, '__module__': 'common_private.v1.service_pb2'})
+_sym_db.RegisterMessage(IsProvisionedResponse)
 _TRANSACTIONSERVICE = DESCRIPTOR.services_by_name['TransactionService']
 _SERVICEINFO = DESCRIPTOR.services_by_name['ServiceInfo']
+_STATUSSERVICE = DESCRIPTOR.services_by_name['StatusService']
 if _descriptor._USE_C_DESCRIPTORS == False:
     DESCRIPTOR._options = None
     DESCRIPTOR._serialized_options = b'Z;github.com/knox-networks/grpc-sdks/sdk/go/common_private/v1'
-    _TRANSACTIONSERVICE._serialized_start = 68
-    _TRANSACTIONSERVICE._serialized_end = 264
-    _SERVICEINFO._serialized_start = 267
-    _SERVICEINFO._serialized_end = 433
+    _ISPROVISIONEDREQUEST._serialized_start = 67
+    _ISPROVISIONEDREQUEST._serialized_end = 89
+    _ISPROVISIONEDRESPONSE._serialized_start = 92
+    _ISPROVISIONEDRESPONSE._serialized_end = 267
+    _ISPROVISIONEDRESPONSE_STATUS._serialized_start = 187
+    _ISPROVISIONEDRESPONSE_STATUS._serialized_end = 267
+    _TRANSACTIONSERVICE._serialized_start = 270
+    _TRANSACTIONSERVICE._serialized_end = 466
+    _SERVICEINFO._serialized_start = 469
+    _SERVICEINFO._serialized_end = 707
+    _STATUSSERVICE._serialized_start = 709
+    _STATUSSERVICE._serialized_end = 802

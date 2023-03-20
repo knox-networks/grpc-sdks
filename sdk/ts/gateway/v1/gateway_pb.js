@@ -121,7 +121,9 @@ proto.gateway.LogEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
     verifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
     note: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, "")
+    timestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    origin: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    connectionId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -170,6 +172,14 @@ proto.gateway.LogEntry.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrigin(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnectionId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -217,6 +227,20 @@ proto.gateway.LogEntry.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getOrigin();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getConnectionId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -274,6 +298,42 @@ proto.gateway.LogEntry.prototype.getTimestamp = function() {
  */
 proto.gateway.LogEntry.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string origin = 4;
+ * @return {string}
+ */
+proto.gateway.LogEntry.prototype.getOrigin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.gateway.LogEntry} returns this
+ */
+proto.gateway.LogEntry.prototype.setOrigin = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string connection_id = 5;
+ * @return {string}
+ */
+proto.gateway.LogEntry.prototype.getConnectionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.gateway.LogEntry} returns this
+ */
+proto.gateway.LogEntry.prototype.setConnectionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
