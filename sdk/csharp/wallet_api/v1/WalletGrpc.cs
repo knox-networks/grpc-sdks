@@ -14,9 +14,9 @@ namespace WalletApi.V1 {
   /// a mobile wallet, hosted by the bank on behalf of the customer who opts in to do so. Can also be used by institutions,
   /// e.g. a financial institution vault.
   /// </summary>
-  public static partial class Wallet
+  public static partial class WalletService
   {
-    static readonly string __ServiceName = "wallet_api.v1.Wallet";
+    static readonly string __ServiceName = "wallet_api.v1.WalletService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -262,9 +262,9 @@ namespace WalletApi.V1 {
       get { return global::WalletApi.V1.WalletReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Wallet</summary>
-    [grpc::BindServiceMethod(typeof(Wallet), "BindService")]
-    public abstract partial class WalletBase
+    /// <summary>Base class for server-side implementations of WalletService</summary>
+    [grpc::BindServiceMethod(typeof(WalletService), "BindService")]
+    public abstract partial class WalletServiceBase
     {
       /// <summary>
       /// Transfers digital banknotes from a custodial wallet to a given recipient public key.
@@ -477,30 +477,30 @@ namespace WalletApi.V1 {
 
     }
 
-    /// <summary>Client for Wallet</summary>
-    public partial class WalletClient : grpc::ClientBase<WalletClient>
+    /// <summary>Client for WalletService</summary>
+    public partial class WalletServiceClient : grpc::ClientBase<WalletServiceClient>
     {
-      /// <summary>Creates a new client for Wallet</summary>
+      /// <summary>Creates a new client for WalletService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public WalletClient(grpc::ChannelBase channel) : base(channel)
+      public WalletServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Wallet that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for WalletService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public WalletClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public WalletServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected WalletClient() : base()
+      protected WalletServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected WalletClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected WalletServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -1342,16 +1342,16 @@ namespace WalletApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override WalletClient NewInstance(ClientBaseConfiguration configuration)
+      protected override WalletServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new WalletClient(configuration);
+        return new WalletServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(WalletBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(WalletServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Transfer, serviceImpl.Transfer)
@@ -1373,12 +1373,12 @@ namespace WalletApi.V1 {
           .AddMethod(__Method_ListTransactionSnapshots, serviceImpl.ListTransactionSnapshots).Build();
     }
 
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, WalletBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, WalletServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Transfer, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.TransferRequest, global::WalletApi.V1.TransferResponse>(serviceImpl.Transfer));
       serviceBinder.AddMethod(__Method_CreateOwner, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.CreateOwnerRequest, global::WalletApi.V1.CreateOwnerResponse>(serviceImpl.CreateOwner));

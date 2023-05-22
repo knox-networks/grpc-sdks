@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// WalletClient is the client API for Wallet service.
+// WalletServiceClient is the client API for WalletService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type WalletClient interface {
+type WalletServiceClient interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*TransferResponse, error)
 	// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
@@ -59,171 +59,171 @@ type WalletClient interface {
 	ListTransactionSnapshots(ctx context.Context, in *ListTransactionSnapshotsRequest, opts ...grpc.CallOption) (*ListTransactionSnapshotsResponse, error)
 }
 
-type walletClient struct {
+type walletServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewWalletClient(cc grpc.ClientConnInterface) WalletClient {
-	return &walletClient{cc}
+func NewWalletServiceClient(cc grpc.ClientConnInterface) WalletServiceClient {
+	return &walletServiceClient{cc}
 }
 
-func (c *walletClient) Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*TransferResponse, error) {
+func (c *walletServiceClient) Transfer(ctx context.Context, in *TransferRequest, opts ...grpc.CallOption) (*TransferResponse, error) {
 	out := new(TransferResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/Transfer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/Transfer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) CreateOwner(ctx context.Context, in *CreateOwnerRequest, opts ...grpc.CallOption) (*CreateOwnerResponse, error) {
+func (c *walletServiceClient) CreateOwner(ctx context.Context, in *CreateOwnerRequest, opts ...grpc.CallOption) (*CreateOwnerResponse, error) {
 	out := new(CreateOwnerResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/CreateOwner", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/CreateOwner", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error) {
+func (c *walletServiceClient) CreateWallet(ctx context.Context, in *CreateWalletRequest, opts ...grpc.CallOption) (*CreateWalletResponse, error) {
 	out := new(CreateWalletResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/CreateWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/CreateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListWallets(ctx context.Context, in *ListWalletsRequest, opts ...grpc.CallOption) (*ListWalletsResponse, error) {
+func (c *walletServiceClient) ListWallets(ctx context.Context, in *ListWalletsRequest, opts ...grpc.CallOption) (*ListWalletsResponse, error) {
 	out := new(ListWalletsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListWallets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListWallets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListFunds(ctx context.Context, in *ListFundsRequest, opts ...grpc.CallOption) (*ListFundsResponse, error) {
+func (c *walletServiceClient) ListFunds(ctx context.Context, in *ListFundsRequest, opts ...grpc.CallOption) (*ListFundsResponse, error) {
 	out := new(ListFundsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListFunds", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListFunds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListWalletBalances(ctx context.Context, in *ListWalletBalancesRequest, opts ...grpc.CallOption) (*ListWalletBalancesResponse, error) {
+func (c *walletServiceClient) ListWalletBalances(ctx context.Context, in *ListWalletBalancesRequest, opts ...grpc.CallOption) (*ListWalletBalancesResponse, error) {
 	out := new(ListWalletBalancesResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListWalletBalances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListWalletBalances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error) {
+func (c *walletServiceClient) Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error) {
 	out := new(RedeemResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/Redeem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/Redeem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListCredentials(ctx context.Context, in *ListCredentialsRequest, opts ...grpc.CallOption) (*ListCredentialsResponse, error) {
+func (c *walletServiceClient) ListCredentials(ctx context.Context, in *ListCredentialsRequest, opts ...grpc.CallOption) (*ListCredentialsResponse, error) {
 	out := new(ListCredentialsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListCredentials", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListCredentials", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) AddCredential(ctx context.Context, in *AddCredentialRequest, opts ...grpc.CallOption) (*AddCredentialResponse, error) {
+func (c *walletServiceClient) AddCredential(ctx context.Context, in *AddCredentialRequest, opts ...grpc.CallOption) (*AddCredentialResponse, error) {
 	out := new(AddCredentialResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/AddCredential", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/AddCredential", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error) {
+func (c *walletServiceClient) AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error) {
 	out := new(AssociateWalletResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/AssociateWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/AssociateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) RequestPresentation(ctx context.Context, in *RequestPresentationRequest, opts ...grpc.CallOption) (*RequestPresentationResponse, error) {
+func (c *walletServiceClient) RequestPresentation(ctx context.Context, in *RequestPresentationRequest, opts ...grpc.CallOption) (*RequestPresentationResponse, error) {
 	out := new(RequestPresentationResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/RequestPresentation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/RequestPresentation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) PrepareSimplePayment(ctx context.Context, in *PrepareSimplePaymentRequest, opts ...grpc.CallOption) (*PrepareSimplePaymentResponse, error) {
+func (c *walletServiceClient) PrepareSimplePayment(ctx context.Context, in *PrepareSimplePaymentRequest, opts ...grpc.CallOption) (*PrepareSimplePaymentResponse, error) {
 	out := new(PrepareSimplePaymentResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/PrepareSimplePayment", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/PrepareSimplePayment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) PrepareFundsChange(ctx context.Context, in *PrepareFundsChangeRequest, opts ...grpc.CallOption) (*PrepareFundsChangeResponse, error) {
+func (c *walletServiceClient) PrepareFundsChange(ctx context.Context, in *PrepareFundsChangeRequest, opts ...grpc.CallOption) (*PrepareFundsChangeResponse, error) {
 	out := new(PrepareFundsChangeResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/PrepareFundsChange", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/PrepareFundsChange", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
+func (c *walletServiceClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
 	out := new(GetTransactionResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/GetTransaction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/GetTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListTransactions(ctx context.Context, in *ListTransactionsRequest, opts ...grpc.CallOption) (*ListTransactionsResponse, error) {
+func (c *walletServiceClient) ListTransactions(ctx context.Context, in *ListTransactionsRequest, opts ...grpc.CallOption) (*ListTransactionsResponse, error) {
 	out := new(ListTransactionsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListTransactions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListTransactions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) GetTransactionSnapshot(ctx context.Context, in *GetTransactionSnapshotRequest, opts ...grpc.CallOption) (*GetTransactionSnapshotResponse, error) {
+func (c *walletServiceClient) GetTransactionSnapshot(ctx context.Context, in *GetTransactionSnapshotRequest, opts ...grpc.CallOption) (*GetTransactionSnapshotResponse, error) {
 	out := new(GetTransactionSnapshotResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/GetTransactionSnapshot", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/GetTransactionSnapshot", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *walletClient) ListTransactionSnapshots(ctx context.Context, in *ListTransactionSnapshotsRequest, opts ...grpc.CallOption) (*ListTransactionSnapshotsResponse, error) {
+func (c *walletServiceClient) ListTransactionSnapshots(ctx context.Context, in *ListTransactionSnapshotsRequest, opts ...grpc.CallOption) (*ListTransactionSnapshotsResponse, error) {
 	out := new(ListTransactionSnapshotsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.Wallet/ListTransactionSnapshots", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListTransactionSnapshots", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// WalletServer is the server API for Wallet service.
-// All implementations must embed UnimplementedWalletServer
+// WalletServiceServer is the server API for WalletService service.
+// All implementations must embed UnimplementedWalletServiceServer
 // for forward compatibility
-type WalletServer interface {
+type WalletServiceServer interface {
 	// Transfers digital banknotes from a custodial wallet to a given recipient public key.
 	Transfer(context.Context, *TransferRequest) (*TransferResponse, error)
 	// Creates an owned and API key for access to future custodial wallet interactions.  Ex Could be a bank that may
@@ -263,457 +263,457 @@ type WalletServer interface {
 	GetTransactionSnapshot(context.Context, *GetTransactionSnapshotRequest) (*GetTransactionSnapshotResponse, error)
 	// Obtains the history of a transaction.
 	ListTransactionSnapshots(context.Context, *ListTransactionSnapshotsRequest) (*ListTransactionSnapshotsResponse, error)
-	mustEmbedUnimplementedWalletServer()
+	mustEmbedUnimplementedWalletServiceServer()
 }
 
-// UnimplementedWalletServer must be embedded to have forward compatible implementations.
-type UnimplementedWalletServer struct {
+// UnimplementedWalletServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedWalletServiceServer struct {
 }
 
-func (UnimplementedWalletServer) Transfer(context.Context, *TransferRequest) (*TransferResponse, error) {
+func (UnimplementedWalletServiceServer) Transfer(context.Context, *TransferRequest) (*TransferResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Transfer not implemented")
 }
-func (UnimplementedWalletServer) CreateOwner(context.Context, *CreateOwnerRequest) (*CreateOwnerResponse, error) {
+func (UnimplementedWalletServiceServer) CreateOwner(context.Context, *CreateOwnerRequest) (*CreateOwnerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOwner not implemented")
 }
-func (UnimplementedWalletServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
+func (UnimplementedWalletServiceServer) CreateWallet(context.Context, *CreateWalletRequest) (*CreateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWallet not implemented")
 }
-func (UnimplementedWalletServer) ListWallets(context.Context, *ListWalletsRequest) (*ListWalletsResponse, error) {
+func (UnimplementedWalletServiceServer) ListWallets(context.Context, *ListWalletsRequest) (*ListWalletsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWallets not implemented")
 }
-func (UnimplementedWalletServer) ListFunds(context.Context, *ListFundsRequest) (*ListFundsResponse, error) {
+func (UnimplementedWalletServiceServer) ListFunds(context.Context, *ListFundsRequest) (*ListFundsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFunds not implemented")
 }
-func (UnimplementedWalletServer) ListWalletBalances(context.Context, *ListWalletBalancesRequest) (*ListWalletBalancesResponse, error) {
+func (UnimplementedWalletServiceServer) ListWalletBalances(context.Context, *ListWalletBalancesRequest) (*ListWalletBalancesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWalletBalances not implemented")
 }
-func (UnimplementedWalletServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
+func (UnimplementedWalletServiceServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Redeem not implemented")
 }
-func (UnimplementedWalletServer) ListCredentials(context.Context, *ListCredentialsRequest) (*ListCredentialsResponse, error) {
+func (UnimplementedWalletServiceServer) ListCredentials(context.Context, *ListCredentialsRequest) (*ListCredentialsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCredentials not implemented")
 }
-func (UnimplementedWalletServer) AddCredential(context.Context, *AddCredentialRequest) (*AddCredentialResponse, error) {
+func (UnimplementedWalletServiceServer) AddCredential(context.Context, *AddCredentialRequest) (*AddCredentialResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddCredential not implemented")
 }
-func (UnimplementedWalletServer) AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error) {
+func (UnimplementedWalletServiceServer) AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AssociateWallet not implemented")
 }
-func (UnimplementedWalletServer) RequestPresentation(context.Context, *RequestPresentationRequest) (*RequestPresentationResponse, error) {
+func (UnimplementedWalletServiceServer) RequestPresentation(context.Context, *RequestPresentationRequest) (*RequestPresentationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RequestPresentation not implemented")
 }
-func (UnimplementedWalletServer) PrepareSimplePayment(context.Context, *PrepareSimplePaymentRequest) (*PrepareSimplePaymentResponse, error) {
+func (UnimplementedWalletServiceServer) PrepareSimplePayment(context.Context, *PrepareSimplePaymentRequest) (*PrepareSimplePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareSimplePayment not implemented")
 }
-func (UnimplementedWalletServer) PrepareFundsChange(context.Context, *PrepareFundsChangeRequest) (*PrepareFundsChangeResponse, error) {
+func (UnimplementedWalletServiceServer) PrepareFundsChange(context.Context, *PrepareFundsChangeRequest) (*PrepareFundsChangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareFundsChange not implemented")
 }
-func (UnimplementedWalletServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
+func (UnimplementedWalletServiceServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
-func (UnimplementedWalletServer) ListTransactions(context.Context, *ListTransactionsRequest) (*ListTransactionsResponse, error) {
+func (UnimplementedWalletServiceServer) ListTransactions(context.Context, *ListTransactionsRequest) (*ListTransactionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListTransactions not implemented")
 }
-func (UnimplementedWalletServer) GetTransactionSnapshot(context.Context, *GetTransactionSnapshotRequest) (*GetTransactionSnapshotResponse, error) {
+func (UnimplementedWalletServiceServer) GetTransactionSnapshot(context.Context, *GetTransactionSnapshotRequest) (*GetTransactionSnapshotResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransactionSnapshot not implemented")
 }
-func (UnimplementedWalletServer) ListTransactionSnapshots(context.Context, *ListTransactionSnapshotsRequest) (*ListTransactionSnapshotsResponse, error) {
+func (UnimplementedWalletServiceServer) ListTransactionSnapshots(context.Context, *ListTransactionSnapshotsRequest) (*ListTransactionSnapshotsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListTransactionSnapshots not implemented")
 }
-func (UnimplementedWalletServer) mustEmbedUnimplementedWalletServer() {}
+func (UnimplementedWalletServiceServer) mustEmbedUnimplementedWalletServiceServer() {}
 
-// UnsafeWalletServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to WalletServer will
+// UnsafeWalletServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to WalletServiceServer will
 // result in compilation errors.
-type UnsafeWalletServer interface {
-	mustEmbedUnimplementedWalletServer()
+type UnsafeWalletServiceServer interface {
+	mustEmbedUnimplementedWalletServiceServer()
 }
 
-func RegisterWalletServer(s grpc.ServiceRegistrar, srv WalletServer) {
-	s.RegisterService(&Wallet_ServiceDesc, srv)
+func RegisterWalletServiceServer(s grpc.ServiceRegistrar, srv WalletServiceServer) {
+	s.RegisterService(&WalletService_ServiceDesc, srv)
 }
 
-func _Wallet_Transfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_Transfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TransferRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).Transfer(ctx, in)
+		return srv.(WalletServiceServer).Transfer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/Transfer",
+		FullMethod: "/wallet_api.v1.WalletService/Transfer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).Transfer(ctx, req.(*TransferRequest))
+		return srv.(WalletServiceServer).Transfer(ctx, req.(*TransferRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_CreateOwner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_CreateOwner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateOwnerRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).CreateOwner(ctx, in)
+		return srv.(WalletServiceServer).CreateOwner(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/CreateOwner",
+		FullMethod: "/wallet_api.v1.WalletService/CreateOwner",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).CreateOwner(ctx, req.(*CreateOwnerRequest))
+		return srv.(WalletServiceServer).CreateOwner(ctx, req.(*CreateOwnerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_CreateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_CreateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).CreateWallet(ctx, in)
+		return srv.(WalletServiceServer).CreateWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/CreateWallet",
+		FullMethod: "/wallet_api.v1.WalletService/CreateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).CreateWallet(ctx, req.(*CreateWalletRequest))
+		return srv.(WalletServiceServer).CreateWallet(ctx, req.(*CreateWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListWallets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListWallets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWalletsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListWallets(ctx, in)
+		return srv.(WalletServiceServer).ListWallets(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListWallets",
+		FullMethod: "/wallet_api.v1.WalletService/ListWallets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListWallets(ctx, req.(*ListWalletsRequest))
+		return srv.(WalletServiceServer).ListWallets(ctx, req.(*ListWalletsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListFundsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListFunds(ctx, in)
+		return srv.(WalletServiceServer).ListFunds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListFunds",
+		FullMethod: "/wallet_api.v1.WalletService/ListFunds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListFunds(ctx, req.(*ListFundsRequest))
+		return srv.(WalletServiceServer).ListFunds(ctx, req.(*ListFundsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListWalletBalances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListWalletBalances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWalletBalancesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListWalletBalances(ctx, in)
+		return srv.(WalletServiceServer).ListWalletBalances(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListWalletBalances",
+		FullMethod: "/wallet_api.v1.WalletService/ListWalletBalances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListWalletBalances(ctx, req.(*ListWalletBalancesRequest))
+		return srv.(WalletServiceServer).ListWalletBalances(ctx, req.(*ListWalletBalancesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_Redeem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_Redeem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RedeemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).Redeem(ctx, in)
+		return srv.(WalletServiceServer).Redeem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/Redeem",
+		FullMethod: "/wallet_api.v1.WalletService/Redeem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).Redeem(ctx, req.(*RedeemRequest))
+		return srv.(WalletServiceServer).Redeem(ctx, req.(*RedeemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListCredentials_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListCredentialsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListCredentials(ctx, in)
+		return srv.(WalletServiceServer).ListCredentials(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListCredentials",
+		FullMethod: "/wallet_api.v1.WalletService/ListCredentials",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListCredentials(ctx, req.(*ListCredentialsRequest))
+		return srv.(WalletServiceServer).ListCredentials(ctx, req.(*ListCredentialsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_AddCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_AddCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddCredentialRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).AddCredential(ctx, in)
+		return srv.(WalletServiceServer).AddCredential(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/AddCredential",
+		FullMethod: "/wallet_api.v1.WalletService/AddCredential",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).AddCredential(ctx, req.(*AddCredentialRequest))
+		return srv.(WalletServiceServer).AddCredential(ctx, req.(*AddCredentialRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_AssociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_AssociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AssociateWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).AssociateWallet(ctx, in)
+		return srv.(WalletServiceServer).AssociateWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/AssociateWallet",
+		FullMethod: "/wallet_api.v1.WalletService/AssociateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).AssociateWallet(ctx, req.(*AssociateWalletRequest))
+		return srv.(WalletServiceServer).AssociateWallet(ctx, req.(*AssociateWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_RequestPresentation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_RequestPresentation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RequestPresentationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).RequestPresentation(ctx, in)
+		return srv.(WalletServiceServer).RequestPresentation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/RequestPresentation",
+		FullMethod: "/wallet_api.v1.WalletService/RequestPresentation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).RequestPresentation(ctx, req.(*RequestPresentationRequest))
+		return srv.(WalletServiceServer).RequestPresentation(ctx, req.(*RequestPresentationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_PrepareSimplePayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_PrepareSimplePayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareSimplePaymentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).PrepareSimplePayment(ctx, in)
+		return srv.(WalletServiceServer).PrepareSimplePayment(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/PrepareSimplePayment",
+		FullMethod: "/wallet_api.v1.WalletService/PrepareSimplePayment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).PrepareSimplePayment(ctx, req.(*PrepareSimplePaymentRequest))
+		return srv.(WalletServiceServer).PrepareSimplePayment(ctx, req.(*PrepareSimplePaymentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_PrepareFundsChange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_PrepareFundsChange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareFundsChangeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).PrepareFundsChange(ctx, in)
+		return srv.(WalletServiceServer).PrepareFundsChange(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/PrepareFundsChange",
+		FullMethod: "/wallet_api.v1.WalletService/PrepareFundsChange",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).PrepareFundsChange(ctx, req.(*PrepareFundsChangeRequest))
+		return srv.(WalletServiceServer).PrepareFundsChange(ctx, req.(*PrepareFundsChangeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_GetTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_GetTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTransactionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).GetTransaction(ctx, in)
+		return srv.(WalletServiceServer).GetTransaction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/GetTransaction",
+		FullMethod: "/wallet_api.v1.WalletService/GetTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).GetTransaction(ctx, req.(*GetTransactionRequest))
+		return srv.(WalletServiceServer).GetTransaction(ctx, req.(*GetTransactionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListTransactions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListTransactions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListTransactionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListTransactions(ctx, in)
+		return srv.(WalletServiceServer).ListTransactions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListTransactions",
+		FullMethod: "/wallet_api.v1.WalletService/ListTransactions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListTransactions(ctx, req.(*ListTransactionsRequest))
+		return srv.(WalletServiceServer).ListTransactions(ctx, req.(*ListTransactionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_GetTransactionSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_GetTransactionSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTransactionSnapshotRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).GetTransactionSnapshot(ctx, in)
+		return srv.(WalletServiceServer).GetTransactionSnapshot(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/GetTransactionSnapshot",
+		FullMethod: "/wallet_api.v1.WalletService/GetTransactionSnapshot",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).GetTransactionSnapshot(ctx, req.(*GetTransactionSnapshotRequest))
+		return srv.(WalletServiceServer).GetTransactionSnapshot(ctx, req.(*GetTransactionSnapshotRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Wallet_ListTransactionSnapshots_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _WalletService_ListTransactionSnapshots_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListTransactionSnapshotsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServer).ListTransactionSnapshots(ctx, in)
+		return srv.(WalletServiceServer).ListTransactionSnapshots(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.Wallet/ListTransactionSnapshots",
+		FullMethod: "/wallet_api.v1.WalletService/ListTransactionSnapshots",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServer).ListTransactionSnapshots(ctx, req.(*ListTransactionSnapshotsRequest))
+		return srv.(WalletServiceServer).ListTransactionSnapshots(ctx, req.(*ListTransactionSnapshotsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Wallet_ServiceDesc is the grpc.ServiceDesc for Wallet service.
+// WalletService_ServiceDesc is the grpc.ServiceDesc for WalletService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Wallet_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "wallet_api.v1.Wallet",
-	HandlerType: (*WalletServer)(nil),
+var WalletService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wallet_api.v1.WalletService",
+	HandlerType: (*WalletServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Transfer",
-			Handler:    _Wallet_Transfer_Handler,
+			Handler:    _WalletService_Transfer_Handler,
 		},
 		{
 			MethodName: "CreateOwner",
-			Handler:    _Wallet_CreateOwner_Handler,
+			Handler:    _WalletService_CreateOwner_Handler,
 		},
 		{
 			MethodName: "CreateWallet",
-			Handler:    _Wallet_CreateWallet_Handler,
+			Handler:    _WalletService_CreateWallet_Handler,
 		},
 		{
 			MethodName: "ListWallets",
-			Handler:    _Wallet_ListWallets_Handler,
+			Handler:    _WalletService_ListWallets_Handler,
 		},
 		{
 			MethodName: "ListFunds",
-			Handler:    _Wallet_ListFunds_Handler,
+			Handler:    _WalletService_ListFunds_Handler,
 		},
 		{
 			MethodName: "ListWalletBalances",
-			Handler:    _Wallet_ListWalletBalances_Handler,
+			Handler:    _WalletService_ListWalletBalances_Handler,
 		},
 		{
 			MethodName: "Redeem",
-			Handler:    _Wallet_Redeem_Handler,
+			Handler:    _WalletService_Redeem_Handler,
 		},
 		{
 			MethodName: "ListCredentials",
-			Handler:    _Wallet_ListCredentials_Handler,
+			Handler:    _WalletService_ListCredentials_Handler,
 		},
 		{
 			MethodName: "AddCredential",
-			Handler:    _Wallet_AddCredential_Handler,
+			Handler:    _WalletService_AddCredential_Handler,
 		},
 		{
 			MethodName: "AssociateWallet",
-			Handler:    _Wallet_AssociateWallet_Handler,
+			Handler:    _WalletService_AssociateWallet_Handler,
 		},
 		{
 			MethodName: "RequestPresentation",
-			Handler:    _Wallet_RequestPresentation_Handler,
+			Handler:    _WalletService_RequestPresentation_Handler,
 		},
 		{
 			MethodName: "PrepareSimplePayment",
-			Handler:    _Wallet_PrepareSimplePayment_Handler,
+			Handler:    _WalletService_PrepareSimplePayment_Handler,
 		},
 		{
 			MethodName: "PrepareFundsChange",
-			Handler:    _Wallet_PrepareFundsChange_Handler,
+			Handler:    _WalletService_PrepareFundsChange_Handler,
 		},
 		{
 			MethodName: "GetTransaction",
-			Handler:    _Wallet_GetTransaction_Handler,
+			Handler:    _WalletService_GetTransaction_Handler,
 		},
 		{
 			MethodName: "ListTransactions",
-			Handler:    _Wallet_ListTransactions_Handler,
+			Handler:    _WalletService_ListTransactions_Handler,
 		},
 		{
 			MethodName: "GetTransactionSnapshot",
-			Handler:    _Wallet_GetTransactionSnapshot_Handler,
+			Handler:    _WalletService_GetTransactionSnapshot_Handler,
 		},
 		{
 			MethodName: "ListTransactionSnapshots",
-			Handler:    _Wallet_ListTransactionSnapshots_Handler,
+			Handler:    _WalletService_ListTransactionSnapshots_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

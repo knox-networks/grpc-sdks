@@ -6,28 +6,28 @@
 import * as treasury_v1_treasury_pb from "../../treasury/v1/treasury_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type TreasuryRemit = {
+type MonetaeTreasuryRemit = {
   readonly methodName: string;
-  readonly service: typeof Treasury;
+  readonly service: typeof MonetaeTreasury;
   readonly requestStream: true;
   readonly responseStream: true;
   readonly requestType: typeof treasury_v1_treasury_pb.RemittanceRequest;
   readonly responseType: typeof treasury_v1_treasury_pb.RemittanceResponse;
 };
 
-type TreasuryGetSupply = {
+type MonetaeTreasuryGetSupply = {
   readonly methodName: string;
-  readonly service: typeof Treasury;
+  readonly service: typeof MonetaeTreasury;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof treasury_v1_treasury_pb.GetSupplyRequest;
   readonly responseType: typeof treasury_v1_treasury_pb.GetSupplyResponse;
 };
 
-export class Treasury {
+export class MonetaeTreasury {
   static readonly serviceName: string;
-  static readonly Remit: TreasuryRemit;
-  static readonly GetSupply: TreasuryGetSupply;
+  static readonly Remit: MonetaeTreasuryRemit;
+  static readonly GetSupply: MonetaeTreasuryGetSupply;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -58,7 +58,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class TreasuryClient {
+export class MonetaeTreasuryClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

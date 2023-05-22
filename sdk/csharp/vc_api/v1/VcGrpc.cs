@@ -11,11 +11,11 @@ using grpc = global::Grpc.Core;
 
 namespace VcApi.V1 {
   /// <summary>
-  /// Enables existing systems to support W3C Verifiable Credential (VC) interactions between holders, VC issuers and verifiers as per https://www.w3.org/TR/vc-data-model/.  It is either used by credential providers (VC Issuer) or verifiers as required.  It provides predefined interfaces to expose (Example Bank customer info APIs) but allows for custom integrations as required.
+  ///Enables existing systems to support W3C Verifiable Credential (VC) interactions between holders, VC issuers and verifiers as per https://www.w3.org/TR/vc-data-model/.  It is either used by credential providers (VC Issuer) or verifiers as required.  It provides predefined interfaces to expose (Example Bank customer info APIs) but allows for custom integrations as required.
   /// </summary>
-  public static partial class CredentialAdapter
+  public static partial class CredentialAdapterService
   {
-    static readonly string __ServiceName = "vc_api.v1.CredentialAdapter";
+    static readonly string __ServiceName = "vc_api.v1.CredentialAdapterService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -117,9 +117,9 @@ namespace VcApi.V1 {
       get { return global::VcApi.V1.VcReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of CredentialAdapter</summary>
-    [grpc::BindServiceMethod(typeof(CredentialAdapter), "BindService")]
-    public abstract partial class CredentialAdapterBase
+    /// <summary>Base class for server-side implementations of CredentialAdapterService</summary>
+    [grpc::BindServiceMethod(typeof(CredentialAdapterService), "BindService")]
+    public abstract partial class CredentialAdapterServiceBase
     {
       /// <summary>
       /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
@@ -184,30 +184,30 @@ namespace VcApi.V1 {
 
     }
 
-    /// <summary>Client for CredentialAdapter</summary>
-    public partial class CredentialAdapterClient : grpc::ClientBase<CredentialAdapterClient>
+    /// <summary>Client for CredentialAdapterService</summary>
+    public partial class CredentialAdapterServiceClient : grpc::ClientBase<CredentialAdapterServiceClient>
     {
-      /// <summary>Creates a new client for CredentialAdapter</summary>
+      /// <summary>Creates a new client for CredentialAdapterService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public CredentialAdapterClient(grpc::ChannelBase channel) : base(channel)
+      public CredentialAdapterServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for CredentialAdapter that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for CredentialAdapterService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public CredentialAdapterClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public CredentialAdapterServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected CredentialAdapterClient() : base()
+      protected CredentialAdapterServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected CredentialAdapterClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected CredentialAdapterServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -429,16 +429,16 @@ namespace VcApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override CredentialAdapterClient NewInstance(ClientBaseConfiguration configuration)
+      protected override CredentialAdapterServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new CredentialAdapterClient(configuration);
+        return new CredentialAdapterServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(CredentialAdapterBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(CredentialAdapterServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateIssuanceChallenge, serviceImpl.CreateIssuanceChallenge)
@@ -448,12 +448,12 @@ namespace VcApi.V1 {
           .AddMethod(__Method_WaitForCompletion, serviceImpl.WaitForCompletion).Build();
     }
 
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, CredentialAdapterBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, CredentialAdapterServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CreateIssuanceChallenge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::VcApi.V1.CreateIssuanceChallengeRequest, global::VcApi.V1.CreateIssuanceChallengeResponse>(serviceImpl.CreateIssuanceChallenge));
       serviceBinder.AddMethod(__Method_IssueVerifiableCredential, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::VcApi.V1.IssueVerifiableCredentialRequest, global::VcApi.V1.IssueVerifiableCredentialResponse>(serviceImpl.IssueVerifiableCredential));

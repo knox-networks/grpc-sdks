@@ -8,38 +8,38 @@ import * as common_v1_common_pb from "../../common/v1/common_pb";
 import * as common_v1_packet_pb from "../../common/v1/packet_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type GatewayAuthenticate = {
+type MonetaeGatewayAuthenticate = {
   readonly methodName: string;
-  readonly service: typeof Gateway;
+  readonly service: typeof MonetaeGateway;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_v1_common_pb.AuthenticationRequest;
   readonly responseType: typeof common_v1_common_pb.AuthenticationResponse;
 };
 
-type GatewayData = {
+type MonetaeGatewayData = {
   readonly methodName: string;
-  readonly service: typeof Gateway;
+  readonly service: typeof MonetaeGateway;
   readonly requestStream: true;
   readonly responseStream: true;
   readonly requestType: typeof common_v1_packet_pb.Packet;
   readonly responseType: typeof common_v1_packet_pb.Packet;
 };
 
-type GatewayGetConnections = {
+type MonetaeGatewayGetConnections = {
   readonly methodName: string;
-  readonly service: typeof Gateway;
+  readonly service: typeof MonetaeGateway;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof gateway_v1_gateway_pb.ConnectionsRequest;
   readonly responseType: typeof gateway_v1_gateway_pb.ConnectionsResponse;
 };
 
-export class Gateway {
+export class MonetaeGateway {
   static readonly serviceName: string;
-  static readonly Authenticate: GatewayAuthenticate;
-  static readonly Data: GatewayData;
-  static readonly GetConnections: GatewayGetConnections;
+  static readonly Authenticate: MonetaeGatewayAuthenticate;
+  static readonly Data: MonetaeGatewayData;
+  static readonly GetConnections: MonetaeGatewayGetConnections;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -70,7 +70,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class GatewayClient {
+export class MonetaeGatewayClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

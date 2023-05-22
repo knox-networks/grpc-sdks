@@ -6,68 +6,68 @@
 import * as authority_api_v1_authority_pb from "../../authority_api/v1/authority_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type AuthoritySetIssuerLimit = {
+type AuthorityServiceSetIssuerLimit = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof authority_api_v1_authority_pb.SetIssuerLimitRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.SetIssuerLimitResponse;
 };
 
-type AuthorityGetIssuerLimits = {
+type AuthorityServiceGetIssuerLimits = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof authority_api_v1_authority_pb.GetIssuerLimitsRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.GetIssuerLimitsResponse;
 };
 
-type AuthorityAuthorize = {
+type AuthorityServiceAuthorize = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: true;
   readonly responseStream: true;
   readonly requestType: typeof authority_api_v1_authority_pb.AuthorizeRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.AuthorizeResponse;
 };
 
-type AuthorityRedeem = {
+type AuthorityServiceRedeem = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof authority_api_v1_authority_pb.RedeemRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.RedeemResponse;
 };
 
-type AuthorityGetEmissary = {
+type AuthorityServiceGetEmissary = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof authority_api_v1_authority_pb.GetEmissaryRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.GetEmissaryResponse;
 };
 
-type AuthorityGetNotary = {
+type AuthorityServiceGetNotary = {
   readonly methodName: string;
-  readonly service: typeof Authority;
+  readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof authority_api_v1_authority_pb.GetNotaryRequest;
   readonly responseType: typeof authority_api_v1_authority_pb.GetNotaryResponse;
 };
 
-export class Authority {
+export class AuthorityService {
   static readonly serviceName: string;
-  static readonly SetIssuerLimit: AuthoritySetIssuerLimit;
-  static readonly GetIssuerLimits: AuthorityGetIssuerLimits;
-  static readonly Authorize: AuthorityAuthorize;
-  static readonly Redeem: AuthorityRedeem;
-  static readonly GetEmissary: AuthorityGetEmissary;
-  static readonly GetNotary: AuthorityGetNotary;
+  static readonly SetIssuerLimit: AuthorityServiceSetIssuerLimit;
+  static readonly GetIssuerLimits: AuthorityServiceGetIssuerLimits;
+  static readonly Authorize: AuthorityServiceAuthorize;
+  static readonly Redeem: AuthorityServiceRedeem;
+  static readonly GetEmissary: AuthorityServiceGetEmissary;
+  static readonly GetNotary: AuthorityServiceGetNotary;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -98,7 +98,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class AuthorityClient {
+export class AuthorityServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

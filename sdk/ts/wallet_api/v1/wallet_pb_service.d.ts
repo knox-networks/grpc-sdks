@@ -6,178 +6,178 @@
 import * as wallet_api_v1_wallet_pb from "../../wallet_api/v1/wallet_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type WalletTransfer = {
+type WalletServiceTransfer = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.TransferRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.TransferResponse;
 };
 
-type WalletCreateOwner = {
+type WalletServiceCreateOwner = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.CreateOwnerRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.CreateOwnerResponse;
 };
 
-type WalletCreateWallet = {
+type WalletServiceCreateWallet = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.CreateWalletRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.CreateWalletResponse;
 };
 
-type WalletListWallets = {
+type WalletServiceListWallets = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListWalletsRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListWalletsResponse;
 };
 
-type WalletListFunds = {
+type WalletServiceListFunds = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListFundsRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListFundsResponse;
 };
 
-type WalletListWalletBalances = {
+type WalletServiceListWalletBalances = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListWalletBalancesRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListWalletBalancesResponse;
 };
 
-type WalletRedeem = {
+type WalletServiceRedeem = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.RedeemRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.RedeemResponse;
 };
 
-type WalletListCredentials = {
+type WalletServiceListCredentials = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListCredentialsRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListCredentialsResponse;
 };
 
-type WalletAddCredential = {
+type WalletServiceAddCredential = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.AddCredentialRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.AddCredentialResponse;
 };
 
-type WalletAssociateWallet = {
+type WalletServiceAssociateWallet = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.AssociateWalletRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.AssociateWalletResponse;
 };
 
-type WalletRequestPresentation = {
+type WalletServiceRequestPresentation = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.RequestPresentationRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.RequestPresentationResponse;
 };
 
-type WalletPrepareSimplePayment = {
+type WalletServicePrepareSimplePayment = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareSimplePaymentRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareSimplePaymentResponse;
 };
 
-type WalletPrepareFundsChange = {
+type WalletServicePrepareFundsChange = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareFundsChangeRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareFundsChangeResponse;
 };
 
-type WalletGetTransaction = {
+type WalletServiceGetTransaction = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.GetTransactionRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.GetTransactionResponse;
 };
 
-type WalletListTransactions = {
+type WalletServiceListTransactions = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListTransactionsRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListTransactionsResponse;
 };
 
-type WalletGetTransactionSnapshot = {
+type WalletServiceGetTransactionSnapshot = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.GetTransactionSnapshotRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.GetTransactionSnapshotResponse;
 };
 
-type WalletListTransactionSnapshots = {
+type WalletServiceListTransactionSnapshots = {
   readonly methodName: string;
-  readonly service: typeof Wallet;
+  readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof wallet_api_v1_wallet_pb.ListTransactionSnapshotsRequest;
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse;
 };
 
-export class Wallet {
+export class WalletService {
   static readonly serviceName: string;
-  static readonly Transfer: WalletTransfer;
-  static readonly CreateOwner: WalletCreateOwner;
-  static readonly CreateWallet: WalletCreateWallet;
-  static readonly ListWallets: WalletListWallets;
-  static readonly ListFunds: WalletListFunds;
-  static readonly ListWalletBalances: WalletListWalletBalances;
-  static readonly Redeem: WalletRedeem;
-  static readonly ListCredentials: WalletListCredentials;
-  static readonly AddCredential: WalletAddCredential;
-  static readonly AssociateWallet: WalletAssociateWallet;
-  static readonly RequestPresentation: WalletRequestPresentation;
-  static readonly PrepareSimplePayment: WalletPrepareSimplePayment;
-  static readonly PrepareFundsChange: WalletPrepareFundsChange;
-  static readonly GetTransaction: WalletGetTransaction;
-  static readonly ListTransactions: WalletListTransactions;
-  static readonly GetTransactionSnapshot: WalletGetTransactionSnapshot;
-  static readonly ListTransactionSnapshots: WalletListTransactionSnapshots;
+  static readonly Transfer: WalletServiceTransfer;
+  static readonly CreateOwner: WalletServiceCreateOwner;
+  static readonly CreateWallet: WalletServiceCreateWallet;
+  static readonly ListWallets: WalletServiceListWallets;
+  static readonly ListFunds: WalletServiceListFunds;
+  static readonly ListWalletBalances: WalletServiceListWalletBalances;
+  static readonly Redeem: WalletServiceRedeem;
+  static readonly ListCredentials: WalletServiceListCredentials;
+  static readonly AddCredential: WalletServiceAddCredential;
+  static readonly AssociateWallet: WalletServiceAssociateWallet;
+  static readonly RequestPresentation: WalletServiceRequestPresentation;
+  static readonly PrepareSimplePayment: WalletServicePrepareSimplePayment;
+  static readonly PrepareFundsChange: WalletServicePrepareFundsChange;
+  static readonly GetTransaction: WalletServiceGetTransaction;
+  static readonly ListTransactions: WalletServiceListTransactions;
+  static readonly GetTransactionSnapshot: WalletServiceGetTransactionSnapshot;
+  static readonly ListTransactionSnapshots: WalletServiceListTransactionSnapshots;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -208,7 +208,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class WalletClient {
+export class WalletServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

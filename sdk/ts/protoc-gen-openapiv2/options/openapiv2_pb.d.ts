@@ -48,6 +48,11 @@ export class Swagger extends jspb.Message {
   setSecurityList(value: Array<SecurityRequirement>): void;
   addSecurity(value?: SecurityRequirement, index?: number): SecurityRequirement;
 
+  clearTagsList(): void;
+  getTagsList(): Array<Tag>;
+  setTagsList(value: Array<Tag>): void;
+  addTags(value?: Tag, index?: number): Tag;
+
   hasExternalDocs(): boolean;
   clearExternalDocs(): void;
   getExternalDocs(): ExternalDocumentation | undefined;
@@ -77,6 +82,7 @@ export namespace Swagger {
     responsesMap: Array<[string, Response.AsObject]>,
     securityDefinitions?: SecurityDefinitions.AsObject,
     securityList: Array<SecurityRequirement.AsObject>,
+    tagsList: Array<Tag.AsObject>,
     externalDocs?: ExternalDocumentation.AsObject,
     extensionsMap: Array<[string, google_protobuf_struct_pb.Value.AsObject]>,
   }
@@ -129,6 +135,11 @@ export class Operation extends jspb.Message {
 
   getExtensionsMap(): jspb.Map<string, google_protobuf_struct_pb.Value>;
   clearExtensionsMap(): void;
+  hasParameters(): boolean;
+  clearParameters(): void;
+  getParameters(): Parameters | undefined;
+  setParameters(value?: Parameters): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Operation.AsObject;
   static toObject(includeInstance: boolean, msg: Operation): Operation.AsObject;
@@ -153,7 +164,76 @@ export namespace Operation {
     deprecated: boolean,
     securityList: Array<SecurityRequirement.AsObject>,
     extensionsMap: Array<[string, google_protobuf_struct_pb.Value.AsObject]>,
+    parameters?: Parameters.AsObject,
   }
+}
+
+export class Parameters extends jspb.Message {
+  clearHeadersList(): void;
+  getHeadersList(): Array<HeaderParameter>;
+  setHeadersList(value: Array<HeaderParameter>): void;
+  addHeaders(value?: HeaderParameter, index?: number): HeaderParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Parameters.AsObject;
+  static toObject(includeInstance: boolean, msg: Parameters): Parameters.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Parameters, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Parameters;
+  static deserializeBinaryFromReader(message: Parameters, reader: jspb.BinaryReader): Parameters;
+}
+
+export namespace Parameters {
+  export type AsObject = {
+    headersList: Array<HeaderParameter.AsObject>,
+  }
+}
+
+export class HeaderParameter extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getType(): HeaderParameter.TypeMap[keyof HeaderParameter.TypeMap];
+  setType(value: HeaderParameter.TypeMap[keyof HeaderParameter.TypeMap]): void;
+
+  getFormat(): string;
+  setFormat(value: string): void;
+
+  getRequired(): boolean;
+  setRequired(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HeaderParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: HeaderParameter): HeaderParameter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HeaderParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HeaderParameter;
+  static deserializeBinaryFromReader(message: HeaderParameter, reader: jspb.BinaryReader): HeaderParameter;
+}
+
+export namespace HeaderParameter {
+  export type AsObject = {
+    name: string,
+    description: string,
+    type: HeaderParameter.TypeMap[keyof HeaderParameter.TypeMap],
+    format: string,
+    required: boolean,
+  }
+
+  export interface TypeMap {
+    UNKNOWN: 0;
+    STRING: 1;
+    NUMBER: 2;
+    INTEGER: 3;
+    BOOLEAN: 4;
+  }
+
+  export const Type: TypeMap;
 }
 
 export class Header extends jspb.Message {
@@ -553,6 +633,9 @@ export namespace JSONSchema {
 }
 
 export class Tag extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
   getDescription(): string;
   setDescription(value: string): void;
 
@@ -561,6 +644,8 @@ export class Tag extends jspb.Message {
   getExternalDocs(): ExternalDocumentation | undefined;
   setExternalDocs(value?: ExternalDocumentation): void;
 
+  getExtensionsMap(): jspb.Map<string, google_protobuf_struct_pb.Value>;
+  clearExtensionsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Tag.AsObject;
   static toObject(includeInstance: boolean, msg: Tag): Tag.AsObject;
@@ -573,8 +658,10 @@ export class Tag extends jspb.Message {
 
 export namespace Tag {
   export type AsObject = {
+    name: string,
     description: string,
     externalDocs?: ExternalDocumentation.AsObject,
+    extensionsMap: Array<[string, google_protobuf_struct_pb.Value.AsObject]>,
   }
 }
 

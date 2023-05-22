@@ -6,69 +6,69 @@
 var issuer_api_v1_issuer_pb = require("../../issuer_api/v1/issuer_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Issuer = (function () {
-  function Issuer() {}
-  Issuer.serviceName = "issuer_api.v1.Issuer";
-  return Issuer;
+var IssuerService = (function () {
+  function IssuerService() {}
+  IssuerService.serviceName = "issuer_api.v1.IssuerService";
+  return IssuerService;
 }());
 
-Issuer.Authenticate = {
+IssuerService.Authenticate = {
   methodName: "Authenticate",
-  service: Issuer,
+  service: IssuerService,
   requestStream: false,
   responseStream: false,
   requestType: issuer_api_v1_issuer_pb.AuthenticateRequest,
   responseType: issuer_api_v1_issuer_pb.AuthenticateResponse
 };
 
-Issuer.Authorize = {
+IssuerService.Authorize = {
   methodName: "Authorize",
-  service: Issuer,
+  service: IssuerService,
   requestStream: true,
   responseStream: true,
   requestType: issuer_api_v1_issuer_pb.AuthorizeRequest,
   responseType: issuer_api_v1_issuer_pb.AuthorizeResponse
 };
 
-Issuer.Issue = {
+IssuerService.Issue = {
   methodName: "Issue",
-  service: Issuer,
+  service: IssuerService,
   requestStream: false,
   responseStream: true,
   requestType: issuer_api_v1_issuer_pb.IssueRequest,
   responseType: issuer_api_v1_issuer_pb.IssueResponse
 };
 
-Issuer.GetRoles = {
+IssuerService.GetRoles = {
   methodName: "GetRoles",
-  service: Issuer,
+  service: IssuerService,
   requestStream: false,
   responseStream: false,
   requestType: issuer_api_v1_issuer_pb.GetRolesRequest,
   responseType: issuer_api_v1_issuer_pb.GetRolesResponse
 };
 
-Issuer.SetRole = {
+IssuerService.SetRole = {
   methodName: "SetRole",
-  service: Issuer,
+  service: IssuerService,
   requestStream: false,
   responseStream: false,
   requestType: issuer_api_v1_issuer_pb.SetRoleRequest,
   responseType: issuer_api_v1_issuer_pb.SetRoleResponse
 };
 
-exports.Issuer = Issuer;
+exports.IssuerService = IssuerService;
 
-function IssuerClient(serviceHost, options) {
+function IssuerServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-IssuerClient.prototype.authenticate = function authenticate(requestMessage, metadata, callback) {
+IssuerServiceClient.prototype.authenticate = function authenticate(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Issuer.Authenticate, {
+  var client = grpc.unary(IssuerService.Authenticate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -95,13 +95,13 @@ IssuerClient.prototype.authenticate = function authenticate(requestMessage, meta
   };
 };
 
-IssuerClient.prototype.authorize = function authorize(metadata) {
+IssuerServiceClient.prototype.authorize = function authorize(metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(Issuer.Authorize, {
+  var client = grpc.client(IssuerService.Authorize, {
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport
@@ -140,13 +140,13 @@ IssuerClient.prototype.authorize = function authorize(metadata) {
   };
 };
 
-IssuerClient.prototype.issue = function issue(requestMessage, metadata) {
+IssuerServiceClient.prototype.issue = function issue(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(Issuer.Issue, {
+  var client = grpc.invoke(IssuerService.Issue, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -179,11 +179,11 @@ IssuerClient.prototype.issue = function issue(requestMessage, metadata) {
   };
 };
 
-IssuerClient.prototype.getRoles = function getRoles(requestMessage, metadata, callback) {
+IssuerServiceClient.prototype.getRoles = function getRoles(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Issuer.GetRoles, {
+  var client = grpc.unary(IssuerService.GetRoles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -210,11 +210,11 @@ IssuerClient.prototype.getRoles = function getRoles(requestMessage, metadata, ca
   };
 };
 
-IssuerClient.prototype.setRole = function setRole(requestMessage, metadata, callback) {
+IssuerServiceClient.prototype.setRole = function setRole(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Issuer.SetRole, {
+  var client = grpc.unary(IssuerService.SetRole, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -241,5 +241,5 @@ IssuerClient.prototype.setRole = function setRole(requestMessage, metadata, call
   };
 };
 
-exports.IssuerClient = IssuerClient;
+exports.IssuerServiceClient = IssuerServiceClient;
 

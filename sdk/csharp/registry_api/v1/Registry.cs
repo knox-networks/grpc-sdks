@@ -35,16 +35,16 @@ namespace RegistryApi.V1 {
             "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBITCgtjb250ZW50VHlw",
             "ZRgDIAEoCSIuCg1VcGRhdGVSZXF1ZXN0EgsKA2RpZBgBIAEoCRIQCghkb2N1",
             "bWVudBgCIAEoCSIQCg5VcGRhdGVSZXNwb25zZSIcCg1SZXZva2VSZXF1ZXN0",
-            "EgsKA2RpZBgBIAEoCSIQCg5SZXZva2VSZXNwb25zZTKwAgoIUmVnaXN0cnkS",
-            "SQoGQ3JlYXRlEh4ucmVnaXN0cnlfYXBpLnYxLkNyZWF0ZVJlcXVlc3QaHy5y",
-            "ZWdpc3RyeV9hcGkudjEuQ3JlYXRlUmVzcG9uc2USQwoEUmVhZBIcLnJlZ2lz",
-            "dHJ5X2FwaS52MS5SZWFkUmVxdWVzdBodLnJlZ2lzdHJ5X2FwaS52MS5SZWFk",
-            "UmVzcG9uc2USSQoGVXBkYXRlEh4ucmVnaXN0cnlfYXBpLnYxLlVwZGF0ZVJl",
-            "cXVlc3QaHy5yZWdpc3RyeV9hcGkudjEuVXBkYXRlUmVzcG9uc2USSQoGUmV2",
-            "b2tlEh4ucmVnaXN0cnlfYXBpLnYxLlJldm9rZVJlcXVlc3QaHy5yZWdpc3Ry",
-            "eV9hcGkudjEuUmV2b2tlUmVzcG9uc2VCO1o5Z2l0aHViLmNvbS9rbm94LW5l",
-            "dHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vcmVnaXN0cnlfYXBpL3YxYgZwcm90",
-            "bzM="));
+            "EgsKA2RpZBgBIAEoCSIQCg5SZXZva2VSZXNwb25zZTK3AgoPUmVnaXN0cnlT",
+            "ZXJ2aWNlEkkKBkNyZWF0ZRIeLnJlZ2lzdHJ5X2FwaS52MS5DcmVhdGVSZXF1",
+            "ZXN0Gh8ucmVnaXN0cnlfYXBpLnYxLkNyZWF0ZVJlc3BvbnNlEkMKBFJlYWQS",
+            "HC5yZWdpc3RyeV9hcGkudjEuUmVhZFJlcXVlc3QaHS5yZWdpc3RyeV9hcGku",
+            "djEuUmVhZFJlc3BvbnNlEkkKBlVwZGF0ZRIeLnJlZ2lzdHJ5X2FwaS52MS5V",
+            "cGRhdGVSZXF1ZXN0Gh8ucmVnaXN0cnlfYXBpLnYxLlVwZGF0ZVJlc3BvbnNl",
+            "EkkKBlJldm9rZRIeLnJlZ2lzdHJ5X2FwaS52MS5SZXZva2VSZXF1ZXN0Gh8u",
+            "cmVnaXN0cnlfYXBpLnYxLlJldm9rZVJlc3BvbnNlQjtaOWdpdGh1Yi5jb20v",
+            "a25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3JlZ2lzdHJ5X2FwaS92",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -112,7 +112,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    /// W3C Decentralized Identifier (DID) of the wallet.
+    ///W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +127,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    /// A set of data containing mechanisms to verify the DID and discover related services. 
+    ///A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -296,7 +296,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  /// Empty body.
+  ///Empty body.
   /// </summary>
   public sealed partial class CreateResponse : pb::IMessage<CreateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -498,7 +498,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    /// W3C Decentralized Identifier (DID) of the wallet.
+    ///W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -692,7 +692,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    /// W3C Decentralized Identifier (DID) of the wallet.
+    ///W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -707,7 +707,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    /// A set of data containing mechanisms to verify the DID and discover related services. 
+    ///A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -722,7 +722,7 @@ namespace RegistryApi.V1 {
     public const int MetadataFieldNumber = 3;
     private global::RegistryApi.V1.ResolutionMetadata metadata_;
     /// <summary>
-    /// Resolution Metadata object, with defined timestamps and content type.
+    ///Resolution Metadata object, with defined timestamps and content type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -973,7 +973,7 @@ namespace RegistryApi.V1 {
     public const int CreatedFieldNumber = 1;
     private global::Google.Protobuf.WellKnownTypes.Timestamp created_;
     /// <summary>
-    /// Timestamp representing the DID document creation time.
+    ///Timestamp representing the DID document creation time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -988,7 +988,7 @@ namespace RegistryApi.V1 {
     public const int UpdatedFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp updated_;
     /// <summary>
-    /// Timestamp representing the DID document last update time.
+    ///Timestamp representing the DID document last update time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1003,7 +1003,7 @@ namespace RegistryApi.V1 {
     public const int ContentTypeFieldNumber = 3;
     private string contentType_ = "";
     /// <summary>
-    /// Media type of the W3C DID Document. 
+    ///Media type of the W3C DID Document. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1262,7 +1262,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    /// W3C Decentralized Identifier (DID) of the wallet.
+    ///W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1277,7 +1277,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    /// A set of data containing mechanisms to verify the DID and discover related services. 
+    ///A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1446,7 +1446,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  /// Empty body.
+  ///Empty body.
   /// </summary>
   public sealed partial class UpdateResponse : pb::IMessage<UpdateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1648,7 +1648,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    /// W3C Decentralized Identifier (DID) of the wallet.
+    ///W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1793,7 +1793,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  /// Empty body.
+  ///Empty body.
   /// </summary>
   public sealed partial class RevokeResponse : pb::IMessage<RevokeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

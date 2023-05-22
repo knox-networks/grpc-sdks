@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// RegistryClient is the client API for Registry service.
+// RegistryServiceClient is the client API for RegistryService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type RegistryClient interface {
+type RegistryServiceClient interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
 	// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
@@ -28,54 +28,54 @@ type RegistryClient interface {
 	Revoke(ctx context.Context, in *RevokeRequest, opts ...grpc.CallOption) (*RevokeResponse, error)
 }
 
-type registryClient struct {
+type registryServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewRegistryClient(cc grpc.ClientConnInterface) RegistryClient {
-	return &registryClient{cc}
+func NewRegistryServiceClient(cc grpc.ClientConnInterface) RegistryServiceClient {
+	return &registryServiceClient{cc}
 }
 
-func (c *registryClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
+func (c *registryServiceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
 	out := new(CreateResponse)
-	err := c.cc.Invoke(ctx, "/registry_api.v1.Registry/Create", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *registryClient) Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error) {
+func (c *registryServiceClient) Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error) {
 	out := new(ReadResponse)
-	err := c.cc.Invoke(ctx, "/registry_api.v1.Registry/Read", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Read", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *registryClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*UpdateResponse, error) {
+func (c *registryServiceClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*UpdateResponse, error) {
 	out := new(UpdateResponse)
-	err := c.cc.Invoke(ctx, "/registry_api.v1.Registry/Update", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *registryClient) Revoke(ctx context.Context, in *RevokeRequest, opts ...grpc.CallOption) (*RevokeResponse, error) {
+func (c *registryServiceClient) Revoke(ctx context.Context, in *RevokeRequest, opts ...grpc.CallOption) (*RevokeResponse, error) {
 	out := new(RevokeResponse)
-	err := c.cc.Invoke(ctx, "/registry_api.v1.Registry/Revoke", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Revoke", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// RegistryServer is the server API for Registry service.
-// All implementations must embed UnimplementedRegistryServer
+// RegistryServiceServer is the server API for RegistryService service.
+// All implementations must embed UnimplementedRegistryServiceServer
 // for forward compatibility
-type RegistryServer interface {
+type RegistryServiceServer interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(context.Context, *CreateRequest) (*CreateResponse, error)
 	// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
@@ -84,132 +84,132 @@ type RegistryServer interface {
 	Update(context.Context, *UpdateRequest) (*UpdateResponse, error)
 	// Revokes a DID document entry for a given DID in the Knox Registry Management Service.
 	Revoke(context.Context, *RevokeRequest) (*RevokeResponse, error)
-	mustEmbedUnimplementedRegistryServer()
+	mustEmbedUnimplementedRegistryServiceServer()
 }
 
-// UnimplementedRegistryServer must be embedded to have forward compatible implementations.
-type UnimplementedRegistryServer struct {
+// UnimplementedRegistryServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedRegistryServiceServer struct {
 }
 
-func (UnimplementedRegistryServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
+func (UnimplementedRegistryServiceServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedRegistryServer) Read(context.Context, *ReadRequest) (*ReadResponse, error) {
+func (UnimplementedRegistryServiceServer) Read(context.Context, *ReadRequest) (*ReadResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Read not implemented")
 }
-func (UnimplementedRegistryServer) Update(context.Context, *UpdateRequest) (*UpdateResponse, error) {
+func (UnimplementedRegistryServiceServer) Update(context.Context, *UpdateRequest) (*UpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedRegistryServer) Revoke(context.Context, *RevokeRequest) (*RevokeResponse, error) {
+func (UnimplementedRegistryServiceServer) Revoke(context.Context, *RevokeRequest) (*RevokeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Revoke not implemented")
 }
-func (UnimplementedRegistryServer) mustEmbedUnimplementedRegistryServer() {}
+func (UnimplementedRegistryServiceServer) mustEmbedUnimplementedRegistryServiceServer() {}
 
-// UnsafeRegistryServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to RegistryServer will
+// UnsafeRegistryServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to RegistryServiceServer will
 // result in compilation errors.
-type UnsafeRegistryServer interface {
-	mustEmbedUnimplementedRegistryServer()
+type UnsafeRegistryServiceServer interface {
+	mustEmbedUnimplementedRegistryServiceServer()
 }
 
-func RegisterRegistryServer(s grpc.ServiceRegistrar, srv RegistryServer) {
-	s.RegisterService(&Registry_ServiceDesc, srv)
+func RegisterRegistryServiceServer(s grpc.ServiceRegistrar, srv RegistryServiceServer) {
+	s.RegisterService(&RegistryService_ServiceDesc, srv)
 }
 
-func _Registry_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RegistryService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegistryServer).Create(ctx, in)
+		return srv.(RegistryServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/registry_api.v1.Registry/Create",
+		FullMethod: "/registry_api.v1.RegistryService/Create",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegistryServer).Create(ctx, req.(*CreateRequest))
+		return srv.(RegistryServiceServer).Create(ctx, req.(*CreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Registry_Read_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RegistryService_Read_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ReadRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegistryServer).Read(ctx, in)
+		return srv.(RegistryServiceServer).Read(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/registry_api.v1.Registry/Read",
+		FullMethod: "/registry_api.v1.RegistryService/Read",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegistryServer).Read(ctx, req.(*ReadRequest))
+		return srv.(RegistryServiceServer).Read(ctx, req.(*ReadRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Registry_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RegistryService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegistryServer).Update(ctx, in)
+		return srv.(RegistryServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/registry_api.v1.Registry/Update",
+		FullMethod: "/registry_api.v1.RegistryService/Update",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegistryServer).Update(ctx, req.(*UpdateRequest))
+		return srv.(RegistryServiceServer).Update(ctx, req.(*UpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Registry_Revoke_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RegistryService_Revoke_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RevokeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegistryServer).Revoke(ctx, in)
+		return srv.(RegistryServiceServer).Revoke(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/registry_api.v1.Registry/Revoke",
+		FullMethod: "/registry_api.v1.RegistryService/Revoke",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegistryServer).Revoke(ctx, req.(*RevokeRequest))
+		return srv.(RegistryServiceServer).Revoke(ctx, req.(*RevokeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Registry_ServiceDesc is the grpc.ServiceDesc for Registry service.
+// RegistryService_ServiceDesc is the grpc.ServiceDesc for RegistryService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Registry_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "registry_api.v1.Registry",
-	HandlerType: (*RegistryServer)(nil),
+var RegistryService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "registry_api.v1.RegistryService",
+	HandlerType: (*RegistryServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Create",
-			Handler:    _Registry_Create_Handler,
+			Handler:    _RegistryService_Create_Handler,
 		},
 		{
 			MethodName: "Read",
-			Handler:    _Registry_Read_Handler,
+			Handler:    _RegistryService_Read_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _Registry_Update_Handler,
+			Handler:    _RegistryService_Update_Handler,
 		},
 		{
 			MethodName: "Revoke",
-			Handler:    _Registry_Revoke_Handler,
+			Handler:    _RegistryService_Revoke_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

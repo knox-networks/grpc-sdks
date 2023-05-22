@@ -6,69 +6,69 @@
 var vc_api_v1_vc_pb = require("../../vc_api/v1/vc_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var CredentialAdapter = (function () {
-  function CredentialAdapter() {}
-  CredentialAdapter.serviceName = "vc_api.v1.CredentialAdapter";
-  return CredentialAdapter;
+var CredentialAdapterService = (function () {
+  function CredentialAdapterService() {}
+  CredentialAdapterService.serviceName = "vc_api.v1.CredentialAdapterService";
+  return CredentialAdapterService;
 }());
 
-CredentialAdapter.CreateIssuanceChallenge = {
+CredentialAdapterService.CreateIssuanceChallenge = {
   methodName: "CreateIssuanceChallenge",
-  service: CredentialAdapter,
+  service: CredentialAdapterService,
   requestStream: false,
   responseStream: false,
   requestType: vc_api_v1_vc_pb.CreateIssuanceChallengeRequest,
   responseType: vc_api_v1_vc_pb.CreateIssuanceChallengeResponse
 };
 
-CredentialAdapter.IssueVerifiableCredential = {
+CredentialAdapterService.IssueVerifiableCredential = {
   methodName: "IssueVerifiableCredential",
-  service: CredentialAdapter,
+  service: CredentialAdapterService,
   requestStream: false,
   responseStream: false,
   requestType: vc_api_v1_vc_pb.IssueVerifiableCredentialRequest,
   responseType: vc_api_v1_vc_pb.IssueVerifiableCredentialResponse
 };
 
-CredentialAdapter.CreatePresentationChallenge = {
+CredentialAdapterService.CreatePresentationChallenge = {
   methodName: "CreatePresentationChallenge",
-  service: CredentialAdapter,
+  service: CredentialAdapterService,
   requestStream: false,
   responseStream: false,
   requestType: vc_api_v1_vc_pb.CreatePresentationChallengeRequest,
   responseType: vc_api_v1_vc_pb.CreatePresentationChallengeResponse
 };
 
-CredentialAdapter.PresentVerifiableCredential = {
+CredentialAdapterService.PresentVerifiableCredential = {
   methodName: "PresentVerifiableCredential",
-  service: CredentialAdapter,
+  service: CredentialAdapterService,
   requestStream: false,
   responseStream: false,
   requestType: vc_api_v1_vc_pb.PresentVerifiableCredentialRequest,
   responseType: vc_api_v1_vc_pb.PresentVerifiableCredentialResponse
 };
 
-CredentialAdapter.WaitForCompletion = {
+CredentialAdapterService.WaitForCompletion = {
   methodName: "WaitForCompletion",
-  service: CredentialAdapter,
+  service: CredentialAdapterService,
   requestStream: false,
   responseStream: true,
   requestType: vc_api_v1_vc_pb.WaitForCompletionRequest,
   responseType: vc_api_v1_vc_pb.WaitForCompletionResponse
 };
 
-exports.CredentialAdapter = CredentialAdapter;
+exports.CredentialAdapterService = CredentialAdapterService;
 
-function CredentialAdapterClient(serviceHost, options) {
+function CredentialAdapterServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-CredentialAdapterClient.prototype.createIssuanceChallenge = function createIssuanceChallenge(requestMessage, metadata, callback) {
+CredentialAdapterServiceClient.prototype.createIssuanceChallenge = function createIssuanceChallenge(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(CredentialAdapter.CreateIssuanceChallenge, {
+  var client = grpc.unary(CredentialAdapterService.CreateIssuanceChallenge, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -95,11 +95,11 @@ CredentialAdapterClient.prototype.createIssuanceChallenge = function createIssua
   };
 };
 
-CredentialAdapterClient.prototype.issueVerifiableCredential = function issueVerifiableCredential(requestMessage, metadata, callback) {
+CredentialAdapterServiceClient.prototype.issueVerifiableCredential = function issueVerifiableCredential(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(CredentialAdapter.IssueVerifiableCredential, {
+  var client = grpc.unary(CredentialAdapterService.IssueVerifiableCredential, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -126,11 +126,11 @@ CredentialAdapterClient.prototype.issueVerifiableCredential = function issueVeri
   };
 };
 
-CredentialAdapterClient.prototype.createPresentationChallenge = function createPresentationChallenge(requestMessage, metadata, callback) {
+CredentialAdapterServiceClient.prototype.createPresentationChallenge = function createPresentationChallenge(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(CredentialAdapter.CreatePresentationChallenge, {
+  var client = grpc.unary(CredentialAdapterService.CreatePresentationChallenge, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -157,11 +157,11 @@ CredentialAdapterClient.prototype.createPresentationChallenge = function createP
   };
 };
 
-CredentialAdapterClient.prototype.presentVerifiableCredential = function presentVerifiableCredential(requestMessage, metadata, callback) {
+CredentialAdapterServiceClient.prototype.presentVerifiableCredential = function presentVerifiableCredential(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(CredentialAdapter.PresentVerifiableCredential, {
+  var client = grpc.unary(CredentialAdapterService.PresentVerifiableCredential, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -188,13 +188,13 @@ CredentialAdapterClient.prototype.presentVerifiableCredential = function present
   };
 };
 
-CredentialAdapterClient.prototype.waitForCompletion = function waitForCompletion(requestMessage, metadata) {
+CredentialAdapterServiceClient.prototype.waitForCompletion = function waitForCompletion(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(CredentialAdapter.WaitForCompletion, {
+  var client = grpc.invoke(CredentialAdapterService.WaitForCompletion, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -227,5 +227,5 @@ CredentialAdapterClient.prototype.waitForCompletion = function waitForCompletion
   };
 };
 
-exports.CredentialAdapterClient = CredentialAdapterClient;
+exports.CredentialAdapterServiceClient = CredentialAdapterServiceClient;
 

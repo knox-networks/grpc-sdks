@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// CredentialAdapterClient is the client API for CredentialAdapter service.
+// CredentialAdapterServiceClient is the client API for CredentialAdapterService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type CredentialAdapterClient interface {
+type CredentialAdapterServiceClient interface {
 	// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
 	CreateIssuanceChallenge(ctx context.Context, in *CreateIssuanceChallengeRequest, opts ...grpc.CallOption) (*CreateIssuanceChallengeResponse, error)
 	// Called by the holder to the VC issuer to answer the challenge and receive the credential.
@@ -27,59 +27,59 @@ type CredentialAdapterClient interface {
 	// Called by the holder to the verifier to verify the presentation with the verifier.
 	PresentVerifiableCredential(ctx context.Context, in *PresentVerifiableCredentialRequest, opts ...grpc.CallOption) (*PresentVerifiableCredentialResponse, error)
 	// Called by the browser to initialize a stream with the server to listen for events such as challenge completion.
-	WaitForCompletion(ctx context.Context, in *WaitForCompletionRequest, opts ...grpc.CallOption) (CredentialAdapter_WaitForCompletionClient, error)
+	WaitForCompletion(ctx context.Context, in *WaitForCompletionRequest, opts ...grpc.CallOption) (CredentialAdapterService_WaitForCompletionClient, error)
 }
 
-type credentialAdapterClient struct {
+type credentialAdapterServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewCredentialAdapterClient(cc grpc.ClientConnInterface) CredentialAdapterClient {
-	return &credentialAdapterClient{cc}
+func NewCredentialAdapterServiceClient(cc grpc.ClientConnInterface) CredentialAdapterServiceClient {
+	return &credentialAdapterServiceClient{cc}
 }
 
-func (c *credentialAdapterClient) CreateIssuanceChallenge(ctx context.Context, in *CreateIssuanceChallengeRequest, opts ...grpc.CallOption) (*CreateIssuanceChallengeResponse, error) {
+func (c *credentialAdapterServiceClient) CreateIssuanceChallenge(ctx context.Context, in *CreateIssuanceChallengeRequest, opts ...grpc.CallOption) (*CreateIssuanceChallengeResponse, error) {
 	out := new(CreateIssuanceChallengeResponse)
-	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapter/CreateIssuanceChallenge", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapterService/CreateIssuanceChallenge", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *credentialAdapterClient) IssueVerifiableCredential(ctx context.Context, in *IssueVerifiableCredentialRequest, opts ...grpc.CallOption) (*IssueVerifiableCredentialResponse, error) {
+func (c *credentialAdapterServiceClient) IssueVerifiableCredential(ctx context.Context, in *IssueVerifiableCredentialRequest, opts ...grpc.CallOption) (*IssueVerifiableCredentialResponse, error) {
 	out := new(IssueVerifiableCredentialResponse)
-	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapter/IssueVerifiableCredential", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapterService/IssueVerifiableCredential", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *credentialAdapterClient) CreatePresentationChallenge(ctx context.Context, in *CreatePresentationChallengeRequest, opts ...grpc.CallOption) (*CreatePresentationChallengeResponse, error) {
+func (c *credentialAdapterServiceClient) CreatePresentationChallenge(ctx context.Context, in *CreatePresentationChallengeRequest, opts ...grpc.CallOption) (*CreatePresentationChallengeResponse, error) {
 	out := new(CreatePresentationChallengeResponse)
-	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapter/CreatePresentationChallenge", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapterService/CreatePresentationChallenge", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *credentialAdapterClient) PresentVerifiableCredential(ctx context.Context, in *PresentVerifiableCredentialRequest, opts ...grpc.CallOption) (*PresentVerifiableCredentialResponse, error) {
+func (c *credentialAdapterServiceClient) PresentVerifiableCredential(ctx context.Context, in *PresentVerifiableCredentialRequest, opts ...grpc.CallOption) (*PresentVerifiableCredentialResponse, error) {
 	out := new(PresentVerifiableCredentialResponse)
-	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapter/PresentVerifiableCredential", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/vc_api.v1.CredentialAdapterService/PresentVerifiableCredential", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *credentialAdapterClient) WaitForCompletion(ctx context.Context, in *WaitForCompletionRequest, opts ...grpc.CallOption) (CredentialAdapter_WaitForCompletionClient, error) {
-	stream, err := c.cc.NewStream(ctx, &CredentialAdapter_ServiceDesc.Streams[0], "/vc_api.v1.CredentialAdapter/WaitForCompletion", opts...)
+func (c *credentialAdapterServiceClient) WaitForCompletion(ctx context.Context, in *WaitForCompletionRequest, opts ...grpc.CallOption) (CredentialAdapterService_WaitForCompletionClient, error) {
+	stream, err := c.cc.NewStream(ctx, &CredentialAdapterService_ServiceDesc.Streams[0], "/vc_api.v1.CredentialAdapterService/WaitForCompletion", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &credentialAdapterWaitForCompletionClient{stream}
+	x := &credentialAdapterServiceWaitForCompletionClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -89,16 +89,16 @@ func (c *credentialAdapterClient) WaitForCompletion(ctx context.Context, in *Wai
 	return x, nil
 }
 
-type CredentialAdapter_WaitForCompletionClient interface {
+type CredentialAdapterService_WaitForCompletionClient interface {
 	Recv() (*WaitForCompletionResponse, error)
 	grpc.ClientStream
 }
 
-type credentialAdapterWaitForCompletionClient struct {
+type credentialAdapterServiceWaitForCompletionClient struct {
 	grpc.ClientStream
 }
 
-func (x *credentialAdapterWaitForCompletionClient) Recv() (*WaitForCompletionResponse, error) {
+func (x *credentialAdapterServiceWaitForCompletionClient) Recv() (*WaitForCompletionResponse, error) {
 	m := new(WaitForCompletionResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -106,10 +106,10 @@ func (x *credentialAdapterWaitForCompletionClient) Recv() (*WaitForCompletionRes
 	return m, nil
 }
 
-// CredentialAdapterServer is the server API for CredentialAdapter service.
-// All implementations must embed UnimplementedCredentialAdapterServer
+// CredentialAdapterServiceServer is the server API for CredentialAdapterService service.
+// All implementations must embed UnimplementedCredentialAdapterServiceServer
 // for forward compatibility
-type CredentialAdapterServer interface {
+type CredentialAdapterServiceServer interface {
 	// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
 	CreateIssuanceChallenge(context.Context, *CreateIssuanceChallengeRequest) (*CreateIssuanceChallengeResponse, error)
 	// Called by the holder to the VC issuer to answer the challenge and receive the credential.
@@ -119,163 +119,164 @@ type CredentialAdapterServer interface {
 	// Called by the holder to the verifier to verify the presentation with the verifier.
 	PresentVerifiableCredential(context.Context, *PresentVerifiableCredentialRequest) (*PresentVerifiableCredentialResponse, error)
 	// Called by the browser to initialize a stream with the server to listen for events such as challenge completion.
-	WaitForCompletion(*WaitForCompletionRequest, CredentialAdapter_WaitForCompletionServer) error
-	mustEmbedUnimplementedCredentialAdapterServer()
+	WaitForCompletion(*WaitForCompletionRequest, CredentialAdapterService_WaitForCompletionServer) error
+	mustEmbedUnimplementedCredentialAdapterServiceServer()
 }
 
-// UnimplementedCredentialAdapterServer must be embedded to have forward compatible implementations.
-type UnimplementedCredentialAdapterServer struct {
+// UnimplementedCredentialAdapterServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedCredentialAdapterServiceServer struct {
 }
 
-func (UnimplementedCredentialAdapterServer) CreateIssuanceChallenge(context.Context, *CreateIssuanceChallengeRequest) (*CreateIssuanceChallengeResponse, error) {
+func (UnimplementedCredentialAdapterServiceServer) CreateIssuanceChallenge(context.Context, *CreateIssuanceChallengeRequest) (*CreateIssuanceChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIssuanceChallenge not implemented")
 }
-func (UnimplementedCredentialAdapterServer) IssueVerifiableCredential(context.Context, *IssueVerifiableCredentialRequest) (*IssueVerifiableCredentialResponse, error) {
+func (UnimplementedCredentialAdapterServiceServer) IssueVerifiableCredential(context.Context, *IssueVerifiableCredentialRequest) (*IssueVerifiableCredentialResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IssueVerifiableCredential not implemented")
 }
-func (UnimplementedCredentialAdapterServer) CreatePresentationChallenge(context.Context, *CreatePresentationChallengeRequest) (*CreatePresentationChallengeResponse, error) {
+func (UnimplementedCredentialAdapterServiceServer) CreatePresentationChallenge(context.Context, *CreatePresentationChallengeRequest) (*CreatePresentationChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePresentationChallenge not implemented")
 }
-func (UnimplementedCredentialAdapterServer) PresentVerifiableCredential(context.Context, *PresentVerifiableCredentialRequest) (*PresentVerifiableCredentialResponse, error) {
+func (UnimplementedCredentialAdapterServiceServer) PresentVerifiableCredential(context.Context, *PresentVerifiableCredentialRequest) (*PresentVerifiableCredentialResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PresentVerifiableCredential not implemented")
 }
-func (UnimplementedCredentialAdapterServer) WaitForCompletion(*WaitForCompletionRequest, CredentialAdapter_WaitForCompletionServer) error {
+func (UnimplementedCredentialAdapterServiceServer) WaitForCompletion(*WaitForCompletionRequest, CredentialAdapterService_WaitForCompletionServer) error {
 	return status.Errorf(codes.Unimplemented, "method WaitForCompletion not implemented")
 }
-func (UnimplementedCredentialAdapterServer) mustEmbedUnimplementedCredentialAdapterServer() {}
+func (UnimplementedCredentialAdapterServiceServer) mustEmbedUnimplementedCredentialAdapterServiceServer() {
+}
 
-// UnsafeCredentialAdapterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to CredentialAdapterServer will
+// UnsafeCredentialAdapterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CredentialAdapterServiceServer will
 // result in compilation errors.
-type UnsafeCredentialAdapterServer interface {
-	mustEmbedUnimplementedCredentialAdapterServer()
+type UnsafeCredentialAdapterServiceServer interface {
+	mustEmbedUnimplementedCredentialAdapterServiceServer()
 }
 
-func RegisterCredentialAdapterServer(s grpc.ServiceRegistrar, srv CredentialAdapterServer) {
-	s.RegisterService(&CredentialAdapter_ServiceDesc, srv)
+func RegisterCredentialAdapterServiceServer(s grpc.ServiceRegistrar, srv CredentialAdapterServiceServer) {
+	s.RegisterService(&CredentialAdapterService_ServiceDesc, srv)
 }
 
-func _CredentialAdapter_CreateIssuanceChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CredentialAdapterService_CreateIssuanceChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateIssuanceChallengeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CredentialAdapterServer).CreateIssuanceChallenge(ctx, in)
+		return srv.(CredentialAdapterServiceServer).CreateIssuanceChallenge(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/vc_api.v1.CredentialAdapter/CreateIssuanceChallenge",
+		FullMethod: "/vc_api.v1.CredentialAdapterService/CreateIssuanceChallenge",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CredentialAdapterServer).CreateIssuanceChallenge(ctx, req.(*CreateIssuanceChallengeRequest))
+		return srv.(CredentialAdapterServiceServer).CreateIssuanceChallenge(ctx, req.(*CreateIssuanceChallengeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CredentialAdapter_IssueVerifiableCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CredentialAdapterService_IssueVerifiableCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(IssueVerifiableCredentialRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CredentialAdapterServer).IssueVerifiableCredential(ctx, in)
+		return srv.(CredentialAdapterServiceServer).IssueVerifiableCredential(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/vc_api.v1.CredentialAdapter/IssueVerifiableCredential",
+		FullMethod: "/vc_api.v1.CredentialAdapterService/IssueVerifiableCredential",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CredentialAdapterServer).IssueVerifiableCredential(ctx, req.(*IssueVerifiableCredentialRequest))
+		return srv.(CredentialAdapterServiceServer).IssueVerifiableCredential(ctx, req.(*IssueVerifiableCredentialRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CredentialAdapter_CreatePresentationChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CredentialAdapterService_CreatePresentationChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreatePresentationChallengeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CredentialAdapterServer).CreatePresentationChallenge(ctx, in)
+		return srv.(CredentialAdapterServiceServer).CreatePresentationChallenge(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/vc_api.v1.CredentialAdapter/CreatePresentationChallenge",
+		FullMethod: "/vc_api.v1.CredentialAdapterService/CreatePresentationChallenge",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CredentialAdapterServer).CreatePresentationChallenge(ctx, req.(*CreatePresentationChallengeRequest))
+		return srv.(CredentialAdapterServiceServer).CreatePresentationChallenge(ctx, req.(*CreatePresentationChallengeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CredentialAdapter_PresentVerifiableCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CredentialAdapterService_PresentVerifiableCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PresentVerifiableCredentialRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CredentialAdapterServer).PresentVerifiableCredential(ctx, in)
+		return srv.(CredentialAdapterServiceServer).PresentVerifiableCredential(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/vc_api.v1.CredentialAdapter/PresentVerifiableCredential",
+		FullMethod: "/vc_api.v1.CredentialAdapterService/PresentVerifiableCredential",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CredentialAdapterServer).PresentVerifiableCredential(ctx, req.(*PresentVerifiableCredentialRequest))
+		return srv.(CredentialAdapterServiceServer).PresentVerifiableCredential(ctx, req.(*PresentVerifiableCredentialRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CredentialAdapter_WaitForCompletion_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _CredentialAdapterService_WaitForCompletion_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(WaitForCompletionRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(CredentialAdapterServer).WaitForCompletion(m, &credentialAdapterWaitForCompletionServer{stream})
+	return srv.(CredentialAdapterServiceServer).WaitForCompletion(m, &credentialAdapterServiceWaitForCompletionServer{stream})
 }
 
-type CredentialAdapter_WaitForCompletionServer interface {
+type CredentialAdapterService_WaitForCompletionServer interface {
 	Send(*WaitForCompletionResponse) error
 	grpc.ServerStream
 }
 
-type credentialAdapterWaitForCompletionServer struct {
+type credentialAdapterServiceWaitForCompletionServer struct {
 	grpc.ServerStream
 }
 
-func (x *credentialAdapterWaitForCompletionServer) Send(m *WaitForCompletionResponse) error {
+func (x *credentialAdapterServiceWaitForCompletionServer) Send(m *WaitForCompletionResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-// CredentialAdapter_ServiceDesc is the grpc.ServiceDesc for CredentialAdapter service.
+// CredentialAdapterService_ServiceDesc is the grpc.ServiceDesc for CredentialAdapterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var CredentialAdapter_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "vc_api.v1.CredentialAdapter",
-	HandlerType: (*CredentialAdapterServer)(nil),
+var CredentialAdapterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "vc_api.v1.CredentialAdapterService",
+	HandlerType: (*CredentialAdapterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateIssuanceChallenge",
-			Handler:    _CredentialAdapter_CreateIssuanceChallenge_Handler,
+			Handler:    _CredentialAdapterService_CreateIssuanceChallenge_Handler,
 		},
 		{
 			MethodName: "IssueVerifiableCredential",
-			Handler:    _CredentialAdapter_IssueVerifiableCredential_Handler,
+			Handler:    _CredentialAdapterService_IssueVerifiableCredential_Handler,
 		},
 		{
 			MethodName: "CreatePresentationChallenge",
-			Handler:    _CredentialAdapter_CreatePresentationChallenge_Handler,
+			Handler:    _CredentialAdapterService_CreatePresentationChallenge_Handler,
 		},
 		{
 			MethodName: "PresentVerifiableCredential",
-			Handler:    _CredentialAdapter_PresentVerifiableCredential_Handler,
+			Handler:    _CredentialAdapterService_PresentVerifiableCredential_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "WaitForCompletion",
-			Handler:       _CredentialAdapter_WaitForCompletion_Handler,
+			Handler:       _CredentialAdapterService_WaitForCompletion_Handler,
 			ServerStreams: true,
 		},
 	},

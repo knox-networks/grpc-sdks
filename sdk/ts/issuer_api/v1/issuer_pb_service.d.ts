@@ -6,58 +6,58 @@
 import * as issuer_api_v1_issuer_pb from "../../issuer_api/v1/issuer_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type IssuerAuthenticate = {
+type IssuerServiceAuthenticate = {
   readonly methodName: string;
-  readonly service: typeof Issuer;
+  readonly service: typeof IssuerService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof issuer_api_v1_issuer_pb.AuthenticateRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.AuthenticateResponse;
 };
 
-type IssuerAuthorize = {
+type IssuerServiceAuthorize = {
   readonly methodName: string;
-  readonly service: typeof Issuer;
+  readonly service: typeof IssuerService;
   readonly requestStream: true;
   readonly responseStream: true;
   readonly requestType: typeof issuer_api_v1_issuer_pb.AuthorizeRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.AuthorizeResponse;
 };
 
-type IssuerIssue = {
+type IssuerServiceIssue = {
   readonly methodName: string;
-  readonly service: typeof Issuer;
+  readonly service: typeof IssuerService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof issuer_api_v1_issuer_pb.IssueRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.IssueResponse;
 };
 
-type IssuerGetRoles = {
+type IssuerServiceGetRoles = {
   readonly methodName: string;
-  readonly service: typeof Issuer;
+  readonly service: typeof IssuerService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof issuer_api_v1_issuer_pb.GetRolesRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.GetRolesResponse;
 };
 
-type IssuerSetRole = {
+type IssuerServiceSetRole = {
   readonly methodName: string;
-  readonly service: typeof Issuer;
+  readonly service: typeof IssuerService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof issuer_api_v1_issuer_pb.SetRoleRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.SetRoleResponse;
 };
 
-export class Issuer {
+export class IssuerService {
   static readonly serviceName: string;
-  static readonly Authenticate: IssuerAuthenticate;
-  static readonly Authorize: IssuerAuthorize;
-  static readonly Issue: IssuerIssue;
-  static readonly GetRoles: IssuerGetRoles;
-  static readonly SetRole: IssuerSetRole;
+  static readonly Authenticate: IssuerServiceAuthenticate;
+  static readonly Authorize: IssuerServiceAuthorize;
+  static readonly Issue: IssuerServiceIssue;
+  static readonly GetRoles: IssuerServiceGetRoles;
+  static readonly SetRole: IssuerServiceSetRole;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -88,7 +88,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class IssuerClient {
+export class IssuerServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

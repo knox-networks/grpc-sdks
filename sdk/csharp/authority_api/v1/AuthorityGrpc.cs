@@ -13,9 +13,9 @@ namespace AuthorityApi.V1 {
   /// limits, approve additional issuance limits, authorize issuing of digital banknotes, and replace digital banknotes in
   /// circulation.
   /// </summary>
-  public static partial class Authority
+  public static partial class AuthorityService
   {
-    static readonly string __ServiceName = "authority_api.v1.Authority";
+    static readonly string __ServiceName = "authority_api.v1.AuthorityService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -129,9 +129,9 @@ namespace AuthorityApi.V1 {
       get { return global::AuthorityApi.V1.AuthorityReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Authority</summary>
-    [grpc::BindServiceMethod(typeof(Authority), "BindService")]
-    public abstract partial class AuthorityBase
+    /// <summary>Base class for server-side implementations of AuthorityService</summary>
+    [grpc::BindServiceMethod(typeof(AuthorityService), "BindService")]
+    public abstract partial class AuthorityServiceBase
     {
       /// <summary>
       /// Sets the issuance limit for an Issuer to a specified value and returns the new limit.
@@ -209,30 +209,30 @@ namespace AuthorityApi.V1 {
 
     }
 
-    /// <summary>Client for Authority</summary>
-    public partial class AuthorityClient : grpc::ClientBase<AuthorityClient>
+    /// <summary>Client for AuthorityService</summary>
+    public partial class AuthorityServiceClient : grpc::ClientBase<AuthorityServiceClient>
     {
-      /// <summary>Creates a new client for Authority</summary>
+      /// <summary>Creates a new client for AuthorityService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public AuthorityClient(grpc::ChannelBase channel) : base(channel)
+      public AuthorityServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Authority that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for AuthorityService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public AuthorityClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public AuthorityServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected AuthorityClient() : base()
+      protected AuthorityServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected AuthorityClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected AuthorityServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -504,16 +504,16 @@ namespace AuthorityApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override AuthorityClient NewInstance(ClientBaseConfiguration configuration)
+      protected override AuthorityServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new AuthorityClient(configuration);
+        return new AuthorityServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(AuthorityBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(AuthorityServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SetIssuerLimit, serviceImpl.SetIssuerLimit)
@@ -524,12 +524,12 @@ namespace AuthorityApi.V1 {
           .AddMethod(__Method_GetNotary, serviceImpl.GetNotary).Build();
     }
 
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, AuthorityBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, AuthorityServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SetIssuerLimit, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.SetIssuerLimitRequest, global::AuthorityApi.V1.SetIssuerLimitResponse>(serviceImpl.SetIssuerLimit));
       serviceBinder.AddMethod(__Method_GetIssuerLimits, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetIssuerLimitsRequest, global::AuthorityApi.V1.GetIssuerLimitsResponse>(serviceImpl.GetIssuerLimits));

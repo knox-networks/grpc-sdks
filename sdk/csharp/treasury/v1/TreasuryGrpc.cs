@@ -14,9 +14,9 @@ namespace Treasury {
   /// supply of the treasury and APIs for remittance. Where functions are offered as part of a Transaction service, the
   /// APIs can be found under the Transaction Service.
   /// </summary>
-  public static partial class Treasury
+  public static partial class MonetaeTreasury
   {
-    static readonly string __ServiceName = "treasury.Treasury";
+    static readonly string __ServiceName = "treasury.MonetaeTreasury";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -82,9 +82,9 @@ namespace Treasury {
       get { return global::Treasury.TreasuryReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Treasury</summary>
-    [grpc::BindServiceMethod(typeof(Treasury), "BindService")]
-    public abstract partial class TreasuryBase
+    /// <summary>Base class for server-side implementations of MonetaeTreasury</summary>
+    [grpc::BindServiceMethod(typeof(MonetaeTreasury), "BindService")]
+    public abstract partial class MonetaeTreasuryBase
     {
       /// <summary>
       /// Start a new remittance, passing in a streamed request and gets back a streamed response.
@@ -113,30 +113,30 @@ namespace Treasury {
 
     }
 
-    /// <summary>Client for Treasury</summary>
-    public partial class TreasuryClient : grpc::ClientBase<TreasuryClient>
+    /// <summary>Client for MonetaeTreasury</summary>
+    public partial class MonetaeTreasuryClient : grpc::ClientBase<MonetaeTreasuryClient>
     {
-      /// <summary>Creates a new client for Treasury</summary>
+      /// <summary>Creates a new client for MonetaeTreasury</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public TreasuryClient(grpc::ChannelBase channel) : base(channel)
+      public MonetaeTreasuryClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Treasury that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MonetaeTreasury that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public TreasuryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MonetaeTreasuryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected TreasuryClient() : base()
+      protected MonetaeTreasuryClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected TreasuryClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MonetaeTreasuryClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -212,28 +212,28 @@ namespace Treasury {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override TreasuryClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MonetaeTreasuryClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new TreasuryClient(configuration);
+        return new MonetaeTreasuryClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(TreasuryBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MonetaeTreasuryBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Remit, serviceImpl.Remit)
           .AddMethod(__Method_GetSupply, serviceImpl.GetSupply).Build();
     }
 
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, TreasuryBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeTreasuryBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Remit, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse>(serviceImpl.Remit));
       serviceBinder.AddMethod(__Method_GetSupply, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Treasury.GetSupplyRequest, global::Treasury.GetSupplyResponse>(serviceImpl.GetSupply));

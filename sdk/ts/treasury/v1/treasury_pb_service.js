@@ -6,44 +6,44 @@
 var treasury_v1_treasury_pb = require("../../treasury/v1/treasury_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Treasury = (function () {
-  function Treasury() {}
-  Treasury.serviceName = "treasury.Treasury";
-  return Treasury;
+var MonetaeTreasury = (function () {
+  function MonetaeTreasury() {}
+  MonetaeTreasury.serviceName = "treasury.MonetaeTreasury";
+  return MonetaeTreasury;
 }());
 
-Treasury.Remit = {
+MonetaeTreasury.Remit = {
   methodName: "Remit",
-  service: Treasury,
+  service: MonetaeTreasury,
   requestStream: true,
   responseStream: true,
   requestType: treasury_v1_treasury_pb.RemittanceRequest,
   responseType: treasury_v1_treasury_pb.RemittanceResponse
 };
 
-Treasury.GetSupply = {
+MonetaeTreasury.GetSupply = {
   methodName: "GetSupply",
-  service: Treasury,
+  service: MonetaeTreasury,
   requestStream: false,
   responseStream: false,
   requestType: treasury_v1_treasury_pb.GetSupplyRequest,
   responseType: treasury_v1_treasury_pb.GetSupplyResponse
 };
 
-exports.Treasury = Treasury;
+exports.MonetaeTreasury = MonetaeTreasury;
 
-function TreasuryClient(serviceHost, options) {
+function MonetaeTreasuryClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-TreasuryClient.prototype.remit = function remit(metadata) {
+MonetaeTreasuryClient.prototype.remit = function remit(metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(Treasury.Remit, {
+  var client = grpc.client(MonetaeTreasury.Remit, {
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport
@@ -82,11 +82,11 @@ TreasuryClient.prototype.remit = function remit(metadata) {
   };
 };
 
-TreasuryClient.prototype.getSupply = function getSupply(requestMessage, metadata, callback) {
+MonetaeTreasuryClient.prototype.getSupply = function getSupply(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Treasury.GetSupply, {
+  var client = grpc.unary(MonetaeTreasury.GetSupply, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -113,5 +113,5 @@ TreasuryClient.prototype.getSupply = function getSupply(requestMessage, metadata
   };
 };
 
-exports.TreasuryClient = TreasuryClient;
+exports.MonetaeTreasuryClient = MonetaeTreasuryClient;
 

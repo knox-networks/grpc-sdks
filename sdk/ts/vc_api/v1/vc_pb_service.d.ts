@@ -6,58 +6,58 @@
 import * as vc_api_v1_vc_pb from "../../vc_api/v1/vc_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type CredentialAdapterCreateIssuanceChallenge = {
+type CredentialAdapterServiceCreateIssuanceChallenge = {
   readonly methodName: string;
-  readonly service: typeof CredentialAdapter;
+  readonly service: typeof CredentialAdapterService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof vc_api_v1_vc_pb.CreateIssuanceChallengeRequest;
   readonly responseType: typeof vc_api_v1_vc_pb.CreateIssuanceChallengeResponse;
 };
 
-type CredentialAdapterIssueVerifiableCredential = {
+type CredentialAdapterServiceIssueVerifiableCredential = {
   readonly methodName: string;
-  readonly service: typeof CredentialAdapter;
+  readonly service: typeof CredentialAdapterService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof vc_api_v1_vc_pb.IssueVerifiableCredentialRequest;
   readonly responseType: typeof vc_api_v1_vc_pb.IssueVerifiableCredentialResponse;
 };
 
-type CredentialAdapterCreatePresentationChallenge = {
+type CredentialAdapterServiceCreatePresentationChallenge = {
   readonly methodName: string;
-  readonly service: typeof CredentialAdapter;
+  readonly service: typeof CredentialAdapterService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof vc_api_v1_vc_pb.CreatePresentationChallengeRequest;
   readonly responseType: typeof vc_api_v1_vc_pb.CreatePresentationChallengeResponse;
 };
 
-type CredentialAdapterPresentVerifiableCredential = {
+type CredentialAdapterServicePresentVerifiableCredential = {
   readonly methodName: string;
-  readonly service: typeof CredentialAdapter;
+  readonly service: typeof CredentialAdapterService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof vc_api_v1_vc_pb.PresentVerifiableCredentialRequest;
   readonly responseType: typeof vc_api_v1_vc_pb.PresentVerifiableCredentialResponse;
 };
 
-type CredentialAdapterWaitForCompletion = {
+type CredentialAdapterServiceWaitForCompletion = {
   readonly methodName: string;
-  readonly service: typeof CredentialAdapter;
+  readonly service: typeof CredentialAdapterService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof vc_api_v1_vc_pb.WaitForCompletionRequest;
   readonly responseType: typeof vc_api_v1_vc_pb.WaitForCompletionResponse;
 };
 
-export class CredentialAdapter {
+export class CredentialAdapterService {
   static readonly serviceName: string;
-  static readonly CreateIssuanceChallenge: CredentialAdapterCreateIssuanceChallenge;
-  static readonly IssueVerifiableCredential: CredentialAdapterIssueVerifiableCredential;
-  static readonly CreatePresentationChallenge: CredentialAdapterCreatePresentationChallenge;
-  static readonly PresentVerifiableCredential: CredentialAdapterPresentVerifiableCredential;
-  static readonly WaitForCompletion: CredentialAdapterWaitForCompletion;
+  static readonly CreateIssuanceChallenge: CredentialAdapterServiceCreateIssuanceChallenge;
+  static readonly IssueVerifiableCredential: CredentialAdapterServiceIssueVerifiableCredential;
+  static readonly CreatePresentationChallenge: CredentialAdapterServiceCreatePresentationChallenge;
+  static readonly PresentVerifiableCredential: CredentialAdapterServicePresentVerifiableCredential;
+  static readonly WaitForCompletion: CredentialAdapterServiceWaitForCompletion;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -88,7 +88,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class CredentialAdapterClient {
+export class CredentialAdapterServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

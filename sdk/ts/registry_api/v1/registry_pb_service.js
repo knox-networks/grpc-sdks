@@ -6,60 +6,60 @@
 var registry_api_v1_registry_pb = require("../../registry_api/v1/registry_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Registry = (function () {
-  function Registry() {}
-  Registry.serviceName = "registry_api.v1.Registry";
-  return Registry;
+var RegistryService = (function () {
+  function RegistryService() {}
+  RegistryService.serviceName = "registry_api.v1.RegistryService";
+  return RegistryService;
 }());
 
-Registry.Create = {
+RegistryService.Create = {
   methodName: "Create",
-  service: Registry,
+  service: RegistryService,
   requestStream: false,
   responseStream: false,
   requestType: registry_api_v1_registry_pb.CreateRequest,
   responseType: registry_api_v1_registry_pb.CreateResponse
 };
 
-Registry.Read = {
+RegistryService.Read = {
   methodName: "Read",
-  service: Registry,
+  service: RegistryService,
   requestStream: false,
   responseStream: false,
   requestType: registry_api_v1_registry_pb.ReadRequest,
   responseType: registry_api_v1_registry_pb.ReadResponse
 };
 
-Registry.Update = {
+RegistryService.Update = {
   methodName: "Update",
-  service: Registry,
+  service: RegistryService,
   requestStream: false,
   responseStream: false,
   requestType: registry_api_v1_registry_pb.UpdateRequest,
   responseType: registry_api_v1_registry_pb.UpdateResponse
 };
 
-Registry.Revoke = {
+RegistryService.Revoke = {
   methodName: "Revoke",
-  service: Registry,
+  service: RegistryService,
   requestStream: false,
   responseStream: false,
   requestType: registry_api_v1_registry_pb.RevokeRequest,
   responseType: registry_api_v1_registry_pb.RevokeResponse
 };
 
-exports.Registry = Registry;
+exports.RegistryService = RegistryService;
 
-function RegistryClient(serviceHost, options) {
+function RegistryServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-RegistryClient.prototype.create = function create(requestMessage, metadata, callback) {
+RegistryServiceClient.prototype.create = function create(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Registry.Create, {
+  var client = grpc.unary(RegistryService.Create, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -86,11 +86,11 @@ RegistryClient.prototype.create = function create(requestMessage, metadata, call
   };
 };
 
-RegistryClient.prototype.read = function read(requestMessage, metadata, callback) {
+RegistryServiceClient.prototype.read = function read(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Registry.Read, {
+  var client = grpc.unary(RegistryService.Read, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -117,11 +117,11 @@ RegistryClient.prototype.read = function read(requestMessage, metadata, callback
   };
 };
 
-RegistryClient.prototype.update = function update(requestMessage, metadata, callback) {
+RegistryServiceClient.prototype.update = function update(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Registry.Update, {
+  var client = grpc.unary(RegistryService.Update, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -148,11 +148,11 @@ RegistryClient.prototype.update = function update(requestMessage, metadata, call
   };
 };
 
-RegistryClient.prototype.revoke = function revoke(requestMessage, metadata, callback) {
+RegistryServiceClient.prototype.revoke = function revoke(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Registry.Revoke, {
+  var client = grpc.unary(RegistryService.Revoke, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -179,5 +179,5 @@ RegistryClient.prototype.revoke = function revoke(requestMessage, metadata, call
   };
 };
 
-exports.RegistryClient = RegistryClient;
+exports.RegistryServiceClient = RegistryServiceClient;
 

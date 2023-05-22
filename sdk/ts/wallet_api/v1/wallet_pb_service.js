@@ -6,177 +6,177 @@
 var wallet_api_v1_wallet_pb = require("../../wallet_api/v1/wallet_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Wallet = (function () {
-  function Wallet() {}
-  Wallet.serviceName = "wallet_api.v1.Wallet";
-  return Wallet;
+var WalletService = (function () {
+  function WalletService() {}
+  WalletService.serviceName = "wallet_api.v1.WalletService";
+  return WalletService;
 }());
 
-Wallet.Transfer = {
+WalletService.Transfer = {
   methodName: "Transfer",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.TransferRequest,
   responseType: wallet_api_v1_wallet_pb.TransferResponse
 };
 
-Wallet.CreateOwner = {
+WalletService.CreateOwner = {
   methodName: "CreateOwner",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.CreateOwnerRequest,
   responseType: wallet_api_v1_wallet_pb.CreateOwnerResponse
 };
 
-Wallet.CreateWallet = {
+WalletService.CreateWallet = {
   methodName: "CreateWallet",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.CreateWalletRequest,
   responseType: wallet_api_v1_wallet_pb.CreateWalletResponse
 };
 
-Wallet.ListWallets = {
+WalletService.ListWallets = {
   methodName: "ListWallets",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListWalletsRequest,
   responseType: wallet_api_v1_wallet_pb.ListWalletsResponse
 };
 
-Wallet.ListFunds = {
+WalletService.ListFunds = {
   methodName: "ListFunds",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListFundsRequest,
   responseType: wallet_api_v1_wallet_pb.ListFundsResponse
 };
 
-Wallet.ListWalletBalances = {
+WalletService.ListWalletBalances = {
   methodName: "ListWalletBalances",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListWalletBalancesRequest,
   responseType: wallet_api_v1_wallet_pb.ListWalletBalancesResponse
 };
 
-Wallet.Redeem = {
+WalletService.Redeem = {
   methodName: "Redeem",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.RedeemRequest,
   responseType: wallet_api_v1_wallet_pb.RedeemResponse
 };
 
-Wallet.ListCredentials = {
+WalletService.ListCredentials = {
   methodName: "ListCredentials",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListCredentialsRequest,
   responseType: wallet_api_v1_wallet_pb.ListCredentialsResponse
 };
 
-Wallet.AddCredential = {
+WalletService.AddCredential = {
   methodName: "AddCredential",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.AddCredentialRequest,
   responseType: wallet_api_v1_wallet_pb.AddCredentialResponse
 };
 
-Wallet.AssociateWallet = {
+WalletService.AssociateWallet = {
   methodName: "AssociateWallet",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.AssociateWalletRequest,
   responseType: wallet_api_v1_wallet_pb.AssociateWalletResponse
 };
 
-Wallet.RequestPresentation = {
+WalletService.RequestPresentation = {
   methodName: "RequestPresentation",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.RequestPresentationRequest,
   responseType: wallet_api_v1_wallet_pb.RequestPresentationResponse
 };
 
-Wallet.PrepareSimplePayment = {
+WalletService.PrepareSimplePayment = {
   methodName: "PrepareSimplePayment",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.PrepareSimplePaymentRequest,
   responseType: wallet_api_v1_wallet_pb.PrepareSimplePaymentResponse
 };
 
-Wallet.PrepareFundsChange = {
+WalletService.PrepareFundsChange = {
   methodName: "PrepareFundsChange",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
   responseType: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse
 };
 
-Wallet.GetTransaction = {
+WalletService.GetTransaction = {
   methodName: "GetTransaction",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.GetTransactionRequest,
   responseType: wallet_api_v1_wallet_pb.GetTransactionResponse
 };
 
-Wallet.ListTransactions = {
+WalletService.ListTransactions = {
   methodName: "ListTransactions",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListTransactionsRequest,
   responseType: wallet_api_v1_wallet_pb.ListTransactionsResponse
 };
 
-Wallet.GetTransactionSnapshot = {
+WalletService.GetTransactionSnapshot = {
   methodName: "GetTransactionSnapshot",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.GetTransactionSnapshotRequest,
   responseType: wallet_api_v1_wallet_pb.GetTransactionSnapshotResponse
 };
 
-Wallet.ListTransactionSnapshots = {
+WalletService.ListTransactionSnapshots = {
   methodName: "ListTransactionSnapshots",
-  service: Wallet,
+  service: WalletService,
   requestStream: false,
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsRequest,
   responseType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse
 };
 
-exports.Wallet = Wallet;
+exports.WalletService = WalletService;
 
-function WalletClient(serviceHost, options) {
+function WalletServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-WalletClient.prototype.transfer = function transfer(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.transfer = function transfer(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.Transfer, {
+  var client = grpc.unary(WalletService.Transfer, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -203,11 +203,11 @@ WalletClient.prototype.transfer = function transfer(requestMessage, metadata, ca
   };
 };
 
-WalletClient.prototype.createOwner = function createOwner(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.createOwner = function createOwner(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.CreateOwner, {
+  var client = grpc.unary(WalletService.CreateOwner, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -234,11 +234,11 @@ WalletClient.prototype.createOwner = function createOwner(requestMessage, metada
   };
 };
 
-WalletClient.prototype.createWallet = function createWallet(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.createWallet = function createWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.CreateWallet, {
+  var client = grpc.unary(WalletService.CreateWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -265,11 +265,11 @@ WalletClient.prototype.createWallet = function createWallet(requestMessage, meta
   };
 };
 
-WalletClient.prototype.listWallets = function listWallets(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listWallets = function listWallets(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListWallets, {
+  var client = grpc.unary(WalletService.ListWallets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -296,11 +296,11 @@ WalletClient.prototype.listWallets = function listWallets(requestMessage, metada
   };
 };
 
-WalletClient.prototype.listFunds = function listFunds(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listFunds = function listFunds(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListFunds, {
+  var client = grpc.unary(WalletService.ListFunds, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -327,11 +327,11 @@ WalletClient.prototype.listFunds = function listFunds(requestMessage, metadata, 
   };
 };
 
-WalletClient.prototype.listWalletBalances = function listWalletBalances(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listWalletBalances = function listWalletBalances(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListWalletBalances, {
+  var client = grpc.unary(WalletService.ListWalletBalances, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -358,11 +358,11 @@ WalletClient.prototype.listWalletBalances = function listWalletBalances(requestM
   };
 };
 
-WalletClient.prototype.redeem = function redeem(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.redeem = function redeem(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.Redeem, {
+  var client = grpc.unary(WalletService.Redeem, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -389,11 +389,11 @@ WalletClient.prototype.redeem = function redeem(requestMessage, metadata, callba
   };
 };
 
-WalletClient.prototype.listCredentials = function listCredentials(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listCredentials = function listCredentials(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListCredentials, {
+  var client = grpc.unary(WalletService.ListCredentials, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -420,11 +420,11 @@ WalletClient.prototype.listCredentials = function listCredentials(requestMessage
   };
 };
 
-WalletClient.prototype.addCredential = function addCredential(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.addCredential = function addCredential(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.AddCredential, {
+  var client = grpc.unary(WalletService.AddCredential, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -451,11 +451,11 @@ WalletClient.prototype.addCredential = function addCredential(requestMessage, me
   };
 };
 
-WalletClient.prototype.associateWallet = function associateWallet(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.associateWallet = function associateWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.AssociateWallet, {
+  var client = grpc.unary(WalletService.AssociateWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -482,11 +482,11 @@ WalletClient.prototype.associateWallet = function associateWallet(requestMessage
   };
 };
 
-WalletClient.prototype.requestPresentation = function requestPresentation(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.requestPresentation = function requestPresentation(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.RequestPresentation, {
+  var client = grpc.unary(WalletService.RequestPresentation, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -513,11 +513,11 @@ WalletClient.prototype.requestPresentation = function requestPresentation(reques
   };
 };
 
-WalletClient.prototype.prepareSimplePayment = function prepareSimplePayment(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.prepareSimplePayment = function prepareSimplePayment(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.PrepareSimplePayment, {
+  var client = grpc.unary(WalletService.PrepareSimplePayment, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -544,11 +544,11 @@ WalletClient.prototype.prepareSimplePayment = function prepareSimplePayment(requ
   };
 };
 
-WalletClient.prototype.prepareFundsChange = function prepareFundsChange(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.prepareFundsChange = function prepareFundsChange(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.PrepareFundsChange, {
+  var client = grpc.unary(WalletService.PrepareFundsChange, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -575,11 +575,11 @@ WalletClient.prototype.prepareFundsChange = function prepareFundsChange(requestM
   };
 };
 
-WalletClient.prototype.getTransaction = function getTransaction(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.getTransaction = function getTransaction(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.GetTransaction, {
+  var client = grpc.unary(WalletService.GetTransaction, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -606,11 +606,11 @@ WalletClient.prototype.getTransaction = function getTransaction(requestMessage, 
   };
 };
 
-WalletClient.prototype.listTransactions = function listTransactions(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listTransactions = function listTransactions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListTransactions, {
+  var client = grpc.unary(WalletService.ListTransactions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -637,11 +637,11 @@ WalletClient.prototype.listTransactions = function listTransactions(requestMessa
   };
 };
 
-WalletClient.prototype.getTransactionSnapshot = function getTransactionSnapshot(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.getTransactionSnapshot = function getTransactionSnapshot(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.GetTransactionSnapshot, {
+  var client = grpc.unary(WalletService.GetTransactionSnapshot, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -668,11 +668,11 @@ WalletClient.prototype.getTransactionSnapshot = function getTransactionSnapshot(
   };
 };
 
-WalletClient.prototype.listTransactionSnapshots = function listTransactionSnapshots(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listTransactionSnapshots = function listTransactionSnapshots(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Wallet.ListTransactionSnapshots, {
+  var client = grpc.unary(WalletService.ListTransactionSnapshots, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -699,5 +699,5 @@ WalletClient.prototype.listTransactionSnapshots = function listTransactionSnapsh
   };
 };
 
-exports.WalletClient = WalletClient;
+exports.WalletServiceClient = WalletServiceClient;
 

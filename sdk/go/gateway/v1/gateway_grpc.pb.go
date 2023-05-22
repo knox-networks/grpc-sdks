@@ -15,59 +15,59 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// GatewayClient is the client API for Gateway service.
+// MonetaeGatewayClient is the client API for MonetaeGateway service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type GatewayClient interface {
+type MonetaeGatewayClient interface {
 	// Start a new authenticated session and get a challenge nonce.
 	Authenticate(ctx context.Context, in *v1.AuthenticationRequest, opts ...grpc.CallOption) (*v1.AuthenticationResponse, error)
 	// Authenticates the connection and opens a bidirectional stream.
-	Data(ctx context.Context, opts ...grpc.CallOption) (Gateway_DataClient, error)
+	Data(ctx context.Context, opts ...grpc.CallOption) (MonetaeGateway_DataClient, error)
 	// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 	GetConnections(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error)
 }
 
-type gatewayClient struct {
+type monetaeGatewayClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
-	return &gatewayClient{cc}
+func NewMonetaeGatewayClient(cc grpc.ClientConnInterface) MonetaeGatewayClient {
+	return &monetaeGatewayClient{cc}
 }
 
-func (c *gatewayClient) Authenticate(ctx context.Context, in *v1.AuthenticationRequest, opts ...grpc.CallOption) (*v1.AuthenticationResponse, error) {
+func (c *monetaeGatewayClient) Authenticate(ctx context.Context, in *v1.AuthenticationRequest, opts ...grpc.CallOption) (*v1.AuthenticationResponse, error) {
 	out := new(v1.AuthenticationResponse)
-	err := c.cc.Invoke(ctx, "/gateway.Gateway/Authenticate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gateway.MonetaeGateway/Authenticate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) Data(ctx context.Context, opts ...grpc.CallOption) (Gateway_DataClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Gateway_ServiceDesc.Streams[0], "/gateway.Gateway/Data", opts...)
+func (c *monetaeGatewayClient) Data(ctx context.Context, opts ...grpc.CallOption) (MonetaeGateway_DataClient, error) {
+	stream, err := c.cc.NewStream(ctx, &MonetaeGateway_ServiceDesc.Streams[0], "/gateway.MonetaeGateway/Data", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &gatewayDataClient{stream}
+	x := &monetaeGatewayDataClient{stream}
 	return x, nil
 }
 
-type Gateway_DataClient interface {
+type MonetaeGateway_DataClient interface {
 	Send(*v1.Packet) error
 	Recv() (*v1.Packet, error)
 	grpc.ClientStream
 }
 
-type gatewayDataClient struct {
+type monetaeGatewayDataClient struct {
 	grpc.ClientStream
 }
 
-func (x *gatewayDataClient) Send(m *v1.Packet) error {
+func (x *monetaeGatewayDataClient) Send(m *v1.Packet) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *gatewayDataClient) Recv() (*v1.Packet, error) {
+func (x *monetaeGatewayDataClient) Recv() (*v1.Packet, error) {
 	m := new(v1.Packet)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -75,91 +75,91 @@ func (x *gatewayDataClient) Recv() (*v1.Packet, error) {
 	return m, nil
 }
 
-func (c *gatewayClient) GetConnections(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error) {
+func (c *monetaeGatewayClient) GetConnections(ctx context.Context, in *ConnectionsRequest, opts ...grpc.CallOption) (*ConnectionsResponse, error) {
 	out := new(ConnectionsResponse)
-	err := c.cc.Invoke(ctx, "/gateway.Gateway/GetConnections", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/gateway.MonetaeGateway/GetConnections", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// GatewayServer is the server API for Gateway service.
-// All implementations must embed UnimplementedGatewayServer
+// MonetaeGatewayServer is the server API for MonetaeGateway service.
+// All implementations must embed UnimplementedMonetaeGatewayServer
 // for forward compatibility
-type GatewayServer interface {
+type MonetaeGatewayServer interface {
 	// Start a new authenticated session and get a challenge nonce.
 	Authenticate(context.Context, *v1.AuthenticationRequest) (*v1.AuthenticationResponse, error)
 	// Authenticates the connection and opens a bidirectional stream.
-	Data(Gateway_DataServer) error
+	Data(MonetaeGateway_DataServer) error
 	// Get a list of connections to the Gateway, including the active connections and connections that have been removed.
 	GetConnections(context.Context, *ConnectionsRequest) (*ConnectionsResponse, error)
-	mustEmbedUnimplementedGatewayServer()
+	mustEmbedUnimplementedMonetaeGatewayServer()
 }
 
-// UnimplementedGatewayServer must be embedded to have forward compatible implementations.
-type UnimplementedGatewayServer struct {
+// UnimplementedMonetaeGatewayServer must be embedded to have forward compatible implementations.
+type UnimplementedMonetaeGatewayServer struct {
 }
 
-func (UnimplementedGatewayServer) Authenticate(context.Context, *v1.AuthenticationRequest) (*v1.AuthenticationResponse, error) {
+func (UnimplementedMonetaeGatewayServer) Authenticate(context.Context, *v1.AuthenticationRequest) (*v1.AuthenticationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Authenticate not implemented")
 }
-func (UnimplementedGatewayServer) Data(Gateway_DataServer) error {
+func (UnimplementedMonetaeGatewayServer) Data(MonetaeGateway_DataServer) error {
 	return status.Errorf(codes.Unimplemented, "method Data not implemented")
 }
-func (UnimplementedGatewayServer) GetConnections(context.Context, *ConnectionsRequest) (*ConnectionsResponse, error) {
+func (UnimplementedMonetaeGatewayServer) GetConnections(context.Context, *ConnectionsRequest) (*ConnectionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConnections not implemented")
 }
-func (UnimplementedGatewayServer) mustEmbedUnimplementedGatewayServer() {}
+func (UnimplementedMonetaeGatewayServer) mustEmbedUnimplementedMonetaeGatewayServer() {}
 
-// UnsafeGatewayServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to GatewayServer will
+// UnsafeMonetaeGatewayServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonetaeGatewayServer will
 // result in compilation errors.
-type UnsafeGatewayServer interface {
-	mustEmbedUnimplementedGatewayServer()
+type UnsafeMonetaeGatewayServer interface {
+	mustEmbedUnimplementedMonetaeGatewayServer()
 }
 
-func RegisterGatewayServer(s grpc.ServiceRegistrar, srv GatewayServer) {
-	s.RegisterService(&Gateway_ServiceDesc, srv)
+func RegisterMonetaeGatewayServer(s grpc.ServiceRegistrar, srv MonetaeGatewayServer) {
+	s.RegisterService(&MonetaeGateway_ServiceDesc, srv)
 }
 
-func _Gateway_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonetaeGateway_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(v1.AuthenticationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).Authenticate(ctx, in)
+		return srv.(MonetaeGatewayServer).Authenticate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gateway.Gateway/Authenticate",
+		FullMethod: "/gateway.MonetaeGateway/Authenticate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).Authenticate(ctx, req.(*v1.AuthenticationRequest))
+		return srv.(MonetaeGatewayServer).Authenticate(ctx, req.(*v1.AuthenticationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_Data_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(GatewayServer).Data(&gatewayDataServer{stream})
+func _MonetaeGateway_Data_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(MonetaeGatewayServer).Data(&monetaeGatewayDataServer{stream})
 }
 
-type Gateway_DataServer interface {
+type MonetaeGateway_DataServer interface {
 	Send(*v1.Packet) error
 	Recv() (*v1.Packet, error)
 	grpc.ServerStream
 }
 
-type gatewayDataServer struct {
+type monetaeGatewayDataServer struct {
 	grpc.ServerStream
 }
 
-func (x *gatewayDataServer) Send(m *v1.Packet) error {
+func (x *monetaeGatewayDataServer) Send(m *v1.Packet) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *gatewayDataServer) Recv() (*v1.Packet, error) {
+func (x *monetaeGatewayDataServer) Recv() (*v1.Packet, error) {
 	m := new(v1.Packet)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -167,44 +167,44 @@ func (x *gatewayDataServer) Recv() (*v1.Packet, error) {
 	return m, nil
 }
 
-func _Gateway_GetConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonetaeGateway_GetConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConnectionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetConnections(ctx, in)
+		return srv.(MonetaeGatewayServer).GetConnections(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/gateway.Gateway/GetConnections",
+		FullMethod: "/gateway.MonetaeGateway/GetConnections",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetConnections(ctx, req.(*ConnectionsRequest))
+		return srv.(MonetaeGatewayServer).GetConnections(ctx, req.(*ConnectionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Gateway_ServiceDesc is the grpc.ServiceDesc for Gateway service.
+// MonetaeGateway_ServiceDesc is the grpc.ServiceDesc for MonetaeGateway service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Gateway_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "gateway.Gateway",
-	HandlerType: (*GatewayServer)(nil),
+var MonetaeGateway_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "gateway.MonetaeGateway",
+	HandlerType: (*MonetaeGatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Authenticate",
-			Handler:    _Gateway_Authenticate_Handler,
+			Handler:    _MonetaeGateway_Authenticate_Handler,
 		},
 		{
 			MethodName: "GetConnections",
-			Handler:    _Gateway_GetConnections_Handler,
+			Handler:    _MonetaeGateway_GetConnections_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Data",
-			Handler:       _Gateway_Data_Handler,
+			Handler:       _MonetaeGateway_Data_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},

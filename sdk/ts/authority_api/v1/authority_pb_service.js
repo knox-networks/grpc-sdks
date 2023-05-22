@@ -6,78 +6,78 @@
 var authority_api_v1_authority_pb = require("../../authority_api/v1/authority_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Authority = (function () {
-  function Authority() {}
-  Authority.serviceName = "authority_api.v1.Authority";
-  return Authority;
+var AuthorityService = (function () {
+  function AuthorityService() {}
+  AuthorityService.serviceName = "authority_api.v1.AuthorityService";
+  return AuthorityService;
 }());
 
-Authority.SetIssuerLimit = {
+AuthorityService.SetIssuerLimit = {
   methodName: "SetIssuerLimit",
-  service: Authority,
+  service: AuthorityService,
   requestStream: false,
   responseStream: false,
   requestType: authority_api_v1_authority_pb.SetIssuerLimitRequest,
   responseType: authority_api_v1_authority_pb.SetIssuerLimitResponse
 };
 
-Authority.GetIssuerLimits = {
+AuthorityService.GetIssuerLimits = {
   methodName: "GetIssuerLimits",
-  service: Authority,
+  service: AuthorityService,
   requestStream: false,
   responseStream: false,
   requestType: authority_api_v1_authority_pb.GetIssuerLimitsRequest,
   responseType: authority_api_v1_authority_pb.GetIssuerLimitsResponse
 };
 
-Authority.Authorize = {
+AuthorityService.Authorize = {
   methodName: "Authorize",
-  service: Authority,
+  service: AuthorityService,
   requestStream: true,
   responseStream: true,
   requestType: authority_api_v1_authority_pb.AuthorizeRequest,
   responseType: authority_api_v1_authority_pb.AuthorizeResponse
 };
 
-Authority.Redeem = {
+AuthorityService.Redeem = {
   methodName: "Redeem",
-  service: Authority,
+  service: AuthorityService,
   requestStream: false,
   responseStream: false,
   requestType: authority_api_v1_authority_pb.RedeemRequest,
   responseType: authority_api_v1_authority_pb.RedeemResponse
 };
 
-Authority.GetEmissary = {
+AuthorityService.GetEmissary = {
   methodName: "GetEmissary",
-  service: Authority,
+  service: AuthorityService,
   requestStream: false,
   responseStream: false,
   requestType: authority_api_v1_authority_pb.GetEmissaryRequest,
   responseType: authority_api_v1_authority_pb.GetEmissaryResponse
 };
 
-Authority.GetNotary = {
+AuthorityService.GetNotary = {
   methodName: "GetNotary",
-  service: Authority,
+  service: AuthorityService,
   requestStream: false,
   responseStream: false,
   requestType: authority_api_v1_authority_pb.GetNotaryRequest,
   responseType: authority_api_v1_authority_pb.GetNotaryResponse
 };
 
-exports.Authority = Authority;
+exports.AuthorityService = AuthorityService;
 
-function AuthorityClient(serviceHost, options) {
+function AuthorityServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-AuthorityClient.prototype.setIssuerLimit = function setIssuerLimit(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.setIssuerLimit = function setIssuerLimit(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Authority.SetIssuerLimit, {
+  var client = grpc.unary(AuthorityService.SetIssuerLimit, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -104,11 +104,11 @@ AuthorityClient.prototype.setIssuerLimit = function setIssuerLimit(requestMessag
   };
 };
 
-AuthorityClient.prototype.getIssuerLimits = function getIssuerLimits(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.getIssuerLimits = function getIssuerLimits(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Authority.GetIssuerLimits, {
+  var client = grpc.unary(AuthorityService.GetIssuerLimits, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -135,13 +135,13 @@ AuthorityClient.prototype.getIssuerLimits = function getIssuerLimits(requestMess
   };
 };
 
-AuthorityClient.prototype.authorize = function authorize(metadata) {
+AuthorityServiceClient.prototype.authorize = function authorize(metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(Authority.Authorize, {
+  var client = grpc.client(AuthorityService.Authorize, {
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport
@@ -180,11 +180,11 @@ AuthorityClient.prototype.authorize = function authorize(metadata) {
   };
 };
 
-AuthorityClient.prototype.redeem = function redeem(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.redeem = function redeem(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Authority.Redeem, {
+  var client = grpc.unary(AuthorityService.Redeem, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -211,11 +211,11 @@ AuthorityClient.prototype.redeem = function redeem(requestMessage, metadata, cal
   };
 };
 
-AuthorityClient.prototype.getEmissary = function getEmissary(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.getEmissary = function getEmissary(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Authority.GetEmissary, {
+  var client = grpc.unary(AuthorityService.GetEmissary, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -242,11 +242,11 @@ AuthorityClient.prototype.getEmissary = function getEmissary(requestMessage, met
   };
 };
 
-AuthorityClient.prototype.getNotary = function getNotary(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.getNotary = function getNotary(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Authority.GetNotary, {
+  var client = grpc.unary(AuthorityService.GetNotary, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -273,5 +273,5 @@ AuthorityClient.prototype.getNotary = function getNotary(requestMessage, metadat
   };
 };
 
-exports.AuthorityClient = AuthorityClient;
+exports.AuthorityServiceClient = AuthorityServiceClient;
 

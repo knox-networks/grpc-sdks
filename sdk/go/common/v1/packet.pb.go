@@ -39,7 +39,7 @@ const (
 	// default behavior is to inverse the sender and recipient fields
 	PacketType_ReturnToSender PacketType = 3
 	// Terminate data stream
-	// @exclude: TODO: decide if this is necessary after "Acknowledgement" type is implemented
+	// TODO: decide if this is necessary after "Acknowledgement" type is implemented
 	PacketType_TerminateStream PacketType = 4
 	// Life signal packet
 	// Used to signal the gateway and/or client that the connection is still alive
@@ -74,7 +74,7 @@ const (
 	PacketType_ArchivePromissory PacketType = 103
 	// Promissory receipt acknowledgement
 	// Respond with promissory receipt to a promissory request
-	// @exclude: TODO: Decide if this msg or a general acknowledgement message should be used.
+	// TODO: Decide if this msg or a general acknowledgement message should be used.
 	PacketType_PromissoryReceipt PacketType = 104
 	// Identity Request
 	// Request identity of a verifier in the network
@@ -521,7 +521,7 @@ type TransactionHeader struct {
 	Timestamp uint64 `protobuf:"varint,4,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	// Signature on all fields in Transaction header (except signature field itself)
 	// and Routing header + (sha256 on serialized(payload).
-	// @exclude: TODO investigate viability
+	// TODO investigate viability
 	// should be sent by the emitter of the transaction
 	Signature []byte `protobuf:"bytes,5,opt,name=signature,proto3" json:"signature,omitempty"`
 	// User reference string for transactions acting as a memo field

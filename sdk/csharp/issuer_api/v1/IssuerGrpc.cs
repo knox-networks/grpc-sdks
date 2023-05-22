@@ -13,9 +13,9 @@ namespace IssuerApi.V1 {
   /// other depository institutions, it can issue, transfer, redeem digital banknotes and request an increase in issuance
   /// limits.  It holds digital banknotes in its own vault.
   /// </summary>
-  public static partial class Issuer
+  public static partial class IssuerService
   {
-    static readonly string __ServiceName = "issuer_api.v1.Issuer";
+    static readonly string __ServiceName = "issuer_api.v1.IssuerService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -117,9 +117,9 @@ namespace IssuerApi.V1 {
       get { return global::IssuerApi.V1.IssuerReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Issuer</summary>
-    [grpc::BindServiceMethod(typeof(Issuer), "BindService")]
-    public abstract partial class IssuerBase
+    /// <summary>Base class for server-side implementations of IssuerService</summary>
+    [grpc::BindServiceMethod(typeof(IssuerService), "BindService")]
+    public abstract partial class IssuerServiceBase
     {
       /// <summary>
       /// Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
@@ -189,30 +189,30 @@ namespace IssuerApi.V1 {
 
     }
 
-    /// <summary>Client for Issuer</summary>
-    public partial class IssuerClient : grpc::ClientBase<IssuerClient>
+    /// <summary>Client for IssuerService</summary>
+    public partial class IssuerServiceClient : grpc::ClientBase<IssuerServiceClient>
     {
-      /// <summary>Creates a new client for Issuer</summary>
+      /// <summary>Creates a new client for IssuerService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public IssuerClient(grpc::ChannelBase channel) : base(channel)
+      public IssuerServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Issuer that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for IssuerService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public IssuerClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public IssuerServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected IssuerClient() : base()
+      protected IssuerServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected IssuerClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected IssuerServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -416,16 +416,16 @@ namespace IssuerApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override IssuerClient NewInstance(ClientBaseConfiguration configuration)
+      protected override IssuerServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new IssuerClient(configuration);
+        return new IssuerServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(IssuerBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(IssuerServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Authenticate, serviceImpl.Authenticate)
@@ -435,12 +435,12 @@ namespace IssuerApi.V1 {
           .AddMethod(__Method_SetRole, serviceImpl.SetRole).Build();
     }
 
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, IssuerBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, IssuerServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Authenticate, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::IssuerApi.V1.AuthenticateRequest, global::IssuerApi.V1.AuthenticateResponse>(serviceImpl.Authenticate));
       serviceBinder.AddMethod(__Method_Authorize, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse>(serviceImpl.Authorize));

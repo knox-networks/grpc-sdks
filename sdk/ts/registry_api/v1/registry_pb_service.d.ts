@@ -6,48 +6,48 @@
 import * as registry_api_v1_registry_pb from "../../registry_api/v1/registry_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type RegistryCreate = {
+type RegistryServiceCreate = {
   readonly methodName: string;
-  readonly service: typeof Registry;
+  readonly service: typeof RegistryService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof registry_api_v1_registry_pb.CreateRequest;
   readonly responseType: typeof registry_api_v1_registry_pb.CreateResponse;
 };
 
-type RegistryRead = {
+type RegistryServiceRead = {
   readonly methodName: string;
-  readonly service: typeof Registry;
+  readonly service: typeof RegistryService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof registry_api_v1_registry_pb.ReadRequest;
   readonly responseType: typeof registry_api_v1_registry_pb.ReadResponse;
 };
 
-type RegistryUpdate = {
+type RegistryServiceUpdate = {
   readonly methodName: string;
-  readonly service: typeof Registry;
+  readonly service: typeof RegistryService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof registry_api_v1_registry_pb.UpdateRequest;
   readonly responseType: typeof registry_api_v1_registry_pb.UpdateResponse;
 };
 
-type RegistryRevoke = {
+type RegistryServiceRevoke = {
   readonly methodName: string;
-  readonly service: typeof Registry;
+  readonly service: typeof RegistryService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof registry_api_v1_registry_pb.RevokeRequest;
   readonly responseType: typeof registry_api_v1_registry_pb.RevokeResponse;
 };
 
-export class Registry {
+export class RegistryService {
   static readonly serviceName: string;
-  static readonly Create: RegistryCreate;
-  static readonly Read: RegistryRead;
-  static readonly Update: RegistryUpdate;
-  static readonly Revoke: RegistryRevoke;
+  static readonly Create: RegistryServiceCreate;
+  static readonly Read: RegistryServiceRead;
+  static readonly Update: RegistryServiceUpdate;
+  static readonly Revoke: RegistryServiceRevoke;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -78,7 +78,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class RegistryClient {
+export class RegistryServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);

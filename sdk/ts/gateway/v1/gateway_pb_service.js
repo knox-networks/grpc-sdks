@@ -8,51 +8,51 @@ var common_v1_common_pb = require("../../common/v1/common_pb");
 var common_v1_packet_pb = require("../../common/v1/packet_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var Gateway = (function () {
-  function Gateway() {}
-  Gateway.serviceName = "gateway.Gateway";
-  return Gateway;
+var MonetaeGateway = (function () {
+  function MonetaeGateway() {}
+  MonetaeGateway.serviceName = "gateway.MonetaeGateway";
+  return MonetaeGateway;
 }());
 
-Gateway.Authenticate = {
+MonetaeGateway.Authenticate = {
   methodName: "Authenticate",
-  service: Gateway,
+  service: MonetaeGateway,
   requestStream: false,
   responseStream: false,
   requestType: common_v1_common_pb.AuthenticationRequest,
   responseType: common_v1_common_pb.AuthenticationResponse
 };
 
-Gateway.Data = {
+MonetaeGateway.Data = {
   methodName: "Data",
-  service: Gateway,
+  service: MonetaeGateway,
   requestStream: true,
   responseStream: true,
   requestType: common_v1_packet_pb.Packet,
   responseType: common_v1_packet_pb.Packet
 };
 
-Gateway.GetConnections = {
+MonetaeGateway.GetConnections = {
   methodName: "GetConnections",
-  service: Gateway,
+  service: MonetaeGateway,
   requestStream: false,
   responseStream: false,
   requestType: gateway_v1_gateway_pb.ConnectionsRequest,
   responseType: gateway_v1_gateway_pb.ConnectionsResponse
 };
 
-exports.Gateway = Gateway;
+exports.MonetaeGateway = MonetaeGateway;
 
-function GatewayClient(serviceHost, options) {
+function MonetaeGatewayClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-GatewayClient.prototype.authenticate = function authenticate(requestMessage, metadata, callback) {
+MonetaeGatewayClient.prototype.authenticate = function authenticate(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Gateway.Authenticate, {
+  var client = grpc.unary(MonetaeGateway.Authenticate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -79,13 +79,13 @@ GatewayClient.prototype.authenticate = function authenticate(requestMessage, met
   };
 };
 
-GatewayClient.prototype.data = function data(metadata) {
+MonetaeGatewayClient.prototype.data = function data(metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(Gateway.Data, {
+  var client = grpc.client(MonetaeGateway.Data, {
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport
@@ -124,11 +124,11 @@ GatewayClient.prototype.data = function data(metadata) {
   };
 };
 
-GatewayClient.prototype.getConnections = function getConnections(requestMessage, metadata, callback) {
+MonetaeGatewayClient.prototype.getConnections = function getConnections(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(Gateway.GetConnections, {
+  var client = grpc.unary(MonetaeGateway.GetConnections, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -155,5 +155,5 @@ GatewayClient.prototype.getConnections = function getConnections(requestMessage,
   };
 };
 
-exports.GatewayClient = GatewayClient;
+exports.MonetaeGatewayClient = MonetaeGatewayClient;
 

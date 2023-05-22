@@ -121,7 +121,7 @@ namespace Common {
     [pbr::OriginalName("ReturnToSender")] ReturnToSender = 3,
     /// <summary>
     /// Terminate data stream
-    /// @exclude: TODO: decide if this is necessary after "Acknowledgement" type is implemented
+    /// TODO: decide if this is necessary after "Acknowledgement" type is implemented
     /// </summary>
     [pbr::OriginalName("TerminateStream")] TerminateStream = 4,
     /// <summary>
@@ -178,7 +178,7 @@ namespace Common {
     /// <summary>
     /// Promissory receipt acknowledgement
     /// Respond with promissory receipt to a promissory request
-    /// @exclude: TODO: Decide if this msg or a general acknowledgement message should be used.
+    /// TODO: Decide if this msg or a general acknowledgement message should be used.
     /// </summary>
     [pbr::OriginalName("PromissoryReceipt")] PromissoryReceipt = 104,
     /// <summary>
@@ -860,7 +860,7 @@ namespace Common {
     /// <summary>
     /// Signature on all fields in Transaction header (except signature field itself)
     /// and Routing header + (sha256 on serialized(payload).
-    /// @exclude: TODO investigate viability
+    /// TODO investigate viability
     /// should be sent by the emitter of the transaction
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

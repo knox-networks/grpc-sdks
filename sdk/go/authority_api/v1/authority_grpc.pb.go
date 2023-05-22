@@ -14,16 +14,16 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// AuthorityClient is the client API for Authority service.
+// AuthorityServiceClient is the client API for AuthorityService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type AuthorityClient interface {
+type AuthorityServiceClient interface {
 	// Sets the issuance limit for an Issuer to a specified value and returns the new limit.
 	SetIssuerLimit(ctx context.Context, in *SetIssuerLimitRequest, opts ...grpc.CallOption) (*SetIssuerLimitResponse, error)
 	// Gets the the issuance limits for all the currencies for which the Issuer is allowed to issue digital banknotes.
 	GetIssuerLimits(ctx context.Context, in *GetIssuerLimitsRequest, opts ...grpc.CallOption) (*GetIssuerLimitsResponse, error)
 	// Accepts digital banknotes in a stream, authorizes them and returns authorized digital banknotes in a stream.
-	Authorize(ctx context.Context, opts ...grpc.CallOption) (Authority_AuthorizeClient, error)
+	Authorize(ctx context.Context, opts ...grpc.CallOption) (AuthorityService_AuthorizeClient, error)
 	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
 	// digital banknote.
 	Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error)
@@ -33,56 +33,56 @@ type AuthorityClient interface {
 	GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error)
 }
 
-type authorityClient struct {
+type authorityServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewAuthorityClient(cc grpc.ClientConnInterface) AuthorityClient {
-	return &authorityClient{cc}
+func NewAuthorityServiceClient(cc grpc.ClientConnInterface) AuthorityServiceClient {
+	return &authorityServiceClient{cc}
 }
 
-func (c *authorityClient) SetIssuerLimit(ctx context.Context, in *SetIssuerLimitRequest, opts ...grpc.CallOption) (*SetIssuerLimitResponse, error) {
+func (c *authorityServiceClient) SetIssuerLimit(ctx context.Context, in *SetIssuerLimitRequest, opts ...grpc.CallOption) (*SetIssuerLimitResponse, error) {
 	out := new(SetIssuerLimitResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/SetIssuerLimit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/SetIssuerLimit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authorityClient) GetIssuerLimits(ctx context.Context, in *GetIssuerLimitsRequest, opts ...grpc.CallOption) (*GetIssuerLimitsResponse, error) {
+func (c *authorityServiceClient) GetIssuerLimits(ctx context.Context, in *GetIssuerLimitsRequest, opts ...grpc.CallOption) (*GetIssuerLimitsResponse, error) {
 	out := new(GetIssuerLimitsResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/GetIssuerLimits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/GetIssuerLimits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authorityClient) Authorize(ctx context.Context, opts ...grpc.CallOption) (Authority_AuthorizeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Authority_ServiceDesc.Streams[0], "/authority_api.v1.Authority/Authorize", opts...)
+func (c *authorityServiceClient) Authorize(ctx context.Context, opts ...grpc.CallOption) (AuthorityService_AuthorizeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &AuthorityService_ServiceDesc.Streams[0], "/authority_api.v1.AuthorityService/Authorize", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &authorityAuthorizeClient{stream}
+	x := &authorityServiceAuthorizeClient{stream}
 	return x, nil
 }
 
-type Authority_AuthorizeClient interface {
+type AuthorityService_AuthorizeClient interface {
 	Send(*AuthorizeRequest) error
 	Recv() (*AuthorizeResponse, error)
 	grpc.ClientStream
 }
 
-type authorityAuthorizeClient struct {
+type authorityServiceAuthorizeClient struct {
 	grpc.ClientStream
 }
 
-func (x *authorityAuthorizeClient) Send(m *AuthorizeRequest) error {
+func (x *authorityServiceAuthorizeClient) Send(m *AuthorizeRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *authorityAuthorizeClient) Recv() (*AuthorizeResponse, error) {
+func (x *authorityServiceAuthorizeClient) Recv() (*AuthorizeResponse, error) {
 	m := new(AuthorizeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -90,43 +90,43 @@ func (x *authorityAuthorizeClient) Recv() (*AuthorizeResponse, error) {
 	return m, nil
 }
 
-func (c *authorityClient) Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error) {
+func (c *authorityServiceClient) Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error) {
 	out := new(RedeemResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/Redeem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/Redeem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authorityClient) GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error) {
+func (c *authorityServiceClient) GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error) {
 	out := new(GetEmissaryResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/GetEmissary", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/GetEmissary", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authorityClient) GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error) {
+func (c *authorityServiceClient) GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error) {
 	out := new(GetNotaryResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.Authority/GetNotary", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/GetNotary", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AuthorityServer is the server API for Authority service.
-// All implementations must embed UnimplementedAuthorityServer
+// AuthorityServiceServer is the server API for AuthorityService service.
+// All implementations must embed UnimplementedAuthorityServiceServer
 // for forward compatibility
-type AuthorityServer interface {
+type AuthorityServiceServer interface {
 	// Sets the issuance limit for an Issuer to a specified value and returns the new limit.
 	SetIssuerLimit(context.Context, *SetIssuerLimitRequest) (*SetIssuerLimitResponse, error)
 	// Gets the the issuance limits for all the currencies for which the Issuer is allowed to issue digital banknotes.
 	GetIssuerLimits(context.Context, *GetIssuerLimitsRequest) (*GetIssuerLimitsResponse, error)
 	// Accepts digital banknotes in a stream, authorizes them and returns authorized digital banknotes in a stream.
-	Authorize(Authority_AuthorizeServer) error
+	Authorize(AuthorityService_AuthorizeServer) error
 	// Redeems a digital banknote in exchange for an increase in issuance limit for the same currency as the redeemed
 	// digital banknote.
 	Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error)
@@ -134,99 +134,99 @@ type AuthorityServer interface {
 	GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error)
 	// Gets the signature of the Notary for this Authority/Notary.
 	GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error)
-	mustEmbedUnimplementedAuthorityServer()
+	mustEmbedUnimplementedAuthorityServiceServer()
 }
 
-// UnimplementedAuthorityServer must be embedded to have forward compatible implementations.
-type UnimplementedAuthorityServer struct {
+// UnimplementedAuthorityServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedAuthorityServiceServer struct {
 }
 
-func (UnimplementedAuthorityServer) SetIssuerLimit(context.Context, *SetIssuerLimitRequest) (*SetIssuerLimitResponse, error) {
+func (UnimplementedAuthorityServiceServer) SetIssuerLimit(context.Context, *SetIssuerLimitRequest) (*SetIssuerLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetIssuerLimit not implemented")
 }
-func (UnimplementedAuthorityServer) GetIssuerLimits(context.Context, *GetIssuerLimitsRequest) (*GetIssuerLimitsResponse, error) {
+func (UnimplementedAuthorityServiceServer) GetIssuerLimits(context.Context, *GetIssuerLimitsRequest) (*GetIssuerLimitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIssuerLimits not implemented")
 }
-func (UnimplementedAuthorityServer) Authorize(Authority_AuthorizeServer) error {
+func (UnimplementedAuthorityServiceServer) Authorize(AuthorityService_AuthorizeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Authorize not implemented")
 }
-func (UnimplementedAuthorityServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
+func (UnimplementedAuthorityServiceServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Redeem not implemented")
 }
-func (UnimplementedAuthorityServer) GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error) {
+func (UnimplementedAuthorityServiceServer) GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmissary not implemented")
 }
-func (UnimplementedAuthorityServer) GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error) {
+func (UnimplementedAuthorityServiceServer) GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotary not implemented")
 }
-func (UnimplementedAuthorityServer) mustEmbedUnimplementedAuthorityServer() {}
+func (UnimplementedAuthorityServiceServer) mustEmbedUnimplementedAuthorityServiceServer() {}
 
-// UnsafeAuthorityServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to AuthorityServer will
+// UnsafeAuthorityServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AuthorityServiceServer will
 // result in compilation errors.
-type UnsafeAuthorityServer interface {
-	mustEmbedUnimplementedAuthorityServer()
+type UnsafeAuthorityServiceServer interface {
+	mustEmbedUnimplementedAuthorityServiceServer()
 }
 
-func RegisterAuthorityServer(s grpc.ServiceRegistrar, srv AuthorityServer) {
-	s.RegisterService(&Authority_ServiceDesc, srv)
+func RegisterAuthorityServiceServer(s grpc.ServiceRegistrar, srv AuthorityServiceServer) {
+	s.RegisterService(&AuthorityService_ServiceDesc, srv)
 }
 
-func _Authority_SetIssuerLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthorityService_SetIssuerLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SetIssuerLimitRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServer).SetIssuerLimit(ctx, in)
+		return srv.(AuthorityServiceServer).SetIssuerLimit(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.Authority/SetIssuerLimit",
+		FullMethod: "/authority_api.v1.AuthorityService/SetIssuerLimit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServer).SetIssuerLimit(ctx, req.(*SetIssuerLimitRequest))
+		return srv.(AuthorityServiceServer).SetIssuerLimit(ctx, req.(*SetIssuerLimitRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Authority_GetIssuerLimits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthorityService_GetIssuerLimits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIssuerLimitsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServer).GetIssuerLimits(ctx, in)
+		return srv.(AuthorityServiceServer).GetIssuerLimits(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.Authority/GetIssuerLimits",
+		FullMethod: "/authority_api.v1.AuthorityService/GetIssuerLimits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServer).GetIssuerLimits(ctx, req.(*GetIssuerLimitsRequest))
+		return srv.(AuthorityServiceServer).GetIssuerLimits(ctx, req.(*GetIssuerLimitsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Authority_Authorize_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AuthorityServer).Authorize(&authorityAuthorizeServer{stream})
+func _AuthorityService_Authorize_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(AuthorityServiceServer).Authorize(&authorityServiceAuthorizeServer{stream})
 }
 
-type Authority_AuthorizeServer interface {
+type AuthorityService_AuthorizeServer interface {
 	Send(*AuthorizeResponse) error
 	Recv() (*AuthorizeRequest, error)
 	grpc.ServerStream
 }
 
-type authorityAuthorizeServer struct {
+type authorityServiceAuthorizeServer struct {
 	grpc.ServerStream
 }
 
-func (x *authorityAuthorizeServer) Send(m *AuthorizeResponse) error {
+func (x *authorityServiceAuthorizeServer) Send(m *AuthorizeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *authorityAuthorizeServer) Recv() (*AuthorizeRequest, error) {
+func (x *authorityServiceAuthorizeServer) Recv() (*AuthorizeRequest, error) {
 	m := new(AuthorizeRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -234,92 +234,92 @@ func (x *authorityAuthorizeServer) Recv() (*AuthorizeRequest, error) {
 	return m, nil
 }
 
-func _Authority_Redeem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthorityService_Redeem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RedeemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServer).Redeem(ctx, in)
+		return srv.(AuthorityServiceServer).Redeem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.Authority/Redeem",
+		FullMethod: "/authority_api.v1.AuthorityService/Redeem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServer).Redeem(ctx, req.(*RedeemRequest))
+		return srv.(AuthorityServiceServer).Redeem(ctx, req.(*RedeemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Authority_GetEmissary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthorityService_GetEmissary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetEmissaryRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServer).GetEmissary(ctx, in)
+		return srv.(AuthorityServiceServer).GetEmissary(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.Authority/GetEmissary",
+		FullMethod: "/authority_api.v1.AuthorityService/GetEmissary",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServer).GetEmissary(ctx, req.(*GetEmissaryRequest))
+		return srv.(AuthorityServiceServer).GetEmissary(ctx, req.(*GetEmissaryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Authority_GetNotary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _AuthorityService_GetNotary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNotaryRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServer).GetNotary(ctx, in)
+		return srv.(AuthorityServiceServer).GetNotary(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.Authority/GetNotary",
+		FullMethod: "/authority_api.v1.AuthorityService/GetNotary",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServer).GetNotary(ctx, req.(*GetNotaryRequest))
+		return srv.(AuthorityServiceServer).GetNotary(ctx, req.(*GetNotaryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Authority_ServiceDesc is the grpc.ServiceDesc for Authority service.
+// AuthorityService_ServiceDesc is the grpc.ServiceDesc for AuthorityService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Authority_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "authority_api.v1.Authority",
-	HandlerType: (*AuthorityServer)(nil),
+var AuthorityService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "authority_api.v1.AuthorityService",
+	HandlerType: (*AuthorityServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SetIssuerLimit",
-			Handler:    _Authority_SetIssuerLimit_Handler,
+			Handler:    _AuthorityService_SetIssuerLimit_Handler,
 		},
 		{
 			MethodName: "GetIssuerLimits",
-			Handler:    _Authority_GetIssuerLimits_Handler,
+			Handler:    _AuthorityService_GetIssuerLimits_Handler,
 		},
 		{
 			MethodName: "Redeem",
-			Handler:    _Authority_Redeem_Handler,
+			Handler:    _AuthorityService_Redeem_Handler,
 		},
 		{
 			MethodName: "GetEmissary",
-			Handler:    _Authority_GetEmissary_Handler,
+			Handler:    _AuthorityService_GetEmissary_Handler,
 		},
 		{
 			MethodName: "GetNotary",
-			Handler:    _Authority_GetNotary_Handler,
+			Handler:    _AuthorityService_GetNotary_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Authorize",
-			Handler:       _Authority_Authorize_Handler,
+			Handler:       _AuthorityService_Authorize_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},

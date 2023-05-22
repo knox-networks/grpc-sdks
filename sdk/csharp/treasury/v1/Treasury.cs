@@ -37,12 +37,12 @@ namespace Treasury {
             "LmNvbW1vbi5BbW91bnQSDQoFY291bnQYAiABKA0SHQoFdG90YWwYAyABKAsy",
             "Di5jb21tb24uQW1vdW50Il8KEUdldFN1cHBseVJlc3BvbnNlEisKBnN1cHBs",
             "eRgBIAMoCzIbLnRyZWFzdXJ5LkRlbm9taW5hdGlvbkNvdW50Eh0KBXRvdGFs",
-            "GAIgASgLMg4uY29tbW9uLkFtb3VudDKYAQoIVHJlYXN1cnkSRgoFUmVtaXQS",
-            "Gy50cmVhc3VyeS5SZW1pdHRhbmNlUmVxdWVzdBocLnRyZWFzdXJ5LlJlbWl0",
-            "dGFuY2VSZXNwb25zZSgBMAESRAoJR2V0U3VwcGx5EhoudHJlYXN1cnkuR2V0",
-            "U3VwcGx5UmVxdWVzdBobLnRyZWFzdXJ5LkdldFN1cHBseVJlc3BvbnNlQjda",
-            "NWdpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3Ry",
-            "ZWFzdXJ5L3YxYgZwcm90bzM="));
+            "GAIgASgLMg4uY29tbW9uLkFtb3VudDKfAQoPTW9uZXRhZVRyZWFzdXJ5EkYK",
+            "BVJlbWl0EhsudHJlYXN1cnkuUmVtaXR0YW5jZVJlcXVlc3QaHC50cmVhc3Vy",
+            "eS5SZW1pdHRhbmNlUmVzcG9uc2UoATABEkQKCUdldFN1cHBseRIaLnRyZWFz",
+            "dXJ5LkdldFN1cHBseVJlcXVlc3QaGy50cmVhc3VyeS5HZXRTdXBwbHlSZXNw",
+            "b25zZUI3WjVnaXRodWIuY29tL2tub3gtbmV0d29ya3MvZ3JwYy1zZGtzL3Nk",
+            "ay9nby90cmVhc3VyeS92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
