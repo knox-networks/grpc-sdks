@@ -16,7 +16,5 @@ Everything in the `sdk/` folder is generated automatically from `.proto` files. 
 
 - [C#/.NET](./sdk/csharp)
 - [Go](./sdk/go)
-- [Java/Kotlin](./sdk/java)
-- [Python](./sdk/python3)
-- [Rust](./sdk/rust)
+- [Java](./sdk/java)
 - [TypeScript/JavaScript](./sdk/ts)
