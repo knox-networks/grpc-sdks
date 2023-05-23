@@ -769,7 +769,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// Responds with the limits applicable to the Issuer for various currencies. The Issuer is identified by its public key
   /// (aka Verifier).
-  /// [Example]{"limit": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}], "issuer_public_key": "[ISSUER_PUBLIC_KEY]"}
+  /// [Example]{"limit": [{"currency_code":"USD", "amount":"100", "decimals":"2"}, {"currency_code":"USD", "amount":"500", "decimals":"2"}], "issuer_public_key": "[ISSUER_PUBLIC_KEY]"}
   /// </summary>
   public sealed partial class GetIssuerLimitsResponse : pb::IMessage<GetIssuerLimitsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
