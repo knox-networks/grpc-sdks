@@ -325,6 +325,7 @@ namespace AuthorityApi.V1 {
   /// Contains the newly set issuance limit. The `Amount` indicates both the numeric value of the limit and the currency
   /// code. The Authority signs the amount and the public key (aka Verifier) of the issuer, and the signature is included
   /// in the response.
+  /// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "WU9VUl9TSUdOQVRVUkU="}
   /// </summary>
   public sealed partial class SetIssuerLimitResponse : pb::IMessage<SetIssuerLimitResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
