@@ -565,7 +565,7 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 }
 
 // The returns a challenge nonce meant to be signed by the requestor's private key.
-// [Example]{"challenge": "CHALLENGExBYTES="}}
+// [Example]{"challenge": "CHALLENGExBYTES="}
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

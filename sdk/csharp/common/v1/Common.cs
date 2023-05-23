@@ -1140,7 +1140,7 @@ namespace Common {
 
   /// <summary>
   /// The returns a challenge nonce meant to be signed by the requestor's private key.
-  /// [Example]{"challenge": "CHALLENGExBYTES="}}
+  /// [Example]{"challenge": "CHALLENGExBYTES="}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
