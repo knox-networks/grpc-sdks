@@ -284,7 +284,7 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 	return CredentialType_CREDENTIAL_TYPE_UNSPECIFIED
 }
 
-// [Example]{"credential_type": "1", "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
+// [Example]{"credential_type": 1, "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
 type IssueVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -360,7 +360,7 @@ func (x *IssueVerifiableCredentialRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"credential": "1"}
+// [Example]{"credential": 1}
 type IssueVerifiableCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -409,7 +409,7 @@ func (x *IssueVerifiableCredentialResponse) GetCredential() string {
 	return ""
 }
 
-// [Example]{"credential_types": ["0", "1"]}
+// [Example]{"credential_types": [0, 1]}
 type CreatePresentationChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

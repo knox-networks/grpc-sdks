@@ -195,7 +195,7 @@ func (x *GetIssuerLimitsRequest) GetIssuerPublicKey() string {
 
 // Responds with the limits applicable to the Issuer for various currencies. The Issuer is identified by its public key
 // (aka Verifier).
-// [Example]{"limit": [{"currency_code":"USD", "amount":"100", "decimals":"2"}], "issuer_public_key": "ISSUER_PUBLIC_KEY"}
+// [Example]{"limit": [{"currency_code":"USD", "amount":100, "decimals":2}], "issuer_public_key": "ISSUER_PUBLIC_KEY"}
 type GetIssuerLimitsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
