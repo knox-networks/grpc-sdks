@@ -395,6 +395,7 @@ func (x *DynamicVerifier) GetVerifier() []byte {
 // IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
 // inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. Ex. An `amount` of
 // 12345 and `decimals` of 2 is equivalent to "123.45".
+// [Example]{"currency_code":"USD", "amount":100, "decimals":2}
 type Amount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

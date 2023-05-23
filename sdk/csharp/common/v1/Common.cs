@@ -474,6 +474,7 @@ namespace Common {
   /// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
   /// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. Ex. An `amount` of
   /// 12345 and `decimals` of 2 is equivalent to "123.45".
+  /// [Example]{"currency_code":"USD", "amount":100, "decimals":2}
   /// </summary>
   public sealed partial class Amount : pb::IMessage<Amount>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
