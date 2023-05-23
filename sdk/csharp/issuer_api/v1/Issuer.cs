@@ -73,7 +73,7 @@ namespace IssuerApi.V1 {
   #region Messages
   /// <summary>
   /// A request to issue new digital banknotes.
-  /// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
+  /// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
   /// </summary>
   public sealed partial class IssueRequest : pb::IMessage<IssueRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1755,6 +1755,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// Sets roles in the Issuer for configuring access.
   /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
+  /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
   /// </summary>
   public sealed partial class SetRoleRequest : pb::IMessage<SetRoleRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

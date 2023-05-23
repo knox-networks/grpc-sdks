@@ -22,7 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
-// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
+// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -439,6 +439,7 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 
 // Sets roles in the Issuer for configuring access.
 // [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
+// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
 type SetRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
