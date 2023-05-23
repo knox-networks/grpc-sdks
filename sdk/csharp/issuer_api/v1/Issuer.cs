@@ -73,7 +73,7 @@ namespace IssuerApi.V1 {
   #region Messages
   /// <summary>
   /// A request to issue new digital banknotes.
-  /// [EEEExample]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
+  /// [EEEExample]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"my_key": 1, "my_value": 1}]}}
   /// </summary>
   public sealed partial class IssueRequest : pb::IMessage<IssueRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1570,7 +1570,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Returns roles set in the Issuer for configuring access.
-  /// [EEExample]{"roles": [{"key": "KEY", "value": "VALUE"}]}
+  /// [EEEExample]{"roles": [{"my_key": "MY_KEY", "my_value": "MY_VALUE"}]}
   /// </summary>
   public sealed partial class GetRolesResponse : pb::IMessage<GetRolesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
