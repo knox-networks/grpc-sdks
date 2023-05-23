@@ -1754,7 +1754,6 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Sets roles in the Issuer for configuring access.
-  /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
   /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
   /// </summary>
   public sealed partial class SetRoleRequest : pb::IMessage<SetRoleRequest>

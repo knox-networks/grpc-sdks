@@ -438,7 +438,6 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 }
 
 // Sets roles in the Issuer for configuring access.
-// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
 // [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
 type SetRoleRequest struct {
 	state         protoimpl.MessageState
