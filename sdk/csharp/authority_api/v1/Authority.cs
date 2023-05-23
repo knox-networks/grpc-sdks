@@ -994,7 +994,7 @@ namespace AuthorityApi.V1 {
 
   /// <summary>
   /// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1190,7 +1190,7 @@ namespace AuthorityApi.V1 {
 
   /// <summary>
   /// A digital banknote that has been authorized. Several such responses may be returned in a stream.
-  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1387,7 +1387,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
   /// by its Verifier (aka public key).
-  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES=", "verifier": "[VERIFIER]"}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES=", "verifier": "[VERIFIER]"}
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

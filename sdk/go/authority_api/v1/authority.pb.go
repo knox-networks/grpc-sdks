@@ -254,7 +254,7 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 }
 
 // A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -304,7 +304,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 }
 
 // A digital banknote that has been authorized. Several such responses may be returned in a stream.
-// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -355,7 +355,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 
 // Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
 // by its Verifier (aka public key).
-// [Example]{"promissory_file": "PROMISSORYxFILExBYTES=", "verifier": "[VERIFIER]"}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES=", "verifier": "[VERIFIER]"}
 type RedeemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
