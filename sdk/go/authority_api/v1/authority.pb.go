@@ -23,6 +23,7 @@ const (
 
 // Requests the issuance limit be set to the value specified in `Amount` for the Issuer identified by its public key
 // (aka Verifier).
+// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "WU9VUl9TSUdOQVRVUkU="}
 type SetIssuerLimitRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
