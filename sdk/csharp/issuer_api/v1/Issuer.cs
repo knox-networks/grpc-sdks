@@ -1754,7 +1754,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Sets roles in the Issuer for configuring access.
-  /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": "VALUE"}}
+  /// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
   /// </summary>
   public sealed partial class SetRoleRequest : pb::IMessage<SetRoleRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
