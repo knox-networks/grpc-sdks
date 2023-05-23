@@ -22,7 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
-// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
+// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "VERIFIERBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -249,7 +249,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 }
 
 // Authentication challenge nonce.
-// [Example]{"verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}
+// [Example]{"verifier": {"signature_system": 1, "verifier": "VERIFIERBYTES="}}
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -299,7 +299,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 }
 
 // Responds to request with authentication challenge nonce.
-// [Example]{"challenge": "CHALLENGEBYTES="}
+// [Example]{"challenge": "CHALLENGExBYTES="}
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
