@@ -22,7 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
-// [EEEExample]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
+// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -389,7 +389,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 }
 
 // Returns roles set in the Issuer for configuring access.
-// [Example]{"roles": [{"key": "KEY", "value": "VALUE"}]}
+// [EEExample]{"roles": [{"key": "KEY", "value": "VALUE"}]}
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -439,7 +439,7 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 }
 
 // Sets roles in the Issuer for configuring access.
-// [EEEExample]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
+// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
 type SetRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -489,7 +489,7 @@ func (x *SetRoleRequest) GetRole() *v1.Role {
 }
 
 // Responds to the request to set roles in the Issuer for configuring access.
-// [Example]{}
+// [Example]{ }
 type SetRoleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
