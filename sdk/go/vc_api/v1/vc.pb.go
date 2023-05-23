@@ -458,7 +458,7 @@ func (x *CreatePresentationChallengeRequest) GetCredentialTypes() []CredentialTy
 	return nil
 }
 
-// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": [0, 1]}
+// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_types": [0, 1]}
 type CreatePresentationChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

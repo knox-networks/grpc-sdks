@@ -1659,7 +1659,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": [0, 1]}
+  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_types": [0, 1]}
   /// </summary>
   public sealed partial class CreatePresentationChallengeResponse : pb::IMessage<CreatePresentationChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
