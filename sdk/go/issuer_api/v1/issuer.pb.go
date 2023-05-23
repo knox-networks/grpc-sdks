@@ -99,7 +99,7 @@ func (x *IssueRequest) GetDistribution() *v1.Distribution {
 }
 
 // A single authorized digital banknote as part of a stream response.
-// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
 type IssueResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -149,7 +149,7 @@ func (x *IssueResponse) GetPromissoryFile() []byte {
 }
 
 // A single digital banknote to be authorized as part of a stream request.
-// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -199,7 +199,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 }
 
 // A single digital banknote with an updated authorized signature as part of a stream response.
-// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -249,7 +249,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 }
 
 // Authentication challenge nonce.
-// [EEEExample]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -299,7 +299,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 }
 
 // Responds to request with authentication challenge nonce.
-// [EEEExample]{"challenge": "CHALLENGExBYTES="}
+// [Example]{"challenge": "CHALLENGExBYTES="}
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -349,7 +349,7 @@ func (x *AuthenticateResponse) GetChallenge() []byte {
 }
 
 // Gets roles set in the Issuer for configuring access.
-// [EEEExample]{}
+// [Example]{}
 type GetRolesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

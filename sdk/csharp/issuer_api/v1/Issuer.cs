@@ -425,7 +425,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// A single authorized digital banknote as part of a stream response.
-  /// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
   /// </summary>
   public sealed partial class IssueResponse : pb::IMessage<IssueResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -621,7 +621,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// A single digital banknote to be authorized as part of a stream request.
-  /// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -817,7 +817,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// A single digital banknote with an updated authorized signature as part of a stream response.
-  /// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
+  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1013,7 +1013,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Authentication challenge nonce.
-  /// [EEEExample]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+  /// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
   /// </summary>
   public sealed partial class AuthenticateRequest : pb::IMessage<AuthenticateRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1218,7 +1218,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Responds to request with authentication challenge nonce.
-  /// [EEEExample]{"challenge": "CHALLENGExBYTES="}
+  /// [Example]{"challenge": "CHALLENGExBYTES="}
   /// </summary>
   public sealed partial class AuthenticateResponse : pb::IMessage<AuthenticateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1414,7 +1414,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Gets roles set in the Issuer for configuring access.
-  /// [EEEExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class GetRolesRequest : pb::IMessage<GetRolesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
