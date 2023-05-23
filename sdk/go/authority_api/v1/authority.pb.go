@@ -84,7 +84,7 @@ func (x *SetIssuerLimitRequest) GetIssuerPublicKey() string {
 // Contains the newly set issuance limit. The `Amount` indicates both the numeric value of the limit and the currency
 // code. The Authority signs the amount and the public key (aka Verifier) of the issuer, and the signature is included
 // in the response.
-// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "[SIGNATURE]"}
+// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "SIGNATURExBYTES="}
 type SetIssuerLimitResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -254,7 +254,7 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 }
 
 // A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]"}
+// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -304,7 +304,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 }
 
 // A digital banknote that has been authorized. Several such responses may be returned in a stream.
-// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]"}
+// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -355,7 +355,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 
 // Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
 // by its Verifier (aka public key).
-// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]", "verifier": "[VERIFIER]"}
+// [Example]{"promissory_file": "PROMISSORYxFILExBYTES=", "verifier": "[VERIFIER]"}
 type RedeemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -604,7 +604,7 @@ func (x *GetNotaryRequest) GetVerifier() string {
 }
 
 // Responds with the signature of the requested Notary
-// [Example]{"signature": "[SIGNATURE]"}
+// [Example]{"signature": "SIGNATURExBYTES="}
 type GetNotaryResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

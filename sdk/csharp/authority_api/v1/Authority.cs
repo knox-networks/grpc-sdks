@@ -326,7 +326,7 @@ namespace AuthorityApi.V1 {
   /// Contains the newly set issuance limit. The `Amount` indicates both the numeric value of the limit and the currency
   /// code. The Authority signs the amount and the public key (aka Verifier) of the issuer, and the signature is included
   /// in the response.
-  /// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "[SIGNATURE]"}
+  /// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "signature": "SIGNATURExBYTES="}
   /// </summary>
   public sealed partial class SetIssuerLimitResponse : pb::IMessage<SetIssuerLimitResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -994,7 +994,7 @@ namespace AuthorityApi.V1 {
 
   /// <summary>
   /// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-  /// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]"}
+  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1190,7 +1190,7 @@ namespace AuthorityApi.V1 {
 
   /// <summary>
   /// A digital banknote that has been authorized. Several such responses may be returned in a stream.
-  /// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]"}
+  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES="}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1387,7 +1387,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
   /// by its Verifier (aka public key).
-  /// [Example]{"promissory_file": "[PROMISSORY_FILE_BYTE_ARRAY]", "verifier": "[VERIFIER]"}
+  /// [Example]{"promissory_file": "PROMISSORYxFILExBYTES=", "verifier": "[VERIFIER]"}
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2376,7 +2376,7 @@ namespace AuthorityApi.V1 {
 
   /// <summary>
   /// Responds with the signature of the requested Notary
-  /// [Example]{"signature": "[SIGNATURE]"}
+  /// [Example]{"signature": "SIGNATURExBYTES="}
   /// </summary>
   public sealed partial class GetNotaryResponse : pb::IMessage<GetNotaryResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
