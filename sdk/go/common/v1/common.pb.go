@@ -515,6 +515,7 @@ func (x *Distribution) GetValue() map[int64]int32 {
 }
 
 // Used to start an authentication flow
+// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
 type AuthenticationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -564,6 +565,7 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 }
 
 // The returns a challenge nonce meant to be signed by the requestor's private key.
+// [Example]{"challenge": "CHALLENGExBYTES="}}
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -935,6 +935,7 @@ namespace Common {
 
   /// <summary>
   /// Used to start an authentication flow
+  /// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
   /// </summary>
   public sealed partial class AuthenticationRequest : pb::IMessage<AuthenticationRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1139,6 +1140,7 @@ namespace Common {
 
   /// <summary>
   /// The returns a challenge nonce meant to be signed by the requestor's private key.
+  /// [Example]{"challenge": "CHALLENGExBYTES="}}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
