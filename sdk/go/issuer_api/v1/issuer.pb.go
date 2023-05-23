@@ -22,7 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
-// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "VERIFIERBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
+// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": "", "distribution": ""}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -249,7 +249,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 }
 
 // Authentication challenge nonce.
-// [Example]{"verifier": {"signature_system": 1, "verifier": "VERIFIERBYTES="}}
+// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -388,7 +388,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 	return file_issuer_api_v1_issuer_proto_rawDescGZIP(), []int{6}
 }
 
-// [Example]{"roles": {"key": "KEY", "value": "VALUE"}}
+// [Example]{"roles": [{"key": "KEY", "value": "VALUE"}]}
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
