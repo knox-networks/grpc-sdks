@@ -22,6 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
+// [EEEExample]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": 1, "value": 1}]}}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -98,7 +99,7 @@ func (x *IssueRequest) GetDistribution() *v1.Distribution {
 }
 
 // A single authorized digital banknote as part of a stream response.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
 type IssueResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -148,7 +149,7 @@ func (x *IssueResponse) GetPromissoryFile() []byte {
 }
 
 // A single digital banknote to be authorized as part of a stream request.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -198,7 +199,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 }
 
 // A single digital banknote with an updated authorized signature as part of a stream response.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [EEEExample]{"promissory_file": "PROMISSORYFILEBYTES="}
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -248,7 +249,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 }
 
 // Authentication challenge nonce.
-// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+// [EEEExample]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -298,7 +299,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 }
 
 // Responds to request with authentication challenge nonce.
-// [Example]{"challenge": "CHALLENGExBYTES="}
+// [EEEExample]{"challenge": "CHALLENGExBYTES="}
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -348,7 +349,7 @@ func (x *AuthenticateResponse) GetChallenge() []byte {
 }
 
 // Gets roles set in the Issuer for configuring access.
-// [Example]{}
+// [EEEExample]{}
 type GetRolesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -388,7 +389,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 }
 
 // Returns roles set in the Issuer for configuring access.
-// [Example]{"roles": [{"key": "KEY", "value": "VALUE"}]}
+// [EEEExample]{"roles": [{"key": "KEY", "value": "VALUE"}]}
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -438,6 +439,7 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 }
 
 // Sets roles in the Issuer for configuring access.
+// [EEEExample]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
 type SetRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -487,7 +489,7 @@ func (x *SetRoleRequest) GetRole() *v1.Role {
 }
 
 // Responds to the request to set roles in the Issuer for configuring access.
-// [Example]{}
+// [EEEExample]{}
 type SetRoleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
