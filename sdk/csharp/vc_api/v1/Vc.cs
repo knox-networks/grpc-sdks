@@ -453,7 +453,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_type": "1", "did": "YOUR_DID"}
+  /// [Example]{"credential_type": 1, "did": "YOUR_DID"}
   /// </summary>
   public sealed partial class CreateIssuanceChallengeRequest : pb::IMessage<CreateIssuanceChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -963,7 +963,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_type": 1, "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
+  /// [Example]{"credential_type": 1, "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID"}
   /// </summary>
   public sealed partial class IssueVerifiableCredentialRequest : pb::IMessage<IssueVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1925,7 +1925,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID", "credential_type": [0, 1]}
+  /// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID", "credential_type": [0, 1]}
   /// </summary>
   public sealed partial class PresentVerifiableCredentialRequest : pb::IMessage<PresentVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
