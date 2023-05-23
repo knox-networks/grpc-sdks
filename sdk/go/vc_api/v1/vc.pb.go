@@ -159,7 +159,7 @@ func (x *CredentialProof) GetProofValue() string {
 	return ""
 }
 
-// [Example]{"credential_type": "CREDENTIAL_TYPE_BANK_CARD", "did": "YOUR_DID"}
+// [Example]{"credential_type": 1, "did": "YOUR_DID"}
 type CreateIssuanceChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -217,7 +217,7 @@ func (x *CreateIssuanceChallengeRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": "CREDENTIAL_TYPE_BANK_CARD"}
+// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": 1}
 type CreateIssuanceChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -284,7 +284,7 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 	return CredentialType_CREDENTIAL_TYPE_UNSPECIFIED
 }
 
-// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"], "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
+// [Example]{"credential_type": [0, 1], "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
 type IssueVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -360,7 +360,7 @@ func (x *IssueVerifiableCredentialRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+// [Example]{"credential_type": [0, 1]}
 type IssueVerifiableCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -409,7 +409,7 @@ func (x *IssueVerifiableCredentialResponse) GetCredential() string {
 	return ""
 }
 
-// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+// [Example]{"credential_type": [0, 1]}
 type CreatePresentationChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -458,7 +458,7 @@ func (x *CreatePresentationChallengeRequest) GetCredentialTypes() []CredentialTy
 	return nil
 }
 
-// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": [0, 1]}
 type CreatePresentationChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -525,7 +525,7 @@ func (x *CreatePresentationChallengeResponse) GetCredentialTypes() []CredentialT
 	return nil
 }
 
-// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID", "credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID", "credential_type": [0, 1]}
 type PresentVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
