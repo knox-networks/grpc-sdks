@@ -452,6 +452,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential_type": "CREDENTIAL_TYPE_BANK_CARD", "did": "YOUR_DID"}
+  /// </summary>
   public sealed partial class CreateIssuanceChallengeRequest : pb::IMessage<CreateIssuanceChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -684,6 +687,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": "CREDENTIAL_TYPE_BANK_CARD"}
+  /// </summary>
   public sealed partial class CreateIssuanceChallengeResponse : pb::IMessage<CreateIssuanceChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -956,6 +962,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"], "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID"}
+  /// </summary>
   public sealed partial class IssueVerifiableCredentialRequest : pb::IMessage<IssueVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1268,6 +1277,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+  /// </summary>
   public sealed partial class IssueVerifiableCredentialResponse : pb::IMessage<IssueVerifiableCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1460,6 +1472,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+  /// </summary>
   public sealed partial class CreatePresentationChallengeRequest : pb::IMessage<CreatePresentationChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1643,6 +1658,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+  /// </summary>
   public sealed partial class CreatePresentationChallengeResponse : pb::IMessage<CreatePresentationChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1906,6 +1924,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURE=", "did": "YOUR_DID", "credential_type": ["CREDENTIAL_TYPE_BANK_CARD", "CREDENTIAL_TYPE_UNSPECIFIED"]}
+  /// </summary>
   public sealed partial class PresentVerifiableCredentialRequest : pb::IMessage<PresentVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2250,7 +2271,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{ }
   /// </summary>
   public sealed partial class PresentVerifiableCredentialResponse : pb::IMessage<PresentVerifiableCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2404,6 +2425,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"nonce": "NONCE"}
+  /// </summary>
   public sealed partial class WaitForCompletionRequest : pb::IMessage<WaitForCompletionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2596,6 +2620,9 @@ namespace VcApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "NONCE"}
+  /// </summary>
   public sealed partial class WaitForCompletionResponse : pb::IMessage<WaitForCompletionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
