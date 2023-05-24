@@ -105,7 +105,7 @@ func (x *RemittanceRequest) GetExchangeRate() float64 {
 
 // Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left
 // after the conversion if any, and a fee.
-// [Example]{"exchanged_promissory_files": ["xPROMISSORYxFILExBYTESxEXCHANGEDx1="], "fee_amount": {"currency_code":"USD", "amount":1, "decimals":2}, "exchange_rate": 1.4, "refunded_promissory_files": ["xPROMISSORYxFILExBYTESxREFUNDx1="]}
+// [Example]{"exchanged_promissory_files": ["xxPROMISSORYxFILExBYTESxEXCHANGEDx1="], "fee_amount": {"currency_code":"USD", "amount":1, "decimals":2}, "exchange_rate": 1.4, "refunded_promissory_files": ["xPROMISSORYxFILExBYTESxREFUNDx1=", "xPROMISSORYxFILExBYTESxREFUNDx2="]}
 type RemittanceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
