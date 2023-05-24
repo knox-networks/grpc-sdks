@@ -23,6 +23,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// [Example]{"did": "WALLET_DID", "document": "DOCUMENT"}
 type CreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -80,6 +81,7 @@ func (x *CreateRequest) GetDocument() string {
 	return ""
 }
 
+// [Example]{}
 type CreateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -118,6 +120,7 @@ func (*CreateResponse) Descriptor() ([]byte, []int) {
 	return file_registry_api_v1_registry_proto_rawDescGZIP(), []int{1}
 }
 
+// [Example]{"did": "WALLET_DID"}
 type ReadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -166,6 +169,7 @@ func (x *ReadRequest) GetDid() string {
 	return ""
 }
 
+// [Example]{"did": "WALLET_DID", "document": "DOCUMENT", "metadata": { "created": { "seconds": 0, "nanos": 0 }, "updated": { "seconds": 0, "nanos": 0 }, "contentType": "MEDIA_TYPE"}}
 type ReadResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -232,6 +236,7 @@ func (x *ReadResponse) GetMetadata() *ResolutionMetadata {
 	return nil
 }
 
+// [Example]{ "created": { "seconds": 0, "nanos": 0 }, "updated": { "seconds": 0, "nanos": 0 }, "contentType": "MEDIA_TYPE"}}
 type ResolutionMetadata struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -298,6 +303,7 @@ func (x *ResolutionMetadata) GetContentType() string {
 	return ""
 }
 
+// [Example]{"did": "WALLET_DID", "document": "DOCUMENT"}
 type UpdateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -355,6 +361,7 @@ func (x *UpdateRequest) GetDocument() string {
 	return ""
 }
 
+// [Example]{}
 type UpdateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -393,6 +400,7 @@ func (*UpdateResponse) Descriptor() ([]byte, []int) {
 	return file_registry_api_v1_registry_proto_rawDescGZIP(), []int{6}
 }
 
+// [Example]{"did": "WALLET_DID"}
 type RevokeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -441,6 +449,7 @@ func (x *RevokeRequest) GetDid() string {
 	return ""
 }
 
+// [Example]{"did": "WALLET_DID"}
 type RevokeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

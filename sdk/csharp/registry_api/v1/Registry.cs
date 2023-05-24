@@ -63,6 +63,9 @@ namespace RegistryApi.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// [Example]{"did": "WALLET_DID", "document": "DOCUMENT"}
+  /// </summary>
   public sealed partial class CreateRequest : pb::IMessage<CreateRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -296,7 +299,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class CreateResponse : pb::IMessage<CreateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -450,6 +453,9 @@ namespace RegistryApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "WALLET_DID"}
+  /// </summary>
   public sealed partial class ReadRequest : pb::IMessage<ReadRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -642,6 +648,9 @@ namespace RegistryApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "WALLET_DID", "document": "DOCUMENT", "metadata": { "created": { "seconds": 0, "nanos": 0 }, "updated": { "seconds": 0, "nanos": 0 }, "contentType": "MEDIA_TYPE"}}
+  /// </summary>
   public sealed partial class ReadResponse : pb::IMessage<ReadResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -923,6 +932,9 @@ namespace RegistryApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{ "created": { "seconds": 0, "nanos": 0 }, "updated": { "seconds": 0, "nanos": 0 }, "contentType": "MEDIA_TYPE"}}
+  /// </summary>
   public sealed partial class ResolutionMetadata : pb::IMessage<ResolutionMetadata>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1213,6 +1225,9 @@ namespace RegistryApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "WALLET_DID", "document": "DOCUMENT"}
+  /// </summary>
   public sealed partial class UpdateRequest : pb::IMessage<UpdateRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1446,7 +1461,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class UpdateResponse : pb::IMessage<UpdateResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1600,6 +1615,9 @@ namespace RegistryApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "WALLET_DID"}
+  /// </summary>
   public sealed partial class RevokeRequest : pb::IMessage<RevokeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1793,7 +1811,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{"did": "WALLET_DID"}
   /// </summary>
   public sealed partial class RevokeResponse : pb::IMessage<RevokeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
