@@ -276,7 +276,7 @@ namespace Common {
   #region Messages
   /// <summary>
   /// Streaming data packet used across Gateway connections.
-  /// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "signature_system": 1, "verifier": "xxSENDERxVERIFIERxBYTES="}, "recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "nonce": "NONCExBYTES=", "transaction_header": ""}
+  /// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "signature_system": 1, "verifier": "xxSENDERxVERIFIERxBYTES="}, "recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "nonce": "NONCExBYTES=", "transaction_header": {"starter": { "signature_system": 1, "verifier": "xSTARTERxVERIFIERxBYTES="}, "responder": { "signature_system": 1, "verifier": "xRESPONDERxVERIFIERxBYTES="}, "uetr": "UETR", "timestamp": "TIMESTAMP", "signature": "SIGNATURExBYTES=", "user_reference": "USER_REFERENCE", "related_uetrs": ["RELATED_UETR1", "RELATED_UETR2"]}}
   /// </summary>
   public sealed partial class Packet : pb::IMessage<Packet>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
