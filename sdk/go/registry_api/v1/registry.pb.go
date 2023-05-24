@@ -449,7 +449,7 @@ func (x *RevokeRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"did": "WALLET_DID"}
+// [Example]{}
 type RevokeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

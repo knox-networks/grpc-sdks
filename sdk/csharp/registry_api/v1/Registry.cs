@@ -1811,7 +1811,7 @@ namespace RegistryApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"did": "WALLET_DID"}
+  /// [Example]{}
   /// </summary>
   public sealed partial class RevokeResponse : pb::IMessage<RevokeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
