@@ -855,7 +855,7 @@ func (x *ListFundsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxSIGNATURExBYTES=", "transfer_signature": "xTRANSFERxSIGNATURExBYTES="}}]}
+// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", "transfer_signature": "xTRANSFERxxSIGNATURExBYTES="}}]}
 type ListFundsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
