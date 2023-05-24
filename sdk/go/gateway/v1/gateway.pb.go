@@ -106,6 +106,7 @@ func (x *LogEntry) GetConnectionId() string {
 }
 
 // Requests a list of connections known to the Gateway.
+// [Example]{ }
 type ConnectionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -146,6 +147,7 @@ func (*ConnectionsRequest) Descriptor() ([]byte, []int) {
 
 // Contains a list of active connections, as well as lists of log entries for all created connections and for all
 // removed connections.
+// [Example]{"active": ["ActiveConnection1", "ActiveConnection2"], "created": ["CreatedConnection1", "CreatedConnection2"], "removed": ["RemovedConnection1", "RemovedConnection2"]}
 type ConnectionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
