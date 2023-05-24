@@ -99,6 +99,7 @@ namespace VcApi.V1 {
   #region Messages
   /// <summary>
   /// For more details, refer to https://www.w3.org/TR/vc-data-integrity/
+  /// [Example]{"type": "TYPE", "created": "CREATED_TIMESTAMP", "verification_method": "VERIFICATION_METHOD", "proof_purpose": "PROOF_PURPOSE", "proof_value": "PROOF_VALUE"}
   /// </summary>
   public sealed partial class CredentialProof : pb::IMessage<CredentialProof>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

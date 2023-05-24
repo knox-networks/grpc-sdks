@@ -335,6 +335,7 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 
 // Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
 // indicated by the `signature_system`.
+// [Example]{"signature_system": 1, "verifier": "VERIFIERxBYTES="}
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,6 +468,7 @@ func (x *Amount) GetDecimals() uint32 {
 // Represents a desired denomination distribution.
 // map<mantissa, quantity>
 // sum must match corresponding amount.amount
+// [Example]{"value": {100: 5}}
 type Distribution struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -615,6 +617,7 @@ func (x *AuthenticationResponse) GetChallenge() []byte {
 }
 
 // Connection type associated with a single verifier.
+// [Example]{}
 type OneConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -655,6 +658,7 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 
 // Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
 // connection.
+// [Example]{"associated_verifiers": [{"signature_system": 1, "verifier": "VERIFIERxBYTES="}, {"signature_system": 2, "verifier": "VERIFIERxBYTES="}]}
 type ManyConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -705,6 +709,7 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 
 // The message sent during an already established connection allowing the addition or removal of an
 // `associated_verifier` tied to connection held by the `primary_verifier`.
+// [Example]{"primary_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}, "associated_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}
 type AssociatedConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

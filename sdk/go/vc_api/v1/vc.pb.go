@@ -75,6 +75,7 @@ func (CredentialType) EnumDescriptor() ([]byte, []int) {
 }
 
 // For more details, refer to https://www.w3.org/TR/vc-data-integrity/
+// [Example]{"type": "TYPE", "created": "CREATED_TIMESTAMP", "verification_method": "VERIFICATION_METHOD", "proof_purpose": "PROOF_PURPOSE", "proof_value": "PROOF_VALUE"}
 type CredentialProof struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

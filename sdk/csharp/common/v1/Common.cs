@@ -237,6 +237,7 @@ namespace Common {
   /// <summary>
   /// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
   /// indicated by the `signature_system`.
+  /// [Example]{"signature_system": 1, "verifier": "VERIFIERxBYTES="}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -754,6 +755,7 @@ namespace Common {
   /// Represents a desired denomination distribution.
   /// map&lt;mantissa, quantity>
   /// sum must match corresponding amount.amount
+  /// [Example]{"value": {100: 5}}
   /// </summary>
   public sealed partial class Distribution : pb::IMessage<Distribution>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1336,6 +1338,7 @@ namespace Common {
 
   /// <summary>
   /// Connection type associated with a single verifier.
+  /// [Example]{}
   /// </summary>
   public sealed partial class OneConnection : pb::IMessage<OneConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1492,6 +1495,7 @@ namespace Common {
   /// <summary>
   /// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
   /// connection.
+  /// [Example]{"associated_verifiers": [{"signature_system": 1, "verifier": "VERIFIERxBYTES="}, {"signature_system": 2, "verifier": "VERIFIERxBYTES="}]}
   /// </summary>
   public sealed partial class ManyConnection : pb::IMessage<ManyConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1677,6 +1681,7 @@ namespace Common {
   /// <summary>
   /// The message sent during an already established connection allowing the addition or removal of an
   /// `associated_verifier` tied to connection held by the `primary_verifier`.
+  /// [Example]{"primary_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}, "associated_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}
   /// </summary>
   public sealed partial class AssociatedConnection : pb::IMessage<AssociatedConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
