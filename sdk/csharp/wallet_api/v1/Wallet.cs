@@ -193,6 +193,9 @@ namespace WalletApi.V1 {
 
   }
   #region Messages
+  /// <summary>
+  /// [Example]{"from_wallet_id": "FROM_WALLET_ID", "recipient_public_key": "RECIPIENT_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class TransferRequest : pb::IMessage<TransferRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -506,7 +509,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class TransferResponse : pb::IMessage<TransferResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -660,6 +663,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"owner_name": "OWNER_NAME"}
+  /// </summary>
   public sealed partial class CreateOwnerRequest : pb::IMessage<CreateOwnerRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -852,6 +858,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"owner_id": "OWNER_ID", "api_key": "API_KEY", "owner_name": "OWNER_NAME"}
+  /// </summary>
   public sealed partial class CreateOwnerResponse : pb::IMessage<CreateOwnerResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1124,6 +1133,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class CreateWalletRequest : pb::IMessage<CreateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1356,6 +1368,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "WALLET_PUBLIC_KEY", "did": "WALLET_DID"}
+  /// </summary>
   public sealed partial class CreateWalletResponse : pb::IMessage<CreateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1668,6 +1683,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"page": 0, "page_size": 10, "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListWalletsRequest : pb::IMessage<ListWalletsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1940,6 +1958,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallets": [{"wallet_name": "WALLET1", "wallet_id": "ID1", "public_key": "PK1", "did": "DID2"}, {"wallet_name": "WALLET2", "wallet_id": "ID2", "public_key": "PK2", "did": "DID2"}], "total_owned_wallets": 5}
+  /// </summary>
   public sealed partial class ListWalletsResponse : pb::IMessage<ListWalletsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2481,6 +2502,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListWalletBalancesRequest : pb::IMessage<ListWalletBalancesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2713,6 +2737,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "file_count": 57}
+  /// </summary>
   public sealed partial class WalletBalance : pb::IMessage<WalletBalance>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2954,6 +2981,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"balances": [{"amount": {"currency_code":"USD", "amount":5700, "decimals":2}, "file_count": 57}, {"amount": {"currency_code":"USD", "amount":500, "decimals":2}, "file_count": 3} ] }
+  /// </summary>
   public sealed partial class ListWalletBalancesResponse : pb::IMessage<ListWalletBalancesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3132,6 +3162,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListFundsRequest : pb::IMessage<ListFundsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
