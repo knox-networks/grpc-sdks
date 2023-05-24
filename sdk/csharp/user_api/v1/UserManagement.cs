@@ -9054,7 +9054,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"sp_metadata": "SPMETADATAxBYTES="}
+  /// [Example]{"sp_metadata": "xxSPMETADATAxxBYTES="}
   /// </summary>
   public sealed partial class SAMLSPMetadataResponse : pb::IMessage<SAMLSPMetadataResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

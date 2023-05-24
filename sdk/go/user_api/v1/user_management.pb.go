@@ -2301,7 +2301,7 @@ func (*SAMLSPMetadataRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{35}
 }
 
-// [Example]{"sp_metadata": "SPMETADATAxBYTES="}
+// [Example]{"sp_metadata": "xxSPMETADATAxxBYTES="}
 type SAMLSPMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
