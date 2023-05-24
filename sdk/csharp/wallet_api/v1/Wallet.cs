@@ -9540,7 +9540,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
+  /// [Example]{"transactions": [{"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}, {"type": 2, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":500, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 1}]}
   /// </summary>
   public sealed partial class ListTransactionsResponse : pb::IMessage<ListTransactionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9999,7 +9999,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
   /// </summary>
   public sealed partial class GetTransactionSnapshotResponse : pb::IMessage<GetTransactionSnapshotResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10478,7 +10478,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
   /// </summary>
   public sealed partial class ListTransactionSnapshotsResponse : pb::IMessage<ListTransactionSnapshotsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
