@@ -2354,7 +2354,7 @@ func (x *ListTransactionSnapshotsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+// [Example]{"snapshots": [{"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}, {"status": 3, "promissories": ["PROMISSORYxIDx3", "PROMISSORYxIDx4"], "amount_transferred": {"currency_code":"USD", "amount":500, "decimals":2}, "message": "MESSAGE2"}]}
 type ListTransactionSnapshotsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
