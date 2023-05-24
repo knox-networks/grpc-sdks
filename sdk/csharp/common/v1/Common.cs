@@ -237,7 +237,7 @@ namespace Common {
   /// <summary>
   /// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
   /// indicated by the `signature_system`.
-  /// [Example]{"signature_system": 1, "verifier": "VERIFIERxBYTES="}
+  /// [Example]{"signature_system": 1, "verifier": "xVERIFIERxBYTES="}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

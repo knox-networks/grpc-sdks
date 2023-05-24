@@ -335,7 +335,7 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 
 // Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
 // indicated by the `signature_system`.
-// [Example]{"signature_system": 1, "verifier": "VERIFIERxBYTES="}
+// [Example]{"signature_system": 1, "verifier": "xVERIFIERxBYTES="}
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

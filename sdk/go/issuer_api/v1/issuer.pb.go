@@ -389,7 +389,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 }
 
 // Returns roles set in the Issuer for configuring access.
-// [EEEExample]{"roles": []}
+// [Example]{"roles": []}
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
