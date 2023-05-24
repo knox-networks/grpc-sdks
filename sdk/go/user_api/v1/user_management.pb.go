@@ -130,7 +130,6 @@ func (Role) EnumDescriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{1}
 }
 
-// [Example]{"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {} }
 type User struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

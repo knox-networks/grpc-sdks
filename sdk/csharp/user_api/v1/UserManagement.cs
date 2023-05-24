@@ -225,9 +225,6 @@ namespace UserApi.V1 {
   #endregion
 
   #region Messages
-  /// <summary>
-  /// [Example]{"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {} }
-  /// </summary>
   public sealed partial class User : pb::IMessage<User>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
