@@ -22,7 +22,7 @@ const (
 )
 
 // A request to issue new digital banknotes.
-// [EEEExample]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": "MY_KEY", "value": "MY_VALUE"}]}}
+// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}, "distribution": {"value": [{"key": "MY_KEY", "value": "MY_VALUE"}]}}
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -389,7 +389,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 }
 
 // Returns roles set in the Issuer for configuring access.
-// [EEEExample]{"roles": [{"key": "MY_KEY", "value": "MY_VALUE"}]}
+// [Example]{"roles": [{"key": "MY_KEY", "value": "MY_VALUE"}]}
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

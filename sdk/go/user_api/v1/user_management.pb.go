@@ -585,7 +585,7 @@ func (*ConfirmUserResponse) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{5}
 }
 
-// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { "fields": {}}}
+// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": [] }}
 type AuthnWithProviderRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -768,7 +768,7 @@ func (x *HandleOIDCCallbackRequest) GetState() string {
 	return ""
 }
 
-// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": {"fields": {}}}
+// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": [] }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": [] }}
 type HandleOIDCCallbackResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2301,7 +2301,7 @@ func (*SAMLSPMetadataRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{35}
 }
 
-// [Example]{"sp_metadata": "SPxMETADATAxBYTES="}
+// [Example]{"sp_metadata": "xSPxMETADATAxBYTES="}
 type SAMLSPMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2389,7 +2389,7 @@ func (*GetAppSettingsRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{37}
 }
 
-// [Example]{"app_settings": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+// [Example]{"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
 type AppSettings struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
