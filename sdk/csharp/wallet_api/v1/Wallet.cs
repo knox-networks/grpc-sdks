@@ -3478,7 +3478,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", "transfer_signature": "xTRANSFERxxSIGNATURExBYTES="}}]}
+  /// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", "transfer_signature": "xxTRANSFERxxSIGNATURExBYTES="}}]}
   /// </summary>
   public sealed partial class ListFundsResponse : pb::IMessage<ListFundsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
