@@ -225,6 +225,9 @@ namespace UserApi.V1 {
   #endregion
 
   #region Messages
+  /// <summary>
+  /// [Example]{"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {} }
+  /// </summary>
   public sealed partial class User : pb::IMessage<User>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -764,6 +767,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{{"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE" }
+  /// </summary>
   public sealed partial class RegisterUserRequest : pb::IMessage<RegisterUserRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1196,6 +1202,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
+  /// </summary>
   public sealed partial class AuthToken : pb::IMessage<AuthToken>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1508,6 +1517,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}} }
+  /// </summary>
   public sealed partial class RegisterUserResponse : pb::IMessage<RegisterUserResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1709,6 +1721,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
+  /// </summary>
   public sealed partial class ConfirmUserRequest : pb::IMessage<ConfirmUserRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1942,7 +1957,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class ConfirmUserResponse : pb::IMessage<ConfirmUserResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2096,6 +2111,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { "fields": {}}}
+  /// </summary>
   public sealed partial class AuthnWithProviderRequest : pb::IMessage<AuthnWithProviderRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2417,6 +2435,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"provider_url": "PROVIDER_URL"}
+  /// </summary>
   public sealed partial class AuthnWithProviderResponse : pb::IMessage<AuthnWithProviderResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2609,6 +2630,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
+  /// </summary>
   public sealed partial class HandleOIDCCallbackRequest : pb::IMessage<HandleOIDCCallbackRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2841,6 +2865,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": {"fields": {}}}
+  /// </summary>
   public sealed partial class HandleOIDCCallbackResponse : pb::IMessage<HandleOIDCCallbackResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3220,6 +3247,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"email": "EMAIL"}
+  /// </summary>
   public sealed partial class FindByEmailRequest : pb::IMessage<FindByEmailRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3412,6 +3442,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}} }
+  /// </summary>
   public sealed partial class FindByEmailResponse : pb::IMessage<FindByEmailResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3613,6 +3646,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"uuid": "UUID"}
+  /// </summary>
   public sealed partial class FindByIDRequest : pb::IMessage<FindByIDRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3805,6 +3841,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}} }
+  /// </summary>
   public sealed partial class FindByIDResponse : pb::IMessage<FindByIDResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4006,6 +4045,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"email": "EMAIL", "password": "PASSWORD"}
+  /// </summary>
   public sealed partial class AuthnWithPasswordRequest : pb::IMessage<AuthnWithPasswordRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4238,6 +4280,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+  /// </summary>
   public sealed partial class AuthnWithPasswordResponse : pb::IMessage<AuthnWithPasswordResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4488,6 +4533,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"refresh_token": "REFRESH_TOKEN"}
+  /// </summary>
   public sealed partial class RefreshAccessTokenRequest : pb::IMessage<RefreshAccessTokenRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4680,6 +4728,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+  /// </summary>
   public sealed partial class RefreshAccessTokenResponse : pb::IMessage<RefreshAccessTokenResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4931,7 +4982,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class GetMeRequest : pb::IMessage<GetMeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5085,6 +5136,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}} }
+  /// </summary>
   public sealed partial class GetMeResponse : pb::IMessage<GetMeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5286,6 +5340,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+  /// </summary>
   public sealed partial class AuthTokenResponse : pb::IMessage<AuthTokenResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5537,7 +5594,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class CreateAuthnBrowserWithWalletChallengeRequest : pb::IMessage<CreateAuthnBrowserWithWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5691,6 +5748,10 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did_start": { "nonce": "NONCE" }}
+  /// [Example]{"did_start": { "auth_token": {"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}}}
+  /// </summary>
   public sealed partial class CreateAuthnBrowserWithWalletChallengeResponse : pb::IMessage<CreateAuthnBrowserWithWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5969,6 +6030,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// </summary>
   public sealed partial class AuthnBrowserWithWalletRequest : pb::IMessage<AuthnBrowserWithWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6242,7 +6306,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class AuthnBrowserWithWalletResponse : pb::IMessage<AuthnBrowserWithWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6397,7 +6461,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class CreateRegisterWalletChallengeRequest : pb::IMessage<CreateRegisterWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6551,6 +6615,10 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"registration_start": { "nonce": "NONCE" }}
+  /// [Example]{"registration_start": { "ok": "OK" }}
+  /// </summary>
   public sealed partial class CreateRegisterWalletChallengeResponse : pb::IMessage<CreateRegisterWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6816,6 +6884,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// </summary>
   public sealed partial class RegisterWalletRequest : pb::IMessage<RegisterWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7088,6 +7159,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+  /// </summary>
   public sealed partial class RegisterWalletResponse : pb::IMessage<RegisterWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7338,6 +7412,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "DID"}
+  /// </summary>
   public sealed partial class CreateAuthnWalletChallengeRequest : pb::IMessage<CreateAuthnWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7530,6 +7607,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"nonce": "NONCE"}
+  /// </summary>
   public sealed partial class CreateAuthnWalletChallengeResponse : pb::IMessage<CreateAuthnWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7722,6 +7802,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// </summary>
   public sealed partial class AuthnWalletRequest : pb::IMessage<AuthnWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7994,6 +8077,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+  /// </summary>
   public sealed partial class AuthnWalletResponse : pb::IMessage<AuthnWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8244,6 +8330,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
+  /// </summary>
   public sealed partial class HandleSAMLCallbackRequest : pb::IMessage<HandleSAMLCallbackRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8476,6 +8565,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN"}
+  /// </summary>
   public sealed partial class HandleSAMLCallbackResponse : pb::IMessage<HandleSAMLCallbackResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8807,7 +8899,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class SAMLSPMetadataRequest : pb::IMessage<SAMLSPMetadataRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8961,6 +9053,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"sp_metadata": "SPxMETADATAxBYTES="}
+  /// </summary>
   public sealed partial class SAMLSPMetadataResponse : pb::IMessage<SAMLSPMetadataResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9154,7 +9249,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class GetAppSettingsRequest : pb::IMessage<GetAppSettingsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9308,6 +9403,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"app_settings": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+  /// </summary>
   public sealed partial class AppSettings : pb::IMessage<AppSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9489,6 +9587,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"provider": 0, "enabled": true}
+  /// </summary>
   public sealed partial class AuthnProvider : pb::IMessage<AuthnProvider>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9721,6 +9822,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"app_settings": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+  /// </summary>
   public sealed partial class GetAppSettingsResponse : pb::IMessage<GetAppSettingsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9922,6 +10026,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "DID"}
+  /// </summary>
   public sealed partial class GetUserByDIDRequest : pb::IMessage<GetUserByDIDRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10114,6 +10221,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}} }
+  /// </summary>
   public sealed partial class GetUserByDIDResponse : pb::IMessage<GetUserByDIDResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10315,6 +10425,9 @@ namespace UserApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "DID"}
+  /// </summary>
   public sealed partial class AssociateWalletRequest : pb::IMessage<AssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10508,7 +10621,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  ///Empty body.
+  /// [Example]{}
   /// </summary>
   public sealed partial class AssociateWalletResponse : pb::IMessage<AssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
