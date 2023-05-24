@@ -398,7 +398,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 }
 
 // Streaming data packet used across Gateway connections.
-// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "verifier": {"signature_system": 1, "verifier": "xSENDERxVERIFIERxBYTES="}}, "recipient": { "verifier": {"signature_system": 1, "verifier": "xRECIPIENTxVERIFIERxBYTES="}}, "nonce": "NONCExBYTES=", "transaction_header": ""}
+// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "verifier": {"signature_system": 1, "verifier": "xxSENDERxVERIFIERxBYTES="}}, "recipient": { "verifier": {"signature_system": 1, "verifier": "xxRECIPIENTxVERIFIERxBYTES="}}, "nonce": "NONCExBYTES=", "transaction_header": ""}
 type Packet struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
