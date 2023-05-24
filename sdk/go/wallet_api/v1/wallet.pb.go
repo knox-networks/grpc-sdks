@@ -912,6 +912,7 @@ func (x *ListFundsResponse) GetTotalOwnedFunds() uint32 {
 	return 0
 }
 
+// [Example]{"from_wallet_id": "FROM_WALLET_ID", "issuer_public_key": "ISSUER_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
 type RedeemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -987,6 +988,7 @@ func (x *RedeemRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"new_limit": {"currency_code":"USD", "amount":100, "decimals":2} }
 type RedeemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1035,6 +1037,7 @@ func (x *RedeemResponse) GetNewLimit() *v1.Amount {
 	return nil
 }
 
+// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type ListCredentialsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1110,6 +1113,7 @@ func (x *ListCredentialsRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], total_owned_credentials: 2}
 type ListCredentialsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1167,6 +1171,7 @@ func (x *ListCredentialsResponse) GetTotalOwnedCredentials() uint32 {
 	return 0
 }
 
+// [Example]{"credential_type":"CREDENTIAL_TYPE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type AddCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1233,6 +1238,7 @@ func (x *AddCredentialRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"credential": "CREDENTIAL"}
 type AddCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1281,6 +1287,7 @@ func (x *AddCredentialResponse) GetCredential() string {
 	return ""
 }
 
+// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type AssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1338,6 +1345,7 @@ func (x *AssociateWalletRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"wallet_id": "WALLET_ID", "did": "DID", "public_key": "PUBLIC_KEY"}
 type AssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1404,6 +1412,7 @@ func (x *AssociateWalletResponse) GetPublicKey() string {
 	return ""
 }
 
+// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY", "token": "TOKEN"}
 type CreateAndAssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1470,6 +1479,7 @@ func (x *CreateAndAssociateWalletRequest) GetToken() string {
 	return ""
 }
 
+// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "PUBLIC_KEY", "did": "DID"}
 type CreateAndAssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1545,6 +1555,7 @@ func (x *CreateAndAssociateWalletResponse) GetDid() string {
 	return ""
 }
 
+// [Example]{"did": "DID", "credential_type": "CREDENTIAL_TYPE", "api_key": "API_KEY"}
 type RequestPresentationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1611,6 +1622,7 @@ func (x *RequestPresentationRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"presentation": "PRESENTATION"}
 type RequestPresentationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1659,6 +1671,7 @@ func (x *RequestPresentationResponse) GetPresentation() string {
 	return ""
 }
 
+// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT_PUBLIC_KEY", "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type PrepareSimplePaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1743,6 +1756,7 @@ func (x *PrepareSimplePaymentRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"status": 0, "uetr": "UETR"}
 type PrepareSimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1800,6 +1814,7 @@ func (x *PrepareSimplePaymentResponse) GetUetr() string {
 	return ""
 }
 
+// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type PrepareFundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1875,6 +1890,7 @@ func (x *PrepareFundsChangeRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"status": 0, "uetr": "UETR"}
 type PrepareFundsChangeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1932,6 +1948,7 @@ func (x *PrepareFundsChangeResponse) GetUetr() string {
 	return ""
 }
 
+// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type GetTransactionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2046,6 +2063,7 @@ func (x *GetTransactionResponse) GetTransaction() *v1.Transaction {
 	return nil
 }
 
+// [Example]{"id": "WALLET_ID", "api_key": "API_KEY"}
 type ListTransactionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2151,6 +2169,7 @@ func (x *ListTransactionsResponse) GetTransactions() []*v1.Transaction {
 	return nil
 }
 
+// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type GetTransactionSnapshotRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2265,6 +2284,7 @@ func (x *GetTransactionSnapshotResponse) GetSnapshot() *v1.TransactionSnapshot {
 	return nil
 }
 
+// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
 type ListTransactionSnapshotsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

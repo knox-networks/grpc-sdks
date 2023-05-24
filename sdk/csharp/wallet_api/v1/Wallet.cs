@@ -4539,6 +4539,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"from_wallet_id": "FROM_WALLET_ID", "issuer_public_key": "ISSUER_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4851,6 +4854,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"new_limit": {"currency_code":"USD", "amount":100, "decimals":2} }
+  /// </summary>
   public sealed partial class RedeemResponse : pb::IMessage<RedeemResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5052,6 +5058,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListCredentialsRequest : pb::IMessage<ListCredentialsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5364,6 +5373,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], total_owned_credentials: 2}
+  /// </summary>
   public sealed partial class ListCredentialsResponse : pb::IMessage<ListCredentialsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5585,6 +5597,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential_type":"CREDENTIAL_TYPE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class AddCredentialRequest : pb::IMessage<AddCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5857,6 +5872,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"credential": "CREDENTIAL"}
+  /// </summary>
   public sealed partial class AddCredentialResponse : pb::IMessage<AddCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6049,6 +6067,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class AssociateWalletRequest : pb::IMessage<AssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6281,6 +6302,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_id": "WALLET_ID", "did": "DID", "public_key": "PUBLIC_KEY"}
+  /// </summary>
   public sealed partial class AssociateWalletResponse : pb::IMessage<AssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6553,6 +6577,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY", "token": "TOKEN"}
+  /// </summary>
   public sealed partial class CreateAndAssociateWalletRequest : pb::IMessage<CreateAndAssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6825,6 +6852,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "PUBLIC_KEY", "did": "DID"}
+  /// </summary>
   public sealed partial class CreateAndAssociateWalletResponse : pb::IMessage<CreateAndAssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7137,6 +7167,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"did": "DID", "credential_type": "CREDENTIAL_TYPE", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class RequestPresentationRequest : pb::IMessage<RequestPresentationRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7409,6 +7442,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"presentation": "PRESENTATION"}
+  /// </summary>
   public sealed partial class RequestPresentationResponse : pb::IMessage<RequestPresentationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7601,6 +7637,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT_PUBLIC_KEY", "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class PrepareSimplePaymentRequest : pb::IMessage<PrepareSimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -7962,6 +8001,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"status": 0, "uetr": "UETR"}
+  /// </summary>
   public sealed partial class PrepareSimplePaymentResponse : pb::IMessage<PrepareSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8209,6 +8251,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class PrepareFundsChangeRequest : pb::IMessage<PrepareFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8530,6 +8575,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"status": 0, "uetr": "UETR"}
+  /// </summary>
   public sealed partial class PrepareFundsChangeResponse : pb::IMessage<PrepareFundsChangeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8777,6 +8825,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class GetTransactionRequest : pb::IMessage<GetTransactionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9250,6 +9301,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListTransactionsRequest : pb::IMessage<ListTransactionsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9663,6 +9717,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class GetTransactionSnapshotRequest : pb::IMessage<GetTransactionSnapshotRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10136,6 +10193,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// </summary>
   public sealed partial class ListTransactionSnapshotsRequest : pb::IMessage<ListTransactionSnapshotsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
