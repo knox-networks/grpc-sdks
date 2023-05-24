@@ -61,7 +61,7 @@ namespace Treasury {
   /// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount
   /// inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional
   /// exchange rate.
-  /// [Example]{"recipient": {"signature_system": "1", "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "promissory_files": ["PROMISSORYxFILExBYTESx1=", "PROMISSORYxFILExBYTESx2="], "exchange_rate": 1.4}
+  /// [Example]{"recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "promissory_files": ["PROMISSORYxFILExBYTESx1=", "PROMISSORYxFILExBYTESx2="], "exchange_rate": 1.4}
   /// </summary>
   public sealed partial class RemittanceRequest : pb::IMessage<RemittanceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -388,7 +388,7 @@ namespace Treasury {
   /// <summary>
   /// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left
   /// after the conversion if any, and a fee.
-  /// [Example]{"recipient": {"signature_system": "1", "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "fee_amount": {"currency_code":"USD", "amount":1, "decimals":2}, "exchange_rate": 1.4, "refunded_promissory_files": ["PROMISSORYxFILExBYTESxREFUND1=", "PROMISSORYxFILExBYTESxREFUND2="]}
+  /// [Example]{"exchanged_promissory_files": ["PROMISSORYxFILExBYTESxEXCHANGEDx1=", "PROMISSORYxFILExBYTESxEXCHANGEDx2="], "fee_amount": {"currency_code":"USD", "amount":1, "decimals":2}, "exchange_rate": 1.4, "refunded_promissory_files": ["PROMISSORYxFILExBYTESxREFUNDx1=", "PROMISSORYxFILExBYTESxREFUNDx2="]}
   /// </summary>
   public sealed partial class RemittanceResponse : pb::IMessage<RemittanceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
