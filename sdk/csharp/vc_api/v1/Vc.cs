@@ -2622,7 +2622,7 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"did": "NONCE", "data": "DATA"}
+  /// [Example]{"did": "DID", "data": "DATA"}
   /// </summary>
   public sealed partial class WaitForCompletionResponse : pb::IMessage<WaitForCompletionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

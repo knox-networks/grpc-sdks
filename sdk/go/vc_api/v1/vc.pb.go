@@ -699,7 +699,7 @@ func (x *WaitForCompletionRequest) GetNonce() string {
 	return ""
 }
 
-// [Example]{"did": "NONCE", "data": "DATA"}
+// [Example]{"did": "DID", "data": "DATA"}
 type WaitForCompletionResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
