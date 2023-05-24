@@ -1113,7 +1113,7 @@ func (x *ListCredentialsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], total_owned_credentials: 2}
+// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], "total_owned_credentials": 2}
 type ListCredentialsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2015,6 +2015,7 @@ func (x *GetTransactionRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
 type GetTransactionResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2121,6 +2122,7 @@ func (x *ListTransactionsRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
 type ListTransactionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2236,6 +2238,7 @@ func (x *GetTransactionSnapshotRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
 type GetTransactionSnapshotResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2351,6 +2354,7 @@ func (x *ListTransactionSnapshotsRequest) GetApiKey() string {
 	return ""
 }
 
+// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
 type ListTransactionSnapshotsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

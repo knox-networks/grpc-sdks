@@ -5374,7 +5374,7 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], total_owned_credentials: 2}
+  /// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], "total_owned_credentials": 2}
   /// </summary>
   public sealed partial class ListCredentialsResponse : pb::IMessage<ListCredentialsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9100,6 +9100,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
+  /// </summary>
   public sealed partial class GetTransactionResponse : pb::IMessage<GetTransactionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9536,6 +9539,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
+  /// </summary>
   public sealed partial class ListTransactionsResponse : pb::IMessage<ListTransactionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9992,6 +9998,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+  /// </summary>
   public sealed partial class GetTransactionSnapshotResponse : pb::IMessage<GetTransactionSnapshotResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10468,6 +10477,9 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred: {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+  /// </summary>
   public sealed partial class ListTransactionSnapshotsResponse : pb::IMessage<ListTransactionSnapshotsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
