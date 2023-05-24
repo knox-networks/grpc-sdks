@@ -468,7 +468,6 @@ func (x *Amount) GetDecimals() uint32 {
 // Represents a desired denomination distribution.
 // map<mantissa, quantity>
 // sum must match corresponding amount.amount
-// [Example]{"value": {100: 5}}
 type Distribution struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

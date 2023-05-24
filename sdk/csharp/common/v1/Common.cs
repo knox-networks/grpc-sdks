@@ -755,7 +755,6 @@ namespace Common {
   /// Represents a desired denomination distribution.
   /// map&lt;mantissa, quantity>
   /// sum must match corresponding amount.amount
-  /// [Example]{"value": {100: 5}}
   /// </summary>
   public sealed partial class Distribution : pb::IMessage<Distribution>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
