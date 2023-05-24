@@ -2496,7 +2496,7 @@ func (x *AuthnProvider) GetEnabled() bool {
 	return false
 }
 
-// [Example]{"app_settings": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+// [Example]{"app_settings": {"provider": 0, "enabled": true} }
 type GetAppSettingsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

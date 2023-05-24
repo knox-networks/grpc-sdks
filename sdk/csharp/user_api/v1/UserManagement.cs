@@ -9823,7 +9823,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"app_settings": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+  /// [Example]{"app_settings": {"provider": 0, "enabled": true} }
   /// </summary>
   public sealed partial class GetAppSettingsResponse : pb::IMessage<GetAppSettingsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
