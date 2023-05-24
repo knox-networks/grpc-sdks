@@ -1456,7 +1456,6 @@ func (*CreateAuthnBrowserWithWalletChallengeRequest) Descriptor() ([]byte, []int
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{21}
 }
 
-// [Example]{"did_start": { "nonce": "NONCE" }}
 // [Example]{"did_start": { "auth_token": {"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}}}
 type CreateAuthnBrowserWithWalletChallengeResponse struct {
 	state         protoimpl.MessageState
@@ -1691,7 +1690,6 @@ func (*CreateRegisterWalletChallengeRequest) Descriptor() ([]byte, []int) {
 }
 
 // [Example]{"registration_start": { "nonce": "NONCE" }}
-// [Example]{"registration_start": { "ok": "OK" }}
 type CreateRegisterWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

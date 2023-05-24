@@ -5746,7 +5746,6 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"did_start": { "nonce": "NONCE" }}
   /// [Example]{"did_start": { "auth_token": {"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": {}}, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}}}
   /// </summary>
   public sealed partial class CreateAuthnBrowserWithWalletChallengeResponse : pb::IMessage<CreateAuthnBrowserWithWalletChallengeResponse>
@@ -6614,7 +6613,6 @@ namespace UserApi.V1 {
 
   /// <summary>
   /// [Example]{"registration_start": { "nonce": "NONCE" }}
-  /// [Example]{"registration_start": { "ok": "OK" }}
   /// </summary>
   public sealed partial class CreateRegisterWalletChallengeResponse : pb::IMessage<CreateRegisterWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
