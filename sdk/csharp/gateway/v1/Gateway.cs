@@ -52,6 +52,7 @@ namespace Gateway {
   #region Messages
   /// <summary>
   /// A log entry for a Gateway connection event.
+  /// [Example]{"verifier": "VERIFIER", "note": "NOTE", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}
   /// </summary>
   public sealed partial class LogEntry : pb::IMessage<LogEntry>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -561,7 +562,7 @@ namespace Gateway {
   /// <summary>
   /// Contains a list of active connections, as well as lists of log entries for all created connections and for all
   /// removed connections.
-  /// [Example]{"active": ["ActiveConnection1", "ActiveConnection2"], "created": ["CreatedConnection1", "CreatedConnection2"], "removed": ["RemovedConnection1", "RemovedConnection2"]}
+  /// [Example]{"active": ["ActiveConnection1", "ActiveConnection2"], "created": [{"verifier": "VERIFIER", "note": "CreatedConnection1", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}, {"verifier": "VERIFIER", "note": "CreatedConnection2", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}], "removed": [{"verifier": "VERIFIER", "note": "RemovedConnection1", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}, {"verifier": "VERIFIER", "note": "RemovedConnection2", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}]}
   /// </summary>
   public sealed partial class ConnectionsResponse : pb::IMessage<ConnectionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
