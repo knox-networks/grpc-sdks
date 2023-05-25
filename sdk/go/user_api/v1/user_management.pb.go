@@ -901,7 +901,7 @@ func (x *FindByEmailRequest) GetEmail() string {
 	return ""
 }
 
-// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } } }
+// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } } }
 type FindByEmailResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2435,7 +2435,7 @@ func (x *AppSettings) GetAuthnProviders() []*AuthnProvider {
 	return nil
 }
 
-// [xExample]{"provider": 0, "enabled": true}
+// [Example]{"provider": 0, "enabled": true}
 type AuthnProvider struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2493,7 +2493,7 @@ func (x *AuthnProvider) GetEnabled() bool {
 	return false
 }
 
-// [xExample]{"app_settings": {"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}}
+// [Example]{"app_settings": {"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}}
 type GetAppSettingsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

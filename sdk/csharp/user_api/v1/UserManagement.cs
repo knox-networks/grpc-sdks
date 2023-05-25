@@ -3440,7 +3440,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } } }
+  /// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } } }
   /// </summary>
   public sealed partial class FindByEmailResponse : pb::IMessage<FindByEmailResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9583,7 +9583,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"provider": 0, "enabled": true}
+  /// [Example]{"provider": 0, "enabled": true}
   /// </summary>
   public sealed partial class AuthnProvider : pb::IMessage<AuthnProvider>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9818,7 +9818,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"app_settings": {"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}}
+  /// [Example]{"app_settings": {"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}}
   /// </summary>
   public sealed partial class GetAppSettingsResponse : pb::IMessage<GetAppSettingsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
