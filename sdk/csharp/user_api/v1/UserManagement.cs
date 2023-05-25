@@ -2628,7 +2628,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
+  /// [Example]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
   /// </summary>
   public sealed partial class HandleOIDCCallbackRequest : pb::IMessage<HandleOIDCCallbackRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6612,7 +6612,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"registration_start": { "nonce": "NONCE" }}
+  /// [Example]{"registration_start": { "nonce": "NONCE" }}
   /// </summary>
   public sealed partial class CreateRegisterWalletChallengeResponse : pb::IMessage<CreateRegisterWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

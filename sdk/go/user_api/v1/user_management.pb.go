@@ -709,7 +709,7 @@ func (x *AuthnWithProviderResponse) GetProviderUrl() string {
 	return ""
 }
 
-// [xExample]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
+// [Example]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
 type HandleOIDCCallbackRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1689,7 +1689,7 @@ func (*CreateRegisterWalletChallengeRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{25}
 }
 
-// [xExample]{"registration_start": { "nonce": "NONCE" }}
+// [Example]{"registration_start": { "nonce": "NONCE" }}
 type CreateRegisterWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
