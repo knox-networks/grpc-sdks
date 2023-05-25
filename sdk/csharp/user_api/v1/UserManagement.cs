@@ -6613,6 +6613,7 @@ namespace UserApi.V1 {
 
   /// <summary>
   /// [Example]{"registration_start": { "nonce": "NONCE" }}
+  /// [Example]{"registration_start": { "ok": "OK" }}
   /// </summary>
   public sealed partial class CreateRegisterWalletChallengeResponse : pb::IMessage<CreateRegisterWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

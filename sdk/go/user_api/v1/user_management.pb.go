@@ -1690,6 +1690,7 @@ func (*CreateRegisterWalletChallengeRequest) Descriptor() ([]byte, []int) {
 }
 
 // [Example]{"registration_start": { "nonce": "NONCE" }}
+// [Example]{"registration_start": { "ok": "OK" }}
 type CreateRegisterWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
