@@ -584,7 +584,7 @@ func (*ConfirmUserResponse) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{5}
 }
 
-// [xExample]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { } }}
+// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { } }}
 type AuthnWithProviderRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -660,7 +660,7 @@ func (x *AuthnWithProviderRequest) GetClientState() *structpb.Struct {
 	return nil
 }
 
-// [xExample]{"provider_url": "PROVIDER_URL"}
+// [Example]{"provider_url": "PROVIDER_URL"}
 type AuthnWithProviderResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

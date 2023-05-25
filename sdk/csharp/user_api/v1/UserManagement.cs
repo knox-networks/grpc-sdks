@@ -2109,7 +2109,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { } }}
+  /// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { } }}
   /// </summary>
   public sealed partial class AuthnWithProviderRequest : pb::IMessage<AuthnWithProviderRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2433,7 +2433,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"provider_url": "PROVIDER_URL"}
+  /// [Example]{"provider_url": "PROVIDER_URL"}
   /// </summary>
   public sealed partial class AuthnWithProviderResponse : pb::IMessage<AuthnWithProviderResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
