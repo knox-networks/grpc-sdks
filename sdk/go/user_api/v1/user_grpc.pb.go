@@ -876,5 +876,5 @@ var UserManagement_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "user_api/v1/user_management.proto",
+	Metadata: "user_api/v1/user.proto",
 }
