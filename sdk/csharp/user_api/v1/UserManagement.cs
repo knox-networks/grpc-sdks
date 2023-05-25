@@ -1200,7 +1200,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
+  /// [Example]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
   /// </summary>
   public sealed partial class AuthToken : pb::IMessage<AuthToken>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1719,7 +1719,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
+  /// [Example]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
   /// </summary>
   public sealed partial class ConfirmUserRequest : pb::IMessage<ConfirmUserRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1954,7 +1954,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class ConfirmUserResponse : pb::IMessage<ConfirmUserResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

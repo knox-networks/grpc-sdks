@@ -362,7 +362,7 @@ func (x *RegisterUserRequest) GetPhone() string {
 	return ""
 }
 
-// [xExample]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
+// [Example]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
 type AuthToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -487,7 +487,7 @@ func (x *RegisterUserResponse) GetUser() *User {
 	return nil
 }
 
-// [xExample]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
+// [Example]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
 type ConfirmUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -545,7 +545,7 @@ func (x *ConfirmUserRequest) GetToken() string {
 	return ""
 }
 
-// [xExample]{}
+// [Example]{}
 type ConfirmUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
