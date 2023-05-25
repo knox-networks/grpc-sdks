@@ -314,7 +314,7 @@ func (x *ListWebhooksRequest) GetPageSize() int32 {
 	return 0
 }
 
-// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
+// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
 type ListWebhooksResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -465,7 +465,7 @@ func (*DeleteWebhookResponse) Descriptor() ([]byte, []int) {
 	return file_webhook_api_v1_webhook_proto_rawDescGZIP(), []int{6}
 }
 
-// [Example] { "event_type": [0, 1], "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
+// [Example] { "event_type": 1, "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
 type EventRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

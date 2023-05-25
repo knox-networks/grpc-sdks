@@ -1122,7 +1122,7 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
+  /// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
   /// </summary>
   public sealed partial class ListWebhooksResponse : pb::IMessage<ListWebhooksResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2063,7 +2063,7 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example] { "event_type": [0, 1], "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
+  /// [Example] { "event_type": 1, "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
   /// </summary>
   public sealed partial class EventRequest : pb::IMessage<EventRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
