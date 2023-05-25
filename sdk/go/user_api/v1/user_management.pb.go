@@ -852,7 +852,7 @@ func (x *HandleOIDCCallbackResponse) GetClientState() *structpb.Struct {
 	return nil
 }
 
-// [xExample]{"email": "EMAIL"}
+// [Example]{"email": "EMAIL"}
 type FindByEmailRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -950,7 +950,7 @@ func (x *FindByEmailResponse) GetUser() *User {
 	return nil
 }
 
-// [Exxample]{"uuid": "UUID"}
+// [Example]{"uuid": "UUID"}
 type FindByIDRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1048,7 +1048,7 @@ func (x *FindByIDResponse) GetUser() *User {
 	return nil
 }
 
-// [xExample]{"email": "EMAIL", "password": "PASSWORD"}
+// [Example]{"email": "EMAIL", "password": "PASSWORD"}
 type AuthnWithPasswordRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1164,7 +1164,7 @@ func (x *AuthnWithPasswordResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [xExample]{"refresh_token": "REFRESH_TOKEN"}
+// [Example]{"refresh_token": "REFRESH_TOKEN"}
 type RefreshAccessTokenRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1271,7 +1271,7 @@ func (x *RefreshAccessTokenResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [xExample]{}
+// [Example]{}
 type GetMeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1417,7 +1417,7 @@ func (x *AuthTokenResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [xExample]{}
+// [Example]{}
 type CreateAuthnBrowserWithWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1544,7 +1544,7 @@ func (*CreateAuthnBrowserWithWalletChallengeResponse_Nonce) isCreateAuthnBrowser
 func (*CreateAuthnBrowserWithWalletChallengeResponse_AuthToken) isCreateAuthnBrowserWithWalletChallengeResponse_DidStart() {
 }
 
-// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
 type AuthnBrowserWithWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1611,7 +1611,7 @@ func (x *AuthnBrowserWithWalletRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{}
+// [Example]{}
 type AuthnBrowserWithWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1650,7 +1650,7 @@ func (*AuthnBrowserWithWalletResponse) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{24}
 }
 
-// [xExample]{}
+// [Example]{}
 type CreateRegisterWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1777,7 +1777,7 @@ func (*CreateRegisterWalletChallengeResponse_Nonce) isCreateRegisterWalletChalle
 func (*CreateRegisterWalletChallengeResponse_Ok) isCreateRegisterWalletChallengeResponse_RegistrationStart() {
 }
 
-// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
 type RegisterWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1902,7 +1902,7 @@ func (x *RegisterWalletResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [xExample]{"did": "DID"}
+// [Example]{"did": "DID"}
 type CreateAuthnWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1951,7 +1951,7 @@ func (x *CreateAuthnWalletChallengeRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{"nonce": "NONCE"}
+// [Example]{"nonce": "NONCE"}
 type CreateAuthnWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2000,7 +2000,7 @@ func (x *CreateAuthnWalletChallengeResponse) GetNonce() string {
 	return ""
 }
 
-// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
 type AuthnWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2125,7 +2125,7 @@ func (x *AuthnWalletResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [xExample]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
+// [Example]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
 type HandleSAMLCallbackRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2259,7 +2259,7 @@ func (x *HandleSAMLCallbackResponse) GetRequestOrigin() string {
 	return ""
 }
 
-// [xExample]{}
+// [Example]{}
 type SAMLSPMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2298,7 +2298,7 @@ func (*SAMLSPMetadataRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_management_proto_rawDescGZIP(), []int{35}
 }
 
-// [xExample]{"sp_metadata": "xxSPMETADATAxxBYTES="}
+// [Example]{"sp_metadata": "xxSPMETADATAxxBYTES="}
 type SAMLSPMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2347,7 +2347,7 @@ func (x *SAMLSPMetadataResponse) GetSpMetadata() []byte {
 	return nil
 }
 
-// [xExample]{}
+// [Example]{}
 type GetAppSettingsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2542,7 +2542,7 @@ func (x *GetAppSettingsResponse) GetAppSettings() *AppSettings {
 	return nil
 }
 
-// [xExample]{"did": "DID"}
+// [Example]{"did": "DID"}
 type GetUserByDIDRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2640,7 +2640,7 @@ func (x *GetUserByDIDResponse) GetUser() *User {
 	return nil
 }
 
-// [xExample]{"did": "DID"}
+// [Example]{"did": "DID"}
 type AssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2689,7 +2689,7 @@ func (x *AssociateWalletRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{}
+// [Example]{}
 type AssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

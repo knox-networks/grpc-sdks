@@ -3245,7 +3245,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"email": "EMAIL"}
+  /// [Example]{"email": "EMAIL"}
   /// </summary>
   public sealed partial class FindByEmailRequest : pb::IMessage<FindByEmailRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3644,7 +3644,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [Exxample]{"uuid": "UUID"}
+  /// [Example]{"uuid": "UUID"}
   /// </summary>
   public sealed partial class FindByIDRequest : pb::IMessage<FindByIDRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4043,7 +4043,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"email": "EMAIL", "password": "PASSWORD"}
+  /// [Example]{"email": "EMAIL", "password": "PASSWORD"}
   /// </summary>
   public sealed partial class AuthnWithPasswordRequest : pb::IMessage<AuthnWithPasswordRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4531,7 +4531,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"refresh_token": "REFRESH_TOKEN"}
+  /// [Example]{"refresh_token": "REFRESH_TOKEN"}
   /// </summary>
   public sealed partial class RefreshAccessTokenRequest : pb::IMessage<RefreshAccessTokenRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4979,7 +4979,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class GetMeRequest : pb::IMessage<GetMeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5591,7 +5591,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class CreateAuthnBrowserWithWalletChallengeRequest : pb::IMessage<CreateAuthnBrowserWithWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6027,7 +6027,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
   /// </summary>
   public sealed partial class AuthnBrowserWithWalletRequest : pb::IMessage<AuthnBrowserWithWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6302,7 +6302,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class AuthnBrowserWithWalletResponse : pb::IMessage<AuthnBrowserWithWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6457,7 +6457,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class CreateRegisterWalletChallengeRequest : pb::IMessage<CreateRegisterWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6880,7 +6880,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
   /// </summary>
   public sealed partial class RegisterWalletRequest : pb::IMessage<RegisterWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7408,7 +7408,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"did": "DID"}
+  /// [Example]{"did": "DID"}
   /// </summary>
   public sealed partial class CreateAuthnWalletChallengeRequest : pb::IMessage<CreateAuthnWalletChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7603,7 +7603,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"nonce": "NONCE"}
+  /// [Example]{"nonce": "NONCE"}
   /// </summary>
   public sealed partial class CreateAuthnWalletChallengeResponse : pb::IMessage<CreateAuthnWalletChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7798,7 +7798,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+  /// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
   /// </summary>
   public sealed partial class AuthnWalletRequest : pb::IMessage<AuthnWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8326,7 +8326,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
+  /// [Example]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
   /// </summary>
   public sealed partial class HandleSAMLCallbackRequest : pb::IMessage<HandleSAMLCallbackRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8894,7 +8894,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class SAMLSPMetadataRequest : pb::IMessage<SAMLSPMetadataRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9049,7 +9049,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"sp_metadata": "xxSPMETADATAxxBYTES="}
+  /// [Example]{"sp_metadata": "xxSPMETADATAxxBYTES="}
   /// </summary>
   public sealed partial class SAMLSPMetadataResponse : pb::IMessage<SAMLSPMetadataResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9244,7 +9244,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class GetAppSettingsRequest : pb::IMessage<GetAppSettingsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10022,7 +10022,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"did": "DID"}
+  /// [Example]{"did": "DID"}
   /// </summary>
   public sealed partial class GetUserByDIDRequest : pb::IMessage<GetUserByDIDRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10421,7 +10421,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{"did": "DID"}
+  /// [Example]{"did": "DID"}
   /// </summary>
   public sealed partial class AssociateWalletRequest : pb::IMessage<AssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10616,7 +10616,7 @@ namespace UserApi.V1 {
   }
 
   /// <summary>
-  /// [xExample]{}
+  /// [Example]{}
   /// </summary>
   public sealed partial class AssociateWalletResponse : pb::IMessage<AssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
