@@ -21,8 +21,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// A log entry for a Gateway connection event.
-// [Example]{"verifier": "VERIFIER", "note": "NOTE", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}
+// [Example]
+// {
+// "verifier": "VERIFIER",
+// "note": "NOTE",
+// "timestamp": "TIMESTAMP",
+// "origin": "ORIGIN",
+// "connection_id": "CONNECTION_ID_UUID"
+// }
 type LogEntry struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -106,8 +112,8 @@ func (x *LogEntry) GetConnectionId() string {
 	return ""
 }
 
-// Requests a list of connections known to the Gateway.
-// [Example]{ }
+// [Example]
+// {}
 type ConnectionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -146,9 +152,46 @@ func (*ConnectionsRequest) Descriptor() ([]byte, []int) {
 	return file_gateway_v1_gateway_proto_rawDescGZIP(), []int{1}
 }
 
-// Contains a list of active connections, as well as lists of log entries for all created connections and for all
-// removed connections.
-// [Example]{"active": ["ActiveConnection1", "ActiveConnection2"], "created": [{"verifier": "VERIFIER", "note": "CreatedConnection1", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}, {"verifier": "VERIFIER", "note": "CreatedConnection2", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}], "removed": [{"verifier": "VERIFIER", "note": "RemovedConnection1", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}, {"verifier": "VERIFIER", "note": "RemovedConnection2", "timestamp": "TIMESTAMP", "origin": "ORIGIN", "connection_id": "CONNECTION_ID_UUID"}]}
+// [Example]
+// {
+// "active": [
+// "ActiveConnection1",
+// "ActiveConnection2"
+// ],
+// "created": [
+// {
+// "verifier": "VERIFIER",
+// "note": "CreatedConnection1",
+// "timestamp": "TIMESTAMP",
+// "origin": "ORIGIN",
+// "connection_id": "CONNECTION_ID_UUID"
+// },
+// {
+// "verifier": "VERIFIER",
+// "note": "CreatedConnection2",
+// "timestamp": "TIMESTAMP",
+// "origin": "ORIGIN",
+// "connection_id":
+// "CONNECTION_ID_UUID"
+// }
+// ],
+// "removed": [
+// {
+// "verifier": "VERIFIER",
+// "note": "RemovedConnection1",
+// "timestamp": "TIMESTAMP",
+// "origin": "ORIGIN",
+// "connection_id": "CONNECTION_ID_UUID"
+// },
+// {
+// "verifier": "VERIFIER",
+// "note": "RemovedConnection2",
+// "timestamp": "TIMESTAMP",
+// "origin": "ORIGIN",
+// "connection_id": "CONNECTION_ID_UUID"
+// }
+// ]
+// }
 type ConnectionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
