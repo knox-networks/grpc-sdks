@@ -422,29 +422,12 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 // {
 // "roles": [
 // {
-// "verifier": "xVERIFIERxBYTES=",
-// "role_enum": {
-// "authorized": true
-// }
+// "key": "KEY1",
+// "value": "VALUE1"
 // },
 // {
-// "verifier": "xVERIFIERxBYTES=",
-// "role_enum": {
-// "issue_permissions": {
-// "inner": [
-// {
-// "currency_code":"USD",
-// "amount":100,
-// "decimals":2
-// },
-// {
-// "currency_code":"USD",
-// "amount":500,
-// "decimals":2
-// }
-// ]
-// }
-// }
+// "key": "KEY2",
+// "value": "VALUE2"
 // }
 // ]
 // }
