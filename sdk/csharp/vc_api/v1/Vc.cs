@@ -98,8 +98,14 @@ namespace VcApi.V1 {
 
   #region Messages
   /// <summary>
-  /// For more details, refer to https://www.w3.org/TR/vc-data-integrity/
-  /// [Example]{"type": "TYPE", "created": "CREATED_TIMESTAMP", "verification_method": "VERIFICATION_METHOD", "proof_purpose": "PROOF_PURPOSE", "proof_value": "PROOF_VALUE"}
+  /// [Example]
+  ///{
+  ///"type": "TYPE", 
+  ///"created": "CREATED_TIMESTAMP", 
+  ///"verification_method": "VERIFICATION_METHOD", 
+  ///"proof_purpose": "PROOF_PURPOSE", 
+  ///"proof_value": "PROOF_VALUE"
+  ///}
   /// </summary>
   public sealed partial class CredentialProof : pb::IMessage<CredentialProof>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -454,7 +460,11 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_type": 1, "did": "YOUR_DID"}
+  /// [Example]
+  ///{
+  ///"credential_type": 1, 
+  ///"did": "YOUR_DID"
+  ///}
   /// </summary>
   public sealed partial class CreateIssuanceChallengeRequest : pb::IMessage<CreateIssuanceChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -689,7 +699,12 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": 1}
+  /// [Example]
+  ///{
+  ///"nonce": "NONCE", 
+  ///"endpoint": "QR_URL_ENDPOINT", 
+  ///"credential_type": 1
+  ///}
   /// </summary>
   public sealed partial class CreateIssuanceChallengeResponse : pb::IMessage<CreateIssuanceChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -964,7 +979,13 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_type": 1, "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID"}
+  /// [Example]
+  ///{
+  ///"credential_type": 1, 
+  ///"nonce": "NONCE", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"did": "YOUR_DID"
+  ///}
   /// </summary>
   public sealed partial class IssueVerifiableCredentialRequest : pb::IMessage<IssueVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1279,7 +1300,10 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential": 1}
+  /// [Example]
+  ///{
+  ///"credential": 1
+  ///}
   /// </summary>
   public sealed partial class IssueVerifiableCredentialResponse : pb::IMessage<IssueVerifiableCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1474,7 +1498,13 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_types": [0, 1]}
+  /// [Example]
+  ///{
+  ///"credential_types": [
+  ///0,
+  ///1
+  ///]
+  ///}
   /// </summary>
   public sealed partial class CreatePresentationChallengeRequest : pb::IMessage<CreatePresentationChallengeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1660,7 +1690,15 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_types": [0, 1]}
+  /// [Example]
+  ///{
+  ///"nonce": "NONCE", 
+  ///"endpoint": "QR_URL_ENDPOINT", 
+  ///"credential_types": [
+  ///0, 
+  ///1
+  ///]
+  ///}
   /// </summary>
   public sealed partial class CreatePresentationChallengeResponse : pb::IMessage<CreatePresentationChallengeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1926,7 +1964,17 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID", "credential_type": [0, 1]}
+  /// [Example]
+  ///{
+  ///"presentation": "PRESENTATION", 
+  ///"nonce": "NONCE", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"did": "YOUR_DID", 
+  ///"credential_type": [
+  ///0, 
+  ///1
+  ///]
+  ///}
   /// </summary>
   public sealed partial class PresentVerifiableCredentialRequest : pb::IMessage<PresentVerifiableCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2272,7 +2320,8 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{ }
+  /// [Example]
+  ///{} 
   /// </summary>
   public sealed partial class PresentVerifiableCredentialResponse : pb::IMessage<PresentVerifiableCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2427,7 +2476,10 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"nonce": "NONCE"}
+  /// [Example]
+  ///{
+  ///"nonce": "NONCE"
+  ///}
   /// </summary>
   public sealed partial class WaitForCompletionRequest : pb::IMessage<WaitForCompletionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2622,7 +2674,11 @@ namespace VcApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"did": "DID", "data": "DATA"}
+  /// [Example]
+  ///{
+  ///"did": "DID", 
+  ///"data": "DATA"
+  ///}
   /// </summary>
   public sealed partial class WaitForCompletionResponse : pb::IMessage<WaitForCompletionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

@@ -125,7 +125,13 @@ func (PrepareFundsChangeResponse_Status) EnumDescriptor() ([]byte, []int) {
 	return file_wallet_api_v1_wallet_proto_rawDescGZIP(), []int{28, 0}
 }
 
-// [Example]{"from_wallet_id": "FROM_WALLET_ID", "recipient_public_key": "RECIPIENT_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "from_wallet_id": "FROM_WALLET_ID",
+// "recipient_public_key": "RECIPIENT_PUBLIC_KEY",
+// "promissory_id": "PROMISSORY_ID",
+// "api_key": "API_KEY"
+// }
 type TransferRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -201,7 +207,8 @@ func (x *TransferRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type TransferResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -240,7 +247,10 @@ func (*TransferResponse) Descriptor() ([]byte, []int) {
 	return file_wallet_api_v1_wallet_proto_rawDescGZIP(), []int{1}
 }
 
-// [Example]{"owner_name": "OWNER_NAME"}
+// [Example]
+// {
+// "owner_name": "OWNER_NAME"
+// }
 type CreateOwnerRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -289,7 +299,12 @@ func (x *CreateOwnerRequest) GetOwnerName() string {
 	return ""
 }
 
-// [Example]{"owner_id": "OWNER_ID", "api_key": "API_KEY", "owner_name": "OWNER_NAME"}
+// [Example]
+// {
+// "owner_id": "OWNER_ID",
+// "api_key": "API_KEY",
+// "owner_name": "OWNER_NAME"
+// }
 type CreateOwnerResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -356,7 +371,11 @@ func (x *CreateOwnerResponse) GetOwnerName() string {
 	return ""
 }
 
-// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY"}
+// [Example]
+// {
+// "wallet_name": "WALLET_NAME",
+// "api_key": "API_KEY"
+// }
 type CreateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -414,7 +433,13 @@ func (x *CreateWalletRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "WALLET_PUBLIC_KEY", "did": "WALLET_DID"}
+// [Example]
+// {
+// "wallet_id": "WALLET_ID",
+// "wallet_name": "WALLET_NAME",
+// "public_key": "WALLET_PUBLIC_KEY",
+// "did": "WALLET_DID"
+// }
 type CreateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -490,7 +515,12 @@ func (x *CreateWalletResponse) GetDid() string {
 	return ""
 }
 
-// [Example]{"page": 0, "page_size": 10, "api_key": "API_KEY"}
+// [Example]
+// {
+// "page": 0,
+// "page_size": 10,
+// "api_key": "API_KEY"
+// }
 type ListWalletsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -557,7 +587,24 @@ func (x *ListWalletsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"wallets": [{"wallet_name": "WALLET1", "wallet_id": "ID1", "public_key": "PK1", "did": "DID2"}, {"wallet_name": "WALLET2", "wallet_id": "ID2", "public_key": "PK2", "did": "DID2"}], "total_owned_wallets": 5}
+// [Example]
+// {
+// "wallets": [
+// {
+// "wallet_name": "WALLET1",
+// "wallet_id": "ID1",
+// "public_key": "PK1",
+// "did": "DID2"
+// },
+// {
+// "wallet_name": "WALLET2",
+// "wallet_id": "ID2",
+// "public_key": "PK2",
+// "did": "DID2"
+// }
+// ],
+// "total_owned_wallets": 5
+// }
 type ListWalletsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -615,7 +662,11 @@ func (x *ListWalletsResponse) GetTotalOwnedWallets() uint32 {
 	return 0
 }
 
-// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type ListWalletBalancesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -673,7 +724,15 @@ func (x *ListWalletBalancesRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "file_count": 57}
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "file_count": 57
+// }
 type WalletBalance struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -731,7 +790,27 @@ func (x *WalletBalance) GetFileCount() int64 {
 	return 0
 }
 
-// [Example]{"balances": [{"amount": {"currency_code":"USD", "amount":5700, "decimals":2}, "file_count": 57}, {"amount": {"currency_code":"USD", "amount":500, "decimals":2}, "file_count": 3} ] }
+// [Example]
+// {
+// "balances": [
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":5700,
+// "decimals":2
+// },
+// "file_count": 57
+// },
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// },
+// "file_count": 3
+// }
+// ]
+// }
 type ListWalletBalancesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -779,7 +858,13 @@ func (x *ListWalletBalancesResponse) GetBalances() []*WalletBalance {
 	return nil
 }
 
-// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "page": 0,
+// "page_size": 10000,
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type ListFundsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -855,7 +940,28 @@ func (x *ListFundsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", "transfer_signature": "xxTRANSFERxxSIGNATURExBYTES="}}]}
+// [Example]
+// {
+// "total_owned_funds": 1,
+// "funds": [
+// {
+// "wallet_id": "WALLET_ID",
+// "promissory": {
+// "version": "VERSION",
+// "id": "ID",
+// "currency": "CURRENCY",
+// "amount": 100,
+// "decimals": 2,
+// "authority": "AUTHORITY_PUBLIC_KEY",
+// "issuer": "ISSUER_PUBLIC_KEY",
+// "issuance_date": "ISSUANCE_DATE_TIMESTAMP",
+// "block_depth": 3,
+// "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=",
+// "transfer_signature": "xxTRANSFERxxSIGNATURExBYTES="
+// }
+// }
+// ]
+// }
 type ListFundsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -913,7 +1019,13 @@ func (x *ListFundsResponse) GetTotalOwnedFunds() uint32 {
 	return 0
 }
 
-// [Example]{"from_wallet_id": "FROM_WALLET_ID", "issuer_public_key": "ISSUER_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "from_wallet_id": "FROM_WALLET_ID",
+// "issuer_public_key": "ISSUER_PUBLIC_KEY",
+// "promissory_id": "PROMISSORY_ID",
+// "api_key": "API_KEY"
+// }
 type RedeemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -989,7 +1101,14 @@ func (x *RedeemRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"new_limit": {"currency_code":"USD", "amount":100, "decimals":2} }
+// [Example]
+// {
+// "new_limit": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// }
+// }
 type RedeemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1038,7 +1157,13 @@ func (x *RedeemResponse) GetNewLimit() *v1.Amount {
 	return nil
 }
 
-// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "page": 0,
+// "page_size": 10000,
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type ListCredentialsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1114,7 +1239,14 @@ func (x *ListCredentialsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], "total_owned_credentials": 2}
+// [Example]
+// {
+// "credentials": [
+// "CREDENTIAL1",
+// "CREDENTIAL2"
+// ],
+// "total_owned_credentials": 2
+// }
 type ListCredentialsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1172,7 +1304,12 @@ func (x *ListCredentialsResponse) GetTotalOwnedCredentials() uint32 {
 	return 0
 }
 
-// [Example]{"credential_type":"CREDENTIAL_TYPE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "credential_type":"CREDENTIAL_TYPE",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type AddCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1239,7 +1376,10 @@ func (x *AddCredentialRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"credential": "CREDENTIAL"}
+// [Example]
+// {
+// "credential": "CREDENTIAL"
+// }
 type AddCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1288,7 +1428,11 @@ func (x *AddCredentialResponse) GetCredential() string {
 	return ""
 }
 
-// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type AssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1346,7 +1490,12 @@ func (x *AssociateWalletRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"wallet_id": "WALLET_ID", "did": "DID", "public_key": "PUBLIC_KEY"}
+// [Example]
+// {
+// "wallet_id": "WALLET_ID",
+// "did": "DID",
+// "public_key": "PUBLIC_KEY"
+// }
 type AssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1413,7 +1562,12 @@ func (x *AssociateWalletResponse) GetPublicKey() string {
 	return ""
 }
 
-// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY", "token": "TOKEN"}
+// [Example]
+// {
+// "wallet_name": "WALLET_NAME",
+// "api_key": "API_KEY",
+// "token": "TOKEN"
+// }
 type CreateAndAssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1480,7 +1634,13 @@ func (x *CreateAndAssociateWalletRequest) GetToken() string {
 	return ""
 }
 
-// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "PUBLIC_KEY", "did": "DID"}
+// [Example]
+// {
+// "wallet_id": "WALLET_ID",
+// "wallet_name": "WALLET_NAME",
+// "public_key": "PUBLIC_KEY",
+// "did": "DID"
+// }
 type CreateAndAssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1556,7 +1716,12 @@ func (x *CreateAndAssociateWalletResponse) GetDid() string {
 	return ""
 }
 
-// [Example]{"did": "DID", "credential_type": "CREDENTIAL_TYPE", "api_key": "API_KEY"}
+// [Example]
+// {
+// "did": "DID",
+// "credential_type": "CREDENTIAL_TYPE",
+// "api_key": "API_KEY"
+// }
 type RequestPresentationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1623,7 +1788,10 @@ func (x *RequestPresentationRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"presentation": "PRESENTATION"}
+// [Example]
+// {
+// "presentation": "PRESENTATION"
+// }
 type RequestPresentationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1672,7 +1840,18 @@ func (x *RequestPresentationResponse) GetPresentation() string {
 	return ""
 }
 
-// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT_PUBLIC_KEY", "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "recipient": "RECIPIENT_PUBLIC_KEY",
+// "user_reference": "TRANSACTION_REFERENCE",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type PrepareSimplePaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1757,7 +1936,11 @@ func (x *PrepareSimplePaymentRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"status": 0, "uetr": "UETR"}
+// [Example]
+// {
+// "status": 0,
+// "uetr": "UETR"
+// }
 type PrepareSimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1815,7 +1998,17 @@ func (x *PrepareSimplePaymentResponse) GetUetr() string {
 	return ""
 }
 
-// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "user_reference": "TRANSACTION_REFERENCE",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type PrepareFundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1891,7 +2084,11 @@ func (x *PrepareFundsChangeRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"status": 0, "uetr": "UETR"}
+// [Example]
+// {
+// "status": 0,
+// "uetr": "UETR"
+// }
 type PrepareFundsChangeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1949,7 +2146,12 @@ func (x *PrepareFundsChangeResponse) GetUetr() string {
 	return ""
 }
 
-// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "uetr": "UETR",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type GetTransactionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2016,7 +2218,25 @@ func (x *GetTransactionRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
+// [Example]
+// {
+// "transaction": {
+// "type": 1,
+// "role": 0,
+// "uetr": "UETR",
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "created": "CREATED_TIMESTAMP",
+// "updated": "UPDATED_TIMESTAMP",
+// "memo": "MEMO",
+// "owner": "OWNER_PUBLIC_KEY",
+// "counterparty": "COUNTERPARTY_PUBLIC_KEY",
+// "status": 0
+// }
+// }
 type GetTransactionResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2065,7 +2285,11 @@ func (x *GetTransactionResponse) GetTransaction() *v1.Transaction {
 	return nil
 }
 
-// [Example]{"id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type ListTransactionsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2123,7 +2347,43 @@ func (x *ListTransactionsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"transactions": [{"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}, {"type": 2, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":500, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 1}]}
+// [Example]
+// {
+// "transactions": [
+// {
+// "type": 1,
+// "role": 0,
+// "uetr": "UETR",
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "created": "CREATED_TIMESTAMP",
+// "updated": "UPDATED_TIMESTAMP",
+// "memo": "MEMO",
+// "owner": "OWNER_PUBLIC_KEY",
+// "counterparty": "COUNTERPARTY_PUBLIC_KEY",
+// "status": 0
+// },
+// {
+// "type": 2,
+// "role": 0,
+// "uetr": "UETR",
+// "amount": {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// },
+// "created": "CREATED_TIMESTAMP",
+// "updated": "UPDATED_TIMESTAMP",
+// "memo": "MEMO",
+// "owner": "OWNER_PUBLIC_KEY",
+// "counterparty": "COUNTERPARTY_PUBLIC_KEY",
+// "status": 1
+// }
+// ]
+// }
 type ListTransactionsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2172,7 +2432,12 @@ func (x *ListTransactionsResponse) GetTransactions() []*v1.Transaction {
 	return nil
 }
 
-// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "uetr": "UETR",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type GetTransactionSnapshotRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2239,7 +2504,22 @@ func (x *GetTransactionSnapshotRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+// [Example]
+// {
+// "snapshot": {
+// "status": 5,
+// "promissories": [
+// "PROMISSORYxIDx1",
+// "PROMISSORYxIDx2"
+// ],
+// "amount_transferred": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "message": "MESSAGE"
+// }
+// }
 type GetTransactionSnapshotResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2288,7 +2568,12 @@ func (x *GetTransactionSnapshotResponse) GetSnapshot() *v1.TransactionSnapshot {
 	return nil
 }
 
-// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+// [Example]
+// {
+// "uetr": "UETR",
+// "wallet_id": "WALLET_ID",
+// "api_key": "API_KEY"
+// }
 type ListTransactionSnapshotsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2355,7 +2640,38 @@ func (x *ListTransactionSnapshotsRequest) GetApiKey() string {
 	return ""
 }
 
-// [Example]{"snapshots": [{"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}, {"status": 3, "promissories": ["PROMISSORYxIDx3", "PROMISSORYxIDx4"], "amount_transferred": {"currency_code":"USD", "amount":500, "decimals":2}, "message": "MESSAGE2"}]}
+// [Example]
+// {
+// "snapshots": [
+// {
+// "status": 5,
+// "promissories": [
+// "PROMISSORYxIDx1",
+// "PROMISSORYxIDx2"
+// ],
+// "amount_transferred": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "message": "MESSAGE"
+// },
+// {
+// "status": 3,
+// "promissories": [
+// "PROMISSORYxIDx3",
+// "PROMISSORYxIDx4"
+// ],
+// "amount_transferred": {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// },
+// "message": "MESSAGE2"
+// }
+// ]
+// }
+// }
 type ListTransactionSnapshotsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

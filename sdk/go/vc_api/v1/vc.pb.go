@@ -74,8 +74,14 @@ func (CredentialType) EnumDescriptor() ([]byte, []int) {
 	return file_vc_api_v1_vc_proto_rawDescGZIP(), []int{0}
 }
 
-// For more details, refer to https://www.w3.org/TR/vc-data-integrity/
-// [Example]{"type": "TYPE", "created": "CREATED_TIMESTAMP", "verification_method": "VERIFICATION_METHOD", "proof_purpose": "PROOF_PURPOSE", "proof_value": "PROOF_VALUE"}
+// [Example]
+// {
+// "type": "TYPE",
+// "created": "CREATED_TIMESTAMP",
+// "verification_method": "VERIFICATION_METHOD",
+// "proof_purpose": "PROOF_PURPOSE",
+// "proof_value": "PROOF_VALUE"
+// }
 type CredentialProof struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -160,7 +166,11 @@ func (x *CredentialProof) GetProofValue() string {
 	return ""
 }
 
-// [Example]{"credential_type": 1, "did": "YOUR_DID"}
+// [Example]
+// {
+// "credential_type": 1,
+// "did": "YOUR_DID"
+// }
 type CreateIssuanceChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -218,7 +228,12 @@ func (x *CreateIssuanceChallengeRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_type": 1}
+// [Example]
+// {
+// "nonce": "NONCE",
+// "endpoint": "QR_URL_ENDPOINT",
+// "credential_type": 1
+// }
 type CreateIssuanceChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -285,7 +300,13 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 	return CredentialType_CREDENTIAL_TYPE_UNSPECIFIED
 }
 
-// [Example]{"credential_type": 1, "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID"}
+// [Example]
+// {
+// "credential_type": 1,
+// "nonce": "NONCE",
+// "signature": "SIGNATURExBYTES=",
+// "did": "YOUR_DID"
+// }
 type IssueVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -361,7 +382,10 @@ func (x *IssueVerifiableCredentialRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"credential": 1}
+// [Example]
+// {
+// "credential": 1
+// }
 type IssueVerifiableCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -410,7 +434,13 @@ func (x *IssueVerifiableCredentialResponse) GetCredential() string {
 	return ""
 }
 
-// [Example]{"credential_types": [0, 1]}
+// [Example]
+// {
+// "credential_types": [
+// 0,
+// 1
+// ]
+// }
 type CreatePresentationChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -459,7 +489,15 @@ func (x *CreatePresentationChallengeRequest) GetCredentialTypes() []CredentialTy
 	return nil
 }
 
-// [Example]{"nonce": "NONCE", "endpoint": "QR_URL_ENDPOINT", "credential_types": [0, 1]}
+// [Example]
+// {
+// "nonce": "NONCE",
+// "endpoint": "QR_URL_ENDPOINT",
+// "credential_types": [
+// 0,
+// 1
+// ]
+// }
 type CreatePresentationChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -526,7 +564,17 @@ func (x *CreatePresentationChallengeResponse) GetCredentialTypes() []CredentialT
 	return nil
 }
 
-// [Example]{"presentation": "PRESENTATION", "nonce": "NONCE", "signature": "SIGNATURExBYTES=", "did": "YOUR_DID", "credential_type": [0, 1]}
+// [Example]
+// {
+// "presentation": "PRESENTATION",
+// "nonce": "NONCE",
+// "signature": "SIGNATURExBYTES=",
+// "did": "YOUR_DID",
+// "credential_type": [
+// 0,
+// 1
+// ]
+// }
 type PresentVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -611,7 +659,8 @@ func (x *PresentVerifiableCredentialRequest) GetCredentialType() []CredentialTyp
 	return nil
 }
 
-// [Example]{ }
+// [Example]
+// {}
 type PresentVerifiableCredentialResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -650,7 +699,10 @@ func (*PresentVerifiableCredentialResponse) Descriptor() ([]byte, []int) {
 	return file_vc_api_v1_vc_proto_rawDescGZIP(), []int{8}
 }
 
-// [Example]{"nonce": "NONCE"}
+// [Example]
+// {
+// "nonce": "NONCE"
+// }
 type WaitForCompletionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -699,7 +751,11 @@ func (x *WaitForCompletionRequest) GetNonce() string {
 	return ""
 }
 
-// [Example]{"did": "DID", "data": "DATA"}
+// [Example]
+// {
+// "did": "DID",
+// "data": "DATA"
+// }
 type WaitForCompletionResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

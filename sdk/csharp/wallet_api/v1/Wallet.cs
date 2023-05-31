@@ -194,7 +194,13 @@ namespace WalletApi.V1 {
   }
   #region Messages
   /// <summary>
-  /// [Example]{"from_wallet_id": "FROM_WALLET_ID", "recipient_public_key": "RECIPIENT_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"from_wallet_id": "FROM_WALLET_ID", 
+  ///"recipient_public_key": "RECIPIENT_PUBLIC_KEY", 
+  ///"promissory_id": "PROMISSORY_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class TransferRequest : pb::IMessage<TransferRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -509,7 +515,8 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class TransferResponse : pb::IMessage<TransferResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -664,7 +671,10 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"owner_name": "OWNER_NAME"}
+  /// [Example]
+  ///{
+  ///"owner_name": "OWNER_NAME"
+  ///}
   /// </summary>
   public sealed partial class CreateOwnerRequest : pb::IMessage<CreateOwnerRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -859,7 +869,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"owner_id": "OWNER_ID", "api_key": "API_KEY", "owner_name": "OWNER_NAME"}
+  /// [Example]
+  ///{
+  ///"owner_id": "OWNER_ID", 
+  ///"api_key": "API_KEY", 
+  ///"owner_name": "OWNER_NAME"
+  ///}
   /// </summary>
   public sealed partial class CreateOwnerResponse : pb::IMessage<CreateOwnerResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1134,7 +1149,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"wallet_name": "WALLET_NAME", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class CreateWalletRequest : pb::IMessage<CreateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1369,7 +1388,13 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "WALLET_PUBLIC_KEY", "did": "WALLET_DID"}
+  /// [Example]
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"wallet_name": "WALLET_NAME", 
+  ///"public_key": "WALLET_PUBLIC_KEY", 
+  ///"did": "WALLET_DID"
+  ///}
   /// </summary>
   public sealed partial class CreateWalletResponse : pb::IMessage<CreateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1684,7 +1709,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"page": 0, "page_size": 10, "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"page": 0, 
+  ///"page_size": 10, 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListWalletsRequest : pb::IMessage<ListWalletsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1959,7 +1989,24 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallets": [{"wallet_name": "WALLET1", "wallet_id": "ID1", "public_key": "PK1", "did": "DID2"}, {"wallet_name": "WALLET2", "wallet_id": "ID2", "public_key": "PK2", "did": "DID2"}], "total_owned_wallets": 5}
+  /// [Example]
+  ///{
+  ///"wallets": [
+  ///{
+  ///"wallet_name": "WALLET1", 
+  ///"wallet_id": "ID1", 
+  ///"public_key": "PK1", 
+  ///"did": "DID2"
+  ///}, 
+  ///{
+  ///"wallet_name": "WALLET2", 
+  ///"wallet_id": "ID2", 
+  ///"public_key": "PK2", 
+  ///"did": "DID2"
+  ///}
+  ///], 
+  ///"total_owned_wallets": 5
+  ///}
   /// </summary>
   public sealed partial class ListWalletsResponse : pb::IMessage<ListWalletsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2503,7 +2550,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListWalletBalancesRequest : pb::IMessage<ListWalletBalancesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2738,7 +2789,15 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "file_count": 57}
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"file_count": 57
+  ///}
   /// </summary>
   public sealed partial class WalletBalance : pb::IMessage<WalletBalance>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2982,7 +3041,27 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"balances": [{"amount": {"currency_code":"USD", "amount":5700, "decimals":2}, "file_count": 57}, {"amount": {"currency_code":"USD", "amount":500, "decimals":2}, "file_count": 3} ] }
+  /// [Example]
+  ///{
+  ///"balances": [
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":5700, 
+  ///"decimals":2
+  ///}, 
+  ///"file_count": 57
+  ///}, 
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///}, 
+  ///"file_count": 3
+  ///} 
+  ///] 
+  ///}
   /// </summary>
   public sealed partial class ListWalletBalancesResponse : pb::IMessage<ListWalletBalancesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3163,7 +3242,13 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"page": 0, 
+  ///"page_size": 10000, 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListFundsRequest : pb::IMessage<ListFundsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3478,7 +3563,28 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"total_owned_funds": 1, "funds": [{"wallet_id": "WALLET_ID", "promissory": {"version": "VERSION", "id": "ID", "currency": "CURRENCY", "amount": 100, "decimals": 2, "authority": "AUTHORITY_PUBLIC_KEY", "issuer": "ISSUER_PUBLIC_KEY", "issuance_date": "ISSUANCE_DATE_TIMESTAMP", "block_depth": 3, "authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", "transfer_signature": "xxTRANSFERxxSIGNATURExBYTES="}}]}
+  /// [Example]
+  ///{
+  ///"total_owned_funds": 1, 
+  ///"funds": [
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"promissory": {
+  ///"version": "VERSION", 
+  ///"id": "ID", 
+  ///"currency": "CURRENCY", 
+  ///"amount": 100, 
+  ///"decimals": 2, 
+  ///"authority": "AUTHORITY_PUBLIC_KEY", 
+  ///"issuer": "ISSUER_PUBLIC_KEY", 
+  ///"issuance_date": "ISSUANCE_DATE_TIMESTAMP", 
+  ///"block_depth": 3, 
+  ///"authorization_signature": "xAUTHORIZATIONxxSIGNATURExBYTES=", 
+  ///"transfer_signature": "xxTRANSFERxxSIGNATURExBYTES="
+  ///}
+  ///}
+  ///]
+  ///}
   /// </summary>
   public sealed partial class ListFundsResponse : pb::IMessage<ListFundsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4543,7 +4649,13 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"from_wallet_id": "FROM_WALLET_ID", "issuer_public_key": "ISSUER_PUBLIC_KEY", "promissory_id": "PROMISSORY_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"from_wallet_id": "FROM_WALLET_ID", 
+  ///"issuer_public_key": "ISSUER_PUBLIC_KEY", 
+  ///"promissory_id": "PROMISSORY_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4858,7 +4970,14 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"new_limit": {"currency_code":"USD", "amount":100, "decimals":2} }
+  /// [Example]
+  ///{
+  ///"new_limit": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}
+  ///}
   /// </summary>
   public sealed partial class RedeemResponse : pb::IMessage<RedeemResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5062,7 +5181,13 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"page": 0, "page_size": 10000, "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"page": 0, 
+  ///"page_size": 10000, 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListCredentialsRequest : pb::IMessage<ListCredentialsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5377,7 +5502,14 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credentials": ["CREDENTIAL1", "CREDENTIAL2"], "total_owned_credentials": 2}
+  /// [Example]
+  ///{
+  ///"credentials": [
+  ///"CREDENTIAL1", 
+  ///"CREDENTIAL2"
+  ///], 
+  ///"total_owned_credentials": 2
+  ///}
   /// </summary>
   public sealed partial class ListCredentialsResponse : pb::IMessage<ListCredentialsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5601,7 +5733,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential_type":"CREDENTIAL_TYPE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"credential_type":"CREDENTIAL_TYPE",
+  ///"wallet_id": "WALLET_ID",
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class AddCredentialRequest : pb::IMessage<AddCredentialRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5876,7 +6013,10 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"credential": "CREDENTIAL"}
+  /// [Example]
+  ///{
+  ///"credential": "CREDENTIAL"
+  ///}
   /// </summary>
   public sealed partial class AddCredentialResponse : pb::IMessage<AddCredentialResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6071,7 +6211,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class AssociateWalletRequest : pb::IMessage<AssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6306,7 +6450,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_id": "WALLET_ID", "did": "DID", "public_key": "PUBLIC_KEY"}
+  /// [Example]
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"did": "DID", 
+  ///"public_key": "PUBLIC_KEY"
+  ///}
   /// </summary>
   public sealed partial class AssociateWalletResponse : pb::IMessage<AssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6581,7 +6730,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_name": "WALLET_NAME", "api_key": "API_KEY", "token": "TOKEN"}
+  /// [Example]
+  ///{
+  ///"wallet_name": "WALLET_NAME", 
+  ///"api_key": "API_KEY", 
+  ///"token": "TOKEN"
+  ///}
   /// </summary>
   public sealed partial class CreateAndAssociateWalletRequest : pb::IMessage<CreateAndAssociateWalletRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6856,7 +7010,13 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"wallet_id": "WALLET_ID", "wallet_name": "WALLET_NAME", "public_key": "PUBLIC_KEY", "did": "DID"}
+  /// [Example]
+  ///{
+  ///"wallet_id": "WALLET_ID", 
+  ///"wallet_name": "WALLET_NAME", 
+  ///"public_key": "PUBLIC_KEY", 
+  ///"did": "DID"
+  ///} 
   /// </summary>
   public sealed partial class CreateAndAssociateWalletResponse : pb::IMessage<CreateAndAssociateWalletResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7171,7 +7331,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"did": "DID", "credential_type": "CREDENTIAL_TYPE", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"did": "DID", 
+  ///"credential_type": "CREDENTIAL_TYPE", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class RequestPresentationRequest : pb::IMessage<RequestPresentationRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7446,7 +7611,10 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"presentation": "PRESENTATION"}
+  /// [Example]
+  ///{
+  ///"presentation": "PRESENTATION"
+  ///}
   /// </summary>
   public sealed partial class RequestPresentationResponse : pb::IMessage<RequestPresentationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -7641,7 +7809,18 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT_PUBLIC_KEY", "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"recipient": "RECIPIENT_PUBLIC_KEY", 
+  ///"user_reference": "TRANSACTION_REFERENCE", 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class PrepareSimplePaymentRequest : pb::IMessage<PrepareSimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8005,7 +8184,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"status": 0, "uetr": "UETR"}
+  /// [Example]
+  ///{
+  ///"status": 0, 
+  ///"uetr": "UETR"
+  ///}
   /// </summary>
   public sealed partial class PrepareSimplePaymentResponse : pb::IMessage<PrepareSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8255,7 +8438,17 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "user_reference": "TRANSACTION_REFERENCE", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"user_reference": "TRANSACTION_REFERENCE", 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class PrepareFundsChangeRequest : pb::IMessage<PrepareFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8579,7 +8772,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"status": 0, "uetr": "UETR"}
+  /// [Example]
+  ///{
+  ///"status": 0, 
+  ///"uetr": "UETR"
+  ///}
   /// </summary>
   public sealed partial class PrepareFundsChangeResponse : pb::IMessage<PrepareFundsChangeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8829,7 +9026,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"uetr": "UETR", 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class GetTransactionRequest : pb::IMessage<GetTransactionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9104,7 +9306,25 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"transaction": {"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}}
+  /// [Example]
+  ///{
+  ///"transaction": {
+  ///"type": 1, 
+  ///"role": 0, 
+  ///"uetr": "UETR", 
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"created": "CREATED_TIMESTAMP", 
+  ///"updated": "UPDATED_TIMESTAMP", 
+  ///"memo": "MEMO", 
+  ///"owner": "OWNER_PUBLIC_KEY", 
+  ///"counterparty": "COUNTERPARTY_PUBLIC_KEY", 
+  ///"status": 0
+  ///}
+  ///}
   /// </summary>
   public sealed partial class GetTransactionResponse : pb::IMessage<GetTransactionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9308,7 +9528,11 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListTransactionsRequest : pb::IMessage<ListTransactionsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9543,7 +9767,43 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"transactions": [{"type": 1, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 0}, {"type": 2, "role": 0, "uetr": "UETR", "amount": {"currency_code":"USD", "amount":500, "decimals":2}, "created": "CREATED_TIMESTAMP", "updated": "UPDATED_TIMESTAMP", "memo": "MEMO", "owner": "OWNER_PUBLIC_KEY", "counterparty": "COUNTERPARTY_PUBLIC_KEY", "status": 1}]}
+  /// [Example]
+  ///{
+  ///"transactions": [
+  ///{
+  ///"type": 1, 
+  ///"role": 0, 
+  ///"uetr": "UETR", 
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"created": "CREATED_TIMESTAMP", 
+  ///"updated": "UPDATED_TIMESTAMP", 
+  ///"memo": "MEMO", 
+  ///"owner": "OWNER_PUBLIC_KEY", 
+  ///"counterparty": "COUNTERPARTY_PUBLIC_KEY", 
+  ///"status": 0
+  ///}, 
+  ///{
+  ///"type": 2, 
+  ///"role": 0, 
+  ///"uetr": "UETR", 
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///}, 
+  ///"created": "CREATED_TIMESTAMP", 
+  ///"updated": "UPDATED_TIMESTAMP", 
+  ///"memo": "MEMO", 
+  ///"owner": "OWNER_PUBLIC_KEY", 
+  ///"counterparty": "COUNTERPARTY_PUBLIC_KEY", 
+  ///"status": 1
+  ///}
+  ///]
+  ///}
   /// </summary>
   public sealed partial class ListTransactionsResponse : pb::IMessage<ListTransactionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9727,7 +9987,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"uetr": "UETR", 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class GetTransactionSnapshotRequest : pb::IMessage<GetTransactionSnapshotRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10002,7 +10267,22 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"snapshot": {"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}}
+  /// [Example]
+  ///{
+  ///"snapshot": {
+  ///"status": 5, 
+  ///"promissories": [
+  ///"PROMISSORYxIDx1", 
+  ///"PROMISSORYxIDx2"
+  ///], 
+  ///"amount_transferred": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"message": "MESSAGE"
+  ///}
+  ///}
   /// </summary>
   public sealed partial class GetTransactionSnapshotResponse : pb::IMessage<GetTransactionSnapshotResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10206,7 +10486,12 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"uetr": "UETR", "wallet_id": "WALLET_ID", "api_key": "API_KEY"}
+  /// [Example]
+  ///{
+  ///"uetr": "UETR", 
+  ///"wallet_id": "WALLET_ID", 
+  ///"api_key": "API_KEY"
+  ///}
   /// </summary>
   public sealed partial class ListTransactionSnapshotsRequest : pb::IMessage<ListTransactionSnapshotsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10481,7 +10766,38 @@ namespace WalletApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"snapshots": [{"status": 5, "promissories": ["PROMISSORYxIDx1", "PROMISSORYxIDx2"], "amount_transferred": {"currency_code":"USD", "amount":100, "decimals":2}, "message": "MESSAGE"}, {"status": 3, "promissories": ["PROMISSORYxIDx3", "PROMISSORYxIDx4"], "amount_transferred": {"currency_code":"USD", "amount":500, "decimals":2}, "message": "MESSAGE2"}]}
+  /// [Example]
+  ///{
+  ///"snapshots": [
+  ///{
+  ///"status": 5, 
+  ///"promissories": [
+  ///"PROMISSORYxIDx1", 
+  ///"PROMISSORYxIDx2"
+  ///], 
+  ///"amount_transferred": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"message": "MESSAGE"
+  ///}, 
+  ///{
+  ///"status": 3, 
+  ///"promissories": [
+  ///"PROMISSORYxIDx3", 
+  ///"PROMISSORYxIDx4"
+  ///], 
+  ///"amount_transferred": {
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///}, 
+  ///"message": "MESSAGE2"
+  ///}
+  ///]
+  ///}
+  ///}
   /// </summary>
   public sealed partial class ListTransactionSnapshotsResponse : pb::IMessage<ListTransactionSnapshotsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

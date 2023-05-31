@@ -98,7 +98,12 @@ namespace WebhookApi.V1 {
 
   #region Messages
   /// <summary>
-  /// [Example]{"id": "ID", "owner_id": "OWNER_ID", "type": 1}
+  /// [Example]
+  ///{
+  ///"id": "ID", 
+  ///"owner_id": "OWNER_ID", 
+  ///"type": 1
+  ///}
   /// </summary>
   public sealed partial class Event : pb::IMessage<Event>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -364,7 +369,16 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"api_key": "API_KEY", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY", 
+  ///"name": "NAME", 
+  ///"webhook_url": "WEBHOOK_URL", 
+  ///"supported_events": [
+  ///0, 
+  ///1
+  ///]
+  ///}
   /// </summary>
   public sealed partial class CreateWebhookRequest : pb::IMessage<CreateWebhookRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -661,7 +675,10 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"webhook_public_key": "WEBHOOK_PUBLIC_KEY" }
+  /// [Example]
+  ///{
+  ///"webhook_public_key": "WEBHOOK_PUBLIC_KEY"
+  ///}
   /// </summary>
   public sealed partial class CreateWebhookResponse : pb::IMessage<CreateWebhookResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -853,7 +870,12 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"api_key": "API_KEY", "page": 0, "page_size": 10000 }
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY", 
+  ///"page": 0, 
+  ///"page_size": 10000 
+  ///}
   /// </summary>
   public sealed partial class ListWebhooksRequest : pb::IMessage<ListWebhooksRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1122,7 +1144,32 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
+  /// [Example]
+  ///{
+  ///"webhooks": [
+  ///{
+  ///"id": "ID1", 
+  ///"owner_id": "OWNER_ID1", 
+  ///"name": "NAME1", 
+  ///"webhook_url": "WEBHOOK_URL1", 
+  ///"supported_events": [
+  ///0, 
+  ///1
+  ///]
+  ///}, 
+  ///{
+  ///"id": "ID2", 
+  ///"owner_id": "OWNER_ID2", 
+  ///"name": "NAME2", 
+  ///"webhook_url": "WEBHOOK_URL2", 
+  ///"supported_events": [
+  ///0, 
+  ///1
+  ///]
+  ///}
+  ///], 
+  ///"total_owned_webhooks": 2
+  ///}
   /// </summary>
   public sealed partial class ListWebhooksResponse : pb::IMessage<ListWebhooksResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1676,7 +1723,11 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"api_key": "API_KEY", "webhook_id": "WEBHOOK_ID"}
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY", 
+  ///"webhook_id": "WEBHOOK_ID"
+  ///}
   /// </summary>
   public sealed partial class DeleteWebhookRequest : pb::IMessage<DeleteWebhookRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1908,7 +1959,8 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class DeleteWebhookResponse : pb::IMessage<DeleteWebhookResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2063,7 +2115,16 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example] { "event_type": 1, "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
+  /// [Example]
+  ///{
+  ///"event_type": 1,
+  ///"signature": "SIGNATURExBYTES=",
+  ///"event_id": "EVENT_ID",
+  ///"creation_date": "CREATION_DATE", 
+  ///"payload": { 
+  ///"wallet_payload": {} 
+  ///} 
+  ///}
   /// </summary>
   public sealed partial class EventRequest : pb::IMessage<EventRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2606,7 +2667,8 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class EventResponse : pb::IMessage<EventResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2761,7 +2823,12 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"api_key": "API_KEY", "page": 0, "page_size": 10000 }
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY", 
+  ///"page": 0, 
+  ///"page_size": 10000 
+  ///}
   /// </summary>
   public sealed partial class ListEventsRequest : pb::IMessage<ListEventsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3030,7 +3097,22 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"events": [{"id": "ID", "owner_id": "OWNER_ID", "type": 1}, {"id": "ID", "owner_id": "OWNER_ID", "type": 1}], "total_owned_events": 2}
+  /// [Example]
+  ///{
+  ///"events": [
+  ///{
+  ///"id": "ID1", 
+  ///"owner_id": "OWNER_ID1", 
+  ///"type": 1
+  ///}, 
+  ///{
+  ///"id": "ID2", "owner_id": 
+  ///"OWNER_ID2", 
+  ///"type": 1
+  ///}
+  ///], 
+  ///"total_owned_events": 2
+  ///}
   /// </summary>
   public sealed partial class ListEventsResponse : pb::IMessage<ListEventsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3248,7 +3330,11 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"api_key": "API_KEY", "event_id": "EVENT_ID" }
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY", 
+  ///"event_id": "EVENT_ID" 
+  ///}
   /// </summary>
   public sealed partial class RetryEventRequest : pb::IMessage<RetryEventRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3480,7 +3566,8 @@ namespace WebhookApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class RetryEventResponse : pb::IMessage<RetryEventResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

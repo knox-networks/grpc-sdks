@@ -66,7 +66,12 @@ func (EventType) EnumDescriptor() ([]byte, []int) {
 	return file_webhook_api_v1_webhook_proto_rawDescGZIP(), []int{0}
 }
 
-// [Example]{"id": "ID", "owner_id": "OWNER_ID", "type": 1}
+// [Example]
+// {
+// "id": "ID",
+// "owner_id": "OWNER_ID",
+// "type": 1
+// }
 type Event struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -130,7 +135,16 @@ func (x *Event) GetType() EventType {
 	return EventType_EVENT_TYPE_UNSPECIFIED
 }
 
-// [Example]{"api_key": "API_KEY", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}
+// [Example]
+// {
+// "api_key": "API_KEY",
+// "name": "NAME",
+// "webhook_url": "WEBHOOK_URL",
+// "supported_events": [
+// 0,
+// 1
+// ]
+// }
 type CreateWebhookRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -202,7 +216,10 @@ func (x *CreateWebhookRequest) GetSupportedEvents() []EventType {
 	return nil
 }
 
-// [Example]{"webhook_public_key": "WEBHOOK_PUBLIC_KEY" }
+// [Example]
+// {
+// "webhook_public_key": "WEBHOOK_PUBLIC_KEY"
+// }
 type CreateWebhookResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -250,7 +267,12 @@ func (x *CreateWebhookResponse) GetWebhookPublicKey() string {
 	return ""
 }
 
-// [Example]{"api_key": "API_KEY", "page": 0, "page_size": 10000 }
+// [Example]
+// {
+// "api_key": "API_KEY",
+// "page": 0,
+// "page_size": 10000
+// }
 type ListWebhooksRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -314,7 +336,32 @@ func (x *ListWebhooksRequest) GetPageSize() int32 {
 	return 0
 }
 
-// [Example]{"webhooks": [{"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}, {"id": "ID", "owner_id": "OWNER_ID", "name": "NAME", "webhook_url": "WEBHOOK_URL", "supported_events": [0, 1]}], "total_owned_webhooks": 2}
+// [Example]
+// {
+// "webhooks": [
+// {
+// "id": "ID1",
+// "owner_id": "OWNER_ID1",
+// "name": "NAME1",
+// "webhook_url": "WEBHOOK_URL1",
+// "supported_events": [
+// 0,
+// 1
+// ]
+// },
+// {
+// "id": "ID2",
+// "owner_id": "OWNER_ID2",
+// "name": "NAME2",
+// "webhook_url": "WEBHOOK_URL2",
+// "supported_events": [
+// 0,
+// 1
+// ]
+// }
+// ],
+// "total_owned_webhooks": 2
+// }
 type ListWebhooksResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -370,7 +417,11 @@ func (x *ListWebhooksResponse) GetTotalOwnedWebhooks() uint32 {
 	return 0
 }
 
-// [Example]{"api_key": "API_KEY", "webhook_id": "WEBHOOK_ID"}
+// [Example]
+// {
+// "api_key": "API_KEY",
+// "webhook_id": "WEBHOOK_ID"
+// }
 type DeleteWebhookRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -426,7 +477,8 @@ func (x *DeleteWebhookRequest) GetWebhookId() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type DeleteWebhookResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -465,7 +517,16 @@ func (*DeleteWebhookResponse) Descriptor() ([]byte, []int) {
 	return file_webhook_api_v1_webhook_proto_rawDescGZIP(), []int{6}
 }
 
-// [Example] { "event_type": 1, "signature": "SIGNATURExBYTES=", "event_id": "EVENT_ID", "creation_date": "CREATION_DATE", "payload": { "wallet_payload": {} } }
+// [Example]
+// {
+// "event_type": 1,
+// "signature": "SIGNATURExBYTES=",
+// "event_id": "EVENT_ID",
+// "creation_date": "CREATION_DATE",
+// "payload": {
+// "wallet_payload": {}
+// }
+// }
 type EventRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -565,7 +626,8 @@ type EventRequest_WalletPayload struct {
 
 func (*EventRequest_WalletPayload) isEventRequest_Payload() {}
 
-// [Example]{}
+// [Example]
+// {}
 type EventResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -604,7 +666,12 @@ func (*EventResponse) Descriptor() ([]byte, []int) {
 	return file_webhook_api_v1_webhook_proto_rawDescGZIP(), []int{8}
 }
 
-// [Example]{"api_key": "API_KEY", "page": 0, "page_size": 10000 }
+// [Example]
+// {
+// "api_key": "API_KEY",
+// "page": 0,
+// "page_size": 10000
+// }
 type ListEventsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -668,7 +735,22 @@ func (x *ListEventsRequest) GetPageSize() int32 {
 	return 0
 }
 
-// [Example]{"events": [{"id": "ID", "owner_id": "OWNER_ID", "type": 1}, {"id": "ID", "owner_id": "OWNER_ID", "type": 1}], "total_owned_events": 2}
+// [Example]
+// {
+// "events": [
+// {
+// "id": "ID1",
+// "owner_id": "OWNER_ID1",
+// "type": 1
+// },
+// {
+// "id": "ID2", "owner_id":
+// "OWNER_ID2",
+// "type": 1
+// }
+// ],
+// "total_owned_events": 2
+// }
 type ListEventsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -724,7 +806,11 @@ func (x *ListEventsResponse) GetTotalOwnedEvents() uint32 {
 	return 0
 }
 
-// [Example]{"api_key": "API_KEY", "event_id": "EVENT_ID" }
+// [Example]
+// {
+// "api_key": "API_KEY",
+// "event_id": "EVENT_ID"
+// }
 type RetryEventRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -780,7 +866,8 @@ func (x *RetryEventRequest) GetEventId() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type RetryEventResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
