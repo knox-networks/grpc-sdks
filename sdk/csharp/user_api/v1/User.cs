@@ -802,7 +802,7 @@ namespace UserApi.V1 {
   ///"email": "EMAIL",
   ///"first_name": "FIRST_NAME", 
   ///"last_name": "LAST_NAME",
-  ///"password": "PASSWORD" 
+  ///"password": "PASSWORD",
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
   ///"phone": "PHONE" 
