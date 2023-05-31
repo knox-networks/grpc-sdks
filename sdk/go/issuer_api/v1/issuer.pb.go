@@ -424,10 +424,6 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 // {
 // "key": "KEY1",
 // "value": "VALUE1"
-// },
-// {
-// "key": "KEY2",
-// "value": "VALUE2"
 // }
 // ]
 // }

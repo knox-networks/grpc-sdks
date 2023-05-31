@@ -1605,10 +1605,6 @@ namespace IssuerApi.V1 {
   ///{
   ///"key": "KEY1",
   ///"value": "VALUE1"
-  ///},
-  ///{
-  ///"key": "KEY2",
-  ///"value": "VALUE2"
   ///}
   ///]
   ///}
