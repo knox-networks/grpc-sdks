@@ -765,7 +765,7 @@ namespace Common {
   ///{
   ///"key2": "value2"
   ///}
-  ///}
+  ///]
   ///}
   /// </summary>
   public sealed partial class Distribution : pb::IMessage<Distribution>
@@ -1972,9 +1972,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"request_type": {
-  ///"one": {}
-  ///},
+  ///"one": {},
   ///"signature": {
   ///"verifier": {
   ///"signature_system": 1, 
@@ -3945,7 +3943,7 @@ namespace Common {
   ///{
   ///"bytes": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "xVERIFIERxBYTES="
   ///},
   ///"multibase": "MULTIBASE"
   ///}

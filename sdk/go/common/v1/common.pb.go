@@ -478,7 +478,7 @@ func (x *Amount) GetDecimals() uint32 {
 // {
 // "key2": "value2"
 // }
-// }
+// ]
 // }
 type Distribution struct {
 	state         protoimpl.MessageState
@@ -805,9 +805,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 
 // [Example]
 // {
-// "request_type": {
-// "one": {}
-// },
+// "one": {},
 // "signature": {
 // "verifier": {
 // "signature_system": 1,
@@ -1310,7 +1308,7 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 // {
 // "bytes": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "xVERIFIERxBYTES="
 // },
 // "multibase": "MULTIBASE"
 // }
