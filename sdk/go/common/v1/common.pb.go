@@ -473,10 +473,12 @@ func (x *Amount) GetDecimals() uint32 {
 // {
 // "value": [
 // {
-// "key1": "value1"
+// "key": "KEY1",
+// "value": "VALUE1"
 // },
 // {
-// "key2": "value2"
+// "key": "KEY2",
+// "value": "VALUE2"
 // }
 // ]
 // }
@@ -922,7 +924,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "xVERIFIERxBYTES="
 // },
 // "signature": "SIGNATURExBYTES="
 // }

@@ -760,10 +760,12 @@ namespace Common {
   ///{
   ///"value": [
   ///{
-  ///"key1": "value1"
+  ///"key": "KEY1",
+  ///"value": "VALUE1"
   ///},
   ///{
-  ///"key2": "value2"
+  ///"key": "KEY2",
+  ///"value": "VALUE2"
   ///}
   ///]
   ///}
@@ -2368,7 +2370,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "xVERIFIERxBYTES="
   ///},
   ///"signature": "SIGNATURExBYTES="
   ///}
