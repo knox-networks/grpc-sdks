@@ -421,10 +421,7 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 // [Example]
 // {
 // "roles": [
-// {
-// "key": "KEY1",
-// "value": "VALUE1"
-// }
+//
 // ]
 // }
 type GetRolesResponse struct {
