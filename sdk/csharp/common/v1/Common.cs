@@ -758,9 +758,13 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"value": {
-  ///"key1": "value1",
+  ///"value": [
+  ///{
+  ///"key1": "value1"
+  ///},
+  ///{
   ///"key2": "value2"
+  ///}
   ///}
   ///}
   /// </summary>
@@ -1975,7 +1979,7 @@ namespace Common {
   ///"verifier": {
   ///"signature_system": 1, 
   ///"verifier": "VERIFIERxBYTES="
-  ///}
+  ///},
   ///"signature": "SIGNATURExBYTES="
   ///},
   ///"connection_id": "CONNECTION_ID"
@@ -2367,7 +2371,7 @@ namespace Common {
   ///"verifier": {
   ///"signature_system": 1, 
   ///"verifier": "VERIFIERxBYTES="
-  ///}
+  ///},
   ///"signature": "SIGNATURExBYTES="
   ///}
   /// </summary>
@@ -3942,7 +3946,7 @@ namespace Common {
   ///"bytes": {
   ///"signature_system": 1, 
   ///"verifier": "VERIFIERxBYTES="
-  ///}
+  ///},
   ///"multibase": "MULTIBASE"
   ///}
   /// </summary>

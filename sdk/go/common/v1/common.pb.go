@@ -471,9 +471,13 @@ func (x *Amount) GetDecimals() uint32 {
 
 // [Example]
 // {
-// "value": {
-// "key1": "value1",
+// "value": [
+// {
+// "key1": "value1"
+// },
+// {
 // "key2": "value2"
+// }
 // }
 // }
 type Distribution struct {
@@ -808,7 +812,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 // "verifier": {
 // "signature_system": 1,
 // "verifier": "VERIFIERxBYTES="
-// }
+// },
 // "signature": "SIGNATURExBYTES="
 // },
 // "connection_id": "CONNECTION_ID"
@@ -921,7 +925,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // "verifier": {
 // "signature_system": 1,
 // "verifier": "VERIFIERxBYTES="
-// }
+// },
 // "signature": "SIGNATURExBYTES="
 // }
 type AuthenticationSignature struct {
@@ -1307,7 +1311,7 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 // "bytes": {
 // "signature_system": 1,
 // "verifier": "VERIFIERxBYTES="
-// }
+// },
 // "multibase": "MULTIBASE"
 // }
 type GetVerifierResponse struct {
