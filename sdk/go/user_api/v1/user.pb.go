@@ -130,6 +130,37 @@ func (Role) EnumDescriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{1}
 }
 
+// [Example]
+// {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": [
+// {
+// "key": "VALUE"
+// }
+// ]
+// }
+// }
 type User struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -259,7 +290,16 @@ func (x *User) GetMetadata() *structpb.Struct {
 	return nil
 }
 
-// [Example]{{"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE" }
+// [Example]
+// {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE"
+// }
 type RegisterUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -362,7 +402,13 @@ func (x *RegisterUserRequest) GetPhone() string {
 	return ""
 }
 
-// [Example]{"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}
+// [Example]
+// {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
 type AuthToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -438,7 +484,35 @@ func (x *AuthToken) GetRefreshToken() string {
 	return ""
 }
 
-// [Example]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": []} }
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// }
+// }
 type RegisterUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -487,7 +561,11 @@ func (x *RegisterUserResponse) GetUser() *User {
 	return nil
 }
 
-// [Example]{"email_or_phone": "EMAIL_OR_PHONE", "token": "TOKEN"}
+// [Example]
+// {
+// "email_or_phone": "EMAIL_OR_PHONE",
+// "token": "TOKEN"
+// }
 type ConfirmUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -545,7 +623,8 @@ func (x *ConfirmUserRequest) GetToken() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type ConfirmUserResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -584,7 +663,13 @@ func (*ConfirmUserResponse) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{5}
 }
 
-// [Example]{"provider": 0, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": { } }}
+// [Example]
+// {
+// "provider": 0,
+// "instance_name": "INSTANCE_NAME",
+// "request_origin": "REQUEST_ORIGIN",
+// "client_state": { }
+// }
 type AuthnWithProviderRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -660,7 +745,10 @@ func (x *AuthnWithProviderRequest) GetClientState() *structpb.Struct {
 	return nil
 }
 
-// [Example]{"provider_url": "PROVIDER_URL"}
+// [Example]
+// {
+// "provider_url": "PROVIDER_URL"
+// }
 type AuthnWithProviderResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -709,7 +797,11 @@ func (x *AuthnWithProviderResponse) GetProviderUrl() string {
 	return ""
 }
 
-// [Example]{"code": "CODE_PREVIOUS_RESPONSE", "state": "STATE"}
+// [Example]
+// {
+// "code": "CODE_PREVIOUS_RESPONSE",
+// "state": "STATE"
+// }
 type HandleOIDCCallbackRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -767,7 +859,44 @@ func (x *HandleOIDCCallbackRequest) GetState() string {
 	return ""
 }
 
-// [xEEEExample] {"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } }, "auth_token": { "token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN", "client_state": {} } }
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// },
+// "instance_name": "INSTANCE_NAME",
+// "request_origin": "REQUEST_ORIGIN",
+// "client_state": {}
+// }
 type HandleOIDCCallbackResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -852,7 +981,10 @@ func (x *HandleOIDCCallbackResponse) GetClientState() *structpb.Struct {
 	return nil
 }
 
-// [Example]{"email": "EMAIL"}
+// [Example]
+// {
+// "email": "EMAIL"
+// }
 type FindByEmailRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -901,7 +1033,35 @@ func (x *FindByEmailRequest) GetEmail() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [], "metadata": { "fields": [] } } }
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// }
+// }
 type FindByEmailResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -950,7 +1110,10 @@ func (x *FindByEmailResponse) GetUser() *User {
 	return nil
 }
 
-// [Example]{"uuid": "UUID"}
+// [Example]
+// {
+// "uuid": "UUID"
+// }
 type FindByIDRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -999,7 +1162,35 @@ func (x *FindByIDRequest) GetUuid() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } } }
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// }
+// }
 type FindByIDResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1048,7 +1239,11 @@ func (x *FindByIDResponse) GetUser() *User {
 	return nil
 }
 
-// [Example]{"email": "EMAIL", "password": "PASSWORD"}
+// [Example]
+// {
+// "email": "EMAIL",
+// "password": "PASSWORD"
+// }
 type AuthnWithPasswordRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1106,7 +1301,41 @@ func (x *AuthnWithPasswordRequest) GetPassword() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
+// }
 type AuthnWithPasswordResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1164,7 +1393,10 @@ func (x *AuthnWithPasswordResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [Example]{"refresh_token": "REFRESH_TOKEN"}
+// [Example]
+// {
+// "refresh_token": "REFRESH_TOKEN"
+// }
 type RefreshAccessTokenRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1213,7 +1445,41 @@ func (x *RefreshAccessTokenRequest) GetRefreshToken() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
+// }
 type RefreshAccessTokenResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1271,7 +1537,8 @@ func (x *RefreshAccessTokenResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [Example]{}
+// [Example]
+// {}
 type GetMeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1310,7 +1577,35 @@ func (*GetMeRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{18}
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } } }
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// }
+// }
 type GetMeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1359,7 +1654,41 @@ func (x *GetMeResponse) GetUser() *User {
 	return nil
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
+// }
 type AuthTokenResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1417,7 +1746,8 @@ func (x *AuthTokenResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [Example]{}
+// [Example]
+// {}
 type CreateAuthnBrowserWithWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1456,13 +1786,18 @@ func (*CreateAuthnBrowserWithWalletChallengeRequest) Descriptor() ([]byte, []int
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{21}
 }
 
-// [xExample]{"did_start": { "nonce": "NONCE" }}
+// [Example]
+// {
+// "did_start": {
+// "nonce": "NONCE"
+// }
+// }
 type CreateAuthnBrowserWithWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// [nonce, auth_token]- Expand for details.
+	// nonce OR auth_token - Expand for details.
 	//
 	// Types that are assignable to DidStart:
 	//
@@ -1544,7 +1879,12 @@ func (*CreateAuthnBrowserWithWalletChallengeResponse_Nonce) isCreateAuthnBrowser
 func (*CreateAuthnBrowserWithWalletChallengeResponse_AuthToken) isCreateAuthnBrowserWithWalletChallengeResponse_DidStart() {
 }
 
-// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]
+// {
+// "signature": "SIGNATURExBYTES=",
+// "nonce": "NONCE",
+// "did": "DID"
+// }
 type AuthnBrowserWithWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1611,7 +1951,8 @@ func (x *AuthnBrowserWithWalletRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type AuthnBrowserWithWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1650,7 +1991,8 @@ func (*AuthnBrowserWithWalletResponse) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{24}
 }
 
-// [Example]{}
+// [Example]
+// {}
 type CreateRegisterWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1689,7 +2031,12 @@ func (*CreateRegisterWalletChallengeRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{25}
 }
 
-// [Example]{"registration_start": { "nonce": "NONCE" }}
+// [Example]
+// {
+// "registration_start": {
+// "nonce": "NONCE"
+// }
+// }
 type CreateRegisterWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1777,7 +2124,12 @@ func (*CreateRegisterWalletChallengeResponse_Nonce) isCreateRegisterWalletChalle
 func (*CreateRegisterWalletChallengeResponse_Ok) isCreateRegisterWalletChallengeResponse_RegistrationStart() {
 }
 
-// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]
+// {
+// "signature": "SIGNATURExBYTES=",
+// "nonce": "NONCE",
+// "did": "DID"
+// }
 type RegisterWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1844,7 +2196,41 @@ func (x *RegisterWalletRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
+// }
 type RegisterWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1902,7 +2288,10 @@ func (x *RegisterWalletResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [Example]{"did": "DID"}
+// [Example]
+// {
+// "did": "DID"
+// }
 type CreateAuthnWalletChallengeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1951,7 +2340,10 @@ func (x *CreateAuthnWalletChallengeRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{"nonce": "NONCE"}
+// [Example]
+// {
+// "nonce": "NONCE"
+// }
 type CreateAuthnWalletChallengeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2000,7 +2392,12 @@ func (x *CreateAuthnWalletChallengeResponse) GetNonce() string {
 	return ""
 }
 
-// [Example]{"signature": "SIGNATURExBYTES=", "nonce": "NONCE", "did": "DID"}
+// [Example]
+// {
+// "signature": "SIGNATURExBYTES=",
+// "nonce": "NONCE",
+// "did": "DID"
+// }
 type AuthnWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2067,7 +2464,41 @@ func (x *AuthnWalletRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": { "fields": [] } }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// }
+// }
 type AuthnWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2125,7 +2556,11 @@ func (x *AuthnWalletResponse) GetAuthToken() *AuthToken {
 	return nil
 }
 
-// [Example]{"saml_response": "SAML_RESPONSE", "relay_state": "RELAY_STATE"}
+// [Example]
+// {
+// "saml_response": "SAML_RESPONSE",
+// "relay_state": "RELAY_STATE"
+// }
 type HandleSAMLCallbackRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2183,7 +2618,43 @@ func (x *HandleSAMLCallbackRequest) GetRelayState() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": {"fields": []} }, "auth_token": {"token": "TOKEN", "token_type": "TOKEN_TYPE", "expires_in": 100, "refresh_token": "REFRESH_TOKEN"}, "instance_name": "INSTANCE_NAME", "request_origin": "REQUEST_ORIGIN"}
+// [Example]
+// {
+// "user": {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": []
+// }
+// },
+// "auth_token": {
+// "token": "TOKEN",
+// "token_type": "TOKEN_TYPE",
+// "expires_in": 100,
+// "refresh_token": "REFRESH_TOKEN"
+// },
+// "instance_name": "INSTANCE_NAME",
+// "request_origin": "REQUEST_ORIGIN"
+// }
 type HandleSAMLCallbackResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2259,7 +2730,8 @@ func (x *HandleSAMLCallbackResponse) GetRequestOrigin() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type SAMLSPMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2298,7 +2770,10 @@ func (*SAMLSPMetadataRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{35}
 }
 
-// [Example]{"sp_metadata": "xxSPMETADATAxxBYTES="}
+// [Example]
+// {
+// "sp_metadata": "xxSPMETADATAxxBYTES="
+// }
 type SAMLSPMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2347,7 +2822,8 @@ func (x *SAMLSPMetadataResponse) GetSpMetadata() []byte {
 	return nil
 }
 
-// [Example]{}
+// [Example]
+// {}
 type GetAppSettingsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2386,7 +2862,19 @@ func (*GetAppSettingsRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_v1_user_proto_rawDescGZIP(), []int{37}
 }
 
-// [xExample]{"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}
+// [Example]
+// {
+// "authn_providers": [
+// {
+// "provider": 0,
+// "enabled": true
+// },
+// {
+// "provider": 1,
+// "enabled": false
+// }
+// ]
+// }
 type AppSettings struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2435,7 +2923,11 @@ func (x *AppSettings) GetAuthnProviders() []*AuthnProvider {
 	return nil
 }
 
-// [Example]{"provider": 0, "enabled": true}
+// [Example]
+// {
+// "provider": 0,
+// "enabled": true
+// }
 type AuthnProvider struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2493,7 +2985,21 @@ func (x *AuthnProvider) GetEnabled() bool {
 	return false
 }
 
-// [Example]{"app_settings": {"authn_providers": [{"provider": 0, "enabled": true}, {"provider": 1, "enabled": false}]}}
+// [Example]
+// {
+// "app_settings": {
+// "authn_providers": [
+// {
+// "provider": 0,
+// "enabled": true
+// },
+// {
+// "provider": 1,
+// "enabled": false
+// }
+// ]
+// }
+// }
 type GetAppSettingsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2542,7 +3048,10 @@ func (x *GetAppSettingsResponse) GetAppSettings() *AppSettings {
 	return nil
 }
 
-// [Example]{"did": "DID"}
+// [Example]
+// {
+// "did": "DID"
+// }
 type GetUserByDIDRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2591,7 +3100,37 @@ func (x *GetUserByDIDRequest) GetDid() string {
 	return ""
 }
 
-// [xExample]{"user": {"uuid": "UUID", "first_name": "FIRST_NAME", "last_name": "LAST_NAME", "email": "EMAIL", "role": 0, "avatar": "AVATAR_URL", "phone": "PHONE", "dids": ["DID1", "DID2"], "external_ids": [{"key": "KEY1", "value": "VALUE1"}, {"key": "KEY2", "value": "VALUE2"}], "metadata": {"fields": []} } }
+// [Example]
+// {
+// "uuid": "UUID",
+// "first_name": "FIRST_NAME",
+// "last_name": "LAST_NAME",
+// "email": "EMAIL",
+// "role": 0,
+// "avatar": "AVATAR_URL",
+// "phone": "PHONE",
+// "dids": [
+// "DID1",
+// "DID2"
+// ],
+// "external_ids": [
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
+// }
+// ],
+// "metadata": {
+// "fields": [
+// {
+// "key": "VALUE"
+// }
+// ]
+// }
+// }
 type GetUserByDIDResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2640,7 +3179,10 @@ func (x *GetUserByDIDResponse) GetUser() *User {
 	return nil
 }
 
-// [Example]{"did": "DID"}
+// [Example]
+// {
+// "did": "DID"
+// }
 type AssociateWalletRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2689,7 +3231,8 @@ func (x *AssociateWalletRequest) GetDid() string {
 	return ""
 }
 
-// [Example]{}
+// [Example]
+// {}
 type AssociateWalletResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
