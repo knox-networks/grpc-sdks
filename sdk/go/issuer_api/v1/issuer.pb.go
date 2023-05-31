@@ -21,8 +21,25 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// A request to issue new digital banknotes.
-// [Example]{"authentication_signature": {"signature": "SIGNATURExBYTES=", "verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "authority": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+// [Example]
+// {
+// "authentication_signature": {
+// "signature": "SIGNATURExBYTES=",
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// }
+// },
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "authority": {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// }
+// }
 type IssueRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -98,8 +115,10 @@ func (x *IssueRequest) GetDistribution() *v1.Distribution {
 	return nil
 }
 
-// A single authorized digital banknote as part of a stream response.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type IssueResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -148,8 +167,10 @@ func (x *IssueResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// A single digital banknote to be authorized as part of a stream request.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -198,8 +219,10 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 	return nil
 }
 
-// A single digital banknote with an updated authorized signature as part of a stream response.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -248,8 +271,13 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Authentication challenge nonce.
-// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+// [Example]
+// {
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// }
+// }
 type AuthenticateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -298,8 +326,10 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 	return nil
 }
 
-// Responds to request with authentication challenge nonce.
-// [Example]{"challenge": "CHALLENGExBYTES="}
+// [Example]
+// {
+// "challenge": "CHALLENGExBYTES="
+// }
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -348,8 +378,8 @@ func (x *AuthenticateResponse) GetChallenge() []byte {
 	return nil
 }
 
-// Gets roles set in the Issuer for configuring access.
-// [Example]{}
+// [Example]
+// {}
 type GetRolesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -388,8 +418,36 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 	return file_issuer_api_v1_issuer_proto_rawDescGZIP(), []int{6}
 }
 
-// Returns roles set in the Issuer for configuring access.
-// [Example]{"roles": []}
+// [Example]
+// {
+// "roles": [
+// {
+// "verifier": "xVERIFIERxBYTES=",
+// "role_enum": {
+// "authorized": true
+// }
+// },
+// {
+// "verifier": "xVERIFIERxBYTES=",
+// "role_enum": {
+// "issue_permissions": {
+// "inner": [
+// {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// }
+// ]
+// }
+// }
+// }
+// ]
+// }
 type GetRolesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -438,9 +496,28 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 	return nil
 }
 
-// Sets roles in the Issuer for configuring access.
-// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"issue_permissions": { "inner": [{"currency_code":"USD", "amount":100, "decimals":2}, {"currency_code":"USD", "amount":500, "decimals":2}]}}}}
-// [Example]{"role": {"verifier": "VERIFIER", "role_enum": {"authorized": true}}}
+// [Example]
+// {
+// "role": {
+// "verifier": "VERIFIER",
+// "role_enum": {
+// "issue_permissions": {
+// "inner": [
+// {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// }
+// ]
+// }
+// }
+// }
+// }
 type SetRoleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -489,8 +566,8 @@ func (x *SetRoleRequest) GetRole() *v1.Role {
 	return nil
 }
 
-// Responds to the request to set roles in the Issuer for configuring access.
-// [Example]{ }
+// [Example]
+// {}
 type SetRoleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
