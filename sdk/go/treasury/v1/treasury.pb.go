@@ -21,10 +21,23 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Defines the input to a remittance operation in same or different currencies, including the recipient, the amount
-// inclusive of currency in which remittance is desired, the promissory files to support the remittance and an optional
-// exchange rate.
-// [Example]{"recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "amount": {"currency_code":"USD", "amount":100, "decimals":2}, "promissory_files": ["PROMISSORYxFILExBYTESx1=", "PROMISSORYxFILExBYTESx2="], "exchange_rate": 1.4}
+// [Example]
+// {
+// "recipient": {
+// "signature_system": 1,
+// "verifier": "xxRECIPIENTxxVERIFIERxBYTES="
+// },
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "promissory_files": [
+// "PROMISSORYxFILExBYTESx1=",
+// "PROMISSORYxFILExBYTESx2="
+// ],
+// "exchange_rate": 1.4
+// }
 type RemittanceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -103,9 +116,22 @@ func (x *RemittanceRequest) GetExchangeRate() float64 {
 	return 0
 }
 
-// Includes the files sent to the recipient at the applicable exchange rate, files representing a residual amount left
-// after the conversion if any, and a fee.
-// [Example]{"exchanged_promissory_files": ["xxPROMISSORYxFILExBYTESxEXCHANGEDx1="], "fee_amount": {"currency_code":"USD", "amount":1, "decimals":2}, "exchange_rate": 1.4, "refunded_promissory_files": ["xPROMISSORYxFILExBYTESxREFUNDx1=", "xPROMISSORYxFILExBYTESxREFUNDx2="]}
+// [Example]
+// {
+// "exchanged_promissory_files": [
+// "xxPROMISSORYxFILExBYTESxEXCHANGEDx1="
+// ],
+// "fee_amount": {
+// "currency_code":"USD",
+// "amount":1,
+// "decimals":2
+// },
+// "exchange_rate": 1.4,
+// "refunded_promissory_files": [
+// "xPROMISSORYxFILExBYTESxREFUNDx1=",
+// "xPROMISSORYxFILExBYTESxREFUNDx2="
+// ]
+// }
 type RemittanceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -181,8 +207,10 @@ func (x *RemittanceResponse) GetRefundedPromissoryFiles() [][]byte {
 	return nil
 }
 
-// Requests the count of files of various denominations for a given currency.
-// [Example]{"currency_code": "USD"}
+// [Example]
+// {
+// "currency_code": "USD"
+// }
 type GetSupplyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -231,9 +259,20 @@ func (x *GetSupplyRequest) GetCurrencyCode() string {
 	return ""
 }
 
-// Lists the count of the files of specific denominations held in the Treasury service's vault, and the total value held
-// in files of that denomination.
-// [Example]{"denomination": {"currency_code":"USD", "amount":2000, "decimals":2}, "count": 5, "total": {"currency_code":"USD", "amount":10000, "decimals":2}}
+// [Example]
+// {
+// "denomination": {
+// "currency_code":"USD",
+// "amount":2000,
+// "decimals":2
+// },
+// "count": 5,
+// "total": {
+// "currency_code":"USD",
+// "amount":10000,
+// "decimals":2
+// }
+// }
 type DenominationCount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -300,8 +339,41 @@ func (x *DenominationCount) GetTotal() *v1.Amount {
 	return nil
 }
 
-// Provides a list of file denominations in the Treasury service's Vault.
-// [Example]{"supply": [{"denomination": {"currency_code":"USD", "amount":2000, "decimals":2}, "count": 5, "total": {"currency_code":"USD", "amount":10000, "decimals":2}}, {"denomination": {"currency_code":"USD", "amount":1000, "decimals":2}, "count": 5, "total": {"currency_code":"USD", "amount":5000, "decimals":2}}], "total": {"currency_code":"USD", "amount": 15000, "decimals":2}}
+// [Example]
+// {
+// "supply": [
+// {
+// "denomination": {
+// "currency_code":"USD",
+// "amount":2000,
+// "decimals":2
+// },
+// "count": 5,
+// "total": {
+// "currency_code":"USD",
+// "amount":10000, "decimals":2
+// }
+// },
+// {
+// "denomination": {
+// "currency_code":"USD",
+// "amount":1000,
+// "decimals":2
+// },
+// "count": 5,
+// "total": {
+// "currency_code":"USD",
+// "amount":5000,
+// "decimals":2
+// }
+// }
+// ],
+// "total": {
+// "currency_code":"USD",
+// "amount": 15000,
+// "decimals":2
+// }
+// }
 type GetSupplyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

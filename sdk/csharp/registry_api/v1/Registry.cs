@@ -119,7 +119,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,7 +134,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    ///A set of data containing mechanisms to verify the DID and discover related services. 
+    /// A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -512,7 +512,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -724,7 +724,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -739,7 +739,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    ///A set of data containing mechanisms to verify the DID and discover related services. 
+    /// A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -754,7 +754,7 @@ namespace RegistryApi.V1 {
     public const int MetadataFieldNumber = 3;
     private global::RegistryApi.V1.ResolutionMetadata metadata_;
     /// <summary>
-    ///Resolution Metadata object, with defined timestamps and content type.
+    /// Resolution Metadata object, with defined timestamps and content type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1019,7 +1019,7 @@ namespace RegistryApi.V1 {
     public const int CreatedFieldNumber = 1;
     private global::Google.Protobuf.WellKnownTypes.Timestamp created_;
     /// <summary>
-    ///Timestamp representing the DID document creation time.
+    /// Timestamp representing the DID document creation time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1034,7 +1034,7 @@ namespace RegistryApi.V1 {
     public const int UpdatedFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp updated_;
     /// <summary>
-    ///Timestamp representing the DID document last update time.
+    /// Timestamp representing the DID document last update time.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1049,7 +1049,7 @@ namespace RegistryApi.V1 {
     public const int ContentTypeFieldNumber = 3;
     private string contentType_ = "";
     /// <summary>
-    ///Media type of the W3C DID Document. 
+    /// Media type of the W3C DID Document. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1315,7 +1315,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1330,7 +1330,7 @@ namespace RegistryApi.V1 {
     public const int DocumentFieldNumber = 2;
     private string document_ = "";
     /// <summary>
-    ///A set of data containing mechanisms to verify the DID and discover related services. 
+    /// A set of data containing mechanisms to verify the DID and discover related services. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1708,7 +1708,7 @@ namespace RegistryApi.V1 {
     public const int DidFieldNumber = 1;
     private string did_ = "";
     /// <summary>
-    ///W3C Decentralized Identifier (DID) of the wallet.
+    /// W3C Decentralized Identifier (DID) of the wallet.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

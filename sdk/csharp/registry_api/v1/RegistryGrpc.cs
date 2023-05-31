@@ -12,7 +12,9 @@ using grpc = global::Grpc.Core;
 
 namespace RegistryApi.V1 {
   /// <summary>
-  ///Publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https://www.w3.org/TR/did-core/
+  /// Publicly accessible repo of DID Documents for cryptographic verification of DIDs. 
+  /// Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. 
+  /// https://www.w3.org/TR/did-core/
   /// </summary>
   public static partial class RegistryService
   {
