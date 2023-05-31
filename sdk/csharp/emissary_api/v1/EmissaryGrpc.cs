@@ -9,11 +9,11 @@ using grpc = global::Grpc.Core;
 
 namespace Emissary {
   /// <summary>
-  /// Emissary service is empty but still needed for health probes.
+  /// MonetaeEmissary service is empty but still needed for health probes.
   /// </summary>
-  public static partial class Emissary
+  public static partial class MonetaeEmissary
   {
-    static readonly string __ServiceName = "emissary.Emissary";
+    static readonly string __ServiceName = "emissary.MonetaeEmissary";
 
 
     /// <summary>Service descriptor</summary>
@@ -22,51 +22,51 @@ namespace Emissary {
       get { return global::Emissary.EmissaryReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Emissary</summary>
-    [grpc::BindServiceMethod(typeof(Emissary), "BindService")]
-    public abstract partial class EmissaryBase
+    /// <summary>Base class for server-side implementations of MonetaeEmissary</summary>
+    [grpc::BindServiceMethod(typeof(MonetaeEmissary), "BindService")]
+    public abstract partial class MonetaeEmissaryBase
     {
     }
 
-    /// <summary>Client for Emissary</summary>
-    public partial class EmissaryClient : grpc::ClientBase<EmissaryClient>
+    /// <summary>Client for MonetaeEmissary</summary>
+    public partial class MonetaeEmissaryClient : grpc::ClientBase<MonetaeEmissaryClient>
     {
-      /// <summary>Creates a new client for Emissary</summary>
+      /// <summary>Creates a new client for MonetaeEmissary</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public EmissaryClient(grpc::ChannelBase channel) : base(channel)
+      public MonetaeEmissaryClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Emissary that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MonetaeEmissary that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public EmissaryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MonetaeEmissaryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected EmissaryClient() : base()
+      protected MonetaeEmissaryClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected EmissaryClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MonetaeEmissaryClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override EmissaryClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MonetaeEmissaryClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new EmissaryClient(configuration);
+        return new MonetaeEmissaryClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(EmissaryBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MonetaeEmissaryBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder().Build();
     }
@@ -76,7 +76,7 @@ namespace Emissary {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, EmissaryBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeEmissaryBase serviceImpl)
     {
     }
 

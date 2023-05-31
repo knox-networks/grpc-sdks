@@ -14,90 +14,90 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// FaucetClient is the client API for Faucet service.
+// MonetaeFaucetServiceClient is the client API for MonetaeFaucetService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type FaucetClient interface {
+type MonetaeFaucetServiceClient interface {
 	// Request promissory files to be issued to a given recipient, for a
 	// total amount with decimal precision and currency code.
 	Faucet(ctx context.Context, in *FaucetRequest, opts ...grpc.CallOption) (*FaucetResponse, error)
 }
 
-type faucetClient struct {
+type monetaeFaucetServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewFaucetClient(cc grpc.ClientConnInterface) FaucetClient {
-	return &faucetClient{cc}
+func NewMonetaeFaucetServiceClient(cc grpc.ClientConnInterface) MonetaeFaucetServiceClient {
+	return &monetaeFaucetServiceClient{cc}
 }
 
-func (c *faucetClient) Faucet(ctx context.Context, in *FaucetRequest, opts ...grpc.CallOption) (*FaucetResponse, error) {
+func (c *monetaeFaucetServiceClient) Faucet(ctx context.Context, in *FaucetRequest, opts ...grpc.CallOption) (*FaucetResponse, error) {
 	out := new(FaucetResponse)
-	err := c.cc.Invoke(ctx, "/faucet_api.v1.Faucet/Faucet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/faucet_api.v1.MonetaeFaucetService/Faucet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// FaucetServer is the server API for Faucet service.
-// All implementations must embed UnimplementedFaucetServer
+// MonetaeFaucetServiceServer is the server API for MonetaeFaucetService service.
+// All implementations must embed UnimplementedMonetaeFaucetServiceServer
 // for forward compatibility
-type FaucetServer interface {
+type MonetaeFaucetServiceServer interface {
 	// Request promissory files to be issued to a given recipient, for a
 	// total amount with decimal precision and currency code.
 	Faucet(context.Context, *FaucetRequest) (*FaucetResponse, error)
-	mustEmbedUnimplementedFaucetServer()
+	mustEmbedUnimplementedMonetaeFaucetServiceServer()
 }
 
-// UnimplementedFaucetServer must be embedded to have forward compatible implementations.
-type UnimplementedFaucetServer struct {
+// UnimplementedMonetaeFaucetServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedMonetaeFaucetServiceServer struct {
 }
 
-func (UnimplementedFaucetServer) Faucet(context.Context, *FaucetRequest) (*FaucetResponse, error) {
+func (UnimplementedMonetaeFaucetServiceServer) Faucet(context.Context, *FaucetRequest) (*FaucetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Faucet not implemented")
 }
-func (UnimplementedFaucetServer) mustEmbedUnimplementedFaucetServer() {}
+func (UnimplementedMonetaeFaucetServiceServer) mustEmbedUnimplementedMonetaeFaucetServiceServer() {}
 
-// UnsafeFaucetServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to FaucetServer will
+// UnsafeMonetaeFaucetServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonetaeFaucetServiceServer will
 // result in compilation errors.
-type UnsafeFaucetServer interface {
-	mustEmbedUnimplementedFaucetServer()
+type UnsafeMonetaeFaucetServiceServer interface {
+	mustEmbedUnimplementedMonetaeFaucetServiceServer()
 }
 
-func RegisterFaucetServer(s grpc.ServiceRegistrar, srv FaucetServer) {
-	s.RegisterService(&Faucet_ServiceDesc, srv)
+func RegisterMonetaeFaucetServiceServer(s grpc.ServiceRegistrar, srv MonetaeFaucetServiceServer) {
+	s.RegisterService(&MonetaeFaucetService_ServiceDesc, srv)
 }
 
-func _Faucet_Faucet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonetaeFaucetService_Faucet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FaucetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FaucetServer).Faucet(ctx, in)
+		return srv.(MonetaeFaucetServiceServer).Faucet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/faucet_api.v1.Faucet/Faucet",
+		FullMethod: "/faucet_api.v1.MonetaeFaucetService/Faucet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FaucetServer).Faucet(ctx, req.(*FaucetRequest))
+		return srv.(MonetaeFaucetServiceServer).Faucet(ctx, req.(*FaucetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Faucet_ServiceDesc is the grpc.ServiceDesc for Faucet service.
+// MonetaeFaucetService_ServiceDesc is the grpc.ServiceDesc for MonetaeFaucetService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Faucet_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "faucet_api.v1.Faucet",
-	HandlerType: (*FaucetServer)(nil),
+var MonetaeFaucetService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "faucet_api.v1.MonetaeFaucetService",
+	HandlerType: (*MonetaeFaucetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Faucet",
-			Handler:    _Faucet_Faucet_Handler,
+			Handler:    _MonetaeFaucetService_Faucet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

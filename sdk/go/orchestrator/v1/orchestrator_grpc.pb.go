@@ -15,28 +15,29 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// OverloadOrchestratorClient is the client API for OverloadOrchestrator service.
+// MonetaeOverloadOrchestratorClient is the client API for MonetaeOverloadOrchestrator service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type OverloadOrchestratorClient interface {
+type MonetaeOverloadOrchestratorClient interface {
 	// Broadcasts overload agent connections to all agents
-	BroadcastAgent(ctx context.Context, in *v1.DynamicVerifier, opts ...grpc.CallOption) (OverloadOrchestrator_BroadcastAgentClient, error)
+	BroadcastAgent(ctx context.Context, in *v1.DynamicVerifier, opts ...grpc.CallOption) (MonetaeOverloadOrchestrator_BroadcastAgentClient, error)
+	Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error)
 }
 
-type overloadOrchestratorClient struct {
+type monetaeOverloadOrchestratorClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOverloadOrchestratorClient(cc grpc.ClientConnInterface) OverloadOrchestratorClient {
-	return &overloadOrchestratorClient{cc}
+func NewMonetaeOverloadOrchestratorClient(cc grpc.ClientConnInterface) MonetaeOverloadOrchestratorClient {
+	return &monetaeOverloadOrchestratorClient{cc}
 }
 
-func (c *overloadOrchestratorClient) BroadcastAgent(ctx context.Context, in *v1.DynamicVerifier, opts ...grpc.CallOption) (OverloadOrchestrator_BroadcastAgentClient, error) {
-	stream, err := c.cc.NewStream(ctx, &OverloadOrchestrator_ServiceDesc.Streams[0], "/orchestrator.OverloadOrchestrator/BroadcastAgent", opts...)
+func (c *monetaeOverloadOrchestratorClient) BroadcastAgent(ctx context.Context, in *v1.DynamicVerifier, opts ...grpc.CallOption) (MonetaeOverloadOrchestrator_BroadcastAgentClient, error) {
+	stream, err := c.cc.NewStream(ctx, &MonetaeOverloadOrchestrator_ServiceDesc.Streams[0], "/orchestrator.MonetaeOverloadOrchestrator/BroadcastAgent", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &overloadOrchestratorBroadcastAgentClient{stream}
+	x := &monetaeOverloadOrchestratorBroadcastAgentClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -46,16 +47,16 @@ func (c *overloadOrchestratorClient) BroadcastAgent(ctx context.Context, in *v1.
 	return x, nil
 }
 
-type OverloadOrchestrator_BroadcastAgentClient interface {
+type MonetaeOverloadOrchestrator_BroadcastAgentClient interface {
 	Recv() (*AgentConnection, error)
 	grpc.ClientStream
 }
 
-type overloadOrchestratorBroadcastAgentClient struct {
+type monetaeOverloadOrchestratorBroadcastAgentClient struct {
 	grpc.ClientStream
 }
 
-func (x *overloadOrchestratorBroadcastAgentClient) Recv() (*AgentConnection, error) {
+func (x *monetaeOverloadOrchestratorBroadcastAgentClient) Recv() (*AgentConnection, error) {
 	m := new(AgentConnection)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -63,67 +64,104 @@ func (x *overloadOrchestratorBroadcastAgentClient) Recv() (*AgentConnection, err
 	return m, nil
 }
 
-// OverloadOrchestratorServer is the server API for OverloadOrchestrator service.
-// All implementations must embed UnimplementedOverloadOrchestratorServer
+func (c *monetaeOverloadOrchestratorClient) Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error) {
+	out := new(ExecuteResponse)
+	err := c.cc.Invoke(ctx, "/orchestrator.MonetaeOverloadOrchestrator/Execute", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// MonetaeOverloadOrchestratorServer is the server API for MonetaeOverloadOrchestrator service.
+// All implementations must embed UnimplementedMonetaeOverloadOrchestratorServer
 // for forward compatibility
-type OverloadOrchestratorServer interface {
+type MonetaeOverloadOrchestratorServer interface {
 	// Broadcasts overload agent connections to all agents
-	BroadcastAgent(*v1.DynamicVerifier, OverloadOrchestrator_BroadcastAgentServer) error
-	mustEmbedUnimplementedOverloadOrchestratorServer()
+	BroadcastAgent(*v1.DynamicVerifier, MonetaeOverloadOrchestrator_BroadcastAgentServer) error
+	Execute(context.Context, *ExecuteRequest) (*ExecuteResponse, error)
+	mustEmbedUnimplementedMonetaeOverloadOrchestratorServer()
 }
 
-// UnimplementedOverloadOrchestratorServer must be embedded to have forward compatible implementations.
-type UnimplementedOverloadOrchestratorServer struct {
+// UnimplementedMonetaeOverloadOrchestratorServer must be embedded to have forward compatible implementations.
+type UnimplementedMonetaeOverloadOrchestratorServer struct {
 }
 
-func (UnimplementedOverloadOrchestratorServer) BroadcastAgent(*v1.DynamicVerifier, OverloadOrchestrator_BroadcastAgentServer) error {
+func (UnimplementedMonetaeOverloadOrchestratorServer) BroadcastAgent(*v1.DynamicVerifier, MonetaeOverloadOrchestrator_BroadcastAgentServer) error {
 	return status.Errorf(codes.Unimplemented, "method BroadcastAgent not implemented")
 }
-func (UnimplementedOverloadOrchestratorServer) mustEmbedUnimplementedOverloadOrchestratorServer() {}
+func (UnimplementedMonetaeOverloadOrchestratorServer) Execute(context.Context, *ExecuteRequest) (*ExecuteResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Execute not implemented")
+}
+func (UnimplementedMonetaeOverloadOrchestratorServer) mustEmbedUnimplementedMonetaeOverloadOrchestratorServer() {
+}
 
-// UnsafeOverloadOrchestratorServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to OverloadOrchestratorServer will
+// UnsafeMonetaeOverloadOrchestratorServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonetaeOverloadOrchestratorServer will
 // result in compilation errors.
-type UnsafeOverloadOrchestratorServer interface {
-	mustEmbedUnimplementedOverloadOrchestratorServer()
+type UnsafeMonetaeOverloadOrchestratorServer interface {
+	mustEmbedUnimplementedMonetaeOverloadOrchestratorServer()
 }
 
-func RegisterOverloadOrchestratorServer(s grpc.ServiceRegistrar, srv OverloadOrchestratorServer) {
-	s.RegisterService(&OverloadOrchestrator_ServiceDesc, srv)
+func RegisterMonetaeOverloadOrchestratorServer(s grpc.ServiceRegistrar, srv MonetaeOverloadOrchestratorServer) {
+	s.RegisterService(&MonetaeOverloadOrchestrator_ServiceDesc, srv)
 }
 
-func _OverloadOrchestrator_BroadcastAgent_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _MonetaeOverloadOrchestrator_BroadcastAgent_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(v1.DynamicVerifier)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(OverloadOrchestratorServer).BroadcastAgent(m, &overloadOrchestratorBroadcastAgentServer{stream})
+	return srv.(MonetaeOverloadOrchestratorServer).BroadcastAgent(m, &monetaeOverloadOrchestratorBroadcastAgentServer{stream})
 }
 
-type OverloadOrchestrator_BroadcastAgentServer interface {
+type MonetaeOverloadOrchestrator_BroadcastAgentServer interface {
 	Send(*AgentConnection) error
 	grpc.ServerStream
 }
 
-type overloadOrchestratorBroadcastAgentServer struct {
+type monetaeOverloadOrchestratorBroadcastAgentServer struct {
 	grpc.ServerStream
 }
 
-func (x *overloadOrchestratorBroadcastAgentServer) Send(m *AgentConnection) error {
+func (x *monetaeOverloadOrchestratorBroadcastAgentServer) Send(m *AgentConnection) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-// OverloadOrchestrator_ServiceDesc is the grpc.ServiceDesc for OverloadOrchestrator service.
+func _MonetaeOverloadOrchestrator_Execute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MonetaeOverloadOrchestratorServer).Execute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/orchestrator.MonetaeOverloadOrchestrator/Execute",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MonetaeOverloadOrchestratorServer).Execute(ctx, req.(*ExecuteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// MonetaeOverloadOrchestrator_ServiceDesc is the grpc.ServiceDesc for MonetaeOverloadOrchestrator service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var OverloadOrchestrator_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "orchestrator.OverloadOrchestrator",
-	HandlerType: (*OverloadOrchestratorServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+var MonetaeOverloadOrchestrator_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "orchestrator.MonetaeOverloadOrchestrator",
+	HandlerType: (*MonetaeOverloadOrchestratorServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Execute",
+			Handler:    _MonetaeOverloadOrchestrator_Execute_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "BroadcastAgent",
-			Handler:       _OverloadOrchestrator_BroadcastAgent_Handler,
+			Handler:       _MonetaeOverloadOrchestrator_BroadcastAgent_Handler,
 			ServerStreams: true,
 		},
 	},

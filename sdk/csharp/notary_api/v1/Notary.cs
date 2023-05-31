@@ -25,9 +25,9 @@ namespace Notary {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chpub3RhcnlfYXBpL3YxL25vdGFyeS5wcm90bxIGbm90YXJ5GhZjb21tb24v",
-            "djEvY29tbW9uLnByb3RvMggKBk5vdGFyeUI5WjdnaXRodWIuY29tL2tub3gt",
-            "bmV0d29ya3MvZ3JwYy1zZGtzL3Nkay9nby9ub3RhcnlfYXBpL3YxYgZwcm90",
-            "bzM="));
+            "djEvY29tbW9uLnByb3RvMg8KDU1vbmV0YWVOb3RhcnlCOVo3Z2l0aHViLmNv",
+            "bS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vbm90YXJ5X2FwaS92",
+            "MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));

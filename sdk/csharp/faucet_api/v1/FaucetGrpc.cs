@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace FaucetApi.V1 {
-  public static partial class Faucet
+  public static partial class MonetaeFaucetService
   {
-    static readonly string __ServiceName = "faucet_api.v1.Faucet";
+    static readonly string __ServiceName = "faucet_api.v1.MonetaeFaucetService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -64,9 +64,9 @@ namespace FaucetApi.V1 {
       get { return global::FaucetApi.V1.FaucetReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Faucet</summary>
-    [grpc::BindServiceMethod(typeof(Faucet), "BindService")]
-    public abstract partial class FaucetBase
+    /// <summary>Base class for server-side implementations of MonetaeFaucetService</summary>
+    [grpc::BindServiceMethod(typeof(MonetaeFaucetService), "BindService")]
+    public abstract partial class MonetaeFaucetServiceBase
     {
       /// <summary>
       /// Request promissory files to be issued to a given recipient, for a
@@ -83,30 +83,30 @@ namespace FaucetApi.V1 {
 
     }
 
-    /// <summary>Client for Faucet</summary>
-    public partial class FaucetClient : grpc::ClientBase<FaucetClient>
+    /// <summary>Client for MonetaeFaucetService</summary>
+    public partial class MonetaeFaucetServiceClient : grpc::ClientBase<MonetaeFaucetServiceClient>
     {
-      /// <summary>Creates a new client for Faucet</summary>
+      /// <summary>Creates a new client for MonetaeFaucetService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public FaucetClient(grpc::ChannelBase channel) : base(channel)
+      public MonetaeFaucetServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Faucet that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MonetaeFaucetService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public FaucetClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MonetaeFaucetServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected FaucetClient() : base()
+      protected MonetaeFaucetServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected FaucetClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MonetaeFaucetServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -164,16 +164,16 @@ namespace FaucetApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override FaucetClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MonetaeFaucetServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new FaucetClient(configuration);
+        return new MonetaeFaucetServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(FaucetBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MonetaeFaucetServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Faucet, serviceImpl.Faucet).Build();
@@ -184,7 +184,7 @@ namespace FaucetApi.V1 {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, FaucetBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeFaucetServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Faucet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FaucetApi.V1.FaucetRequest, global::FaucetApi.V1.FaucetResponse>(serviceImpl.Faucet));
     }

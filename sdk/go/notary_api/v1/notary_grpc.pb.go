@@ -11,50 +11,50 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// NotaryClient is the client API for Notary service.
+// MonetaeNotaryClient is the client API for MonetaeNotary service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type NotaryClient interface {
+type MonetaeNotaryClient interface {
 }
 
-type notaryClient struct {
+type monetaeNotaryClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNotaryClient(cc grpc.ClientConnInterface) NotaryClient {
-	return &notaryClient{cc}
+func NewMonetaeNotaryClient(cc grpc.ClientConnInterface) MonetaeNotaryClient {
+	return &monetaeNotaryClient{cc}
 }
 
-// NotaryServer is the server API for Notary service.
-// All implementations must embed UnimplementedNotaryServer
+// MonetaeNotaryServer is the server API for MonetaeNotary service.
+// All implementations must embed UnimplementedMonetaeNotaryServer
 // for forward compatibility
-type NotaryServer interface {
-	mustEmbedUnimplementedNotaryServer()
+type MonetaeNotaryServer interface {
+	mustEmbedUnimplementedMonetaeNotaryServer()
 }
 
-// UnimplementedNotaryServer must be embedded to have forward compatible implementations.
-type UnimplementedNotaryServer struct {
+// UnimplementedMonetaeNotaryServer must be embedded to have forward compatible implementations.
+type UnimplementedMonetaeNotaryServer struct {
 }
 
-func (UnimplementedNotaryServer) mustEmbedUnimplementedNotaryServer() {}
+func (UnimplementedMonetaeNotaryServer) mustEmbedUnimplementedMonetaeNotaryServer() {}
 
-// UnsafeNotaryServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to NotaryServer will
+// UnsafeMonetaeNotaryServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonetaeNotaryServer will
 // result in compilation errors.
-type UnsafeNotaryServer interface {
-	mustEmbedUnimplementedNotaryServer()
+type UnsafeMonetaeNotaryServer interface {
+	mustEmbedUnimplementedMonetaeNotaryServer()
 }
 
-func RegisterNotaryServer(s grpc.ServiceRegistrar, srv NotaryServer) {
-	s.RegisterService(&Notary_ServiceDesc, srv)
+func RegisterMonetaeNotaryServer(s grpc.ServiceRegistrar, srv MonetaeNotaryServer) {
+	s.RegisterService(&MonetaeNotary_ServiceDesc, srv)
 }
 
-// Notary_ServiceDesc is the grpc.ServiceDesc for Notary service.
+// MonetaeNotary_ServiceDesc is the grpc.ServiceDesc for MonetaeNotary service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Notary_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "notary.Notary",
-	HandlerType: (*NotaryServer)(nil),
+var MonetaeNotary_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "notary.MonetaeNotary",
+	HandlerType: (*MonetaeNotaryServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams:     []grpc.StreamDesc{},
 	Metadata:    "notary_api/v1/notary.proto",

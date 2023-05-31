@@ -21,8 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// *
-// IdentityRequest - Subject and query parameters for identity lookup
+// [Example]{"subject": "SUBJECTxBYTES=", "query": "QUERY" }
 type IdentityRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -80,8 +79,7 @@ func (x *IdentityRequest) GetQuery() string {
 	return ""
 }
 
-// *
-// IdentityResponse - Subject and media data with mime type for encoding
+// [Example]{"subject": "SUBJECTxBYTES=", "media": [{"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}, {"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}]}
 type IdentityResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -139,8 +137,7 @@ func (x *IdentityResponse) GetMedia() []*v1.Media {
 	return nil
 }
 
-// *
-// ConnectionIdentity - Identity of a connection
+// [Example]{}
 type ConnectionIdentity struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

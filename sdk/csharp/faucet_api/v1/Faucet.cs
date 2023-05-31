@@ -29,10 +29,11 @@ namespace FaucetApi.V1 {
             "bW91bnQYASABKAsyDi5jb21tb24uQW1vdW50EhEKCXJlY2lwaWVudBgCIAEo",
             "CRIvCgxkaXN0cmlidXRpb24YAyABKAsyFC5jb21tb24uRGlzdHJpYnV0aW9u",
             "SACIAQFCDwoNX2Rpc3RyaWJ1dGlvbiIuCg5GYXVjZXRSZXNwb25zZRIcChRu",
-            "dW1fcHJvbWlzc29yeV9maWxlcxgBIAEoDTJPCgZGYXVjZXQSRQoGRmF1Y2V0",
-            "EhwuZmF1Y2V0X2FwaS52MS5GYXVjZXRSZXF1ZXN0Gh0uZmF1Y2V0X2FwaS52",
-            "MS5GYXVjZXRSZXNwb25zZUI5WjdnaXRodWIuY29tL2tub3gtbmV0d29ya3Mv",
-            "Z3JwYy1zZGtzL3Nkay9nby9mYXVjZXRfYXBpL3YxYgZwcm90bzM="));
+            "dW1fcHJvbWlzc29yeV9maWxlcxgBIAEoDTJdChRNb25ldGFlRmF1Y2V0U2Vy",
+            "dmljZRJFCgZGYXVjZXQSHC5mYXVjZXRfYXBpLnYxLkZhdWNldFJlcXVlc3Qa",
+            "HS5mYXVjZXRfYXBpLnYxLkZhdWNldFJlc3BvbnNlQjlaN2dpdGh1Yi5jb20v",
+            "a25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL2ZhdWNldF9hcGkvdjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -46,6 +47,7 @@ namespace FaucetApi.V1 {
   #region Messages
   /// <summary>
   /// Faucet request with the total amount and recipient.
+  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT"}
   /// </summary>
   public sealed partial class FaucetRequest : pb::IMessage<FaucetRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -340,6 +342,7 @@ namespace FaucetApi.V1 {
 
   /// <summary>
   /// Faucet response including the number of promissory files issued.
+  /// [Example]{"num_promissory_files": 10}
   /// </summary>
   public sealed partial class FaucetResponse : pb::IMessage<FaucetResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

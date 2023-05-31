@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Orchestrator {
-  public static partial class OverloadOrchestrator
+  public static partial class MonetaeOverloadOrchestrator
   {
-    static readonly string __ServiceName = "orchestrator.OverloadOrchestrator";
+    static readonly string __ServiceName = "orchestrator.MonetaeOverloadOrchestrator";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -49,6 +49,10 @@ namespace Orchestrator {
     static readonly grpc::Marshaller<global::Common.DynamicVerifier> __Marshaller_common_DynamicVerifier = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Common.DynamicVerifier.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Orchestrator.AgentConnection> __Marshaller_orchestrator_AgentConnection = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Orchestrator.AgentConnection.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Orchestrator.ExecuteRequest> __Marshaller_orchestrator_ExecuteRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Orchestrator.ExecuteRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Orchestrator.ExecuteResponse> __Marshaller_orchestrator_ExecuteResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Orchestrator.ExecuteResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Common.DynamicVerifier, global::Orchestrator.AgentConnection> __Method_BroadcastAgent = new grpc::Method<global::Common.DynamicVerifier, global::Orchestrator.AgentConnection>(
@@ -58,15 +62,23 @@ namespace Orchestrator {
         __Marshaller_common_DynamicVerifier,
         __Marshaller_orchestrator_AgentConnection);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Orchestrator.ExecuteRequest, global::Orchestrator.ExecuteResponse> __Method_Execute = new grpc::Method<global::Orchestrator.ExecuteRequest, global::Orchestrator.ExecuteResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Execute",
+        __Marshaller_orchestrator_ExecuteRequest,
+        __Marshaller_orchestrator_ExecuteResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
       get { return global::Orchestrator.OrchestratorReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of OverloadOrchestrator</summary>
-    [grpc::BindServiceMethod(typeof(OverloadOrchestrator), "BindService")]
-    public abstract partial class OverloadOrchestratorBase
+    /// <summary>Base class for server-side implementations of MonetaeOverloadOrchestrator</summary>
+    [grpc::BindServiceMethod(typeof(MonetaeOverloadOrchestrator), "BindService")]
+    public abstract partial class MonetaeOverloadOrchestratorBase
     {
       /// <summary>
       /// Broadcasts overload agent connections to all agents
@@ -81,32 +93,38 @@ namespace Orchestrator {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Orchestrator.ExecuteResponse> Execute(global::Orchestrator.ExecuteRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
-    /// <summary>Client for OverloadOrchestrator</summary>
-    public partial class OverloadOrchestratorClient : grpc::ClientBase<OverloadOrchestratorClient>
+    /// <summary>Client for MonetaeOverloadOrchestrator</summary>
+    public partial class MonetaeOverloadOrchestratorClient : grpc::ClientBase<MonetaeOverloadOrchestratorClient>
     {
-      /// <summary>Creates a new client for OverloadOrchestrator</summary>
+      /// <summary>Creates a new client for MonetaeOverloadOrchestrator</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public OverloadOrchestratorClient(grpc::ChannelBase channel) : base(channel)
+      public MonetaeOverloadOrchestratorClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for OverloadOrchestrator that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MonetaeOverloadOrchestrator that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public OverloadOrchestratorClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MonetaeOverloadOrchestratorClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected OverloadOrchestratorClient() : base()
+      protected MonetaeOverloadOrchestratorClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected OverloadOrchestratorClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MonetaeOverloadOrchestratorClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -134,21 +152,42 @@ namespace Orchestrator {
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_BroadcastAgent, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Orchestrator.ExecuteResponse Execute(global::Orchestrator.ExecuteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Execute(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Orchestrator.ExecuteResponse Execute(global::Orchestrator.ExecuteRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Execute, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Orchestrator.ExecuteResponse> ExecuteAsync(global::Orchestrator.ExecuteRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ExecuteAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Orchestrator.ExecuteResponse> ExecuteAsync(global::Orchestrator.ExecuteRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Execute, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override OverloadOrchestratorClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MonetaeOverloadOrchestratorClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new OverloadOrchestratorClient(configuration);
+        return new MonetaeOverloadOrchestratorClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(OverloadOrchestratorBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MonetaeOverloadOrchestratorBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_BroadcastAgent, serviceImpl.BroadcastAgent).Build();
+          .AddMethod(__Method_BroadcastAgent, serviceImpl.BroadcastAgent)
+          .AddMethod(__Method_Execute, serviceImpl.Execute).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -156,9 +195,10 @@ namespace Orchestrator {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, OverloadOrchestratorBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeOverloadOrchestratorBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_BroadcastAgent, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Common.DynamicVerifier, global::Orchestrator.AgentConnection>(serviceImpl.BroadcastAgent));
+      serviceBinder.AddMethod(__Method_Execute, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Orchestrator.ExecuteRequest, global::Orchestrator.ExecuteResponse>(serviceImpl.Execute));
     }
 
   }

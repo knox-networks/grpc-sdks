@@ -57,6 +57,7 @@ namespace Common {
   #region Messages
   /// <summary>
   /// IsProvisionedRequest - Request the service to determine if it is provisioned to perform its duties
+  /// [Example]{}
   /// </summary>
   public sealed partial class IsProvisionedRequest : pb::IMessage<IsProvisionedRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -212,6 +213,7 @@ namespace Common {
 
   /// <summary>
   /// IsProvisionedResponse - Respond with the provision status of the service
+  /// [Example]{ "status": 1, "reason": "REASON" }
   /// </summary>
   public sealed partial class IsProvisionedResponse : pb::IMessage<IsProvisionedResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

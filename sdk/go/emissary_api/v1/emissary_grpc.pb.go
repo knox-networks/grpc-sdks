@@ -11,50 +11,50 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// EmissaryClient is the client API for Emissary service.
+// MonetaeEmissaryClient is the client API for MonetaeEmissary service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type EmissaryClient interface {
+type MonetaeEmissaryClient interface {
 }
 
-type emissaryClient struct {
+type monetaeEmissaryClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewEmissaryClient(cc grpc.ClientConnInterface) EmissaryClient {
-	return &emissaryClient{cc}
+func NewMonetaeEmissaryClient(cc grpc.ClientConnInterface) MonetaeEmissaryClient {
+	return &monetaeEmissaryClient{cc}
 }
 
-// EmissaryServer is the server API for Emissary service.
-// All implementations must embed UnimplementedEmissaryServer
+// MonetaeEmissaryServer is the server API for MonetaeEmissary service.
+// All implementations must embed UnimplementedMonetaeEmissaryServer
 // for forward compatibility
-type EmissaryServer interface {
-	mustEmbedUnimplementedEmissaryServer()
+type MonetaeEmissaryServer interface {
+	mustEmbedUnimplementedMonetaeEmissaryServer()
 }
 
-// UnimplementedEmissaryServer must be embedded to have forward compatible implementations.
-type UnimplementedEmissaryServer struct {
+// UnimplementedMonetaeEmissaryServer must be embedded to have forward compatible implementations.
+type UnimplementedMonetaeEmissaryServer struct {
 }
 
-func (UnimplementedEmissaryServer) mustEmbedUnimplementedEmissaryServer() {}
+func (UnimplementedMonetaeEmissaryServer) mustEmbedUnimplementedMonetaeEmissaryServer() {}
 
-// UnsafeEmissaryServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to EmissaryServer will
+// UnsafeMonetaeEmissaryServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonetaeEmissaryServer will
 // result in compilation errors.
-type UnsafeEmissaryServer interface {
-	mustEmbedUnimplementedEmissaryServer()
+type UnsafeMonetaeEmissaryServer interface {
+	mustEmbedUnimplementedMonetaeEmissaryServer()
 }
 
-func RegisterEmissaryServer(s grpc.ServiceRegistrar, srv EmissaryServer) {
-	s.RegisterService(&Emissary_ServiceDesc, srv)
+func RegisterMonetaeEmissaryServer(s grpc.ServiceRegistrar, srv MonetaeEmissaryServer) {
+	s.RegisterService(&MonetaeEmissary_ServiceDesc, srv)
 }
 
-// Emissary_ServiceDesc is the grpc.ServiceDesc for Emissary service.
+// MonetaeEmissary_ServiceDesc is the grpc.ServiceDesc for MonetaeEmissary service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Emissary_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "emissary.Emissary",
-	HandlerType: (*EmissaryServer)(nil),
+var MonetaeEmissary_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "emissary.MonetaeEmissary",
+	HandlerType: (*MonetaeEmissaryServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams:     []grpc.StreamDesc{},
 	Metadata:    "emissary_api/v1/emissary.proto",

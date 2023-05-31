@@ -1570,7 +1570,7 @@ namespace IssuerApi.V1 {
 
   /// <summary>
   /// Returns roles set in the Issuer for configuring access.
-  /// [EEEExample]{"roles": []}
+  /// [Example]{"roles": []}
   /// </summary>
   public sealed partial class GetRolesResponse : pb::IMessage<GetRolesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

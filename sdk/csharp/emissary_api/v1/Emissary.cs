@@ -24,9 +24,9 @@ namespace Emissary {
     static EmissaryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbWlzc2FyeV9hcGkvdjEvZW1pc3NhcnkucHJvdG8SCGVtaXNzYXJ5MgoK",
-            "CEVtaXNzYXJ5QjtaOWdpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNk",
-            "a3Mvc2RrL2dvL2VtaXNzYXJ5X2FwaS92MWIGcHJvdG8z"));
+            "Ch5lbWlzc2FyeV9hcGkvdjEvZW1pc3NhcnkucHJvdG8SCGVtaXNzYXJ5MhEK",
+            "D01vbmV0YWVFbWlzc2FyeUI7WjlnaXRodWIuY29tL2tub3gtbmV0d29ya3Mv",
+            "Z3JwYy1zZGtzL3Nkay9nby9lbWlzc2FyeV9hcGkvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, null));

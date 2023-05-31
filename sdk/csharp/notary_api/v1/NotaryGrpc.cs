@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Notary {
-  public static partial class Notary
+  public static partial class MonetaeNotary
   {
-    static readonly string __ServiceName = "notary.Notary";
+    static readonly string __ServiceName = "notary.MonetaeNotary";
 
 
     /// <summary>Service descriptor</summary>
@@ -19,51 +19,51 @@ namespace Notary {
       get { return global::Notary.NotaryReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Notary</summary>
-    [grpc::BindServiceMethod(typeof(Notary), "BindService")]
-    public abstract partial class NotaryBase
+    /// <summary>Base class for server-side implementations of MonetaeNotary</summary>
+    [grpc::BindServiceMethod(typeof(MonetaeNotary), "BindService")]
+    public abstract partial class MonetaeNotaryBase
     {
     }
 
-    /// <summary>Client for Notary</summary>
-    public partial class NotaryClient : grpc::ClientBase<NotaryClient>
+    /// <summary>Client for MonetaeNotary</summary>
+    public partial class MonetaeNotaryClient : grpc::ClientBase<MonetaeNotaryClient>
     {
-      /// <summary>Creates a new client for Notary</summary>
+      /// <summary>Creates a new client for MonetaeNotary</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public NotaryClient(grpc::ChannelBase channel) : base(channel)
+      public MonetaeNotaryClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Notary that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MonetaeNotary that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public NotaryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MonetaeNotaryClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected NotaryClient() : base()
+      protected MonetaeNotaryClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected NotaryClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MonetaeNotaryClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override NotaryClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MonetaeNotaryClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new NotaryClient(configuration);
+        return new MonetaeNotaryClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(NotaryBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MonetaeNotaryBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder().Build();
     }
@@ -73,7 +73,7 @@ namespace Notary {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, NotaryBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeNotaryBase serviceImpl)
     {
     }
 
