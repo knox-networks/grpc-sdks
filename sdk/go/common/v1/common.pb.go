@@ -333,9 +333,11 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{25, 1}
 }
 
-// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
-// indicated by the `signature_system`.
-// [Example]{"signature_system": 1, "verifier": "xVERIFIERxBYTES="}
+// [Example]
+// {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// }
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -393,10 +395,12 @@ func (x *DynamicVerifier) GetVerifier() []byte {
 	return nil
 }
 
-// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
-// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. Ex. An `amount` of
-// 12345 and `decimals` of 2 is equivalent to "123.45".
-// [Example]{"currency_code":"USD", "amount":100, "decimals":2}
+// [Example]
+// {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// }
 type Amount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -465,9 +469,13 @@ func (x *Amount) GetDecimals() uint32 {
 	return 0
 }
 
-// Represents a desired denomination distribution.
-// map<mantissa, quantity>
-// sum must match corresponding amount.amount
+// [Example]
+// {
+// "value": {
+// "key1": "value1",
+// "key2": "value2"
+// }
+// }
 type Distribution struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -515,8 +523,13 @@ func (x *Distribution) GetValue() map[int64]int32 {
 	return nil
 }
 
-// Used to start an authentication flow
-// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+// [Example]
+// {
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// }
+// }
 type AuthenticationRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -565,8 +578,10 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 	return nil
 }
 
-// The returns a challenge nonce meant to be signed by the requestor's private key.
-// [Example]{"challenge": "CHALLENGExBYTES="}
+// [Example]
+// {
+// "challenge": "CHALLENGExBYTES="
+// }
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -615,8 +630,8 @@ func (x *AuthenticationResponse) GetChallenge() []byte {
 	return nil
 }
 
-// Connection type associated with a single verifier.
-// [Example]{}
+// [Example]
+// {}
 type OneConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -655,9 +670,19 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{5}
 }
 
-// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
-// connection.
-// [Example]{"associated_verifiers": [{"signature_system": 1, "verifier": "VERIFIERxBYTES="}, {"signature_system": 2, "verifier": "VERIFIERxBYTES="}]}
+// [Example]
+// {
+// "associated_verifiers": [
+// {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// },
+// {
+// "signature_system": 2,
+// "verifier": "VERIFIERxBYTES="
+// }
+// ]
+// }
 type ManyConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -706,9 +731,17 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 	return nil
 }
 
-// The message sent during an already established connection allowing the addition or removal of an
-// `associated_verifier` tied to connection held by the `primary_verifier`.
-// [Example]{"primary_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}, "associated_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}
+// [Example]
+// {
+// "primary_verifier": {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// },
+// "associated_verifier": {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// }
+// }
 type AssociatedConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -766,9 +799,20 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 	return nil
 }
 
-// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more
-// verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is
-// represented by the `signature.verifier` field.
+// [Example]
+// {
+// "request_type": {
+// "one": {}
+// },
+// "signature": {
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// }
+// "signature": "SIGNATURExBYTES="
+// },
+// "connection_id": "CONNECTION_ID"
+// }
 type ConnectionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -872,8 +916,14 @@ func (*ConnectionRequest_One) isConnectionRequest_RequestType() {}
 
 func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 
-// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the
-// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
+// [Example]
+// {
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// }
+// "signature": "SIGNATURExBYTES="
+// }
 type AuthenticationSignature struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -931,7 +981,10 @@ func (x *AuthenticationSignature) GetSignature() []byte {
 	return nil
 }
 
-// Digital banknote to be authorized in the Notary service flow.
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizedSignatureRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -980,7 +1033,10 @@ func (x *AuthorizedSignatureRequest) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Authorized digital banknote returned in the Notary service flow.
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizedSignatureResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1029,8 +1085,11 @@ func (x *AuthorizedSignatureResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Media - Mime type and binary data encoding For common MIME types see:
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+// [Example]
+// {
+// "mime_type": "MIME_TYPE",
+// "data": "xDATAxBYTES="
+// }
 type Media struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1088,8 +1147,26 @@ func (x *Media) GetData() []byte {
 	return nil
 }
 
-// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
-// create issuance requests.
+// [Example]
+// {
+// "verifier": "VERIFIER",
+// "role_enum": {
+// "issue_permissions": {
+// "inner": [
+// {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// }
+// ]
+// }
+// }
+// }
 type Role struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1185,7 +1262,8 @@ func (*Role_Authorized) isRole_RoleEnum() {}
 
 func (*Role_IssuePermissions_) isRole_RoleEnum() {}
 
-// Request the identity of a given service endpoint, e.g. Issuer, Authority, Treasury.
+// [Example]
+// {}
 type GetVerifierRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1224,8 +1302,14 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{14}
 }
 
-// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and
-// multibase encoded formats.
+// [Example]
+// {
+// "bytes": {
+// "signature_system": 1,
+// "verifier": "VERIFIERxBYTES="
+// }
+// "multibase": "MULTIBASE"
+// }
 type GetVerifierResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1283,7 +1367,8 @@ func (x *GetVerifierResponse) GetMultibase() string {
 	return ""
 }
 
-// Request the `ServiceType` of a given service endpoint. e.g. Issuer, Authority, Treasury.
+// [Example]
+// {}
 type GetServiceTypeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1322,7 +1407,10 @@ func (*GetServiceTypeRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{16}
 }
 
-// Response that contains the `ServiceType` of a service endpoint.
+// [Example]
+// {
+// "service_type": 1
+// }
 type GetServiceTypeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1371,8 +1459,8 @@ func (x *GetServiceTypeResponse) GetServiceType() ServiceType {
 	return ServiceType_UnknownService
 }
 
-// GetInstanceRequest - Request the Instance of the service, a value generated each time a service
-// is started, can be correlated to a gateway connection_id
+// [Example]
+// {}
 type GetInstanceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1411,7 +1499,10 @@ func (*GetInstanceRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{18}
 }
 
-// GetInstanceResponse - Respond with a UUID of the particular instance
+// [Example]
+// {
+// "instance_id": "INSTANCE_ID"
+// }
 type GetInstanceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1459,7 +1550,21 @@ func (x *GetInstanceResponse) GetInstanceId() string {
 	return ""
 }
 
-// Initiates a Simple Payment transaction. Sender is implied to be the owner of the digital banknotes to be sent.
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "recipient": "RECIPIENT",
+// "promissories": [
+// "PROMISSORY1",
+// "PROMISSORY2",
+// "PROMISSORY3"
+// ],
+// "user_reference": "USER_PROVIDED_REFERENCE"
+// }
 type StartSimplePaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1535,8 +1640,10 @@ func (x *StartSimplePaymentRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-// transaction.
+// [Example]
+// {
+// "uetr": "UETR"
+// }
 type StartSimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1585,8 +1692,16 @@ func (x *StartSimplePaymentResponse) GetUetr() string {
 	return ""
 }
 
-// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
-// the well known Treasury verifier provided at startup.
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "promissory": "PROMISSORY1",
+// "user_reference": "USER_PROVIDED_REFERENCE"
+// }
 type StartFundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1654,8 +1769,10 @@ func (x *StartFundsChangeRequest) GetUserReference() string {
 	return ""
 }
 
-// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Funds Change
-// transaction.
+// [Example]
+// {
+// "uetr": "UETR"
+// }
 type StartFundsChangeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1704,7 +1821,20 @@ func (x *StartFundsChangeResponse) GetUetr() string {
 	return ""
 }
 
-// Represents the status of a transaction with pertinent metadata attached.
+// [Example]
+// {
+// "status": 5,
+// "promissories": [
+// "PROMISSORYxIDx1",
+// "PROMISSORYxIDx2"
+// ],
+// "amount_transferred": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "message": "MESSAGE"
+// }
 type TransactionSnapshot struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1780,8 +1910,23 @@ func (x *TransactionSnapshot) GetMessage() string {
 	return ""
 }
 
-// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
-// only has local significance. On the wire messages use various packet types.
+// [Example]
+// {
+// "type": 1,
+// "role": 0,
+// "uetr": "UETR",
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "created": "CREATED_TIMESTAMP",
+// "updated": "UPDATED_TIMESTAMP",
+// "memo": "MEMO",
+// "owner": "OWNER_PUBLIC_KEY",
+// "counterparty": "COUNTERPARTY_PUBLIC_KEY",
+// "status": 0
+// }
 type Transaction struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

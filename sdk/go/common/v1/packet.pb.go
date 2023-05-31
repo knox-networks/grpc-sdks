@@ -397,8 +397,39 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_packet_proto_rawDescGZIP(), []int{9, 0}
 }
 
-// Streaming data packet used across Gateway connections.
-// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "signature_system": 1, "verifier": "xxSENDERxVERIFIERxBYTES="}, "recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "nonce": "NONCExBYTES=", "transaction_header": {"starter": { "signature_system": 1, "verifier": "xSTARTERxVERIFIERxBYTES="}, "responder": { "signature_system": 1, "verifier": "xxRESPONDERxxVERIFIERxBYTES="}, "uetr": "UETR", "timestamp": "TIMESTAMP", "signature": "SIGNATURExBYTES=", "user_reference": "USER_REFERENCE", "related_uetrs": ["RELATED_UETR1", "RELATED_UETR2"]}}
+// [Example]
+// {
+// "packet_type": 100,
+// "data": "xDATAxBYTES=",
+// "channel": "YOUR_CHANNEL",
+// "sender": {
+// "signature_system": 1,
+// "verifier": "xxSENDERxVERIFIERxBYTES="
+// },
+// "recipient": {
+// "signature_system": 1,
+// "verifier": "xxRECIPIENTxxVERIFIERxBYTES="
+// },
+// "nonce": "NONCExBYTES=",
+// "transaction_header": {
+// "starter": {
+// "signature_system": 1,
+// "verifier": "xSTARTERxVERIFIERxBYTES="
+// },
+// "responder": {
+// "signature_system": 1,
+// "verifier": "xxRESPONDERxxVERIFIERxBYTES="
+// },
+// "uetr": "UETR",
+// "timestamp": "TIMESTAMP",
+// "signature": "SIGNATURExBYTES=",
+// "user_reference": "USER_REFERENCE",
+// "related_uetrs": [
+// "RELATED_UETR1",
+// "RELATED_UETR2"
+// ]
+// }
+// }
 type Packet struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -501,8 +532,25 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 	return nil
 }
 
-// Encasulates all cross-network metadata that associates
-// a `Packet` with a given transaction.
+// [Example]
+// {
+// "starter": {
+// "signature_system": 1,
+// "verifier": "xSTARTERxVERIFIERxBYTES="
+// },
+// "responder": {
+// "signature_system": 1,
+// "verifier": "xxRESPONDERxxVERIFIERxBYTES="
+// },
+// "uetr": "UETR",
+// "timestamp": "TIMESTAMP",
+// "signature": "SIGNATURExBYTES=",
+// "user_reference": "USER_REFERENCE",
+// "related_uetrs": [
+// "RELATED_UETR1",
+// "RELATED_UETR2"
+// ]
+// }
 type TransactionHeader struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -612,8 +660,14 @@ func (x *TransactionHeader) GetRelatedUetrs() []string {
 	return nil
 }
 
-// Sent by a Simple Payment starter allowing a responder to
-// accept or reject a transfer of funds.
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// }
+// }
 type SimplePaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -661,7 +715,8 @@ func (x *SimplePaymentRequest) GetAmount() *Amount {
 	return nil
 }
 
-// Sent by a Simple Payment responder, signals readiness to accept funds.
+// [Example]
+// {}
 type SimplePaymentAck struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -700,7 +755,11 @@ func (*SimplePaymentAck) Descriptor() ([]byte, []int) {
 	return file_common_v1_packet_proto_rawDescGZIP(), []int{3}
 }
 
-// Sent by a Simple Payment responder, indicates a rejection to accept funds.
+// [Example]
+// {
+// "rejection_reason": 1,
+// "other": "OTHER"
+// }
 type SimplePaymentNack struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -756,10 +815,19 @@ func (x *SimplePaymentNack) GetOther() string {
 	return ""
 }
 
-// * Sent by the responder.
-// * Paired with a `PacketType::SPStatus`.
-// * Always sent after the end of a simple payment flow
-// * Acts as confirmation of full or partial funds transfer
+// [Example]
+// {
+// "received_amount": {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// },
+// "received_promissories": [
+// "RECEIVED_PROMISSORY1",
+// "RECEIVED_PROMISSORY2",
+// "RECEIVED_PROMISSORY3"
+// ]
+// }
 type SimplePaymentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -828,8 +896,24 @@ func (x *SimplePaymentResponse) GetReceivedPromissories() []string {
 	return nil
 }
 
-// Sent by a Funds Change starter allowing a responder to
-// accept or reject a transfer of funds.
+// [Example]
+// {
+// "gross_amount": {
+// "currency_code":"USD",
+// "amount":500,
+// "decimals":2
+// },
+// "exact_amount": {
+// "currency_code":"USD",
+// "amount":499,
+// "decimals":2
+// },
+// "fees": {
+// "currency_code":"USD",
+// "amount":1,
+// "decimals":2
+// }
+// }
 type FundsChangeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -893,7 +977,8 @@ func (x *FundsChangeRequest) GetFees() *Amount {
 	return nil
 }
 
-// Sent by a Funds Change responder, signals readiness to accept funds.
+// [Example]
+// {}
 type FundsChangeAck struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -932,7 +1017,11 @@ func (*FundsChangeAck) Descriptor() ([]byte, []int) {
 	return file_common_v1_packet_proto_rawDescGZIP(), []int{7}
 }
 
-// Sent by a Funds Change responder, indicates a rejection to accept funds.
+// [Example]
+// {
+// "rejection_reason": 0,
+// "other": "OTHER"
+// }
 type FundsChangeNack struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -988,7 +1077,11 @@ func (x *FundsChangeNack) GetOther() string {
 	return ""
 }
 
-// Signal meant to terminate a transaction that is in progress
+// [Example]
+// {
+// "rejection_reason": 0,
+// "other": "OTHER"
+// }
 type CancelTransaction struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

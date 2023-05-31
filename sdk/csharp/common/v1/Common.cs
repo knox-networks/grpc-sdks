@@ -235,9 +235,11 @@ namespace Common {
 
   #region Messages
   /// <summary>
-  /// Holds a bytes value public key in the `verifier` field that allows verification using the digital signature algorithm
-  /// indicated by the `signature_system`.
-  /// [Example]{"signature_system": 1, "verifier": "xVERIFIERxBYTES="}
+  /// [Example]
+  ///{
+  ///"signature_system": 1, 
+  ///"verifier": "xVERIFIERxBYTES="
+  ///}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -472,10 +474,12 @@ namespace Common {
   }
 
   /// <summary>
-  /// IEEE 754 decimal128 compatible amount type constructed from `amount` (the significand/mantissa) and `decimals` (the
-  /// inverse exponent) for use with floating point arithmetic and decimal 128 compatible libraries. Ex. An `amount` of
-  /// 12345 and `decimals` of 2 is equivalent to "123.45".
-  /// [Example]{"currency_code":"USD", "amount":100, "decimals":2}
+  /// [Example]
+  ///{
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}
   /// </summary>
   public sealed partial class Amount : pb::IMessage<Amount>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -752,9 +756,13 @@ namespace Common {
   }
 
   /// <summary>
-  /// Represents a desired denomination distribution.
-  /// map&lt;mantissa, quantity>
-  /// sum must match corresponding amount.amount
+  /// [Example]
+  ///{
+  ///"value": {
+  ///"key1": "value1",
+  ///"key2": "value2"
+  ///}
+  ///}
   /// </summary>
   public sealed partial class Distribution : pb::IMessage<Distribution>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -935,8 +943,13 @@ namespace Common {
   }
 
   /// <summary>
-  /// Used to start an authentication flow
-  /// [Example]{"verifier": {"signature_system": 1, "verifier": "xVERIFIERxBYTES="}}
+  /// [Example]
+  ///{
+  ///"verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "xVERIFIERxBYTES="
+  ///}
+  ///}
   /// </summary>
   public sealed partial class AuthenticationRequest : pb::IMessage<AuthenticationRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1140,8 +1153,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// The returns a challenge nonce meant to be signed by the requestor's private key.
-  /// [Example]{"challenge": "CHALLENGExBYTES="}
+  /// [Example]
+  ///{
+  ///"challenge": "CHALLENGExBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1336,8 +1351,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Connection type associated with a single verifier.
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class OneConnection : pb::IMessage<OneConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1492,9 +1507,19 @@ namespace Common {
   }
 
   /// <summary>
-  /// Connection type holding one or more `associated_verifiers` associated with a primary verifier and single gateway
-  /// connection.
-  /// [Example]{"associated_verifiers": [{"signature_system": 1, "verifier": "VERIFIERxBYTES="}, {"signature_system": 2, "verifier": "VERIFIERxBYTES="}]}
+  /// [Example]
+  ///{
+  ///"associated_verifiers": [
+  ///{
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}, 
+  ///{
+  ///"signature_system": 2, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}
+  ///]
+  ///}
   /// </summary>
   public sealed partial class ManyConnection : pb::IMessage<ManyConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1678,9 +1703,17 @@ namespace Common {
   }
 
   /// <summary>
-  /// The message sent during an already established connection allowing the addition or removal of an
-  /// `associated_verifier` tied to connection held by the `primary_verifier`.
-  /// [Example]{"primary_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}, "associated_verifier": {"signature_system": 1, "verifier": "VERIFIERxBYTES="}}
+  /// [Example]
+  ///{
+  ///"primary_verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}, 
+  ///"associated_verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}
+  ///}
   /// </summary>
   public sealed partial class AssociatedConnection : pb::IMessage<AssociatedConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1933,9 +1966,20 @@ namespace Common {
   }
 
   /// <summary>
-  /// Presented when establishing a gateway connection. `request_type` type indicates whether there will be one or more
-  /// verifiers (public keys) associated with a particular connection. The primary verifier (connection owner) is
-  /// represented by the `signature.verifier` field.
+  /// [Example]
+  ///{
+  ///"request_type": {
+  ///"one": {}
+  ///},
+  ///"signature": {
+  ///"verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}
+  ///"signature": "SIGNATURExBYTES="
+  ///},
+  ///"connection_id": "CONNECTION_ID"
+  ///}
   /// </summary>
   public sealed partial class ConnectionRequest : pb::IMessage<ConnectionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2318,8 +2362,14 @@ namespace Common {
   }
 
   /// <summary>
-  /// Presented when establishing a gateway connection as a field of `ConnectionRequest`. The `verifier` should match the
-  /// verifier used in `AuthenticationRequest`. The `bytes` field is the signed nonce from `AuthenticationResponse`.
+  /// [Example]
+  ///{
+  ///"verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}
+  ///"signature": "SIGNATURExBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthenticationSignature : pb::IMessage<AuthenticationSignature>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2563,7 +2613,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// Digital banknote to be authorized in the Notary service flow.
+  /// [Example]
+  ///{
+  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureRequest : pb::IMessage<AuthorizedSignatureRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2758,7 +2811,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// Authorized digital banknote returned in the Notary service flow.
+  /// [Example]
+  ///{
+  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureResponse : pb::IMessage<AuthorizedSignatureResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2953,8 +3009,11 @@ namespace Common {
   }
 
   /// <summary>
-  /// Media - Mime type and binary data encoding For common MIME types see:
-  /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+  /// [Example]
+  ///{
+  ///"mime_type": "MIME_TYPE",
+  ///"data": "xDATAxBYTES="
+  ///}
   /// </summary>
   public sealed partial class Media : pb::IMessage<Media>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3189,8 +3248,26 @@ namespace Common {
   }
 
   /// <summary>
-  /// Resource based access control (RBAC) role used to define currency limits for a public key that the issuer allows to
-  /// create issuance requests.
+  /// [Example]
+  ///{
+  ///"verifier": "VERIFIER",
+  ///"role_enum": {
+  ///"issue_permissions": {
+  ///"inner": [
+  ///{
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///},
+  ///{
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///} 
+  ///]
+  ///}
+  ///}
+  ///}
   /// </summary>
   public sealed partial class Role : pb::IMessage<Role>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3704,7 +3781,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Request the identity of a given service endpoint, e.g. Issuer, Authority, Treasury.
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class GetVerifierRequest : pb::IMessage<GetVerifierRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3859,8 +3937,14 @@ namespace Common {
   }
 
   /// <summary>
-  /// Response that contains the verifier (public key) of a service endpoint. Returns both Dynamic Verifier bytes, and
-  /// multibase encoded formats.
+  /// [Example]
+  ///{
+  ///"bytes": {
+  ///"signature_system": 1, 
+  ///"verifier": "VERIFIERxBYTES="
+  ///}
+  ///"multibase": "MULTIBASE"
+  ///}
   /// </summary>
   public sealed partial class GetVerifierResponse : pb::IMessage<GetVerifierResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4104,7 +4188,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Request the `ServiceType` of a given service endpoint. e.g. Issuer, Authority, Treasury.
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class GetServiceTypeRequest : pb::IMessage<GetServiceTypeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4259,7 +4344,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// Response that contains the `ServiceType` of a service endpoint.
+  /// [Example]
+  ///{
+  ///"service_type": 1
+  ///}
   /// </summary>
   public sealed partial class GetServiceTypeResponse : pb::IMessage<GetServiceTypeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4454,8 +4542,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// GetInstanceRequest - Request the Instance of the service, a value generated each time a service
-  /// is started, can be correlated to a gateway connection_id
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class GetInstanceRequest : pb::IMessage<GetInstanceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4610,7 +4698,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// GetInstanceResponse - Respond with a UUID of the particular instance
+  /// [Example]
+  ///{
+  ///"instance_id": "INSTANCE_ID"
+  ///}
   /// </summary>
   public sealed partial class GetInstanceResponse : pb::IMessage<GetInstanceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4802,7 +4893,21 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Simple Payment transaction. Sender is implied to be the owner of the digital banknotes to be sent.
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///},
+  ///"recipient": "RECIPIENT",
+  ///"promissories": [
+  ///"PROMISSORY1",
+  ///"PROMISSORY2",
+  ///"PROMISSORY3"
+  ///],
+  ///"user_reference": "USER_PROVIDED_REFERENCE"
+  ///}
   /// </summary>
   public sealed partial class StartSimplePaymentRequest : pb::IMessage<StartSimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5115,8 +5220,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-  /// transaction.
+  /// [Example]
+  ///{
+  ///"uetr": "UETR"
+  ///}
   /// </summary>
   public sealed partial class StartSimplePaymentResponse : pb::IMessage<StartSimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5311,8 +5418,16 @@ namespace Common {
   }
 
   /// <summary>
-  /// Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
-  /// the well known Treasury verifier provided at startup.
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///},
+  ///"promissory": "PROMISSORY1",
+  ///"user_reference": "USER_PROVIDED_REFERENCE"
+  ///}
   /// </summary>
   public sealed partial class StartFundsChangeRequest : pb::IMessage<StartFundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5597,8 +5712,10 @@ namespace Common {
   }
 
   /// <summary>
-  /// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Funds Change
-  /// transaction.
+  /// [Example]
+  ///{
+  ///"uetr": "UETR"
+  ///}
   /// </summary>
   public sealed partial class StartFundsChangeResponse : pb::IMessage<StartFundsChangeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5793,7 +5910,20 @@ namespace Common {
   }
 
   /// <summary>
-  /// Represents the status of a transaction with pertinent metadata attached.
+  /// [Example]
+  ///{
+  ///"status": 5, 
+  ///"promissories": [
+  ///"PROMISSORYxIDx1", 
+  ///"PROMISSORYxIDx2"
+  ///], 
+  ///"amount_transferred": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"message": "MESSAGE"
+  ///}
   /// </summary>
   public sealed partial class TransactionSnapshot : pb::IMessage<TransactionSnapshot>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -6106,8 +6236,23 @@ namespace Common {
   }
 
   /// <summary>
-  /// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
-  /// only has local significance. On the wire messages use various packet types.
+  /// [Example]
+  ///{
+  ///"type": 1, 
+  ///"role": 0, 
+  ///"uetr": "UETR", 
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"created": "CREATED_TIMESTAMP", 
+  ///"updated": "UPDATED_TIMESTAMP", 
+  ///"memo": "MEMO", 
+  ///"owner": "OWNER_PUBLIC_KEY", 
+  ///"counterparty": "COUNTERPARTY_PUBLIC_KEY", 
+  ///"status": 0
+  ///}
   /// </summary>
   public sealed partial class Transaction : pb::IMessage<Transaction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

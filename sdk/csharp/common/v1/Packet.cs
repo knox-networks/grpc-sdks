@@ -275,8 +275,39 @@ namespace Common {
 
   #region Messages
   /// <summary>
-  /// Streaming data packet used across Gateway connections.
-  /// [Example]{"packet_type": 100, "data": "xDATAxBYTES=", "channel": "YOUR_CHANNEL", "sender": { "signature_system": 1, "verifier": "xxSENDERxVERIFIERxBYTES="}, "recipient": {"signature_system": 1, "verifier": "xxRECIPIENTxxVERIFIERxBYTES="}, "nonce": "NONCExBYTES=", "transaction_header": {"starter": { "signature_system": 1, "verifier": "xSTARTERxVERIFIERxBYTES="}, "responder": { "signature_system": 1, "verifier": "xxRESPONDERxxVERIFIERxBYTES="}, "uetr": "UETR", "timestamp": "TIMESTAMP", "signature": "SIGNATURExBYTES=", "user_reference": "USER_REFERENCE", "related_uetrs": ["RELATED_UETR1", "RELATED_UETR2"]}}
+  /// [Example]
+  ///{
+  ///"packet_type": 100, 
+  ///"data": "xDATAxBYTES=", 
+  ///"channel": "YOUR_CHANNEL", 
+  ///"sender": { 
+  ///"signature_system": 1, 
+  ///"verifier": "xxSENDERxVERIFIERxBYTES="
+  ///}, 
+  ///"recipient": {
+  ///"signature_system": 1, 
+  ///"verifier": "xxRECIPIENTxxVERIFIERxBYTES="
+  ///}, 
+  ///"nonce": "NONCExBYTES=", 
+  ///"transaction_header": {
+  ///"starter": { 
+  ///"signature_system": 1, 
+  ///"verifier": "xSTARTERxVERIFIERxBYTES="
+  ///}, 
+  ///"responder": { 
+  ///"signature_system": 1, 
+  ///"verifier": "xxRESPONDERxxVERIFIERxBYTES="
+  ///}, 
+  ///"uetr": "UETR", 
+  ///"timestamp": "TIMESTAMP", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"user_reference": "USER_REFERENCE", 
+  ///"related_uetrs": [
+  ///"RELATED_UETR1", 
+  ///"RELATED_UETR2"
+  ///]
+  ///}
+  ///}
   /// </summary>
   public sealed partial class Packet : pb::IMessage<Packet>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -738,8 +769,25 @@ namespace Common {
   }
 
   /// <summary>
-  /// Encasulates all cross-network metadata that associates
-  /// a `Packet` with a given transaction.
+  /// [Example]
+  ///{
+  ///"starter": { 
+  ///"signature_system": 1, 
+  ///"verifier": "xSTARTERxVERIFIERxBYTES="
+  ///}, 
+  ///"responder": { 
+  ///"signature_system": 1, 
+  ///"verifier": "xxRESPONDERxxVERIFIERxBYTES="
+  ///}, 
+  ///"uetr": "UETR", 
+  ///"timestamp": "TIMESTAMP", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"user_reference": "USER_REFERENCE", 
+  ///"related_uetrs": [
+  ///"RELATED_UETR1", 
+  ///"RELATED_UETR2"
+  ///]
+  ///}
   /// </summary>
   public sealed partial class TransactionHeader : pb::IMessage<TransactionHeader>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1188,8 +1236,14 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Simple Payment starter allowing a responder to
-  /// accept or reject a transfer of funds.
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}
+  ///}
   /// </summary>
   public sealed partial class SimplePaymentRequest : pb::IMessage<SimplePaymentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1390,7 +1444,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Simple Payment responder, signals readiness to accept funds.
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class SimplePaymentAck : pb::IMessage<SimplePaymentAck>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1545,7 +1600,11 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Simple Payment responder, indicates a rejection to accept funds.
+  /// [Example]
+  ///{
+  ///"rejection_reason": 1,
+  ///"other": "OTHER"
+  ///}
   /// </summary>
   public sealed partial class SimplePaymentNack : pb::IMessage<SimplePaymentNack>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1801,10 +1860,19 @@ namespace Common {
   }
 
   /// <summary>
-  /// * Sent by the responder.
-  /// * Paired with a `PacketType::SPStatus`.
-  /// * Always sent after the end of a simple payment flow
-  /// * Acts as confirmation of full or partial funds transfer
+  /// [Example]
+  ///{
+  ///"received_amount": {
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///},
+  ///"received_promissories": [
+  ///"RECEIVED_PROMISSORY1",
+  ///"RECEIVED_PROMISSORY2",
+  ///"RECEIVED_PROMISSORY3"
+  ///]
+  ///}
   /// </summary>
   public sealed partial class SimplePaymentResponse : pb::IMessage<SimplePaymentResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2046,8 +2114,24 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Funds Change starter allowing a responder to
-  /// accept or reject a transfer of funds.
+  /// [Example]
+  ///{
+  ///"gross_amount": {
+  ///"currency_code":"USD", 
+  ///"amount":500, 
+  ///"decimals":2
+  ///},
+  ///"exact_amount": {
+  ///"currency_code":"USD", 
+  ///"amount":499, 
+  ///"decimals":2
+  ///},
+  ///"fees": {
+  ///"currency_code":"USD", 
+  ///"amount":1, 
+  ///"decimals":2
+  ///}
+  ///}
   /// </summary>
   public sealed partial class FundsChangeRequest : pb::IMessage<FundsChangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2340,7 +2424,8 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Funds Change responder, signals readiness to accept funds.
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class FundsChangeAck : pb::IMessage<FundsChangeAck>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2495,7 +2580,11 @@ namespace Common {
   }
 
   /// <summary>
-  /// Sent by a Funds Change responder, indicates a rejection to accept funds.
+  /// [Example]
+  ///{
+  ///"rejection_reason": 0,
+  ///"other": "OTHER"
+  ///}
   /// </summary>
   public sealed partial class FundsChangeNack : pb::IMessage<FundsChangeNack>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2751,7 +2840,11 @@ namespace Common {
   }
 
   /// <summary>
-  /// Signal meant to terminate a transaction that is in progress
+  /// [Example]
+  ///{
+  ///"rejection_reason": 0,
+  ///"other": "OTHER"
+  ///}
   /// </summary>
   public sealed partial class CancelTransaction : pb::IMessage<CancelTransaction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
