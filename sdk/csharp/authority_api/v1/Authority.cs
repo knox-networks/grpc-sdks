@@ -77,9 +77,15 @@ namespace AuthorityApi.V1 {
   }
   #region Messages
   /// <summary>
-  /// Requests the issuance limit be set to the value specified in `Amount` for the Issuer identified by its public key
-  /// (aka Verifier).
-  /// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "issuer_public_key": "ISSUER_PUBLIC_KEY"}
+  /// [Example]
+  ///{
+  ///"limit": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///}
   /// </summary>
   public sealed partial class SetIssuerLimitRequest : pb::IMessage<SetIssuerLimitRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -574,9 +580,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Requests the issuance limits associated with the issuer for all currencies that the Issuer is allowed to issue. The
-  /// Issuer is identified by its public key (aka Verifier).
-  /// [Example]{"issuer_public_key": "ISSUER_PUBLIC_KEY"}
+  /// [Example]
+  ///{
+  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///}
   /// </summary>
   public sealed partial class GetIssuerLimitsRequest : pb::IMessage<GetIssuerLimitsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -771,9 +778,17 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Responds with the limits applicable to the Issuer for various currencies. The Issuer is identified by its public key
-  /// (aka Verifier).
-  /// [Example]{"limit": [{"currency_code":"USD", "amount": 100, "decimals":2}], "issuer_public_key": "ISSUER_PUBLIC_KEY"}
+  /// [Example]
+  ///{
+  ///"limit": [
+  ///{
+  ///"currency_code":"USD", 
+  ///"amount": 100, 
+  ///"decimals":2
+  ///}
+  ///], 
+  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///}
   /// </summary>
   public sealed partial class GetIssuerLimitsResponse : pb::IMessage<GetIssuerLimitsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -997,8 +1012,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+  /// [Example]
+  ///{
+  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1193,8 +1210,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// A digital banknote that has been authorized. Several such responses may be returned in a stream.
-  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+  /// [Example]
+  ///{
+  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1389,9 +1408,11 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
-  /// by its Verifier (aka public key).
-  /// [Example]{"promissory_file": "PROMISSORYFILEBYTES=", "verifier": "VERIFIER"}
+  /// [Example]
+  ///{
+  ///"promissory_file": "PROMISSORYFILEBYTES=", 
+  ///"verifier": "VERIFIER"
+  ///}
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1626,8 +1647,14 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Returns the new issuance limit for the Issuer after redeeming a digital banknote.
-  /// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}}
+  /// [Example]
+  ///{
+  ///"limit": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}
+  ///} 
   /// </summary>
   public sealed partial class RedeemResponse : pb::IMessage<RedeemResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1831,8 +1858,8 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Requests to get the Emissary for the Authority.
-  /// [Example]{}
+  /// [Example]
+  ///{} 
   /// </summary>
   public sealed partial class GetEmissaryRequest : pb::IMessage<GetEmissaryRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1987,8 +2014,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Responds with the verifier of the Emissary
-  /// [Example]{"verifier": "VERIFIER"}
+  /// [Example]
+  ///{
+  ///"verifier": "VERIFIER"
+  ///}
   /// </summary>
   public sealed partial class GetEmissaryResponse : pb::IMessage<GetEmissaryResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2183,8 +2212,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Requests to get the Notary signature for a Notary public key
-  /// [Example]{"verifier": "VERIFIER"}
+  /// [Example]
+  ///{
+  ///"verifier": "VERIFIER"
+  ///}
   /// </summary>
   public sealed partial class GetNotaryRequest : pb::IMessage<GetNotaryRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2379,8 +2410,10 @@ namespace AuthorityApi.V1 {
   }
 
   /// <summary>
-  /// Responds with the signature of the requested Notary
-  /// [Example]{"signature": "SIGNATURExBYTES="}
+  /// [Example]
+  ///{
+  ///"signature": "SIGNATURExBYTES="
+  ///}
   /// </summary>
   public sealed partial class GetNotaryResponse : pb::IMessage<GetNotaryResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

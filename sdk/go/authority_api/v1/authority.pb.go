@@ -21,9 +21,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Requests the issuance limit be set to the value specified in `Amount` for the Issuer identified by its public key
-// (aka Verifier).
-// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}, "issuer_public_key": "ISSUER_PUBLIC_KEY"}
+// [Example]
+// {
+// "limit": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "issuer_public_key": "ISSUER_PUBLIC_KEY"
+// }
 type SetIssuerLimitRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -146,9 +152,10 @@ func (x *SetIssuerLimitResponse) GetSignature() []byte {
 	return nil
 }
 
-// Requests the issuance limits associated with the issuer for all currencies that the Issuer is allowed to issue. The
-// Issuer is identified by its public key (aka Verifier).
-// [Example]{"issuer_public_key": "ISSUER_PUBLIC_KEY"}
+// [Example]
+// {
+// "issuer_public_key": "ISSUER_PUBLIC_KEY"
+// }
 type GetIssuerLimitsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -197,9 +204,17 @@ func (x *GetIssuerLimitsRequest) GetIssuerPublicKey() string {
 	return ""
 }
 
-// Responds with the limits applicable to the Issuer for various currencies. The Issuer is identified by its public key
-// (aka Verifier).
-// [Example]{"limit": [{"currency_code":"USD", "amount": 100, "decimals":2}], "issuer_public_key": "ISSUER_PUBLIC_KEY"}
+// [Example]
+// {
+// "limit": [
+// {
+// "currency_code":"USD",
+// "amount": 100,
+// "decimals":2
+// }
+// ],
+// "issuer_public_key": "ISSUER_PUBLIC_KEY"
+// }
 type GetIssuerLimitsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -257,8 +272,10 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 	return ""
 }
 
-// A digital banknote that is to be authorized. Several such requests may be sent in a stream.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -307,8 +324,10 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 	return nil
 }
 
-// A digital banknote that has been authorized. Several such responses may be returned in a stream.
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES="}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES="
+// }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -357,9 +376,11 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 	return nil
 }
 
-// Requests redemption of a digital banknote in exchange for an increase in the issuance limit for an Issuer identified
-// by its Verifier (aka public key).
-// [Example]{"promissory_file": "PROMISSORYFILEBYTES=", "verifier": "VERIFIER"}
+// [Example]
+// {
+// "promissory_file": "PROMISSORYFILEBYTES=",
+// "verifier": "VERIFIER"
+// }
 type RedeemRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -417,8 +438,14 @@ func (x *RedeemRequest) GetVerifier() string {
 	return ""
 }
 
-// Returns the new issuance limit for the Issuer after redeeming a digital banknote.
-// [Example]{"limit": {"currency_code":"USD", "amount":100, "decimals":2}}
+// [Example]
+// {
+// "limit": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// }
+// }
 type RedeemResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,8 +494,8 @@ func (x *RedeemResponse) GetLimit() *v1.Amount {
 	return nil
 }
 
-// Requests to get the Emissary for the Authority.
-// [Example]{}
+// [Example]
+// {}
 type GetEmissaryRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -507,8 +534,10 @@ func (*GetEmissaryRequest) Descriptor() ([]byte, []int) {
 	return file_authority_api_v1_authority_proto_rawDescGZIP(), []int{8}
 }
 
-// Responds with the verifier of the Emissary
-// [Example]{"verifier": "VERIFIER"}
+// [Example]
+// {
+// "verifier": "VERIFIER"
+// }
 type GetEmissaryResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -557,8 +586,10 @@ func (x *GetEmissaryResponse) GetVerifier() string {
 	return ""
 }
 
-// Requests to get the Notary signature for a Notary public key
-// [Example]{"verifier": "VERIFIER"}
+// [Example]
+// {
+// "verifier": "VERIFIER"
+// }
 type GetNotaryRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -607,8 +638,10 @@ func (x *GetNotaryRequest) GetVerifier() string {
 	return ""
 }
 
-// Responds with the signature of the requested Notary
-// [Example]{"signature": "SIGNATURExBYTES="}
+// [Example]
+// {
+// "signature": "SIGNATURExBYTES="
+// }
 type GetNotaryResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
