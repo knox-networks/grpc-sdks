@@ -799,10 +799,10 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"uuid": "UUID", 
+  ///"email": "EMAIL",
   ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"last_name": "LAST_NAME",
+  ///"password": "PASSWORD" 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
   ///"phone": "PHONE" 
@@ -10729,6 +10729,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
+  ///"user": {
   ///"uuid": "UUID", 
   ///"first_name": "FIRST_NAME", 
   ///"last_name": "LAST_NAME", 
@@ -10756,6 +10757,7 @@ namespace UserApi.V1 {
   ///"key": "VALUE"
   ///}
   ///]
+  ///}
   ///}
   ///}
   /// </summary>

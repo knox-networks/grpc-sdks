@@ -292,10 +292,10 @@ func (x *User) GetMetadata() *structpb.Struct {
 
 // [Example]
 // {
-// "uuid": "UUID",
+// "email": "EMAIL",
 // "first_name": "FIRST_NAME",
 // "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "password": "PASSWORD"
 // "role": 0,
 // "avatar": "AVATAR_URL",
 // "phone": "PHONE"
@@ -3102,6 +3102,7 @@ func (x *GetUserByDIDRequest) GetDid() string {
 
 // [Example]
 // {
+// "user": {
 // "uuid": "UUID",
 // "first_name": "FIRST_NAME",
 // "last_name": "LAST_NAME",
@@ -3129,6 +3130,7 @@ func (x *GetUserByDIDRequest) GetDid() string {
 // "key": "VALUE"
 // }
 // ]
+// }
 // }
 // }
 type GetUserByDIDResponse struct {
