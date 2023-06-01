@@ -70,7 +70,14 @@ func (AgentConnection_ConnectionStatus) EnumDescriptor() ([]byte, []int) {
 	return file_orchestrator_v1_orchestrator_proto_rawDescGZIP(), []int{0, 0}
 }
 
-// [Example]{ "verifier": { "signature_system": 1, "verifier": "VERIFIERxBYTES=" }, "status": 0 }
+// [Example]
+// {
+// "verifier": {
+// "signature_system": 1,
+// "verifier": "xVERIFIERxBYTES="
+// },
+// "status": 0
+// }
 type AgentConnection struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -126,7 +133,8 @@ func (x *AgentConnection) GetStatus() AgentConnection_ConnectionStatus {
 	return AgentConnection_CONNECTED
 }
 
-// [Example]{}
+// [Example]
+// {}
 type ExecuteRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -165,7 +173,8 @@ func (*ExecuteRequest) Descriptor() ([]byte, []int) {
 	return file_orchestrator_v1_orchestrator_proto_rawDescGZIP(), []int{1}
 }
 
-// [Example]{}
+// [Example]
+// {}
 type ExecuteResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

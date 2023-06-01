@@ -176,10 +176,25 @@ namespace ControlPlaneApi.V1 {
 
   #region Messages
   /// <summary>
-  /// service_suffix here is the suffix of the release name. The relationship between service_suffix, helm release name 
-  /// and kubernetes service name are:
-  /// &lt;namespace>-service_suffix = helm release name = kubernetes service name
-  /// [Example] { "service_type": 0, "service_suffix": "SERVICE_SUFFIX", "server_configs": { "values": }}
+  /// [Example] 
+  ///{
+  ///"service_type": 0, 
+  ///"service_suffix": "SERVICE_SUFFIX", 
+  ///"service_configs": { 
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///}
+  ///}
   /// </summary>
   public sealed partial class CreateServiceRequest : pb::IMessage<CreateServiceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -454,7 +469,12 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{ "status": 0, "service_name": "SERVICE_NAME", "public_key": "PUBLIC_KEY" }
+  /// [Example]
+  ///{
+  ///"status": 0, 
+  ///"service_name": "SERVICE_NAME", 
+  ///"public_key": "PUBLIC_KEY" 
+  ///}
   /// </summary>
   public sealed partial class CreateServiceResponse : pb::IMessage<CreateServiceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -720,7 +740,21 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"values": { "fields": {} }}
+  /// [Example]
+  ///{
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///}
   /// </summary>
   public sealed partial class ServiceDetails : pb::IMessage<ServiceDetails>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -921,8 +955,11 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// Returns the status of a Service
-  /// [Example]{ "service_type": 0, "service_suffix": "SERVICE_SUFFIX" }
+  /// [Example]
+  ///{
+  ///"service_type": 0, 
+  ///"service_suffix": "SERVICE_SUFFIX"
+  ///}
   /// </summary>
   public sealed partial class GetServiceRequest : pb::IMessage<GetServiceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1151,7 +1188,11 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"instance_status": 0, "reason": "REASON"}
+  /// [Example]
+  ///{
+  ///"instance_status": 0, 
+  ///"reason": "REASON"
+  ///}
   /// </summary>
   public sealed partial class InstanceState : pb::IMessage<InstanceState>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1380,7 +1421,35 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"service_name": "SERVICE_NAME", "instance_states": [0, 1, 2], "public_key": "PUBLIC_KEY", "service_details": 0 }
+  /// [Example] 
+  ///{
+  ///"service_name": "SERVICE_NAME", 
+  ///"instance_states": [
+  ///{
+  ///"instance_status": 0, 
+  ///"reason": "REASON0"
+  ///}, 
+  ///{
+  ///"instance_status": 1, 
+  ///"reason": "REASON1"
+  ///}
+  ///], 
+  ///"public_key": "PUBLIC_KEY", 
+  ///"service_details": {
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///} 
+  ///}
   /// </summary>
   public sealed partial class GetServiceResponse : pb::IMessage<GetServiceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1681,8 +1750,10 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// Returns the status of a Service
-  /// [Example]{"service_type": 0 }
+  /// [Example]
+  ///{
+  ///"service_type": 0
+  ///}
   /// </summary>
   public sealed partial class GetServicesRequest : pb::IMessage<GetServicesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1874,7 +1945,67 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"services": [{"service_type": 0}, {"service_type": 1}]}
+  /// [Example]
+  ///{
+  ///"services": [
+  ///{
+  ///"service_name": "SERVICE_NAME1", 
+  ///"instance_states": [
+  ///{
+  ///"instance_status": 0, 
+  ///"reason": "REASON0"
+  ///}, 
+  ///{
+  ///"instance_status": 1, 
+  ///"reason": "REASON1"
+  ///}
+  ///], 
+  ///"public_key": "PUBLIC_KEY1", 
+  ///"service_details": {
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///} 
+  ///},
+  ///{
+  ///"service_name": "SERVICE_NAME2", 
+  ///"instance_states": [
+  ///{
+  ///"instance_status": 0, 
+  ///"reason": "REASON0"
+  ///}, 
+  ///{
+  ///"instance_status": 1, 
+  ///"reason": "REASON1"
+  ///}
+  ///], 
+  ///"public_key": "PUBLIC_KEY2", 
+  ///"service_details": {
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///} 
+  ///}
+  ///]
+  ///}
   /// </summary>
   public sealed partial class GetServicesResponse : pb::IMessage<GetServicesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2055,7 +2186,11 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"service_type": 0, "service_suffix": "SERVICE_SUFFIX" }
+  /// [Example]
+  ///{
+  ///"service_type": 0,
+  ///"service_suffix": "SERVICE_SUFFIX" 
+  ///}
   /// </summary>
   public sealed partial class DeleteServiceRequest : pb::IMessage<DeleteServiceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2284,7 +2419,11 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"service_name": "SERVICE_NAME", "status": 0 }
+  /// [Example]
+  ///{
+  ///"service_name": "SERVICE_NAME", 
+  ///"status": 0 
+  ///}
   /// </summary>
   public sealed partial class DeleteServiceResponse : pb::IMessage<DeleteServiceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2513,9 +2652,21 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// TODO: Need to decide which values can be configurable
-  /// What else? (Possibly: memory, cpu, resource limits, etc.)
-  /// [Example]{ "values": { "fields": {} } }
+  /// [Example]
+  ///{
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///}
   /// </summary>
   public sealed partial class ServiceConfigurations : pb::IMessage<ServiceConfigurations>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2716,8 +2867,25 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// Corresponds to a helm upgrade command
-  /// [Example]{ "service_type": 0, "service_suffix": "SERVICE_SUFFIX", "service_configs": 0 }
+  /// [Example]
+  ///{
+  ///"service_type": 0,
+  ///"service_suffix": "SERVICE_SUFFIX",
+  ///"service_configs": {
+  ///"values": {
+  ///"fields": [
+  ///{
+  ///"key": "KEY1",
+  ///"value": {}
+  ///},
+  ///{
+  ///"key": "KEY2",
+  ///"value": {}
+  ///}
+  ///]
+  ///}
+  ///}
+  ///}
   /// </summary>
   public sealed partial class UpdateServiceRequest : pb::IMessage<UpdateServiceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2992,7 +3160,11 @@ namespace ControlPlaneApi.V1 {
   }
 
   /// <summary>
-  /// [Example]{"service_name": "SERVICE_NAME", "status": 0 }
+  /// [Example]
+  ///{
+  ///"service_name": "SERVICE_NAME", 
+  ///"status": 0 
+  ///}
   /// </summary>
   public sealed partial class UpdateServiceResponse : pb::IMessage<UpdateServiceResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

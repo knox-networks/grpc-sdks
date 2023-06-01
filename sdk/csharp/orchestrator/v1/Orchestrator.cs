@@ -50,7 +50,14 @@ namespace Orchestrator {
   }
   #region Messages
   /// <summary>
-  /// [Example]{ "verifier": { "signature_system": 1, "verifier": "VERIFIERxBYTES=" }, "status": 0 }
+  /// [Example]
+  ///{
+  ///"verifier": {
+  ///"signature_system": 1, 
+  ///"verifier": "xVERIFIERxBYTES=" 
+  ///}, 
+  ///"status": 0 
+  ///}
   /// </summary>
   public sealed partial class AgentConnection : pb::IMessage<AgentConnection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -302,7 +309,8 @@ namespace Orchestrator {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class ExecuteRequest : pb::IMessage<ExecuteRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -457,7 +465,8 @@ namespace Orchestrator {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class ExecuteResponse : pb::IMessage<ExecuteResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

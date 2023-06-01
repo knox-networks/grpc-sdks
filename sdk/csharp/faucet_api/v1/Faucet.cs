@@ -46,8 +46,15 @@ namespace FaucetApi.V1 {
   }
   #region Messages
   /// <summary>
-  /// Faucet request with the total amount and recipient.
-  /// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT"}
+  /// [Example]
+  ///{
+  ///"amount": {
+  ///"currency_code":"USD", 
+  ///"amount":100, 
+  ///"decimals":2
+  ///}, 
+  ///"recipient": "RECIPIENT"
+  ///} 
   /// </summary>
   public sealed partial class FaucetRequest : pb::IMessage<FaucetRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -341,8 +348,10 @@ namespace FaucetApi.V1 {
   }
 
   /// <summary>
-  /// Faucet response including the number of promissory files issued.
-  /// [Example]{"num_promissory_files": 10}
+  /// [Example]
+  ///{
+  ///"num_promissory_files": 10
+  ///}
   /// </summary>
   public sealed partial class FaucetResponse : pb::IMessage<FaucetResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

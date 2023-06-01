@@ -69,8 +69,8 @@ func (IsProvisionedResponse_Status) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_service_proto_rawDescGZIP(), []int{1, 0}
 }
 
-// IsProvisionedRequest - Request the service to determine if it is provisioned to perform its duties
-// [Example]{}
+// [Example]
+// {}
 type IsProvisionedRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -109,8 +109,11 @@ func (*IsProvisionedRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_service_proto_rawDescGZIP(), []int{0}
 }
 
-// IsProvisionedResponse - Respond with the provision status of the service
-// [Example]{ "status": 1, "reason": "REASON" }
+// [Example]
+// {
+// "status": 1,
+// "reason": "REASON"
+// }
 type IsProvisionedResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -234,10 +234,25 @@ func (InstanceStatus) EnumDescriptor() ([]byte, []int) {
 	return file_control_plane_api_v1_control_plane_proto_rawDescGZIP(), []int{2}
 }
 
-// service_suffix here is the suffix of the release name. The relationship between service_suffix, helm release name
-// and kubernetes service name are:
-// <namespace>-service_suffix = helm release name = kubernetes service name
-// [Example] { "service_type": 0, "service_suffix": "SERVICE_SUFFIX", "server_configs": { "values": }}
+// [Example]
+// {
+// "service_type": 0,
+// "service_suffix": "SERVICE_SUFFIX",
+// "service_configs": {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
+// }
 type CreateServiceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -301,7 +316,12 @@ func (x *CreateServiceRequest) GetServiceConfigs() *ServiceConfigurations {
 	return nil
 }
 
-// [Example]{ "status": 0, "service_name": "SERVICE_NAME", "public_key": "PUBLIC_KEY" }
+// [Example]
+// {
+// "status": 0,
+// "service_name": "SERVICE_NAME",
+// "public_key": "PUBLIC_KEY"
+// }
 type CreateServiceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -365,7 +385,21 @@ func (x *CreateServiceResponse) GetPublicKey() string {
 	return ""
 }
 
-// [Example]{"values": { "fields": {} }}
+// [Example]
+// {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
 type ServiceDetails struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -413,8 +447,11 @@ func (x *ServiceDetails) GetValues() *structpb.Struct {
 	return nil
 }
 
-// Returns the status of a Service
-// [Example]{ "service_type": 0, "service_suffix": "SERVICE_SUFFIX" }
+// [Example]
+// {
+// "service_type": 0,
+// "service_suffix": "SERVICE_SUFFIX"
+// }
 type GetServiceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -470,7 +507,11 @@ func (x *GetServiceRequest) GetServiceSuffix() string {
 	return ""
 }
 
-// [Example]{"instance_status": 0, "reason": "REASON"}
+// [Example]
+// {
+// "instance_status": 0,
+// "reason": "REASON"
+// }
 type InstanceState struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -526,7 +567,35 @@ func (x *InstanceState) GetReason() string {
 	return ""
 }
 
-// [Example]{"service_name": "SERVICE_NAME", "instance_states": [0, 1, 2], "public_key": "PUBLIC_KEY", "service_details": 0 }
+// [Example]
+// {
+// "service_name": "SERVICE_NAME",
+// "instance_states": [
+// {
+// "instance_status": 0,
+// "reason": "REASON0"
+// },
+// {
+// "instance_status": 1,
+// "reason": "REASON1"
+// }
+// ],
+// "public_key": "PUBLIC_KEY",
+// "service_details": {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
+// }
 type GetServiceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -598,8 +667,10 @@ func (x *GetServiceResponse) GetServiceDetails() *ServiceDetails {
 	return nil
 }
 
-// Returns the status of a Service
-// [Example]{"service_type": 0 }
+// [Example]
+// {
+// "service_type": 0
+// }
 type GetServicesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -647,7 +718,67 @@ func (x *GetServicesRequest) GetServiceType() ServiceType {
 	return ServiceType_SERVICE_TYPE_UNSPECIFIED
 }
 
-// [Example]{"services": [{"service_type": 0}, {"service_type": 1}]}
+// [Example]
+// {
+// "services": [
+// {
+// "service_name": "SERVICE_NAME1",
+// "instance_states": [
+// {
+// "instance_status": 0,
+// "reason": "REASON0"
+// },
+// {
+// "instance_status": 1,
+// "reason": "REASON1"
+// }
+// ],
+// "public_key": "PUBLIC_KEY1",
+// "service_details": {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
+// },
+// {
+// "service_name": "SERVICE_NAME2",
+// "instance_states": [
+// {
+// "instance_status": 0,
+// "reason": "REASON0"
+// },
+// {
+// "instance_status": 1,
+// "reason": "REASON1"
+// }
+// ],
+// "public_key": "PUBLIC_KEY2",
+// "service_details": {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
+// }
+// ]
+// }
 type GetServicesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -695,7 +826,11 @@ func (x *GetServicesResponse) GetServices() []*GetServiceResponse {
 	return nil
 }
 
-// [Example]{"service_type": 0, "service_suffix": "SERVICE_SUFFIX" }
+// [Example]
+// {
+// "service_type": 0,
+// "service_suffix": "SERVICE_SUFFIX"
+// }
 type DeleteServiceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -751,7 +886,11 @@ func (x *DeleteServiceRequest) GetServiceSuffix() string {
 	return ""
 }
 
-// [Example]{"service_name": "SERVICE_NAME", "status": 0 }
+// [Example]
+// {
+// "service_name": "SERVICE_NAME",
+// "status": 0
+// }
 type DeleteServiceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -807,9 +946,21 @@ func (x *DeleteServiceResponse) GetStatus() DeployStatus {
 	return DeployStatus_DEPLOY_STATUS_UNSPECIFIED
 }
 
-// TODO: Need to decide which values can be configurable
-// What else? (Possibly: memory, cpu, resource limits, etc.)
-// [Example]{ "values": { "fields": {} } }
+// [Example]
+// {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
 type ServiceConfigurations struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -857,8 +1008,25 @@ func (x *ServiceConfigurations) GetValues() *structpb.Struct {
 	return nil
 }
 
-// Corresponds to a helm upgrade command
-// [Example]{ "service_type": 0, "service_suffix": "SERVICE_SUFFIX", "service_configs": 0 }
+// [Example]
+// {
+// "service_type": 0,
+// "service_suffix": "SERVICE_SUFFIX",
+// "service_configs": {
+// "values": {
+// "fields": [
+// {
+// "key": "KEY1",
+// "value": {}
+// },
+// {
+// "key": "KEY2",
+// "value": {}
+// }
+// ]
+// }
+// }
+// }
 type UpdateServiceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -922,7 +1090,11 @@ func (x *UpdateServiceRequest) GetServiceConfigs() *ServiceConfigurations {
 	return nil
 }
 
-// [Example]{"service_name": "SERVICE_NAME", "status": 0 }
+// [Example]
+// {
+// "service_name": "SERVICE_NAME",
+// "status": 0
+// }
 type UpdateServiceResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

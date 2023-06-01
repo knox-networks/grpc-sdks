@@ -21,8 +21,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Faucet request with the total amount and recipient.
-// [Example]{"amount": {"currency_code":"USD", "amount":100, "decimals":2}, "recipient": "RECIPIENT"}
+// [Example]
+// {
+// "amount": {
+// "currency_code":"USD",
+// "amount":100,
+// "decimals":2
+// },
+// "recipient": "RECIPIENT"
+// }
 type FaucetRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -90,8 +97,10 @@ func (x *FaucetRequest) GetDistribution() *v1.Distribution {
 	return nil
 }
 
-// Faucet response including the number of promissory files issued.
-// [Example]{"num_promissory_files": 10}
+// [Example]
+// {
+// "num_promissory_files": 10
+// }
 type FaucetResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

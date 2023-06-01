@@ -44,7 +44,11 @@ namespace Identity {
   }
   #region Messages
   /// <summary>
-  /// [Example]{"subject": "SUBJECTxBYTES=", "query": "QUERY" }
+  /// [Example]
+  ///{
+  ///"subject": "SUBJECTxBYTES=", 
+  ///"query": "QUERY" 
+  ///}
   /// </summary>
   public sealed partial class IdentityRequest : pb::IMessage<IdentityRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -279,7 +283,20 @@ namespace Identity {
   }
 
   /// <summary>
-  /// [Example]{"subject": "SUBJECTxBYTES=", "media": [{"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}, {"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}]}
+  /// [Example]
+  ///{
+  ///"subject": "SUBJECTxBYTES=", 
+  ///"media": [
+  ///{
+  ///"mime_type": "MIME_TYPE", 
+  ///"data": "DATAxBYTES="
+  ///}, 
+  ///{
+  ///"mime_type": "MIME_TYPE", 
+  ///"data": "DATAxBYTES="
+  ///}
+  ///]
+  ///}
   /// </summary>
   public sealed partial class IdentityResponse : pb::IMessage<IdentityResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -503,7 +520,8 @@ namespace Identity {
   }
 
   /// <summary>
-  /// [Example]{}
+  /// [Example]
+  ///{}
   /// </summary>
   public sealed partial class ConnectionIdentity : pb::IMessage<ConnectionIdentity>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

@@ -21,7 +21,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// [Example]{"subject": "SUBJECTxBYTES=", "query": "QUERY" }
+// [Example]
+// {
+// "subject": "SUBJECTxBYTES=",
+// "query": "QUERY"
+// }
 type IdentityRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -79,7 +83,20 @@ func (x *IdentityRequest) GetQuery() string {
 	return ""
 }
 
-// [Example]{"subject": "SUBJECTxBYTES=", "media": [{"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}, {"mime_type": "MIME_TYPE", "data": "DATAxBYTES="}]}
+// [Example]
+// {
+// "subject": "SUBJECTxBYTES=",
+// "media": [
+// {
+// "mime_type": "MIME_TYPE",
+// "data": "DATAxBYTES="
+// },
+// {
+// "mime_type": "MIME_TYPE",
+// "data": "DATAxBYTES="
+// }
+// ]
+// }
 type IdentityResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -137,7 +154,8 @@ func (x *IdentityResponse) GetMedia() []*v1.Media {
 	return nil
 }
 
-// [Example]{}
+// [Example]
+// {}
 type ConnectionIdentity struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
