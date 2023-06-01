@@ -4,7 +4,6 @@ package v1
 
 import (
 	context "context"
-	v1 "github.com/knox-networks/grpc-sdks/sdk/go/common/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,9 +19,9 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TransactionServiceClient interface {
 	// initiates a Simple Payment transaction.
-	NewSimplePayment(ctx context.Context, in *v1.StartSimplePaymentRequest, opts ...grpc.CallOption) (*v1.StartSimplePaymentResponse, error)
+	NewSimplePayment(ctx context.Context, in *StartSimplePaymentRequest, opts ...grpc.CallOption) (*StartSimplePaymentResponse, error)
 	// initiates a Funds Change transaction.
-	NewFundsChange(ctx context.Context, in *v1.StartFundsChangeRequest, opts ...grpc.CallOption) (*v1.StartFundsChangeResponse, error)
+	NewFundsChange(ctx context.Context, in *StartFundsChangeRequest, opts ...grpc.CallOption) (*StartFundsChangeResponse, error)
 }
 
 type transactionServiceClient struct {
@@ -33,8 +32,8 @@ func NewTransactionServiceClient(cc grpc.ClientConnInterface) TransactionService
 	return &transactionServiceClient{cc}
 }
 
-func (c *transactionServiceClient) NewSimplePayment(ctx context.Context, in *v1.StartSimplePaymentRequest, opts ...grpc.CallOption) (*v1.StartSimplePaymentResponse, error) {
-	out := new(v1.StartSimplePaymentResponse)
+func (c *transactionServiceClient) NewSimplePayment(ctx context.Context, in *StartSimplePaymentRequest, opts ...grpc.CallOption) (*StartSimplePaymentResponse, error) {
+	out := new(StartSimplePaymentResponse)
 	err := c.cc.Invoke(ctx, "/common.TransactionService/NewSimplePayment", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -42,8 +41,8 @@ func (c *transactionServiceClient) NewSimplePayment(ctx context.Context, in *v1.
 	return out, nil
 }
 
-func (c *transactionServiceClient) NewFundsChange(ctx context.Context, in *v1.StartFundsChangeRequest, opts ...grpc.CallOption) (*v1.StartFundsChangeResponse, error) {
-	out := new(v1.StartFundsChangeResponse)
+func (c *transactionServiceClient) NewFundsChange(ctx context.Context, in *StartFundsChangeRequest, opts ...grpc.CallOption) (*StartFundsChangeResponse, error) {
+	out := new(StartFundsChangeResponse)
 	err := c.cc.Invoke(ctx, "/common.TransactionService/NewFundsChange", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -56,9 +55,9 @@ func (c *transactionServiceClient) NewFundsChange(ctx context.Context, in *v1.St
 // for forward compatibility
 type TransactionServiceServer interface {
 	// initiates a Simple Payment transaction.
-	NewSimplePayment(context.Context, *v1.StartSimplePaymentRequest) (*v1.StartSimplePaymentResponse, error)
+	NewSimplePayment(context.Context, *StartSimplePaymentRequest) (*StartSimplePaymentResponse, error)
 	// initiates a Funds Change transaction.
-	NewFundsChange(context.Context, *v1.StartFundsChangeRequest) (*v1.StartFundsChangeResponse, error)
+	NewFundsChange(context.Context, *StartFundsChangeRequest) (*StartFundsChangeResponse, error)
 	mustEmbedUnimplementedTransactionServiceServer()
 }
 
@@ -66,10 +65,10 @@ type TransactionServiceServer interface {
 type UnimplementedTransactionServiceServer struct {
 }
 
-func (UnimplementedTransactionServiceServer) NewSimplePayment(context.Context, *v1.StartSimplePaymentRequest) (*v1.StartSimplePaymentResponse, error) {
+func (UnimplementedTransactionServiceServer) NewSimplePayment(context.Context, *StartSimplePaymentRequest) (*StartSimplePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewSimplePayment not implemented")
 }
-func (UnimplementedTransactionServiceServer) NewFundsChange(context.Context, *v1.StartFundsChangeRequest) (*v1.StartFundsChangeResponse, error) {
+func (UnimplementedTransactionServiceServer) NewFundsChange(context.Context, *StartFundsChangeRequest) (*StartFundsChangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewFundsChange not implemented")
 }
 func (UnimplementedTransactionServiceServer) mustEmbedUnimplementedTransactionServiceServer() {}
@@ -86,7 +85,7 @@ func RegisterTransactionServiceServer(s grpc.ServiceRegistrar, srv TransactionSe
 }
 
 func _TransactionService_NewSimplePayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.StartSimplePaymentRequest)
+	in := new(StartSimplePaymentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -98,13 +97,13 @@ func _TransactionService_NewSimplePayment_Handler(srv interface{}, ctx context.C
 		FullMethod: "/common.TransactionService/NewSimplePayment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TransactionServiceServer).NewSimplePayment(ctx, req.(*v1.StartSimplePaymentRequest))
+		return srv.(TransactionServiceServer).NewSimplePayment(ctx, req.(*StartSimplePaymentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _TransactionService_NewFundsChange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.StartFundsChangeRequest)
+	in := new(StartFundsChangeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -116,7 +115,7 @@ func _TransactionService_NewFundsChange_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/common.TransactionService/NewFundsChange",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TransactionServiceServer).NewFundsChange(ctx, req.(*v1.StartFundsChangeRequest))
+		return srv.(TransactionServiceServer).NewFundsChange(ctx, req.(*StartFundsChangeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -138,7 +137,7 @@ var TransactionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "common_private/v1/service.proto",
+	Metadata: "common/v1/service.proto",
 }
 
 // ServiceInfoClient is the client API for ServiceInfo service.
@@ -146,11 +145,11 @@ var TransactionService_ServiceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ServiceInfoClient interface {
 	// GetVerifier returns the public key associated with a service endpoint.
-	GetVerifier(ctx context.Context, in *v1.GetVerifierRequest, opts ...grpc.CallOption) (*v1.GetVerifierResponse, error)
+	GetVerifier(ctx context.Context, in *GetVerifierRequest, opts ...grpc.CallOption) (*GetVerifierResponse, error)
 	// GetServiceType returns the type of service provided by the endpoint.
-	GetServiceType(ctx context.Context, in *v1.GetServiceTypeRequest, opts ...grpc.CallOption) (*v1.GetServiceTypeResponse, error)
+	GetServiceType(ctx context.Context, in *GetServiceTypeRequest, opts ...grpc.CallOption) (*GetServiceTypeResponse, error)
 	// GetInstance returns an instance UUID that is distinct per startup
-	GetInstance(ctx context.Context, in *v1.GetInstanceRequest, opts ...grpc.CallOption) (*v1.GetInstanceResponse, error)
+	GetInstance(ctx context.Context, in *GetInstanceRequest, opts ...grpc.CallOption) (*GetInstanceResponse, error)
 }
 
 type serviceInfoClient struct {
@@ -161,8 +160,8 @@ func NewServiceInfoClient(cc grpc.ClientConnInterface) ServiceInfoClient {
 	return &serviceInfoClient{cc}
 }
 
-func (c *serviceInfoClient) GetVerifier(ctx context.Context, in *v1.GetVerifierRequest, opts ...grpc.CallOption) (*v1.GetVerifierResponse, error) {
-	out := new(v1.GetVerifierResponse)
+func (c *serviceInfoClient) GetVerifier(ctx context.Context, in *GetVerifierRequest, opts ...grpc.CallOption) (*GetVerifierResponse, error) {
+	out := new(GetVerifierResponse)
 	err := c.cc.Invoke(ctx, "/common.ServiceInfo/GetVerifier", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -170,8 +169,8 @@ func (c *serviceInfoClient) GetVerifier(ctx context.Context, in *v1.GetVerifierR
 	return out, nil
 }
 
-func (c *serviceInfoClient) GetServiceType(ctx context.Context, in *v1.GetServiceTypeRequest, opts ...grpc.CallOption) (*v1.GetServiceTypeResponse, error) {
-	out := new(v1.GetServiceTypeResponse)
+func (c *serviceInfoClient) GetServiceType(ctx context.Context, in *GetServiceTypeRequest, opts ...grpc.CallOption) (*GetServiceTypeResponse, error) {
+	out := new(GetServiceTypeResponse)
 	err := c.cc.Invoke(ctx, "/common.ServiceInfo/GetServiceType", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -179,8 +178,8 @@ func (c *serviceInfoClient) GetServiceType(ctx context.Context, in *v1.GetServic
 	return out, nil
 }
 
-func (c *serviceInfoClient) GetInstance(ctx context.Context, in *v1.GetInstanceRequest, opts ...grpc.CallOption) (*v1.GetInstanceResponse, error) {
-	out := new(v1.GetInstanceResponse)
+func (c *serviceInfoClient) GetInstance(ctx context.Context, in *GetInstanceRequest, opts ...grpc.CallOption) (*GetInstanceResponse, error) {
+	out := new(GetInstanceResponse)
 	err := c.cc.Invoke(ctx, "/common.ServiceInfo/GetInstance", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -193,11 +192,11 @@ func (c *serviceInfoClient) GetInstance(ctx context.Context, in *v1.GetInstanceR
 // for forward compatibility
 type ServiceInfoServer interface {
 	// GetVerifier returns the public key associated with a service endpoint.
-	GetVerifier(context.Context, *v1.GetVerifierRequest) (*v1.GetVerifierResponse, error)
+	GetVerifier(context.Context, *GetVerifierRequest) (*GetVerifierResponse, error)
 	// GetServiceType returns the type of service provided by the endpoint.
-	GetServiceType(context.Context, *v1.GetServiceTypeRequest) (*v1.GetServiceTypeResponse, error)
+	GetServiceType(context.Context, *GetServiceTypeRequest) (*GetServiceTypeResponse, error)
 	// GetInstance returns an instance UUID that is distinct per startup
-	GetInstance(context.Context, *v1.GetInstanceRequest) (*v1.GetInstanceResponse, error)
+	GetInstance(context.Context, *GetInstanceRequest) (*GetInstanceResponse, error)
 	mustEmbedUnimplementedServiceInfoServer()
 }
 
@@ -205,13 +204,13 @@ type ServiceInfoServer interface {
 type UnimplementedServiceInfoServer struct {
 }
 
-func (UnimplementedServiceInfoServer) GetVerifier(context.Context, *v1.GetVerifierRequest) (*v1.GetVerifierResponse, error) {
+func (UnimplementedServiceInfoServer) GetVerifier(context.Context, *GetVerifierRequest) (*GetVerifierResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVerifier not implemented")
 }
-func (UnimplementedServiceInfoServer) GetServiceType(context.Context, *v1.GetServiceTypeRequest) (*v1.GetServiceTypeResponse, error) {
+func (UnimplementedServiceInfoServer) GetServiceType(context.Context, *GetServiceTypeRequest) (*GetServiceTypeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetServiceType not implemented")
 }
-func (UnimplementedServiceInfoServer) GetInstance(context.Context, *v1.GetInstanceRequest) (*v1.GetInstanceResponse, error) {
+func (UnimplementedServiceInfoServer) GetInstance(context.Context, *GetInstanceRequest) (*GetInstanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetInstance not implemented")
 }
 func (UnimplementedServiceInfoServer) mustEmbedUnimplementedServiceInfoServer() {}
@@ -228,7 +227,7 @@ func RegisterServiceInfoServer(s grpc.ServiceRegistrar, srv ServiceInfoServer) {
 }
 
 func _ServiceInfo_GetVerifier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.GetVerifierRequest)
+	in := new(GetVerifierRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -240,13 +239,13 @@ func _ServiceInfo_GetVerifier_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/common.ServiceInfo/GetVerifier",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceInfoServer).GetVerifier(ctx, req.(*v1.GetVerifierRequest))
+		return srv.(ServiceInfoServer).GetVerifier(ctx, req.(*GetVerifierRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ServiceInfo_GetServiceType_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.GetServiceTypeRequest)
+	in := new(GetServiceTypeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -258,13 +257,13 @@ func _ServiceInfo_GetServiceType_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: "/common.ServiceInfo/GetServiceType",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceInfoServer).GetServiceType(ctx, req.(*v1.GetServiceTypeRequest))
+		return srv.(ServiceInfoServer).GetServiceType(ctx, req.(*GetServiceTypeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ServiceInfo_GetInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.GetInstanceRequest)
+	in := new(GetInstanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -276,7 +275,7 @@ func _ServiceInfo_GetInstance_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/common.ServiceInfo/GetInstance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceInfoServer).GetInstance(ctx, req.(*v1.GetInstanceRequest))
+		return srv.(ServiceInfoServer).GetInstance(ctx, req.(*GetInstanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -302,7 +301,7 @@ var ServiceInfo_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "common_private/v1/service.proto",
+	Metadata: "common/v1/service.proto",
 }
 
 // StatusServiceClient is the client API for StatusService service.
@@ -388,5 +387,5 @@ var StatusService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "common_private/v1/service.proto",
+	Metadata: "common/v1/service.proto",
 }
