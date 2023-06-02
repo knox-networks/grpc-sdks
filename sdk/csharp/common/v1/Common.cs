@@ -758,7 +758,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"value": {[
+  ///"value": {
   ///{
   ///"key": 10,
   ///"value": 43"
@@ -767,7 +767,7 @@ namespace Common {
   ///"key": 5000,
   ///"value": 87
   ///}
-  ///]}
+  ///}
   ///}
   /// </summary>
   public sealed partial class Distribution : pb::IMessage<Distribution>
