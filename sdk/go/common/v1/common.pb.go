@@ -471,10 +471,16 @@ func (x *Amount) GetDecimals() uint32 {
 
 // [Example]
 // {
-// "value": {
-// { 1: 10 },
-// { 100: 57 }
+// "value": {[
+// {
+// "key": "KEY1",
+// "value": "VALUE1"
+// },
+// {
+// "key": "KEY2",
+// "value": "VALUE2"
 // }
+// ]}
 // }
 type Distribution struct {
 	state         protoimpl.MessageState
