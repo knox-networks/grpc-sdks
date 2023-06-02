@@ -472,8 +472,8 @@ func (x *Amount) GetDecimals() uint32 {
 // [Example]
 // {
 // "value": {
-// 1: 10,
-// 100: 57
+// { 1: 10 },
+// { 100: 57 }
 // }
 // }
 type Distribution struct {
