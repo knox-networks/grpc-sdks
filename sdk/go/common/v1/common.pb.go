@@ -586,7 +586,7 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 
 // [Example]
 // {
-// "challenge": "CHALLENGExBYTES="
+// "challenge": "ChallengeBytesLengthVariesByAlgo="
 // }
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
@@ -681,11 +681,11 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 // "associated_verifiers": [
 // {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // },
 // {
 // "signature_system": 2,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // }
 // ]
 // }
@@ -741,11 +741,11 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 // {
 // "primary_verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // },
 // "associated_verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // }
 // }
 type AssociatedConnection struct {
@@ -811,7 +811,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 // "signature": {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // },
 // "signature": "SignatureLen64Bytes="
 // },

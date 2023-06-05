@@ -328,7 +328,7 @@ func (x *AuthenticateRequest) GetVerifier() *v1.DynamicVerifier {
 
 // [Example]
 // {
-// "challenge": "CHALLENGExBYTES="
+// "challenge": "ChallengeBytesLengthVariesByAlgo="
 // }
 type AuthenticateResponse struct {
 	state         protoimpl.MessageState

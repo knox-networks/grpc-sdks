@@ -1161,7 +1161,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"challenge": "CHALLENGExBYTES="
+  ///"challenge": "ChallengeBytesLengthVariesByAlgo="
   ///}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
@@ -1518,11 +1518,11 @@ namespace Common {
   ///"associated_verifiers": [
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLengthVariesByAlgo="
   ///}, 
   ///{
   ///"signature_system": 2, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLengthVariesByAlgo="
   ///}
   ///]
   ///}
@@ -1713,11 +1713,11 @@ namespace Common {
   ///{
   ///"primary_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"associated_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLengthVariesByAlgo="
   ///}
   ///}
   /// </summary>
@@ -1978,7 +1978,7 @@ namespace Common {
   ///"signature": {
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLengthVariesByAlgo="
   ///},
   ///"signature": "SignatureLen64Bytes="
   ///},
