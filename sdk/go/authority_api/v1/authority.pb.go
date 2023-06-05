@@ -93,7 +93,7 @@ func (x *SetIssuerLimitRequest) GetIssuerPublicKey() string {
 // "currency_code":"USD",
 // "amount":100, "decimals":2
 // },
-// "signature": "SIGNATURE_64Bytes_="
+// "signature": "SIGNATURE_64ByteLength="
 // }
 type SetIssuerLimitResponse struct {
 	state         protoimpl.MessageState
@@ -640,7 +640,7 @@ func (x *GetNotaryRequest) GetVerifier() string {
 
 // [Example]
 // {
-// "signature": "SIGNATURE_64Bytes_="
+// "signature": "SIGNATURE_64ByteLength="
 // }
 type GetNotaryResponse struct {
 	state         protoimpl.MessageState
