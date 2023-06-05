@@ -75,7 +75,7 @@ namespace IssuerApi.V1 {
   /// [Example]
   ///{
   ///"authentication_signature": {
-  ///"signature": "SIGNATURE64ByteLength=", 
+  ///"signature": "SIGNATURE64BytesLength=", 
   ///"verifier": {
   ///"signature_system": 1, 
   ///"verifier": "xVERIFIERxBYTES="

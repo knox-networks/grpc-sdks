@@ -304,7 +304,7 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 // {
 // "credential_type": 1,
 // "nonce": "NONCE",
-// "signature": "SIGNATURE64ByteLength=",
+// "signature": "SIGNATURE64BytesLength=",
 // "did": "YOUR_DID"
 // }
 type IssueVerifiableCredentialRequest struct {
@@ -568,7 +568,7 @@ func (x *CreatePresentationChallengeResponse) GetCredentialTypes() []CredentialT
 // {
 // "presentation": "PRESENTATION",
 // "nonce": "NONCE",
-// "signature": "SIGNATURE64ByteLength=",
+// "signature": "SIGNATURE64BytesLength=",
 // "did": "YOUR_DID",
 // "credential_type": [
 // 0,

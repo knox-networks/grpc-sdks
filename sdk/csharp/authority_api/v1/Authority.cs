@@ -335,7 +335,7 @@ namespace AuthorityApi.V1 {
   ///"currency_code":"USD", 
   ///"amount":100, "decimals":2
   ///}, 
-  ///"signature": "SIGNATURE64ByteLength="
+  ///"signature": "SIGNATURE64BytesLength="
   ///}
   /// </summary>
   public sealed partial class SetIssuerLimitResponse : pb::IMessage<SetIssuerLimitResponse>
@@ -2412,7 +2412,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURE64ByteLength="
+  ///"signature": "SIGNATURE64BytesLength="
   ///}
   /// </summary>
   public sealed partial class GetNotaryResponse : pb::IMessage<GetNotaryResponse>

@@ -520,7 +520,7 @@ func (*DeleteWebhookResponse) Descriptor() ([]byte, []int) {
 // [Example]
 // {
 // "event_type": 1,
-// "signature": "SIGNATURE64ByteLength=",
+// "signature": "SIGNATURE64BytesLength=",
 // "event_id": "EVENT_ID",
 // "creation_date": "CREATION_DATE",
 // "payload": {
