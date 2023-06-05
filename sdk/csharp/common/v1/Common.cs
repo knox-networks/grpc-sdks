@@ -1161,7 +1161,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"challenge": "ChallengeBytesLengthVariesByAlgo="
+  ///"challenge": "ByteLengthChallengeVariesByAlgo="
   ///}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>

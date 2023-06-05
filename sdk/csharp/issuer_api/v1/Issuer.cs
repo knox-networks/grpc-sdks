@@ -1247,7 +1247,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"challenge": "ChallengeBytesLengthVariesByAlgo="
+  ///"challenge": "ByteLengthChallengeVariesByAlgo="
   ///}
   /// </summary>
   public sealed partial class AuthenticateResponse : pb::IMessage<AuthenticateResponse>
