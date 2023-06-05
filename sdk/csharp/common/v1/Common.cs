@@ -238,7 +238,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "VerifierByteLenDependsOnAlgorithm="
+  ///"verifier": "VerifierByteLenDependsOnAlgo="
   ///}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
@@ -953,7 +953,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierByteLenDependsOnAlgorithm="
+  ///"verifier": "VerifierByteLenDependsOnAlgo="
   ///}
   ///}
   /// </summary>
@@ -2370,7 +2370,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierByteLenDependsOnAlgorithm="
+  ///"verifier": "VerifierByteLenDependsOnAlgo="
   ///},
   ///"signature": "SignatureLen64Bytes="
   ///}
@@ -3945,7 +3945,7 @@ namespace Common {
   ///{
   ///"bytes": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierByteLenDependsOnAlgorithm="
+  ///"verifier": "VerifierByteLenDependsOnAlgo="
   ///},
   ///"multibase": "MULTIBASE"
   ///}
