@@ -813,7 +813,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 // "signature_system": 1,
 // "verifier": "VERIFIERxBYTES="
 // },
-// "signature": "SIGNATURE_64Bytes="
+// "signature": "SIGNATURE_64Bytes_="
 // },
 // "connection_id": "CONNECTION_ID"
 // }
@@ -926,7 +926,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // "signature_system": 1,
 // "verifier": "xVERIFIERxBYTES="
 // },
-// "signature": "SIGNATURE_64Bytes="
+// "signature": "SIGNATURE_64Bytes_="
 // }
 type AuthenticationSignature struct {
 	state         protoimpl.MessageState

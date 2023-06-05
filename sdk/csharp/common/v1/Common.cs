@@ -1980,7 +1980,7 @@ namespace Common {
   ///"signature_system": 1, 
   ///"verifier": "VERIFIERxBYTES="
   ///},
-  ///"signature": "SIGNATURE_64Bytes="
+  ///"signature": "SIGNATURE_64Bytes_="
   ///},
   ///"connection_id": "CONNECTION_ID"
   ///}
@@ -2372,7 +2372,7 @@ namespace Common {
   ///"signature_system": 1, 
   ///"verifier": "xVERIFIERxBYTES="
   ///},
-  ///"signature": "SIGNATURE_64Bytes="
+  ///"signature": "SIGNATURE_64Bytes_="
   ///}
   /// </summary>
   public sealed partial class AuthenticationSignature : pb::IMessage<AuthenticationSignature>

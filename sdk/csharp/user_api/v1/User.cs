@@ -6371,7 +6371,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURE_64Bytes=", 
+  ///"signature": "SIGNATURE_64Bytes_=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
@@ -7236,7 +7236,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURE_64Bytes=", 
+  ///"signature": "SIGNATURE_64Bytes_=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
@@ -8199,7 +8199,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURE_64Bytes=", 
+  ///"signature": "SIGNATURE_64Bytes_=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
