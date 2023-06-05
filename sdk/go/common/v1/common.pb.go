@@ -336,7 +336,7 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "signature_system": 1,
-// "verifier": "VerifierByteLenDependsOnAlgo="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // }
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
@@ -533,7 +533,7 @@ func (x *Distribution) GetValue() map[int64]int32 {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierByteLenDependsOnAlgo="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // }
 // }
 type AuthenticationRequest struct {
@@ -924,7 +924,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierByteLenDependsOnAlgo="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // },
 // "signature": "SignatureLen64Bytes="
 // }
@@ -1310,7 +1310,7 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 // {
 // "bytes": {
 // "signature_system": 1,
-// "verifier": "VerifierByteLenDependsOnAlgo="
+// "verifier": "VerifierBytesLengthVariesByAlgo="
 // },
 // "multibase": "MULTIBASE"
 // }
