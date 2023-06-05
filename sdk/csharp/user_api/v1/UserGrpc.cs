@@ -104,6 +104,10 @@ namespace UserApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserApi.V1.AssociateWalletResponse> __Marshaller_user_api_v1_AssociateWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.AssociateWalletResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.DissociateWalletRequest> __Marshaller_user_api_v1_DissociateWalletRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.DissociateWalletRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.DissociateWalletResponse> __Marshaller_user_api_v1_DissociateWalletResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.DissociateWalletResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserApi.V1.GetAppSettingsRequest> __Marshaller_user_api_v1_GetAppSettingsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetAppSettingsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UserApi.V1.GetAppSettingsResponse> __Marshaller_user_api_v1_GetAppSettingsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetAppSettingsResponse.Parser));
@@ -235,6 +239,14 @@ namespace UserApi.V1 {
         "AssociateWallet",
         __Marshaller_user_api_v1_AssociateWalletRequest,
         __Marshaller_user_api_v1_AssociateWalletResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UserApi.V1.DissociateWalletRequest, global::UserApi.V1.DissociateWalletResponse> __Method_DissociateWallet = new grpc::Method<global::UserApi.V1.DissociateWalletRequest, global::UserApi.V1.DissociateWalletResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DissociateWallet",
+        __Marshaller_user_api_v1_DissociateWalletRequest,
+        __Marshaller_user_api_v1_DissociateWalletResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse> __Method_GetAppSettings = new grpc::Method<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse>(
@@ -456,6 +468,18 @@ namespace UserApi.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.AssociateWalletResponse> AssociateWallet(global::UserApi.V1.AssociateWalletRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Dissociate Wallet with the authenticated account in the bearer token.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.DissociateWalletResponse> DissociateWallet(global::UserApi.V1.DissociateWalletRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1150,6 +1174,54 @@ namespace UserApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_AssociateWallet, null, options, request);
       }
       /// <summary>
+      /// Dissociate Wallet with the authenticated account in the bearer token.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.DissociateWalletResponse DissociateWallet(global::UserApi.V1.DissociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DissociateWallet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Dissociate Wallet with the authenticated account in the bearer token.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.DissociateWalletResponse DissociateWallet(global::UserApi.V1.DissociateWalletRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DissociateWallet, null, options, request);
+      }
+      /// <summary>
+      /// Dissociate Wallet with the authenticated account in the bearer token.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.DissociateWalletResponse> DissociateWalletAsync(global::UserApi.V1.DissociateWalletRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DissociateWalletAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Dissociate Wallet with the authenticated account in the bearer token.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.DissociateWalletResponse> DissociateWalletAsync(global::UserApi.V1.DissociateWalletRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DissociateWallet, null, options, request);
+      }
+      /// <summary>
       /// Get application specific settings in a given environment.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -1512,6 +1584,7 @@ namespace UserApi.V1 {
           .AddMethod(__Method_CreateRegisterWalletChallenge, serviceImpl.CreateRegisterWalletChallenge)
           .AddMethod(__Method_RegisterWallet, serviceImpl.RegisterWallet)
           .AddMethod(__Method_AssociateWallet, serviceImpl.AssociateWallet)
+          .AddMethod(__Method_DissociateWallet, serviceImpl.DissociateWallet)
           .AddMethod(__Method_GetAppSettings, serviceImpl.GetAppSettings)
           .AddMethod(__Method_RegisterUser, serviceImpl.RegisterUser)
           .AddMethod(__Method_ConfirmUser, serviceImpl.ConfirmUser)
@@ -1541,6 +1614,7 @@ namespace UserApi.V1 {
       serviceBinder.AddMethod(__Method_CreateRegisterWalletChallenge, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::UserApi.V1.CreateRegisterWalletChallengeRequest, global::UserApi.V1.CreateRegisterWalletChallengeResponse>(serviceImpl.CreateRegisterWalletChallenge));
       serviceBinder.AddMethod(__Method_RegisterWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RegisterWalletRequest, global::UserApi.V1.RegisterWalletResponse>(serviceImpl.RegisterWallet));
       serviceBinder.AddMethod(__Method_AssociateWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AssociateWalletRequest, global::UserApi.V1.AssociateWalletResponse>(serviceImpl.AssociateWallet));
+      serviceBinder.AddMethod(__Method_DissociateWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.DissociateWalletRequest, global::UserApi.V1.DissociateWalletResponse>(serviceImpl.DissociateWallet));
       serviceBinder.AddMethod(__Method_GetAppSettings, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetAppSettingsRequest, global::UserApi.V1.GetAppSettingsResponse>(serviceImpl.GetAppSettings));
       serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RegisterUserRequest, global::UserApi.V1.RegisterUserResponse>(serviceImpl.RegisterUser));
       serviceBinder.AddMethod(__Method_ConfirmUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.ConfirmUserRequest, global::UserApi.V1.ConfirmUserResponse>(serviceImpl.ConfirmUser));

@@ -123,6 +123,15 @@ type UserManagementAssociateWallet = {
   readonly responseType: typeof user_api_v1_user_pb.AssociateWalletResponse;
 };
 
+type UserManagementDissociateWallet = {
+  readonly methodName: string;
+  readonly service: typeof UserManagement;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.DissociateWalletRequest;
+  readonly responseType: typeof user_api_v1_user_pb.DissociateWalletResponse;
+};
+
 type UserManagementGetAppSettings = {
   readonly methodName: string;
   readonly service: typeof UserManagement;
@@ -201,6 +210,7 @@ export class UserManagement {
   static readonly CreateRegisterWalletChallenge: UserManagementCreateRegisterWalletChallenge;
   static readonly RegisterWallet: UserManagementRegisterWallet;
   static readonly AssociateWallet: UserManagementAssociateWallet;
+  static readonly DissociateWallet: UserManagementDissociateWallet;
   static readonly GetAppSettings: UserManagementGetAppSettings;
   static readonly RegisterUser: UserManagementRegisterUser;
   static readonly ConfirmUser: UserManagementConfirmUser;
@@ -342,6 +352,15 @@ export class UserManagementClient {
   associateWallet(
     requestMessage: user_api_v1_user_pb.AssociateWalletRequest,
     callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.AssociateWalletResponse|null) => void
+  ): UnaryResponse;
+  dissociateWallet(
+    requestMessage: user_api_v1_user_pb.DissociateWalletRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.DissociateWalletResponse|null) => void
+  ): UnaryResponse;
+  dissociateWallet(
+    requestMessage: user_api_v1_user_pb.DissociateWalletRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.DissociateWalletResponse|null) => void
   ): UnaryResponse;
   getAppSettings(
     requestMessage: user_api_v1_user_pb.GetAppSettingsRequest,

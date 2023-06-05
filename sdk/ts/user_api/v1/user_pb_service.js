@@ -129,6 +129,15 @@ UserManagement.AssociateWallet = {
   responseType: user_api_v1_user_pb.AssociateWalletResponse
 };
 
+UserManagement.DissociateWallet = {
+  methodName: "DissociateWallet",
+  service: UserManagement,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.DissociateWalletRequest,
+  responseType: user_api_v1_user_pb.DissociateWalletResponse
+};
+
 UserManagement.GetAppSettings = {
   methodName: "GetAppSettings",
   service: UserManagement,
@@ -592,6 +601,37 @@ UserManagementClient.prototype.associateWallet = function associateWallet(reques
     callback = arguments[1];
   }
   var client = grpc.unary(UserManagement.AssociateWallet, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UserManagementClient.prototype.dissociateWallet = function dissociateWallet(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UserManagement.DissociateWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

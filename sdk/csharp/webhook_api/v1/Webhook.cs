@@ -2118,7 +2118,7 @@ namespace WebhookApi.V1 {
   /// [Example]
   ///{
   ///"event_type": 1,
-  ///"signature": "SIGNATURExBYTES=",
+  ///"signature": "SIGNATURE_64Bytes=",
   ///"event_id": "EVENT_ID",
   ///"creation_date": "CREATION_DATE", 
   ///"payload": { 

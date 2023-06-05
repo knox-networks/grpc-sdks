@@ -101,57 +101,61 @@ namespace UserApi.V1 {
             "IiIKE0dldFVzZXJCeURJRFJlcXVlc3QSCwoDZGlkGAEgASgJIjcKFEdldFVz",
             "ZXJCeURJRFJlc3BvbnNlEh8KBHVzZXIYASABKAsyES51c2VyX2FwaS52MS5V",
             "c2VyIiUKFkFzc29jaWF0ZVdhbGxldFJlcXVlc3QSCwoDZGlkGAEgASgJIhkK",
-            "F0Fzc29jaWF0ZVdhbGxldFJlc3BvbnNlKo4BCghQcm92aWRlchIYChRQUk9W",
-            "SURFUl9VTlNQRUNJRklFRBAAEhMKD1BST1ZJREVSX0dJVEhVQhABEhUKEVBS",
-            "T1ZJREVSX0ZBQ0VCT09LEAISEwoPUFJPVklERVJfR09PR0xFEAMSEQoNUFJP",
-            "VklERVJfU0FNTBAEEhQKEFBST1ZJREVSX0NPR05JVE8QBSo7CgRSb2xlEhQK",
-            "EFJPTEVfVU5TUEVDSUZJRUQQABINCglST0xFX1VTRVIQARIOCgpST0xFX0FE",
-            "TUlOEAIyxQ8KDlVzZXJNYW5hZ2VtZW50EmIKEUF1dGhuV2l0aFBhc3N3b3Jk",
-            "EiUudXNlcl9hcGkudjEuQXV0aG5XaXRoUGFzc3dvcmRSZXF1ZXN0GiYudXNl",
-            "cl9hcGkudjEuQXV0aG5XaXRoUGFzc3dvcmRSZXNwb25zZRJlChJSZWZyZXNo",
-            "QWNjZXNzVG9rZW4SJi51c2VyX2FwaS52MS5SZWZyZXNoQWNjZXNzVG9rZW5S",
-            "ZXF1ZXN0GicudXNlcl9hcGkudjEuUmVmcmVzaEFjY2Vzc1Rva2VuUmVzcG9u",
-            "c2USYgoRQXV0aG5XaXRoUHJvdmlkZXISJS51c2VyX2FwaS52MS5BdXRobldp",
-            "dGhQcm92aWRlclJlcXVlc3QaJi51c2VyX2FwaS52MS5BdXRobldpdGhQcm92",
-            "aWRlclJlc3BvbnNlEmUKEkhhbmRsZU9JRENDYWxsYmFjaxImLnVzZXJfYXBp",
-            "LnYxLkhhbmRsZU9JRENDYWxsYmFja1JlcXVlc3QaJy51c2VyX2FwaS52MS5I",
-            "YW5kbGVPSURDQ2FsbGJhY2tSZXNwb25zZRJlChJIYW5kbGVTQU1MQ2FsbGJh",
-            "Y2sSJi51c2VyX2FwaS52MS5IYW5kbGVTQU1MQ2FsbGJhY2tSZXF1ZXN0Gicu",
-            "dXNlcl9hcGkudjEuSGFuZGxlU0FNTENhbGxiYWNrUmVzcG9uc2USWQoOU0FN",
-            "TFNQTWV0YWRhdGESIi51c2VyX2FwaS52MS5TQU1MU1BNZXRhZGF0YVJlcXVl",
-            "c3QaIy51c2VyX2FwaS52MS5TQU1MU1BNZXRhZGF0YVJlc3BvbnNlEqABCiVD",
-            "cmVhdGVBdXRobkJyb3dzZXJXaXRoV2FsbGV0Q2hhbGxlbmdlEjkudXNlcl9h",
-            "cGkudjEuQ3JlYXRlQXV0aG5Ccm93c2VyV2l0aFdhbGxldENoYWxsZW5nZVJl",
-            "cXVlc3QaOi51c2VyX2FwaS52MS5DcmVhdGVBdXRobkJyb3dzZXJXaXRoV2Fs",
-            "bGV0Q2hhbGxlbmdlUmVzcG9uc2UwARJxChZBdXRobkJyb3dzZXJXaXRoV2Fs",
-            "bGV0EioudXNlcl9hcGkudjEuQXV0aG5Ccm93c2VyV2l0aFdhbGxldFJlcXVl",
-            "c3QaKy51c2VyX2FwaS52MS5BdXRobkJyb3dzZXJXaXRoV2FsbGV0UmVzcG9u",
-            "c2USfQoaQ3JlYXRlQXV0aG5XYWxsZXRDaGFsbGVuZ2USLi51c2VyX2FwaS52",
-            "MS5DcmVhdGVBdXRobldhbGxldENoYWxsZW5nZVJlcXVlc3QaLy51c2VyX2Fw",
-            "aS52MS5DcmVhdGVBdXRobldhbGxldENoYWxsZW5nZVJlc3BvbnNlElAKC0F1",
-            "dGhuV2FsbGV0Eh8udXNlcl9hcGkudjEuQXV0aG5XYWxsZXRSZXF1ZXN0GiAu",
-            "dXNlcl9hcGkudjEuQXV0aG5XYWxsZXRSZXNwb25zZRKIAQodQ3JlYXRlUmVn",
-            "aXN0ZXJXYWxsZXRDaGFsbGVuZ2USMS51c2VyX2FwaS52MS5DcmVhdGVSZWdp",
-            "c3RlcldhbGxldENoYWxsZW5nZVJlcXVlc3QaMi51c2VyX2FwaS52MS5DcmVh",
-            "dGVSZWdpc3RlcldhbGxldENoYWxsZW5nZVJlc3BvbnNlMAESWQoOUmVnaXN0",
-            "ZXJXYWxsZXQSIi51c2VyX2FwaS52MS5SZWdpc3RlcldhbGxldFJlcXVlc3Qa",
-            "Iy51c2VyX2FwaS52MS5SZWdpc3RlcldhbGxldFJlc3BvbnNlElwKD0Fzc29j",
-            "aWF0ZVdhbGxldBIjLnVzZXJfYXBpLnYxLkFzc29jaWF0ZVdhbGxldFJlcXVl",
-            "c3QaJC51c2VyX2FwaS52MS5Bc3NvY2lhdGVXYWxsZXRSZXNwb25zZRJZCg5H",
-            "ZXRBcHBTZXR0aW5ncxIiLnVzZXJfYXBpLnYxLkdldEFwcFNldHRpbmdzUmVx",
-            "dWVzdBojLnVzZXJfYXBpLnYxLkdldEFwcFNldHRpbmdzUmVzcG9uc2USUwoM",
-            "UmVnaXN0ZXJVc2VyEiAudXNlcl9hcGkudjEuUmVnaXN0ZXJVc2VyUmVxdWVz",
-            "dBohLnVzZXJfYXBpLnYxLlJlZ2lzdGVyVXNlclJlc3BvbnNlElAKC0NvbmZp",
-            "cm1Vc2VyEh8udXNlcl9hcGkudjEuQ29uZmlybVVzZXJSZXF1ZXN0GiAudXNl",
-            "cl9hcGkudjEuQ29uZmlybVVzZXJSZXNwb25zZRJQCgtGaW5kQnlFbWFpbBIf",
-            "LnVzZXJfYXBpLnYxLkZpbmRCeUVtYWlsUmVxdWVzdBogLnVzZXJfYXBpLnYx",
-            "LkZpbmRCeUVtYWlsUmVzcG9uc2USRwoIRmluZEJ5SUQSHC51c2VyX2FwaS52",
-            "MS5GaW5kQnlJRFJlcXVlc3QaHS51c2VyX2FwaS52MS5GaW5kQnlJRFJlc3Bv",
-            "bnNlEj4KBUdldE1lEhkudXNlcl9hcGkudjEuR2V0TWVSZXF1ZXN0GhoudXNl",
-            "cl9hcGkudjEuR2V0TWVSZXNwb25zZRJTCgxHZXRVc2VyQnlESUQSIC51c2Vy",
-            "X2FwaS52MS5HZXRVc2VyQnlESURSZXF1ZXN0GiEudXNlcl9hcGkudjEuR2V0",
-            "VXNlckJ5RElEUmVzcG9uc2VCN1o1Z2l0aHViLmNvbS9rbm94LW5ldHdvcmtz",
-            "L2dycGMtc2Rrcy9zZGsvZ28vdXNlcl9hcGkvdjFiBnByb3RvMw=="));
+            "F0Fzc29jaWF0ZVdhbGxldFJlc3BvbnNlIiYKF0Rpc3NvY2lhdGVXYWxsZXRS",
+            "ZXF1ZXN0EgsKA2RpZBgBIAEoCSIaChhEaXNzb2NpYXRlV2FsbGV0UmVzcG9u",
+            "c2UqjgEKCFByb3ZpZGVyEhgKFFBST1ZJREVSX1VOU1BFQ0lGSUVEEAASEwoP",
+            "UFJPVklERVJfR0lUSFVCEAESFQoRUFJPVklERVJfRkFDRUJPT0sQAhITCg9Q",
+            "Uk9WSURFUl9HT09HTEUQAxIRCg1QUk9WSURFUl9TQU1MEAQSFAoQUFJPVklE",
+            "RVJfQ09HTklUTxAFKjsKBFJvbGUSFAoQUk9MRV9VTlNQRUNJRklFRBAAEg0K",
+            "CVJPTEVfVVNFUhABEg4KClJPTEVfQURNSU4QAjKmEAoOVXNlck1hbmFnZW1l",
+            "bnQSYgoRQXV0aG5XaXRoUGFzc3dvcmQSJS51c2VyX2FwaS52MS5BdXRobldp",
+            "dGhQYXNzd29yZFJlcXVlc3QaJi51c2VyX2FwaS52MS5BdXRobldpdGhQYXNz",
+            "d29yZFJlc3BvbnNlEmUKElJlZnJlc2hBY2Nlc3NUb2tlbhImLnVzZXJfYXBp",
+            "LnYxLlJlZnJlc2hBY2Nlc3NUb2tlblJlcXVlc3QaJy51c2VyX2FwaS52MS5S",
+            "ZWZyZXNoQWNjZXNzVG9rZW5SZXNwb25zZRJiChFBdXRobldpdGhQcm92aWRl",
+            "chIlLnVzZXJfYXBpLnYxLkF1dGhuV2l0aFByb3ZpZGVyUmVxdWVzdBomLnVz",
+            "ZXJfYXBpLnYxLkF1dGhuV2l0aFByb3ZpZGVyUmVzcG9uc2USZQoSSGFuZGxl",
+            "T0lEQ0NhbGxiYWNrEiYudXNlcl9hcGkudjEuSGFuZGxlT0lEQ0NhbGxiYWNr",
+            "UmVxdWVzdBonLnVzZXJfYXBpLnYxLkhhbmRsZU9JRENDYWxsYmFja1Jlc3Bv",
+            "bnNlEmUKEkhhbmRsZVNBTUxDYWxsYmFjaxImLnVzZXJfYXBpLnYxLkhhbmRs",
+            "ZVNBTUxDYWxsYmFja1JlcXVlc3QaJy51c2VyX2FwaS52MS5IYW5kbGVTQU1M",
+            "Q2FsbGJhY2tSZXNwb25zZRJZCg5TQU1MU1BNZXRhZGF0YRIiLnVzZXJfYXBp",
+            "LnYxLlNBTUxTUE1ldGFkYXRhUmVxdWVzdBojLnVzZXJfYXBpLnYxLlNBTUxT",
+            "UE1ldGFkYXRhUmVzcG9uc2USoAEKJUNyZWF0ZUF1dGhuQnJvd3NlcldpdGhX",
+            "YWxsZXRDaGFsbGVuZ2USOS51c2VyX2FwaS52MS5DcmVhdGVBdXRobkJyb3dz",
+            "ZXJXaXRoV2FsbGV0Q2hhbGxlbmdlUmVxdWVzdBo6LnVzZXJfYXBpLnYxLkNy",
+            "ZWF0ZUF1dGhuQnJvd3NlcldpdGhXYWxsZXRDaGFsbGVuZ2VSZXNwb25zZTAB",
+            "EnEKFkF1dGhuQnJvd3NlcldpdGhXYWxsZXQSKi51c2VyX2FwaS52MS5BdXRo",
+            "bkJyb3dzZXJXaXRoV2FsbGV0UmVxdWVzdBorLnVzZXJfYXBpLnYxLkF1dGhu",
+            "QnJvd3NlcldpdGhXYWxsZXRSZXNwb25zZRJ9ChpDcmVhdGVBdXRobldhbGxl",
+            "dENoYWxsZW5nZRIuLnVzZXJfYXBpLnYxLkNyZWF0ZUF1dGhuV2FsbGV0Q2hh",
+            "bGxlbmdlUmVxdWVzdBovLnVzZXJfYXBpLnYxLkNyZWF0ZUF1dGhuV2FsbGV0",
+            "Q2hhbGxlbmdlUmVzcG9uc2USUAoLQXV0aG5XYWxsZXQSHy51c2VyX2FwaS52",
+            "MS5BdXRobldhbGxldFJlcXVlc3QaIC51c2VyX2FwaS52MS5BdXRobldhbGxl",
+            "dFJlc3BvbnNlEogBCh1DcmVhdGVSZWdpc3RlcldhbGxldENoYWxsZW5nZRIx",
+            "LnVzZXJfYXBpLnYxLkNyZWF0ZVJlZ2lzdGVyV2FsbGV0Q2hhbGxlbmdlUmVx",
+            "dWVzdBoyLnVzZXJfYXBpLnYxLkNyZWF0ZVJlZ2lzdGVyV2FsbGV0Q2hhbGxl",
+            "bmdlUmVzcG9uc2UwARJZCg5SZWdpc3RlcldhbGxldBIiLnVzZXJfYXBpLnYx",
+            "LlJlZ2lzdGVyV2FsbGV0UmVxdWVzdBojLnVzZXJfYXBpLnYxLlJlZ2lzdGVy",
+            "V2FsbGV0UmVzcG9uc2USXAoPQXNzb2NpYXRlV2FsbGV0EiMudXNlcl9hcGku",
+            "djEuQXNzb2NpYXRlV2FsbGV0UmVxdWVzdBokLnVzZXJfYXBpLnYxLkFzc29j",
+            "aWF0ZVdhbGxldFJlc3BvbnNlEl8KEERpc3NvY2lhdGVXYWxsZXQSJC51c2Vy",
+            "X2FwaS52MS5EaXNzb2NpYXRlV2FsbGV0UmVxdWVzdBolLnVzZXJfYXBpLnYx",
+            "LkRpc3NvY2lhdGVXYWxsZXRSZXNwb25zZRJZCg5HZXRBcHBTZXR0aW5ncxIi",
+            "LnVzZXJfYXBpLnYxLkdldEFwcFNldHRpbmdzUmVxdWVzdBojLnVzZXJfYXBp",
+            "LnYxLkdldEFwcFNldHRpbmdzUmVzcG9uc2USUwoMUmVnaXN0ZXJVc2VyEiAu",
+            "dXNlcl9hcGkudjEuUmVnaXN0ZXJVc2VyUmVxdWVzdBohLnVzZXJfYXBpLnYx",
+            "LlJlZ2lzdGVyVXNlclJlc3BvbnNlElAKC0NvbmZpcm1Vc2VyEh8udXNlcl9h",
+            "cGkudjEuQ29uZmlybVVzZXJSZXF1ZXN0GiAudXNlcl9hcGkudjEuQ29uZmly",
+            "bVVzZXJSZXNwb25zZRJQCgtGaW5kQnlFbWFpbBIfLnVzZXJfYXBpLnYxLkZp",
+            "bmRCeUVtYWlsUmVxdWVzdBogLnVzZXJfYXBpLnYxLkZpbmRCeUVtYWlsUmVz",
+            "cG9uc2USRwoIRmluZEJ5SUQSHC51c2VyX2FwaS52MS5GaW5kQnlJRFJlcXVl",
+            "c3QaHS51c2VyX2FwaS52MS5GaW5kQnlJRFJlc3BvbnNlEj4KBUdldE1lEhku",
+            "dXNlcl9hcGkudjEuR2V0TWVSZXF1ZXN0GhoudXNlcl9hcGkudjEuR2V0TWVS",
+            "ZXNwb25zZRJTCgxHZXRVc2VyQnlESUQSIC51c2VyX2FwaS52MS5HZXRVc2Vy",
+            "QnlESURSZXF1ZXN0GiEudXNlcl9hcGkudjEuR2V0VXNlckJ5RElEUmVzcG9u",
+            "c2VCN1o1Z2l0aHViLmNvbS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsv",
+            "Z28vdXNlcl9hcGkvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UserApi.V1.Provider), typeof(global::UserApi.V1.Role), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -199,7 +203,9 @@ namespace UserApi.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetUserByDIDRequest), global::UserApi.V1.GetUserByDIDRequest.Parser, new[]{ "Did" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.GetUserByDIDResponse), global::UserApi.V1.GetUserByDIDResponse.Parser, new[]{ "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AssociateWalletRequest), global::UserApi.V1.AssociateWalletRequest.Parser, new[]{ "Did" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AssociateWalletResponse), global::UserApi.V1.AssociateWalletResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.AssociateWalletResponse), global::UserApi.V1.AssociateWalletResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.DissociateWalletRequest), global::UserApi.V1.DissociateWalletRequest.Parser, new[]{ "Did" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UserApi.V1.DissociateWalletResponse), global::UserApi.V1.DissociateWalletResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -6365,7 +6371,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURExBYTES=", 
+  ///"signature": "SIGNATURE_64Bytes=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
@@ -7230,7 +7236,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURExBYTES=", 
+  ///"signature": "SIGNATURE_64Bytes=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
@@ -8193,7 +8199,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "SIGNATURExBYTES=", 
+  ///"signature": "SIGNATURE_64Bytes=", 
   ///"nonce": "NONCE", 
   ///"did": "DID"
   ///}
@@ -11276,6 +11282,360 @@ namespace UserApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(AssociateWalletResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"did": "DID"
+  ///} 
+  /// </summary>
+  public sealed partial class DissociateWalletRequest : pb::IMessage<DissociateWalletRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DissociateWalletRequest> _parser = new pb::MessageParser<DissociateWalletRequest>(() => new DissociateWalletRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DissociateWalletRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UserApi.V1.UserReflection.Descriptor.MessageTypes[45]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletRequest(DissociateWalletRequest other) : this() {
+      did_ = other.did_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletRequest Clone() {
+      return new DissociateWalletRequest(this);
+    }
+
+    /// <summary>Field number for the "did" field.</summary>
+    public const int DidFieldNumber = 1;
+    private string did_ = "";
+    /// <summary>
+    ///W3C Decentralized Identifier (DID) of the wallet to be associated with the account in the bearer token.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Did {
+      get { return did_; }
+      set {
+        did_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DissociateWalletRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DissociateWalletRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Did != other.Did) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Did.Length != 0) hash ^= Did.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Did.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Did);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Did.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Did);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Did.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Did);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DissociateWalletRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Did.Length != 0) {
+        Did = other.Did;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Did = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Did = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{} 
+  /// </summary>
+  public sealed partial class DissociateWalletResponse : pb::IMessage<DissociateWalletResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DissociateWalletResponse> _parser = new pb::MessageParser<DissociateWalletResponse>(() => new DissociateWalletResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DissociateWalletResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UserApi.V1.UserReflection.Descriptor.MessageTypes[46]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletResponse(DissociateWalletResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DissociateWalletResponse Clone() {
+      return new DissociateWalletResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DissociateWalletResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DissociateWalletResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DissociateWalletResponse other) {
       if (other == null) {
         return;
       }

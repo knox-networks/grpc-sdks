@@ -1137,6 +1137,42 @@ export namespace AssociateWalletResponse {
   }
 }
 
+export class DissociateWalletRequest extends jspb.Message {
+  getDid(): string;
+  setDid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DissociateWalletRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DissociateWalletRequest): DissociateWalletRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DissociateWalletRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DissociateWalletRequest;
+  static deserializeBinaryFromReader(message: DissociateWalletRequest, reader: jspb.BinaryReader): DissociateWalletRequest;
+}
+
+export namespace DissociateWalletRequest {
+  export type AsObject = {
+    did: string,
+  }
+}
+
+export class DissociateWalletResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DissociateWalletResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DissociateWalletResponse): DissociateWalletResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DissociateWalletResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DissociateWalletResponse;
+  static deserializeBinaryFromReader(message: DissociateWalletResponse, reader: jspb.BinaryReader): DissociateWalletResponse;
+}
+
+export namespace DissociateWalletResponse {
+  export type AsObject = {
+  }
+}
+
 export interface ProviderMap {
   PROVIDER_UNSPECIFIED: 0;
   PROVIDER_GITHUB: 1;

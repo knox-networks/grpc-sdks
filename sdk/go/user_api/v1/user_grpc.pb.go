@@ -44,6 +44,8 @@ type UserManagementClient interface {
 	RegisterWallet(ctx context.Context, in *RegisterWalletRequest, opts ...grpc.CallOption) (*RegisterWalletResponse, error)
 	// Associate Wallet with the authenticated account in the bearer token.
 	AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error)
+	// Dissociate Wallet with the authenticated account in the bearer token.
+	DissociateWallet(ctx context.Context, in *DissociateWalletRequest, opts ...grpc.CallOption) (*DissociateWalletResponse, error)
 	// Get application specific settings in a given environment.
 	GetAppSettings(ctx context.Context, in *GetAppSettingsRequest, opts ...grpc.CallOption) (*GetAppSettingsResponse, error)
 	// Admin API to register a user.
@@ -231,6 +233,15 @@ func (c *userManagementClient) AssociateWallet(ctx context.Context, in *Associat
 	return out, nil
 }
 
+func (c *userManagementClient) DissociateWallet(ctx context.Context, in *DissociateWalletRequest, opts ...grpc.CallOption) (*DissociateWalletResponse, error) {
+	out := new(DissociateWalletResponse)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/DissociateWallet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *userManagementClient) GetAppSettings(ctx context.Context, in *GetAppSettingsRequest, opts ...grpc.CallOption) (*GetAppSettingsResponse, error) {
 	out := new(GetAppSettingsResponse)
 	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetAppSettings", in, out, opts...)
@@ -324,6 +335,8 @@ type UserManagementServer interface {
 	RegisterWallet(context.Context, *RegisterWalletRequest) (*RegisterWalletResponse, error)
 	// Associate Wallet with the authenticated account in the bearer token.
 	AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error)
+	// Dissociate Wallet with the authenticated account in the bearer token.
+	DissociateWallet(context.Context, *DissociateWalletRequest) (*DissociateWalletResponse, error)
 	// Get application specific settings in a given environment.
 	GetAppSettings(context.Context, *GetAppSettingsRequest) (*GetAppSettingsResponse, error)
 	// Admin API to register a user.
@@ -383,6 +396,9 @@ func (UnimplementedUserManagementServer) RegisterWallet(context.Context, *Regist
 }
 func (UnimplementedUserManagementServer) AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AssociateWallet not implemented")
+}
+func (UnimplementedUserManagementServer) DissociateWallet(context.Context, *DissociateWalletRequest) (*DissociateWalletResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DissociateWallet not implemented")
 }
 func (UnimplementedUserManagementServer) GetAppSettings(context.Context, *GetAppSettingsRequest) (*GetAppSettingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppSettings not implemented")
@@ -658,6 +674,24 @@ func _UserManagement_AssociateWallet_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserManagement_DissociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DissociateWalletRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserManagementServer).DissociateWallet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_api.v1.UserManagement/DissociateWallet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserManagementServer).DissociateWallet(ctx, req.(*DissociateWalletRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _UserManagement_GetAppSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppSettingsRequest)
 	if err := dec(in); err != nil {
@@ -834,6 +868,10 @@ var UserManagement_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AssociateWallet",
 			Handler:    _UserManagement_AssociateWallet_Handler,
+		},
+		{
+			MethodName: "DissociateWallet",
+			Handler:    _UserManagement_DissociateWallet_Handler,
 		},
 		{
 			MethodName: "GetAppSettings",
