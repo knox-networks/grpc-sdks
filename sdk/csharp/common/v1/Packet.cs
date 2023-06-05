@@ -278,25 +278,25 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "ByteLengthOfDataVaries=", 
+  ///"data": "ByteLenDataVaries=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 
-  ///"verifier": "xxSENDERxVERIFIERxBYTES="
+  ///"verifier": "SenderVerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"recipient": {
   ///"signature_system": 1, 
-  ///"verifier": "xxRECIPIENTxxVERIFIERxBYTES="
+  ///"verifier": "RecipientVerifierBytesLengthVariesByAlgo="
   ///}, 
-  ///"nonce": "NONCExBYTES=", 
+  ///"nonce": "BytesLengthNonceVariesByAlgo=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 
-  ///"verifier": "xSTARTERxVERIFIERxBYTES="
+  ///"verifier": "StarterVerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "xxRESPONDERxxVERIFIERxBYTES="
+  ///"verifier": "ResponderVerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
@@ -773,11 +773,11 @@ namespace Common {
   ///{
   ///"starter": { 
   ///"signature_system": 1, 
-  ///"verifier": "xSTARTERxVERIFIERxBYTES="
+  ///"verifier": "StarterVerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "xxRESPONDERxxVERIFIERxBYTES="
+  ///"verifier": "ResponderVerifierBytesLengthVariesByAlgo="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
