@@ -300,7 +300,7 @@ namespace Common {
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
-  ///"signature": "SignatureLen64Bytes=", 
+  ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"user_reference": "USER_REFERENCE", 
   ///"related_uetrs": [
   ///"RELATED_UETR1", 
@@ -781,7 +781,7 @@ namespace Common {
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
-  ///"signature": "SignatureLen64Bytes=", 
+  ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"user_reference": "USER_REFERENCE", 
   ///"related_uetrs": [
   ///"RELATED_UETR1", 

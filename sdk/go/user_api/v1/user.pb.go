@@ -1881,7 +1881,7 @@ func (*CreateAuthnBrowserWithWalletChallengeResponse_AuthToken) isCreateAuthnBro
 
 // [Example]
 // {
-// "signature": "SignatureLen64Bytes=",
+// "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
 // "did": "DID"
 // }
@@ -2126,7 +2126,7 @@ func (*CreateRegisterWalletChallengeResponse_Ok) isCreateRegisterWalletChallenge
 
 // [Example]
 // {
-// "signature": "SignatureLen64Bytes=",
+// "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
 // "did": "DID"
 // }
@@ -2394,7 +2394,7 @@ func (x *CreateAuthnWalletChallengeResponse) GetNonce() string {
 
 // [Example]
 // {
-// "signature": "SignatureLen64Bytes=",
+// "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
 // "did": "DID"
 // }
