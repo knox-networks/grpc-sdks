@@ -27,7 +27,7 @@ const (
 // "signature": "SignatureLen64Bytes=",
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLenDependsOnAlgorithm="
+// "verifier": "VerifierByteLenDependsOnAlgorithm="
 // }
 // },
 // "amount": {
@@ -37,7 +37,7 @@ const (
 // },
 // "authority": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLenDependsOnAlgorithm="
+// "verifier": "VerifierByteLenDependsOnAlgorithm="
 // }
 // }
 type IssueRequest struct {
@@ -275,7 +275,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLenDependsOnAlgorithm="
+// "verifier": "VerifierByteLenDependsOnAlgorithm="
 // }
 // }
 type AuthenticateRequest struct {
