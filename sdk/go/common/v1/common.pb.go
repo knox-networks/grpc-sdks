@@ -1092,7 +1092,7 @@ func (x *AuthorizedSignatureResponse) GetPromissoryFile() []byte {
 // [Example]
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "xDATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // }
 type Media struct {
 	state         protoimpl.MessageState

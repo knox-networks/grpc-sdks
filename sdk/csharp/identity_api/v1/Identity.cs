@@ -289,11 +289,11 @@ namespace Identity {
   ///"media": [
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "DATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}, 
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "DATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}
   ///]
   ///}

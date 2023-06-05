@@ -89,11 +89,11 @@ func (x *IdentityRequest) GetQuery() string {
 // "media": [
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "DATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // },
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "DATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // }
 // ]
 // }

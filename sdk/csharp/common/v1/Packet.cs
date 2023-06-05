@@ -278,7 +278,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "xDATAxBYTES=", 
+  ///"data": "ByteLengthDataVaries=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 

@@ -3016,7 +3016,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"mime_type": "MIME_TYPE",
-  ///"data": "xDATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}
   /// </summary>
   public sealed partial class Media : pb::IMessage<Media>
