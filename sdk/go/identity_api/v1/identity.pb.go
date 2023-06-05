@@ -23,7 +23,7 @@ const (
 
 // [Example]
 // {
-// "subject": "SUBJECTxBYTES=",
+// "subject": "ByteLengthSubjectVaries=",
 // "query": "QUERY"
 // }
 type IdentityRequest struct {
@@ -85,7 +85,7 @@ func (x *IdentityRequest) GetQuery() string {
 
 // [Example]
 // {
-// "subject": "SUBJECTxBYTES=",
+// "subject": "ByteLengthSubjectVaries=",
 // "media": [
 // {
 // "mime_type": "MIME_TYPE",
