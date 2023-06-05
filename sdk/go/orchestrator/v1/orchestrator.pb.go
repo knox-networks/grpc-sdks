@@ -74,7 +74,7 @@ func (AgentConnection_ConnectionStatus) EnumDescriptor() ([]byte, []int) {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierBytesLenDependsOnAlgorithm="
 // },
 // "status": 0
 // }

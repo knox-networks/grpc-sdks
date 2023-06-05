@@ -78,7 +78,7 @@ namespace IssuerApi.V1 {
   ///"signature": "SignatureLen64Bytes=", 
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLenDependsOnAlgorithm="
   ///}
   ///}, 
   ///"amount": {
@@ -88,7 +88,7 @@ namespace IssuerApi.V1 {
   ///}, 
   ///"authority": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLenDependsOnAlgorithm="
   ///}
   ///}
   /// </summary>
@@ -1039,7 +1039,7 @@ namespace IssuerApi.V1 {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierBytesLenDependsOnAlgorithm="
   ///}
   ///}
   /// </summary>
