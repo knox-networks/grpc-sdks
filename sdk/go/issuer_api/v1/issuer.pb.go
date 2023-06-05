@@ -24,7 +24,7 @@ const (
 // [Example]
 // {
 // "authentication_signature": {
-// "signature": "SIGNATURE_64ByteLength=",
+// "signature": "SIGNATURE64ByteLength=",
 // "verifier": {
 // "signature_system": 1,
 // "verifier": "xVERIFIERxBYTES="
