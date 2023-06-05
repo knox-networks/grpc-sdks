@@ -983,7 +983,7 @@ namespace VcApi.V1 {
   ///{
   ///"credential_type": 1, 
   ///"nonce": "NONCE", 
-  ///"signature": "Signature_64BytesLength=", 
+  ///"signature": "SignatureLen64Bytes=", 
   ///"did": "YOUR_DID"
   ///}
   /// </summary>
@@ -1968,7 +1968,7 @@ namespace VcApi.V1 {
   ///{
   ///"presentation": "PRESENTATION", 
   ///"nonce": "NONCE", 
-  ///"signature": "Signature_64BytesLength=", 
+  ///"signature": "SignatureLen64Bytes=", 
   ///"did": "YOUR_DID", 
   ///"credential_type": [
   ///0, 
