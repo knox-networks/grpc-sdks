@@ -422,7 +422,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // },
 // "uetr": "UETR",
 // "timestamp": "TIMESTAMP",
-// "signature": "SIGNATURE64BytesLength=",
+// "signature": "SIGNATURE_64ByteLength=",
 // "user_reference": "USER_REFERENCE",
 // "related_uetrs": [
 // "RELATED_UETR1",
@@ -544,7 +544,7 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 // },
 // "uetr": "UETR",
 // "timestamp": "TIMESTAMP",
-// "signature": "SIGNATURE64BytesLength=",
+// "signature": "SIGNATURE_64ByteLength=",
 // "user_reference": "USER_REFERENCE",
 // "related_uetrs": [
 // "RELATED_UETR1",
