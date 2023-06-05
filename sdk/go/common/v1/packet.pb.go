@@ -400,7 +400,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "packet_type": 100,
-// "data": "ByteLengthDataVaries=",
+// "data": "ByteLengthOfDataVaries=",
 // "channel": "YOUR_CHANNEL",
 // "sender": {
 // "signature_system": 1,
