@@ -169,7 +169,7 @@ func (x *CredentialProof) GetProofValue() string {
 // [Example]
 // {
 // "credential_type": 1,
-// "did": "YOUR_DID"
+// "did": "did:organization:zDIDMultibase58Encoded"
 // }
 type CreateIssuanceChallengeRequest struct {
 	state         protoimpl.MessageState
@@ -305,7 +305,7 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 // "credential_type": 1,
 // "nonce": "NONCE",
 // "signature": "ByteLengthSignatureVariesByAlgo=",
-// "did": "YOUR_DID"
+// "did": "did:organization:zDIDMultibase58Encoded"
 // }
 type IssueVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
@@ -569,7 +569,7 @@ func (x *CreatePresentationChallengeResponse) GetCredentialTypes() []CredentialT
 // "presentation": "PRESENTATION",
 // "nonce": "NONCE",
 // "signature": "ByteLengthSignatureVariesByAlgo=",
-// "did": "YOUR_DID",
+// "did": "did:organization:zDIDMultibase58Encoded",
 // "credential_type": [
 // 0,
 // 1
@@ -753,7 +753,7 @@ func (x *WaitForCompletionRequest) GetNonce() string {
 
 // [Example]
 // {
-// "did": "DID",
+// "did": "did:organization:zDIDMultibase58Encoded",
 // "data": "DATA"
 // }
 type WaitForCompletionResponse struct {

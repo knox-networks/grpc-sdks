@@ -20,8 +20,10 @@ const _ = grpc.SupportPackageIsVersion7
 type RegistryServiceClient interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
-	// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
-	Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error)
+	// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+	Resolve(ctx context.Context, in *ResolveRequest, opts ...grpc.CallOption) (*ResolveResponse, error)
+	// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+	ResolveRepresentation(ctx context.Context, in *ResolveRepresentationRequest, opts ...grpc.CallOption) (*ResolveRepresentationResponse, error)
 	// Updates a DID document entry for a given DID in the Knox Registry Management Service.
 	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*UpdateResponse, error)
 	// Revokes a DID document entry for a given DID in the Knox Registry Management Service.
@@ -45,9 +47,18 @@ func (c *registryServiceClient) Create(ctx context.Context, in *CreateRequest, o
 	return out, nil
 }
 
-func (c *registryServiceClient) Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error) {
-	out := new(ReadResponse)
-	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Read", in, out, opts...)
+func (c *registryServiceClient) Resolve(ctx context.Context, in *ResolveRequest, opts ...grpc.CallOption) (*ResolveResponse, error) {
+	out := new(ResolveResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/Resolve", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *registryServiceClient) ResolveRepresentation(ctx context.Context, in *ResolveRepresentationRequest, opts ...grpc.CallOption) (*ResolveRepresentationResponse, error) {
+	out := new(ResolveRepresentationResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.RegistryService/ResolveRepresentation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,8 +89,10 @@ func (c *registryServiceClient) Revoke(ctx context.Context, in *RevokeRequest, o
 type RegistryServiceServer interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(context.Context, *CreateRequest) (*CreateResponse, error)
-	// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
-	Read(context.Context, *ReadRequest) (*ReadResponse, error)
+	// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+	Resolve(context.Context, *ResolveRequest) (*ResolveResponse, error)
+	// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+	ResolveRepresentation(context.Context, *ResolveRepresentationRequest) (*ResolveRepresentationResponse, error)
 	// Updates a DID document entry for a given DID in the Knox Registry Management Service.
 	Update(context.Context, *UpdateRequest) (*UpdateResponse, error)
 	// Revokes a DID document entry for a given DID in the Knox Registry Management Service.
@@ -94,8 +107,11 @@ type UnimplementedRegistryServiceServer struct {
 func (UnimplementedRegistryServiceServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedRegistryServiceServer) Read(context.Context, *ReadRequest) (*ReadResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Read not implemented")
+func (UnimplementedRegistryServiceServer) Resolve(context.Context, *ResolveRequest) (*ResolveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Resolve not implemented")
+}
+func (UnimplementedRegistryServiceServer) ResolveRepresentation(context.Context, *ResolveRepresentationRequest) (*ResolveRepresentationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResolveRepresentation not implemented")
 }
 func (UnimplementedRegistryServiceServer) Update(context.Context, *UpdateRequest) (*UpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
@@ -134,20 +150,38 @@ func _RegistryService_Create_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RegistryService_Read_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReadRequest)
+func _RegistryService_Resolve_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RegistryServiceServer).Read(ctx, in)
+		return srv.(RegistryServiceServer).Resolve(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/registry_api.v1.RegistryService/Read",
+		FullMethod: "/registry_api.v1.RegistryService/Resolve",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RegistryServiceServer).Read(ctx, req.(*ReadRequest))
+		return srv.(RegistryServiceServer).Resolve(ctx, req.(*ResolveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RegistryService_ResolveRepresentation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveRepresentationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RegistryServiceServer).ResolveRepresentation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.RegistryService/ResolveRepresentation",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RegistryServiceServer).ResolveRepresentation(ctx, req.(*ResolveRepresentationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -200,8 +234,12 @@ var RegistryService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _RegistryService_Create_Handler,
 		},
 		{
-			MethodName: "Read",
-			Handler:    _RegistryService_Read_Handler,
+			MethodName: "Resolve",
+			Handler:    _RegistryService_Resolve_Handler,
+		},
+		{
+			MethodName: "ResolveRepresentation",
+			Handler:    _RegistryService_ResolveRepresentation_Handler,
 		},
 		{
 			MethodName: "Update",
@@ -210,6 +248,336 @@ var RegistryService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Revoke",
 			Handler:    _RegistryService_Revoke_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "registry_api/v1/registry.proto",
+}
+
+// CredentialIssuerRegistryServiceClient is the client API for CredentialIssuerRegistryService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type CredentialIssuerRegistryServiceClient interface {
+	// Creates an verifiable credential credentialIssuer
+	CreateCredentialIssuer(ctx context.Context, in *CreateCredentialIssuerRequest, opts ...grpc.CallOption) (*CreateCredentialIssuerResponse, error)
+	// Gets an verifiable credential credentialIssuer
+	GetCredentialIssuer(ctx context.Context, in *GetCredentialIssuerRequest, opts ...grpc.CallOption) (*GetCredentialIssuerResponse, error)
+	// Updates an verifiable credential credentialIssuer
+	UpdateCredentialIssuer(ctx context.Context, in *UpdateCredentialIssuerRequest, opts ...grpc.CallOption) (*UpdateCredentialIssuerResponse, error)
+}
+
+type credentialIssuerRegistryServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewCredentialIssuerRegistryServiceClient(cc grpc.ClientConnInterface) CredentialIssuerRegistryServiceClient {
+	return &credentialIssuerRegistryServiceClient{cc}
+}
+
+func (c *credentialIssuerRegistryServiceClient) CreateCredentialIssuer(ctx context.Context, in *CreateCredentialIssuerRequest, opts ...grpc.CallOption) (*CreateCredentialIssuerResponse, error) {
+	out := new(CreateCredentialIssuerResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.CredentialIssuerRegistryService/CreateCredentialIssuer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *credentialIssuerRegistryServiceClient) GetCredentialIssuer(ctx context.Context, in *GetCredentialIssuerRequest, opts ...grpc.CallOption) (*GetCredentialIssuerResponse, error) {
+	out := new(GetCredentialIssuerResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.CredentialIssuerRegistryService/GetCredentialIssuer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *credentialIssuerRegistryServiceClient) UpdateCredentialIssuer(ctx context.Context, in *UpdateCredentialIssuerRequest, opts ...grpc.CallOption) (*UpdateCredentialIssuerResponse, error) {
+	out := new(UpdateCredentialIssuerResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.CredentialIssuerRegistryService/UpdateCredentialIssuer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// CredentialIssuerRegistryServiceServer is the server API for CredentialIssuerRegistryService service.
+// All implementations must embed UnimplementedCredentialIssuerRegistryServiceServer
+// for forward compatibility
+type CredentialIssuerRegistryServiceServer interface {
+	// Creates an verifiable credential credentialIssuer
+	CreateCredentialIssuer(context.Context, *CreateCredentialIssuerRequest) (*CreateCredentialIssuerResponse, error)
+	// Gets an verifiable credential credentialIssuer
+	GetCredentialIssuer(context.Context, *GetCredentialIssuerRequest) (*GetCredentialIssuerResponse, error)
+	// Updates an verifiable credential credentialIssuer
+	UpdateCredentialIssuer(context.Context, *UpdateCredentialIssuerRequest) (*UpdateCredentialIssuerResponse, error)
+	mustEmbedUnimplementedCredentialIssuerRegistryServiceServer()
+}
+
+// UnimplementedCredentialIssuerRegistryServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedCredentialIssuerRegistryServiceServer struct {
+}
+
+func (UnimplementedCredentialIssuerRegistryServiceServer) CreateCredentialIssuer(context.Context, *CreateCredentialIssuerRequest) (*CreateCredentialIssuerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCredentialIssuer not implemented")
+}
+func (UnimplementedCredentialIssuerRegistryServiceServer) GetCredentialIssuer(context.Context, *GetCredentialIssuerRequest) (*GetCredentialIssuerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCredentialIssuer not implemented")
+}
+func (UnimplementedCredentialIssuerRegistryServiceServer) UpdateCredentialIssuer(context.Context, *UpdateCredentialIssuerRequest) (*UpdateCredentialIssuerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCredentialIssuer not implemented")
+}
+func (UnimplementedCredentialIssuerRegistryServiceServer) mustEmbedUnimplementedCredentialIssuerRegistryServiceServer() {
+}
+
+// UnsafeCredentialIssuerRegistryServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CredentialIssuerRegistryServiceServer will
+// result in compilation errors.
+type UnsafeCredentialIssuerRegistryServiceServer interface {
+	mustEmbedUnimplementedCredentialIssuerRegistryServiceServer()
+}
+
+func RegisterCredentialIssuerRegistryServiceServer(s grpc.ServiceRegistrar, srv CredentialIssuerRegistryServiceServer) {
+	s.RegisterService(&CredentialIssuerRegistryService_ServiceDesc, srv)
+}
+
+func _CredentialIssuerRegistryService_CreateCredentialIssuer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCredentialIssuerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CredentialIssuerRegistryServiceServer).CreateCredentialIssuer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.CredentialIssuerRegistryService/CreateCredentialIssuer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CredentialIssuerRegistryServiceServer).CreateCredentialIssuer(ctx, req.(*CreateCredentialIssuerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CredentialIssuerRegistryService_GetCredentialIssuer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCredentialIssuerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CredentialIssuerRegistryServiceServer).GetCredentialIssuer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.CredentialIssuerRegistryService/GetCredentialIssuer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CredentialIssuerRegistryServiceServer).GetCredentialIssuer(ctx, req.(*GetCredentialIssuerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CredentialIssuerRegistryService_UpdateCredentialIssuer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCredentialIssuerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CredentialIssuerRegistryServiceServer).UpdateCredentialIssuer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.CredentialIssuerRegistryService/UpdateCredentialIssuer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CredentialIssuerRegistryServiceServer).UpdateCredentialIssuer(ctx, req.(*UpdateCredentialIssuerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// CredentialIssuerRegistryService_ServiceDesc is the grpc.ServiceDesc for CredentialIssuerRegistryService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var CredentialIssuerRegistryService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "registry_api.v1.CredentialIssuerRegistryService",
+	HandlerType: (*CredentialIssuerRegistryServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateCredentialIssuer",
+			Handler:    _CredentialIssuerRegistryService_CreateCredentialIssuer_Handler,
+		},
+		{
+			MethodName: "GetCredentialIssuer",
+			Handler:    _CredentialIssuerRegistryService_GetCredentialIssuer_Handler,
+		},
+		{
+			MethodName: "UpdateCredentialIssuer",
+			Handler:    _CredentialIssuerRegistryService_UpdateCredentialIssuer_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "registry_api/v1/registry.proto",
+}
+
+// StatusListRegistryServiceClient is the client API for StatusListRegistryService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type StatusListRegistryServiceClient interface {
+	// Create status registry entry
+	CreateStatusListEntry(ctx context.Context, in *CreateStatusListEntryRequest, opts ...grpc.CallOption) (*CreateStatusListEntryResponse, error)
+	// Get VC status Credential
+	GetStatusListCredential(ctx context.Context, in *GetStatusListCredentialRequest, opts ...grpc.CallOption) (*GetStatusListCredentialResponse, error)
+	// Update status registry entry
+	UpdateStatusListEntry(ctx context.Context, in *UpdateStatusListEntryRequest, opts ...grpc.CallOption) (*UpdateStatusListEntryResponse, error)
+}
+
+type statusListRegistryServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewStatusListRegistryServiceClient(cc grpc.ClientConnInterface) StatusListRegistryServiceClient {
+	return &statusListRegistryServiceClient{cc}
+}
+
+func (c *statusListRegistryServiceClient) CreateStatusListEntry(ctx context.Context, in *CreateStatusListEntryRequest, opts ...grpc.CallOption) (*CreateStatusListEntryResponse, error) {
+	out := new(CreateStatusListEntryResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.StatusListRegistryService/CreateStatusListEntry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *statusListRegistryServiceClient) GetStatusListCredential(ctx context.Context, in *GetStatusListCredentialRequest, opts ...grpc.CallOption) (*GetStatusListCredentialResponse, error) {
+	out := new(GetStatusListCredentialResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.StatusListRegistryService/GetStatusListCredential", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *statusListRegistryServiceClient) UpdateStatusListEntry(ctx context.Context, in *UpdateStatusListEntryRequest, opts ...grpc.CallOption) (*UpdateStatusListEntryResponse, error) {
+	out := new(UpdateStatusListEntryResponse)
+	err := c.cc.Invoke(ctx, "/registry_api.v1.StatusListRegistryService/UpdateStatusListEntry", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// StatusListRegistryServiceServer is the server API for StatusListRegistryService service.
+// All implementations must embed UnimplementedStatusListRegistryServiceServer
+// for forward compatibility
+type StatusListRegistryServiceServer interface {
+	// Create status registry entry
+	CreateStatusListEntry(context.Context, *CreateStatusListEntryRequest) (*CreateStatusListEntryResponse, error)
+	// Get VC status Credential
+	GetStatusListCredential(context.Context, *GetStatusListCredentialRequest) (*GetStatusListCredentialResponse, error)
+	// Update status registry entry
+	UpdateStatusListEntry(context.Context, *UpdateStatusListEntryRequest) (*UpdateStatusListEntryResponse, error)
+	mustEmbedUnimplementedStatusListRegistryServiceServer()
+}
+
+// UnimplementedStatusListRegistryServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedStatusListRegistryServiceServer struct {
+}
+
+func (UnimplementedStatusListRegistryServiceServer) CreateStatusListEntry(context.Context, *CreateStatusListEntryRequest) (*CreateStatusListEntryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateStatusListEntry not implemented")
+}
+func (UnimplementedStatusListRegistryServiceServer) GetStatusListCredential(context.Context, *GetStatusListCredentialRequest) (*GetStatusListCredentialResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStatusListCredential not implemented")
+}
+func (UnimplementedStatusListRegistryServiceServer) UpdateStatusListEntry(context.Context, *UpdateStatusListEntryRequest) (*UpdateStatusListEntryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateStatusListEntry not implemented")
+}
+func (UnimplementedStatusListRegistryServiceServer) mustEmbedUnimplementedStatusListRegistryServiceServer() {
+}
+
+// UnsafeStatusListRegistryServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to StatusListRegistryServiceServer will
+// result in compilation errors.
+type UnsafeStatusListRegistryServiceServer interface {
+	mustEmbedUnimplementedStatusListRegistryServiceServer()
+}
+
+func RegisterStatusListRegistryServiceServer(s grpc.ServiceRegistrar, srv StatusListRegistryServiceServer) {
+	s.RegisterService(&StatusListRegistryService_ServiceDesc, srv)
+}
+
+func _StatusListRegistryService_CreateStatusListEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateStatusListEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StatusListRegistryServiceServer).CreateStatusListEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.StatusListRegistryService/CreateStatusListEntry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StatusListRegistryServiceServer).CreateStatusListEntry(ctx, req.(*CreateStatusListEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StatusListRegistryService_GetStatusListCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStatusListCredentialRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StatusListRegistryServiceServer).GetStatusListCredential(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.StatusListRegistryService/GetStatusListCredential",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StatusListRegistryServiceServer).GetStatusListCredential(ctx, req.(*GetStatusListCredentialRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StatusListRegistryService_UpdateStatusListEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateStatusListEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StatusListRegistryServiceServer).UpdateStatusListEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registry_api.v1.StatusListRegistryService/UpdateStatusListEntry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StatusListRegistryServiceServer).UpdateStatusListEntry(ctx, req.(*UpdateStatusListEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// StatusListRegistryService_ServiceDesc is the grpc.ServiceDesc for StatusListRegistryService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var StatusListRegistryService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "registry_api.v1.StatusListRegistryService",
+	HandlerType: (*StatusListRegistryServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateStatusListEntry",
+			Handler:    _StatusListRegistryService_CreateStatusListEntry_Handler,
+		},
+		{
+			MethodName: "GetStatusListCredential",
+			Handler:    _StatusListRegistryService_GetStatusListCredential_Handler,
+		},
+		{
+			MethodName: "UpdateStatusListEntry",
+			Handler:    _StatusListRegistryService_UpdateStatusListEntry_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

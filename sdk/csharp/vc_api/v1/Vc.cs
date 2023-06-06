@@ -463,7 +463,7 @@ namespace VcApi.V1 {
   /// [Example]
   ///{
   ///"credential_type": 1, 
-  ///"did": "YOUR_DID"
+  ///"did": "did:organization:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class CreateIssuanceChallengeRequest : pb::IMessage<CreateIssuanceChallengeRequest>
@@ -984,7 +984,7 @@ namespace VcApi.V1 {
   ///"credential_type": 1, 
   ///"nonce": "NONCE", 
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
-  ///"did": "YOUR_DID"
+  ///"did": "did:organization:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class IssueVerifiableCredentialRequest : pb::IMessage<IssueVerifiableCredentialRequest>
@@ -1969,7 +1969,7 @@ namespace VcApi.V1 {
   ///"presentation": "PRESENTATION", 
   ///"nonce": "NONCE", 
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
-  ///"did": "YOUR_DID", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
   ///"credential_type": [
   ///0, 
   ///1
@@ -2676,7 +2676,7 @@ namespace VcApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "DID", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
   ///"data": "DATA"
   ///}
   /// </summary>

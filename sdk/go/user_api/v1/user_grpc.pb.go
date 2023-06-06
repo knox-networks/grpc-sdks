@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UserManagementClient is the client API for UserManagement service.
+// UserApiServiceClient is the client API for UserApiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserManagementClient interface {
+type UserApiServiceClient interface {
 	// Login with username and password for admin and test users.
 	AuthnWithPassword(ctx context.Context, in *AuthnWithPasswordRequest, opts ...grpc.CallOption) (*AuthnWithPasswordResponse, error)
 	// Login with refresh token and get a new access token.
@@ -31,7 +31,7 @@ type UserManagementClient interface {
 	// Retrieve SAML service provider metadata.
 	SAMLSPMetadata(ctx context.Context, in *SAMLSPMetadataRequest, opts ...grpc.CallOption) (*SAMLSPMetadataResponse, error)
 	// Used for logging into the browser using a device wallet. Called from the browser, bearer token is received from the stream response once authentication is successful via the wallet.
-	CreateAuthnBrowserWithWalletChallenge(ctx context.Context, in *CreateAuthnBrowserWithWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateAuthnBrowserWithWalletChallengeClient, error)
+	CreateAuthnBrowserWithWalletChallenge(ctx context.Context, in *CreateAuthnBrowserWithWalletChallengeRequest, opts ...grpc.CallOption) (UserApiService_CreateAuthnBrowserWithWalletChallengeClient, error)
 	// Called from the device wallet to authenticate the browser and bearer token is sent to the browser session.
 	AuthnBrowserWithWallet(ctx context.Context, in *AuthnBrowserWithWalletRequest, opts ...grpc.CallOption) (*AuthnBrowserWithWalletResponse, error)
 	// Start login process on the device wallet.
@@ -39,7 +39,7 @@ type UserManagementClient interface {
 	// Finish login with cryptographic challenge and bearer token is returned to the caller.
 	AuthnWallet(ctx context.Context, in *AuthnWalletRequest, opts ...grpc.CallOption) (*AuthnWalletResponse, error)
 	// Called by the browser in an authenticated session to start a device wallet registration process. Acknowledgement is received from the stream response once registration is successful via the wallet.
-	CreateRegisterWalletChallenge(ctx context.Context, in *CreateRegisterWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateRegisterWalletChallengeClient, error)
+	CreateRegisterWalletChallenge(ctx context.Context, in *CreateRegisterWalletChallengeRequest, opts ...grpc.CallOption) (UserApiService_CreateRegisterWalletChallengeClient, error)
 	// Called by the device wallet to register against the given authenticated account.
 	RegisterWallet(ctx context.Context, in *RegisterWalletRequest, opts ...grpc.CallOption) (*RegisterWalletResponse, error)
 	// Associate Wallet with the authenticated account in the bearer token.
@@ -62,74 +62,74 @@ type UserManagementClient interface {
 	GetUserByDID(ctx context.Context, in *GetUserByDIDRequest, opts ...grpc.CallOption) (*GetUserByDIDResponse, error)
 }
 
-type userManagementClient struct {
+type userApiServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserManagementClient(cc grpc.ClientConnInterface) UserManagementClient {
-	return &userManagementClient{cc}
+func NewUserApiServiceClient(cc grpc.ClientConnInterface) UserApiServiceClient {
+	return &userApiServiceClient{cc}
 }
 
-func (c *userManagementClient) AuthnWithPassword(ctx context.Context, in *AuthnWithPasswordRequest, opts ...grpc.CallOption) (*AuthnWithPasswordResponse, error) {
+func (c *userApiServiceClient) AuthnWithPassword(ctx context.Context, in *AuthnWithPasswordRequest, opts ...grpc.CallOption) (*AuthnWithPasswordResponse, error) {
 	out := new(AuthnWithPasswordResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWithPassword", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/AuthnWithPassword", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) RefreshAccessToken(ctx context.Context, in *RefreshAccessTokenRequest, opts ...grpc.CallOption) (*RefreshAccessTokenResponse, error) {
+func (c *userApiServiceClient) RefreshAccessToken(ctx context.Context, in *RefreshAccessTokenRequest, opts ...grpc.CallOption) (*RefreshAccessTokenResponse, error) {
 	out := new(RefreshAccessTokenResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RefreshAccessToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/RefreshAccessToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) AuthnWithProvider(ctx context.Context, in *AuthnWithProviderRequest, opts ...grpc.CallOption) (*AuthnWithProviderResponse, error) {
+func (c *userApiServiceClient) AuthnWithProvider(ctx context.Context, in *AuthnWithProviderRequest, opts ...grpc.CallOption) (*AuthnWithProviderResponse, error) {
 	out := new(AuthnWithProviderResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWithProvider", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/AuthnWithProvider", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) HandleOIDCCallback(ctx context.Context, in *HandleOIDCCallbackRequest, opts ...grpc.CallOption) (*HandleOIDCCallbackResponse, error) {
+func (c *userApiServiceClient) HandleOIDCCallback(ctx context.Context, in *HandleOIDCCallbackRequest, opts ...grpc.CallOption) (*HandleOIDCCallbackResponse, error) {
 	out := new(HandleOIDCCallbackResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/HandleOIDCCallback", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/HandleOIDCCallback", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) HandleSAMLCallback(ctx context.Context, in *HandleSAMLCallbackRequest, opts ...grpc.CallOption) (*HandleSAMLCallbackResponse, error) {
+func (c *userApiServiceClient) HandleSAMLCallback(ctx context.Context, in *HandleSAMLCallbackRequest, opts ...grpc.CallOption) (*HandleSAMLCallbackResponse, error) {
 	out := new(HandleSAMLCallbackResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/HandleSAMLCallback", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/HandleSAMLCallback", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) SAMLSPMetadata(ctx context.Context, in *SAMLSPMetadataRequest, opts ...grpc.CallOption) (*SAMLSPMetadataResponse, error) {
+func (c *userApiServiceClient) SAMLSPMetadata(ctx context.Context, in *SAMLSPMetadataRequest, opts ...grpc.CallOption) (*SAMLSPMetadataResponse, error) {
 	out := new(SAMLSPMetadataResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/SAMLSPMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/SAMLSPMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) CreateAuthnBrowserWithWalletChallenge(ctx context.Context, in *CreateAuthnBrowserWithWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateAuthnBrowserWithWalletChallengeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[0], "/user_api.v1.UserManagement/CreateAuthnBrowserWithWalletChallenge", opts...)
+func (c *userApiServiceClient) CreateAuthnBrowserWithWalletChallenge(ctx context.Context, in *CreateAuthnBrowserWithWalletChallengeRequest, opts ...grpc.CallOption) (UserApiService_CreateAuthnBrowserWithWalletChallengeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &UserApiService_ServiceDesc.Streams[0], "/user_api.v1.UserApiService/CreateAuthnBrowserWithWalletChallenge", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &userManagementCreateAuthnBrowserWithWalletChallengeClient{stream}
+	x := &userApiServiceCreateAuthnBrowserWithWalletChallengeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -139,16 +139,16 @@ func (c *userManagementClient) CreateAuthnBrowserWithWalletChallenge(ctx context
 	return x, nil
 }
 
-type UserManagement_CreateAuthnBrowserWithWalletChallengeClient interface {
+type UserApiService_CreateAuthnBrowserWithWalletChallengeClient interface {
 	Recv() (*CreateAuthnBrowserWithWalletChallengeResponse, error)
 	grpc.ClientStream
 }
 
-type userManagementCreateAuthnBrowserWithWalletChallengeClient struct {
+type userApiServiceCreateAuthnBrowserWithWalletChallengeClient struct {
 	grpc.ClientStream
 }
 
-func (x *userManagementCreateAuthnBrowserWithWalletChallengeClient) Recv() (*CreateAuthnBrowserWithWalletChallengeResponse, error) {
+func (x *userApiServiceCreateAuthnBrowserWithWalletChallengeClient) Recv() (*CreateAuthnBrowserWithWalletChallengeResponse, error) {
 	m := new(CreateAuthnBrowserWithWalletChallengeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -156,39 +156,39 @@ func (x *userManagementCreateAuthnBrowserWithWalletChallengeClient) Recv() (*Cre
 	return m, nil
 }
 
-func (c *userManagementClient) AuthnBrowserWithWallet(ctx context.Context, in *AuthnBrowserWithWalletRequest, opts ...grpc.CallOption) (*AuthnBrowserWithWalletResponse, error) {
+func (c *userApiServiceClient) AuthnBrowserWithWallet(ctx context.Context, in *AuthnBrowserWithWalletRequest, opts ...grpc.CallOption) (*AuthnBrowserWithWalletResponse, error) {
 	out := new(AuthnBrowserWithWalletResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnBrowserWithWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/AuthnBrowserWithWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) CreateAuthnWalletChallenge(ctx context.Context, in *CreateAuthnWalletChallengeRequest, opts ...grpc.CallOption) (*CreateAuthnWalletChallengeResponse, error) {
+func (c *userApiServiceClient) CreateAuthnWalletChallenge(ctx context.Context, in *CreateAuthnWalletChallengeRequest, opts ...grpc.CallOption) (*CreateAuthnWalletChallengeResponse, error) {
 	out := new(CreateAuthnWalletChallengeResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/CreateAuthnWalletChallenge", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/CreateAuthnWalletChallenge", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) AuthnWallet(ctx context.Context, in *AuthnWalletRequest, opts ...grpc.CallOption) (*AuthnWalletResponse, error) {
+func (c *userApiServiceClient) AuthnWallet(ctx context.Context, in *AuthnWalletRequest, opts ...grpc.CallOption) (*AuthnWalletResponse, error) {
 	out := new(AuthnWalletResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AuthnWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/AuthnWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) CreateRegisterWalletChallenge(ctx context.Context, in *CreateRegisterWalletChallengeRequest, opts ...grpc.CallOption) (UserManagement_CreateRegisterWalletChallengeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &UserManagement_ServiceDesc.Streams[1], "/user_api.v1.UserManagement/CreateRegisterWalletChallenge", opts...)
+func (c *userApiServiceClient) CreateRegisterWalletChallenge(ctx context.Context, in *CreateRegisterWalletChallengeRequest, opts ...grpc.CallOption) (UserApiService_CreateRegisterWalletChallengeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &UserApiService_ServiceDesc.Streams[1], "/user_api.v1.UserApiService/CreateRegisterWalletChallenge", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &userManagementCreateRegisterWalletChallengeClient{stream}
+	x := &userApiServiceCreateRegisterWalletChallengeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -198,16 +198,16 @@ func (c *userManagementClient) CreateRegisterWalletChallenge(ctx context.Context
 	return x, nil
 }
 
-type UserManagement_CreateRegisterWalletChallengeClient interface {
+type UserApiService_CreateRegisterWalletChallengeClient interface {
 	Recv() (*CreateRegisterWalletChallengeResponse, error)
 	grpc.ClientStream
 }
 
-type userManagementCreateRegisterWalletChallengeClient struct {
+type userApiServiceCreateRegisterWalletChallengeClient struct {
 	grpc.ClientStream
 }
 
-func (x *userManagementCreateRegisterWalletChallengeClient) Recv() (*CreateRegisterWalletChallengeResponse, error) {
+func (x *userApiServiceCreateRegisterWalletChallengeClient) Recv() (*CreateRegisterWalletChallengeResponse, error) {
 	m := new(CreateRegisterWalletChallengeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -215,100 +215,100 @@ func (x *userManagementCreateRegisterWalletChallengeClient) Recv() (*CreateRegis
 	return m, nil
 }
 
-func (c *userManagementClient) RegisterWallet(ctx context.Context, in *RegisterWalletRequest, opts ...grpc.CallOption) (*RegisterWalletResponse, error) {
+func (c *userApiServiceClient) RegisterWallet(ctx context.Context, in *RegisterWalletRequest, opts ...grpc.CallOption) (*RegisterWalletResponse, error) {
 	out := new(RegisterWalletResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RegisterWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/RegisterWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error) {
+func (c *userApiServiceClient) AssociateWallet(ctx context.Context, in *AssociateWalletRequest, opts ...grpc.CallOption) (*AssociateWalletResponse, error) {
 	out := new(AssociateWalletResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/AssociateWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/AssociateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) DissociateWallet(ctx context.Context, in *DissociateWalletRequest, opts ...grpc.CallOption) (*DissociateWalletResponse, error) {
+func (c *userApiServiceClient) DissociateWallet(ctx context.Context, in *DissociateWalletRequest, opts ...grpc.CallOption) (*DissociateWalletResponse, error) {
 	out := new(DissociateWalletResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/DissociateWallet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/DissociateWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) GetAppSettings(ctx context.Context, in *GetAppSettingsRequest, opts ...grpc.CallOption) (*GetAppSettingsResponse, error) {
+func (c *userApiServiceClient) GetAppSettings(ctx context.Context, in *GetAppSettingsRequest, opts ...grpc.CallOption) (*GetAppSettingsResponse, error) {
 	out := new(GetAppSettingsResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetAppSettings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/GetAppSettings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error) {
+func (c *userApiServiceClient) RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error) {
 	out := new(RegisterUserResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/RegisterUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/RegisterUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) ConfirmUser(ctx context.Context, in *ConfirmUserRequest, opts ...grpc.CallOption) (*ConfirmUserResponse, error) {
+func (c *userApiServiceClient) ConfirmUser(ctx context.Context, in *ConfirmUserRequest, opts ...grpc.CallOption) (*ConfirmUserResponse, error) {
 	out := new(ConfirmUserResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/ConfirmUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/ConfirmUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) FindByEmail(ctx context.Context, in *FindByEmailRequest, opts ...grpc.CallOption) (*FindByEmailResponse, error) {
+func (c *userApiServiceClient) FindByEmail(ctx context.Context, in *FindByEmailRequest, opts ...grpc.CallOption) (*FindByEmailResponse, error) {
 	out := new(FindByEmailResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/FindByEmail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/FindByEmail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) FindByID(ctx context.Context, in *FindByIDRequest, opts ...grpc.CallOption) (*FindByIDResponse, error) {
+func (c *userApiServiceClient) FindByID(ctx context.Context, in *FindByIDRequest, opts ...grpc.CallOption) (*FindByIDResponse, error) {
 	out := new(FindByIDResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/FindByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/FindByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) GetMe(ctx context.Context, in *GetMeRequest, opts ...grpc.CallOption) (*GetMeResponse, error) {
+func (c *userApiServiceClient) GetMe(ctx context.Context, in *GetMeRequest, opts ...grpc.CallOption) (*GetMeResponse, error) {
 	out := new(GetMeResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetMe", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/GetMe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userManagementClient) GetUserByDID(ctx context.Context, in *GetUserByDIDRequest, opts ...grpc.CallOption) (*GetUserByDIDResponse, error) {
+func (c *userApiServiceClient) GetUserByDID(ctx context.Context, in *GetUserByDIDRequest, opts ...grpc.CallOption) (*GetUserByDIDResponse, error) {
 	out := new(GetUserByDIDResponse)
-	err := c.cc.Invoke(ctx, "/user_api.v1.UserManagement/GetUserByDID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/user_api.v1.UserApiService/GetUserByDID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserManagementServer is the server API for UserManagement service.
-// All implementations must embed UnimplementedUserManagementServer
+// UserApiServiceServer is the server API for UserApiService service.
+// All implementations must embed UnimplementedUserApiServiceServer
 // for forward compatibility
-type UserManagementServer interface {
+type UserApiServiceServer interface {
 	// Login with username and password for admin and test users.
 	AuthnWithPassword(context.Context, *AuthnWithPasswordRequest) (*AuthnWithPasswordResponse, error)
 	// Login with refresh token and get a new access token.
@@ -322,7 +322,7 @@ type UserManagementServer interface {
 	// Retrieve SAML service provider metadata.
 	SAMLSPMetadata(context.Context, *SAMLSPMetadataRequest) (*SAMLSPMetadataResponse, error)
 	// Used for logging into the browser using a device wallet. Called from the browser, bearer token is received from the stream response once authentication is successful via the wallet.
-	CreateAuthnBrowserWithWalletChallenge(*CreateAuthnBrowserWithWalletChallengeRequest, UserManagement_CreateAuthnBrowserWithWalletChallengeServer) error
+	CreateAuthnBrowserWithWalletChallenge(*CreateAuthnBrowserWithWalletChallengeRequest, UserApiService_CreateAuthnBrowserWithWalletChallengeServer) error
 	// Called from the device wallet to authenticate the browser and bearer token is sent to the browser session.
 	AuthnBrowserWithWallet(context.Context, *AuthnBrowserWithWalletRequest) (*AuthnBrowserWithWalletResponse, error)
 	// Start login process on the device wallet.
@@ -330,7 +330,7 @@ type UserManagementServer interface {
 	// Finish login with cryptographic challenge and bearer token is returned to the caller.
 	AuthnWallet(context.Context, *AuthnWalletRequest) (*AuthnWalletResponse, error)
 	// Called by the browser in an authenticated session to start a device wallet registration process. Acknowledgement is received from the stream response once registration is successful via the wallet.
-	CreateRegisterWalletChallenge(*CreateRegisterWalletChallengeRequest, UserManagement_CreateRegisterWalletChallengeServer) error
+	CreateRegisterWalletChallenge(*CreateRegisterWalletChallengeRequest, UserApiService_CreateRegisterWalletChallengeServer) error
 	// Called by the device wallet to register against the given authenticated account.
 	RegisterWallet(context.Context, *RegisterWalletRequest) (*RegisterWalletResponse, error)
 	// Associate Wallet with the authenticated account in the bearer token.
@@ -351,568 +351,762 @@ type UserManagementServer interface {
 	GetMe(context.Context, *GetMeRequest) (*GetMeResponse, error)
 	// M2M helper API to retrieve User object given a Decentralized Identifier (DID). API Key required for this call.
 	GetUserByDID(context.Context, *GetUserByDIDRequest) (*GetUserByDIDResponse, error)
-	mustEmbedUnimplementedUserManagementServer()
+	mustEmbedUnimplementedUserApiServiceServer()
 }
 
-// UnimplementedUserManagementServer must be embedded to have forward compatible implementations.
-type UnimplementedUserManagementServer struct {
+// UnimplementedUserApiServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedUserApiServiceServer struct {
 }
 
-func (UnimplementedUserManagementServer) AuthnWithPassword(context.Context, *AuthnWithPasswordRequest) (*AuthnWithPasswordResponse, error) {
+func (UnimplementedUserApiServiceServer) AuthnWithPassword(context.Context, *AuthnWithPasswordRequest) (*AuthnWithPasswordResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthnWithPassword not implemented")
 }
-func (UnimplementedUserManagementServer) RefreshAccessToken(context.Context, *RefreshAccessTokenRequest) (*RefreshAccessTokenResponse, error) {
+func (UnimplementedUserApiServiceServer) RefreshAccessToken(context.Context, *RefreshAccessTokenRequest) (*RefreshAccessTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshAccessToken not implemented")
 }
-func (UnimplementedUserManagementServer) AuthnWithProvider(context.Context, *AuthnWithProviderRequest) (*AuthnWithProviderResponse, error) {
+func (UnimplementedUserApiServiceServer) AuthnWithProvider(context.Context, *AuthnWithProviderRequest) (*AuthnWithProviderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthnWithProvider not implemented")
 }
-func (UnimplementedUserManagementServer) HandleOIDCCallback(context.Context, *HandleOIDCCallbackRequest) (*HandleOIDCCallbackResponse, error) {
+func (UnimplementedUserApiServiceServer) HandleOIDCCallback(context.Context, *HandleOIDCCallbackRequest) (*HandleOIDCCallbackResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HandleOIDCCallback not implemented")
 }
-func (UnimplementedUserManagementServer) HandleSAMLCallback(context.Context, *HandleSAMLCallbackRequest) (*HandleSAMLCallbackResponse, error) {
+func (UnimplementedUserApiServiceServer) HandleSAMLCallback(context.Context, *HandleSAMLCallbackRequest) (*HandleSAMLCallbackResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HandleSAMLCallback not implemented")
 }
-func (UnimplementedUserManagementServer) SAMLSPMetadata(context.Context, *SAMLSPMetadataRequest) (*SAMLSPMetadataResponse, error) {
+func (UnimplementedUserApiServiceServer) SAMLSPMetadata(context.Context, *SAMLSPMetadataRequest) (*SAMLSPMetadataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SAMLSPMetadata not implemented")
 }
-func (UnimplementedUserManagementServer) CreateAuthnBrowserWithWalletChallenge(*CreateAuthnBrowserWithWalletChallengeRequest, UserManagement_CreateAuthnBrowserWithWalletChallengeServer) error {
+func (UnimplementedUserApiServiceServer) CreateAuthnBrowserWithWalletChallenge(*CreateAuthnBrowserWithWalletChallengeRequest, UserApiService_CreateAuthnBrowserWithWalletChallengeServer) error {
 	return status.Errorf(codes.Unimplemented, "method CreateAuthnBrowserWithWalletChallenge not implemented")
 }
-func (UnimplementedUserManagementServer) AuthnBrowserWithWallet(context.Context, *AuthnBrowserWithWalletRequest) (*AuthnBrowserWithWalletResponse, error) {
+func (UnimplementedUserApiServiceServer) AuthnBrowserWithWallet(context.Context, *AuthnBrowserWithWalletRequest) (*AuthnBrowserWithWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthnBrowserWithWallet not implemented")
 }
-func (UnimplementedUserManagementServer) CreateAuthnWalletChallenge(context.Context, *CreateAuthnWalletChallengeRequest) (*CreateAuthnWalletChallengeResponse, error) {
+func (UnimplementedUserApiServiceServer) CreateAuthnWalletChallenge(context.Context, *CreateAuthnWalletChallengeRequest) (*CreateAuthnWalletChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAuthnWalletChallenge not implemented")
 }
-func (UnimplementedUserManagementServer) AuthnWallet(context.Context, *AuthnWalletRequest) (*AuthnWalletResponse, error) {
+func (UnimplementedUserApiServiceServer) AuthnWallet(context.Context, *AuthnWalletRequest) (*AuthnWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthnWallet not implemented")
 }
-func (UnimplementedUserManagementServer) CreateRegisterWalletChallenge(*CreateRegisterWalletChallengeRequest, UserManagement_CreateRegisterWalletChallengeServer) error {
+func (UnimplementedUserApiServiceServer) CreateRegisterWalletChallenge(*CreateRegisterWalletChallengeRequest, UserApiService_CreateRegisterWalletChallengeServer) error {
 	return status.Errorf(codes.Unimplemented, "method CreateRegisterWalletChallenge not implemented")
 }
-func (UnimplementedUserManagementServer) RegisterWallet(context.Context, *RegisterWalletRequest) (*RegisterWalletResponse, error) {
+func (UnimplementedUserApiServiceServer) RegisterWallet(context.Context, *RegisterWalletRequest) (*RegisterWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterWallet not implemented")
 }
-func (UnimplementedUserManagementServer) AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error) {
+func (UnimplementedUserApiServiceServer) AssociateWallet(context.Context, *AssociateWalletRequest) (*AssociateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AssociateWallet not implemented")
 }
-func (UnimplementedUserManagementServer) DissociateWallet(context.Context, *DissociateWalletRequest) (*DissociateWalletResponse, error) {
+func (UnimplementedUserApiServiceServer) DissociateWallet(context.Context, *DissociateWalletRequest) (*DissociateWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DissociateWallet not implemented")
 }
-func (UnimplementedUserManagementServer) GetAppSettings(context.Context, *GetAppSettingsRequest) (*GetAppSettingsResponse, error) {
+func (UnimplementedUserApiServiceServer) GetAppSettings(context.Context, *GetAppSettingsRequest) (*GetAppSettingsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppSettings not implemented")
 }
-func (UnimplementedUserManagementServer) RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error) {
+func (UnimplementedUserApiServiceServer) RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterUser not implemented")
 }
-func (UnimplementedUserManagementServer) ConfirmUser(context.Context, *ConfirmUserRequest) (*ConfirmUserResponse, error) {
+func (UnimplementedUserApiServiceServer) ConfirmUser(context.Context, *ConfirmUserRequest) (*ConfirmUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfirmUser not implemented")
 }
-func (UnimplementedUserManagementServer) FindByEmail(context.Context, *FindByEmailRequest) (*FindByEmailResponse, error) {
+func (UnimplementedUserApiServiceServer) FindByEmail(context.Context, *FindByEmailRequest) (*FindByEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindByEmail not implemented")
 }
-func (UnimplementedUserManagementServer) FindByID(context.Context, *FindByIDRequest) (*FindByIDResponse, error) {
+func (UnimplementedUserApiServiceServer) FindByID(context.Context, *FindByIDRequest) (*FindByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindByID not implemented")
 }
-func (UnimplementedUserManagementServer) GetMe(context.Context, *GetMeRequest) (*GetMeResponse, error) {
+func (UnimplementedUserApiServiceServer) GetMe(context.Context, *GetMeRequest) (*GetMeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMe not implemented")
 }
-func (UnimplementedUserManagementServer) GetUserByDID(context.Context, *GetUserByDIDRequest) (*GetUserByDIDResponse, error) {
+func (UnimplementedUserApiServiceServer) GetUserByDID(context.Context, *GetUserByDIDRequest) (*GetUserByDIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserByDID not implemented")
 }
-func (UnimplementedUserManagementServer) mustEmbedUnimplementedUserManagementServer() {}
+func (UnimplementedUserApiServiceServer) mustEmbedUnimplementedUserApiServiceServer() {}
 
-// UnsafeUserManagementServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserManagementServer will
+// UnsafeUserApiServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UserApiServiceServer will
 // result in compilation errors.
-type UnsafeUserManagementServer interface {
-	mustEmbedUnimplementedUserManagementServer()
+type UnsafeUserApiServiceServer interface {
+	mustEmbedUnimplementedUserApiServiceServer()
 }
 
-func RegisterUserManagementServer(s grpc.ServiceRegistrar, srv UserManagementServer) {
-	s.RegisterService(&UserManagement_ServiceDesc, srv)
+func RegisterUserApiServiceServer(s grpc.ServiceRegistrar, srv UserApiServiceServer) {
+	s.RegisterService(&UserApiService_ServiceDesc, srv)
 }
 
-func _UserManagement_AuthnWithPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_AuthnWithPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthnWithPasswordRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).AuthnWithPassword(ctx, in)
+		return srv.(UserApiServiceServer).AuthnWithPassword(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/AuthnWithPassword",
+		FullMethod: "/user_api.v1.UserApiService/AuthnWithPassword",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).AuthnWithPassword(ctx, req.(*AuthnWithPasswordRequest))
+		return srv.(UserApiServiceServer).AuthnWithPassword(ctx, req.(*AuthnWithPasswordRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_RefreshAccessToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_RefreshAccessToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RefreshAccessTokenRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).RefreshAccessToken(ctx, in)
+		return srv.(UserApiServiceServer).RefreshAccessToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/RefreshAccessToken",
+		FullMethod: "/user_api.v1.UserApiService/RefreshAccessToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).RefreshAccessToken(ctx, req.(*RefreshAccessTokenRequest))
+		return srv.(UserApiServiceServer).RefreshAccessToken(ctx, req.(*RefreshAccessTokenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_AuthnWithProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_AuthnWithProvider_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthnWithProviderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).AuthnWithProvider(ctx, in)
+		return srv.(UserApiServiceServer).AuthnWithProvider(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/AuthnWithProvider",
+		FullMethod: "/user_api.v1.UserApiService/AuthnWithProvider",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).AuthnWithProvider(ctx, req.(*AuthnWithProviderRequest))
+		return srv.(UserApiServiceServer).AuthnWithProvider(ctx, req.(*AuthnWithProviderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_HandleOIDCCallback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_HandleOIDCCallback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HandleOIDCCallbackRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).HandleOIDCCallback(ctx, in)
+		return srv.(UserApiServiceServer).HandleOIDCCallback(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/HandleOIDCCallback",
+		FullMethod: "/user_api.v1.UserApiService/HandleOIDCCallback",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).HandleOIDCCallback(ctx, req.(*HandleOIDCCallbackRequest))
+		return srv.(UserApiServiceServer).HandleOIDCCallback(ctx, req.(*HandleOIDCCallbackRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_HandleSAMLCallback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_HandleSAMLCallback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HandleSAMLCallbackRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).HandleSAMLCallback(ctx, in)
+		return srv.(UserApiServiceServer).HandleSAMLCallback(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/HandleSAMLCallback",
+		FullMethod: "/user_api.v1.UserApiService/HandleSAMLCallback",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).HandleSAMLCallback(ctx, req.(*HandleSAMLCallbackRequest))
+		return srv.(UserApiServiceServer).HandleSAMLCallback(ctx, req.(*HandleSAMLCallbackRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_SAMLSPMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_SAMLSPMetadata_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SAMLSPMetadataRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).SAMLSPMetadata(ctx, in)
+		return srv.(UserApiServiceServer).SAMLSPMetadata(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/SAMLSPMetadata",
+		FullMethod: "/user_api.v1.UserApiService/SAMLSPMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).SAMLSPMetadata(ctx, req.(*SAMLSPMetadataRequest))
+		return srv.(UserApiServiceServer).SAMLSPMetadata(ctx, req.(*SAMLSPMetadataRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_CreateAuthnBrowserWithWalletChallenge_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _UserApiService_CreateAuthnBrowserWithWalletChallenge_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(CreateAuthnBrowserWithWalletChallengeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(UserManagementServer).CreateAuthnBrowserWithWalletChallenge(m, &userManagementCreateAuthnBrowserWithWalletChallengeServer{stream})
+	return srv.(UserApiServiceServer).CreateAuthnBrowserWithWalletChallenge(m, &userApiServiceCreateAuthnBrowserWithWalletChallengeServer{stream})
 }
 
-type UserManagement_CreateAuthnBrowserWithWalletChallengeServer interface {
+type UserApiService_CreateAuthnBrowserWithWalletChallengeServer interface {
 	Send(*CreateAuthnBrowserWithWalletChallengeResponse) error
 	grpc.ServerStream
 }
 
-type userManagementCreateAuthnBrowserWithWalletChallengeServer struct {
+type userApiServiceCreateAuthnBrowserWithWalletChallengeServer struct {
 	grpc.ServerStream
 }
 
-func (x *userManagementCreateAuthnBrowserWithWalletChallengeServer) Send(m *CreateAuthnBrowserWithWalletChallengeResponse) error {
+func (x *userApiServiceCreateAuthnBrowserWithWalletChallengeServer) Send(m *CreateAuthnBrowserWithWalletChallengeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _UserManagement_AuthnBrowserWithWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_AuthnBrowserWithWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthnBrowserWithWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).AuthnBrowserWithWallet(ctx, in)
+		return srv.(UserApiServiceServer).AuthnBrowserWithWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/AuthnBrowserWithWallet",
+		FullMethod: "/user_api.v1.UserApiService/AuthnBrowserWithWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).AuthnBrowserWithWallet(ctx, req.(*AuthnBrowserWithWalletRequest))
+		return srv.(UserApiServiceServer).AuthnBrowserWithWallet(ctx, req.(*AuthnBrowserWithWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_CreateAuthnWalletChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_CreateAuthnWalletChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAuthnWalletChallengeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).CreateAuthnWalletChallenge(ctx, in)
+		return srv.(UserApiServiceServer).CreateAuthnWalletChallenge(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/CreateAuthnWalletChallenge",
+		FullMethod: "/user_api.v1.UserApiService/CreateAuthnWalletChallenge",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).CreateAuthnWalletChallenge(ctx, req.(*CreateAuthnWalletChallengeRequest))
+		return srv.(UserApiServiceServer).CreateAuthnWalletChallenge(ctx, req.(*CreateAuthnWalletChallengeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_AuthnWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_AuthnWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthnWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).AuthnWallet(ctx, in)
+		return srv.(UserApiServiceServer).AuthnWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/AuthnWallet",
+		FullMethod: "/user_api.v1.UserApiService/AuthnWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).AuthnWallet(ctx, req.(*AuthnWalletRequest))
+		return srv.(UserApiServiceServer).AuthnWallet(ctx, req.(*AuthnWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_CreateRegisterWalletChallenge_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _UserApiService_CreateRegisterWalletChallenge_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(CreateRegisterWalletChallengeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(UserManagementServer).CreateRegisterWalletChallenge(m, &userManagementCreateRegisterWalletChallengeServer{stream})
+	return srv.(UserApiServiceServer).CreateRegisterWalletChallenge(m, &userApiServiceCreateRegisterWalletChallengeServer{stream})
 }
 
-type UserManagement_CreateRegisterWalletChallengeServer interface {
+type UserApiService_CreateRegisterWalletChallengeServer interface {
 	Send(*CreateRegisterWalletChallengeResponse) error
 	grpc.ServerStream
 }
 
-type userManagementCreateRegisterWalletChallengeServer struct {
+type userApiServiceCreateRegisterWalletChallengeServer struct {
 	grpc.ServerStream
 }
 
-func (x *userManagementCreateRegisterWalletChallengeServer) Send(m *CreateRegisterWalletChallengeResponse) error {
+func (x *userApiServiceCreateRegisterWalletChallengeServer) Send(m *CreateRegisterWalletChallengeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _UserManagement_RegisterWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_RegisterWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RegisterWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).RegisterWallet(ctx, in)
+		return srv.(UserApiServiceServer).RegisterWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/RegisterWallet",
+		FullMethod: "/user_api.v1.UserApiService/RegisterWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).RegisterWallet(ctx, req.(*RegisterWalletRequest))
+		return srv.(UserApiServiceServer).RegisterWallet(ctx, req.(*RegisterWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_AssociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_AssociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AssociateWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).AssociateWallet(ctx, in)
+		return srv.(UserApiServiceServer).AssociateWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/AssociateWallet",
+		FullMethod: "/user_api.v1.UserApiService/AssociateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).AssociateWallet(ctx, req.(*AssociateWalletRequest))
+		return srv.(UserApiServiceServer).AssociateWallet(ctx, req.(*AssociateWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_DissociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_DissociateWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DissociateWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).DissociateWallet(ctx, in)
+		return srv.(UserApiServiceServer).DissociateWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/DissociateWallet",
+		FullMethod: "/user_api.v1.UserApiService/DissociateWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).DissociateWallet(ctx, req.(*DissociateWalletRequest))
+		return srv.(UserApiServiceServer).DissociateWallet(ctx, req.(*DissociateWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_GetAppSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_GetAppSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAppSettingsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).GetAppSettings(ctx, in)
+		return srv.(UserApiServiceServer).GetAppSettings(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/GetAppSettings",
+		FullMethod: "/user_api.v1.UserApiService/GetAppSettings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).GetAppSettings(ctx, req.(*GetAppSettingsRequest))
+		return srv.(UserApiServiceServer).GetAppSettings(ctx, req.(*GetAppSettingsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_RegisterUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_RegisterUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RegisterUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).RegisterUser(ctx, in)
+		return srv.(UserApiServiceServer).RegisterUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/RegisterUser",
+		FullMethod: "/user_api.v1.UserApiService/RegisterUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).RegisterUser(ctx, req.(*RegisterUserRequest))
+		return srv.(UserApiServiceServer).RegisterUser(ctx, req.(*RegisterUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_ConfirmUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_ConfirmUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfirmUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).ConfirmUser(ctx, in)
+		return srv.(UserApiServiceServer).ConfirmUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/ConfirmUser",
+		FullMethod: "/user_api.v1.UserApiService/ConfirmUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).ConfirmUser(ctx, req.(*ConfirmUserRequest))
+		return srv.(UserApiServiceServer).ConfirmUser(ctx, req.(*ConfirmUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_FindByEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_FindByEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FindByEmailRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).FindByEmail(ctx, in)
+		return srv.(UserApiServiceServer).FindByEmail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/FindByEmail",
+		FullMethod: "/user_api.v1.UserApiService/FindByEmail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).FindByEmail(ctx, req.(*FindByEmailRequest))
+		return srv.(UserApiServiceServer).FindByEmail(ctx, req.(*FindByEmailRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_FindByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_FindByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FindByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).FindByID(ctx, in)
+		return srv.(UserApiServiceServer).FindByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/FindByID",
+		FullMethod: "/user_api.v1.UserApiService/FindByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).FindByID(ctx, req.(*FindByIDRequest))
+		return srv.(UserApiServiceServer).FindByID(ctx, req.(*FindByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_GetMe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_GetMe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetMeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).GetMe(ctx, in)
+		return srv.(UserApiServiceServer).GetMe(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/GetMe",
+		FullMethod: "/user_api.v1.UserApiService/GetMe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).GetMe(ctx, req.(*GetMeRequest))
+		return srv.(UserApiServiceServer).GetMe(ctx, req.(*GetMeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserManagement_GetUserByDID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserApiService_GetUserByDID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserByDIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserManagementServer).GetUserByDID(ctx, in)
+		return srv.(UserApiServiceServer).GetUserByDID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/user_api.v1.UserManagement/GetUserByDID",
+		FullMethod: "/user_api.v1.UserApiService/GetUserByDID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserManagementServer).GetUserByDID(ctx, req.(*GetUserByDIDRequest))
+		return srv.(UserApiServiceServer).GetUserByDID(ctx, req.(*GetUserByDIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserManagement_ServiceDesc is the grpc.ServiceDesc for UserManagement service.
+// UserApiService_ServiceDesc is the grpc.ServiceDesc for UserApiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserManagement_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "user_api.v1.UserManagement",
-	HandlerType: (*UserManagementServer)(nil),
+var UserApiService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "user_api.v1.UserApiService",
+	HandlerType: (*UserApiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "AuthnWithPassword",
-			Handler:    _UserManagement_AuthnWithPassword_Handler,
+			Handler:    _UserApiService_AuthnWithPassword_Handler,
 		},
 		{
 			MethodName: "RefreshAccessToken",
-			Handler:    _UserManagement_RefreshAccessToken_Handler,
+			Handler:    _UserApiService_RefreshAccessToken_Handler,
 		},
 		{
 			MethodName: "AuthnWithProvider",
-			Handler:    _UserManagement_AuthnWithProvider_Handler,
+			Handler:    _UserApiService_AuthnWithProvider_Handler,
 		},
 		{
 			MethodName: "HandleOIDCCallback",
-			Handler:    _UserManagement_HandleOIDCCallback_Handler,
+			Handler:    _UserApiService_HandleOIDCCallback_Handler,
 		},
 		{
 			MethodName: "HandleSAMLCallback",
-			Handler:    _UserManagement_HandleSAMLCallback_Handler,
+			Handler:    _UserApiService_HandleSAMLCallback_Handler,
 		},
 		{
 			MethodName: "SAMLSPMetadata",
-			Handler:    _UserManagement_SAMLSPMetadata_Handler,
+			Handler:    _UserApiService_SAMLSPMetadata_Handler,
 		},
 		{
 			MethodName: "AuthnBrowserWithWallet",
-			Handler:    _UserManagement_AuthnBrowserWithWallet_Handler,
+			Handler:    _UserApiService_AuthnBrowserWithWallet_Handler,
 		},
 		{
 			MethodName: "CreateAuthnWalletChallenge",
-			Handler:    _UserManagement_CreateAuthnWalletChallenge_Handler,
+			Handler:    _UserApiService_CreateAuthnWalletChallenge_Handler,
 		},
 		{
 			MethodName: "AuthnWallet",
-			Handler:    _UserManagement_AuthnWallet_Handler,
+			Handler:    _UserApiService_AuthnWallet_Handler,
 		},
 		{
 			MethodName: "RegisterWallet",
-			Handler:    _UserManagement_RegisterWallet_Handler,
+			Handler:    _UserApiService_RegisterWallet_Handler,
 		},
 		{
 			MethodName: "AssociateWallet",
-			Handler:    _UserManagement_AssociateWallet_Handler,
+			Handler:    _UserApiService_AssociateWallet_Handler,
 		},
 		{
 			MethodName: "DissociateWallet",
-			Handler:    _UserManagement_DissociateWallet_Handler,
+			Handler:    _UserApiService_DissociateWallet_Handler,
 		},
 		{
 			MethodName: "GetAppSettings",
-			Handler:    _UserManagement_GetAppSettings_Handler,
+			Handler:    _UserApiService_GetAppSettings_Handler,
 		},
 		{
 			MethodName: "RegisterUser",
-			Handler:    _UserManagement_RegisterUser_Handler,
+			Handler:    _UserApiService_RegisterUser_Handler,
 		},
 		{
 			MethodName: "ConfirmUser",
-			Handler:    _UserManagement_ConfirmUser_Handler,
+			Handler:    _UserApiService_ConfirmUser_Handler,
 		},
 		{
 			MethodName: "FindByEmail",
-			Handler:    _UserManagement_FindByEmail_Handler,
+			Handler:    _UserApiService_FindByEmail_Handler,
 		},
 		{
 			MethodName: "FindByID",
-			Handler:    _UserManagement_FindByID_Handler,
+			Handler:    _UserApiService_FindByID_Handler,
 		},
 		{
 			MethodName: "GetMe",
-			Handler:    _UserManagement_GetMe_Handler,
+			Handler:    _UserApiService_GetMe_Handler,
 		},
 		{
 			MethodName: "GetUserByDID",
-			Handler:    _UserManagement_GetUserByDID_Handler,
+			Handler:    _UserApiService_GetUserByDID_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "CreateAuthnBrowserWithWalletChallenge",
-			Handler:       _UserManagement_CreateAuthnBrowserWithWalletChallenge_Handler,
+			Handler:       _UserApiService_CreateAuthnBrowserWithWalletChallenge_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "CreateRegisterWalletChallenge",
-			Handler:       _UserManagement_CreateRegisterWalletChallenge_Handler,
+			Handler:       _UserApiService_CreateRegisterWalletChallenge_Handler,
 			ServerStreams: true,
 		},
 	},
+	Metadata: "user_api/v1/user.proto",
+}
+
+// ApiKeyManagerServiceClient is the client API for ApiKeyManagerService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type ApiKeyManagerServiceClient interface {
+	CreateApiKey(ctx context.Context, in *CreateApiKeyRequest, opts ...grpc.CallOption) (*CreateApiKeyResponse, error)
+	UpdateApiKeyStatus(ctx context.Context, in *UpdateApiKeyStatusRequest, opts ...grpc.CallOption) (*UpdateApiKeyStatusResponse, error)
+	GetApiKeys(ctx context.Context, in *GetApiKeysRequest, opts ...grpc.CallOption) (*GetApiKeysResponse, error)
+	CheckApiKey(ctx context.Context, in *CheckApiKeyRequest, opts ...grpc.CallOption) (*CheckApiKeyResponse, error)
+}
+
+type apiKeyManagerServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewApiKeyManagerServiceClient(cc grpc.ClientConnInterface) ApiKeyManagerServiceClient {
+	return &apiKeyManagerServiceClient{cc}
+}
+
+func (c *apiKeyManagerServiceClient) CreateApiKey(ctx context.Context, in *CreateApiKeyRequest, opts ...grpc.CallOption) (*CreateApiKeyResponse, error) {
+	out := new(CreateApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/user_api.v1.ApiKeyManagerService/CreateApiKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apiKeyManagerServiceClient) UpdateApiKeyStatus(ctx context.Context, in *UpdateApiKeyStatusRequest, opts ...grpc.CallOption) (*UpdateApiKeyStatusResponse, error) {
+	out := new(UpdateApiKeyStatusResponse)
+	err := c.cc.Invoke(ctx, "/user_api.v1.ApiKeyManagerService/UpdateApiKeyStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apiKeyManagerServiceClient) GetApiKeys(ctx context.Context, in *GetApiKeysRequest, opts ...grpc.CallOption) (*GetApiKeysResponse, error) {
+	out := new(GetApiKeysResponse)
+	err := c.cc.Invoke(ctx, "/user_api.v1.ApiKeyManagerService/GetApiKeys", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apiKeyManagerServiceClient) CheckApiKey(ctx context.Context, in *CheckApiKeyRequest, opts ...grpc.CallOption) (*CheckApiKeyResponse, error) {
+	out := new(CheckApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/user_api.v1.ApiKeyManagerService/CheckApiKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ApiKeyManagerServiceServer is the server API for ApiKeyManagerService service.
+// All implementations must embed UnimplementedApiKeyManagerServiceServer
+// for forward compatibility
+type ApiKeyManagerServiceServer interface {
+	CreateApiKey(context.Context, *CreateApiKeyRequest) (*CreateApiKeyResponse, error)
+	UpdateApiKeyStatus(context.Context, *UpdateApiKeyStatusRequest) (*UpdateApiKeyStatusResponse, error)
+	GetApiKeys(context.Context, *GetApiKeysRequest) (*GetApiKeysResponse, error)
+	CheckApiKey(context.Context, *CheckApiKeyRequest) (*CheckApiKeyResponse, error)
+	mustEmbedUnimplementedApiKeyManagerServiceServer()
+}
+
+// UnimplementedApiKeyManagerServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedApiKeyManagerServiceServer struct {
+}
+
+func (UnimplementedApiKeyManagerServiceServer) CreateApiKey(context.Context, *CreateApiKeyRequest) (*CreateApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateApiKey not implemented")
+}
+func (UnimplementedApiKeyManagerServiceServer) UpdateApiKeyStatus(context.Context, *UpdateApiKeyStatusRequest) (*UpdateApiKeyStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiKeyStatus not implemented")
+}
+func (UnimplementedApiKeyManagerServiceServer) GetApiKeys(context.Context, *GetApiKeysRequest) (*GetApiKeysResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApiKeys not implemented")
+}
+func (UnimplementedApiKeyManagerServiceServer) CheckApiKey(context.Context, *CheckApiKeyRequest) (*CheckApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckApiKey not implemented")
+}
+func (UnimplementedApiKeyManagerServiceServer) mustEmbedUnimplementedApiKeyManagerServiceServer() {}
+
+// UnsafeApiKeyManagerServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ApiKeyManagerServiceServer will
+// result in compilation errors.
+type UnsafeApiKeyManagerServiceServer interface {
+	mustEmbedUnimplementedApiKeyManagerServiceServer()
+}
+
+func RegisterApiKeyManagerServiceServer(s grpc.ServiceRegistrar, srv ApiKeyManagerServiceServer) {
+	s.RegisterService(&ApiKeyManagerService_ServiceDesc, srv)
+}
+
+func _ApiKeyManagerService_CreateApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateApiKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiKeyManagerServiceServer).CreateApiKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_api.v1.ApiKeyManagerService/CreateApiKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiKeyManagerServiceServer).CreateApiKey(ctx, req.(*CreateApiKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApiKeyManagerService_UpdateApiKeyStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateApiKeyStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiKeyManagerServiceServer).UpdateApiKeyStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_api.v1.ApiKeyManagerService/UpdateApiKeyStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiKeyManagerServiceServer).UpdateApiKeyStatus(ctx, req.(*UpdateApiKeyStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApiKeyManagerService_GetApiKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetApiKeysRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiKeyManagerServiceServer).GetApiKeys(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_api.v1.ApiKeyManagerService/GetApiKeys",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiKeyManagerServiceServer).GetApiKeys(ctx, req.(*GetApiKeysRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApiKeyManagerService_CheckApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckApiKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiKeyManagerServiceServer).CheckApiKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_api.v1.ApiKeyManagerService/CheckApiKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiKeyManagerServiceServer).CheckApiKey(ctx, req.(*CheckApiKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// ApiKeyManagerService_ServiceDesc is the grpc.ServiceDesc for ApiKeyManagerService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ApiKeyManagerService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "user_api.v1.ApiKeyManagerService",
+	HandlerType: (*ApiKeyManagerServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateApiKey",
+			Handler:    _ApiKeyManagerService_CreateApiKey_Handler,
+		},
+		{
+			MethodName: "UpdateApiKeyStatus",
+			Handler:    _ApiKeyManagerService_UpdateApiKeyStatus_Handler,
+		},
+		{
+			MethodName: "GetApiKeys",
+			Handler:    _ApiKeyManagerService_GetApiKeys_Handler,
+		},
+		{
+			MethodName: "CheckApiKey",
+			Handler:    _ApiKeyManagerService_CheckApiKey_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "user_api/v1/user.proto",
 }

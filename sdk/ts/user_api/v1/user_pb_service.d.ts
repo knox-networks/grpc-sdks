@@ -6,218 +6,262 @@
 import * as user_api_v1_user_pb from "../../user_api/v1/user_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type UserManagementAuthnWithPassword = {
+type UserApiServiceAuthnWithPassword = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.AuthnWithPasswordRequest;
   readonly responseType: typeof user_api_v1_user_pb.AuthnWithPasswordResponse;
 };
 
-type UserManagementRefreshAccessToken = {
+type UserApiServiceRefreshAccessToken = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.RefreshAccessTokenRequest;
   readonly responseType: typeof user_api_v1_user_pb.RefreshAccessTokenResponse;
 };
 
-type UserManagementAuthnWithProvider = {
+type UserApiServiceAuthnWithProvider = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.AuthnWithProviderRequest;
   readonly responseType: typeof user_api_v1_user_pb.AuthnWithProviderResponse;
 };
 
-type UserManagementHandleOIDCCallback = {
+type UserApiServiceHandleOIDCCallback = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.HandleOIDCCallbackRequest;
   readonly responseType: typeof user_api_v1_user_pb.HandleOIDCCallbackResponse;
 };
 
-type UserManagementHandleSAMLCallback = {
+type UserApiServiceHandleSAMLCallback = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.HandleSAMLCallbackRequest;
   readonly responseType: typeof user_api_v1_user_pb.HandleSAMLCallbackResponse;
 };
 
-type UserManagementSAMLSPMetadata = {
+type UserApiServiceSAMLSPMetadata = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.SAMLSPMetadataRequest;
   readonly responseType: typeof user_api_v1_user_pb.SAMLSPMetadataResponse;
 };
 
-type UserManagementCreateAuthnBrowserWithWalletChallenge = {
+type UserApiServiceCreateAuthnBrowserWithWalletChallenge = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof user_api_v1_user_pb.CreateAuthnBrowserWithWalletChallengeRequest;
   readonly responseType: typeof user_api_v1_user_pb.CreateAuthnBrowserWithWalletChallengeResponse;
 };
 
-type UserManagementAuthnBrowserWithWallet = {
+type UserApiServiceAuthnBrowserWithWallet = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.AuthnBrowserWithWalletRequest;
   readonly responseType: typeof user_api_v1_user_pb.AuthnBrowserWithWalletResponse;
 };
 
-type UserManagementCreateAuthnWalletChallenge = {
+type UserApiServiceCreateAuthnWalletChallenge = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.CreateAuthnWalletChallengeRequest;
   readonly responseType: typeof user_api_v1_user_pb.CreateAuthnWalletChallengeResponse;
 };
 
-type UserManagementAuthnWallet = {
+type UserApiServiceAuthnWallet = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.AuthnWalletRequest;
   readonly responseType: typeof user_api_v1_user_pb.AuthnWalletResponse;
 };
 
-type UserManagementCreateRegisterWalletChallenge = {
+type UserApiServiceCreateRegisterWalletChallenge = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof user_api_v1_user_pb.CreateRegisterWalletChallengeRequest;
   readonly responseType: typeof user_api_v1_user_pb.CreateRegisterWalletChallengeResponse;
 };
 
-type UserManagementRegisterWallet = {
+type UserApiServiceRegisterWallet = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.RegisterWalletRequest;
   readonly responseType: typeof user_api_v1_user_pb.RegisterWalletResponse;
 };
 
-type UserManagementAssociateWallet = {
+type UserApiServiceAssociateWallet = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.AssociateWalletRequest;
   readonly responseType: typeof user_api_v1_user_pb.AssociateWalletResponse;
 };
 
-type UserManagementDissociateWallet = {
+type UserApiServiceDissociateWallet = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.DissociateWalletRequest;
   readonly responseType: typeof user_api_v1_user_pb.DissociateWalletResponse;
 };
 
-type UserManagementGetAppSettings = {
+type UserApiServiceGetAppSettings = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.GetAppSettingsRequest;
   readonly responseType: typeof user_api_v1_user_pb.GetAppSettingsResponse;
 };
 
-type UserManagementRegisterUser = {
+type UserApiServiceRegisterUser = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.RegisterUserRequest;
   readonly responseType: typeof user_api_v1_user_pb.RegisterUserResponse;
 };
 
-type UserManagementConfirmUser = {
+type UserApiServiceConfirmUser = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.ConfirmUserRequest;
   readonly responseType: typeof user_api_v1_user_pb.ConfirmUserResponse;
 };
 
-type UserManagementFindByEmail = {
+type UserApiServiceFindByEmail = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.FindByEmailRequest;
   readonly responseType: typeof user_api_v1_user_pb.FindByEmailResponse;
 };
 
-type UserManagementFindByID = {
+type UserApiServiceFindByID = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.FindByIDRequest;
   readonly responseType: typeof user_api_v1_user_pb.FindByIDResponse;
 };
 
-type UserManagementGetMe = {
+type UserApiServiceGetMe = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.GetMeRequest;
   readonly responseType: typeof user_api_v1_user_pb.GetMeResponse;
 };
 
-type UserManagementGetUserByDID = {
+type UserApiServiceGetUserByDID = {
   readonly methodName: string;
-  readonly service: typeof UserManagement;
+  readonly service: typeof UserApiService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof user_api_v1_user_pb.GetUserByDIDRequest;
   readonly responseType: typeof user_api_v1_user_pb.GetUserByDIDResponse;
 };
 
-export class UserManagement {
+export class UserApiService {
   static readonly serviceName: string;
-  static readonly AuthnWithPassword: UserManagementAuthnWithPassword;
-  static readonly RefreshAccessToken: UserManagementRefreshAccessToken;
-  static readonly AuthnWithProvider: UserManagementAuthnWithProvider;
-  static readonly HandleOIDCCallback: UserManagementHandleOIDCCallback;
-  static readonly HandleSAMLCallback: UserManagementHandleSAMLCallback;
-  static readonly SAMLSPMetadata: UserManagementSAMLSPMetadata;
-  static readonly CreateAuthnBrowserWithWalletChallenge: UserManagementCreateAuthnBrowserWithWalletChallenge;
-  static readonly AuthnBrowserWithWallet: UserManagementAuthnBrowserWithWallet;
-  static readonly CreateAuthnWalletChallenge: UserManagementCreateAuthnWalletChallenge;
-  static readonly AuthnWallet: UserManagementAuthnWallet;
-  static readonly CreateRegisterWalletChallenge: UserManagementCreateRegisterWalletChallenge;
-  static readonly RegisterWallet: UserManagementRegisterWallet;
-  static readonly AssociateWallet: UserManagementAssociateWallet;
-  static readonly DissociateWallet: UserManagementDissociateWallet;
-  static readonly GetAppSettings: UserManagementGetAppSettings;
-  static readonly RegisterUser: UserManagementRegisterUser;
-  static readonly ConfirmUser: UserManagementConfirmUser;
-  static readonly FindByEmail: UserManagementFindByEmail;
-  static readonly FindByID: UserManagementFindByID;
-  static readonly GetMe: UserManagementGetMe;
-  static readonly GetUserByDID: UserManagementGetUserByDID;
+  static readonly AuthnWithPassword: UserApiServiceAuthnWithPassword;
+  static readonly RefreshAccessToken: UserApiServiceRefreshAccessToken;
+  static readonly AuthnWithProvider: UserApiServiceAuthnWithProvider;
+  static readonly HandleOIDCCallback: UserApiServiceHandleOIDCCallback;
+  static readonly HandleSAMLCallback: UserApiServiceHandleSAMLCallback;
+  static readonly SAMLSPMetadata: UserApiServiceSAMLSPMetadata;
+  static readonly CreateAuthnBrowserWithWalletChallenge: UserApiServiceCreateAuthnBrowserWithWalletChallenge;
+  static readonly AuthnBrowserWithWallet: UserApiServiceAuthnBrowserWithWallet;
+  static readonly CreateAuthnWalletChallenge: UserApiServiceCreateAuthnWalletChallenge;
+  static readonly AuthnWallet: UserApiServiceAuthnWallet;
+  static readonly CreateRegisterWalletChallenge: UserApiServiceCreateRegisterWalletChallenge;
+  static readonly RegisterWallet: UserApiServiceRegisterWallet;
+  static readonly AssociateWallet: UserApiServiceAssociateWallet;
+  static readonly DissociateWallet: UserApiServiceDissociateWallet;
+  static readonly GetAppSettings: UserApiServiceGetAppSettings;
+  static readonly RegisterUser: UserApiServiceRegisterUser;
+  static readonly ConfirmUser: UserApiServiceConfirmUser;
+  static readonly FindByEmail: UserApiServiceFindByEmail;
+  static readonly FindByID: UserApiServiceFindByID;
+  static readonly GetMe: UserApiServiceGetMe;
+  static readonly GetUserByDID: UserApiServiceGetUserByDID;
+}
+
+type ApiKeyManagerServiceCreateApiKey = {
+  readonly methodName: string;
+  readonly service: typeof ApiKeyManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.CreateApiKeyRequest;
+  readonly responseType: typeof user_api_v1_user_pb.CreateApiKeyResponse;
+};
+
+type ApiKeyManagerServiceUpdateApiKeyStatus = {
+  readonly methodName: string;
+  readonly service: typeof ApiKeyManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.UpdateApiKeyStatusRequest;
+  readonly responseType: typeof user_api_v1_user_pb.UpdateApiKeyStatusResponse;
+};
+
+type ApiKeyManagerServiceGetApiKeys = {
+  readonly methodName: string;
+  readonly service: typeof ApiKeyManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.GetApiKeysRequest;
+  readonly responseType: typeof user_api_v1_user_pb.GetApiKeysResponse;
+};
+
+type ApiKeyManagerServiceCheckApiKey = {
+  readonly methodName: string;
+  readonly service: typeof ApiKeyManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.CheckApiKeyRequest;
+  readonly responseType: typeof user_api_v1_user_pb.CheckApiKeyResponse;
+};
+
+export class ApiKeyManagerService {
+  static readonly serviceName: string;
+  static readonly CreateApiKey: ApiKeyManagerServiceCreateApiKey;
+  static readonly UpdateApiKeyStatus: ApiKeyManagerServiceUpdateApiKeyStatus;
+  static readonly GetApiKeys: ApiKeyManagerServiceGetApiKeys;
+  static readonly CheckApiKey: ApiKeyManagerServiceCheckApiKey;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -248,7 +292,7 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class UserManagementClient {
+export class UserApiServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
@@ -424,6 +468,48 @@ export class UserManagementClient {
   getUserByDID(
     requestMessage: user_api_v1_user_pb.GetUserByDIDRequest,
     callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.GetUserByDIDResponse|null) => void
+  ): UnaryResponse;
+}
+
+export class ApiKeyManagerServiceClient {
+  readonly serviceHost: string;
+
+  constructor(serviceHost: string, options?: grpc.RpcOptions);
+  createApiKey(
+    requestMessage: user_api_v1_user_pb.CreateApiKeyRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.CreateApiKeyResponse|null) => void
+  ): UnaryResponse;
+  createApiKey(
+    requestMessage: user_api_v1_user_pb.CreateApiKeyRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.CreateApiKeyResponse|null) => void
+  ): UnaryResponse;
+  updateApiKeyStatus(
+    requestMessage: user_api_v1_user_pb.UpdateApiKeyStatusRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.UpdateApiKeyStatusResponse|null) => void
+  ): UnaryResponse;
+  updateApiKeyStatus(
+    requestMessage: user_api_v1_user_pb.UpdateApiKeyStatusRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.UpdateApiKeyStatusResponse|null) => void
+  ): UnaryResponse;
+  getApiKeys(
+    requestMessage: user_api_v1_user_pb.GetApiKeysRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.GetApiKeysResponse|null) => void
+  ): UnaryResponse;
+  getApiKeys(
+    requestMessage: user_api_v1_user_pb.GetApiKeysRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.GetApiKeysResponse|null) => void
+  ): UnaryResponse;
+  checkApiKey(
+    requestMessage: user_api_v1_user_pb.CheckApiKeyRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.CheckApiKeyResponse|null) => void
+  ): UnaryResponse;
+  checkApiKey(
+    requestMessage: user_api_v1_user_pb.CheckApiKeyRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.CheckApiKeyResponse|null) => void
   ): UnaryResponse;
 }
 

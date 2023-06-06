@@ -12,9 +12,7 @@ using grpc = global::Grpc.Core;
 
 namespace RegistryApi.V1 {
   /// <summary>
-  /// Publicly accessible repo of DID Documents for cryptographic verification of DIDs. 
-  /// Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. 
-  /// https://www.w3.org/TR/did-core/
+  ///Publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https://www.w3.org/TR/did-core/
   /// </summary>
   public static partial class RegistryService
   {
@@ -58,9 +56,13 @@ namespace RegistryApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::RegistryApi.V1.CreateResponse> __Marshaller_registry_api_v1_CreateResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.CreateResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::RegistryApi.V1.ReadRequest> __Marshaller_registry_api_v1_ReadRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ReadRequest.Parser));
+    static readonly grpc::Marshaller<global::RegistryApi.V1.ResolveRequest> __Marshaller_registry_api_v1_ResolveRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ResolveRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::RegistryApi.V1.ReadResponse> __Marshaller_registry_api_v1_ReadResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ReadResponse.Parser));
+    static readonly grpc::Marshaller<global::RegistryApi.V1.ResolveResponse> __Marshaller_registry_api_v1_ResolveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ResolveResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.ResolveRepresentationRequest> __Marshaller_registry_api_v1_ResolveRepresentationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ResolveRepresentationRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.ResolveRepresentationResponse> __Marshaller_registry_api_v1_ResolveRepresentationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.ResolveRepresentationResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::RegistryApi.V1.UpdateRequest> __Marshaller_registry_api_v1_UpdateRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.UpdateRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -79,12 +81,20 @@ namespace RegistryApi.V1 {
         __Marshaller_registry_api_v1_CreateResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::RegistryApi.V1.ReadRequest, global::RegistryApi.V1.ReadResponse> __Method_Read = new grpc::Method<global::RegistryApi.V1.ReadRequest, global::RegistryApi.V1.ReadResponse>(
+    static readonly grpc::Method<global::RegistryApi.V1.ResolveRequest, global::RegistryApi.V1.ResolveResponse> __Method_Resolve = new grpc::Method<global::RegistryApi.V1.ResolveRequest, global::RegistryApi.V1.ResolveResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "Read",
-        __Marshaller_registry_api_v1_ReadRequest,
-        __Marshaller_registry_api_v1_ReadResponse);
+        "Resolve",
+        __Marshaller_registry_api_v1_ResolveRequest,
+        __Marshaller_registry_api_v1_ResolveResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.ResolveRepresentationRequest, global::RegistryApi.V1.ResolveRepresentationResponse> __Method_ResolveRepresentation = new grpc::Method<global::RegistryApi.V1.ResolveRepresentationRequest, global::RegistryApi.V1.ResolveRepresentationResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ResolveRepresentation",
+        __Marshaller_registry_api_v1_ResolveRepresentationRequest,
+        __Marshaller_registry_api_v1_ResolveRepresentationResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::RegistryApi.V1.UpdateRequest, global::RegistryApi.V1.UpdateResponse> __Method_Update = new grpc::Method<global::RegistryApi.V1.UpdateRequest, global::RegistryApi.V1.UpdateResponse>(
@@ -125,13 +135,25 @@ namespace RegistryApi.V1 {
       }
 
       /// <summary>
-      /// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.ReadResponse> Read(global::RegistryApi.V1.ReadRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.ResolveResponse> Resolve(global::RegistryApi.V1.ResolveRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.ResolveRepresentationResponse> ResolveRepresentation(global::RegistryApi.V1.ResolveRepresentationRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -238,7 +260,7 @@ namespace RegistryApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Create, null, options, request);
       }
       /// <summary>
-      /// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -246,23 +268,23 @@ namespace RegistryApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::RegistryApi.V1.ReadResponse Read(global::RegistryApi.V1.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::RegistryApi.V1.ResolveResponse Resolve(global::RegistryApi.V1.ResolveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return Read(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return Resolve(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::RegistryApi.V1.ReadResponse Read(global::RegistryApi.V1.ReadRequest request, grpc::CallOptions options)
+      public virtual global::RegistryApi.V1.ResolveResponse Resolve(global::RegistryApi.V1.ResolveRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_Read, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_Resolve, null, options, request);
       }
       /// <summary>
-      /// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -270,20 +292,68 @@ namespace RegistryApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ReadResponse> ReadAsync(global::RegistryApi.V1.ReadRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ResolveResponse> ResolveAsync(global::RegistryApi.V1.ResolveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return ReadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return ResolveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Retrieves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ReadResponse> ReadAsync(global::RegistryApi.V1.ReadRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ResolveResponse> ResolveAsync(global::RegistryApi.V1.ResolveRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_Read, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_Resolve, null, options, request);
+      }
+      /// <summary>
+      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.ResolveRepresentationResponse ResolveRepresentation(global::RegistryApi.V1.ResolveRepresentationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResolveRepresentation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.ResolveRepresentationResponse ResolveRepresentation(global::RegistryApi.V1.ResolveRepresentationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ResolveRepresentation, null, options, request);
+      }
+      /// <summary>
+      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ResolveRepresentationResponse> ResolveRepresentationAsync(global::RegistryApi.V1.ResolveRepresentationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResolveRepresentationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.ResolveRepresentationResponse> ResolveRepresentationAsync(global::RegistryApi.V1.ResolveRepresentationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ResolveRepresentation, null, options, request);
       }
       /// <summary>
       /// Updates a DID document entry for a given DID in the Knox Registry Management Service.
@@ -396,7 +466,8 @@ namespace RegistryApi.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Create, serviceImpl.Create)
-          .AddMethod(__Method_Read, serviceImpl.Read)
+          .AddMethod(__Method_Resolve, serviceImpl.Resolve)
+          .AddMethod(__Method_ResolveRepresentation, serviceImpl.ResolveRepresentation)
           .AddMethod(__Method_Update, serviceImpl.Update)
           .AddMethod(__Method_Revoke, serviceImpl.Revoke).Build();
     }
@@ -409,9 +480,660 @@ namespace RegistryApi.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, RegistryServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Create, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.CreateRequest, global::RegistryApi.V1.CreateResponse>(serviceImpl.Create));
-      serviceBinder.AddMethod(__Method_Read, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.ReadRequest, global::RegistryApi.V1.ReadResponse>(serviceImpl.Read));
+      serviceBinder.AddMethod(__Method_Resolve, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.ResolveRequest, global::RegistryApi.V1.ResolveResponse>(serviceImpl.Resolve));
+      serviceBinder.AddMethod(__Method_ResolveRepresentation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.ResolveRepresentationRequest, global::RegistryApi.V1.ResolveRepresentationResponse>(serviceImpl.ResolveRepresentation));
       serviceBinder.AddMethod(__Method_Update, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.UpdateRequest, global::RegistryApi.V1.UpdateResponse>(serviceImpl.Update));
       serviceBinder.AddMethod(__Method_Revoke, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.RevokeRequest, global::RegistryApi.V1.RevokeResponse>(serviceImpl.Revoke));
+    }
+
+  }
+  public static partial class CredentialIssuerRegistryService
+  {
+    static readonly string __ServiceName = "registry_api.v1.CredentialIssuerRegistryService";
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.CreateCredentialIssuerRequest> __Marshaller_registry_api_v1_CreateCredentialIssuerRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.CreateCredentialIssuerRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.CreateCredentialIssuerResponse> __Marshaller_registry_api_v1_CreateCredentialIssuerResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.CreateCredentialIssuerResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.GetCredentialIssuerRequest> __Marshaller_registry_api_v1_GetCredentialIssuerRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.GetCredentialIssuerRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.GetCredentialIssuerResponse> __Marshaller_registry_api_v1_GetCredentialIssuerResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.GetCredentialIssuerResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.UpdateCredentialIssuerRequest> __Marshaller_registry_api_v1_UpdateCredentialIssuerRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.UpdateCredentialIssuerRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.UpdateCredentialIssuerResponse> __Marshaller_registry_api_v1_UpdateCredentialIssuerResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.UpdateCredentialIssuerResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.CreateCredentialIssuerRequest, global::RegistryApi.V1.CreateCredentialIssuerResponse> __Method_CreateCredentialIssuer = new grpc::Method<global::RegistryApi.V1.CreateCredentialIssuerRequest, global::RegistryApi.V1.CreateCredentialIssuerResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateCredentialIssuer",
+        __Marshaller_registry_api_v1_CreateCredentialIssuerRequest,
+        __Marshaller_registry_api_v1_CreateCredentialIssuerResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.GetCredentialIssuerRequest, global::RegistryApi.V1.GetCredentialIssuerResponse> __Method_GetCredentialIssuer = new grpc::Method<global::RegistryApi.V1.GetCredentialIssuerRequest, global::RegistryApi.V1.GetCredentialIssuerResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetCredentialIssuer",
+        __Marshaller_registry_api_v1_GetCredentialIssuerRequest,
+        __Marshaller_registry_api_v1_GetCredentialIssuerResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.UpdateCredentialIssuerRequest, global::RegistryApi.V1.UpdateCredentialIssuerResponse> __Method_UpdateCredentialIssuer = new grpc::Method<global::RegistryApi.V1.UpdateCredentialIssuerRequest, global::RegistryApi.V1.UpdateCredentialIssuerResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateCredentialIssuer",
+        __Marshaller_registry_api_v1_UpdateCredentialIssuerRequest,
+        __Marshaller_registry_api_v1_UpdateCredentialIssuerResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::RegistryApi.V1.RegistryReflection.Descriptor.Services[1]; }
+    }
+
+    /// <summary>Base class for server-side implementations of CredentialIssuerRegistryService</summary>
+    [grpc::BindServiceMethod(typeof(CredentialIssuerRegistryService), "BindService")]
+    public abstract partial class CredentialIssuerRegistryServiceBase
+    {
+      /// <summary>
+      /// Creates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.CreateCredentialIssuerResponse> CreateCredentialIssuer(global::RegistryApi.V1.CreateCredentialIssuerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Gets an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.GetCredentialIssuerResponse> GetCredentialIssuer(global::RegistryApi.V1.GetCredentialIssuerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Updates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.UpdateCredentialIssuerResponse> UpdateCredentialIssuer(global::RegistryApi.V1.UpdateCredentialIssuerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for CredentialIssuerRegistryService</summary>
+    public partial class CredentialIssuerRegistryServiceClient : grpc::ClientBase<CredentialIssuerRegistryServiceClient>
+    {
+      /// <summary>Creates a new client for CredentialIssuerRegistryService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public CredentialIssuerRegistryServiceClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for CredentialIssuerRegistryService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public CredentialIssuerRegistryServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected CredentialIssuerRegistryServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected CredentialIssuerRegistryServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      /// <summary>
+      /// Creates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.CreateCredentialIssuerResponse CreateCredentialIssuer(global::RegistryApi.V1.CreateCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateCredentialIssuer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.CreateCredentialIssuerResponse CreateCredentialIssuer(global::RegistryApi.V1.CreateCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateCredentialIssuer, null, options, request);
+      }
+      /// <summary>
+      /// Creates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.CreateCredentialIssuerResponse> CreateCredentialIssuerAsync(global::RegistryApi.V1.CreateCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateCredentialIssuerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Creates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.CreateCredentialIssuerResponse> CreateCredentialIssuerAsync(global::RegistryApi.V1.CreateCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateCredentialIssuer, null, options, request);
+      }
+      /// <summary>
+      /// Gets an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.GetCredentialIssuerResponse GetCredentialIssuer(global::RegistryApi.V1.GetCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCredentialIssuer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.GetCredentialIssuerResponse GetCredentialIssuer(global::RegistryApi.V1.GetCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetCredentialIssuer, null, options, request);
+      }
+      /// <summary>
+      /// Gets an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.GetCredentialIssuerResponse> GetCredentialIssuerAsync(global::RegistryApi.V1.GetCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCredentialIssuerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.GetCredentialIssuerResponse> GetCredentialIssuerAsync(global::RegistryApi.V1.GetCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetCredentialIssuer, null, options, request);
+      }
+      /// <summary>
+      /// Updates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.UpdateCredentialIssuerResponse UpdateCredentialIssuer(global::RegistryApi.V1.UpdateCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateCredentialIssuer(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.UpdateCredentialIssuerResponse UpdateCredentialIssuer(global::RegistryApi.V1.UpdateCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateCredentialIssuer, null, options, request);
+      }
+      /// <summary>
+      /// Updates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.UpdateCredentialIssuerResponse> UpdateCredentialIssuerAsync(global::RegistryApi.V1.UpdateCredentialIssuerRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateCredentialIssuerAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates an verifiable credential credentialIssuer
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.UpdateCredentialIssuerResponse> UpdateCredentialIssuerAsync(global::RegistryApi.V1.UpdateCredentialIssuerRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateCredentialIssuer, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override CredentialIssuerRegistryServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new CredentialIssuerRegistryServiceClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(CredentialIssuerRegistryServiceBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_CreateCredentialIssuer, serviceImpl.CreateCredentialIssuer)
+          .AddMethod(__Method_GetCredentialIssuer, serviceImpl.GetCredentialIssuer)
+          .AddMethod(__Method_UpdateCredentialIssuer, serviceImpl.UpdateCredentialIssuer).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, CredentialIssuerRegistryServiceBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_CreateCredentialIssuer, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.CreateCredentialIssuerRequest, global::RegistryApi.V1.CreateCredentialIssuerResponse>(serviceImpl.CreateCredentialIssuer));
+      serviceBinder.AddMethod(__Method_GetCredentialIssuer, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.GetCredentialIssuerRequest, global::RegistryApi.V1.GetCredentialIssuerResponse>(serviceImpl.GetCredentialIssuer));
+      serviceBinder.AddMethod(__Method_UpdateCredentialIssuer, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.UpdateCredentialIssuerRequest, global::RegistryApi.V1.UpdateCredentialIssuerResponse>(serviceImpl.UpdateCredentialIssuer));
+    }
+
+  }
+  public static partial class StatusListRegistryService
+  {
+    static readonly string __ServiceName = "registry_api.v1.StatusListRegistryService";
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.CreateStatusListEntryRequest> __Marshaller_registry_api_v1_CreateStatusListEntryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.CreateStatusListEntryRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.CreateStatusListEntryResponse> __Marshaller_registry_api_v1_CreateStatusListEntryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.CreateStatusListEntryResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.GetStatusListCredentialRequest> __Marshaller_registry_api_v1_GetStatusListCredentialRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.GetStatusListCredentialRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.GetStatusListCredentialResponse> __Marshaller_registry_api_v1_GetStatusListCredentialResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.GetStatusListCredentialResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.UpdateStatusListEntryRequest> __Marshaller_registry_api_v1_UpdateStatusListEntryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.UpdateStatusListEntryRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::RegistryApi.V1.UpdateStatusListEntryResponse> __Marshaller_registry_api_v1_UpdateStatusListEntryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::RegistryApi.V1.UpdateStatusListEntryResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.CreateStatusListEntryRequest, global::RegistryApi.V1.CreateStatusListEntryResponse> __Method_CreateStatusListEntry = new grpc::Method<global::RegistryApi.V1.CreateStatusListEntryRequest, global::RegistryApi.V1.CreateStatusListEntryResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateStatusListEntry",
+        __Marshaller_registry_api_v1_CreateStatusListEntryRequest,
+        __Marshaller_registry_api_v1_CreateStatusListEntryResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.GetStatusListCredentialRequest, global::RegistryApi.V1.GetStatusListCredentialResponse> __Method_GetStatusListCredential = new grpc::Method<global::RegistryApi.V1.GetStatusListCredentialRequest, global::RegistryApi.V1.GetStatusListCredentialResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetStatusListCredential",
+        __Marshaller_registry_api_v1_GetStatusListCredentialRequest,
+        __Marshaller_registry_api_v1_GetStatusListCredentialResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::RegistryApi.V1.UpdateStatusListEntryRequest, global::RegistryApi.V1.UpdateStatusListEntryResponse> __Method_UpdateStatusListEntry = new grpc::Method<global::RegistryApi.V1.UpdateStatusListEntryRequest, global::RegistryApi.V1.UpdateStatusListEntryResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateStatusListEntry",
+        __Marshaller_registry_api_v1_UpdateStatusListEntryRequest,
+        __Marshaller_registry_api_v1_UpdateStatusListEntryResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::RegistryApi.V1.RegistryReflection.Descriptor.Services[2]; }
+    }
+
+    /// <summary>Base class for server-side implementations of StatusListRegistryService</summary>
+    [grpc::BindServiceMethod(typeof(StatusListRegistryService), "BindService")]
+    public abstract partial class StatusListRegistryServiceBase
+    {
+      /// <summary>
+      ///Create status registry entry
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.CreateStatusListEntryResponse> CreateStatusListEntry(global::RegistryApi.V1.CreateStatusListEntryRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      ///Get VC status Credential
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.GetStatusListCredentialResponse> GetStatusListCredential(global::RegistryApi.V1.GetStatusListCredentialRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      ///Update status registry entry
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::RegistryApi.V1.UpdateStatusListEntryResponse> UpdateStatusListEntry(global::RegistryApi.V1.UpdateStatusListEntryRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for StatusListRegistryService</summary>
+    public partial class StatusListRegistryServiceClient : grpc::ClientBase<StatusListRegistryServiceClient>
+    {
+      /// <summary>Creates a new client for StatusListRegistryService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public StatusListRegistryServiceClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for StatusListRegistryService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public StatusListRegistryServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected StatusListRegistryServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected StatusListRegistryServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      /// <summary>
+      ///Create status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.CreateStatusListEntryResponse CreateStatusListEntry(global::RegistryApi.V1.CreateStatusListEntryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateStatusListEntry(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Create status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.CreateStatusListEntryResponse CreateStatusListEntry(global::RegistryApi.V1.CreateStatusListEntryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateStatusListEntry, null, options, request);
+      }
+      /// <summary>
+      ///Create status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.CreateStatusListEntryResponse> CreateStatusListEntryAsync(global::RegistryApi.V1.CreateStatusListEntryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateStatusListEntryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Create status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.CreateStatusListEntryResponse> CreateStatusListEntryAsync(global::RegistryApi.V1.CreateStatusListEntryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateStatusListEntry, null, options, request);
+      }
+      /// <summary>
+      ///Get VC status Credential
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.GetStatusListCredentialResponse GetStatusListCredential(global::RegistryApi.V1.GetStatusListCredentialRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetStatusListCredential(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Get VC status Credential
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.GetStatusListCredentialResponse GetStatusListCredential(global::RegistryApi.V1.GetStatusListCredentialRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetStatusListCredential, null, options, request);
+      }
+      /// <summary>
+      ///Get VC status Credential
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.GetStatusListCredentialResponse> GetStatusListCredentialAsync(global::RegistryApi.V1.GetStatusListCredentialRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetStatusListCredentialAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Get VC status Credential
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.GetStatusListCredentialResponse> GetStatusListCredentialAsync(global::RegistryApi.V1.GetStatusListCredentialRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetStatusListCredential, null, options, request);
+      }
+      /// <summary>
+      ///Update status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.UpdateStatusListEntryResponse UpdateStatusListEntry(global::RegistryApi.V1.UpdateStatusListEntryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateStatusListEntry(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Update status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::RegistryApi.V1.UpdateStatusListEntryResponse UpdateStatusListEntry(global::RegistryApi.V1.UpdateStatusListEntryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateStatusListEntry, null, options, request);
+      }
+      /// <summary>
+      ///Update status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.UpdateStatusListEntryResponse> UpdateStatusListEntryAsync(global::RegistryApi.V1.UpdateStatusListEntryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateStatusListEntryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///Update status registry entry
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::RegistryApi.V1.UpdateStatusListEntryResponse> UpdateStatusListEntryAsync(global::RegistryApi.V1.UpdateStatusListEntryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateStatusListEntry, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override StatusListRegistryServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new StatusListRegistryServiceClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(StatusListRegistryServiceBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_CreateStatusListEntry, serviceImpl.CreateStatusListEntry)
+          .AddMethod(__Method_GetStatusListCredential, serviceImpl.GetStatusListCredential)
+          .AddMethod(__Method_UpdateStatusListEntry, serviceImpl.UpdateStatusListEntry).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, StatusListRegistryServiceBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_CreateStatusListEntry, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.CreateStatusListEntryRequest, global::RegistryApi.V1.CreateStatusListEntryResponse>(serviceImpl.CreateStatusListEntry));
+      serviceBinder.AddMethod(__Method_GetStatusListCredential, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.GetStatusListCredentialRequest, global::RegistryApi.V1.GetStatusListCredentialResponse>(serviceImpl.GetStatusListCredential));
+      serviceBinder.AddMethod(__Method_UpdateStatusListEntry, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::RegistryApi.V1.UpdateStatusListEntryRequest, global::RegistryApi.V1.UpdateStatusListEntryResponse>(serviceImpl.UpdateStatusListEntry));
     }
 
   }

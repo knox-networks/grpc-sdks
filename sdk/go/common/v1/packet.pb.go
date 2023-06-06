@@ -421,7 +421,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // "verifier": "AlgoVariesResponderVerifierBytesLen="
 // },
 // "uetr": "UETR",
-// "timestamp": "TIMESTAMP",
+// "timestamp": "2006-01-02T15:04:05Z",
 // "signature": "ByteLengthSignatureVariesByAlgo=",
 // "user_reference": "USER_REFERENCE",
 // "related_uetrs": [
@@ -543,7 +543,7 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 // "verifier": "AlgoVariesResponderVerifierBytesLen="
 // },
 // "uetr": "UETR",
-// "timestamp": "TIMESTAMP",
+// "timestamp": "2006-01-02T15:04:05Z",
 // "signature": "LengthSignatureVariesByAlgo=",
 // "user_reference": "USER_REFERENCE",
 // "related_uetrs": [

@@ -4256,7 +4256,7 @@ namespace WalletApi.V1 {
   ///"promissory": {
   ///"version": "0.1.0", 
   ///"id": "PROMISSORY_ID", 
-  ///"currency": "CURRENCY_ASSET_CODE", 
+  ///"currency": "USD", 
   ///"amount": 100, 
   ///"decimals": 2, 
   ///"authority": "zAuthorityPublicKeyMultibase58Encoded", 
@@ -4282,7 +4282,7 @@ namespace WalletApi.V1 {
   ///"promissory": {
   ///"version": "0.1.0", 
   ///"id": "PROMISSORY_ID", 
-  ///"currency": "CURRENCY_ASSET_CODE", 
+  ///"currency": "USD", 
   ///"amount": 500, 
   ///"decimals": 2, 
   ///"authority": "zAuthorityPublicKeyMultibase58Encoded", 

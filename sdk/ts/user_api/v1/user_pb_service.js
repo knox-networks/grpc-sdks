@@ -6,213 +6,213 @@
 var user_api_v1_user_pb = require("../../user_api/v1/user_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var UserManagement = (function () {
-  function UserManagement() {}
-  UserManagement.serviceName = "user_api.v1.UserManagement";
-  return UserManagement;
+var UserApiService = (function () {
+  function UserApiService() {}
+  UserApiService.serviceName = "user_api.v1.UserApiService";
+  return UserApiService;
 }());
 
-UserManagement.AuthnWithPassword = {
+UserApiService.AuthnWithPassword = {
   methodName: "AuthnWithPassword",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.AuthnWithPasswordRequest,
   responseType: user_api_v1_user_pb.AuthnWithPasswordResponse
 };
 
-UserManagement.RefreshAccessToken = {
+UserApiService.RefreshAccessToken = {
   methodName: "RefreshAccessToken",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.RefreshAccessTokenRequest,
   responseType: user_api_v1_user_pb.RefreshAccessTokenResponse
 };
 
-UserManagement.AuthnWithProvider = {
+UserApiService.AuthnWithProvider = {
   methodName: "AuthnWithProvider",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.AuthnWithProviderRequest,
   responseType: user_api_v1_user_pb.AuthnWithProviderResponse
 };
 
-UserManagement.HandleOIDCCallback = {
+UserApiService.HandleOIDCCallback = {
   methodName: "HandleOIDCCallback",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.HandleOIDCCallbackRequest,
   responseType: user_api_v1_user_pb.HandleOIDCCallbackResponse
 };
 
-UserManagement.HandleSAMLCallback = {
+UserApiService.HandleSAMLCallback = {
   methodName: "HandleSAMLCallback",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.HandleSAMLCallbackRequest,
   responseType: user_api_v1_user_pb.HandleSAMLCallbackResponse
 };
 
-UserManagement.SAMLSPMetadata = {
+UserApiService.SAMLSPMetadata = {
   methodName: "SAMLSPMetadata",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.SAMLSPMetadataRequest,
   responseType: user_api_v1_user_pb.SAMLSPMetadataResponse
 };
 
-UserManagement.CreateAuthnBrowserWithWalletChallenge = {
+UserApiService.CreateAuthnBrowserWithWalletChallenge = {
   methodName: "CreateAuthnBrowserWithWalletChallenge",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: true,
   requestType: user_api_v1_user_pb.CreateAuthnBrowserWithWalletChallengeRequest,
   responseType: user_api_v1_user_pb.CreateAuthnBrowserWithWalletChallengeResponse
 };
 
-UserManagement.AuthnBrowserWithWallet = {
+UserApiService.AuthnBrowserWithWallet = {
   methodName: "AuthnBrowserWithWallet",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.AuthnBrowserWithWalletRequest,
   responseType: user_api_v1_user_pb.AuthnBrowserWithWalletResponse
 };
 
-UserManagement.CreateAuthnWalletChallenge = {
+UserApiService.CreateAuthnWalletChallenge = {
   methodName: "CreateAuthnWalletChallenge",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.CreateAuthnWalletChallengeRequest,
   responseType: user_api_v1_user_pb.CreateAuthnWalletChallengeResponse
 };
 
-UserManagement.AuthnWallet = {
+UserApiService.AuthnWallet = {
   methodName: "AuthnWallet",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.AuthnWalletRequest,
   responseType: user_api_v1_user_pb.AuthnWalletResponse
 };
 
-UserManagement.CreateRegisterWalletChallenge = {
+UserApiService.CreateRegisterWalletChallenge = {
   methodName: "CreateRegisterWalletChallenge",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: true,
   requestType: user_api_v1_user_pb.CreateRegisterWalletChallengeRequest,
   responseType: user_api_v1_user_pb.CreateRegisterWalletChallengeResponse
 };
 
-UserManagement.RegisterWallet = {
+UserApiService.RegisterWallet = {
   methodName: "RegisterWallet",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.RegisterWalletRequest,
   responseType: user_api_v1_user_pb.RegisterWalletResponse
 };
 
-UserManagement.AssociateWallet = {
+UserApiService.AssociateWallet = {
   methodName: "AssociateWallet",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.AssociateWalletRequest,
   responseType: user_api_v1_user_pb.AssociateWalletResponse
 };
 
-UserManagement.DissociateWallet = {
+UserApiService.DissociateWallet = {
   methodName: "DissociateWallet",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.DissociateWalletRequest,
   responseType: user_api_v1_user_pb.DissociateWalletResponse
 };
 
-UserManagement.GetAppSettings = {
+UserApiService.GetAppSettings = {
   methodName: "GetAppSettings",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.GetAppSettingsRequest,
   responseType: user_api_v1_user_pb.GetAppSettingsResponse
 };
 
-UserManagement.RegisterUser = {
+UserApiService.RegisterUser = {
   methodName: "RegisterUser",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.RegisterUserRequest,
   responseType: user_api_v1_user_pb.RegisterUserResponse
 };
 
-UserManagement.ConfirmUser = {
+UserApiService.ConfirmUser = {
   methodName: "ConfirmUser",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.ConfirmUserRequest,
   responseType: user_api_v1_user_pb.ConfirmUserResponse
 };
 
-UserManagement.FindByEmail = {
+UserApiService.FindByEmail = {
   methodName: "FindByEmail",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.FindByEmailRequest,
   responseType: user_api_v1_user_pb.FindByEmailResponse
 };
 
-UserManagement.FindByID = {
+UserApiService.FindByID = {
   methodName: "FindByID",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.FindByIDRequest,
   responseType: user_api_v1_user_pb.FindByIDResponse
 };
 
-UserManagement.GetMe = {
+UserApiService.GetMe = {
   methodName: "GetMe",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.GetMeRequest,
   responseType: user_api_v1_user_pb.GetMeResponse
 };
 
-UserManagement.GetUserByDID = {
+UserApiService.GetUserByDID = {
   methodName: "GetUserByDID",
-  service: UserManagement,
+  service: UserApiService,
   requestStream: false,
   responseStream: false,
   requestType: user_api_v1_user_pb.GetUserByDIDRequest,
   responseType: user_api_v1_user_pb.GetUserByDIDResponse
 };
 
-exports.UserManagement = UserManagement;
+exports.UserApiService = UserApiService;
 
-function UserManagementClient(serviceHost, options) {
+function UserApiServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-UserManagementClient.prototype.authnWithPassword = function authnWithPassword(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.authnWithPassword = function authnWithPassword(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.AuthnWithPassword, {
+  var client = grpc.unary(UserApiService.AuthnWithPassword, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -239,11 +239,11 @@ UserManagementClient.prototype.authnWithPassword = function authnWithPassword(re
   };
 };
 
-UserManagementClient.prototype.refreshAccessToken = function refreshAccessToken(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.refreshAccessToken = function refreshAccessToken(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.RefreshAccessToken, {
+  var client = grpc.unary(UserApiService.RefreshAccessToken, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -270,11 +270,11 @@ UserManagementClient.prototype.refreshAccessToken = function refreshAccessToken(
   };
 };
 
-UserManagementClient.prototype.authnWithProvider = function authnWithProvider(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.authnWithProvider = function authnWithProvider(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.AuthnWithProvider, {
+  var client = grpc.unary(UserApiService.AuthnWithProvider, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -301,11 +301,11 @@ UserManagementClient.prototype.authnWithProvider = function authnWithProvider(re
   };
 };
 
-UserManagementClient.prototype.handleOIDCCallback = function handleOIDCCallback(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.handleOIDCCallback = function handleOIDCCallback(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.HandleOIDCCallback, {
+  var client = grpc.unary(UserApiService.HandleOIDCCallback, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -332,11 +332,11 @@ UserManagementClient.prototype.handleOIDCCallback = function handleOIDCCallback(
   };
 };
 
-UserManagementClient.prototype.handleSAMLCallback = function handleSAMLCallback(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.handleSAMLCallback = function handleSAMLCallback(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.HandleSAMLCallback, {
+  var client = grpc.unary(UserApiService.HandleSAMLCallback, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -363,11 +363,11 @@ UserManagementClient.prototype.handleSAMLCallback = function handleSAMLCallback(
   };
 };
 
-UserManagementClient.prototype.sAMLSPMetadata = function sAMLSPMetadata(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.sAMLSPMetadata = function sAMLSPMetadata(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.SAMLSPMetadata, {
+  var client = grpc.unary(UserApiService.SAMLSPMetadata, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -394,13 +394,13 @@ UserManagementClient.prototype.sAMLSPMetadata = function sAMLSPMetadata(requestM
   };
 };
 
-UserManagementClient.prototype.createAuthnBrowserWithWalletChallenge = function createAuthnBrowserWithWalletChallenge(requestMessage, metadata) {
+UserApiServiceClient.prototype.createAuthnBrowserWithWalletChallenge = function createAuthnBrowserWithWalletChallenge(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(UserManagement.CreateAuthnBrowserWithWalletChallenge, {
+  var client = grpc.invoke(UserApiService.CreateAuthnBrowserWithWalletChallenge, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -433,11 +433,11 @@ UserManagementClient.prototype.createAuthnBrowserWithWalletChallenge = function 
   };
 };
 
-UserManagementClient.prototype.authnBrowserWithWallet = function authnBrowserWithWallet(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.authnBrowserWithWallet = function authnBrowserWithWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.AuthnBrowserWithWallet, {
+  var client = grpc.unary(UserApiService.AuthnBrowserWithWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -464,11 +464,11 @@ UserManagementClient.prototype.authnBrowserWithWallet = function authnBrowserWit
   };
 };
 
-UserManagementClient.prototype.createAuthnWalletChallenge = function createAuthnWalletChallenge(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.createAuthnWalletChallenge = function createAuthnWalletChallenge(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.CreateAuthnWalletChallenge, {
+  var client = grpc.unary(UserApiService.CreateAuthnWalletChallenge, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -495,11 +495,11 @@ UserManagementClient.prototype.createAuthnWalletChallenge = function createAuthn
   };
 };
 
-UserManagementClient.prototype.authnWallet = function authnWallet(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.authnWallet = function authnWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.AuthnWallet, {
+  var client = grpc.unary(UserApiService.AuthnWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -526,13 +526,13 @@ UserManagementClient.prototype.authnWallet = function authnWallet(requestMessage
   };
 };
 
-UserManagementClient.prototype.createRegisterWalletChallenge = function createRegisterWalletChallenge(requestMessage, metadata) {
+UserApiServiceClient.prototype.createRegisterWalletChallenge = function createRegisterWalletChallenge(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(UserManagement.CreateRegisterWalletChallenge, {
+  var client = grpc.invoke(UserApiService.CreateRegisterWalletChallenge, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -565,11 +565,11 @@ UserManagementClient.prototype.createRegisterWalletChallenge = function createRe
   };
 };
 
-UserManagementClient.prototype.registerWallet = function registerWallet(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.registerWallet = function registerWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.RegisterWallet, {
+  var client = grpc.unary(UserApiService.RegisterWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -596,11 +596,11 @@ UserManagementClient.prototype.registerWallet = function registerWallet(requestM
   };
 };
 
-UserManagementClient.prototype.associateWallet = function associateWallet(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.associateWallet = function associateWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.AssociateWallet, {
+  var client = grpc.unary(UserApiService.AssociateWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -627,11 +627,11 @@ UserManagementClient.prototype.associateWallet = function associateWallet(reques
   };
 };
 
-UserManagementClient.prototype.dissociateWallet = function dissociateWallet(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.dissociateWallet = function dissociateWallet(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.DissociateWallet, {
+  var client = grpc.unary(UserApiService.DissociateWallet, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -658,11 +658,11 @@ UserManagementClient.prototype.dissociateWallet = function dissociateWallet(requ
   };
 };
 
-UserManagementClient.prototype.getAppSettings = function getAppSettings(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.getAppSettings = function getAppSettings(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.GetAppSettings, {
+  var client = grpc.unary(UserApiService.GetAppSettings, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -689,11 +689,11 @@ UserManagementClient.prototype.getAppSettings = function getAppSettings(requestM
   };
 };
 
-UserManagementClient.prototype.registerUser = function registerUser(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.registerUser = function registerUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.RegisterUser, {
+  var client = grpc.unary(UserApiService.RegisterUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -720,11 +720,11 @@ UserManagementClient.prototype.registerUser = function registerUser(requestMessa
   };
 };
 
-UserManagementClient.prototype.confirmUser = function confirmUser(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.confirmUser = function confirmUser(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.ConfirmUser, {
+  var client = grpc.unary(UserApiService.ConfirmUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -751,11 +751,11 @@ UserManagementClient.prototype.confirmUser = function confirmUser(requestMessage
   };
 };
 
-UserManagementClient.prototype.findByEmail = function findByEmail(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.findByEmail = function findByEmail(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.FindByEmail, {
+  var client = grpc.unary(UserApiService.FindByEmail, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -782,11 +782,11 @@ UserManagementClient.prototype.findByEmail = function findByEmail(requestMessage
   };
 };
 
-UserManagementClient.prototype.findByID = function findByID(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.findByID = function findByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.FindByID, {
+  var client = grpc.unary(UserApiService.FindByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -813,11 +813,11 @@ UserManagementClient.prototype.findByID = function findByID(requestMessage, meta
   };
 };
 
-UserManagementClient.prototype.getMe = function getMe(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.getMe = function getMe(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.GetMe, {
+  var client = grpc.unary(UserApiService.GetMe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -844,11 +844,11 @@ UserManagementClient.prototype.getMe = function getMe(requestMessage, metadata, 
   };
 };
 
-UserManagementClient.prototype.getUserByDID = function getUserByDID(requestMessage, metadata, callback) {
+UserApiServiceClient.prototype.getUserByDID = function getUserByDID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(UserManagement.GetUserByDID, {
+  var client = grpc.unary(UserApiService.GetUserByDID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -875,5 +875,180 @@ UserManagementClient.prototype.getUserByDID = function getUserByDID(requestMessa
   };
 };
 
-exports.UserManagementClient = UserManagementClient;
+exports.UserApiServiceClient = UserApiServiceClient;
+
+var ApiKeyManagerService = (function () {
+  function ApiKeyManagerService() {}
+  ApiKeyManagerService.serviceName = "user_api.v1.ApiKeyManagerService";
+  return ApiKeyManagerService;
+}());
+
+ApiKeyManagerService.CreateApiKey = {
+  methodName: "CreateApiKey",
+  service: ApiKeyManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.CreateApiKeyRequest,
+  responseType: user_api_v1_user_pb.CreateApiKeyResponse
+};
+
+ApiKeyManagerService.UpdateApiKeyStatus = {
+  methodName: "UpdateApiKeyStatus",
+  service: ApiKeyManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.UpdateApiKeyStatusRequest,
+  responseType: user_api_v1_user_pb.UpdateApiKeyStatusResponse
+};
+
+ApiKeyManagerService.GetApiKeys = {
+  methodName: "GetApiKeys",
+  service: ApiKeyManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.GetApiKeysRequest,
+  responseType: user_api_v1_user_pb.GetApiKeysResponse
+};
+
+ApiKeyManagerService.CheckApiKey = {
+  methodName: "CheckApiKey",
+  service: ApiKeyManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.CheckApiKeyRequest,
+  responseType: user_api_v1_user_pb.CheckApiKeyResponse
+};
+
+exports.ApiKeyManagerService = ApiKeyManagerService;
+
+function ApiKeyManagerServiceClient(serviceHost, options) {
+  this.serviceHost = serviceHost;
+  this.options = options || {};
+}
+
+ApiKeyManagerServiceClient.prototype.createApiKey = function createApiKey(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ApiKeyManagerService.CreateApiKey, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ApiKeyManagerServiceClient.prototype.updateApiKeyStatus = function updateApiKeyStatus(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ApiKeyManagerService.UpdateApiKeyStatus, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ApiKeyManagerServiceClient.prototype.getApiKeys = function getApiKeys(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ApiKeyManagerService.GetApiKeys, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ApiKeyManagerServiceClient.prototype.checkApiKey = function checkApiKey(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ApiKeyManagerService.CheckApiKey, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+exports.ApiKeyManagerServiceClient = ApiKeyManagerServiceClient;
 

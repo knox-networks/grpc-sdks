@@ -5,6 +5,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class User extends jspb.Message {
   getUuid(): string;
@@ -1173,6 +1174,204 @@ export namespace DissociateWalletResponse {
   }
 }
 
+export class ApiKeyEntity extends jspb.Message {
+  getClientId(): string;
+  setClientId(value: string): void;
+
+  getClientName(): string;
+  setClientName(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getStatus(): ApiKeyStatusMap[keyof ApiKeyStatusMap];
+  setStatus(value: ApiKeyStatusMap[keyof ApiKeyStatusMap]): void;
+
+  hasExpiryDate(): boolean;
+  clearExpiryDate(): void;
+  getExpiryDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpiryDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiKeyEntity.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiKeyEntity): ApiKeyEntity.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ApiKeyEntity, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiKeyEntity;
+  static deserializeBinaryFromReader(message: ApiKeyEntity, reader: jspb.BinaryReader): ApiKeyEntity;
+}
+
+export namespace ApiKeyEntity {
+  export type AsObject = {
+    clientId: string,
+    clientName: string,
+    apiKey: string,
+    status: ApiKeyStatusMap[keyof ApiKeyStatusMap],
+    expiryDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class CreateApiKeyRequest extends jspb.Message {
+  getClientName(): string;
+  setClientName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateApiKeyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateApiKeyRequest): CreateApiKeyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateApiKeyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateApiKeyRequest;
+  static deserializeBinaryFromReader(message: CreateApiKeyRequest, reader: jspb.BinaryReader): CreateApiKeyRequest;
+}
+
+export namespace CreateApiKeyRequest {
+  export type AsObject = {
+    clientName: string,
+  }
+}
+
+export class CreateApiKeyResponse extends jspb.Message {
+  hasApiKeyEntity(): boolean;
+  clearApiKeyEntity(): void;
+  getApiKeyEntity(): ApiKeyEntity | undefined;
+  setApiKeyEntity(value?: ApiKeyEntity): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateApiKeyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateApiKeyResponse): CreateApiKeyResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateApiKeyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateApiKeyResponse;
+  static deserializeBinaryFromReader(message: CreateApiKeyResponse, reader: jspb.BinaryReader): CreateApiKeyResponse;
+}
+
+export namespace CreateApiKeyResponse {
+  export type AsObject = {
+    apiKeyEntity?: ApiKeyEntity.AsObject,
+  }
+}
+
+export class UpdateApiKeyStatusRequest extends jspb.Message {
+  getClientId(): string;
+  setClientId(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getApiKeyStatus(): ApiKeyStatusMap[keyof ApiKeyStatusMap];
+  setApiKeyStatus(value: ApiKeyStatusMap[keyof ApiKeyStatusMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateApiKeyStatusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateApiKeyStatusRequest): UpdateApiKeyStatusRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateApiKeyStatusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateApiKeyStatusRequest;
+  static deserializeBinaryFromReader(message: UpdateApiKeyStatusRequest, reader: jspb.BinaryReader): UpdateApiKeyStatusRequest;
+}
+
+export namespace UpdateApiKeyStatusRequest {
+  export type AsObject = {
+    clientId: string,
+    apiKey: string,
+    apiKeyStatus: ApiKeyStatusMap[keyof ApiKeyStatusMap],
+  }
+}
+
+export class UpdateApiKeyStatusResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateApiKeyStatusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateApiKeyStatusResponse): UpdateApiKeyStatusResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateApiKeyStatusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateApiKeyStatusResponse;
+  static deserializeBinaryFromReader(message: UpdateApiKeyStatusResponse, reader: jspb.BinaryReader): UpdateApiKeyStatusResponse;
+}
+
+export namespace UpdateApiKeyStatusResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetApiKeysRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetApiKeysRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetApiKeysRequest): GetApiKeysRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetApiKeysRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetApiKeysRequest;
+  static deserializeBinaryFromReader(message: GetApiKeysRequest, reader: jspb.BinaryReader): GetApiKeysRequest;
+}
+
+export namespace GetApiKeysRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetApiKeysResponse extends jspb.Message {
+  clearApiKeyEntitiesList(): void;
+  getApiKeyEntitiesList(): Array<ApiKeyEntity>;
+  setApiKeyEntitiesList(value: Array<ApiKeyEntity>): void;
+  addApiKeyEntities(value?: ApiKeyEntity, index?: number): ApiKeyEntity;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetApiKeysResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetApiKeysResponse): GetApiKeysResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetApiKeysResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetApiKeysResponse;
+  static deserializeBinaryFromReader(message: GetApiKeysResponse, reader: jspb.BinaryReader): GetApiKeysResponse;
+}
+
+export namespace GetApiKeysResponse {
+  export type AsObject = {
+    apiKeyEntitiesList: Array<ApiKeyEntity.AsObject>,
+  }
+}
+
+export class CheckApiKeyRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CheckApiKeyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CheckApiKeyRequest): CheckApiKeyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CheckApiKeyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CheckApiKeyRequest;
+  static deserializeBinaryFromReader(message: CheckApiKeyRequest, reader: jspb.BinaryReader): CheckApiKeyRequest;
+}
+
+export namespace CheckApiKeyRequest {
+  export type AsObject = {
+  }
+}
+
+export class CheckApiKeyResponse extends jspb.Message {
+  getIsValid(): boolean;
+  setIsValid(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CheckApiKeyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CheckApiKeyResponse): CheckApiKeyResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CheckApiKeyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CheckApiKeyResponse;
+  static deserializeBinaryFromReader(message: CheckApiKeyResponse, reader: jspb.BinaryReader): CheckApiKeyResponse;
+}
+
+export namespace CheckApiKeyResponse {
+  export type AsObject = {
+    isValid: boolean,
+  }
+}
+
 export interface ProviderMap {
   PROVIDER_UNSPECIFIED: 0;
   PROVIDER_GITHUB: 1;
@@ -1191,4 +1390,12 @@ export interface RoleMap {
 }
 
 export const Role: RoleMap;
+
+export interface ApiKeyStatusMap {
+  API_KEY_STATUS_UNSPECIFIED: 0;
+  API_KEY_STATUS_ACTIVE: 1;
+  API_KEY_STATUS_INACTIVE: 2;
+}
+
+export const ApiKeyStatus: ApiKeyStatusMap;
 

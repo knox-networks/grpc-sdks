@@ -299,7 +299,7 @@ namespace Common {
   ///"verifier": "AlgoVariesResponderVerifierBytesLen="
   ///}, 
   ///"uetr": "UETR", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"user_reference": "USER_REFERENCE", 
   ///"related_uetrs": [
@@ -780,7 +780,7 @@ namespace Common {
   ///"verifier": "AlgoVariesResponderVerifierBytesLen="
   ///}, 
   ///"uetr": "UETR", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"signature": "LengthSignatureVariesByAlgo=", 
   ///"user_reference": "USER_REFERENCE", 
   ///"related_uetrs": [

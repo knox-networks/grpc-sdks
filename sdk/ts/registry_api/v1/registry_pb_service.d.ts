@@ -15,13 +15,22 @@ type RegistryServiceCreate = {
   readonly responseType: typeof registry_api_v1_registry_pb.CreateResponse;
 };
 
-type RegistryServiceRead = {
+type RegistryServiceResolve = {
   readonly methodName: string;
   readonly service: typeof RegistryService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof registry_api_v1_registry_pb.ReadRequest;
-  readonly responseType: typeof registry_api_v1_registry_pb.ReadResponse;
+  readonly requestType: typeof registry_api_v1_registry_pb.ResolveRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.ResolveResponse;
+};
+
+type RegistryServiceResolveRepresentation = {
+  readonly methodName: string;
+  readonly service: typeof RegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.ResolveRepresentationRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.ResolveRepresentationResponse;
 };
 
 type RegistryServiceUpdate = {
@@ -45,9 +54,78 @@ type RegistryServiceRevoke = {
 export class RegistryService {
   static readonly serviceName: string;
   static readonly Create: RegistryServiceCreate;
-  static readonly Read: RegistryServiceRead;
+  static readonly Resolve: RegistryServiceResolve;
+  static readonly ResolveRepresentation: RegistryServiceResolveRepresentation;
   static readonly Update: RegistryServiceUpdate;
   static readonly Revoke: RegistryServiceRevoke;
+}
+
+type CredentialIssuerRegistryServiceCreateCredentialIssuer = {
+  readonly methodName: string;
+  readonly service: typeof CredentialIssuerRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.CreateCredentialIssuerRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.CreateCredentialIssuerResponse;
+};
+
+type CredentialIssuerRegistryServiceGetCredentialIssuer = {
+  readonly methodName: string;
+  readonly service: typeof CredentialIssuerRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.GetCredentialIssuerRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.GetCredentialIssuerResponse;
+};
+
+type CredentialIssuerRegistryServiceUpdateCredentialIssuer = {
+  readonly methodName: string;
+  readonly service: typeof CredentialIssuerRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.UpdateCredentialIssuerRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.UpdateCredentialIssuerResponse;
+};
+
+export class CredentialIssuerRegistryService {
+  static readonly serviceName: string;
+  static readonly CreateCredentialIssuer: CredentialIssuerRegistryServiceCreateCredentialIssuer;
+  static readonly GetCredentialIssuer: CredentialIssuerRegistryServiceGetCredentialIssuer;
+  static readonly UpdateCredentialIssuer: CredentialIssuerRegistryServiceUpdateCredentialIssuer;
+}
+
+type StatusListRegistryServiceCreateStatusListEntry = {
+  readonly methodName: string;
+  readonly service: typeof StatusListRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.CreateStatusListEntryRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.CreateStatusListEntryResponse;
+};
+
+type StatusListRegistryServiceGetStatusListCredential = {
+  readonly methodName: string;
+  readonly service: typeof StatusListRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.GetStatusListCredentialRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.GetStatusListCredentialResponse;
+};
+
+type StatusListRegistryServiceUpdateStatusListEntry = {
+  readonly methodName: string;
+  readonly service: typeof StatusListRegistryService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof registry_api_v1_registry_pb.UpdateStatusListEntryRequest;
+  readonly responseType: typeof registry_api_v1_registry_pb.UpdateStatusListEntryResponse;
+};
+
+export class StatusListRegistryService {
+  static readonly serviceName: string;
+  static readonly CreateStatusListEntry: StatusListRegistryServiceCreateStatusListEntry;
+  static readonly GetStatusListCredential: StatusListRegistryServiceGetStatusListCredential;
+  static readonly UpdateStatusListEntry: StatusListRegistryServiceUpdateStatusListEntry;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -91,14 +169,23 @@ export class RegistryServiceClient {
     requestMessage: registry_api_v1_registry_pb.CreateRequest,
     callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.CreateResponse|null) => void
   ): UnaryResponse;
-  read(
-    requestMessage: registry_api_v1_registry_pb.ReadRequest,
+  resolve(
+    requestMessage: registry_api_v1_registry_pb.ResolveRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ReadResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ResolveResponse|null) => void
   ): UnaryResponse;
-  read(
-    requestMessage: registry_api_v1_registry_pb.ReadRequest,
-    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ReadResponse|null) => void
+  resolve(
+    requestMessage: registry_api_v1_registry_pb.ResolveRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ResolveResponse|null) => void
+  ): UnaryResponse;
+  resolveRepresentation(
+    requestMessage: registry_api_v1_registry_pb.ResolveRepresentationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ResolveRepresentationResponse|null) => void
+  ): UnaryResponse;
+  resolveRepresentation(
+    requestMessage: registry_api_v1_registry_pb.ResolveRepresentationRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.ResolveRepresentationResponse|null) => void
   ): UnaryResponse;
   update(
     requestMessage: registry_api_v1_registry_pb.UpdateRequest,
@@ -117,6 +204,72 @@ export class RegistryServiceClient {
   revoke(
     requestMessage: registry_api_v1_registry_pb.RevokeRequest,
     callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.RevokeResponse|null) => void
+  ): UnaryResponse;
+}
+
+export class CredentialIssuerRegistryServiceClient {
+  readonly serviceHost: string;
+
+  constructor(serviceHost: string, options?: grpc.RpcOptions);
+  createCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.CreateCredentialIssuerRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.CreateCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+  createCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.CreateCredentialIssuerRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.CreateCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+  getCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.GetCredentialIssuerRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.GetCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+  getCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.GetCredentialIssuerRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.GetCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+  updateCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.UpdateCredentialIssuerRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.UpdateCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+  updateCredentialIssuer(
+    requestMessage: registry_api_v1_registry_pb.UpdateCredentialIssuerRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.UpdateCredentialIssuerResponse|null) => void
+  ): UnaryResponse;
+}
+
+export class StatusListRegistryServiceClient {
+  readonly serviceHost: string;
+
+  constructor(serviceHost: string, options?: grpc.RpcOptions);
+  createStatusListEntry(
+    requestMessage: registry_api_v1_registry_pb.CreateStatusListEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.CreateStatusListEntryResponse|null) => void
+  ): UnaryResponse;
+  createStatusListEntry(
+    requestMessage: registry_api_v1_registry_pb.CreateStatusListEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.CreateStatusListEntryResponse|null) => void
+  ): UnaryResponse;
+  getStatusListCredential(
+    requestMessage: registry_api_v1_registry_pb.GetStatusListCredentialRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.GetStatusListCredentialResponse|null) => void
+  ): UnaryResponse;
+  getStatusListCredential(
+    requestMessage: registry_api_v1_registry_pb.GetStatusListCredentialRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.GetStatusListCredentialResponse|null) => void
+  ): UnaryResponse;
+  updateStatusListEntry(
+    requestMessage: registry_api_v1_registry_pb.UpdateStatusListEntryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.UpdateStatusListEntryResponse|null) => void
+  ): UnaryResponse;
+  updateStatusListEntry(
+    requestMessage: registry_api_v1_registry_pb.UpdateStatusListEntryRequest,
+    callback: (error: ServiceError|null, responseMessage: registry_api_v1_registry_pb.UpdateStatusListEntryResponse|null) => void
   ): UnaryResponse;
 }
 

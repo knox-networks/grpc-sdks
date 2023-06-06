@@ -21,13 +21,22 @@ RegistryService.Create = {
   responseType: registry_api_v1_registry_pb.CreateResponse
 };
 
-RegistryService.Read = {
-  methodName: "Read",
+RegistryService.Resolve = {
+  methodName: "Resolve",
   service: RegistryService,
   requestStream: false,
   responseStream: false,
-  requestType: registry_api_v1_registry_pb.ReadRequest,
-  responseType: registry_api_v1_registry_pb.ReadResponse
+  requestType: registry_api_v1_registry_pb.ResolveRequest,
+  responseType: registry_api_v1_registry_pb.ResolveResponse
+};
+
+RegistryService.ResolveRepresentation = {
+  methodName: "ResolveRepresentation",
+  service: RegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.ResolveRepresentationRequest,
+  responseType: registry_api_v1_registry_pb.ResolveRepresentationResponse
 };
 
 RegistryService.Update = {
@@ -86,11 +95,42 @@ RegistryServiceClient.prototype.create = function create(requestMessage, metadat
   };
 };
 
-RegistryServiceClient.prototype.read = function read(requestMessage, metadata, callback) {
+RegistryServiceClient.prototype.resolve = function resolve(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(RegistryService.Read, {
+  var client = grpc.unary(RegistryService.Resolve, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+RegistryServiceClient.prototype.resolveRepresentation = function resolveRepresentation(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(RegistryService.ResolveRepresentation, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -180,4 +220,274 @@ RegistryServiceClient.prototype.revoke = function revoke(requestMessage, metadat
 };
 
 exports.RegistryServiceClient = RegistryServiceClient;
+
+var CredentialIssuerRegistryService = (function () {
+  function CredentialIssuerRegistryService() {}
+  CredentialIssuerRegistryService.serviceName = "registry_api.v1.CredentialIssuerRegistryService";
+  return CredentialIssuerRegistryService;
+}());
+
+CredentialIssuerRegistryService.CreateCredentialIssuer = {
+  methodName: "CreateCredentialIssuer",
+  service: CredentialIssuerRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.CreateCredentialIssuerRequest,
+  responseType: registry_api_v1_registry_pb.CreateCredentialIssuerResponse
+};
+
+CredentialIssuerRegistryService.GetCredentialIssuer = {
+  methodName: "GetCredentialIssuer",
+  service: CredentialIssuerRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.GetCredentialIssuerRequest,
+  responseType: registry_api_v1_registry_pb.GetCredentialIssuerResponse
+};
+
+CredentialIssuerRegistryService.UpdateCredentialIssuer = {
+  methodName: "UpdateCredentialIssuer",
+  service: CredentialIssuerRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.UpdateCredentialIssuerRequest,
+  responseType: registry_api_v1_registry_pb.UpdateCredentialIssuerResponse
+};
+
+exports.CredentialIssuerRegistryService = CredentialIssuerRegistryService;
+
+function CredentialIssuerRegistryServiceClient(serviceHost, options) {
+  this.serviceHost = serviceHost;
+  this.options = options || {};
+}
+
+CredentialIssuerRegistryServiceClient.prototype.createCredentialIssuer = function createCredentialIssuer(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(CredentialIssuerRegistryService.CreateCredentialIssuer, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+CredentialIssuerRegistryServiceClient.prototype.getCredentialIssuer = function getCredentialIssuer(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(CredentialIssuerRegistryService.GetCredentialIssuer, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+CredentialIssuerRegistryServiceClient.prototype.updateCredentialIssuer = function updateCredentialIssuer(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(CredentialIssuerRegistryService.UpdateCredentialIssuer, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+exports.CredentialIssuerRegistryServiceClient = CredentialIssuerRegistryServiceClient;
+
+var StatusListRegistryService = (function () {
+  function StatusListRegistryService() {}
+  StatusListRegistryService.serviceName = "registry_api.v1.StatusListRegistryService";
+  return StatusListRegistryService;
+}());
+
+StatusListRegistryService.CreateStatusListEntry = {
+  methodName: "CreateStatusListEntry",
+  service: StatusListRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.CreateStatusListEntryRequest,
+  responseType: registry_api_v1_registry_pb.CreateStatusListEntryResponse
+};
+
+StatusListRegistryService.GetStatusListCredential = {
+  methodName: "GetStatusListCredential",
+  service: StatusListRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.GetStatusListCredentialRequest,
+  responseType: registry_api_v1_registry_pb.GetStatusListCredentialResponse
+};
+
+StatusListRegistryService.UpdateStatusListEntry = {
+  methodName: "UpdateStatusListEntry",
+  service: StatusListRegistryService,
+  requestStream: false,
+  responseStream: false,
+  requestType: registry_api_v1_registry_pb.UpdateStatusListEntryRequest,
+  responseType: registry_api_v1_registry_pb.UpdateStatusListEntryResponse
+};
+
+exports.StatusListRegistryService = StatusListRegistryService;
+
+function StatusListRegistryServiceClient(serviceHost, options) {
+  this.serviceHost = serviceHost;
+  this.options = options || {};
+}
+
+StatusListRegistryServiceClient.prototype.createStatusListEntry = function createStatusListEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(StatusListRegistryService.CreateStatusListEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+StatusListRegistryServiceClient.prototype.getStatusListCredential = function getStatusListCredential(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(StatusListRegistryService.GetStatusListCredential, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+StatusListRegistryServiceClient.prototype.updateStatusListEntry = function updateStatusListEntry(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(StatusListRegistryService.UpdateStatusListEntry, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+exports.StatusListRegistryServiceClient = StatusListRegistryServiceClient;
 

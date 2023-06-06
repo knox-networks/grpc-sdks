@@ -14,9 +14,9 @@ namespace UserApi.V1 {
   /// <summary>
   ///This service integrates with existing identity systems (Ex. Bank accounts) to bridge traditional account identifiers to DID/public key identifiers used in the Knox ecosytem. Leverages existing KYC/AML data to enable financial transaction compliance.  Supports OIDC, SAML and other traditional AuthN/Z standards. 
   /// </summary>
-  public static partial class UserManagement
+  public static partial class UserApiService
   {
-    static readonly string __ServiceName = "user_api.v1.UserManagement";
+    static readonly string __ServiceName = "user_api.v1.UserApiService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -310,9 +310,9 @@ namespace UserApi.V1 {
       get { return global::UserApi.V1.UserReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of UserManagement</summary>
-    [grpc::BindServiceMethod(typeof(UserManagement), "BindService")]
-    public abstract partial class UserManagementBase
+    /// <summary>Base class for server-side implementations of UserApiService</summary>
+    [grpc::BindServiceMethod(typeof(UserApiService), "BindService")]
+    public abstract partial class UserApiServiceBase
     {
       /// <summary>
       /// Login with username and password for admin and test users.
@@ -570,30 +570,30 @@ namespace UserApi.V1 {
 
     }
 
-    /// <summary>Client for UserManagement</summary>
-    public partial class UserManagementClient : grpc::ClientBase<UserManagementClient>
+    /// <summary>Client for UserApiService</summary>
+    public partial class UserApiServiceClient : grpc::ClientBase<UserApiServiceClient>
     {
-      /// <summary>Creates a new client for UserManagement</summary>
+      /// <summary>Creates a new client for UserApiService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public UserManagementClient(grpc::ChannelBase channel) : base(channel)
+      public UserApiServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for UserManagement that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for UserApiService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public UserManagementClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public UserApiServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected UserManagementClient() : base()
+      protected UserApiServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected UserManagementClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected UserApiServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -1559,16 +1559,16 @@ namespace UserApi.V1 {
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override UserManagementClient NewInstance(ClientBaseConfiguration configuration)
+      protected override UserApiServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new UserManagementClient(configuration);
+        return new UserApiServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(UserManagementBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(UserApiServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_AuthnWithPassword, serviceImpl.AuthnWithPassword)
@@ -1599,7 +1599,7 @@ namespace UserApi.V1 {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, UserManagementBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, UserApiServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_AuthnWithPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.AuthnWithPasswordRequest, global::UserApi.V1.AuthnWithPasswordResponse>(serviceImpl.AuthnWithPassword));
       serviceBinder.AddMethod(__Method_RefreshAccessToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.RefreshAccessTokenRequest, global::UserApi.V1.RefreshAccessTokenResponse>(serviceImpl.RefreshAccessToken));
@@ -1622,6 +1622,269 @@ namespace UserApi.V1 {
       serviceBinder.AddMethod(__Method_FindByID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.FindByIDRequest, global::UserApi.V1.FindByIDResponse>(serviceImpl.FindByID));
       serviceBinder.AddMethod(__Method_GetMe, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetMeRequest, global::UserApi.V1.GetMeResponse>(serviceImpl.GetMe));
       serviceBinder.AddMethod(__Method_GetUserByDID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetUserByDIDRequest, global::UserApi.V1.GetUserByDIDResponse>(serviceImpl.GetUserByDID));
+    }
+
+  }
+  public static partial class ApiKeyManagerService
+  {
+    static readonly string __ServiceName = "user_api.v1.ApiKeyManagerService";
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateApiKeyRequest> __Marshaller_user_api_v1_CreateApiKeyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateApiKeyRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.CreateApiKeyResponse> __Marshaller_user_api_v1_CreateApiKeyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CreateApiKeyResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.UpdateApiKeyStatusRequest> __Marshaller_user_api_v1_UpdateApiKeyStatusRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.UpdateApiKeyStatusRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.UpdateApiKeyStatusResponse> __Marshaller_user_api_v1_UpdateApiKeyStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.UpdateApiKeyStatusResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.GetApiKeysRequest> __Marshaller_user_api_v1_GetApiKeysRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetApiKeysRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.GetApiKeysResponse> __Marshaller_user_api_v1_GetApiKeysResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.GetApiKeysResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.CheckApiKeyRequest> __Marshaller_user_api_v1_CheckApiKeyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CheckApiKeyRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UserApi.V1.CheckApiKeyResponse> __Marshaller_user_api_v1_CheckApiKeyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UserApi.V1.CheckApiKeyResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UserApi.V1.CreateApiKeyRequest, global::UserApi.V1.CreateApiKeyResponse> __Method_CreateApiKey = new grpc::Method<global::UserApi.V1.CreateApiKeyRequest, global::UserApi.V1.CreateApiKeyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateApiKey",
+        __Marshaller_user_api_v1_CreateApiKeyRequest,
+        __Marshaller_user_api_v1_CreateApiKeyResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UserApi.V1.UpdateApiKeyStatusRequest, global::UserApi.V1.UpdateApiKeyStatusResponse> __Method_UpdateApiKeyStatus = new grpc::Method<global::UserApi.V1.UpdateApiKeyStatusRequest, global::UserApi.V1.UpdateApiKeyStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateApiKeyStatus",
+        __Marshaller_user_api_v1_UpdateApiKeyStatusRequest,
+        __Marshaller_user_api_v1_UpdateApiKeyStatusResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UserApi.V1.GetApiKeysRequest, global::UserApi.V1.GetApiKeysResponse> __Method_GetApiKeys = new grpc::Method<global::UserApi.V1.GetApiKeysRequest, global::UserApi.V1.GetApiKeysResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetApiKeys",
+        __Marshaller_user_api_v1_GetApiKeysRequest,
+        __Marshaller_user_api_v1_GetApiKeysResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UserApi.V1.CheckApiKeyRequest, global::UserApi.V1.CheckApiKeyResponse> __Method_CheckApiKey = new grpc::Method<global::UserApi.V1.CheckApiKeyRequest, global::UserApi.V1.CheckApiKeyResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CheckApiKey",
+        __Marshaller_user_api_v1_CheckApiKeyRequest,
+        __Marshaller_user_api_v1_CheckApiKeyResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::UserApi.V1.UserReflection.Descriptor.Services[1]; }
+    }
+
+    /// <summary>Base class for server-side implementations of ApiKeyManagerService</summary>
+    [grpc::BindServiceMethod(typeof(ApiKeyManagerService), "BindService")]
+    public abstract partial class ApiKeyManagerServiceBase
+    {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.CreateApiKeyResponse> CreateApiKey(global::UserApi.V1.CreateApiKeyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.UpdateApiKeyStatusResponse> UpdateApiKeyStatus(global::UserApi.V1.UpdateApiKeyStatusRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.GetApiKeysResponse> GetApiKeys(global::UserApi.V1.GetApiKeysRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UserApi.V1.CheckApiKeyResponse> CheckApiKey(global::UserApi.V1.CheckApiKeyRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for ApiKeyManagerService</summary>
+    public partial class ApiKeyManagerServiceClient : grpc::ClientBase<ApiKeyManagerServiceClient>
+    {
+      /// <summary>Creates a new client for ApiKeyManagerService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public ApiKeyManagerServiceClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for ApiKeyManagerService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public ApiKeyManagerServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected ApiKeyManagerServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected ApiKeyManagerServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.CreateApiKeyResponse CreateApiKey(global::UserApi.V1.CreateApiKeyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateApiKey(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.CreateApiKeyResponse CreateApiKey(global::UserApi.V1.CreateApiKeyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateApiKey, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CreateApiKeyResponse> CreateApiKeyAsync(global::UserApi.V1.CreateApiKeyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateApiKeyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CreateApiKeyResponse> CreateApiKeyAsync(global::UserApi.V1.CreateApiKeyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateApiKey, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.UpdateApiKeyStatusResponse UpdateApiKeyStatus(global::UserApi.V1.UpdateApiKeyStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateApiKeyStatus(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.UpdateApiKeyStatusResponse UpdateApiKeyStatus(global::UserApi.V1.UpdateApiKeyStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateApiKeyStatus, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.UpdateApiKeyStatusResponse> UpdateApiKeyStatusAsync(global::UserApi.V1.UpdateApiKeyStatusRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateApiKeyStatusAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.UpdateApiKeyStatusResponse> UpdateApiKeyStatusAsync(global::UserApi.V1.UpdateApiKeyStatusRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateApiKeyStatus, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.GetApiKeysResponse GetApiKeys(global::UserApi.V1.GetApiKeysRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetApiKeys(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.GetApiKeysResponse GetApiKeys(global::UserApi.V1.GetApiKeysRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetApiKeys, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetApiKeysResponse> GetApiKeysAsync(global::UserApi.V1.GetApiKeysRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetApiKeysAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.GetApiKeysResponse> GetApiKeysAsync(global::UserApi.V1.GetApiKeysRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetApiKeys, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.CheckApiKeyResponse CheckApiKey(global::UserApi.V1.CheckApiKeyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckApiKey(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::UserApi.V1.CheckApiKeyResponse CheckApiKey(global::UserApi.V1.CheckApiKeyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CheckApiKey, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CheckApiKeyResponse> CheckApiKeyAsync(global::UserApi.V1.CheckApiKeyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CheckApiKeyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::UserApi.V1.CheckApiKeyResponse> CheckApiKeyAsync(global::UserApi.V1.CheckApiKeyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CheckApiKey, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override ApiKeyManagerServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new ApiKeyManagerServiceClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(ApiKeyManagerServiceBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_CreateApiKey, serviceImpl.CreateApiKey)
+          .AddMethod(__Method_UpdateApiKeyStatus, serviceImpl.UpdateApiKeyStatus)
+          .AddMethod(__Method_GetApiKeys, serviceImpl.GetApiKeys)
+          .AddMethod(__Method_CheckApiKey, serviceImpl.CheckApiKey).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, ApiKeyManagerServiceBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_CreateApiKey, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.CreateApiKeyRequest, global::UserApi.V1.CreateApiKeyResponse>(serviceImpl.CreateApiKey));
+      serviceBinder.AddMethod(__Method_UpdateApiKeyStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.UpdateApiKeyStatusRequest, global::UserApi.V1.UpdateApiKeyStatusResponse>(serviceImpl.UpdateApiKeyStatus));
+      serviceBinder.AddMethod(__Method_GetApiKeys, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.GetApiKeysRequest, global::UserApi.V1.GetApiKeysResponse>(serviceImpl.GetApiKeys));
+      serviceBinder.AddMethod(__Method_CheckApiKey, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UserApi.V1.CheckApiKeyRequest, global::UserApi.V1.CheckApiKeyResponse>(serviceImpl.CheckApiKey));
     }
 
   }
