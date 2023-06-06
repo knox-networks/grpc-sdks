@@ -4235,7 +4235,7 @@ namespace WalletApi.V1 {
   ///"issuance_date": "2006-01-02T15:04:05Z", 
   ///"block_depth": 3, 
   ///"authorization_signature": "ByteLengthAuthSignatureVariesByAlgo=", 
-  ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo="
+  ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
   ///"notaries": [
   ///{
   ///"did": "did:organization:zDIDMultibase58Encoded",
@@ -4261,7 +4261,7 @@ namespace WalletApi.V1 {
   ///"issuance_date": "2006-01-02T15:04:05Z", 
   ///"block_depth": 3, 
   ///"authorization_signature": "ByteLengthAuthSignatureVariesByAlgo=", 
-  ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo="
+  ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
   ///"notaries": [
   ///{
   ///"did": "did:organization:zDIDMultibase58Encoded",
@@ -5594,7 +5594,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"from_wallet_id": zFromWalletIDMultibase58Encoded, 
+  ///"from_wallet_id": "zFromWalletIDMultibase58Encoded",
   ///"issuer_public_key": "zIssuerPublicKeyMultibase58Encoded", 
   ///"promissory_id": "PROMISSORY_ID", 
   ///"api_key": "API_KEY"
