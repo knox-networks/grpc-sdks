@@ -62,7 +62,7 @@ namespace Treasury {
   ///{
   ///"recipient": {
   ///"signature_system": 1, 
-  ///"verifier": "RecipientVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLengthOfRecipientVerifierVariesByAlgo="
   ///}, 
   ///"amount": {
   ///"currency_code":"USD", 

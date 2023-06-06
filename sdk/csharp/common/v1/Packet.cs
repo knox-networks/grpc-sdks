@@ -278,25 +278,25 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "ByteLenDataVaries=", 
+  ///"data": "ByteLengthOfDataVaries=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 
-  ///"verifier": "SenderVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLengthOfSenderVerifierVariesByAlgo="
   ///}, 
   ///"recipient": {
   ///"signature_system": 1, 
-  ///"verifier": "RecipientVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLengthOfRecipientVerifierVariesByAlgo="
   ///}, 
-  ///"nonce": "BytesLengthNonceVariesByAlgo=", 
+  ///"nonce": "BytesLengthOfNonceVariesByAlgo=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 
-  ///"verifier": "StarterVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLengthOfStarterVerifierVariesByAlgo="
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "ResponderVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLengthOfResponderVerifierVariesByAlgo="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
