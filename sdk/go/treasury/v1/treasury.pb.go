@@ -25,7 +25,7 @@ const (
 // {
 // "recipient": {
 // "signature_system": 1,
-// "verifier": "BytesLengthOfRecipientVerifierVariesByAlgo="
+// "verifier": "LengthRecipientVerifierVariesByAlgo="
 // },
 // "amount": {
 // "currency_code":"USD",
