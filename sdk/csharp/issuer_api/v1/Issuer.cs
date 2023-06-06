@@ -487,7 +487,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///"num_promissory_files": 4
   ///}
   /// </summary>
   public sealed partial class IssueResponse : pb::IMessage<IssueResponse>

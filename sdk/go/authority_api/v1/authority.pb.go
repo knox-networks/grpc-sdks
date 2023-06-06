@@ -274,7 +274,7 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries"
+// "promissory_file": "LengthOfFileBytesVaries="
 // }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
@@ -326,7 +326,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries"
+// "promissory_file": "LengthOfFileBytesVaries="
 // }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState

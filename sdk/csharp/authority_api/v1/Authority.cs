@@ -1015,7 +1015,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries"
+  ///"promissory_file": "LengthOfFileBytesVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
@@ -1213,7 +1213,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries"
+  ///"promissory_file": "LengthOfFileBytesVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>

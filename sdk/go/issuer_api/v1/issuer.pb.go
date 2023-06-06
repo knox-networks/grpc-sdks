@@ -126,7 +126,7 @@ func (x *IssueRequest) GetDistribution() *v1.Distribution {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "num_promissory_files": 4
 // }
 type IssueResponse struct {
 	state         protoimpl.MessageState
