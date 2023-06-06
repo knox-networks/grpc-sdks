@@ -93,7 +93,7 @@ func (x *SetIssuerLimitRequest) GetIssuerPublicKey() string {
 // "currency_code":"USD",
 // "amount":100, "decimals":2
 // },
-// "signature": "ByteLengthSignatureVariesByAlgo
+// "signature": "ByteLengthSignatureVariesByAlgo="
 // }
 type SetIssuerLimitResponse struct {
 	state         protoimpl.MessageState
@@ -274,7 +274,7 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries
+// "promissory_file": "LengthOfFileBytesVaries"
 // }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
@@ -326,7 +326,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries
+// "promissory_file": "LengthOfFileBytesVaries"
 // }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
@@ -378,7 +378,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries,
+// "promissory_file": "LengthOfFileBytesVaries",
 // "verifier": "VERIFIER"
 // }
 type RedeemRequest struct {
@@ -650,7 +650,7 @@ func (x *GetNotaryRequest) GetVerifier() string {
 
 // [Example]
 // {
-// "signature": "ByteLengthSignatureVariesByAlgo
+// "signature": "ByteLengthSignatureVariesByAlgo="
 // }
 type GetNotaryResponse struct {
 	state         protoimpl.MessageState

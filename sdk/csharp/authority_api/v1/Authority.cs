@@ -336,7 +336,7 @@ namespace AuthorityApi.V1 {
   ///"currency_code":"USD", 
   ///"amount":100, "decimals":2
   ///}, 
-  ///"signature": "ByteLengthSignatureVariesByAlgo
+  ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///}
   /// </summary>
   public sealed partial class SetIssuerLimitResponse : pb::IMessage<SetIssuerLimitResponse>
@@ -1015,7 +1015,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries
+  ///"promissory_file": "LengthOfFileBytesVaries"
   ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
@@ -1213,7 +1213,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries
+  ///"promissory_file": "LengthOfFileBytesVaries"
   ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
@@ -1411,7 +1411,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries, 
+  ///"promissory_file": "LengthOfFileBytesVaries", 
   ///"verifier": "VERIFIER"
   ///}
   /// </summary>
@@ -2454,7 +2454,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "ByteLengthSignatureVariesByAlgo
+  ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///} 
   /// </summary>
   public sealed partial class GetNotaryResponse : pb::IMessage<GetNotaryResponse>
