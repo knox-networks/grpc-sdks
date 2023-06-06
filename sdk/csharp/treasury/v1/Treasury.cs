@@ -70,8 +70,8 @@ namespace Treasury {
   ///"decimals":2
   ///}, 
   ///"promissory_files": [
-  ///"PROMISSORYxFILExBYTESx1=", 
-  ///"PROMISSORYxFILExBYTESx2="
+  ///"LengthOfFileBytesVaries=", 
+  ///"LengthOfFileBytesVaries="
   ///], 
   ///"exchange_rate": 1.4
   ///} 
@@ -402,7 +402,7 @@ namespace Treasury {
   /// [Example]
   ///{
   ///"exchanged_promissory_files": [
-  ///"xxPROMISSORYxFILExBYTESxEXCHANGEDx1="
+  ///"LengthOfFileBytesVariesExchangedFile1="
   ///], 
   ///"fee_amount": {
   ///"currency_code":"USD", 
@@ -411,8 +411,8 @@ namespace Treasury {
   ///}, 
   ///"exchange_rate": 1.4, 
   ///"refunded_promissory_files": [
-  ///"xPROMISSORYxFILExBYTESxREFUNDx1=", 
-  ///"xPROMISSORYxFILExBYTESxREFUNDx2="
+  ///"LengthOfFileBytesVariesRefunded1=", 
+  ///"LengthOfFileBytesVariesRefunded2="
   ///]
   ///}
   /// </summary>
