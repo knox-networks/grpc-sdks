@@ -117,7 +117,7 @@ func (x *IssueRequest) GetDistribution() *v1.Distribution {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "PromissoryFileBytesLenVaries="
 // }
 type IssueResponse struct {
 	state         protoimpl.MessageState
@@ -169,7 +169,7 @@ func (x *IssueResponse) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "PromissoryFileBytesLenVaries="
 // }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
@@ -221,7 +221,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "PromissoryFileBytesLenVaries="
 // }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState

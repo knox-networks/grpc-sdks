@@ -2619,7 +2619,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///"promissory_file": "PromissoryFileBytesLenVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureRequest : pb::IMessage<AuthorizedSignatureRequest>
@@ -2817,7 +2817,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///"promissory_file": "PromissoryFileBytesLenVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureResponse : pb::IMessage<AuthorizedSignatureResponse>

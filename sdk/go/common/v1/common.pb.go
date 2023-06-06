@@ -987,7 +987,7 @@ func (x *AuthenticationSignature) GetSignature() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "PromissoryFileBytesLenVaries="
 // }
 type AuthorizedSignatureRequest struct {
 	state         protoimpl.MessageState
@@ -1039,7 +1039,7 @@ func (x *AuthorizedSignatureRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "PromissoryFileBytesLenVaries="
 // }
 type AuthorizedSignatureResponse struct {
 	state         protoimpl.MessageState
