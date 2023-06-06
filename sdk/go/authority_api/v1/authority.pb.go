@@ -274,7 +274,7 @@ func (x *GetIssuerLimitsResponse) GetIssuerPublicKey() string {
 
 // [Example]
 // {
-// "promissory_file": "PromissoryFileBytesLenVaries="
+// "promissory_file": "LenVariesPromissoryFileBytes="
 // }
 type AuthorizeRequest struct {
 	state         protoimpl.MessageState
@@ -326,7 +326,7 @@ func (x *AuthorizeRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PromissoryFileBytesLenVaries="
+// "promissory_file": "LenVariesPromissoryFileBytes="
 // }
 type AuthorizeResponse struct {
 	state         protoimpl.MessageState
@@ -378,7 +378,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PromissoryFileBytesLenVaries=",
+// "promissory_file": "LenVariesPromissoryFileBytes=",
 // "verifier": "VERIFIER"
 // }
 type RedeemRequest struct {

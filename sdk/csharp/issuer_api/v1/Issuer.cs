@@ -443,7 +443,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "LenVariesPromissoryFileBytes="
   ///}
   /// </summary>
   public sealed partial class IssueResponse : pb::IMessage<IssueResponse>
@@ -641,7 +641,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "LenVariesPromissoryFileBytes="
   ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
@@ -839,7 +839,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "LenVariesPromissoryFileBytes="
   ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>

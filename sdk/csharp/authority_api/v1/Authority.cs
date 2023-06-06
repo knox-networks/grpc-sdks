@@ -1014,7 +1014,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "LenVariesPromissoryFileBytes="
   ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
@@ -1212,7 +1212,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "LenVariesPromissoryFileBytes="
   ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
@@ -1410,7 +1410,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries=", 
+  ///"promissory_file": "LenVariesPromissoryFileBytes=", 
   ///"verifier": "VERIFIER"
   ///}
   /// </summary>
