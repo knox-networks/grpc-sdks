@@ -288,7 +288,7 @@ namespace Common {
   ///"signature_system": 1, 
   ///"verifier": "AlgoVariesRecipientVerifierBytesLen="
   ///}, 
-  ///"nonce": "AlgoChancesNonceLength=", 
+  ///"nonce": "NonceBytesLenVaryByAlgo=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 

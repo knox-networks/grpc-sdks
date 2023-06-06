@@ -410,7 +410,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // "signature_system": 1,
 // "verifier": "AlgoVariesRecipientVerifierBytesLen="
 // },
-// "nonce": "AlgoChancesNonceLength=",
+// "nonce": "NonceBytesLenVaryByAlgo=",
 // "transaction_header": {
 // "starter": {
 // "signature_system": 1,
