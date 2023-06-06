@@ -379,7 +379,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 // [Example]
 // {
 // "promissory_file": "LengthOfFileBytesVaries=",
-// "verifier": "VERIFIER"
+// "verifier": "VerfierLengthVariesByAlgo"
 // }
 type RedeemRequest struct {
 	state         protoimpl.MessageState
@@ -536,7 +536,7 @@ func (*GetNetworkInfoRequest) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "emissary": "EMISSARY_VERIFIER",
+// "emissary": "EmissaryVerfierLengthVariesByAlgo",
 // "transaction_manager": "TRANSACTION_MANAGER_VERIFIER"
 // }
 type GetNetworkInfoResponse struct {
@@ -598,7 +598,7 @@ func (x *GetNetworkInfoResponse) GetTransactionManager() string {
 
 // [Example]
 // {
-// "verifier": "NOTARY_VERIFIER"
+// "verifier": "NotaryVerfierLengthVariesByAlgo"
 // }
 type GetNotaryRequest struct {
 	state         protoimpl.MessageState

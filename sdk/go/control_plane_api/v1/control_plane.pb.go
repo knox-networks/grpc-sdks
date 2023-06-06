@@ -320,7 +320,7 @@ func (x *CreateServiceRequest) GetServiceConfigs() *ServiceConfigurations {
 // {
 // "status": 0,
 // "service_name": "SERVICE_NAME",
-// "public_key": "PUBLIC_KEY"
+// "public_key": "zPublicKey"
 // }
 type CreateServiceResponse struct {
 	state         protoimpl.MessageState
@@ -580,7 +580,7 @@ func (x *InstanceState) GetReason() string {
 // "reason": "REASON1"
 // }
 // ],
-// "public_key": "PUBLIC_KEY",
+// "public_key": "zPublicKey",
 // "service_details": {
 // "values": {
 // "fields": [
@@ -733,7 +733,7 @@ func (x *GetServicesRequest) GetServiceType() ServiceType {
 // "reason": "REASON1"
 // }
 // ],
-// "public_key": "PUBLIC_KEY1",
+// "public_key": "zPublicKey1",
 // "service_details": {
 // "values": {
 // "fields": [
@@ -761,7 +761,7 @@ func (x *GetServicesRequest) GetServiceType() ServiceType {
 // "reason": "REASON1"
 // }
 // ],
-// "public_key": "PUBLIC_KEY2",
+// "public_key": "zPublicKey2",
 // "service_details": {
 // "values": {
 // "fields": [

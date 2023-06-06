@@ -295,7 +295,7 @@ func (x *PingPayload) GetMessage() string {
 // [Example]
 // {
 // "event_type": 0,
-// "signature": "SIGNATURE",
+// "signature": "SignatureLenVariesByAlgorithm",
 // "event_id": "EVENT_ID",
 // "delivery_date": "2007-01-02T15:04:05Z",
 // "owner_id": "eyJwtHeader.eyJwtPayload.Secret",
@@ -836,7 +836,7 @@ func (*DeleteWebhookResponse) Descriptor() ([]byte, []int) {
 // {
 // "event": {
 // "event_type": 0,
-// "signature": "SIGNATURE",
+// "signature": "SignatureLenVariesByAlgorithm",
 // "event_id": "EVENT_ID",
 // "delivery_date": "2007-01-02T15:04:05Z",
 // "owner_id": "eyJwtHeader.eyJwtPayload.Secret",
@@ -1010,7 +1010,7 @@ func (x *ListEventsRequest) GetPageSize() int32 {
 // "events": [
 // {
 // "event_type": 0,
-// "signature": "SIGNATURE",
+// "signature": "SignatureLenVariesByAlgorithm",
 // "event_id": "EVENT_ID1",
 // "delivery_date": "2007-01-02T15:04:05Z",
 // "owner_id": "eyJwtHeader.eyJwtPayload.Secret1",
@@ -1024,7 +1024,7 @@ func (x *ListEventsRequest) GetPageSize() int32 {
 // },
 // {
 // "event_type": 0,
-// "signature": "SIGNATURE",
+// "signature": "SignatureLenVariesByAlgorithm",
 // "event_id": "EVENT_ID2",
 // "delivery_date": "2007-01-02T15:04:05Z",
 // "owner_id": "eyJwtHeader.eyJwtPayload.Secret2",

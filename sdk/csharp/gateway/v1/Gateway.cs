@@ -53,7 +53,7 @@ namespace Gateway {
   /// <summary>
   /// [Example]
   ///{
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"note": "NOTE", 
   ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
@@ -574,14 +574,14 @@ namespace Gateway {
   ///], 
   ///"created": [
   ///{
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"note": "CreatedConnection1", 
   ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}, 
   ///{
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"note": "CreatedConnection2", 
   ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
@@ -591,14 +591,14 @@ namespace Gateway {
   ///], 
   ///"removed": [
   ///{
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"note": "RemovedConnection1", 
   ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}, 
   ///{
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"note": "RemovedConnection2", 
   ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 

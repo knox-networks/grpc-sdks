@@ -46,7 +46,7 @@ namespace Identity {
   /// <summary>
   /// [Example]
   ///{
-  ///"subject": "SUBJECTxBYTES=", 
+  ///"subject": "ByteLengthSubjectVaries=", 
   ///"query": "?fields=[name,email]" 
   ///}
   /// </summary>
@@ -285,15 +285,15 @@ namespace Identity {
   /// <summary>
   /// [Example]
   ///{
-  ///"subject": "SUBJECTxBYTES=", 
+  ///"subject": "ByteLengthSubjectVaries=", 
   ///"media": [
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "DATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}, 
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "DATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}
   ///]
   ///}

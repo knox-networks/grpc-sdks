@@ -791,7 +791,7 @@ namespace WebhookApi.V1 {
   /// [Example]
   ///{
   ///"event_type": 0,
-  ///"signature": "SIGNATURE",
+  ///"signature": "SignatureLenVariesByAlgorithm",
   ///"event_id": "EVENT_ID",
   ///"delivery_date": "2007-01-02T15:04:05Z",
   ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret", 
@@ -3152,7 +3152,7 @@ namespace WebhookApi.V1 {
   ///{
   ///"event": {
   ///"event_type": 0,
-  ///"signature": "SIGNATURE",
+  ///"signature": "SignatureLenVariesByAlgorithm",
   ///"event_id": "EVENT_ID",
   ///"delivery_date": "2007-01-02T15:04:05Z",
   ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret", 
@@ -3800,7 +3800,7 @@ namespace WebhookApi.V1 {
   ///"events": [
   ///{
   ///"event_type": 0,
-  ///"signature": "SIGNATURE",
+  ///"signature": "SignatureLenVariesByAlgorithm",
   ///"event_id": "EVENT_ID1",
   ///"delivery_date": "2007-01-02T15:04:05Z",
   ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret1", 
@@ -3814,7 +3814,7 @@ namespace WebhookApi.V1 {
   ///},
   ///{
   ///"event_type": 0,
-  ///"signature": "SIGNATURE",
+  ///"signature": "SignatureLenVariesByAlgorithm",
   ///"event_id": "EVENT_ID2",
   ///"delivery_date": "2007-01-02T15:04:05Z",
   ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret2", 

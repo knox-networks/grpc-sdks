@@ -183,12 +183,12 @@ func (ApiKeyStatus) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -342,13 +342,13 @@ func (x *User) GetMetadata() *structpb.Struct {
 
 // [Example]
 // {
-// "email": "EMAIL",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
+// "email": "example@gmail.com",
+// "first_name": "John",
+// "last_name": "Doe",
 // "password": "PASSWORD",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE"
+// "phone": "+1 555 555 5555"
 // }
 type RegisterUserRequest struct {
 	state         protoimpl.MessageState
@@ -538,12 +538,12 @@ func (x *AuthToken) GetRefreshToken() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -850,7 +850,7 @@ func (x *AuthnWithProviderResponse) GetProviderUrl() string {
 // [Example]
 // {
 // "code": "CODE_PREVIOUS_RESPONSE",
-// "state": "STATE"
+// "state": "AL"
 // }
 type HandleOIDCCallbackRequest struct {
 	state         protoimpl.MessageState
@@ -913,12 +913,12 @@ func (x *HandleOIDCCallbackRequest) GetState() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1033,7 +1033,7 @@ func (x *HandleOIDCCallbackResponse) GetClientState() *structpb.Struct {
 
 // [Example]
 // {
-// "email": "EMAIL"
+// "email": "example@gmail.com"
 // }
 type FindByEmailRequest struct {
 	state         protoimpl.MessageState
@@ -1087,12 +1087,12 @@ func (x *FindByEmailRequest) GetEmail() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1216,12 +1216,12 @@ func (x *FindByIDRequest) GetUuid() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1291,7 +1291,7 @@ func (x *FindByIDResponse) GetUser() *User {
 
 // [Example]
 // {
-// "email": "EMAIL",
+// "email": "example@gmail.com",
 // "password": "PASSWORD"
 // }
 type AuthnWithPasswordRequest struct {
@@ -1355,12 +1355,12 @@ func (x *AuthnWithPasswordRequest) GetPassword() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1499,12 +1499,12 @@ func (x *RefreshAccessTokenRequest) GetRefreshToken() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1631,12 +1631,12 @@ func (*GetMeRequest) Descriptor() ([]byte, []int) {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -1708,12 +1708,12 @@ func (x *GetMeResponse) GetUser() *User {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -2250,12 +2250,12 @@ func (x *RegisterWalletRequest) GetDid() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -2518,12 +2518,12 @@ func (x *AuthnWalletRequest) GetDid() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -2672,12 +2672,12 @@ func (x *HandleSAMLCallbackRequest) GetRelayState() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -2822,7 +2822,7 @@ func (*SAMLSPMetadataRequest) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "sp_metadata": "xxSPMETADATAxxBYTES="
+// "sp_metadata": "SPMetadataVariesLen="
 // }
 type SAMLSPMetadataResponse struct {
 	state         protoimpl.MessageState
@@ -3154,12 +3154,12 @@ func (x *GetUserByDIDRequest) GetDid() string {
 // {
 // "user": {
 // "uuid": "UUID",
-// "first_name": "FIRST_NAME",
-// "last_name": "LAST_NAME",
-// "email": "EMAIL",
+// "first_name": "John",
+// "last_name": "Doe",
+// "email": "example@gmail.com",
 // "role": 0,
 // "avatar": "AVATAR_URL",
-// "phone": "PHONE",
+// "phone": "+1 555 555 5555",
 // "dids": [
 // "did:organization:zDIDMultibase58Encoded",
 // "did:organization:zDIDMultibase58Encoded"
@@ -3420,7 +3420,7 @@ func (*DissociateWalletResponse) Descriptor() ([]byte, []int) {
 // "client_id": "CLIENT_ID",
 // "client_name": "CLIENT_NAME",
 // "api_key": "API_KEY",
-// "api_key_status": 0,
+// "status": 0,
 // "expiry_date": {
 // "seconds": 0,
 // "nanos": 0
@@ -3562,7 +3562,7 @@ func (x *CreateApiKeyRequest) GetClientName() string {
 // "client_id": "CLIENT_ID",
 // "client_name": "CLIENT_NAME",
 // "api_key": "API_KEY",
-// "api_key_status": 0,
+// "status": 0,
 // "expiry_date": {
 // "seconds": 0,
 // "nanos": 0
@@ -3618,7 +3618,7 @@ func (x *CreateApiKeyResponse) GetApiKeyEntity() *ApiKeyEntity {
 
 // [Example]
 // {
-// "client_name": "CLIENT_NAME",
+// "client_id": "CLIENT_ID",
 // "api_key": "API_KEY",
 // "api_key_status": 0
 // }
@@ -3772,7 +3772,7 @@ func (*GetApiKeysRequest) Descriptor() ([]byte, []int) {
 // "client_id": "CLIENT_ID1",
 // "client_name": "CLIENT_NAME1",
 // "api_key": "API_KEY",
-// "api_key_status": 0,
+// "status": 0,
 // "expiry_date": {
 // "seconds": 0,
 // "nanos": 0
@@ -3782,7 +3782,7 @@ func (*GetApiKeysRequest) Descriptor() ([]byte, []int) {
 // "client_id": "CLIENT_ID2",
 // "client_name": "CLIENT_NAME2",
 // "api_key": "API_KEY",
-// "api_key_status": 0,
+// "status": 0,
 // "expiry_date": {
 // "seconds": 0,
 // "nanos": 0

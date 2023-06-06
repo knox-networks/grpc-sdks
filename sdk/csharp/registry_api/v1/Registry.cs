@@ -2859,11 +2859,11 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"country": "COUNTRY",
-  ///"city": "CITY",
-  ///"state": "STATE",
-  ///"postal_code": "POSTAL_CODE",
-  ///"street": "STREET"
+  ///"country": "United States",
+  ///"city": "Anytown",
+  ///"state": "AL",
+  ///"postal_code": "10101",
+  ///"street": "123 Sesame Street"
   ///}
   /// </summary>
   public sealed partial class PostalAddress : pb::IMessage<PostalAddress>
@@ -3208,14 +3208,14 @@ namespace RegistryApi.V1 {
   ///{
   ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
-  ///"email": "EMAIL",
-  ///"website": "WEBSITE",
+  ///"email": "example@gmail.com",
+  ///"website": "google.com",
   ///"postal_address": {
-  ///"country": "COUNTRY",
-  ///"city": "CITY",
-  ///"state": "STATE",
-  ///"postal_code": "POSTAL_CODE",
-  ///"street": "STREET"
+  ///"country": "United States",
+  ///"city": "Anytown",
+  ///"state": "AL",
+  ///"postal_code": "10101",
+  ///"street": "123 Sesame Street"
   ///},
   ///"status": 0
   ///}
@@ -3609,14 +3609,14 @@ namespace RegistryApi.V1 {
   ///"credential_issuer": {
   ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
-  ///"email": "EMAIL",
-  ///"website": "WEBSITE",
+  ///"email": "example@gmail.com",
+  ///"website": "google.com",
   ///"postal_address": {
-  ///"country": "COUNTRY",
-  ///"city": "CITY",
-  ///"state": "STATE",
-  ///"postal_code": "POSTAL_CODE",
-  ///"street": "STREET"
+  ///"country": "United States",
+  ///"city": "Anytown",
+  ///"state": "AL",
+  ///"postal_code": "10101",
+  ///"street": "123 Sesame Street"
   ///},
   ///"status": 0
   ///}
@@ -4177,14 +4177,14 @@ namespace RegistryApi.V1 {
   ///"credential_issuer": {
   ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
-  ///"email": "EMAIL",
-  ///"website": "WEBSITE",
+  ///"email": "example@gmail.com",
+  ///"website": "google.com",
   ///"postal_address": {
-  ///"country": "COUNTRY",
-  ///"city": "CITY",
-  ///"state": "STATE",
-  ///"postal_code": "POSTAL_CODE",
-  ///"street": "STREET"
+  ///"country": "United States",
+  ///"city": "Anytown",
+  ///"state": "AL",
+  ///"postal_code": "10101",
+  ///"street": "123 Sesame Street"
   ///},
   ///"status": 0
   ///}
@@ -4394,14 +4394,14 @@ namespace RegistryApi.V1 {
   ///"credential_issuer": {
   ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
-  ///"email": "EMAIL",
-  ///"website": "WEBSITE",
+  ///"email": "example@gmail.com",
+  ///"website": "google.com",
   ///"postal_address": {
-  ///"country": "COUNTRY",
-  ///"city": "CITY",
-  ///"state": "STATE",
-  ///"postal_code": "POSTAL_CODE",
-  ///"street": "STREET"
+  ///"country": "United States",
+  ///"city": "Anytown",
+  ///"state": "AL",
+  ///"postal_code": "10101",
+  ///"street": "123 Sesame Street"
   ///},
   ///"status": 0
   ///}

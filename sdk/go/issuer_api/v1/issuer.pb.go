@@ -27,7 +27,7 @@ const (
 // "signature": "ByteLengthSignatureVariesByAlgo=",
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // },
 // "amount": {
@@ -37,7 +37,7 @@ const (
 // },
 // "authority": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // }
 type IssueRequest struct {
@@ -180,7 +180,7 @@ func (x *IssueResponse) GetNumPromissoryFiles() uint32 {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // }
 type AuthenticateRequest struct {
@@ -387,7 +387,7 @@ func (x *GetRolesResponse) GetRoles() map[string]string {
 // [Example]
 // {
 // "role": {
-// "verifier": "VERIFIER",
+// "verifier": "VerfierLengthVariesByAlgo",
 // "role_enum": {
 // "issue_permissions": {
 // "inner": [

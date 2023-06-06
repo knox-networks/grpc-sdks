@@ -871,11 +871,11 @@ func (*RevokeResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "country": "COUNTRY",
-// "city": "CITY",
-// "state": "STATE",
-// "postal_code": "POSTAL_CODE",
-// "street": "STREET"
+// "country": "United States",
+// "city": "Anytown",
+// "state": "AL",
+// "postal_code": "10101",
+// "street": "123 Sesame Street"
 // }
 type PostalAddress struct {
 	state         protoimpl.MessageState
@@ -960,14 +960,14 @@ func (x *PostalAddress) GetStreet() string {
 // {
 // "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
-// "email": "EMAIL",
-// "website": "WEBSITE",
+// "email": "example@gmail.com",
+// "website": "google.com",
 // "postal_address": {
-// "country": "COUNTRY",
-// "city": "CITY",
-// "state": "STATE",
-// "postal_code": "POSTAL_CODE",
-// "street": "STREET"
+// "country": "United States",
+// "city": "Anytown",
+// "state": "AL",
+// "postal_code": "10101",
+// "street": "123 Sesame Street"
 // },
 // "status": 0
 // }
@@ -1063,14 +1063,14 @@ func (x *CredentialIssuer) GetStatus() IssuerStatus {
 // "credential_issuer": {
 // "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
-// "email": "EMAIL",
-// "website": "WEBSITE",
+// "email": "example@gmail.com",
+// "website": "google.com",
 // "postal_address": {
-// "country": "COUNTRY",
-// "city": "CITY",
-// "state": "STATE",
-// "postal_code": "POSTAL_CODE",
-// "street": "STREET"
+// "country": "United States",
+// "city": "Anytown",
+// "state": "AL",
+// "postal_code": "10101",
+// "street": "123 Sesame Street"
 // },
 // "status": 0
 // }
@@ -1218,14 +1218,14 @@ func (x *GetCredentialIssuerRequest) GetIssuerDid() string {
 // "credential_issuer": {
 // "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
-// "email": "EMAIL",
-// "website": "WEBSITE",
+// "email": "example@gmail.com",
+// "website": "google.com",
 // "postal_address": {
-// "country": "COUNTRY",
-// "city": "CITY",
-// "state": "STATE",
-// "postal_code": "POSTAL_CODE",
-// "street": "STREET"
+// "country": "United States",
+// "city": "Anytown",
+// "state": "AL",
+// "postal_code": "10101",
+// "street": "123 Sesame Street"
 // },
 // "status": 0
 // }
@@ -1282,14 +1282,14 @@ func (x *GetCredentialIssuerResponse) GetCredentialIssuer() *CredentialIssuer {
 // "credential_issuer": {
 // "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
-// "email": "EMAIL",
-// "website": "WEBSITE",
+// "email": "example@gmail.com",
+// "website": "google.com",
 // "postal_address": {
-// "country": "COUNTRY",
-// "city": "CITY",
-// "state": "STATE",
-// "postal_code": "POSTAL_CODE",
-// "street": "STREET"
+// "country": "United States",
+// "city": "Anytown",
+// "state": "AL",
+// "postal_code": "10101",
+// "street": "123 Sesame Street"
 // },
 // "status": 0
 // }

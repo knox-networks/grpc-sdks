@@ -456,7 +456,7 @@ func (FilterItem_FilterOperator) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
@@ -653,7 +653,7 @@ func (x *Distribution) GetValue() map[int64]int32 {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // }
 type AuthenticationRequest struct {
@@ -801,11 +801,11 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 // "associated_verifiers": [
 // {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // },
 // {
 // "signature_system": 2,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // ]
 // }
@@ -861,11 +861,11 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 // {
 // "primary_verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // },
 // "associated_verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // }
 // }
 type AssociatedConnection struct {
@@ -931,7 +931,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 // "signature": {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // },
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // },
@@ -1044,7 +1044,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // },
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // }
@@ -1107,7 +1107,7 @@ func (x *AuthenticationSignature) GetSignature() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "FileByteLengthVaries="
 // }
 type AuthorizedSignatureRequest struct {
 	state         protoimpl.MessageState
@@ -1159,7 +1159,7 @@ func (x *AuthorizedSignatureRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PROMISSORYFILEBYTES="
+// "promissory_file": "FileByteLengthVaries="
 // }
 type AuthorizedSignatureResponse struct {
 	state         protoimpl.MessageState
@@ -1212,7 +1212,7 @@ func (x *AuthorizedSignatureResponse) GetPromissoryFile() []byte {
 // [Example]
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "xDATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // }
 type Media struct {
 	state         protoimpl.MessageState
@@ -1273,7 +1273,7 @@ func (x *Media) GetData() []byte {
 
 // [Example]
 // {
-// "verifier": "VERIFIER",
+// "verifier": "VerfierLengthVariesByAlgo",
 // "role_enum": {
 // "issue_permissions": {
 // "inner": [
@@ -1430,7 +1430,7 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 // {
 // "bytes": {
 // "signature_system": 1,
-// "verifier": "xVERIFIERxBYTES="
+// "verifier": "VerifierLengthChangesByAlgo="
 // },
 // "multibase": "MULTIBASE"
 // }

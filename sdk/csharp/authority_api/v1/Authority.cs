@@ -1412,7 +1412,7 @@ namespace AuthorityApi.V1 {
   /// [Example]
   ///{
   ///"promissory_file": "LengthOfFileBytesVaries=", 
-  ///"verifier": "VERIFIER"
+  ///"verifier": "VerfierLengthVariesByAlgo"
   ///}
   /// </summary>
   public sealed partial class RedeemRequest : pb::IMessage<RedeemRequest>
@@ -2017,7 +2017,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"emissary": "EMISSARY_VERIFIER",
+  ///"emissary": "EmissaryVerfierLengthVariesByAlgo",
   ///"transaction_manager": "TRANSACTION_MANAGER_VERIFIER"
   ///} 
   /// </summary>
@@ -2256,7 +2256,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"verifier": "NOTARY_VERIFIER"
+  ///"verifier": "NotaryVerfierLengthVariesByAlgo"
   ///} 
   /// </summary>
   public sealed partial class GetNotaryRequest : pb::IMessage<GetNotaryRequest>

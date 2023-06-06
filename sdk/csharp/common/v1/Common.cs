@@ -264,7 +264,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
@@ -979,7 +979,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///}
   /// </summary>
@@ -1544,11 +1544,11 @@ namespace Common {
   ///"associated_verifiers": [
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}, 
   ///{
   ///"signature_system": 2, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///]
   ///}
@@ -1739,11 +1739,11 @@ namespace Common {
   ///{
   ///"primary_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}, 
   ///"associated_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///}
   /// </summary>
@@ -2004,7 +2004,7 @@ namespace Common {
   ///"signature": {
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///},
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///},
@@ -2396,7 +2396,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///},
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///}
@@ -2645,7 +2645,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///"promissory_file": "FileByteLengthVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureRequest : pb::IMessage<AuthorizedSignatureRequest>
@@ -2843,7 +2843,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PROMISSORYFILEBYTES="
+  ///"promissory_file": "FileByteLengthVaries="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureResponse : pb::IMessage<AuthorizedSignatureResponse>
@@ -3042,7 +3042,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"mime_type": "MIME_TYPE",
-  ///"data": "xDATAxBYTES="
+  ///"data": "ByteLengthDataVaries="
   ///}
   /// </summary>
   public sealed partial class Media : pb::IMessage<Media>
@@ -3280,7 +3280,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"verifier": "VERIFIER",
+  ///"verifier": "VerfierLengthVariesByAlgo",
   ///"role_enum": {
   ///"issue_permissions": {
   ///"inner": [
@@ -3971,7 +3971,7 @@ namespace Common {
   ///{
   ///"bytes": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///},
   ///"multibase": "MULTIBASE"
   ///}

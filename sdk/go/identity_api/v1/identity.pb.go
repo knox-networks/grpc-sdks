@@ -23,7 +23,7 @@ const (
 
 // [Example]
 // {
-// "subject": "SUBJECTxBYTES=",
+// "subject": "ByteLengthSubjectVaries=",
 // "query": "?fields=[name,email]"
 // }
 type IdentityRequest struct {
@@ -85,15 +85,15 @@ func (x *IdentityRequest) GetQuery() string {
 
 // [Example]
 // {
-// "subject": "SUBJECTxBYTES=",
+// "subject": "ByteLengthSubjectVaries=",
 // "media": [
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "DATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // },
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "DATAxBYTES="
+// "data": "ByteLengthDataVaries="
 // }
 // ]
 // }

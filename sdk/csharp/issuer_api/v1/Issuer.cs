@@ -73,7 +73,7 @@ namespace IssuerApi.V1 {
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///}, 
   ///"amount": {
@@ -83,7 +83,7 @@ namespace IssuerApi.V1 {
   ///}, 
   ///"authority": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///}
   /// </summary>
@@ -687,7 +687,7 @@ namespace IssuerApi.V1 {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "xVERIFIERxBYTES="
+  ///"verifier": "VerifierLengthChangesByAlgo="
   ///}
   ///}
   /// </summary>
@@ -1446,7 +1446,7 @@ namespace IssuerApi.V1 {
   /// [Example]
   ///{
   ///"role": {
-  ///"verifier": "VERIFIER", 
+  ///"verifier": "VerfierLengthVariesByAlgo", 
   ///"role_enum": {
   ///"issue_permissions": {
   ///"inner": [

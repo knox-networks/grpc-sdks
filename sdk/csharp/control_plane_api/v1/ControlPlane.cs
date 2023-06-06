@@ -473,7 +473,7 @@ namespace ControlPlaneApi.V1 {
   ///{
   ///"status": 0, 
   ///"service_name": "SERVICE_NAME", 
-  ///"public_key": "PUBLIC_KEY" 
+  ///"public_key": "zPublicKey" 
   ///}
   /// </summary>
   public sealed partial class CreateServiceResponse : pb::IMessage<CreateServiceResponse>
@@ -1434,7 +1434,7 @@ namespace ControlPlaneApi.V1 {
   ///"reason": "REASON1"
   ///}
   ///], 
-  ///"public_key": "PUBLIC_KEY", 
+  ///"public_key": "zPublicKey", 
   ///"service_details": {
   ///"values": {
   ///"fields": [
@@ -1960,7 +1960,7 @@ namespace ControlPlaneApi.V1 {
   ///"reason": "REASON1"
   ///}
   ///], 
-  ///"public_key": "PUBLIC_KEY1", 
+  ///"public_key": "zPublicKey1", 
   ///"service_details": {
   ///"values": {
   ///"fields": [
@@ -1988,7 +1988,7 @@ namespace ControlPlaneApi.V1 {
   ///"reason": "REASON1"
   ///}
   ///], 
-  ///"public_key": "PUBLIC_KEY2", 
+  ///"public_key": "zPublicKey2", 
   ///"service_details": {
   ///"values": {
   ///"fields": [

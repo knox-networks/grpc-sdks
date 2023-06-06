@@ -273,12 +273,12 @@ namespace UserApi.V1 {
   /// [Example]
   ///{
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -844,13 +844,13 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"email": "EMAIL",
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME",
+  ///"email": "example@gmail.com",
+  ///"first_name": "John", 
+  ///"last_name": "Doe",
   ///"password": "PASSWORD",
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE" 
+  ///"phone": "+1 555 555 5555" 
   ///}
   /// </summary>
   public sealed partial class RegisterUserRequest : pb::IMessage<RegisterUserRequest>
@@ -1611,12 +1611,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -2765,7 +2765,7 @@ namespace UserApi.V1 {
   /// [Example]
   ///{
   ///"code": "CODE_PREVIOUS_RESPONSE", 
-  ///"state": "STATE"
+  ///"state": "AL"
   ///}
   /// </summary>
   public sealed partial class HandleOIDCCallbackRequest : pb::IMessage<HandleOIDCCallbackRequest>
@@ -3005,12 +3005,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -3422,7 +3422,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"email": "EMAIL"
+  ///"email": "example@gmail.com"
   ///} 
   /// </summary>
   public sealed partial class FindByEmailRequest : pb::IMessage<FindByEmailRequest>
@@ -3622,12 +3622,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -4052,12 +4052,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -4282,7 +4282,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"email": "EMAIL", 
+  ///"email": "example@gmail.com", 
   ///"password": "PASSWORD"
   ///}
   /// </summary>
@@ -4523,12 +4523,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -5008,12 +5008,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -5451,12 +5451,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -5683,12 +5683,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -7557,12 +7557,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -8520,12 +8520,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -9046,12 +9046,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -9569,7 +9569,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"sp_metadata": "xxSPMETADATAxxBYTES="
+  ///"sp_metadata": "SPMetadataVariesLen="
   ///}
   /// </summary>
   public sealed partial class SAMLSPMetadataResponse : pb::IMessage<SAMLSPMetadataResponse>
@@ -10776,12 +10776,12 @@ namespace UserApi.V1 {
   ///{
   ///"user": {
   ///"uuid": "UUID", 
-  ///"first_name": "FIRST_NAME", 
-  ///"last_name": "LAST_NAME", 
-  ///"email": "EMAIL", 
+  ///"first_name": "John", 
+  ///"last_name": "Doe", 
+  ///"email": "example@gmail.com", 
   ///"role": 0, 
   ///"avatar": "AVATAR_URL", 
-  ///"phone": "PHONE", 
+  ///"phone": "+1 555 555 5555", 
   ///"dids": [
   ///"did:organization:zDIDMultibase58Encoded", 
   ///"did:organization:zDIDMultibase58Encoded"
@@ -11721,7 +11721,7 @@ namespace UserApi.V1 {
   ///"client_id": "CLIENT_ID",
   ///"client_name": "CLIENT_NAME",
   ///"api_key": "API_KEY",
-  ///"api_key_status": 0,
+  ///"status": 0,
   ///"expiry_date": { 
   ///"seconds": 0, 
   ///"nanos": 0 
@@ -12276,7 +12276,7 @@ namespace UserApi.V1 {
   ///"client_id": "CLIENT_ID",
   ///"client_name": "CLIENT_NAME",
   ///"api_key": "API_KEY",
-  ///"api_key_status": 0,
+  ///"status": 0,
   ///"expiry_date": { 
   ///"seconds": 0, 
   ///"nanos": 0 
@@ -12485,7 +12485,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"client_name": "CLIENT_NAME",
+  ///"client_id": "CLIENT_ID",
   ///"api_key": "API_KEY",
   ///"api_key_status": 0
   ///}
@@ -13073,7 +13073,7 @@ namespace UserApi.V1 {
   ///"client_id": "CLIENT_ID1",
   ///"client_name": "CLIENT_NAME1",
   ///"api_key": "API_KEY",
-  ///"api_key_status": 0,
+  ///"status": 0,
   ///"expiry_date": { 
   ///"seconds": 0, 
   ///"nanos": 0 
@@ -13083,7 +13083,7 @@ namespace UserApi.V1 {
   ///"client_id": "CLIENT_ID2",
   ///"client_name": "CLIENT_NAME2",
   ///"api_key": "API_KEY",
-  ///"api_key_status": 0,
+  ///"status": 0,
   ///"expiry_date": { 
   ///"seconds": 0, 
   ///"nanos": 0 
