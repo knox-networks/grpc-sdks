@@ -278,7 +278,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "DataLenVaries=", 
+  ///"data": "VariedDataLength=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 
@@ -288,7 +288,7 @@ namespace Common {
   ///"signature_system": 1, 
   ///"verifier": "AlgoVariesRecipientVerifierBytesLen="
   ///}, 
-  ///"nonce": "NonceLenVariesFromAlgo=", 
+  ///"nonce": "LengthOfNonceVariesBasedOnAlgo=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 

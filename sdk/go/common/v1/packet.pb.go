@@ -400,7 +400,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "packet_type": 100,
-// "data": "DataLenVaries=",
+// "data": "VariedDataLength=",
 // "channel": "YOUR_CHANNEL",
 // "sender": {
 // "signature_system": 1,
@@ -410,7 +410,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // "signature_system": 1,
 // "verifier": "AlgoVariesRecipientVerifierBytesLen="
 // },
-// "nonce": "NonceLenVariesFromAlgo=",
+// "nonce": "LengthOfNonceVariesBasedOnAlgo=",
 // "transaction_header": {
 // "starter": {
 // "signature_system": 1,
