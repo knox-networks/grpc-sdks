@@ -402,7 +402,7 @@ namespace Treasury {
   /// [Example]
   ///{
   ///"exchanged_promissory_files": [
-  ///"LengthOfFileBytesVariesExchangedFile1="
+  ///"LengthBytesExchangedFileVaries="
   ///], 
   ///"fee_amount": {
   ///"currency_code":"USD", 
@@ -411,8 +411,8 @@ namespace Treasury {
   ///}, 
   ///"exchange_rate": 1.4, 
   ///"refunded_promissory_files": [
-  ///"LengthOfFileBytesVariesRefunded1=", 
-  ///"LengthOfFileBytesVariesRefunded2="
+  ///"LengthRefund1FileBytesVaries=", 
+  ///"LengthRefund2FileBytesVaries="
   ///]
   ///}
   /// </summary>
