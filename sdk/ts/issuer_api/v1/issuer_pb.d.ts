@@ -22,6 +22,11 @@ export class IssueRequest extends jspb.Message {
   getAuthority(): common_v1_common_pb.DynamicVerifier | undefined;
   setAuthority(value?: common_v1_common_pb.DynamicVerifier): void;
 
+  hasRecipient(): boolean;
+  clearRecipient(): void;
+  getRecipient(): common_v1_common_pb.DynamicVerifier | undefined;
+  setRecipient(value?: common_v1_common_pb.DynamicVerifier): void;
+
   hasDistribution(): boolean;
   clearDistribution(): void;
   getDistribution(): common_v1_common_pb.Distribution | undefined;
@@ -42,15 +47,14 @@ export namespace IssueRequest {
     authenticationSignature?: common_v1_common_pb.AuthenticationSignature.AsObject,
     amount?: common_v1_common_pb.Amount.AsObject,
     authority?: common_v1_common_pb.DynamicVerifier.AsObject,
+    recipient?: common_v1_common_pb.DynamicVerifier.AsObject,
     distribution?: common_v1_common_pb.Distribution.AsObject,
   }
 }
 
 export class IssueResponse extends jspb.Message {
-  getPromissoryFile(): Uint8Array | string;
-  getPromissoryFile_asU8(): Uint8Array;
-  getPromissoryFile_asB64(): string;
-  setPromissoryFile(value: Uint8Array | string): void;
+  getNumPromissoryFiles(): number;
+  setNumPromissoryFiles(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IssueResponse.AsObject;
@@ -64,51 +68,7 @@ export class IssueResponse extends jspb.Message {
 
 export namespace IssueResponse {
   export type AsObject = {
-    promissoryFile: Uint8Array | string,
-  }
-}
-
-export class AuthorizeRequest extends jspb.Message {
-  getPromissoryFile(): Uint8Array | string;
-  getPromissoryFile_asU8(): Uint8Array;
-  getPromissoryFile_asB64(): string;
-  setPromissoryFile(value: Uint8Array | string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AuthorizeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: AuthorizeRequest): AuthorizeRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AuthorizeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AuthorizeRequest;
-  static deserializeBinaryFromReader(message: AuthorizeRequest, reader: jspb.BinaryReader): AuthorizeRequest;
-}
-
-export namespace AuthorizeRequest {
-  export type AsObject = {
-    promissoryFile: Uint8Array | string,
-  }
-}
-
-export class AuthorizeResponse extends jspb.Message {
-  getPromissoryFile(): Uint8Array | string;
-  getPromissoryFile_asU8(): Uint8Array;
-  getPromissoryFile_asB64(): string;
-  setPromissoryFile(value: Uint8Array | string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AuthorizeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: AuthorizeResponse): AuthorizeResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AuthorizeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AuthorizeResponse;
-  static deserializeBinaryFromReader(message: AuthorizeResponse, reader: jspb.BinaryReader): AuthorizeResponse;
-}
-
-export namespace AuthorizeResponse {
-  export type AsObject = {
-    promissoryFile: Uint8Array | string,
+    numPromissoryFiles: number,
   }
 }
 

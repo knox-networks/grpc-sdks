@@ -68,9 +68,9 @@ namespace WalletApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WalletApi.V1.ListWalletsResponse> __Marshaller_wallet_api_v1_ListWalletsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListWalletsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::WalletApi.V1.ListFundsRequest> __Marshaller_wallet_api_v1_ListFundsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListFundsRequest.Parser));
+    static readonly grpc::Marshaller<global::WalletApi.V1.ListAssetFilesRequest> __Marshaller_wallet_api_v1_ListAssetFilesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListAssetFilesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::WalletApi.V1.ListFundsResponse> __Marshaller_wallet_api_v1_ListFundsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListFundsResponse.Parser));
+    static readonly grpc::Marshaller<global::WalletApi.V1.ListAssetFilesResponse> __Marshaller_wallet_api_v1_ListAssetFilesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListAssetFilesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WalletApi.V1.ListWalletBalancesRequest> __Marshaller_wallet_api_v1_ListWalletBalancesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.ListWalletBalancesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -103,6 +103,10 @@ namespace WalletApi.V1 {
     static readonly grpc::Marshaller<global::WalletApi.V1.PrepareFundsChangeRequest> __Marshaller_wallet_api_v1_PrepareFundsChangeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.PrepareFundsChangeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WalletApi.V1.PrepareFundsChangeResponse> __Marshaller_wallet_api_v1_PrepareFundsChangeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.PrepareFundsChangeResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WalletApi.V1.PrepareTwoStepPaymentRequest> __Marshaller_wallet_api_v1_PrepareTwoStepPaymentRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.PrepareTwoStepPaymentRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WalletApi.V1.PrepareTwoStepPaymentResponse> __Marshaller_wallet_api_v1_PrepareTwoStepPaymentResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.PrepareTwoStepPaymentResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WalletApi.V1.GetTransactionRequest> __Marshaller_wallet_api_v1_GetTransactionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WalletApi.V1.GetTransactionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -153,12 +157,12 @@ namespace WalletApi.V1 {
         __Marshaller_wallet_api_v1_ListWalletsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::WalletApi.V1.ListFundsRequest, global::WalletApi.V1.ListFundsResponse> __Method_ListFunds = new grpc::Method<global::WalletApi.V1.ListFundsRequest, global::WalletApi.V1.ListFundsResponse>(
+    static readonly grpc::Method<global::WalletApi.V1.ListAssetFilesRequest, global::WalletApi.V1.ListAssetFilesResponse> __Method_ListAssetFiles = new grpc::Method<global::WalletApi.V1.ListAssetFilesRequest, global::WalletApi.V1.ListAssetFilesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "ListFunds",
-        __Marshaller_wallet_api_v1_ListFundsRequest,
-        __Marshaller_wallet_api_v1_ListFundsResponse);
+        "ListAssetFiles",
+        __Marshaller_wallet_api_v1_ListAssetFilesRequest,
+        __Marshaller_wallet_api_v1_ListAssetFilesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::WalletApi.V1.ListWalletBalancesRequest, global::WalletApi.V1.ListWalletBalancesResponse> __Method_ListWalletBalances = new grpc::Method<global::WalletApi.V1.ListWalletBalancesRequest, global::WalletApi.V1.ListWalletBalancesResponse>(
@@ -223,6 +227,14 @@ namespace WalletApi.V1 {
         "PrepareFundsChange",
         __Marshaller_wallet_api_v1_PrepareFundsChangeRequest,
         __Marshaller_wallet_api_v1_PrepareFundsChangeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::WalletApi.V1.PrepareTwoStepPaymentRequest, global::WalletApi.V1.PrepareTwoStepPaymentResponse> __Method_PrepareTwoStepPayment = new grpc::Method<global::WalletApi.V1.PrepareTwoStepPaymentRequest, global::WalletApi.V1.PrepareTwoStepPaymentResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PrepareTwoStepPayment",
+        __Marshaller_wallet_api_v1_PrepareTwoStepPaymentRequest,
+        __Marshaller_wallet_api_v1_PrepareTwoStepPaymentResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::WalletApi.V1.GetTransactionRequest, global::WalletApi.V1.GetTransactionResponse> __Method_GetTransaction = new grpc::Method<global::WalletApi.V1.GetTransactionRequest, global::WalletApi.V1.GetTransactionResponse>(
@@ -322,7 +334,7 @@ namespace WalletApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::WalletApi.V1.ListFundsResponse> ListFunds(global::WalletApi.V1.ListFundsRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::WalletApi.V1.ListAssetFilesResponse> ListAssetFiles(global::WalletApi.V1.ListAssetFilesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -423,6 +435,19 @@ namespace WalletApi.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::WalletApi.V1.PrepareFundsChangeResponse> PrepareFundsChange(global::WalletApi.V1.PrepareFundsChangeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::WalletApi.V1.PrepareTwoStepPaymentResponse> PrepareTwoStepPayment(global::WalletApi.V1.PrepareTwoStepPaymentRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -709,9 +734,9 @@ namespace WalletApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::WalletApi.V1.ListFundsResponse ListFunds(global::WalletApi.V1.ListFundsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::WalletApi.V1.ListAssetFilesResponse ListAssetFiles(global::WalletApi.V1.ListAssetFilesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return ListFunds(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return ListAssetFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// List the digital banknotes for a wallet.
@@ -720,9 +745,9 @@ namespace WalletApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::WalletApi.V1.ListFundsResponse ListFunds(global::WalletApi.V1.ListFundsRequest request, grpc::CallOptions options)
+      public virtual global::WalletApi.V1.ListAssetFilesResponse ListAssetFiles(global::WalletApi.V1.ListAssetFilesRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_ListFunds, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_ListAssetFiles, null, options, request);
       }
       /// <summary>
       /// List the digital banknotes for a wallet.
@@ -733,9 +758,9 @@ namespace WalletApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.ListFundsResponse> ListFundsAsync(global::WalletApi.V1.ListFundsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.ListAssetFilesResponse> ListAssetFilesAsync(global::WalletApi.V1.ListAssetFilesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return ListFundsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return ListAssetFilesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// List the digital banknotes for a wallet.
@@ -744,9 +769,9 @@ namespace WalletApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.ListFundsResponse> ListFundsAsync(global::WalletApi.V1.ListFundsRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.ListAssetFilesResponse> ListAssetFilesAsync(global::WalletApi.V1.ListAssetFilesRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_ListFunds, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_ListAssetFiles, null, options, request);
       }
       /// <summary>
       /// List the balances of each currency in the wallet.
@@ -1149,6 +1174,58 @@ namespace WalletApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PrepareFundsChange, null, options, request);
       }
       /// <summary>
+      /// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WalletApi.V1.PrepareTwoStepPaymentResponse PrepareTwoStepPayment(global::WalletApi.V1.PrepareTwoStepPaymentRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PrepareTwoStepPayment(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WalletApi.V1.PrepareTwoStepPaymentResponse PrepareTwoStepPayment(global::WalletApi.V1.PrepareTwoStepPaymentRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PrepareTwoStepPayment, null, options, request);
+      }
+      /// <summary>
+      /// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.PrepareTwoStepPaymentResponse> PrepareTwoStepPaymentAsync(global::WalletApi.V1.PrepareTwoStepPaymentRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PrepareTwoStepPaymentAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+      /// to query more information about the transaction.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WalletApi.V1.PrepareTwoStepPaymentResponse> PrepareTwoStepPaymentAsync(global::WalletApi.V1.PrepareTwoStepPaymentRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PrepareTwoStepPayment, null, options, request);
+      }
+      /// <summary>
       /// Obtains metadata about a transaction.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -1358,7 +1435,7 @@ namespace WalletApi.V1 {
           .AddMethod(__Method_CreateOwner, serviceImpl.CreateOwner)
           .AddMethod(__Method_CreateWallet, serviceImpl.CreateWallet)
           .AddMethod(__Method_ListWallets, serviceImpl.ListWallets)
-          .AddMethod(__Method_ListFunds, serviceImpl.ListFunds)
+          .AddMethod(__Method_ListAssetFiles, serviceImpl.ListAssetFiles)
           .AddMethod(__Method_ListWalletBalances, serviceImpl.ListWalletBalances)
           .AddMethod(__Method_Redeem, serviceImpl.Redeem)
           .AddMethod(__Method_ListCredentials, serviceImpl.ListCredentials)
@@ -1367,6 +1444,7 @@ namespace WalletApi.V1 {
           .AddMethod(__Method_RequestPresentation, serviceImpl.RequestPresentation)
           .AddMethod(__Method_PrepareSimplePayment, serviceImpl.PrepareSimplePayment)
           .AddMethod(__Method_PrepareFundsChange, serviceImpl.PrepareFundsChange)
+          .AddMethod(__Method_PrepareTwoStepPayment, serviceImpl.PrepareTwoStepPayment)
           .AddMethod(__Method_GetTransaction, serviceImpl.GetTransaction)
           .AddMethod(__Method_ListTransactions, serviceImpl.ListTransactions)
           .AddMethod(__Method_GetTransactionSnapshot, serviceImpl.GetTransactionSnapshot)
@@ -1384,7 +1462,7 @@ namespace WalletApi.V1 {
       serviceBinder.AddMethod(__Method_CreateOwner, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.CreateOwnerRequest, global::WalletApi.V1.CreateOwnerResponse>(serviceImpl.CreateOwner));
       serviceBinder.AddMethod(__Method_CreateWallet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.CreateWalletRequest, global::WalletApi.V1.CreateWalletResponse>(serviceImpl.CreateWallet));
       serviceBinder.AddMethod(__Method_ListWallets, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListWalletsRequest, global::WalletApi.V1.ListWalletsResponse>(serviceImpl.ListWallets));
-      serviceBinder.AddMethod(__Method_ListFunds, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListFundsRequest, global::WalletApi.V1.ListFundsResponse>(serviceImpl.ListFunds));
+      serviceBinder.AddMethod(__Method_ListAssetFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListAssetFilesRequest, global::WalletApi.V1.ListAssetFilesResponse>(serviceImpl.ListAssetFiles));
       serviceBinder.AddMethod(__Method_ListWalletBalances, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListWalletBalancesRequest, global::WalletApi.V1.ListWalletBalancesResponse>(serviceImpl.ListWalletBalances));
       serviceBinder.AddMethod(__Method_Redeem, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.RedeemRequest, global::WalletApi.V1.RedeemResponse>(serviceImpl.Redeem));
       serviceBinder.AddMethod(__Method_ListCredentials, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListCredentialsRequest, global::WalletApi.V1.ListCredentialsResponse>(serviceImpl.ListCredentials));
@@ -1393,6 +1471,7 @@ namespace WalletApi.V1 {
       serviceBinder.AddMethod(__Method_RequestPresentation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.RequestPresentationRequest, global::WalletApi.V1.RequestPresentationResponse>(serviceImpl.RequestPresentation));
       serviceBinder.AddMethod(__Method_PrepareSimplePayment, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.PrepareSimplePaymentRequest, global::WalletApi.V1.PrepareSimplePaymentResponse>(serviceImpl.PrepareSimplePayment));
       serviceBinder.AddMethod(__Method_PrepareFundsChange, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.PrepareFundsChangeRequest, global::WalletApi.V1.PrepareFundsChangeResponse>(serviceImpl.PrepareFundsChange));
+      serviceBinder.AddMethod(__Method_PrepareTwoStepPayment, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.PrepareTwoStepPaymentRequest, global::WalletApi.V1.PrepareTwoStepPaymentResponse>(serviceImpl.PrepareTwoStepPayment));
       serviceBinder.AddMethod(__Method_GetTransaction, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.GetTransactionRequest, global::WalletApi.V1.GetTransactionResponse>(serviceImpl.GetTransaction));
       serviceBinder.AddMethod(__Method_ListTransactions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.ListTransactionsRequest, global::WalletApi.V1.ListTransactionsResponse>(serviceImpl.ListTransactions));
       serviceBinder.AddMethod(__Method_GetTransactionSnapshot, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WalletApi.V1.GetTransactionSnapshotRequest, global::WalletApi.V1.GetTransactionSnapshotResponse>(serviceImpl.GetTransactionSnapshot));

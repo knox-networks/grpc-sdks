@@ -6,6 +6,52 @@
 import * as jspb from "google-protobuf";
 import * as common_v1_common_pb from "../../common/v1/common_pb";
 
+export class SortItem extends jspb.Message {
+  getField(): string;
+  setField(value: string): void;
+
+  getDirection(): SortDirectionMap[keyof SortDirectionMap];
+  setDirection(value: SortDirectionMap[keyof SortDirectionMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SortItem.AsObject;
+  static toObject(includeInstance: boolean, msg: SortItem): SortItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SortItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SortItem;
+  static deserializeBinaryFromReader(message: SortItem, reader: jspb.BinaryReader): SortItem;
+}
+
+export namespace SortItem {
+  export type AsObject = {
+    field: string,
+    direction: SortDirectionMap[keyof SortDirectionMap],
+  }
+}
+
+export class SortBy extends jspb.Message {
+  clearItemsList(): void;
+  getItemsList(): Array<SortItem>;
+  setItemsList(value: Array<SortItem>): void;
+  addItems(value?: SortItem, index?: number): SortItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SortBy.AsObject;
+  static toObject(includeInstance: boolean, msg: SortBy): SortBy.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SortBy, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SortBy;
+  static deserializeBinaryFromReader(message: SortBy, reader: jspb.BinaryReader): SortBy;
+}
+
+export namespace SortBy {
+  export type AsObject = {
+    itemsList: Array<SortItem.AsObject>,
+  }
+}
+
 export class TransferRequest extends jspb.Message {
   getFromWalletId(): string;
   setFromWalletId(value: string): void;
@@ -168,6 +214,11 @@ export class ListWalletsRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWalletsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListWalletsRequest): ListWalletsRequest.AsObject;
@@ -183,6 +234,7 @@ export namespace ListWalletsRequest {
     page: number,
     pageSize: number,
     apiKey: string,
+    filters?: common_v1_common_pb.Filter.AsObject,
   }
 }
 
@@ -316,7 +368,7 @@ export namespace ListWalletBalancesResponse {
   }
 }
 
-export class ListFundsRequest extends jspb.Message {
+export class ListAssetFilesRequest extends jspb.Message {
   getPage(): number;
   setPage(value: number): void;
 
@@ -329,48 +381,86 @@ export class ListFundsRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): SortBy | undefined;
+  setSortBy(value?: SortBy): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFundsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFundsRequest): ListFundsRequest.AsObject;
+  toObject(includeInstance?: boolean): ListAssetFilesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAssetFilesRequest): ListAssetFilesRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFundsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFundsRequest;
-  static deserializeBinaryFromReader(message: ListFundsRequest, reader: jspb.BinaryReader): ListFundsRequest;
+  static serializeBinaryToWriter(message: ListAssetFilesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAssetFilesRequest;
+  static deserializeBinaryFromReader(message: ListAssetFilesRequest, reader: jspb.BinaryReader): ListAssetFilesRequest;
 }
 
-export namespace ListFundsRequest {
+export namespace ListAssetFilesRequest {
   export type AsObject = {
     page: number,
     pageSize: number,
     walletId: string,
     apiKey: string,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: SortBy.AsObject,
   }
 }
 
-export class ListFundsResponse extends jspb.Message {
+export class ListAssetFilesResponse extends jspb.Message {
   clearFundsList(): void;
-  getFundsList(): Array<ListFundsResponse.Fund>;
-  setFundsList(value: Array<ListFundsResponse.Fund>): void;
-  addFunds(value?: ListFundsResponse.Fund, index?: number): ListFundsResponse.Fund;
+  getFundsList(): Array<ListAssetFilesResponse.Fund>;
+  setFundsList(value: Array<ListAssetFilesResponse.Fund>): void;
+  addFunds(value?: ListAssetFilesResponse.Fund, index?: number): ListAssetFilesResponse.Fund;
 
   getTotalOwnedFunds(): number;
   setTotalOwnedFunds(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFundsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFundsResponse): ListFundsResponse.AsObject;
+  toObject(includeInstance?: boolean): ListAssetFilesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAssetFilesResponse): ListAssetFilesResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFundsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFundsResponse;
-  static deserializeBinaryFromReader(message: ListFundsResponse, reader: jspb.BinaryReader): ListFundsResponse;
+  static serializeBinaryToWriter(message: ListAssetFilesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAssetFilesResponse;
+  static deserializeBinaryFromReader(message: ListAssetFilesResponse, reader: jspb.BinaryReader): ListAssetFilesResponse;
 }
 
-export namespace ListFundsResponse {
+export namespace ListAssetFilesResponse {
   export type AsObject = {
-    fundsList: Array<ListFundsResponse.Fund.AsObject>,
+    fundsList: Array<ListAssetFilesResponse.Fund.AsObject>,
     totalOwnedFunds: number,
+  }
+
+  export class Notary extends jspb.Message {
+    getDid(): string;
+    setDid(value: string): void;
+
+    getSignature(): Uint8Array | string;
+    getSignature_asU8(): Uint8Array;
+    getSignature_asB64(): string;
+    setSignature(value: Uint8Array | string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Notary.AsObject;
+    static toObject(includeInstance: boolean, msg: Notary): Notary.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Notary, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Notary;
+    static deserializeBinaryFromReader(message: Notary, reader: jspb.BinaryReader): Notary;
+  }
+
+  export namespace Notary {
+    export type AsObject = {
+      did: string,
+      signature: Uint8Array | string,
+    }
   }
 
   export class Promissory extends jspb.Message {
@@ -411,6 +501,11 @@ export namespace ListFundsResponse {
     getTransferSignature_asB64(): string;
     setTransferSignature(value: Uint8Array | string): void;
 
+    clearNotariesList(): void;
+    getNotariesList(): Array<ListAssetFilesResponse.Notary>;
+    setNotariesList(value: Array<ListAssetFilesResponse.Notary>): void;
+    addNotaries(value?: ListAssetFilesResponse.Notary, index?: number): ListAssetFilesResponse.Notary;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Promissory.AsObject;
     static toObject(includeInstance: boolean, msg: Promissory): Promissory.AsObject;
@@ -434,6 +529,7 @@ export namespace ListFundsResponse {
       blockDepth: number,
       authorizationSignature: Uint8Array | string,
       transferSignature: Uint8Array | string,
+      notariesList: Array<ListAssetFilesResponse.Notary.AsObject>,
     }
   }
 
@@ -443,8 +539,8 @@ export namespace ListFundsResponse {
 
     hasPromissory(): boolean;
     clearPromissory(): void;
-    getPromissory(): ListFundsResponse.Promissory | undefined;
-    setPromissory(value?: ListFundsResponse.Promissory): void;
+    getPromissory(): ListAssetFilesResponse.Promissory | undefined;
+    setPromissory(value?: ListAssetFilesResponse.Promissory): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Fund.AsObject;
@@ -459,7 +555,7 @@ export namespace ListFundsResponse {
   export namespace Fund {
     export type AsObject = {
       walletId: string,
-      promissory?: ListFundsResponse.Promissory.AsObject,
+      promissory?: ListAssetFilesResponse.Promissory.AsObject,
     }
   }
 }
@@ -922,6 +1018,77 @@ export namespace PrepareFundsChangeResponse {
   export const Status: StatusMap;
 }
 
+export class PrepareTwoStepPaymentRequest extends jspb.Message {
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  getRecipient(): string;
+  setRecipient(value: string): void;
+
+  getUserReference(): string;
+  setUserReference(value: string): void;
+
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareTwoStepPaymentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareTwoStepPaymentRequest): PrepareTwoStepPaymentRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareTwoStepPaymentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareTwoStepPaymentRequest;
+  static deserializeBinaryFromReader(message: PrepareTwoStepPaymentRequest, reader: jspb.BinaryReader): PrepareTwoStepPaymentRequest;
+}
+
+export namespace PrepareTwoStepPaymentRequest {
+  export type AsObject = {
+    amount?: common_v1_common_pb.Amount.AsObject,
+    recipient: string,
+    userReference: string,
+    walletId: string,
+    apiKey: string,
+  }
+}
+
+export class PrepareTwoStepPaymentResponse extends jspb.Message {
+  getStatus(): PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap];
+  setStatus(value: PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap]): void;
+
+  getUetr(): string;
+  setUetr(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareTwoStepPaymentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareTwoStepPaymentResponse): PrepareTwoStepPaymentResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareTwoStepPaymentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareTwoStepPaymentResponse;
+  static deserializeBinaryFromReader(message: PrepareTwoStepPaymentResponse, reader: jspb.BinaryReader): PrepareTwoStepPaymentResponse;
+}
+
+export namespace PrepareTwoStepPaymentResponse {
+  export type AsObject = {
+    status: PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap],
+    uetr: string,
+  }
+
+  export interface StatusMap {
+    STATUS_UNSPECIFIED: 0;
+    STATUS_SUCCESS: 1;
+    STATUS_NEED_CHANGE: 2;
+    STATUS_INSUFFICIENT_FUNDS: 3;
+  }
+
+  export const Status: StatusMap;
+}
+
 export class GetTransactionRequest extends jspb.Message {
   getUetr(): string;
   setUetr(value: string): void;
@@ -979,6 +1146,17 @@ export class ListTransactionsRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTransactionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTransactionsRequest): ListTransactionsRequest.AsObject;
@@ -993,6 +1171,9 @@ export namespace ListTransactionsRequest {
   export type AsObject = {
     id: string,
     apiKey: string,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    page: number,
+    pageSize: number,
   }
 }
 
@@ -1001,6 +1182,9 @@ export class ListTransactionsResponse extends jspb.Message {
   getTransactionsList(): Array<common_v1_common_pb.Transaction>;
   setTransactionsList(value: Array<common_v1_common_pb.Transaction>): void;
   addTransactions(value?: common_v1_common_pb.Transaction, index?: number): common_v1_common_pb.Transaction;
+
+  getTotalMatchingTransactions(): number;
+  setTotalMatchingTransactions(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTransactionsResponse.AsObject;
@@ -1015,6 +1199,7 @@ export class ListTransactionsResponse extends jspb.Message {
 export namespace ListTransactionsResponse {
   export type AsObject = {
     transactionsList: Array<common_v1_common_pb.Transaction.AsObject>,
+    totalMatchingTransactions: number,
   }
 }
 
@@ -1117,4 +1302,12 @@ export namespace ListTransactionSnapshotsResponse {
     snapshotsList: Array<common_v1_common_pb.TransactionSnapshot.AsObject>,
   }
 }
+
+export interface SortDirectionMap {
+  SORT_DIRECTION_UNSPECIFIED: 0;
+  SORT_DIRECTION_ASCENDING: 1;
+  SORT_DIRECTION_DESCENDING: 2;
+}
+
+export const SortDirection: SortDirectionMap;
 

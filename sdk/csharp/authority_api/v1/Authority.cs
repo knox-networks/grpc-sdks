@@ -36,25 +36,26 @@ namespace AuthorityApi.V1 {
             "cnlfZmlsZRgBIAEoDCIsChFBdXRob3JpemVSZXNwb25zZRIXCg9wcm9taXNz",
             "b3J5X2ZpbGUYASABKAwiOgoNUmVkZWVtUmVxdWVzdBIXCg9wcm9taXNzb3J5",
             "X2ZpbGUYASABKAwSEAoIdmVyaWZpZXIYAiABKAkiLwoOUmVkZWVtUmVzcG9u",
-            "c2USHQoFbGltaXQYASABKAsyDi5jb21tb24uQW1vdW50IhQKEkdldEVtaXNz",
-            "YXJ5UmVxdWVzdCInChNHZXRFbWlzc2FyeVJlc3BvbnNlEhAKCHZlcmlmaWVy",
-            "GAEgASgJIiQKEEdldE5vdGFyeVJlcXVlc3QSEAoIdmVyaWZpZXIYASABKAki",
-            "JgoRR2V0Tm90YXJ5UmVzcG9uc2USEQoJc2lnbmF0dXJlGAEgASgMMrgEChBB",
-            "dXRob3JpdHlTZXJ2aWNlEmMKDlNldElzc3VlckxpbWl0EicuYXV0aG9yaXR5",
-            "X2FwaS52MS5TZXRJc3N1ZXJMaW1pdFJlcXVlc3QaKC5hdXRob3JpdHlfYXBp",
-            "LnYxLlNldElzc3VlckxpbWl0UmVzcG9uc2USZgoPR2V0SXNzdWVyTGltaXRz",
-            "EiguYXV0aG9yaXR5X2FwaS52MS5HZXRJc3N1ZXJMaW1pdHNSZXF1ZXN0Giku",
-            "YXV0aG9yaXR5X2FwaS52MS5HZXRJc3N1ZXJMaW1pdHNSZXNwb25zZRJYCglB",
-            "dXRob3JpemUSIi5hdXRob3JpdHlfYXBpLnYxLkF1dGhvcml6ZVJlcXVlc3Qa",
-            "Iy5hdXRob3JpdHlfYXBpLnYxLkF1dGhvcml6ZVJlc3BvbnNlKAEwARJLCgZS",
-            "ZWRlZW0SHy5hdXRob3JpdHlfYXBpLnYxLlJlZGVlbVJlcXVlc3QaIC5hdXRo",
-            "b3JpdHlfYXBpLnYxLlJlZGVlbVJlc3BvbnNlEloKC0dldEVtaXNzYXJ5EiQu",
-            "YXV0aG9yaXR5X2FwaS52MS5HZXRFbWlzc2FyeVJlcXVlc3QaJS5hdXRob3Jp",
-            "dHlfYXBpLnYxLkdldEVtaXNzYXJ5UmVzcG9uc2USVAoJR2V0Tm90YXJ5EiIu",
-            "YXV0aG9yaXR5X2FwaS52MS5HZXROb3RhcnlSZXF1ZXN0GiMuYXV0aG9yaXR5",
-            "X2FwaS52MS5HZXROb3RhcnlSZXNwb25zZUI8WjpnaXRodWIuY29tL2tub3gt",
-            "bmV0d29ya3MvZ3JwYy1zZGtzL3Nkay9nby9hdXRob3JpdHlfYXBpL3YxYgZw",
-            "cm90bzM="));
+            "c2USHQoFbGltaXQYASABKAsyDi5jb21tb24uQW1vdW50IhcKFUdldE5ldHdv",
+            "cmtJbmZvUmVxdWVzdCJHChZHZXROZXR3b3JrSW5mb1Jlc3BvbnNlEhAKCGVt",
+            "aXNzYXJ5GAEgASgJEhsKE3RyYW5zYWN0aW9uX21hbmFnZXIYAiABKAkiJAoQ",
+            "R2V0Tm90YXJ5UmVxdWVzdBIQCgh2ZXJpZmllchgBIAEoCSImChFHZXROb3Rh",
+            "cnlSZXNwb25zZRIRCglzaWduYXR1cmUYASABKAwywQQKEEF1dGhvcml0eVNl",
+            "cnZpY2USYwoOU2V0SXNzdWVyTGltaXQSJy5hdXRob3JpdHlfYXBpLnYxLlNl",
+            "dElzc3VlckxpbWl0UmVxdWVzdBooLmF1dGhvcml0eV9hcGkudjEuU2V0SXNz",
+            "dWVyTGltaXRSZXNwb25zZRJmCg9HZXRJc3N1ZXJMaW1pdHMSKC5hdXRob3Jp",
+            "dHlfYXBpLnYxLkdldElzc3VlckxpbWl0c1JlcXVlc3QaKS5hdXRob3JpdHlf",
+            "YXBpLnYxLkdldElzc3VlckxpbWl0c1Jlc3BvbnNlElgKCUF1dGhvcml6ZRIi",
+            "LmF1dGhvcml0eV9hcGkudjEuQXV0aG9yaXplUmVxdWVzdBojLmF1dGhvcml0",
+            "eV9hcGkudjEuQXV0aG9yaXplUmVzcG9uc2UoATABEksKBlJlZGVlbRIfLmF1",
+            "dGhvcml0eV9hcGkudjEuUmVkZWVtUmVxdWVzdBogLmF1dGhvcml0eV9hcGku",
+            "djEuUmVkZWVtUmVzcG9uc2USYwoOR2V0TmV0d29ya0luZm8SJy5hdXRob3Jp",
+            "dHlfYXBpLnYxLkdldE5ldHdvcmtJbmZvUmVxdWVzdBooLmF1dGhvcml0eV9h",
+            "cGkudjEuR2V0TmV0d29ya0luZm9SZXNwb25zZRJUCglHZXROb3RhcnkSIi5h",
+            "dXRob3JpdHlfYXBpLnYxLkdldE5vdGFyeVJlcXVlc3QaIy5hdXRob3JpdHlf",
+            "YXBpLnYxLkdldE5vdGFyeVJlc3BvbnNlQjxaOmdpdGh1Yi5jb20va25veC1u",
+            "ZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL2F1dGhvcml0eV9hcGkvdjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -66,8 +67,8 @@ namespace AuthorityApi.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.AuthorizeResponse), global::AuthorityApi.V1.AuthorizeResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.RedeemRequest), global::AuthorityApi.V1.RedeemRequest.Parser, new[]{ "PromissoryFile", "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.RedeemResponse), global::AuthorityApi.V1.RedeemResponse.Parser, new[]{ "Limit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetEmissaryRequest), global::AuthorityApi.V1.GetEmissaryRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetEmissaryResponse), global::AuthorityApi.V1.GetEmissaryResponse.Parser, new[]{ "Verifier" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetNetworkInfoRequest), global::AuthorityApi.V1.GetNetworkInfoRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetNetworkInfoResponse), global::AuthorityApi.V1.GetNetworkInfoResponse.Parser, new[]{ "Emissary", "TransactionManager" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetNotaryRequest), global::AuthorityApi.V1.GetNotaryRequest.Parser, new[]{ "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::AuthorityApi.V1.GetNotaryResponse), global::AuthorityApi.V1.GetNotaryResponse.Parser, new[]{ "Signature" }, null, null, null, null)
           }));
@@ -84,7 +85,7 @@ namespace AuthorityApi.V1 {
   ///"amount":100, 
   ///"decimals":2
   ///}, 
-  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///"issuer_public_key": "zIssuerPublicKeyMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class SetIssuerLimitRequest : pb::IMessage<SetIssuerLimitRequest>
@@ -335,7 +336,7 @@ namespace AuthorityApi.V1 {
   ///"currency_code":"USD", 
   ///"amount":100, "decimals":2
   ///}, 
-  ///"signature": "ByteLengthSignatureVariesByAlgo="
+  ///"signature": "ByteLengthSignatureVariesByAlgo
   ///}
   /// </summary>
   public sealed partial class SetIssuerLimitResponse : pb::IMessage<SetIssuerLimitResponse>
@@ -582,7 +583,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///"issuer_public_key": "zIssuerPublicKeyMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class GetIssuerLimitsRequest : pb::IMessage<GetIssuerLimitsRequest>
@@ -787,7 +788,7 @@ namespace AuthorityApi.V1 {
   ///"decimals":2
   ///}
   ///], 
-  ///"issuer_public_key": "ISSUER_PUBLIC_KEY"
+  ///"issuer_public_key": "zIssuerPublicKeyMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class GetIssuerLimitsResponse : pb::IMessage<GetIssuerLimitsResponse>
@@ -1014,7 +1015,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries="
+  ///"promissory_file": "LengthOfFileBytesVaries
   ///}
   /// </summary>
   public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
@@ -1212,7 +1213,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries="
+  ///"promissory_file": "LengthOfFileBytesVaries
   ///}
   /// </summary>
   public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
@@ -1410,7 +1411,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries=", 
+  ///"promissory_file": "LengthOfFileBytesVaries, 
   ///"verifier": "VERIFIER"
   ///}
   /// </summary>
@@ -1861,16 +1862,16 @@ namespace AuthorityApi.V1 {
   /// [Example]
   ///{} 
   /// </summary>
-  public sealed partial class GetEmissaryRequest : pb::IMessage<GetEmissaryRequest>
+  public sealed partial class GetNetworkInfoRequest : pb::IMessage<GetNetworkInfoRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GetEmissaryRequest> _parser = new pb::MessageParser<GetEmissaryRequest>(() => new GetEmissaryRequest());
+    private static readonly pb::MessageParser<GetNetworkInfoRequest> _parser = new pb::MessageParser<GetNetworkInfoRequest>(() => new GetNetworkInfoRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<GetEmissaryRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetNetworkInfoRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1886,7 +1887,7 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryRequest() {
+    public GetNetworkInfoRequest() {
       OnConstruction();
     }
 
@@ -1894,25 +1895,25 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryRequest(GetEmissaryRequest other) : this() {
+    public GetNetworkInfoRequest(GetNetworkInfoRequest other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryRequest Clone() {
-      return new GetEmissaryRequest(this);
+    public GetNetworkInfoRequest Clone() {
+      return new GetNetworkInfoRequest(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as GetEmissaryRequest);
+      return Equals(other as GetNetworkInfoRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(GetEmissaryRequest other) {
+    public bool Equals(GetNetworkInfoRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1972,7 +1973,7 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(GetEmissaryRequest other) {
+    public void MergeFrom(GetNetworkInfoRequest other) {
       if (other == null) {
         return;
       }
@@ -2016,19 +2017,20 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"verifier": "VERIFIER"
-  ///}
+  ///"emissary": "EMISSARY_VERIFIER",
+  ///"transaction_manager": "TRANSACTION_MANAGER_VERIFIER"
+  ///} 
   /// </summary>
-  public sealed partial class GetEmissaryResponse : pb::IMessage<GetEmissaryResponse>
+  public sealed partial class GetNetworkInfoResponse : pb::IMessage<GetNetworkInfoResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GetEmissaryResponse> _parser = new pb::MessageParser<GetEmissaryResponse>(() => new GetEmissaryResponse());
+    private static readonly pb::MessageParser<GetNetworkInfoResponse> _parser = new pb::MessageParser<GetNetworkInfoResponse>(() => new GetNetworkInfoResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<GetEmissaryResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetNetworkInfoResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2044,7 +2046,7 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryResponse() {
+    public GetNetworkInfoResponse() {
       OnConstruction();
     }
 
@@ -2052,48 +2054,65 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryResponse(GetEmissaryResponse other) : this() {
-      verifier_ = other.verifier_;
+    public GetNetworkInfoResponse(GetNetworkInfoResponse other) : this() {
+      emissary_ = other.emissary_;
+      transactionManager_ = other.transactionManager_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GetEmissaryResponse Clone() {
-      return new GetEmissaryResponse(this);
+    public GetNetworkInfoResponse Clone() {
+      return new GetNetworkInfoResponse(this);
     }
 
-    /// <summary>Field number for the "verifier" field.</summary>
-    public const int VerifierFieldNumber = 1;
-    private string verifier_ = "";
+    /// <summary>Field number for the "emissary" field.</summary>
+    public const int EmissaryFieldNumber = 1;
+    private string emissary_ = "";
     /// <summary>
     /// Verifier of the Emissary in multibase format.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Verifier {
-      get { return verifier_; }
+    public string Emissary {
+      get { return emissary_; }
       set {
-        verifier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        emissary_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "transaction_manager" field.</summary>
+    public const int TransactionManagerFieldNumber = 2;
+    private string transactionManager_ = "";
+    /// <summary>
+    /// Verifier of the Transaction Manager in multibase format.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TransactionManager {
+      get { return transactionManager_; }
+      set {
+        transactionManager_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as GetEmissaryResponse);
+      return Equals(other as GetNetworkInfoResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(GetEmissaryResponse other) {
+    public bool Equals(GetNetworkInfoResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Verifier != other.Verifier) return false;
+      if (Emissary != other.Emissary) return false;
+      if (TransactionManager != other.TransactionManager) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2101,7 +2120,8 @@ namespace AuthorityApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Verifier.Length != 0) hash ^= Verifier.GetHashCode();
+      if (Emissary.Length != 0) hash ^= Emissary.GetHashCode();
+      if (TransactionManager.Length != 0) hash ^= TransactionManager.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2120,9 +2140,13 @@ namespace AuthorityApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Verifier.Length != 0) {
+      if (Emissary.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Verifier);
+        output.WriteString(Emissary);
+      }
+      if (TransactionManager.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TransactionManager);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2134,9 +2158,13 @@ namespace AuthorityApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Verifier.Length != 0) {
+      if (Emissary.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Verifier);
+        output.WriteString(Emissary);
+      }
+      if (TransactionManager.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TransactionManager);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2148,8 +2176,11 @@ namespace AuthorityApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Verifier.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Verifier);
+      if (Emissary.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Emissary);
+      }
+      if (TransactionManager.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TransactionManager);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2159,12 +2190,15 @@ namespace AuthorityApi.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(GetEmissaryResponse other) {
+    public void MergeFrom(GetNetworkInfoResponse other) {
       if (other == null) {
         return;
       }
-      if (other.Verifier.Length != 0) {
-        Verifier = other.Verifier;
+      if (other.Emissary.Length != 0) {
+        Emissary = other.Emissary;
+      }
+      if (other.TransactionManager.Length != 0) {
+        TransactionManager = other.TransactionManager;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2182,7 +2216,11 @@ namespace AuthorityApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Verifier = input.ReadString();
+            Emissary = input.ReadString();
+            break;
+          }
+          case 18: {
+            TransactionManager = input.ReadString();
             break;
           }
         }
@@ -2201,7 +2239,11 @@ namespace AuthorityApi.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Verifier = input.ReadString();
+            Emissary = input.ReadString();
+            break;
+          }
+          case 18: {
+            TransactionManager = input.ReadString();
             break;
           }
         }
@@ -2214,8 +2256,8 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"verifier": "VERIFIER"
-  ///}
+  ///"verifier": "NOTARY_VERIFIER"
+  ///} 
   /// </summary>
   public sealed partial class GetNotaryRequest : pb::IMessage<GetNotaryRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2412,8 +2454,8 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"signature": "ByteLengthSignatureVariesByAlgo="
-  ///}
+  ///"signature": "ByteLengthSignatureVariesByAlgo
+  ///} 
   /// </summary>
   public sealed partial class GetNotaryResponse : pb::IMessage<GetNotaryResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

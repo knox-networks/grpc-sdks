@@ -6,15 +6,6 @@
 import * as treasury_v1_treasury_pb from "../../treasury/v1/treasury_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type MonetaeTreasuryRemit = {
-  readonly methodName: string;
-  readonly service: typeof MonetaeTreasury;
-  readonly requestStream: true;
-  readonly responseStream: true;
-  readonly requestType: typeof treasury_v1_treasury_pb.RemittanceRequest;
-  readonly responseType: typeof treasury_v1_treasury_pb.RemittanceResponse;
-};
-
 type MonetaeTreasuryGetSupply = {
   readonly methodName: string;
   readonly service: typeof MonetaeTreasury;
@@ -26,7 +17,6 @@ type MonetaeTreasuryGetSupply = {
 
 export class MonetaeTreasury {
   static readonly serviceName: string;
-  static readonly Remit: MonetaeTreasuryRemit;
   static readonly GetSupply: MonetaeTreasuryGetSupply;
 }
 
@@ -62,7 +52,6 @@ export class MonetaeTreasuryClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
-  remit(metadata?: grpc.Metadata): BidirectionalStream<treasury_v1_treasury_pb.RemittanceRequest, treasury_v1_treasury_pb.RemittanceResponse>;
   getSupply(
     requestMessage: treasury_v1_treasury_pb.GetSupplyRequest,
     metadata: grpc.Metadata,

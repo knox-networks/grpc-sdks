@@ -18,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MonetaeTreasuryClient interface {
-	// Start a new remittance, passing in a streamed request and gets back a streamed response.
-	Remit(ctx context.Context, opts ...grpc.CallOption) (MonetaeTreasury_RemitClient, error)
 	// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 	GetSupply(ctx context.Context, in *GetSupplyRequest, opts ...grpc.CallOption) (*GetSupplyResponse, error)
 }
@@ -30,37 +28,6 @@ type monetaeTreasuryClient struct {
 
 func NewMonetaeTreasuryClient(cc grpc.ClientConnInterface) MonetaeTreasuryClient {
 	return &monetaeTreasuryClient{cc}
-}
-
-func (c *monetaeTreasuryClient) Remit(ctx context.Context, opts ...grpc.CallOption) (MonetaeTreasury_RemitClient, error) {
-	stream, err := c.cc.NewStream(ctx, &MonetaeTreasury_ServiceDesc.Streams[0], "/treasury.MonetaeTreasury/Remit", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &monetaeTreasuryRemitClient{stream}
-	return x, nil
-}
-
-type MonetaeTreasury_RemitClient interface {
-	Send(*RemittanceRequest) error
-	Recv() (*RemittanceResponse, error)
-	grpc.ClientStream
-}
-
-type monetaeTreasuryRemitClient struct {
-	grpc.ClientStream
-}
-
-func (x *monetaeTreasuryRemitClient) Send(m *RemittanceRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *monetaeTreasuryRemitClient) Recv() (*RemittanceResponse, error) {
-	m := new(RemittanceResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
 }
 
 func (c *monetaeTreasuryClient) GetSupply(ctx context.Context, in *GetSupplyRequest, opts ...grpc.CallOption) (*GetSupplyResponse, error) {
@@ -76,8 +43,6 @@ func (c *monetaeTreasuryClient) GetSupply(ctx context.Context, in *GetSupplyRequ
 // All implementations must embed UnimplementedMonetaeTreasuryServer
 // for forward compatibility
 type MonetaeTreasuryServer interface {
-	// Start a new remittance, passing in a streamed request and gets back a streamed response.
-	Remit(MonetaeTreasury_RemitServer) error
 	// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
 	GetSupply(context.Context, *GetSupplyRequest) (*GetSupplyResponse, error)
 	mustEmbedUnimplementedMonetaeTreasuryServer()
@@ -87,9 +52,6 @@ type MonetaeTreasuryServer interface {
 type UnimplementedMonetaeTreasuryServer struct {
 }
 
-func (UnimplementedMonetaeTreasuryServer) Remit(MonetaeTreasury_RemitServer) error {
-	return status.Errorf(codes.Unimplemented, "method Remit not implemented")
-}
 func (UnimplementedMonetaeTreasuryServer) GetSupply(context.Context, *GetSupplyRequest) (*GetSupplyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSupply not implemented")
 }
@@ -104,32 +66,6 @@ type UnsafeMonetaeTreasuryServer interface {
 
 func RegisterMonetaeTreasuryServer(s grpc.ServiceRegistrar, srv MonetaeTreasuryServer) {
 	s.RegisterService(&MonetaeTreasury_ServiceDesc, srv)
-}
-
-func _MonetaeTreasury_Remit_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(MonetaeTreasuryServer).Remit(&monetaeTreasuryRemitServer{stream})
-}
-
-type MonetaeTreasury_RemitServer interface {
-	Send(*RemittanceResponse) error
-	Recv() (*RemittanceRequest, error)
-	grpc.ServerStream
-}
-
-type monetaeTreasuryRemitServer struct {
-	grpc.ServerStream
-}
-
-func (x *monetaeTreasuryRemitServer) Send(m *RemittanceResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *monetaeTreasuryRemitServer) Recv() (*RemittanceRequest, error) {
-	m := new(RemittanceRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
 }
 
 func _MonetaeTreasury_GetSupply_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -162,13 +98,6 @@ var MonetaeTreasury_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _MonetaeTreasury_GetSupply_Handler,
 		},
 	},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "Remit",
-			Handler:       _MonetaeTreasury_Remit_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
-		},
-	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "treasury/v1/treasury.proto",
 }

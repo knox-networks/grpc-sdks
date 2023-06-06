@@ -65,6 +65,10 @@ namespace WebhookApi.V1 {
     static readonly grpc::Marshaller<global::WebhookApi.V1.RetryEventRequest> __Marshaller_webhook_api_v1_RetryEventRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebhookApi.V1.RetryEventRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WebhookApi.V1.RetryEventResponse> __Marshaller_webhook_api_v1_RetryEventResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebhookApi.V1.RetryEventResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WebhookApi.V1.PingRequest> __Marshaller_webhook_api_v1_PingRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebhookApi.V1.PingRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WebhookApi.V1.PingResponse> __Marshaller_webhook_api_v1_PingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebhookApi.V1.PingResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::WebhookApi.V1.CreateWebhookRequest, global::WebhookApi.V1.CreateWebhookResponse> __Method_CreateWebhook = new grpc::Method<global::WebhookApi.V1.CreateWebhookRequest, global::WebhookApi.V1.CreateWebhookResponse>(
@@ -106,6 +110,14 @@ namespace WebhookApi.V1 {
         __Marshaller_webhook_api_v1_RetryEventRequest,
         __Marshaller_webhook_api_v1_RetryEventResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::WebhookApi.V1.PingRequest, global::WebhookApi.V1.PingResponse> __Method_Ping = new grpc::Method<global::WebhookApi.V1.PingRequest, global::WebhookApi.V1.PingResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Ping",
+        __Marshaller_webhook_api_v1_PingRequest,
+        __Marshaller_webhook_api_v1_PingResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -142,6 +154,12 @@ namespace WebhookApi.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::WebhookApi.V1.RetryEventResponse> RetryEvent(global::WebhookApi.V1.RetryEventRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::WebhookApi.V1.PingResponse> Ping(global::WebhookApi.V1.PingRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -275,6 +293,26 @@ namespace WebhookApi.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_RetryEvent, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WebhookApi.V1.PingResponse Ping(global::WebhookApi.V1.PingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Ping(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WebhookApi.V1.PingResponse Ping(global::WebhookApi.V1.PingRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Ping, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WebhookApi.V1.PingResponse> PingAsync(global::WebhookApi.V1.PingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PingAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WebhookApi.V1.PingResponse> PingAsync(global::WebhookApi.V1.PingRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Ping, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override WebhookManagerServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -293,7 +331,8 @@ namespace WebhookApi.V1 {
           .AddMethod(__Method_ListWebhooks, serviceImpl.ListWebhooks)
           .AddMethod(__Method_DeleteWebhook, serviceImpl.DeleteWebhook)
           .AddMethod(__Method_ListEvents, serviceImpl.ListEvents)
-          .AddMethod(__Method_RetryEvent, serviceImpl.RetryEvent).Build();
+          .AddMethod(__Method_RetryEvent, serviceImpl.RetryEvent)
+          .AddMethod(__Method_Ping, serviceImpl.Ping).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -308,6 +347,7 @@ namespace WebhookApi.V1 {
       serviceBinder.AddMethod(__Method_DeleteWebhook, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WebhookApi.V1.DeleteWebhookRequest, global::WebhookApi.V1.DeleteWebhookResponse>(serviceImpl.DeleteWebhook));
       serviceBinder.AddMethod(__Method_ListEvents, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WebhookApi.V1.ListEventsRequest, global::WebhookApi.V1.ListEventsResponse>(serviceImpl.ListEvents));
       serviceBinder.AddMethod(__Method_RetryEvent, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WebhookApi.V1.RetryEventRequest, global::WebhookApi.V1.RetryEventResponse>(serviceImpl.RetryEvent));
+      serviceBinder.AddMethod(__Method_Ping, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WebhookApi.V1.PingRequest, global::WebhookApi.V1.PingResponse>(serviceImpl.Ping));
     }
 
   }

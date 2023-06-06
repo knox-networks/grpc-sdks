@@ -42,13 +42,13 @@ type WalletServiceListWallets = {
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListWalletsResponse;
 };
 
-type WalletServiceListFunds = {
+type WalletServiceListAssetFiles = {
   readonly methodName: string;
   readonly service: typeof WalletService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof wallet_api_v1_wallet_pb.ListFundsRequest;
-  readonly responseType: typeof wallet_api_v1_wallet_pb.ListFundsResponse;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.ListAssetFilesRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.ListAssetFilesResponse;
 };
 
 type WalletServiceListWalletBalances = {
@@ -123,6 +123,15 @@ type WalletServicePrepareFundsChange = {
   readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareFundsChangeResponse;
 };
 
+type WalletServicePrepareTwoStepPayment = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse;
+};
+
 type WalletServiceGetTransaction = {
   readonly methodName: string;
   readonly service: typeof WalletService;
@@ -165,7 +174,7 @@ export class WalletService {
   static readonly CreateOwner: WalletServiceCreateOwner;
   static readonly CreateWallet: WalletServiceCreateWallet;
   static readonly ListWallets: WalletServiceListWallets;
-  static readonly ListFunds: WalletServiceListFunds;
+  static readonly ListAssetFiles: WalletServiceListAssetFiles;
   static readonly ListWalletBalances: WalletServiceListWalletBalances;
   static readonly Redeem: WalletServiceRedeem;
   static readonly ListCredentials: WalletServiceListCredentials;
@@ -174,6 +183,7 @@ export class WalletService {
   static readonly RequestPresentation: WalletServiceRequestPresentation;
   static readonly PrepareSimplePayment: WalletServicePrepareSimplePayment;
   static readonly PrepareFundsChange: WalletServicePrepareFundsChange;
+  static readonly PrepareTwoStepPayment: WalletServicePrepareTwoStepPayment;
   static readonly GetTransaction: WalletServiceGetTransaction;
   static readonly ListTransactions: WalletServiceListTransactions;
   static readonly GetTransactionSnapshot: WalletServiceGetTransactionSnapshot;
@@ -248,14 +258,14 @@ export class WalletServiceClient {
     requestMessage: wallet_api_v1_wallet_pb.ListWalletsRequest,
     callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListWalletsResponse|null) => void
   ): UnaryResponse;
-  listFunds(
-    requestMessage: wallet_api_v1_wallet_pb.ListFundsRequest,
+  listAssetFiles(
+    requestMessage: wallet_api_v1_wallet_pb.ListAssetFilesRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListFundsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListAssetFilesResponse|null) => void
   ): UnaryResponse;
-  listFunds(
-    requestMessage: wallet_api_v1_wallet_pb.ListFundsRequest,
-    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListFundsResponse|null) => void
+  listAssetFiles(
+    requestMessage: wallet_api_v1_wallet_pb.ListAssetFilesRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListAssetFilesResponse|null) => void
   ): UnaryResponse;
   listWalletBalances(
     requestMessage: wallet_api_v1_wallet_pb.ListWalletBalancesRequest,
@@ -328,6 +338,15 @@ export class WalletServiceClient {
   prepareFundsChange(
     requestMessage: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
     callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse|null) => void
+  ): UnaryResponse;
+  prepareTwoStepPayment(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse|null) => void
+  ): UnaryResponse;
+  prepareTwoStepPayment(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse|null) => void
   ): UnaryResponse;
   getTransaction(
     requestMessage: wallet_api_v1_wallet_pb.GetTransactionRequest,

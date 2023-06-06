@@ -23,6 +23,7 @@ type WebhookManagerServiceClient interface {
 	DeleteWebhook(ctx context.Context, in *DeleteWebhookRequest, opts ...grpc.CallOption) (*DeleteWebhookResponse, error)
 	ListEvents(ctx context.Context, in *ListEventsRequest, opts ...grpc.CallOption) (*ListEventsResponse, error)
 	RetryEvent(ctx context.Context, in *RetryEventRequest, opts ...grpc.CallOption) (*RetryEventResponse, error)
+	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error)
 }
 
 type webhookManagerServiceClient struct {
@@ -78,6 +79,15 @@ func (c *webhookManagerServiceClient) RetryEvent(ctx context.Context, in *RetryE
 	return out, nil
 }
 
+func (c *webhookManagerServiceClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error) {
+	out := new(PingResponse)
+	err := c.cc.Invoke(ctx, "/webhook_api.v1.WebhookManagerService/Ping", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WebhookManagerServiceServer is the server API for WebhookManagerService service.
 // All implementations must embed UnimplementedWebhookManagerServiceServer
 // for forward compatibility
@@ -87,6 +97,7 @@ type WebhookManagerServiceServer interface {
 	DeleteWebhook(context.Context, *DeleteWebhookRequest) (*DeleteWebhookResponse, error)
 	ListEvents(context.Context, *ListEventsRequest) (*ListEventsResponse, error)
 	RetryEvent(context.Context, *RetryEventRequest) (*RetryEventResponse, error)
+	Ping(context.Context, *PingRequest) (*PingResponse, error)
 	mustEmbedUnimplementedWebhookManagerServiceServer()
 }
 
@@ -108,6 +119,9 @@ func (UnimplementedWebhookManagerServiceServer) ListEvents(context.Context, *Lis
 }
 func (UnimplementedWebhookManagerServiceServer) RetryEvent(context.Context, *RetryEventRequest) (*RetryEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RetryEvent not implemented")
+}
+func (UnimplementedWebhookManagerServiceServer) Ping(context.Context, *PingRequest) (*PingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
 func (UnimplementedWebhookManagerServiceServer) mustEmbedUnimplementedWebhookManagerServiceServer() {}
 
@@ -212,6 +226,24 @@ func _WebhookManagerService_RetryEvent_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WebhookManagerService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WebhookManagerServiceServer).Ping(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webhook_api.v1.WebhookManagerService/Ping",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WebhookManagerServiceServer).Ping(ctx, req.(*PingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WebhookManagerService_ServiceDesc is the grpc.ServiceDesc for WebhookManagerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -238,6 +270,10 @@ var WebhookManagerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RetryEvent",
 			Handler:    _WebhookManagerService_RetryEvent_Handler,
+		},
+		{
+			MethodName: "Ping",
+			Handler:    _WebhookManagerService_Ping_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

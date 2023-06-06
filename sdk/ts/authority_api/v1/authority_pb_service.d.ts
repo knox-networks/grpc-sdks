@@ -42,13 +42,13 @@ type AuthorityServiceRedeem = {
   readonly responseType: typeof authority_api_v1_authority_pb.RedeemResponse;
 };
 
-type AuthorityServiceGetEmissary = {
+type AuthorityServiceGetNetworkInfo = {
   readonly methodName: string;
   readonly service: typeof AuthorityService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof authority_api_v1_authority_pb.GetEmissaryRequest;
-  readonly responseType: typeof authority_api_v1_authority_pb.GetEmissaryResponse;
+  readonly requestType: typeof authority_api_v1_authority_pb.GetNetworkInfoRequest;
+  readonly responseType: typeof authority_api_v1_authority_pb.GetNetworkInfoResponse;
 };
 
 type AuthorityServiceGetNotary = {
@@ -66,7 +66,7 @@ export class AuthorityService {
   static readonly GetIssuerLimits: AuthorityServiceGetIssuerLimits;
   static readonly Authorize: AuthorityServiceAuthorize;
   static readonly Redeem: AuthorityServiceRedeem;
-  static readonly GetEmissary: AuthorityServiceGetEmissary;
+  static readonly GetNetworkInfo: AuthorityServiceGetNetworkInfo;
   static readonly GetNotary: AuthorityServiceGetNotary;
 }
 
@@ -130,14 +130,14 @@ export class AuthorityServiceClient {
     requestMessage: authority_api_v1_authority_pb.RedeemRequest,
     callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.RedeemResponse|null) => void
   ): UnaryResponse;
-  getEmissary(
-    requestMessage: authority_api_v1_authority_pb.GetEmissaryRequest,
+  getNetworkInfo(
+    requestMessage: authority_api_v1_authority_pb.GetNetworkInfoRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetEmissaryResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetNetworkInfoResponse|null) => void
   ): UnaryResponse;
-  getEmissary(
-    requestMessage: authority_api_v1_authority_pb.GetEmissaryRequest,
-    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetEmissaryResponse|null) => void
+  getNetworkInfo(
+    requestMessage: authority_api_v1_authority_pb.GetNetworkInfoRequest,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetNetworkInfoResponse|null) => void
   ): UnaryResponse;
   getNotary(
     requestMessage: authority_api_v1_authority_pb.GetNotaryRequest,

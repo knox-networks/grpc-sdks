@@ -25,40 +25,35 @@ namespace IssuerApi.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chppc3N1ZXJfYXBpL3YxL2lzc3Vlci5wcm90bxINaXNzdWVyX2FwaS52MRoW",
-            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byLfAQoMSXNzdWVSZXF1ZXN0EkEKGGF1",
+            "Y29tbW9uL3YxL2NvbW1vbi5wcm90byKLAgoMSXNzdWVSZXF1ZXN0EkEKGGF1",
             "dGhlbnRpY2F0aW9uX3NpZ25hdHVyZRgBIAEoCzIfLmNvbW1vbi5BdXRoZW50",
             "aWNhdGlvblNpZ25hdHVyZRIeCgZhbW91bnQYAiABKAsyDi5jb21tb24uQW1v",
             "dW50EioKCWF1dGhvcml0eRgDIAEoCzIXLmNvbW1vbi5EeW5hbWljVmVyaWZp",
-            "ZXISLwoMZGlzdHJpYnV0aW9uGAQgASgLMhQuY29tbW9uLkRpc3RyaWJ1dGlv",
-            "bkgAiAEBQg8KDV9kaXN0cmlidXRpb24iKAoNSXNzdWVSZXNwb25zZRIXCg9w",
-            "cm9taXNzb3J5X2ZpbGUYASABKAwiKwoQQXV0aG9yaXplUmVxdWVzdBIXCg9w",
-            "cm9taXNzb3J5X2ZpbGUYASABKAwiLAoRQXV0aG9yaXplUmVzcG9uc2USFwoP",
-            "cHJvbWlzc29yeV9maWxlGAEgASgMIkAKE0F1dGhlbnRpY2F0ZVJlcXVlc3QS",
-            "KQoIdmVyaWZpZXIYASABKAsyFy5jb21tb24uRHluYW1pY1ZlcmlmaWVyIikK",
-            "FEF1dGhlbnRpY2F0ZVJlc3BvbnNlEhEKCWNoYWxsZW5nZRgBIAEoDCIRCg9H",
-            "ZXRSb2xlc1JlcXVlc3QiewoQR2V0Um9sZXNSZXNwb25zZRI5CgVyb2xlcxgB",
-            "IAMoCzIqLmlzc3Vlcl9hcGkudjEuR2V0Um9sZXNSZXNwb25zZS5Sb2xlc0Vu",
-            "dHJ5GiwKClJvbGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJ",
-            "OgI4ASIsCg5TZXRSb2xlUmVxdWVzdBIaCgRyb2xlGAEgASgLMgwuY29tbW9u",
-            "LlJvbGUiEQoPU2V0Um9sZVJlc3BvbnNlMpkDCg1Jc3N1ZXJTZXJ2aWNlElcK",
-            "DEF1dGhlbnRpY2F0ZRIiLmlzc3Vlcl9hcGkudjEuQXV0aGVudGljYXRlUmVx",
-            "dWVzdBojLmlzc3Vlcl9hcGkudjEuQXV0aGVudGljYXRlUmVzcG9uc2USUgoJ",
-            "QXV0aG9yaXplEh8uaXNzdWVyX2FwaS52MS5BdXRob3JpemVSZXF1ZXN0GiAu",
-            "aXNzdWVyX2FwaS52MS5BdXRob3JpemVSZXNwb25zZSgBMAESRAoFSXNzdWUS",
-            "Gy5pc3N1ZXJfYXBpLnYxLklzc3VlUmVxdWVzdBocLmlzc3Vlcl9hcGkudjEu",
-            "SXNzdWVSZXNwb25zZTABEksKCEdldFJvbGVzEh4uaXNzdWVyX2FwaS52MS5H",
-            "ZXRSb2xlc1JlcXVlc3QaHy5pc3N1ZXJfYXBpLnYxLkdldFJvbGVzUmVzcG9u",
-            "c2USSAoHU2V0Um9sZRIdLmlzc3Vlcl9hcGkudjEuU2V0Um9sZVJlcXVlc3Qa",
-            "Hi5pc3N1ZXJfYXBpLnYxLlNldFJvbGVSZXNwb25zZUI5WjdnaXRodWIuY29t",
-            "L2tub3gtbmV0d29ya3MvZ3JwYy1zZGtzL3Nkay9nby9pc3N1ZXJfYXBpL3Yx",
-            "YgZwcm90bzM="));
+            "ZXISKgoJcmVjaXBpZW50GAUgASgLMhcuY29tbW9uLkR5bmFtaWNWZXJpZmll",
+            "chIvCgxkaXN0cmlidXRpb24YBCABKAsyFC5jb21tb24uRGlzdHJpYnV0aW9u",
+            "SACIAQFCDwoNX2Rpc3RyaWJ1dGlvbiItCg1Jc3N1ZVJlc3BvbnNlEhwKFG51",
+            "bV9wcm9taXNzb3J5X2ZpbGVzGAEgASgNIkAKE0F1dGhlbnRpY2F0ZVJlcXVl",
+            "c3QSKQoIdmVyaWZpZXIYASABKAsyFy5jb21tb24uRHluYW1pY1ZlcmlmaWVy",
+            "IikKFEF1dGhlbnRpY2F0ZVJlc3BvbnNlEhEKCWNoYWxsZW5nZRgBIAEoDCIR",
+            "Cg9HZXRSb2xlc1JlcXVlc3QiewoQR2V0Um9sZXNSZXNwb25zZRI5CgVyb2xl",
+            "cxgBIAMoCzIqLmlzc3Vlcl9hcGkudjEuR2V0Um9sZXNSZXNwb25zZS5Sb2xl",
+            "c0VudHJ5GiwKClJvbGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
+            "ASgJOgI4ASIsCg5TZXRSb2xlUmVxdWVzdBIaCgRyb2xlGAEgASgLMgwuY29t",
+            "bW9uLlJvbGUiEQoPU2V0Um9sZVJlc3BvbnNlMsMCCg1Jc3N1ZXJTZXJ2aWNl",
+            "ElcKDEF1dGhlbnRpY2F0ZRIiLmlzc3Vlcl9hcGkudjEuQXV0aGVudGljYXRl",
+            "UmVxdWVzdBojLmlzc3Vlcl9hcGkudjEuQXV0aGVudGljYXRlUmVzcG9uc2US",
+            "QgoFSXNzdWUSGy5pc3N1ZXJfYXBpLnYxLklzc3VlUmVxdWVzdBocLmlzc3Vl",
+            "cl9hcGkudjEuSXNzdWVSZXNwb25zZRJLCghHZXRSb2xlcxIeLmlzc3Vlcl9h",
+            "cGkudjEuR2V0Um9sZXNSZXF1ZXN0Gh8uaXNzdWVyX2FwaS52MS5HZXRSb2xl",
+            "c1Jlc3BvbnNlEkgKB1NldFJvbGUSHS5pc3N1ZXJfYXBpLnYxLlNldFJvbGVS",
+            "ZXF1ZXN0Gh4uaXNzdWVyX2FwaS52MS5TZXRSb2xlUmVzcG9uc2VCOVo3Z2l0",
+            "aHViLmNvbS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vaXNzdWVy",
+            "X2FwaS92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueRequest), global::IssuerApi.V1.IssueRequest.Parser, new[]{ "AuthenticationSignature", "Amount", "Authority", "Distribution" }, new[]{ "Distribution" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueResponse), global::IssuerApi.V1.IssueResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthorizeRequest), global::IssuerApi.V1.AuthorizeRequest.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthorizeResponse), global::IssuerApi.V1.AuthorizeResponse.Parser, new[]{ "PromissoryFile" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueRequest), global::IssuerApi.V1.IssueRequest.Parser, new[]{ "AuthenticationSignature", "Amount", "Authority", "Recipient", "Distribution" }, new[]{ "Distribution" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.IssueResponse), global::IssuerApi.V1.IssueResponse.Parser, new[]{ "NumPromissoryFiles" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthenticateRequest), global::IssuerApi.V1.AuthenticateRequest.Parser, new[]{ "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.AuthenticateResponse), global::IssuerApi.V1.AuthenticateResponse.Parser, new[]{ "Challenge" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IssuerApi.V1.GetRolesRequest), global::IssuerApi.V1.GetRolesRequest.Parser, null, null, null, null, null),
@@ -78,7 +73,7 @@ namespace IssuerApi.V1 {
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///}
   ///}, 
   ///"amount": {
@@ -88,7 +83,7 @@ namespace IssuerApi.V1 {
   ///}, 
   ///"authority": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///}
   ///}
   /// </summary>
@@ -129,6 +124,7 @@ namespace IssuerApi.V1 {
       authenticationSignature_ = other.authenticationSignature_ != null ? other.authenticationSignature_.Clone() : null;
       amount_ = other.amount_ != null ? other.amount_.Clone() : null;
       authority_ = other.authority_ != null ? other.authority_.Clone() : null;
+      recipient_ = other.recipient_ != null ? other.recipient_.Clone() : null;
       distribution_ = other.distribution_ != null ? other.distribution_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -184,6 +180,21 @@ namespace IssuerApi.V1 {
       }
     }
 
+    /// <summary>Field number for the "recipient" field.</summary>
+    public const int RecipientFieldNumber = 5;
+    private global::Common.DynamicVerifier recipient_;
+    /// <summary>
+    /// Verifier of the Recipient.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.DynamicVerifier Recipient {
+      get { return recipient_; }
+      set {
+        recipient_ = value;
+      }
+    }
+
     /// <summary>Field number for the "distribution" field.</summary>
     public const int DistributionFieldNumber = 4;
     private global::Common.Distribution distribution_;
@@ -217,6 +228,7 @@ namespace IssuerApi.V1 {
       if (!object.Equals(AuthenticationSignature, other.AuthenticationSignature)) return false;
       if (!object.Equals(Amount, other.Amount)) return false;
       if (!object.Equals(Authority, other.Authority)) return false;
+      if (!object.Equals(Recipient, other.Recipient)) return false;
       if (!object.Equals(Distribution, other.Distribution)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -228,6 +240,7 @@ namespace IssuerApi.V1 {
       if (authenticationSignature_ != null) hash ^= AuthenticationSignature.GetHashCode();
       if (amount_ != null) hash ^= Amount.GetHashCode();
       if (authority_ != null) hash ^= Authority.GetHashCode();
+      if (recipient_ != null) hash ^= Recipient.GetHashCode();
       if (distribution_ != null) hash ^= Distribution.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -263,6 +276,10 @@ namespace IssuerApi.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Distribution);
       }
+      if (recipient_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Recipient);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -289,6 +306,10 @@ namespace IssuerApi.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Distribution);
       }
+      if (recipient_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Recipient);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -307,6 +328,9 @@ namespace IssuerApi.V1 {
       }
       if (authority_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Authority);
+      }
+      if (recipient_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Recipient);
       }
       if (distribution_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Distribution);
@@ -340,6 +364,12 @@ namespace IssuerApi.V1 {
           Authority = new global::Common.DynamicVerifier();
         }
         Authority.MergeFrom(other.Authority);
+      }
+      if (other.recipient_ != null) {
+        if (recipient_ == null) {
+          Recipient = new global::Common.DynamicVerifier();
+        }
+        Recipient.MergeFrom(other.Recipient);
       }
       if (other.distribution_ != null) {
         if (distribution_ == null) {
@@ -390,6 +420,13 @@ namespace IssuerApi.V1 {
             input.ReadMessage(Distribution);
             break;
           }
+          case 42: {
+            if (recipient_ == null) {
+              Recipient = new global::Common.DynamicVerifier();
+            }
+            input.ReadMessage(Recipient);
+            break;
+          }
         }
       }
     #endif
@@ -433,6 +470,13 @@ namespace IssuerApi.V1 {
             input.ReadMessage(Distribution);
             break;
           }
+          case 42: {
+            if (recipient_ == null) {
+              Recipient = new global::Common.DynamicVerifier();
+            }
+            input.ReadMessage(Recipient);
+            break;
+          }
         }
       }
     }
@@ -443,7 +487,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries="
+  ///"promissory_file": "PROMISSORYFILEBYTES="
   ///}
   /// </summary>
   public sealed partial class IssueResponse : pb::IMessage<IssueResponse>
@@ -480,7 +524,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IssueResponse(IssueResponse other) : this() {
-      promissoryFile_ = other.promissoryFile_;
+      numPromissoryFiles_ = other.numPromissoryFiles_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -490,18 +534,18 @@ namespace IssuerApi.V1 {
       return new IssueResponse(this);
     }
 
-    /// <summary>Field number for the "promissory_file" field.</summary>
-    public const int PromissoryFileFieldNumber = 1;
-    private pb::ByteString promissoryFile_ = pb::ByteString.Empty;
+    /// <summary>Field number for the "num_promissory_files" field.</summary>
+    public const int NumPromissoryFilesFieldNumber = 1;
+    private uint numPromissoryFiles_;
     /// <summary>
-    /// Stream of a digital banknote.
+    /// The count of files
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString PromissoryFile {
-      get { return promissoryFile_; }
+    public uint NumPromissoryFiles {
+      get { return numPromissoryFiles_; }
       set {
-        promissoryFile_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        numPromissoryFiles_ = value;
       }
     }
 
@@ -520,7 +564,7 @@ namespace IssuerApi.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PromissoryFile != other.PromissoryFile) return false;
+      if (NumPromissoryFiles != other.NumPromissoryFiles) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -528,7 +572,7 @@ namespace IssuerApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PromissoryFile.Length != 0) hash ^= PromissoryFile.GetHashCode();
+      if (NumPromissoryFiles != 0) hash ^= NumPromissoryFiles.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -547,9 +591,9 @@ namespace IssuerApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
+      if (NumPromissoryFiles != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NumPromissoryFiles);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -561,9 +605,9 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
+      if (NumPromissoryFiles != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NumPromissoryFiles);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -575,8 +619,8 @@ namespace IssuerApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PromissoryFile.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PromissoryFile);
+      if (NumPromissoryFiles != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NumPromissoryFiles);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -590,8 +634,8 @@ namespace IssuerApi.V1 {
       if (other == null) {
         return;
       }
-      if (other.PromissoryFile.Length != 0) {
-        PromissoryFile = other.PromissoryFile;
+      if (other.NumPromissoryFiles != 0) {
+        NumPromissoryFiles = other.NumPromissoryFiles;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -608,8 +652,8 @@ namespace IssuerApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
+          case 8: {
+            NumPromissoryFiles = input.ReadUInt32();
             break;
           }
         }
@@ -627,404 +671,8 @@ namespace IssuerApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  /// <summary>
-  /// [Example]
-  ///{
-  ///"promissory_file": "LengthOfFileBytesVaries="
-  ///}
-  /// </summary>
-  public sealed partial class AuthorizeRequest : pb::IMessage<AuthorizeRequest>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<AuthorizeRequest> _parser = new pb::MessageParser<AuthorizeRequest>(() => new AuthorizeRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<AuthorizeRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeRequest(AuthorizeRequest other) : this() {
-      promissoryFile_ = other.promissoryFile_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeRequest Clone() {
-      return new AuthorizeRequest(this);
-    }
-
-    /// <summary>Field number for the "promissory_file" field.</summary>
-    public const int PromissoryFileFieldNumber = 1;
-    private pb::ByteString promissoryFile_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Stream of a digital banknote to authorize.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString PromissoryFile {
-      get { return promissoryFile_; }
-      set {
-        promissoryFile_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as AuthorizeRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(AuthorizeRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (PromissoryFile != other.PromissoryFile) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (PromissoryFile.Length != 0) hash ^= PromissoryFile.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (PromissoryFile.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(AuthorizeRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.PromissoryFile.Length != 0) {
-        PromissoryFile = other.PromissoryFile;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  /// <summary>
-  /// [Example]
-  ///{
-  ///"promissory_file": "LengthOfFileBytesVaries="
-  ///}
-  /// </summary>
-  public sealed partial class AuthorizeResponse : pb::IMessage<AuthorizeResponse>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<AuthorizeResponse> _parser = new pb::MessageParser<AuthorizeResponse>(() => new AuthorizeResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<AuthorizeResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeResponse(AuthorizeResponse other) : this() {
-      promissoryFile_ = other.promissoryFile_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public AuthorizeResponse Clone() {
-      return new AuthorizeResponse(this);
-    }
-
-    /// <summary>Field number for the "promissory_file" field.</summary>
-    public const int PromissoryFileFieldNumber = 1;
-    private pb::ByteString promissoryFile_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Stream of a digital banknote with authorized signature.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString PromissoryFile {
-      get { return promissoryFile_; }
-      set {
-        promissoryFile_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as AuthorizeResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(AuthorizeResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (PromissoryFile != other.PromissoryFile) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (PromissoryFile.Length != 0) hash ^= PromissoryFile.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PromissoryFile.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (PromissoryFile.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(PromissoryFile);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(AuthorizeResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.PromissoryFile.Length != 0) {
-        PromissoryFile = other.PromissoryFile;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            PromissoryFile = input.ReadBytes();
+          case 8: {
+            NumPromissoryFiles = input.ReadUInt32();
             break;
           }
         }
@@ -1039,7 +687,7 @@ namespace IssuerApi.V1 {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///}
   ///}
   /// </summary>
@@ -1057,7 +705,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[4]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1247,7 +895,7 @@ namespace IssuerApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"challenge": "ByteLengthChallengeVariesByAlgo="
+  ///"challenge": "CHALLENGExBYTES="
   ///}
   /// </summary>
   public sealed partial class AuthenticateResponse : pb::IMessage<AuthenticateResponse>
@@ -1264,7 +912,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[5]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1460,7 +1108,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[6]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1627,7 +1275,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[7]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1832,7 +1480,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[8]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2037,7 +1685,7 @@ namespace IssuerApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[9]; }
+      get { return global::IssuerApi.V1.IssuerReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

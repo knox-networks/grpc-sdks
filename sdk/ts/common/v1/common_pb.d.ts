@@ -721,6 +721,96 @@ export namespace Transaction {
   export const Type: TypeMap;
 }
 
+export class FilterItem extends jspb.Message {
+  getField(): string;
+  setField(value: string): void;
+
+  getOperator(): FilterItem.FilterOperatorMap[keyof FilterItem.FilterOperatorMap];
+  setOperator(value: FilterItem.FilterOperatorMap[keyof FilterItem.FilterOperatorMap]): void;
+
+  hasStrValue(): boolean;
+  clearStrValue(): void;
+  getStrValue(): string;
+  setStrValue(value: string): void;
+
+  hasIntValue(): boolean;
+  clearIntValue(): void;
+  getIntValue(): number;
+  setIntValue(value: number): void;
+
+  hasBoolValue(): boolean;
+  clearBoolValue(): void;
+  getBoolValue(): boolean;
+  setBoolValue(value: boolean): void;
+
+  getValueCase(): FilterItem.ValueCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FilterItem.AsObject;
+  static toObject(includeInstance: boolean, msg: FilterItem): FilterItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FilterItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FilterItem;
+  static deserializeBinaryFromReader(message: FilterItem, reader: jspb.BinaryReader): FilterItem;
+}
+
+export namespace FilterItem {
+  export type AsObject = {
+    field: string,
+    operator: FilterItem.FilterOperatorMap[keyof FilterItem.FilterOperatorMap],
+    strValue: string,
+    intValue: number,
+    boolValue: boolean,
+  }
+
+  export interface FilterOperatorMap {
+    FILTER_OPERATOR_UNSPECIFIED: 0;
+    FILTER_OPERATOR_EQ: 1;
+    FILTER_OPERATOR_NE: 2;
+    FILTER_OPERATOR_GT: 3;
+    FILTER_OPERATOR_GTE: 4;
+    FILTER_OPERATOR_LT: 5;
+    FILTER_OPERATOR_LTE: 6;
+    FILTER_OPERATOR_IN: 7;
+    FILTER_OPERATOR_NOT_IN: 8;
+  }
+
+  export const FilterOperator: FilterOperatorMap;
+
+  export enum ValueCase {
+    VALUE_NOT_SET = 0,
+    STR_VALUE = 3,
+    INT_VALUE = 4,
+    BOOL_VALUE = 5,
+  }
+}
+
+export class Filter extends jspb.Message {
+  clearFiltersList(): void;
+  getFiltersList(): Array<FilterItem>;
+  setFiltersList(value: Array<FilterItem>): void;
+  addFilters(value?: FilterItem, index?: number): FilterItem;
+
+  getOperator(): LogicalOperatorMap[keyof LogicalOperatorMap];
+  setOperator(value: LogicalOperatorMap[keyof LogicalOperatorMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Filter.AsObject;
+  static toObject(includeInstance: boolean, msg: Filter): Filter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Filter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Filter;
+  static deserializeBinaryFromReader(message: Filter, reader: jspb.BinaryReader): Filter;
+}
+
+export namespace Filter {
+  export type AsObject = {
+    filtersList: Array<FilterItem.AsObject>,
+    operator: LogicalOperatorMap[keyof LogicalOperatorMap],
+  }
+}
+
 export interface ServiceTypeMap {
   UNKNOWNSERVICE: 0;
   GATEWAY: 1;
@@ -735,6 +825,7 @@ export interface ServiceTypeMap {
   ISSUER: 10;
   OVERLOAD: 11;
   FAUCET: 12;
+  TRANSACTIONMANAGER: 13;
 }
 
 export const ServiceType: ServiceTypeMap;
@@ -757,4 +848,12 @@ export interface TransactionStatusMap {
 }
 
 export const TransactionStatus: TransactionStatusMap;
+
+export interface LogicalOperatorMap {
+  LOGICAL_OPERATOR_UNSPECIFIED: 0;
+  LOGICAL_OPERATOR_AND: 1;
+  LOGICAL_OPERATOR_OR: 2;
+}
+
+export const LogicalOperator: LogicalOperatorMap;
 

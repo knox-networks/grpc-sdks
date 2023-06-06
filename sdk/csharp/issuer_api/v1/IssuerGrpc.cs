@@ -55,10 +55,6 @@ namespace IssuerApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::IssuerApi.V1.AuthenticateResponse> __Marshaller_issuer_api_v1_AuthenticateResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::IssuerApi.V1.AuthenticateResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::IssuerApi.V1.AuthorizeRequest> __Marshaller_issuer_api_v1_AuthorizeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::IssuerApi.V1.AuthorizeRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::IssuerApi.V1.AuthorizeResponse> __Marshaller_issuer_api_v1_AuthorizeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::IssuerApi.V1.AuthorizeResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::IssuerApi.V1.IssueRequest> __Marshaller_issuer_api_v1_IssueRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::IssuerApi.V1.IssueRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::IssuerApi.V1.IssueResponse> __Marshaller_issuer_api_v1_IssueResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::IssuerApi.V1.IssueResponse.Parser));
@@ -80,16 +76,8 @@ namespace IssuerApi.V1 {
         __Marshaller_issuer_api_v1_AuthenticateResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse> __Method_Authorize = new grpc::Method<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse>(
-        grpc::MethodType.DuplexStreaming,
-        __ServiceName,
-        "Authorize",
-        __Marshaller_issuer_api_v1_AuthorizeRequest,
-        __Marshaller_issuer_api_v1_AuthorizeResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::IssuerApi.V1.IssueRequest, global::IssuerApi.V1.IssueResponse> __Method_Issue = new grpc::Method<global::IssuerApi.V1.IssueRequest, global::IssuerApi.V1.IssueResponse>(
-        grpc::MethodType.ServerStreaming,
+        grpc::MethodType.Unary,
         __ServiceName,
         "Issue",
         __Marshaller_issuer_api_v1_IssueRequest,
@@ -134,31 +122,15 @@ namespace IssuerApi.V1 {
       }
 
       /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
-      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
-      /// future double spends. The newly authorized promissory files are returned as a stream.
-      /// </summary>
-      /// <param name="requestStream">Used for reading requests from the client.</param>
-      /// <param name="responseStream">Used for sending responses back to the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>A task indicating completion of the handler.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task Authorize(grpc::IAsyncStreamReader<global::IssuerApi.V1.AuthorizeRequest> requestStream, grpc::IServerStreamWriter<global::IssuerApi.V1.AuthorizeResponse> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      /// <summary>
       /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
       /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
-      /// along with the verifier of the Authority.
+      /// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
-      /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>A task indicating completion of the handler.</returns>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task Issue(global::IssuerApi.V1.IssueRequest request, grpc::IServerStreamWriter<global::IssuerApi.V1.IssueResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::IssuerApi.V1.IssueResponse> Issue(global::IssuerApi.V1.IssueRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -265,58 +237,60 @@ namespace IssuerApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Authenticate, null, options, request);
       }
       /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
-      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
-      /// future double spends. The newly authorized promissory files are returned as a stream.
-      /// </summary>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse> Authorize(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return Authorize(new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
-      /// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
-      /// future double spends. The newly authorized promissory files are returned as a stream.
-      /// </summary>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse> Authorize(grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncDuplexStreamingCall(__Method_Authorize, null, options);
-      }
-      /// <summary>
       /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
       /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
-      /// along with the verifier of the Authority.
+      /// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
+      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::IssuerApi.V1.IssueResponse> Issue(global::IssuerApi.V1.IssueRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::IssuerApi.V1.IssueResponse Issue(global::IssuerApi.V1.IssueRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Issue(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
       /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
-      /// along with the verifier of the Authority.
+      /// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::IssuerApi.V1.IssueResponse Issue(global::IssuerApi.V1.IssueRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Issue, null, options, request);
+      }
+      /// <summary>
+      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+      /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+      /// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::IssuerApi.V1.IssueResponse> IssueAsync(global::IssuerApi.V1.IssueRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return IssueAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
+      /// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
+      /// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::IssuerApi.V1.IssueResponse> Issue(global::IssuerApi.V1.IssueRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::IssuerApi.V1.IssueResponse> IssueAsync(global::IssuerApi.V1.IssueRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncServerStreamingCall(__Method_Issue, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_Issue, null, options, request);
       }
       /// <summary>
       /// Gets the roles configured for the Issuer- ex Currency limit for issuance.
@@ -429,7 +403,6 @@ namespace IssuerApi.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Authenticate, serviceImpl.Authenticate)
-          .AddMethod(__Method_Authorize, serviceImpl.Authorize)
           .AddMethod(__Method_Issue, serviceImpl.Issue)
           .AddMethod(__Method_GetRoles, serviceImpl.GetRoles)
           .AddMethod(__Method_SetRole, serviceImpl.SetRole).Build();
@@ -443,8 +416,7 @@ namespace IssuerApi.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, IssuerServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Authenticate, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::IssuerApi.V1.AuthenticateRequest, global::IssuerApi.V1.AuthenticateResponse>(serviceImpl.Authenticate));
-      serviceBinder.AddMethod(__Method_Authorize, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::IssuerApi.V1.AuthorizeRequest, global::IssuerApi.V1.AuthorizeResponse>(serviceImpl.Authorize));
-      serviceBinder.AddMethod(__Method_Issue, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::IssuerApi.V1.IssueRequest, global::IssuerApi.V1.IssueResponse>(serviceImpl.Issue));
+      serviceBinder.AddMethod(__Method_Issue, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::IssuerApi.V1.IssueRequest, global::IssuerApi.V1.IssueResponse>(serviceImpl.Issue));
       serviceBinder.AddMethod(__Method_GetRoles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::IssuerApi.V1.GetRolesRequest, global::IssuerApi.V1.GetRolesResponse>(serviceImpl.GetRoles));
       serviceBinder.AddMethod(__Method_SetRole, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::IssuerApi.V1.SetRoleRequest, global::IssuerApi.V1.SetRoleResponse>(serviceImpl.SetRole));
     }

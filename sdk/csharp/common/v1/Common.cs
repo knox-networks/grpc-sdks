@@ -76,21 +76,35 @@ namespace Common {
             "KA4yGS5jb21tb24uVHJhbnNhY3Rpb25TdGF0dXMiLAoEUm9sZRIQCgxST0xF",
             "X1NUQVJURVIQABISCg5ST0xFX1JFU1BPTkRFUhABIkgKBFR5cGUSEAoMVFlQ",
             "RV9VTktOT1dOEAASFwoTVFlQRV9TSU1QTEVfUEFZTUVOVBABEhUKEVRZUEVf",
-            "RlVORFNfQ0hBTkdFEAIqxQEKC1NlcnZpY2VUeXBlEhIKDlVua25vd25TZXJ2",
-            "aWNlEAASCwoHR2F0ZXdheRABEgoKBk5vdGFyeRACEg0KCUF1dGhvcml0eRAD",
-            "EgwKCFRyZWFzdXJ5EAQSDAoIRW1pc3NhcnkQBRIKCgZTaGFyZWQQBhIMCghJ",
-            "ZGVudGl0eRAHEgkKBVZhdWx0EAgSEwoPQ3VzdG9kaWFsV2FsbGV0EAkSCgoG",
-            "SXNzdWVyEAoSDAoIT3ZlcmxvYWQQCxIKCgZGYXVjZXQQDCpxCg9TaWduYXR1",
-            "cmVTeXN0ZW0SIAocU0lHTkFUVVJFX1NZU1RFTV9VTlNQRUNJRklFRBAAEhwK",
-            "GFNJR05BVFVSRV9TWVNURU1fRUQyNTUxORABEh4KGlNJR05BVFVSRV9TWVNU",
-            "RU1fU0VDUDI1NksxEAIqkAEKEVRyYW5zYWN0aW9uU3RhdHVzEhYKElNUQVRF",
-            "X0lOSVRJQUxJWklORxAAEhUKEVNUQVRFX0FVVEhPUklaSU5HEAESEQoNU1RB",
-            "VEVfU0VORElORxACEhMKD1NUQVRFX1JFQ0VJVklORxAFEhIKDlNUQVRFX0NP",
-            "TVBMRVRFEAMSEAoMU1RBVEVfRkFJTEVEEARCNVozZ2l0aHViLmNvbS9rbm94",
-            "LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vY29tbW9uL3YxYgZwcm90bzM="));
+            "RlVORFNfQ0hBTkdFEAIikwMKCkZpbHRlckl0ZW0SDQoFZmllbGQYASABKAkS",
+            "MwoIb3BlcmF0b3IYAiABKA4yIS5jb21tb24uRmlsdGVySXRlbS5GaWx0ZXJP",
+            "cGVyYXRvchITCglzdHJfdmFsdWUYAyABKAlIABITCglpbnRfdmFsdWUYBCAB",
+            "KANIABIUCgpib29sX3ZhbHVlGAUgASgISAAi9wEKDkZpbHRlck9wZXJhdG9y",
+            "Eh8KG0ZJTFRFUl9PUEVSQVRPUl9VTlNQRUNJRklFRBAAEhYKEkZJTFRFUl9P",
+            "UEVSQVRPUl9FURABEhYKEkZJTFRFUl9PUEVSQVRPUl9ORRACEhYKEkZJTFRF",
+            "Ul9PUEVSQVRPUl9HVBADEhcKE0ZJTFRFUl9PUEVSQVRPUl9HVEUQBBIWChJG",
+            "SUxURVJfT1BFUkFUT1JfTFQQBRIXChNGSUxURVJfT1BFUkFUT1JfTFRFEAYS",
+            "FgoSRklMVEVSX09QRVJBVE9SX0lOEAcSGgoWRklMVEVSX09QRVJBVE9SX05P",
+            "VF9JThAIQgcKBXZhbHVlIlgKBkZpbHRlchIjCgdmaWx0ZXJzGAEgAygLMhIu",
+            "Y29tbW9uLkZpbHRlckl0ZW0SKQoIb3BlcmF0b3IYAiABKA4yFy5jb21tb24u",
+            "TG9naWNhbE9wZXJhdG9yKt0BCgtTZXJ2aWNlVHlwZRISCg5Vbmtub3duU2Vy",
+            "dmljZRAAEgsKB0dhdGV3YXkQARIKCgZOb3RhcnkQAhINCglBdXRob3JpdHkQ",
+            "AxIMCghUcmVhc3VyeRAEEgwKCEVtaXNzYXJ5EAUSCgoGU2hhcmVkEAYSDAoI",
+            "SWRlbnRpdHkQBxIJCgVWYXVsdBAIEhMKD0N1c3RvZGlhbFdhbGxldBAJEgoK",
+            "Bklzc3VlchAKEgwKCE92ZXJsb2FkEAsSCgoGRmF1Y2V0EAwSFgoSVHJhbnNh",
+            "Y3Rpb25NYW5hZ2VyEA0qcQoPU2lnbmF0dXJlU3lzdGVtEiAKHFNJR05BVFVS",
+            "RV9TWVNURU1fVU5TUEVDSUZJRUQQABIcChhTSUdOQVRVUkVfU1lTVEVNX0VE",
+            "MjU1MTkQARIeChpTSUdOQVRVUkVfU1lTVEVNX1NFQ1AyNTZLMRACKpABChFU",
+            "cmFuc2FjdGlvblN0YXR1cxIWChJTVEFURV9JTklUSUFMSVpJTkcQABIVChFT",
+            "VEFURV9BVVRIT1JJWklORxABEhEKDVNUQVRFX1NFTkRJTkcQAhITCg9TVEFU",
+            "RV9SRUNFSVZJTkcQBRISCg5TVEFURV9DT01QTEVURRADEhAKDFNUQVRFX0ZB",
+            "SUxFRBAEKmYKD0xvZ2ljYWxPcGVyYXRvchIgChxMT0dJQ0FMX09QRVJBVE9S",
+            "X1VOU1BFQ0lGSUVEEAASGAoUTE9HSUNBTF9PUEVSQVRPUl9BTkQQARIXChNM",
+            "T0dJQ0FMX09QRVJBVE9SX09SEAJCNVozZ2l0aHViLmNvbS9rbm94LW5ldHdv",
+            "cmtzL2dycGMtc2Rrcy9zZGsvZ28vY29tbW9uL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Common.ServiceType), typeof(global::Common.SignatureSystem), typeof(global::Common.TransactionStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Common.ServiceType), typeof(global::Common.SignatureSystem), typeof(global::Common.TransactionStatus), typeof(global::Common.LogicalOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.DynamicVerifier), global::Common.DynamicVerifier.Parser, new[]{ "SignatureSystem", "Verifier" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Amount), global::Common.Amount.Parser, new[]{ "CurrencyCode", "Amount_", "Decimals" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Distribution), global::Common.Distribution.Parser, new[]{ "Value" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -116,7 +130,9 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.StartFundsChangeRequest), global::Common.StartFundsChangeRequest.Parser, new[]{ "Amount", "Promissory", "UserReference" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.StartFundsChangeResponse), global::Common.StartFundsChangeResponse.Parser, new[]{ "Uetr" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.TransactionSnapshot), global::Common.TransactionSnapshot.Parser, new[]{ "Status", "Promissories", "AmountTransferred", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Transaction), global::Common.Transaction.Parser, new[]{ "Type", "Role", "Uetr", "Amount", "Created", "Updated", "Memo", "Owner", "Counterparty", "Status" }, null, new[]{ typeof(global::Common.Transaction.Types.Role), typeof(global::Common.Transaction.Types.Type) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Transaction), global::Common.Transaction.Parser, new[]{ "Type", "Role", "Uetr", "Amount", "Created", "Updated", "Memo", "Owner", "Counterparty", "Status" }, null, new[]{ typeof(global::Common.Transaction.Types.Role), typeof(global::Common.Transaction.Types.Type) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.FilterItem), global::Common.FilterItem.Parser, new[]{ "Field", "Operator", "StrValue", "IntValue", "BoolValue" }, new[]{ "Value" }, new[]{ typeof(global::Common.FilterItem.Types.FilterOperator) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Filter), global::Common.Filter.Parser, new[]{ "Filters", "Operator" }, null, null, null, null)
           }));
     }
     #endregion
@@ -180,6 +196,10 @@ namespace Common {
     /// The Faucet Service (Reserved).
     /// </summary>
     [pbr::OriginalName("Faucet")] Faucet = 12,
+    /// <summary>
+    /// The TransactionManager Service (Reserved).
+    /// </summary>
+    [pbr::OriginalName("TransactionManager")] TransactionManager = 13,
   }
 
   /// <summary>
@@ -231,6 +251,12 @@ namespace Common {
     [pbr::OriginalName("STATE_FAILED")] StateFailed = 4,
   }
 
+  public enum LogicalOperator {
+    [pbr::OriginalName("LOGICAL_OPERATOR_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("LOGICAL_OPERATOR_AND")] And = 1,
+    [pbr::OriginalName("LOGICAL_OPERATOR_OR")] Or = 2,
+  }
+
   #endregion
 
   #region Messages
@@ -238,7 +264,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///}
   /// </summary>
   public sealed partial class DynamicVerifier : pb::IMessage<DynamicVerifier>
@@ -953,7 +979,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///}
   ///}
   /// </summary>
@@ -1161,7 +1187,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"challenge": "ByteLengthChallengeVariesByAlgo="
+  ///"challenge": "CHALLENGExBYTES="
   ///}
   /// </summary>
   public sealed partial class AuthenticationResponse : pb::IMessage<AuthenticationResponse>
@@ -1518,11 +1544,11 @@ namespace Common {
   ///"associated_verifiers": [
   ///{
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "VERIFIERxBYTES="
   ///}, 
   ///{
   ///"signature_system": 2, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "VERIFIERxBYTES="
   ///}
   ///]
   ///}
@@ -1713,11 +1739,11 @@ namespace Common {
   ///{
   ///"primary_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "VERIFIERxBYTES="
   ///}, 
   ///"associated_verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "VERIFIERxBYTES="
   ///}
   ///}
   /// </summary>
@@ -1978,7 +2004,7 @@ namespace Common {
   ///"signature": {
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "VERIFIERxBYTES="
   ///},
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///},
@@ -2370,7 +2396,7 @@ namespace Common {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///},
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///}
@@ -2619,7 +2645,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "PROMISSORYFILEBYTES="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureRequest : pb::IMessage<AuthorizedSignatureRequest>
@@ -2817,7 +2843,7 @@ namespace Common {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "PromissoryFileBytesLenVaries="
+  ///"promissory_file": "PROMISSORYFILEBYTES="
   ///}
   /// </summary>
   public sealed partial class AuthorizedSignatureResponse : pb::IMessage<AuthorizedSignatureResponse>
@@ -3016,7 +3042,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"mime_type": "MIME_TYPE",
-  ///"data": "ByteLengthDataVaries="
+  ///"data": "xDATAxBYTES="
   ///}
   /// </summary>
   public sealed partial class Media : pb::IMessage<Media>
@@ -3330,7 +3356,7 @@ namespace Common {
     public const int VerifierFieldNumber = 1;
     private string verifier_ = "";
     /// <summary>
-    /// MultibaseEncodedVerifier.
+    /// MultibaseVerifier.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3945,7 +3971,7 @@ namespace Common {
   ///{
   ///"bytes": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo="
+  ///"verifier": "xVERIFIERxBYTES="
   ///},
   ///"multibase": "MULTIBASE"
   ///}
@@ -6250,11 +6276,11 @@ namespace Common {
   ///"amount":100, 
   ///"decimals":2
   ///}, 
-  ///"created": "CREATED_TIMESTAMP", 
-  ///"updated": "UPDATED_TIMESTAMP", 
+  ///"created": "2006-01-02T15:04:05Z", 
+  ///"updated": "2007-01-02T15:04:05Z", 
   ///"memo": "MEMO", 
-  ///"owner": "OWNER_PUBLIC_KEY", 
-  ///"counterparty": "COUNTERPARTY_PUBLIC_KEY", 
+  ///"owner": "zOwnerPublicKeyMultibase58Encoded", 
+  ///"counterparty": "zCounterpartyPublicKeyMultibase58Encoded", 
   ///"status": 0
   ///}
   /// </summary>
@@ -6852,6 +6878,653 @@ namespace Common {
 
     }
     #endregion
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"field": "FIELD",
+  ///"operator": 0,
+  ///"value": {
+  ///"str_value": "STRINGVAL"
+  ///}
+  ///}
+  /// </summary>
+  public sealed partial class FilterItem : pb::IMessage<FilterItem>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FilterItem> _parser = new pb::MessageParser<FilterItem>(() => new FilterItem());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FilterItem> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterItem() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterItem(FilterItem other) : this() {
+      field_ = other.field_;
+      operator_ = other.operator_;
+      switch (other.ValueCase) {
+        case ValueOneofCase.StrValue:
+          StrValue = other.StrValue;
+          break;
+        case ValueOneofCase.IntValue:
+          IntValue = other.IntValue;
+          break;
+        case ValueOneofCase.BoolValue:
+          BoolValue = other.BoolValue;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterItem Clone() {
+      return new FilterItem(this);
+    }
+
+    /// <summary>Field number for the "field" field.</summary>
+    public const int FieldFieldNumber = 1;
+    private string field_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Field {
+      get { return field_; }
+      set {
+        field_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "operator" field.</summary>
+    public const int OperatorFieldNumber = 2;
+    private global::Common.FilterItem.Types.FilterOperator operator_ = global::Common.FilterItem.Types.FilterOperator.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.FilterItem.Types.FilterOperator Operator {
+      get { return operator_; }
+      set {
+        operator_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "str_value" field.</summary>
+    public const int StrValueFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StrValue {
+      get { return valueCase_ == ValueOneofCase.StrValue ? (string) value_ : ""; }
+      set {
+        value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        valueCase_ = ValueOneofCase.StrValue;
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long IntValue {
+      get { return valueCase_ == ValueOneofCase.IntValue ? (long) value_ : 0L; }
+      set {
+        value_ = value;
+        valueCase_ = ValueOneofCase.IntValue;
+      }
+    }
+
+    /// <summary>Field number for the "bool_value" field.</summary>
+    public const int BoolValueFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool BoolValue {
+      get { return valueCase_ == ValueOneofCase.BoolValue ? (bool) value_ : false; }
+      set {
+        value_ = value;
+        valueCase_ = ValueOneofCase.BoolValue;
+      }
+    }
+
+    private object value_;
+    /// <summary>Enum of possible cases for the "value" oneof.</summary>
+    public enum ValueOneofCase {
+      None = 0,
+      StrValue = 3,
+      IntValue = 4,
+      BoolValue = 5,
+    }
+    private ValueOneofCase valueCase_ = ValueOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ValueOneofCase ValueCase {
+      get { return valueCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearValue() {
+      valueCase_ = ValueOneofCase.None;
+      value_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FilterItem);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FilterItem other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Field != other.Field) return false;
+      if (Operator != other.Operator) return false;
+      if (StrValue != other.StrValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (BoolValue != other.BoolValue) return false;
+      if (ValueCase != other.ValueCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Field.Length != 0) hash ^= Field.GetHashCode();
+      if (Operator != global::Common.FilterItem.Types.FilterOperator.Unspecified) hash ^= Operator.GetHashCode();
+      if (valueCase_ == ValueOneofCase.StrValue) hash ^= StrValue.GetHashCode();
+      if (valueCase_ == ValueOneofCase.IntValue) hash ^= IntValue.GetHashCode();
+      if (valueCase_ == ValueOneofCase.BoolValue) hash ^= BoolValue.GetHashCode();
+      hash ^= (int) valueCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Field.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Field);
+      }
+      if (Operator != global::Common.FilterItem.Types.FilterOperator.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Operator);
+      }
+      if (valueCase_ == ValueOneofCase.StrValue) {
+        output.WriteRawTag(26);
+        output.WriteString(StrValue);
+      }
+      if (valueCase_ == ValueOneofCase.IntValue) {
+        output.WriteRawTag(32);
+        output.WriteInt64(IntValue);
+      }
+      if (valueCase_ == ValueOneofCase.BoolValue) {
+        output.WriteRawTag(40);
+        output.WriteBool(BoolValue);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Field.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Field);
+      }
+      if (Operator != global::Common.FilterItem.Types.FilterOperator.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Operator);
+      }
+      if (valueCase_ == ValueOneofCase.StrValue) {
+        output.WriteRawTag(26);
+        output.WriteString(StrValue);
+      }
+      if (valueCase_ == ValueOneofCase.IntValue) {
+        output.WriteRawTag(32);
+        output.WriteInt64(IntValue);
+      }
+      if (valueCase_ == ValueOneofCase.BoolValue) {
+        output.WriteRawTag(40);
+        output.WriteBool(BoolValue);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Field.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Field);
+      }
+      if (Operator != global::Common.FilterItem.Types.FilterOperator.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Operator);
+      }
+      if (valueCase_ == ValueOneofCase.StrValue) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StrValue);
+      }
+      if (valueCase_ == ValueOneofCase.IntValue) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(IntValue);
+      }
+      if (valueCase_ == ValueOneofCase.BoolValue) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FilterItem other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Field.Length != 0) {
+        Field = other.Field;
+      }
+      if (other.Operator != global::Common.FilterItem.Types.FilterOperator.Unspecified) {
+        Operator = other.Operator;
+      }
+      switch (other.ValueCase) {
+        case ValueOneofCase.StrValue:
+          StrValue = other.StrValue;
+          break;
+        case ValueOneofCase.IntValue:
+          IntValue = other.IntValue;
+          break;
+        case ValueOneofCase.BoolValue:
+          BoolValue = other.BoolValue;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Field = input.ReadString();
+            break;
+          }
+          case 16: {
+            Operator = (global::Common.FilterItem.Types.FilterOperator) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            StrValue = input.ReadString();
+            break;
+          }
+          case 32: {
+            IntValue = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            BoolValue = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Field = input.ReadString();
+            break;
+          }
+          case 16: {
+            Operator = (global::Common.FilterItem.Types.FilterOperator) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            StrValue = input.ReadString();
+            break;
+          }
+          case 32: {
+            IntValue = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            BoolValue = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the FilterItem message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum FilterOperator {
+        [pbr::OriginalName("FILTER_OPERATOR_UNSPECIFIED")] Unspecified = 0,
+        [pbr::OriginalName("FILTER_OPERATOR_EQ")] Eq = 1,
+        [pbr::OriginalName("FILTER_OPERATOR_NE")] Ne = 2,
+        [pbr::OriginalName("FILTER_OPERATOR_GT")] Gt = 3,
+        [pbr::OriginalName("FILTER_OPERATOR_GTE")] Gte = 4,
+        [pbr::OriginalName("FILTER_OPERATOR_LT")] Lt = 5,
+        [pbr::OriginalName("FILTER_OPERATOR_LTE")] Lte = 6,
+        [pbr::OriginalName("FILTER_OPERATOR_IN")] In = 7,
+        [pbr::OriginalName("FILTER_OPERATOR_NOT_IN")] NotIn = 8,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"filters": [
+  ///{
+  ///"field": "FIELD1",
+  ///"operator": 0,
+  ///"value": {
+  ///"str_value": "STRINGVAL"
+  ///}
+  ///}, 
+  ///{
+  ///"field": "FIELD2",
+  ///"operator": 0,
+  ///"value": {
+  ///"int_value": 10
+  ///}
+  ///},
+  ///{
+  ///"field": "FIELD3",
+  ///"operator": 0,
+  ///"value": {
+  ///"bool_value": false
+  ///}
+  ///}
+  ///],
+  ///"operator": 0
+  ///}
+  /// </summary>
+  public sealed partial class Filter : pb::IMessage<Filter>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Filter> _parser = new pb::MessageParser<Filter>(() => new Filter());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Filter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Filter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Filter(Filter other) : this() {
+      filters_ = other.filters_.Clone();
+      operator_ = other.operator_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Filter Clone() {
+      return new Filter(this);
+    }
+
+    /// <summary>Field number for the "filters" field.</summary>
+    public const int FiltersFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Common.FilterItem> _repeated_filters_codec
+        = pb::FieldCodec.ForMessage(10, global::Common.FilterItem.Parser);
+    private readonly pbc::RepeatedField<global::Common.FilterItem> filters_ = new pbc::RepeatedField<global::Common.FilterItem>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Common.FilterItem> Filters {
+      get { return filters_; }
+    }
+
+    /// <summary>Field number for the "operator" field.</summary>
+    public const int OperatorFieldNumber = 2;
+    private global::Common.LogicalOperator operator_ = global::Common.LogicalOperator.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Common.LogicalOperator Operator {
+      get { return operator_; }
+      set {
+        operator_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Filter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Filter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!filters_.Equals(other.filters_)) return false;
+      if (Operator != other.Operator) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= filters_.GetHashCode();
+      if (Operator != global::Common.LogicalOperator.Unspecified) hash ^= Operator.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      filters_.WriteTo(output, _repeated_filters_codec);
+      if (Operator != global::Common.LogicalOperator.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Operator);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      filters_.WriteTo(ref output, _repeated_filters_codec);
+      if (Operator != global::Common.LogicalOperator.Unspecified) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Operator);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += filters_.CalculateSize(_repeated_filters_codec);
+      if (Operator != global::Common.LogicalOperator.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Operator);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Filter other) {
+      if (other == null) {
+        return;
+      }
+      filters_.Add(other.filters_);
+      if (other.Operator != global::Common.LogicalOperator.Unspecified) {
+        Operator = other.Operator;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            filters_.AddEntriesFrom(input, _repeated_filters_codec);
+            break;
+          }
+          case 16: {
+            Operator = (global::Common.LogicalOperator) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            filters_.AddEntriesFrom(ref input, _repeated_filters_codec);
+            break;
+          }
+          case 16: {
+            Operator = (global::Common.LogicalOperator) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

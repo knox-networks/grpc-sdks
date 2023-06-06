@@ -15,20 +15,11 @@ type IssuerServiceAuthenticate = {
   readonly responseType: typeof issuer_api_v1_issuer_pb.AuthenticateResponse;
 };
 
-type IssuerServiceAuthorize = {
-  readonly methodName: string;
-  readonly service: typeof IssuerService;
-  readonly requestStream: true;
-  readonly responseStream: true;
-  readonly requestType: typeof issuer_api_v1_issuer_pb.AuthorizeRequest;
-  readonly responseType: typeof issuer_api_v1_issuer_pb.AuthorizeResponse;
-};
-
 type IssuerServiceIssue = {
   readonly methodName: string;
   readonly service: typeof IssuerService;
   readonly requestStream: false;
-  readonly responseStream: true;
+  readonly responseStream: false;
   readonly requestType: typeof issuer_api_v1_issuer_pb.IssueRequest;
   readonly responseType: typeof issuer_api_v1_issuer_pb.IssueResponse;
 };
@@ -54,7 +45,6 @@ type IssuerServiceSetRole = {
 export class IssuerService {
   static readonly serviceName: string;
   static readonly Authenticate: IssuerServiceAuthenticate;
-  static readonly Authorize: IssuerServiceAuthorize;
   static readonly Issue: IssuerServiceIssue;
   static readonly GetRoles: IssuerServiceGetRoles;
   static readonly SetRole: IssuerServiceSetRole;
@@ -101,8 +91,15 @@ export class IssuerServiceClient {
     requestMessage: issuer_api_v1_issuer_pb.AuthenticateRequest,
     callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.AuthenticateResponse|null) => void
   ): UnaryResponse;
-  authorize(metadata?: grpc.Metadata): BidirectionalStream<issuer_api_v1_issuer_pb.AuthorizeRequest, issuer_api_v1_issuer_pb.AuthorizeResponse>;
-  issue(requestMessage: issuer_api_v1_issuer_pb.IssueRequest, metadata?: grpc.Metadata): ResponseStream<issuer_api_v1_issuer_pb.IssueResponse>;
+  issue(
+    requestMessage: issuer_api_v1_issuer_pb.IssueRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.IssueResponse|null) => void
+  ): UnaryResponse;
+  issue(
+    requestMessage: issuer_api_v1_issuer_pb.IssueRequest,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.IssueResponse|null) => void
+  ): UnaryResponse;
   getRoles(
     requestMessage: issuer_api_v1_issuer_pb.GetRolesRequest,
     metadata: grpc.Metadata,

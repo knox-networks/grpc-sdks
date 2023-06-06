@@ -52,21 +52,9 @@ namespace Treasury {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Treasury.RemittanceRequest> __Marshaller_treasury_RemittanceRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Treasury.RemittanceRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Treasury.RemittanceResponse> __Marshaller_treasury_RemittanceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Treasury.RemittanceResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Treasury.GetSupplyRequest> __Marshaller_treasury_GetSupplyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Treasury.GetSupplyRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Treasury.GetSupplyResponse> __Marshaller_treasury_GetSupplyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Treasury.GetSupplyResponse.Parser));
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse> __Method_Remit = new grpc::Method<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse>(
-        grpc::MethodType.DuplexStreaming,
-        __ServiceName,
-        "Remit",
-        __Marshaller_treasury_RemittanceRequest,
-        __Marshaller_treasury_RemittanceResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Treasury.GetSupplyRequest, global::Treasury.GetSupplyResponse> __Method_GetSupply = new grpc::Method<global::Treasury.GetSupplyRequest, global::Treasury.GetSupplyResponse>(
@@ -86,19 +74,6 @@ namespace Treasury {
     [grpc::BindServiceMethod(typeof(MonetaeTreasury), "BindService")]
     public abstract partial class MonetaeTreasuryBase
     {
-      /// <summary>
-      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
-      /// </summary>
-      /// <param name="requestStream">Used for reading requests from the client.</param>
-      /// <param name="responseStream">Used for sending responses back to the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>A task indicating completion of the handler.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task Remit(grpc::IAsyncStreamReader<global::Treasury.RemittanceRequest> requestStream, grpc::IServerStreamWriter<global::Treasury.RemittanceResponse> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       /// <summary>
       /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
@@ -140,28 +115,6 @@ namespace Treasury {
       {
       }
 
-      /// <summary>
-      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
-      /// </summary>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse> Remit(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return Remit(new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// Start a new remittance, passing in a streamed request and gets back a streamed response.
-      /// </summary>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncDuplexStreamingCall<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse> Remit(grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncDuplexStreamingCall(__Method_Remit, null, options);
-      }
       /// <summary>
       /// Get a list of denomination counts of the digital banknotes held in the Treasury service's vault.
       /// </summary>
@@ -224,7 +177,6 @@ namespace Treasury {
     public static grpc::ServerServiceDefinition BindService(MonetaeTreasuryBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Remit, serviceImpl.Remit)
           .AddMethod(__Method_GetSupply, serviceImpl.GetSupply).Build();
     }
 
@@ -235,7 +187,6 @@ namespace Treasury {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MonetaeTreasuryBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_Remit, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Treasury.RemittanceRequest, global::Treasury.RemittanceResponse>(serviceImpl.Remit));
       serviceBinder.AddMethod(__Method_GetSupply, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Treasury.GetSupplyRequest, global::Treasury.GetSupplyResponse>(serviceImpl.GetSupply));
     }
 

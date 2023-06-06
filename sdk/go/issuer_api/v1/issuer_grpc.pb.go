@@ -20,14 +20,10 @@ const _ = grpc.SupportPackageIsVersion7
 type IssuerServiceClient interface {
 	// Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
 	Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error)
-	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
-	// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
-	// future double spends. The newly authorized promissory files are returned as a stream.
-	Authorize(ctx context.Context, opts ...grpc.CallOption) (IssuerService_AuthorizeClient, error)
 	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
 	// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
-	// along with the verifier of the Authority.
-	Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (IssuerService_IssueClient, error)
+	// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
+	Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (*IssueResponse, error)
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error)
 	// Sets the roles configured for the Issuer- Ex List of the currency limits.
@@ -51,67 +47,13 @@ func (c *issuerServiceClient) Authenticate(ctx context.Context, in *Authenticate
 	return out, nil
 }
 
-func (c *issuerServiceClient) Authorize(ctx context.Context, opts ...grpc.CallOption) (IssuerService_AuthorizeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &IssuerService_ServiceDesc.Streams[0], "/issuer_api.v1.IssuerService/Authorize", opts...)
+func (c *issuerServiceClient) Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (*IssueResponse, error) {
+	out := new(IssueResponse)
+	err := c.cc.Invoke(ctx, "/issuer_api.v1.IssuerService/Issue", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &issuerServiceAuthorizeClient{stream}
-	return x, nil
-}
-
-type IssuerService_AuthorizeClient interface {
-	Send(*AuthorizeRequest) error
-	Recv() (*AuthorizeResponse, error)
-	grpc.ClientStream
-}
-
-type issuerServiceAuthorizeClient struct {
-	grpc.ClientStream
-}
-
-func (x *issuerServiceAuthorizeClient) Send(m *AuthorizeRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *issuerServiceAuthorizeClient) Recv() (*AuthorizeResponse, error) {
-	m := new(AuthorizeResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *issuerServiceClient) Issue(ctx context.Context, in *IssueRequest, opts ...grpc.CallOption) (IssuerService_IssueClient, error) {
-	stream, err := c.cc.NewStream(ctx, &IssuerService_ServiceDesc.Streams[1], "/issuer_api.v1.IssuerService/Issue", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &issuerServiceIssueClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type IssuerService_IssueClient interface {
-	Recv() (*IssueResponse, error)
-	grpc.ClientStream
-}
-
-type issuerServiceIssueClient struct {
-	grpc.ClientStream
-}
-
-func (x *issuerServiceIssueClient) Recv() (*IssueResponse, error) {
-	m := new(IssueResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 func (c *issuerServiceClient) GetRoles(ctx context.Context, in *GetRolesRequest, opts ...grpc.CallOption) (*GetRolesResponse, error) {
@@ -138,14 +80,10 @@ func (c *issuerServiceClient) SetRole(ctx context.Context, in *SetRoleRequest, o
 type IssuerServiceServer interface {
 	// Checks that the Verifier is authenticated, then stores and returns the challenge nonce.
 	Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error)
-	// Sends a stream of digital banknotes to be authorized. The digital banknote is checked to see if it is transferred
-	// to the new owner, but not yet authorized. IT is then checked for double spends, signed and saved to check for
-	// future double spends. The newly authorized promissory files are returned as a stream.
-	Authorize(IssuerService_AuthorizeServer) error
 	// Issues digital banknotes against the corresponding issuance limit set by an Authority.  The Issuer must collect the
 	// Authenticate challenge signature, the Amount with a total amount, decimal place precision, and a currency code,
-	// along with the verifier of the Authority.
-	Issue(*IssueRequest, IssuerService_IssueServer) error
+	// along with the verifier of the Authority. Issued promissories are sent to the given recipient.
+	Issue(context.Context, *IssueRequest) (*IssueResponse, error)
 	// Gets the roles configured for the Issuer- ex Currency limit for issuance.
 	GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error)
 	// Sets the roles configured for the Issuer- Ex List of the currency limits.
@@ -160,11 +98,8 @@ type UnimplementedIssuerServiceServer struct {
 func (UnimplementedIssuerServiceServer) Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Authenticate not implemented")
 }
-func (UnimplementedIssuerServiceServer) Authorize(IssuerService_AuthorizeServer) error {
-	return status.Errorf(codes.Unimplemented, "method Authorize not implemented")
-}
-func (UnimplementedIssuerServiceServer) Issue(*IssueRequest, IssuerService_IssueServer) error {
-	return status.Errorf(codes.Unimplemented, "method Issue not implemented")
+func (UnimplementedIssuerServiceServer) Issue(context.Context, *IssueRequest) (*IssueResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Issue not implemented")
 }
 func (UnimplementedIssuerServiceServer) GetRoles(context.Context, *GetRolesRequest) (*GetRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoles not implemented")
@@ -203,51 +138,22 @@ func _IssuerService_Authenticate_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IssuerService_Authorize_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(IssuerServiceServer).Authorize(&issuerServiceAuthorizeServer{stream})
-}
-
-type IssuerService_AuthorizeServer interface {
-	Send(*AuthorizeResponse) error
-	Recv() (*AuthorizeRequest, error)
-	grpc.ServerStream
-}
-
-type issuerServiceAuthorizeServer struct {
-	grpc.ServerStream
-}
-
-func (x *issuerServiceAuthorizeServer) Send(m *AuthorizeResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *issuerServiceAuthorizeServer) Recv() (*AuthorizeRequest, error) {
-	m := new(AuthorizeRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _IssuerService_Issue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
-}
-
-func _IssuerService_Issue_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(IssueRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
+	if interceptor == nil {
+		return srv.(IssuerServiceServer).Issue(ctx, in)
 	}
-	return srv.(IssuerServiceServer).Issue(m, &issuerServiceIssueServer{stream})
-}
-
-type IssuerService_IssueServer interface {
-	Send(*IssueResponse) error
-	grpc.ServerStream
-}
-
-type issuerServiceIssueServer struct {
-	grpc.ServerStream
-}
-
-func (x *issuerServiceIssueServer) Send(m *IssueResponse) error {
-	return x.ServerStream.SendMsg(m)
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/issuer_api.v1.IssuerService/Issue",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(IssuerServiceServer).Issue(ctx, req.(*IssueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _IssuerService_GetRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -298,6 +204,10 @@ var IssuerService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _IssuerService_Authenticate_Handler,
 		},
 		{
+			MethodName: "Issue",
+			Handler:    _IssuerService_Issue_Handler,
+		},
+		{
 			MethodName: "GetRoles",
 			Handler:    _IssuerService_GetRoles_Handler,
 		},
@@ -306,18 +216,6 @@ var IssuerService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _IssuerService_SetRole_Handler,
 		},
 	},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "Authorize",
-			Handler:       _IssuerService_Authorize_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
-		},
-		{
-			StreamName:    "Issue",
-			Handler:       _IssuerService_Issue_Handler,
-			ServerStreams: true,
-		},
-	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "issuer_api/v1/issuer.proto",
 }

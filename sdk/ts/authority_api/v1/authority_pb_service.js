@@ -48,13 +48,13 @@ AuthorityService.Redeem = {
   responseType: authority_api_v1_authority_pb.RedeemResponse
 };
 
-AuthorityService.GetEmissary = {
-  methodName: "GetEmissary",
+AuthorityService.GetNetworkInfo = {
+  methodName: "GetNetworkInfo",
   service: AuthorityService,
   requestStream: false,
   responseStream: false,
-  requestType: authority_api_v1_authority_pb.GetEmissaryRequest,
-  responseType: authority_api_v1_authority_pb.GetEmissaryResponse
+  requestType: authority_api_v1_authority_pb.GetNetworkInfoRequest,
+  responseType: authority_api_v1_authority_pb.GetNetworkInfoResponse
 };
 
 AuthorityService.GetNotary = {
@@ -211,11 +211,11 @@ AuthorityServiceClient.prototype.redeem = function redeem(requestMessage, metada
   };
 };
 
-AuthorityServiceClient.prototype.getEmissary = function getEmissary(requestMessage, metadata, callback) {
+AuthorityServiceClient.prototype.getNetworkInfo = function getNetworkInfo(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AuthorityService.GetEmissary, {
+  var client = grpc.unary(AuthorityService.GetNetworkInfo, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

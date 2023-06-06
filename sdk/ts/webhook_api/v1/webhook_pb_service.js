@@ -57,6 +57,15 @@ WebhookManagerService.RetryEvent = {
   responseType: webhook_api_v1_webhook_pb.RetryEventResponse
 };
 
+WebhookManagerService.Ping = {
+  methodName: "Ping",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.PingRequest,
+  responseType: webhook_api_v1_webhook_pb.PingResponse
+};
+
 exports.WebhookManagerService = WebhookManagerService;
 
 function WebhookManagerServiceClient(serviceHost, options) {
@@ -193,6 +202,37 @@ WebhookManagerServiceClient.prototype.retryEvent = function retryEvent(requestMe
     callback = arguments[1];
   }
   var client = grpc.unary(WebhookManagerService.RetryEvent, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.ping = function ping(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.Ping, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

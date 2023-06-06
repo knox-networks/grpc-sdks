@@ -12,15 +12,6 @@ var MonetaeTreasury = (function () {
   return MonetaeTreasury;
 }());
 
-MonetaeTreasury.Remit = {
-  methodName: "Remit",
-  service: MonetaeTreasury,
-  requestStream: true,
-  responseStream: true,
-  requestType: treasury_v1_treasury_pb.RemittanceRequest,
-  responseType: treasury_v1_treasury_pb.RemittanceResponse
-};
-
 MonetaeTreasury.GetSupply = {
   methodName: "GetSupply",
   service: MonetaeTreasury,
@@ -36,51 +27,6 @@ function MonetaeTreasuryClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
-
-MonetaeTreasuryClient.prototype.remit = function remit(metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.client(MonetaeTreasury.Remit, {
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport
-  });
-  client.onEnd(function (status, statusMessage, trailers) {
-    listeners.status.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners.end.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners = null;
-  });
-  client.onMessage(function (message) {
-    listeners.data.forEach(function (handler) {
-      handler(message);
-    })
-  });
-  client.start(metadata);
-  return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
-    write: function (requestMessage) {
-      client.send(requestMessage);
-      return this;
-    },
-    end: function () {
-      client.finishSend();
-    },
-    cancel: function () {
-      listeners = null;
-      client.close();
-    }
-  };
-};
 
 MonetaeTreasuryClient.prototype.getSupply = function getSupply(requestMessage, metadata, callback) {
   if (arguments.length === 2) {

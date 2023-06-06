@@ -28,7 +28,7 @@ type WalletServiceClient interface {
 	// List all wallets for a given owner.
 	ListWallets(ctx context.Context, in *ListWalletsRequest, opts ...grpc.CallOption) (*ListWalletsResponse, error)
 	// List the digital banknotes for a wallet.
-	ListFunds(ctx context.Context, in *ListFundsRequest, opts ...grpc.CallOption) (*ListFundsResponse, error)
+	ListAssetFiles(ctx context.Context, in *ListAssetFilesRequest, opts ...grpc.CallOption) (*ListAssetFilesResponse, error)
 	// List the balances of each currency in the wallet.
 	ListWalletBalances(ctx context.Context, in *ListWalletBalancesRequest, opts ...grpc.CallOption) (*ListWalletBalancesResponse, error)
 	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
@@ -49,6 +49,9 @@ type WalletServiceClient interface {
 	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
 	// to query more information about the transaction.
 	PrepareFundsChange(ctx context.Context, in *PrepareFundsChangeRequest, opts ...grpc.CallOption) (*PrepareFundsChangeResponse, error)
+	// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+	// to query more information about the transaction.
+	PrepareTwoStepPayment(ctx context.Context, in *PrepareTwoStepPaymentRequest, opts ...grpc.CallOption) (*PrepareTwoStepPaymentResponse, error)
 	// Obtains metadata about a transaction.
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
 	// List all transactions of a given wallet.
@@ -103,9 +106,9 @@ func (c *walletServiceClient) ListWallets(ctx context.Context, in *ListWalletsRe
 	return out, nil
 }
 
-func (c *walletServiceClient) ListFunds(ctx context.Context, in *ListFundsRequest, opts ...grpc.CallOption) (*ListFundsResponse, error) {
-	out := new(ListFundsResponse)
-	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListFunds", in, out, opts...)
+func (c *walletServiceClient) ListAssetFiles(ctx context.Context, in *ListAssetFilesRequest, opts ...grpc.CallOption) (*ListAssetFilesResponse, error) {
+	out := new(ListAssetFilesResponse)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/ListAssetFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -184,6 +187,15 @@ func (c *walletServiceClient) PrepareFundsChange(ctx context.Context, in *Prepar
 	return out, nil
 }
 
+func (c *walletServiceClient) PrepareTwoStepPayment(ctx context.Context, in *PrepareTwoStepPaymentRequest, opts ...grpc.CallOption) (*PrepareTwoStepPaymentResponse, error) {
+	out := new(PrepareTwoStepPaymentResponse)
+	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/PrepareTwoStepPayment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *walletServiceClient) GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error) {
 	out := new(GetTransactionResponse)
 	err := c.cc.Invoke(ctx, "/wallet_api.v1.WalletService/GetTransaction", in, out, opts...)
@@ -234,7 +246,7 @@ type WalletServiceServer interface {
 	// List all wallets for a given owner.
 	ListWallets(context.Context, *ListWalletsRequest) (*ListWalletsResponse, error)
 	// List the digital banknotes for a wallet.
-	ListFunds(context.Context, *ListFundsRequest) (*ListFundsResponse, error)
+	ListAssetFiles(context.Context, *ListAssetFilesRequest) (*ListAssetFilesResponse, error)
 	// List the balances of each currency in the wallet.
 	ListWalletBalances(context.Context, *ListWalletBalancesRequest) (*ListWalletBalancesResponse, error)
 	// Sends digital banknotes from the Issuer wallet to the Authority for redemption of digital banknotes and increase
@@ -255,6 +267,9 @@ type WalletServiceServer interface {
 	// Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
 	// to query more information about the transaction.
 	PrepareFundsChange(context.Context, *PrepareFundsChangeRequest) (*PrepareFundsChangeResponse, error)
+	// Request to start a new two-step payment. The call immediately returns with a `status` and `uetr` that can be used
+	// to query more information about the transaction.
+	PrepareTwoStepPayment(context.Context, *PrepareTwoStepPaymentRequest) (*PrepareTwoStepPaymentResponse, error)
 	// Obtains metadata about a transaction.
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
 	// List all transactions of a given wallet.
@@ -282,8 +297,8 @@ func (UnimplementedWalletServiceServer) CreateWallet(context.Context, *CreateWal
 func (UnimplementedWalletServiceServer) ListWallets(context.Context, *ListWalletsRequest) (*ListWalletsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWallets not implemented")
 }
-func (UnimplementedWalletServiceServer) ListFunds(context.Context, *ListFundsRequest) (*ListFundsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFunds not implemented")
+func (UnimplementedWalletServiceServer) ListAssetFiles(context.Context, *ListAssetFilesRequest) (*ListAssetFilesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAssetFiles not implemented")
 }
 func (UnimplementedWalletServiceServer) ListWalletBalances(context.Context, *ListWalletBalancesRequest) (*ListWalletBalancesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWalletBalances not implemented")
@@ -308,6 +323,9 @@ func (UnimplementedWalletServiceServer) PrepareSimplePayment(context.Context, *P
 }
 func (UnimplementedWalletServiceServer) PrepareFundsChange(context.Context, *PrepareFundsChangeRequest) (*PrepareFundsChangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareFundsChange not implemented")
+}
+func (UnimplementedWalletServiceServer) PrepareTwoStepPayment(context.Context, *PrepareTwoStepPaymentRequest) (*PrepareTwoStepPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrepareTwoStepPayment not implemented")
 }
 func (UnimplementedWalletServiceServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
@@ -406,20 +424,20 @@ func _WalletService_ListWallets_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _WalletService_ListFunds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFundsRequest)
+func _WalletService_ListAssetFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAssetFilesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WalletServiceServer).ListFunds(ctx, in)
+		return srv.(WalletServiceServer).ListAssetFiles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wallet_api.v1.WalletService/ListFunds",
+		FullMethod: "/wallet_api.v1.WalletService/ListAssetFiles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WalletServiceServer).ListFunds(ctx, req.(*ListFundsRequest))
+		return srv.(WalletServiceServer).ListAssetFiles(ctx, req.(*ListAssetFilesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -568,6 +586,24 @@ func _WalletService_PrepareFundsChange_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WalletService_PrepareTwoStepPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareTwoStepPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServiceServer).PrepareTwoStepPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wallet_api.v1.WalletService/PrepareTwoStepPayment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServiceServer).PrepareTwoStepPayment(ctx, req.(*PrepareTwoStepPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WalletService_GetTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetTransactionRequest)
 	if err := dec(in); err != nil {
@@ -664,8 +700,8 @@ var WalletService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _WalletService_ListWallets_Handler,
 		},
 		{
-			MethodName: "ListFunds",
-			Handler:    _WalletService_ListFunds_Handler,
+			MethodName: "ListAssetFiles",
+			Handler:    _WalletService_ListAssetFiles_Handler,
 		},
 		{
 			MethodName: "ListWalletBalances",
@@ -698,6 +734,10 @@ var WalletService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PrepareFundsChange",
 			Handler:    _WalletService_PrepareFundsChange_Handler,
+		},
+		{
+			MethodName: "PrepareTwoStepPayment",
+			Handler:    _WalletService_PrepareTwoStepPayment_Handler,
 		},
 		{
 			MethodName: "GetTransaction",

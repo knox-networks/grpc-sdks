@@ -67,9 +67,9 @@ namespace AuthorityApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::AuthorityApi.V1.RedeemResponse> __Marshaller_authority_api_v1_RedeemResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.RedeemResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetEmissaryRequest> __Marshaller_authority_api_v1_GetEmissaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetEmissaryRequest.Parser));
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetNetworkInfoRequest> __Marshaller_authority_api_v1_GetNetworkInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetNetworkInfoRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetEmissaryResponse> __Marshaller_authority_api_v1_GetEmissaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetEmissaryResponse.Parser));
+    static readonly grpc::Marshaller<global::AuthorityApi.V1.GetNetworkInfoResponse> __Marshaller_authority_api_v1_GetNetworkInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetNetworkInfoResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::AuthorityApi.V1.GetNotaryRequest> __Marshaller_authority_api_v1_GetNotaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AuthorityApi.V1.GetNotaryRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -108,12 +108,12 @@ namespace AuthorityApi.V1 {
         __Marshaller_authority_api_v1_RedeemResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse> __Method_GetEmissary = new grpc::Method<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse>(
+    static readonly grpc::Method<global::AuthorityApi.V1.GetNetworkInfoRequest, global::AuthorityApi.V1.GetNetworkInfoResponse> __Method_GetNetworkInfo = new grpc::Method<global::AuthorityApi.V1.GetNetworkInfoRequest, global::AuthorityApi.V1.GetNetworkInfoResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetEmissary",
-        __Marshaller_authority_api_v1_GetEmissaryRequest,
-        __Marshaller_authority_api_v1_GetEmissaryResponse);
+        "GetNetworkInfo",
+        __Marshaller_authority_api_v1_GetNetworkInfoRequest,
+        __Marshaller_authority_api_v1_GetNetworkInfoResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse> __Method_GetNotary = new grpc::Method<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse>(
@@ -190,7 +190,7 @@ namespace AuthorityApi.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::AuthorityApi.V1.GetNetworkInfoResponse> GetNetworkInfo(global::AuthorityApi.V1.GetNetworkInfoRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -415,9 +415,9 @@ namespace AuthorityApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthorityApi.V1.GetEmissaryResponse GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::AuthorityApi.V1.GetNetworkInfoResponse GetNetworkInfo(global::AuthorityApi.V1.GetNetworkInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetEmissary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetNetworkInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// Gets the verifier of the Emissary for this Authority.
@@ -426,9 +426,9 @@ namespace AuthorityApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AuthorityApi.V1.GetEmissaryResponse GetEmissary(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::CallOptions options)
+      public virtual global::AuthorityApi.V1.GetNetworkInfoResponse GetNetworkInfo(global::AuthorityApi.V1.GetNetworkInfoRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GetEmissary, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_GetNetworkInfo, null, options, request);
       }
       /// <summary>
       /// Gets the verifier of the Emissary for this Authority.
@@ -439,9 +439,9 @@ namespace AuthorityApi.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissaryAsync(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetNetworkInfoResponse> GetNetworkInfoAsync(global::AuthorityApi.V1.GetNetworkInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetEmissaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetNetworkInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// Gets the verifier of the Emissary for this Authority.
@@ -450,9 +450,9 @@ namespace AuthorityApi.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetEmissaryResponse> GetEmissaryAsync(global::AuthorityApi.V1.GetEmissaryRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::AuthorityApi.V1.GetNetworkInfoResponse> GetNetworkInfoAsync(global::AuthorityApi.V1.GetNetworkInfoRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GetEmissary, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_GetNetworkInfo, null, options, request);
       }
       /// <summary>
       /// Gets the signature of the Notary for this Authority/Notary.
@@ -520,7 +520,7 @@ namespace AuthorityApi.V1 {
           .AddMethod(__Method_GetIssuerLimits, serviceImpl.GetIssuerLimits)
           .AddMethod(__Method_Authorize, serviceImpl.Authorize)
           .AddMethod(__Method_Redeem, serviceImpl.Redeem)
-          .AddMethod(__Method_GetEmissary, serviceImpl.GetEmissary)
+          .AddMethod(__Method_GetNetworkInfo, serviceImpl.GetNetworkInfo)
           .AddMethod(__Method_GetNotary, serviceImpl.GetNotary).Build();
     }
 
@@ -535,7 +535,7 @@ namespace AuthorityApi.V1 {
       serviceBinder.AddMethod(__Method_GetIssuerLimits, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetIssuerLimitsRequest, global::AuthorityApi.V1.GetIssuerLimitsResponse>(serviceImpl.GetIssuerLimits));
       serviceBinder.AddMethod(__Method_Authorize, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::AuthorityApi.V1.AuthorizeRequest, global::AuthorityApi.V1.AuthorizeResponse>(serviceImpl.Authorize));
       serviceBinder.AddMethod(__Method_Redeem, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.RedeemRequest, global::AuthorityApi.V1.RedeemResponse>(serviceImpl.Redeem));
-      serviceBinder.AddMethod(__Method_GetEmissary, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetEmissaryRequest, global::AuthorityApi.V1.GetEmissaryResponse>(serviceImpl.GetEmissary));
+      serviceBinder.AddMethod(__Method_GetNetworkInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetNetworkInfoRequest, global::AuthorityApi.V1.GetNetworkInfoResponse>(serviceImpl.GetNetworkInfo));
       serviceBinder.AddMethod(__Method_GetNotary, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AuthorityApi.V1.GetNotaryRequest, global::AuthorityApi.V1.GetNotaryResponse>(serviceImpl.GetNotary));
     }
 

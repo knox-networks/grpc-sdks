@@ -25,64 +25,85 @@ namespace WebhookApi.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chx3ZWJob29rX2FwaS92MS93ZWJob29rLnByb3RvEg53ZWJob29rX2FwaS52",
-            "MSJOCgVFdmVudBIKCgJpZBgBIAEoCRIQCghvd25lcl9pZBgCIAEoCRInCgR0",
-            "eXBlGAMgASgOMhkud2ViaG9va19hcGkudjEuRXZlbnRUeXBlIn8KFENyZWF0",
-            "ZVdlYmhvb2tSZXF1ZXN0Eg8KB2FwaV9rZXkYASABKAkSDAoEbmFtZRgCIAEo",
-            "CRITCgt3ZWJob29rX3VybBgEIAEoCRIzChBzdXBwb3J0ZWRfZXZlbnRzGAMg",
-            "AygOMhkud2ViaG9va19hcGkudjEuRXZlbnRUeXBlIjMKFUNyZWF0ZVdlYmhv",
-            "b2tSZXNwb25zZRIaChJ3ZWJob29rX3B1YmxpY19rZXkYASABKAkiRwoTTGlz",
-            "dFdlYmhvb2tzUmVxdWVzdBIPCgdhcGlfa2V5GAEgASgJEgwKBHBhZ2UYAiAB",
-            "KAUSEQoJcGFnZV9zaXplGAMgASgFIvUBChRMaXN0V2ViaG9va3NSZXNwb25z",
-            "ZRI+Cgh3ZWJob29rcxgBIAMoCzIsLndlYmhvb2tfYXBpLnYxLkxpc3RXZWJo",
-            "b29rc1Jlc3BvbnNlLldlYmhvb2sSHAoUdG90YWxfb3duZWRfd2ViaG9va3MY",
-            "AiABKA0afwoHV2ViaG9vaxIKCgJpZBgBIAEoCRIQCghvd25lcl9pZBgCIAEo",
-            "CRIMCgRuYW1lGAMgASgJEhMKC3dlYmhvb2tfdXJsGAQgASgJEjMKEHN1cHBv",
-            "cnRlZF9ldmVudHMYBSADKA4yGS53ZWJob29rX2FwaS52MS5FdmVudFR5cGUi",
-            "OwoURGVsZXRlV2ViaG9va1JlcXVlc3QSDwoHYXBpX2tleRgBIAEoCRISCgp3",
-            "ZWJob29rX2lkGAIgASgJIhcKFURlbGV0ZVdlYmhvb2tSZXNwb25zZSLnAQoM",
-            "RXZlbnRSZXF1ZXN0Ei0KCmV2ZW50X3R5cGUYASABKA4yGS53ZWJob29rX2Fw",
-            "aS52MS5FdmVudFR5cGUSEQoJc2lnbmF0dXJlGAIgASgMEhAKCGV2ZW50X2lk",
-            "GAMgASgJEhUKDWNyZWF0aW9uX2RhdGUYBCABKAkSSgoOd2FsbGV0X3BheWxv",
-            "YWQYBSABKAsyMC53ZWJob29rX2FwaS52MS5FdmVudFJlcXVlc3QuQ3JlYXRl",
-            "V2FsbGV0UGF5bG9hZEgAGhUKE0NyZWF0ZVdhbGxldFBheWxvYWRCCQoHcGF5",
-            "bG9hZCIPCg1FdmVudFJlc3BvbnNlIkUKEUxpc3RFdmVudHNSZXF1ZXN0Eg8K",
-            "B2FwaV9rZXkYASABKAkSDAoEcGFnZRgCIAEoBRIRCglwYWdlX3NpemUYAyAB",
-            "KAUiVwoSTGlzdEV2ZW50c1Jlc3BvbnNlEiUKBmV2ZW50cxgBIAMoCzIVLndl",
-            "Ymhvb2tfYXBpLnYxLkV2ZW50EhoKEnRvdGFsX293bmVkX2V2ZW50cxgCIAEo",
-            "DSI2ChFSZXRyeUV2ZW50UmVxdWVzdBIPCgdhcGlfa2V5GAEgASgJEhAKCGV2",
-            "ZW50X2lkGAIgASgJIhQKElJldHJ5RXZlbnRSZXNwb25zZSpGCglFdmVudFR5",
-            "cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEh0KGUVWRU5UX1RZUEVf",
-            "V0FMTEVUX0NSRUFURUQQATLYAwoVV2ViaG9va01hbmFnZXJTZXJ2aWNlElwK",
-            "DUNyZWF0ZVdlYmhvb2sSJC53ZWJob29rX2FwaS52MS5DcmVhdGVXZWJob29r",
-            "UmVxdWVzdBolLndlYmhvb2tfYXBpLnYxLkNyZWF0ZVdlYmhvb2tSZXNwb25z",
-            "ZRJZCgxMaXN0V2ViaG9va3MSIy53ZWJob29rX2FwaS52MS5MaXN0V2ViaG9v",
-            "a3NSZXF1ZXN0GiQud2ViaG9va19hcGkudjEuTGlzdFdlYmhvb2tzUmVzcG9u",
-            "c2USXAoNRGVsZXRlV2ViaG9vaxIkLndlYmhvb2tfYXBpLnYxLkRlbGV0ZVdl",
-            "Ymhvb2tSZXF1ZXN0GiUud2ViaG9va19hcGkudjEuRGVsZXRlV2ViaG9va1Jl",
-            "c3BvbnNlElMKCkxpc3RFdmVudHMSIS53ZWJob29rX2FwaS52MS5MaXN0RXZl",
-            "bnRzUmVxdWVzdBoiLndlYmhvb2tfYXBpLnYxLkxpc3RFdmVudHNSZXNwb25z",
-            "ZRJTCgpSZXRyeUV2ZW50EiEud2ViaG9va19hcGkudjEuUmV0cnlFdmVudFJl",
-            "cXVlc3QaIi53ZWJob29rX2FwaS52MS5SZXRyeUV2ZW50UmVzcG9uc2UyXAoU",
-            "RXZlbnRDb25zdW1lclNlcnZpY2USRAoFRXZlbnQSHC53ZWJob29rX2FwaS52",
-            "MS5FdmVudFJlcXVlc3QaHS53ZWJob29rX2FwaS52MS5FdmVudFJlc3BvbnNl",
-            "QjpaOGdpdGh1Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dv",
-            "L3dlYmhvb2tfYXBpL3YxYgZwcm90bzM="));
+            "MSJBChNDcmVhdGVXYWxsZXRQYXlsb2FkEgwKBG5hbWUYASABKAkSCwoDZGlk",
+            "GAIgASgJEg8KB2NyZWF0ZWQYAyABKAkiLgoZUHJvbWlzc29yeVJlY2VpdmVk",
+            "UGF5bG9hZBIRCgl3YWxsZXRfaWQYASABKAkiHgoLUGluZ1BheWxvYWQSDwoH",
+            "bWVzc2FnZRgBIAEoCSLdAgoFRXZlbnQSLQoKZXZlbnRfdHlwZRgBIAEoDjIZ",
+            "LndlYmhvb2tfYXBpLnYxLkV2ZW50VHlwZRIRCglzaWduYXR1cmUYAiABKAkS",
+            "EAoIZXZlbnRfaWQYAyABKAkSFQoNZGVsaXZlcnlfZGF0ZRgEIAEoCRIQCghv",
+            "d25lcl9pZBgFIAEoCRJFChZ3YWxsZXRfY3JlYXRlZF9wYXlsb2FkGAYgASgL",
+            "MiMud2ViaG9va19hcGkudjEuQ3JlYXRlV2FsbGV0UGF5bG9hZEgAElAKG3By",
+            "b21pc3NvcnlfcmVjZWl2ZWRfcGF5bG9hZBgHIAEoCzIpLndlYmhvb2tfYXBp",
+            "LnYxLlByb21pc3NvcnlSZWNlaXZlZFBheWxvYWRIABIzCgxwaW5nX3BheWxv",
+            "YWQYCCABKAsyGy53ZWJob29rX2FwaS52MS5QaW5nUGF5bG9hZEgAQgkKB3Bh",
+            "eWxvYWQivAEKFENyZWF0ZVdlYmhvb2tSZXF1ZXN0Eg8KB2FwaV9rZXkYASAB",
+            "KAkSDAoEbmFtZRgCIAEoCRIzChBzdXBwb3J0ZWRfZXZlbnRzGAMgAygOMhku",
+            "d2ViaG9va19hcGkudjEuRXZlbnRUeXBlEhMKC3dlYmhvb2tfdXJsGAQgASgJ",
+            "EjsKD2RlbGl2ZXJ5X21ldGhvZBgFIAEoDjIiLndlYmhvb2tfYXBpLnYxLkRl",
+            "bGl2ZXJ5TWV0aG9kVHlwZSIzChVDcmVhdGVXZWJob29rUmVzcG9uc2USGgoS",
+            "d2ViaG9va19wdWJsaWNfa2V5GAEgASgJIkcKE0xpc3RXZWJob29rc1JlcXVl",
+            "c3QSDwoHYXBpX2tleRgBIAEoCRIMCgRwYWdlGAIgASgFEhEKCXBhZ2Vfc2l6",
+            "ZRgDIAEoBSKzAgoUTGlzdFdlYmhvb2tzUmVzcG9uc2USPgoId2ViaG9va3MY",
+            "ASADKAsyLC53ZWJob29rX2FwaS52MS5MaXN0V2ViaG9va3NSZXNwb25zZS5X",
+            "ZWJob29rEhwKFHRvdGFsX293bmVkX3dlYmhvb2tzGAIgASgNGrwBCgdXZWJo",
+            "b29rEgoKAmlkGAEgASgJEhAKCG93bmVyX2lkGAIgASgJEgwKBG5hbWUYAyAB",
+            "KAkSEwoLd2ViaG9va191cmwYBCABKAkSMwoQc3VwcG9ydGVkX2V2ZW50cxgF",
+            "IAMoDjIZLndlYmhvb2tfYXBpLnYxLkV2ZW50VHlwZRI7Cg9kZWxpdmVyeV9t",
+            "ZXRob2QYBiABKA4yIi53ZWJob29rX2FwaS52MS5EZWxpdmVyeU1ldGhvZFR5",
+            "cGUiOwoURGVsZXRlV2ViaG9va1JlcXVlc3QSDwoHYXBpX2tleRgBIAEoCRIS",
+            "Cgp3ZWJob29rX2lkGAIgASgJIhcKFURlbGV0ZVdlYmhvb2tSZXNwb25zZSI0",
+            "CgxFdmVudFJlcXVlc3QSJAoFZXZlbnQYASABKAsyFS53ZWJob29rX2FwaS52",
+            "MS5FdmVudCIPCg1FdmVudFJlc3BvbnNlIkUKEUxpc3RFdmVudHNSZXF1ZXN0",
+            "Eg8KB2FwaV9rZXkYASABKAkSDAoEcGFnZRgCIAEoBRIRCglwYWdlX3NpemUY",
+            "AyABKAUiVwoSTGlzdEV2ZW50c1Jlc3BvbnNlEiUKBmV2ZW50cxgBIAMoCzIV",
+            "LndlYmhvb2tfYXBpLnYxLkV2ZW50EhoKEnRvdGFsX293bmVkX2V2ZW50cxgC",
+            "IAEoDSJKChFSZXRyeUV2ZW50UmVxdWVzdBIPCgdhcGlfa2V5GAEgASgJEhAK",
+            "CGV2ZW50X2lkGAIgASgJEhIKCndlYmhvb2tfaWQYAyABKAkiFAoSUmV0cnlF",
+            "dmVudFJlc3BvbnNlIi8KC1BpbmdSZXF1ZXN0Eg8KB2FwaV9rZXkYASABKAkS",
+            "DwoHbWVzc2FnZRgCIAEoCSIfCgxQaW5nUmVzcG9uc2USDwoHbWVzc2FnZRgB",
+            "IAEoCSp/CglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAA",
+            "Eh0KGUVWRU5UX1RZUEVfV0FMTEVUX0NSRUFURUQQARIiCh5FVkVOVF9UWVBF",
+            "X1BST01JU1NPUllfUkVDRUlWRUQQAhITCg9FVkVOVF9UWVBFX1BJTkcQAyp4",
+            "ChJEZWxpdmVyeU1ldGhvZFR5cGUSJAogREVMSVZFUllfTUVUSE9EX1RZUEVf",
+            "VU5TUEVDSUZJRUQQABIdChlERUxJVkVSWV9NRVRIT0RfVFlQRV9IVFRQEAES",
+            "HQoZREVMSVZFUllfTUVUSE9EX1RZUEVfR1JQQxACMpsEChVXZWJob29rTWFu",
+            "YWdlclNlcnZpY2USXAoNQ3JlYXRlV2ViaG9vaxIkLndlYmhvb2tfYXBpLnYx",
+            "LkNyZWF0ZVdlYmhvb2tSZXF1ZXN0GiUud2ViaG9va19hcGkudjEuQ3JlYXRl",
+            "V2ViaG9va1Jlc3BvbnNlElkKDExpc3RXZWJob29rcxIjLndlYmhvb2tfYXBp",
+            "LnYxLkxpc3RXZWJob29rc1JlcXVlc3QaJC53ZWJob29rX2FwaS52MS5MaXN0",
+            "V2ViaG9va3NSZXNwb25zZRJcCg1EZWxldGVXZWJob29rEiQud2ViaG9va19h",
+            "cGkudjEuRGVsZXRlV2ViaG9va1JlcXVlc3QaJS53ZWJob29rX2FwaS52MS5E",
+            "ZWxldGVXZWJob29rUmVzcG9uc2USUwoKTGlzdEV2ZW50cxIhLndlYmhvb2tf",
+            "YXBpLnYxLkxpc3RFdmVudHNSZXF1ZXN0GiIud2ViaG9va19hcGkudjEuTGlz",
+            "dEV2ZW50c1Jlc3BvbnNlElMKClJldHJ5RXZlbnQSIS53ZWJob29rX2FwaS52",
+            "MS5SZXRyeUV2ZW50UmVxdWVzdBoiLndlYmhvb2tfYXBpLnYxLlJldHJ5RXZl",
+            "bnRSZXNwb25zZRJBCgRQaW5nEhsud2ViaG9va19hcGkudjEuUGluZ1JlcXVl",
+            "c3QaHC53ZWJob29rX2FwaS52MS5QaW5nUmVzcG9uc2UyXAoURXZlbnRDb25z",
+            "dW1lclNlcnZpY2USRAoFRXZlbnQSHC53ZWJob29rX2FwaS52MS5FdmVudFJl",
+            "cXVlc3QaHS53ZWJob29rX2FwaS52MS5FdmVudFJlc3BvbnNlQjpaOGdpdGh1",
+            "Yi5jb20va25veC1uZXR3b3Jrcy9ncnBjLXNka3Mvc2RrL2dvL3dlYmhvb2tf",
+            "YXBpL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WebhookApi.V1.EventType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.Event), global::WebhookApi.V1.Event.Parser, new[]{ "Id", "OwnerId", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.CreateWebhookRequest), global::WebhookApi.V1.CreateWebhookRequest.Parser, new[]{ "ApiKey", "Name", "WebhookUrl", "SupportedEvents" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WebhookApi.V1.EventType), typeof(global::WebhookApi.V1.DeliveryMethodType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.CreateWalletPayload), global::WebhookApi.V1.CreateWalletPayload.Parser, new[]{ "Name", "Did", "Created" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.PromissoryReceivedPayload), global::WebhookApi.V1.PromissoryReceivedPayload.Parser, new[]{ "WalletId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.PingPayload), global::WebhookApi.V1.PingPayload.Parser, new[]{ "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.Event), global::WebhookApi.V1.Event.Parser, new[]{ "EventType", "Signature", "EventId", "DeliveryDate", "OwnerId", "WalletCreatedPayload", "PromissoryReceivedPayload", "PingPayload" }, new[]{ "Payload" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.CreateWebhookRequest), global::WebhookApi.V1.CreateWebhookRequest.Parser, new[]{ "ApiKey", "Name", "SupportedEvents", "WebhookUrl", "DeliveryMethod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.CreateWebhookResponse), global::WebhookApi.V1.CreateWebhookResponse.Parser, new[]{ "WebhookPublicKey" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListWebhooksRequest), global::WebhookApi.V1.ListWebhooksRequest.Parser, new[]{ "ApiKey", "Page", "PageSize" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListWebhooksResponse), global::WebhookApi.V1.ListWebhooksResponse.Parser, new[]{ "Webhooks", "TotalOwnedWebhooks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListWebhooksResponse.Types.Webhook), global::WebhookApi.V1.ListWebhooksResponse.Types.Webhook.Parser, new[]{ "Id", "OwnerId", "Name", "WebhookUrl", "SupportedEvents" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListWebhooksResponse), global::WebhookApi.V1.ListWebhooksResponse.Parser, new[]{ "Webhooks", "TotalOwnedWebhooks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListWebhooksResponse.Types.Webhook), global::WebhookApi.V1.ListWebhooksResponse.Types.Webhook.Parser, new[]{ "Id", "OwnerId", "Name", "WebhookUrl", "SupportedEvents", "DeliveryMethod" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.DeleteWebhookRequest), global::WebhookApi.V1.DeleteWebhookRequest.Parser, new[]{ "ApiKey", "WebhookId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.DeleteWebhookResponse), global::WebhookApi.V1.DeleteWebhookResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.EventRequest), global::WebhookApi.V1.EventRequest.Parser, new[]{ "EventType", "Signature", "EventId", "CreationDate", "WalletPayload" }, new[]{ "Payload" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload), global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload.Parser, null, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.EventRequest), global::WebhookApi.V1.EventRequest.Parser, new[]{ "Event" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.EventResponse), global::WebhookApi.V1.EventResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListEventsRequest), global::WebhookApi.V1.ListEventsRequest.Parser, new[]{ "ApiKey", "Page", "PageSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.ListEventsResponse), global::WebhookApi.V1.ListEventsResponse.Parser, new[]{ "Events", "TotalOwnedEvents" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.RetryEventRequest), global::WebhookApi.V1.RetryEventRequest.Parser, new[]{ "ApiKey", "EventId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.RetryEventResponse), global::WebhookApi.V1.RetryEventResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.RetryEventRequest), global::WebhookApi.V1.RetryEventRequest.Parser, new[]{ "ApiKey", "EventId", "WebhookId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.RetryEventResponse), global::WebhookApi.V1.RetryEventResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.PingRequest), global::WebhookApi.V1.PingRequest.Parser, new[]{ "ApiKey", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.PingResponse), global::WebhookApi.V1.PingResponse.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -92,6 +113,14 @@ namespace WebhookApi.V1 {
   public enum EventType {
     [pbr::OriginalName("EVENT_TYPE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("EVENT_TYPE_WALLET_CREATED")] WalletCreated = 1,
+    [pbr::OriginalName("EVENT_TYPE_PROMISSORY_RECEIVED")] PromissoryReceived = 2,
+    [pbr::OriginalName("EVENT_TYPE_PING")] Ping = 3,
+  }
+
+  public enum DeliveryMethodType {
+    [pbr::OriginalName("DELIVERY_METHOD_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("DELIVERY_METHOD_TYPE_HTTP")] Http = 1,
+    [pbr::OriginalName("DELIVERY_METHOD_TYPE_GRPC")] Grpc = 2,
   }
 
   #endregion
@@ -100,9 +129,679 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"id": "ID", 
-  ///"owner_id": "OWNER_ID", 
-  ///"type": 1
+  ///"name": "NAME", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"created": "2006-01-02T15:04:05Z"
+  ///}
+  /// </summary>
+  public sealed partial class CreateWalletPayload : pb::IMessage<CreateWalletPayload>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CreateWalletPayload> _parser = new pb::MessageParser<CreateWalletPayload>(() => new CreateWalletPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CreateWalletPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateWalletPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateWalletPayload(CreateWalletPayload other) : this() {
+      name_ = other.name_;
+      did_ = other.did_;
+      created_ = other.created_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateWalletPayload Clone() {
+      return new CreateWalletPayload(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "did" field.</summary>
+    public const int DidFieldNumber = 2;
+    private string did_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Did {
+      get { return did_; }
+      set {
+        did_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "created" field.</summary>
+    public const int CreatedFieldNumber = 3;
+    private string created_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Created {
+      get { return created_; }
+      set {
+        created_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CreateWalletPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CreateWalletPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Did != other.Did) return false;
+      if (Created != other.Created) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Did.Length != 0) hash ^= Did.GetHashCode();
+      if (Created.Length != 0) hash ^= Created.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Did.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Did);
+      }
+      if (Created.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Created);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Did.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Did);
+      }
+      if (Created.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Created);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Did.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Did);
+      }
+      if (Created.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Created);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CreateWalletPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Did.Length != 0) {
+        Did = other.Did;
+      }
+      if (other.Created.Length != 0) {
+        Created = other.Created;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Did = input.ReadString();
+            break;
+          }
+          case 26: {
+            Created = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Did = input.ReadString();
+            break;
+          }
+          case 26: {
+            Created = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"wallet_id": zWalletIDMultibase58Encoded
+  ///}
+  /// </summary>
+  public sealed partial class PromissoryReceivedPayload : pb::IMessage<PromissoryReceivedPayload>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PromissoryReceivedPayload> _parser = new pb::MessageParser<PromissoryReceivedPayload>(() => new PromissoryReceivedPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PromissoryReceivedPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PromissoryReceivedPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PromissoryReceivedPayload(PromissoryReceivedPayload other) : this() {
+      walletId_ = other.walletId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PromissoryReceivedPayload Clone() {
+      return new PromissoryReceivedPayload(this);
+    }
+
+    /// <summary>Field number for the "wallet_id" field.</summary>
+    public const int WalletIdFieldNumber = 1;
+    private string walletId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string WalletId {
+      get { return walletId_; }
+      set {
+        walletId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PromissoryReceivedPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PromissoryReceivedPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (WalletId != other.WalletId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (WalletId.Length != 0) hash ^= WalletId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (WalletId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(WalletId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (WalletId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(WalletId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (WalletId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(WalletId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PromissoryReceivedPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.WalletId.Length != 0) {
+        WalletId = other.WalletId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            WalletId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            WalletId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"message": "MESSAGE"
+  ///}
+  /// </summary>
+  public sealed partial class PingPayload : pb::IMessage<PingPayload>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PingPayload> _parser = new pb::MessageParser<PingPayload>(() => new PingPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PingPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingPayload(PingPayload other) : this() {
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingPayload Clone() {
+      return new PingPayload(this);
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 1;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PingPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PingPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PingPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"event_type": 0,
+  ///"signature": "SIGNATURE",
+  ///"event_id": "EVENT_ID",
+  ///"delivery_date": "2007-01-02T15:04:05Z",
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret", 
+  ///"payload": {
+  ///"wallet_created_payload": {
+  ///"name": "NAME", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"created": "2006-01-02T15:04:05Z"
+  ///}
+  ///}
   ///}
   /// </summary>
   public sealed partial class Event : pb::IMessage<Event>
@@ -119,7 +818,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[0]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,9 +838,23 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Event(Event other) : this() {
-      id_ = other.id_;
+      eventType_ = other.eventType_;
+      signature_ = other.signature_;
+      eventId_ = other.eventId_;
+      deliveryDate_ = other.deliveryDate_;
       ownerId_ = other.ownerId_;
-      type_ = other.type_;
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.WalletCreatedPayload:
+          WalletCreatedPayload = other.WalletCreatedPayload.Clone();
+          break;
+        case PayloadOneofCase.PromissoryReceivedPayload:
+          PromissoryReceivedPayload = other.PromissoryReceivedPayload.Clone();
+          break;
+        case PayloadOneofCase.PingPayload:
+          PingPayload = other.PingPayload.Clone();
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -151,20 +864,56 @@ namespace WebhookApi.V1 {
       return new Event(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private string id_ = "";
+    /// <summary>Field number for the "event_type" field.</summary>
+    public const int EventTypeFieldNumber = 1;
+    private global::WebhookApi.V1.EventType eventType_ = global::WebhookApi.V1.EventType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Id {
-      get { return id_; }
+    public global::WebhookApi.V1.EventType EventType {
+      get { return eventType_; }
       set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        eventType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "signature" field.</summary>
+    public const int SignatureFieldNumber = 2;
+    private string signature_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Signature {
+      get { return signature_; }
+      set {
+        signature_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 3;
+    private string eventId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EventId {
+      get { return eventId_; }
+      set {
+        eventId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "delivery_date" field.</summary>
+    public const int DeliveryDateFieldNumber = 4;
+    private string deliveryDate_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeliveryDate {
+      get { return deliveryDate_; }
+      set {
+        deliveryDate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "owner_id" field.</summary>
-    public const int OwnerIdFieldNumber = 2;
+    public const int OwnerIdFieldNumber = 5;
     private string ownerId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,16 +924,62 @@ namespace WebhookApi.V1 {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 3;
-    private global::WebhookApi.V1.EventType type_ = global::WebhookApi.V1.EventType.Unspecified;
+    /// <summary>Field number for the "wallet_created_payload" field.</summary>
+    public const int WalletCreatedPayloadFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::WebhookApi.V1.EventType Type {
-      get { return type_; }
+    public global::WebhookApi.V1.CreateWalletPayload WalletCreatedPayload {
+      get { return payloadCase_ == PayloadOneofCase.WalletCreatedPayload ? (global::WebhookApi.V1.CreateWalletPayload) payload_ : null; }
       set {
-        type_ = value;
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.WalletCreatedPayload;
       }
+    }
+
+    /// <summary>Field number for the "promissory_received_payload" field.</summary>
+    public const int PromissoryReceivedPayloadFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::WebhookApi.V1.PromissoryReceivedPayload PromissoryReceivedPayload {
+      get { return payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload ? (global::WebhookApi.V1.PromissoryReceivedPayload) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.PromissoryReceivedPayload;
+      }
+    }
+
+    /// <summary>Field number for the "ping_payload" field.</summary>
+    public const int PingPayloadFieldNumber = 8;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::WebhookApi.V1.PingPayload PingPayload {
+      get { return payloadCase_ == PayloadOneofCase.PingPayload ? (global::WebhookApi.V1.PingPayload) payload_ : null; }
+      set {
+        payload_ = value;
+        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.PingPayload;
+      }
+    }
+
+    private object payload_;
+    /// <summary>Enum of possible cases for the "payload" oneof.</summary>
+    public enum PayloadOneofCase {
+      None = 0,
+      WalletCreatedPayload = 6,
+      PromissoryReceivedPayload = 7,
+      PingPayload = 8,
+    }
+    private PayloadOneofCase payloadCase_ = PayloadOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PayloadOneofCase PayloadCase {
+      get { return payloadCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPayload() {
+      payloadCase_ = PayloadOneofCase.None;
+      payload_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,9 +997,15 @@ namespace WebhookApi.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
+      if (EventType != other.EventType) return false;
+      if (Signature != other.Signature) return false;
+      if (EventId != other.EventId) return false;
+      if (DeliveryDate != other.DeliveryDate) return false;
       if (OwnerId != other.OwnerId) return false;
-      if (Type != other.Type) return false;
+      if (!object.Equals(WalletCreatedPayload, other.WalletCreatedPayload)) return false;
+      if (!object.Equals(PromissoryReceivedPayload, other.PromissoryReceivedPayload)) return false;
+      if (!object.Equals(PingPayload, other.PingPayload)) return false;
+      if (PayloadCase != other.PayloadCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -212,9 +1013,15 @@ namespace WebhookApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (EventType != global::WebhookApi.V1.EventType.Unspecified) hash ^= EventType.GetHashCode();
+      if (Signature.Length != 0) hash ^= Signature.GetHashCode();
+      if (EventId.Length != 0) hash ^= EventId.GetHashCode();
+      if (DeliveryDate.Length != 0) hash ^= DeliveryDate.GetHashCode();
       if (OwnerId.Length != 0) hash ^= OwnerId.GetHashCode();
-      if (Type != global::WebhookApi.V1.EventType.Unspecified) hash ^= Type.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) hash ^= WalletCreatedPayload.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) hash ^= PromissoryReceivedPayload.GetHashCode();
+      if (payloadCase_ == PayloadOneofCase.PingPayload) hash ^= PingPayload.GetHashCode();
+      hash ^= (int) payloadCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -233,17 +1040,37 @@ namespace WebhookApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
+      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) EventType);
+      }
+      if (Signature.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Signature);
+      }
+      if (EventId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(EventId);
+      }
+      if (DeliveryDate.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DeliveryDate);
       }
       if (OwnerId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteString(OwnerId);
       }
-      if (Type != global::WebhookApi.V1.EventType.Unspecified) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Type);
+      if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) {
+        output.WriteRawTag(50);
+        output.WriteMessage(WalletCreatedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PromissoryReceivedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PingPayload) {
+        output.WriteRawTag(66);
+        output.WriteMessage(PingPayload);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -255,17 +1082,37 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Id);
+      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) EventType);
+      }
+      if (Signature.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Signature);
+      }
+      if (EventId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(EventId);
+      }
+      if (DeliveryDate.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DeliveryDate);
       }
       if (OwnerId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteString(OwnerId);
       }
-      if (Type != global::WebhookApi.V1.EventType.Unspecified) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Type);
+      if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) {
+        output.WriteRawTag(50);
+        output.WriteMessage(WalletCreatedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PromissoryReceivedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PingPayload) {
+        output.WriteRawTag(66);
+        output.WriteMessage(PingPayload);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -277,14 +1124,29 @@ namespace WebhookApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EventType);
+      }
+      if (Signature.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Signature);
+      }
+      if (EventId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EventId);
+      }
+      if (DeliveryDate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeliveryDate);
       }
       if (OwnerId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OwnerId);
       }
-      if (Type != global::WebhookApi.V1.EventType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WalletCreatedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PromissoryReceivedPayload);
+      }
+      if (payloadCase_ == PayloadOneofCase.PingPayload) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PingPayload);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -298,15 +1160,42 @@ namespace WebhookApi.V1 {
       if (other == null) {
         return;
       }
-      if (other.Id.Length != 0) {
-        Id = other.Id;
+      if (other.EventType != global::WebhookApi.V1.EventType.Unspecified) {
+        EventType = other.EventType;
+      }
+      if (other.Signature.Length != 0) {
+        Signature = other.Signature;
+      }
+      if (other.EventId.Length != 0) {
+        EventId = other.EventId;
+      }
+      if (other.DeliveryDate.Length != 0) {
+        DeliveryDate = other.DeliveryDate;
       }
       if (other.OwnerId.Length != 0) {
         OwnerId = other.OwnerId;
       }
-      if (other.Type != global::WebhookApi.V1.EventType.Unspecified) {
-        Type = other.Type;
+      switch (other.PayloadCase) {
+        case PayloadOneofCase.WalletCreatedPayload:
+          if (WalletCreatedPayload == null) {
+            WalletCreatedPayload = new global::WebhookApi.V1.CreateWalletPayload();
+          }
+          WalletCreatedPayload.MergeFrom(other.WalletCreatedPayload);
+          break;
+        case PayloadOneofCase.PromissoryReceivedPayload:
+          if (PromissoryReceivedPayload == null) {
+            PromissoryReceivedPayload = new global::WebhookApi.V1.PromissoryReceivedPayload();
+          }
+          PromissoryReceivedPayload.MergeFrom(other.PromissoryReceivedPayload);
+          break;
+        case PayloadOneofCase.PingPayload:
+          if (PingPayload == null) {
+            PingPayload = new global::WebhookApi.V1.PingPayload();
+          }
+          PingPayload.MergeFrom(other.PingPayload);
+          break;
       }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -322,16 +1211,51 @@ namespace WebhookApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Id = input.ReadString();
+          case 8: {
+            EventType = (global::WebhookApi.V1.EventType) input.ReadEnum();
             break;
           }
           case 18: {
+            Signature = input.ReadString();
+            break;
+          }
+          case 26: {
+            EventId = input.ReadString();
+            break;
+          }
+          case 34: {
+            DeliveryDate = input.ReadString();
+            break;
+          }
+          case 42: {
             OwnerId = input.ReadString();
             break;
           }
-          case 24: {
-            Type = (global::WebhookApi.V1.EventType) input.ReadEnum();
+          case 50: {
+            global::WebhookApi.V1.CreateWalletPayload subBuilder = new global::WebhookApi.V1.CreateWalletPayload();
+            if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) {
+              subBuilder.MergeFrom(WalletCreatedPayload);
+            }
+            input.ReadMessage(subBuilder);
+            WalletCreatedPayload = subBuilder;
+            break;
+          }
+          case 58: {
+            global::WebhookApi.V1.PromissoryReceivedPayload subBuilder = new global::WebhookApi.V1.PromissoryReceivedPayload();
+            if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) {
+              subBuilder.MergeFrom(PromissoryReceivedPayload);
+            }
+            input.ReadMessage(subBuilder);
+            PromissoryReceivedPayload = subBuilder;
+            break;
+          }
+          case 66: {
+            global::WebhookApi.V1.PingPayload subBuilder = new global::WebhookApi.V1.PingPayload();
+            if (payloadCase_ == PayloadOneofCase.PingPayload) {
+              subBuilder.MergeFrom(PingPayload);
+            }
+            input.ReadMessage(subBuilder);
+            PingPayload = subBuilder;
             break;
           }
         }
@@ -349,16 +1273,51 @@ namespace WebhookApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            Id = input.ReadString();
+          case 8: {
+            EventType = (global::WebhookApi.V1.EventType) input.ReadEnum();
             break;
           }
           case 18: {
+            Signature = input.ReadString();
+            break;
+          }
+          case 26: {
+            EventId = input.ReadString();
+            break;
+          }
+          case 34: {
+            DeliveryDate = input.ReadString();
+            break;
+          }
+          case 42: {
             OwnerId = input.ReadString();
             break;
           }
-          case 24: {
-            Type = (global::WebhookApi.V1.EventType) input.ReadEnum();
+          case 50: {
+            global::WebhookApi.V1.CreateWalletPayload subBuilder = new global::WebhookApi.V1.CreateWalletPayload();
+            if (payloadCase_ == PayloadOneofCase.WalletCreatedPayload) {
+              subBuilder.MergeFrom(WalletCreatedPayload);
+            }
+            input.ReadMessage(subBuilder);
+            WalletCreatedPayload = subBuilder;
+            break;
+          }
+          case 58: {
+            global::WebhookApi.V1.PromissoryReceivedPayload subBuilder = new global::WebhookApi.V1.PromissoryReceivedPayload();
+            if (payloadCase_ == PayloadOneofCase.PromissoryReceivedPayload) {
+              subBuilder.MergeFrom(PromissoryReceivedPayload);
+            }
+            input.ReadMessage(subBuilder);
+            PromissoryReceivedPayload = subBuilder;
+            break;
+          }
+          case 66: {
+            global::WebhookApi.V1.PingPayload subBuilder = new global::WebhookApi.V1.PingPayload();
+            if (payloadCase_ == PayloadOneofCase.PingPayload) {
+              subBuilder.MergeFrom(PingPayload);
+            }
+            input.ReadMessage(subBuilder);
+            PingPayload = subBuilder;
             break;
           }
         }
@@ -371,13 +1330,13 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"api_key": "API_KEY", 
-  ///"name": "NAME", 
-  ///"webhook_url": "WEBHOOK_URL", 
+  ///"api_key": "API_KEY",
+  ///"name": "NAME",
   ///"supported_events": [
-  ///0, 
-  ///1
-  ///]
+  ///0, 1, 2
+  ///],
+  ///"webhook_url": "WEBHOOK_URL",
+  ///"delivery_method": 0
   ///}
   /// </summary>
   public sealed partial class CreateWebhookRequest : pb::IMessage<CreateWebhookRequest>
@@ -394,7 +1353,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[1]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -416,8 +1375,9 @@ namespace WebhookApi.V1 {
     public CreateWebhookRequest(CreateWebhookRequest other) : this() {
       apiKey_ = other.apiKey_;
       name_ = other.name_;
-      webhookUrl_ = other.webhookUrl_;
       supportedEvents_ = other.supportedEvents_.Clone();
+      webhookUrl_ = other.webhookUrl_;
+      deliveryMethod_ = other.deliveryMethod_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -454,6 +1414,17 @@ namespace WebhookApi.V1 {
       }
     }
 
+    /// <summary>Field number for the "supported_events" field.</summary>
+    public const int SupportedEventsFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::WebhookApi.V1.EventType> _repeated_supportedEvents_codec
+        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::WebhookApi.V1.EventType) x);
+    private readonly pbc::RepeatedField<global::WebhookApi.V1.EventType> supportedEvents_ = new pbc::RepeatedField<global::WebhookApi.V1.EventType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::WebhookApi.V1.EventType> SupportedEvents {
+      get { return supportedEvents_; }
+    }
+
     /// <summary>Field number for the "webhook_url" field.</summary>
     public const int WebhookUrlFieldNumber = 4;
     private string webhookUrl_ = "";
@@ -466,15 +1437,16 @@ namespace WebhookApi.V1 {
       }
     }
 
-    /// <summary>Field number for the "supported_events" field.</summary>
-    public const int SupportedEventsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::WebhookApi.V1.EventType> _repeated_supportedEvents_codec
-        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::WebhookApi.V1.EventType) x);
-    private readonly pbc::RepeatedField<global::WebhookApi.V1.EventType> supportedEvents_ = new pbc::RepeatedField<global::WebhookApi.V1.EventType>();
+    /// <summary>Field number for the "delivery_method" field.</summary>
+    public const int DeliveryMethodFieldNumber = 5;
+    private global::WebhookApi.V1.DeliveryMethodType deliveryMethod_ = global::WebhookApi.V1.DeliveryMethodType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::WebhookApi.V1.EventType> SupportedEvents {
-      get { return supportedEvents_; }
+    public global::WebhookApi.V1.DeliveryMethodType DeliveryMethod {
+      get { return deliveryMethod_; }
+      set {
+        deliveryMethod_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -494,8 +1466,9 @@ namespace WebhookApi.V1 {
       }
       if (ApiKey != other.ApiKey) return false;
       if (Name != other.Name) return false;
-      if (WebhookUrl != other.WebhookUrl) return false;
       if(!supportedEvents_.Equals(other.supportedEvents_)) return false;
+      if (WebhookUrl != other.WebhookUrl) return false;
+      if (DeliveryMethod != other.DeliveryMethod) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -505,8 +1478,9 @@ namespace WebhookApi.V1 {
       int hash = 1;
       if (ApiKey.Length != 0) hash ^= ApiKey.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (WebhookUrl.Length != 0) hash ^= WebhookUrl.GetHashCode();
       hash ^= supportedEvents_.GetHashCode();
+      if (WebhookUrl.Length != 0) hash ^= WebhookUrl.GetHashCode();
+      if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) hash ^= DeliveryMethod.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -538,6 +1512,10 @@ namespace WebhookApi.V1 {
         output.WriteRawTag(34);
         output.WriteString(WebhookUrl);
       }
+      if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) DeliveryMethod);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -561,6 +1539,10 @@ namespace WebhookApi.V1 {
         output.WriteRawTag(34);
         output.WriteString(WebhookUrl);
       }
+      if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) DeliveryMethod);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -577,10 +1559,13 @@ namespace WebhookApi.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      size += supportedEvents_.CalculateSize(_repeated_supportedEvents_codec);
       if (WebhookUrl.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(WebhookUrl);
       }
-      size += supportedEvents_.CalculateSize(_repeated_supportedEvents_codec);
+      if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeliveryMethod);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -599,10 +1584,13 @@ namespace WebhookApi.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      supportedEvents_.Add(other.supportedEvents_);
       if (other.WebhookUrl.Length != 0) {
         WebhookUrl = other.WebhookUrl;
       }
-      supportedEvents_.Add(other.supportedEvents_);
+      if (other.DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+        DeliveryMethod = other.DeliveryMethod;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -633,6 +1621,10 @@ namespace WebhookApi.V1 {
           }
           case 34: {
             WebhookUrl = input.ReadString();
+            break;
+          }
+          case 40: {
+            DeliveryMethod = (global::WebhookApi.V1.DeliveryMethodType) input.ReadEnum();
             break;
           }
         }
@@ -667,6 +1659,10 @@ namespace WebhookApi.V1 {
             WebhookUrl = input.ReadString();
             break;
           }
+          case 40: {
+            DeliveryMethod = (global::WebhookApi.V1.DeliveryMethodType) input.ReadEnum();
+            break;
+          }
         }
       }
     }
@@ -677,7 +1673,7 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"webhook_public_key": "WEBHOOK_PUBLIC_KEY"
+  ///"webhook_public_key": "zWebhookMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class CreateWebhookResponse : pb::IMessage<CreateWebhookResponse>
@@ -694,7 +1690,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[2]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -872,9 +1868,9 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"api_key": "API_KEY", 
-  ///"page": 0, 
-  ///"page_size": 10000 
+  ///"api_key": "API_KEY",
+  ///"page": 0,
+  ///"page_size": 10000
   ///}
   /// </summary>
   public sealed partial class ListWebhooksRequest : pb::IMessage<ListWebhooksRequest>
@@ -891,7 +1887,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[3]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1149,7 +2145,7 @@ namespace WebhookApi.V1 {
   ///"webhooks": [
   ///{
   ///"id": "ID1", 
-  ///"owner_id": "OWNER_ID1", 
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret1", 
   ///"name": "NAME1", 
   ///"webhook_url": "WEBHOOK_URL1", 
   ///"supported_events": [
@@ -1159,7 +2155,7 @@ namespace WebhookApi.V1 {
   ///}, 
   ///{
   ///"id": "ID2", 
-  ///"owner_id": "OWNER_ID2", 
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret2", 
   ///"name": "NAME2", 
   ///"webhook_url": "WEBHOOK_URL2", 
   ///"supported_events": [
@@ -1185,7 +2181,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[4]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1428,6 +2424,7 @@ namespace WebhookApi.V1 {
           name_ = other.name_;
           webhookUrl_ = other.webhookUrl_;
           supportedEvents_ = other.supportedEvents_.Clone();
+          deliveryMethod_ = other.deliveryMethod_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1496,6 +2493,18 @@ namespace WebhookApi.V1 {
           get { return supportedEvents_; }
         }
 
+        /// <summary>Field number for the "delivery_method" field.</summary>
+        public const int DeliveryMethodFieldNumber = 6;
+        private global::WebhookApi.V1.DeliveryMethodType deliveryMethod_ = global::WebhookApi.V1.DeliveryMethodType.Unspecified;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::WebhookApi.V1.DeliveryMethodType DeliveryMethod {
+          get { return deliveryMethod_; }
+          set {
+            deliveryMethod_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -1516,6 +2525,7 @@ namespace WebhookApi.V1 {
           if (Name != other.Name) return false;
           if (WebhookUrl != other.WebhookUrl) return false;
           if(!supportedEvents_.Equals(other.supportedEvents_)) return false;
+          if (DeliveryMethod != other.DeliveryMethod) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1528,6 +2538,7 @@ namespace WebhookApi.V1 {
           if (Name.Length != 0) hash ^= Name.GetHashCode();
           if (WebhookUrl.Length != 0) hash ^= WebhookUrl.GetHashCode();
           hash ^= supportedEvents_.GetHashCode();
+          if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) hash ^= DeliveryMethod.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1563,6 +2574,10 @@ namespace WebhookApi.V1 {
             output.WriteString(WebhookUrl);
           }
           supportedEvents_.WriteTo(output, _repeated_supportedEvents_codec);
+          if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+            output.WriteRawTag(48);
+            output.WriteEnum((int) DeliveryMethod);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1590,6 +2605,10 @@ namespace WebhookApi.V1 {
             output.WriteString(WebhookUrl);
           }
           supportedEvents_.WriteTo(ref output, _repeated_supportedEvents_codec);
+          if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+            output.WriteRawTag(48);
+            output.WriteEnum((int) DeliveryMethod);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -1613,6 +2632,9 @@ namespace WebhookApi.V1 {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(WebhookUrl);
           }
           size += supportedEvents_.CalculateSize(_repeated_supportedEvents_codec);
+          if (DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DeliveryMethod);
+          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -1638,6 +2660,9 @@ namespace WebhookApi.V1 {
             WebhookUrl = other.WebhookUrl;
           }
           supportedEvents_.Add(other.supportedEvents_);
+          if (other.DeliveryMethod != global::WebhookApi.V1.DeliveryMethodType.Unspecified) {
+            DeliveryMethod = other.DeliveryMethod;
+          }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -1672,6 +2697,10 @@ namespace WebhookApi.V1 {
               case 42:
               case 40: {
                 supportedEvents_.AddEntriesFrom(input, _repeated_supportedEvents_codec);
+                break;
+              }
+              case 48: {
+                DeliveryMethod = (global::WebhookApi.V1.DeliveryMethodType) input.ReadEnum();
                 break;
               }
             }
@@ -1710,6 +2739,10 @@ namespace WebhookApi.V1 {
                 supportedEvents_.AddEntriesFrom(ref input, _repeated_supportedEvents_codec);
                 break;
               }
+              case 48: {
+                DeliveryMethod = (global::WebhookApi.V1.DeliveryMethodType) input.ReadEnum();
+                break;
+              }
             }
           }
         }
@@ -1725,7 +2758,7 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"api_key": "API_KEY", 
+  ///"api_key": "API_KEY",
   ///"webhook_id": "WEBHOOK_ID"
   ///}
   /// </summary>
@@ -1743,7 +2776,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[5]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1976,7 +3009,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[6]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2117,13 +3150,20 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"event_type": 1,
-  ///"signature": "ByteLengthSignatureVariesByAlgo=",
+  ///"event": {
+  ///"event_type": 0,
+  ///"signature": "SIGNATURE",
   ///"event_id": "EVENT_ID",
-  ///"creation_date": "CREATION_DATE", 
-  ///"payload": { 
-  ///"wallet_payload": {} 
-  ///} 
+  ///"delivery_date": "2007-01-02T15:04:05Z",
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret", 
+  ///"payload": {
+  ///"wallet_created_payload": {
+  ///"name": "NAME", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"created": "2006-01-02T15:04:05Z"
+  ///}
+  ///}
+  ///}
   ///}
   /// </summary>
   public sealed partial class EventRequest : pb::IMessage<EventRequest>
@@ -2140,7 +3180,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[7]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2160,16 +3200,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EventRequest(EventRequest other) : this() {
-      eventType_ = other.eventType_;
-      signature_ = other.signature_;
-      eventId_ = other.eventId_;
-      creationDate_ = other.creationDate_;
-      switch (other.PayloadCase) {
-        case PayloadOneofCase.WalletPayload:
-          WalletPayload = other.WalletPayload.Clone();
-          break;
-      }
-
+      event_ = other.event_ != null ? other.event_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2179,84 +3210,16 @@ namespace WebhookApi.V1 {
       return new EventRequest(this);
     }
 
-    /// <summary>Field number for the "event_type" field.</summary>
-    public const int EventTypeFieldNumber = 1;
-    private global::WebhookApi.V1.EventType eventType_ = global::WebhookApi.V1.EventType.Unspecified;
+    /// <summary>Field number for the "event" field.</summary>
+    public const int EventFieldNumber = 1;
+    private global::WebhookApi.V1.Event event_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::WebhookApi.V1.EventType EventType {
-      get { return eventType_; }
+    public global::WebhookApi.V1.Event Event {
+      get { return event_; }
       set {
-        eventType_ = value;
+        event_ = value;
       }
-    }
-
-    /// <summary>Field number for the "signature" field.</summary>
-    public const int SignatureFieldNumber = 2;
-    private pb::ByteString signature_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString Signature {
-      get { return signature_; }
-      set {
-        signature_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "event_id" field.</summary>
-    public const int EventIdFieldNumber = 3;
-    private string eventId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string EventId {
-      get { return eventId_; }
-      set {
-        eventId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "creation_date" field.</summary>
-    public const int CreationDateFieldNumber = 4;
-    private string creationDate_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CreationDate {
-      get { return creationDate_; }
-      set {
-        creationDate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "wallet_payload" field.</summary>
-    public const int WalletPayloadFieldNumber = 5;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload WalletPayload {
-      get { return payloadCase_ == PayloadOneofCase.WalletPayload ? (global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload) payload_ : null; }
-      set {
-        payload_ = value;
-        payloadCase_ = value == null ? PayloadOneofCase.None : PayloadOneofCase.WalletPayload;
-      }
-    }
-
-    private object payload_;
-    /// <summary>Enum of possible cases for the "payload" oneof.</summary>
-    public enum PayloadOneofCase {
-      None = 0,
-      WalletPayload = 5,
-    }
-    private PayloadOneofCase payloadCase_ = PayloadOneofCase.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PayloadOneofCase PayloadCase {
-      get { return payloadCase_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearPayload() {
-      payloadCase_ = PayloadOneofCase.None;
-      payload_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2274,12 +3237,7 @@ namespace WebhookApi.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EventType != other.EventType) return false;
-      if (Signature != other.Signature) return false;
-      if (EventId != other.EventId) return false;
-      if (CreationDate != other.CreationDate) return false;
-      if (!object.Equals(WalletPayload, other.WalletPayload)) return false;
-      if (PayloadCase != other.PayloadCase) return false;
+      if (!object.Equals(Event, other.Event)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2287,12 +3245,7 @@ namespace WebhookApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EventType != global::WebhookApi.V1.EventType.Unspecified) hash ^= EventType.GetHashCode();
-      if (Signature.Length != 0) hash ^= Signature.GetHashCode();
-      if (EventId.Length != 0) hash ^= EventId.GetHashCode();
-      if (CreationDate.Length != 0) hash ^= CreationDate.GetHashCode();
-      if (payloadCase_ == PayloadOneofCase.WalletPayload) hash ^= WalletPayload.GetHashCode();
-      hash ^= (int) payloadCase_;
+      if (event_ != null) hash ^= Event.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2311,25 +3264,9 @@ namespace WebhookApi.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) EventType);
-      }
-      if (Signature.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteBytes(Signature);
-      }
-      if (EventId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EventId);
-      }
-      if (CreationDate.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(CreationDate);
-      }
-      if (payloadCase_ == PayloadOneofCase.WalletPayload) {
-        output.WriteRawTag(42);
-        output.WriteMessage(WalletPayload);
+      if (event_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Event);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2341,25 +3278,9 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) EventType);
-      }
-      if (Signature.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteBytes(Signature);
-      }
-      if (EventId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EventId);
-      }
-      if (CreationDate.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(CreationDate);
-      }
-      if (payloadCase_ == PayloadOneofCase.WalletPayload) {
-        output.WriteRawTag(42);
-        output.WriteMessage(WalletPayload);
+      if (event_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Event);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2371,20 +3292,8 @@ namespace WebhookApi.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EventType != global::WebhookApi.V1.EventType.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EventType);
-      }
-      if (Signature.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Signature);
-      }
-      if (EventId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EventId);
-      }
-      if (CreationDate.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CreationDate);
-      }
-      if (payloadCase_ == PayloadOneofCase.WalletPayload) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WalletPayload);
+      if (event_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Event);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2398,27 +3307,12 @@ namespace WebhookApi.V1 {
       if (other == null) {
         return;
       }
-      if (other.EventType != global::WebhookApi.V1.EventType.Unspecified) {
-        EventType = other.EventType;
+      if (other.event_ != null) {
+        if (event_ == null) {
+          Event = new global::WebhookApi.V1.Event();
+        }
+        Event.MergeFrom(other.Event);
       }
-      if (other.Signature.Length != 0) {
-        Signature = other.Signature;
-      }
-      if (other.EventId.Length != 0) {
-        EventId = other.EventId;
-      }
-      if (other.CreationDate.Length != 0) {
-        CreationDate = other.CreationDate;
-      }
-      switch (other.PayloadCase) {
-        case PayloadOneofCase.WalletPayload:
-          if (WalletPayload == null) {
-            WalletPayload = new global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload();
-          }
-          WalletPayload.MergeFrom(other.WalletPayload);
-          break;
-      }
-
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2434,29 +3328,11 @@ namespace WebhookApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            EventType = (global::WebhookApi.V1.EventType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Signature = input.ReadBytes();
-            break;
-          }
-          case 26: {
-            EventId = input.ReadString();
-            break;
-          }
-          case 34: {
-            CreationDate = input.ReadString();
-            break;
-          }
-          case 42: {
-            global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload subBuilder = new global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload();
-            if (payloadCase_ == PayloadOneofCase.WalletPayload) {
-              subBuilder.MergeFrom(WalletPayload);
+          case 10: {
+            if (event_ == null) {
+              Event = new global::WebhookApi.V1.Event();
             }
-            input.ReadMessage(subBuilder);
-            WalletPayload = subBuilder;
+            input.ReadMessage(Event);
             break;
           }
         }
@@ -2474,195 +3350,17 @@ namespace WebhookApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            EventType = (global::WebhookApi.V1.EventType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Signature = input.ReadBytes();
-            break;
-          }
-          case 26: {
-            EventId = input.ReadString();
-            break;
-          }
-          case 34: {
-            CreationDate = input.ReadString();
-            break;
-          }
-          case 42: {
-            global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload subBuilder = new global::WebhookApi.V1.EventRequest.Types.CreateWalletPayload();
-            if (payloadCase_ == PayloadOneofCase.WalletPayload) {
-              subBuilder.MergeFrom(WalletPayload);
+          case 10: {
+            if (event_ == null) {
+              Event = new global::WebhookApi.V1.Event();
             }
-            input.ReadMessage(subBuilder);
-            WalletPayload = subBuilder;
+            input.ReadMessage(Event);
             break;
           }
         }
       }
     }
     #endif
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the EventRequest message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static partial class Types {
-      public sealed partial class CreateWalletPayload : pb::IMessage<CreateWalletPayload>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<CreateWalletPayload> _parser = new pb::MessageParser<CreateWalletPayload>(() => new CreateWalletPayload());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<CreateWalletPayload> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::WebhookApi.V1.EventRequest.Descriptor.NestedTypes[0]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public CreateWalletPayload() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public CreateWalletPayload(CreateWalletPayload other) : this() {
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public CreateWalletPayload Clone() {
-          return new CreateWalletPayload(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as CreateWalletPayload);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(CreateWalletPayload other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(CreateWalletPayload other) {
-          if (other == null) {
-            return;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-            }
-          }
-        }
-        #endif
-
-      }
-
-    }
-    #endregion
 
   }
 
@@ -2684,7 +3382,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[8]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2825,9 +3523,9 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"api_key": "API_KEY", 
-  ///"page": 0, 
-  ///"page_size": 10000 
+  ///"api_key": "API_KEY",
+  ///"page": 0,
+  ///"page_size": 10000
   ///}
   /// </summary>
   public sealed partial class ListEventsRequest : pb::IMessage<ListEventsRequest>
@@ -2844,7 +3542,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[9]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3099,18 +3797,36 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"events": [
+  ///"events: [
   ///{
-  ///"id": "ID1", 
-  ///"owner_id": "OWNER_ID1", 
-  ///"type": 1
-  ///}, 
-  ///{
-  ///"id": "ID2", "owner_id": 
-  ///"OWNER_ID2", 
-  ///"type": 1
+  ///"event_type": 0,
+  ///"signature": "SIGNATURE",
+  ///"event_id": "EVENT_ID1",
+  ///"delivery_date": "2007-01-02T15:04:05Z",
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret1", 
+  ///"payload": {
+  ///"wallet_created_payload": {
+  ///"name": "NAME", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"created": "2006-01-02T15:04:05Z"
   ///}
-  ///], 
+  ///}
+  ///},
+  ///{
+  ///"event_type": 0,
+  ///"signature": "SIGNATURE",
+  ///"event_id": "EVENT_ID2",
+  ///"delivery_date": "2007-01-02T15:04:05Z",
+  ///"owner_id": "eyJwtHeader.eyJwtPayload.Secret2", 
+  ///"payload": {
+  ///"wallet_created_payload": {
+  ///"name": "NAME", 
+  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"created": "2006-01-02T15:04:05Z"
+  ///}
+  ///}
+  ///}
+  ///],
   ///"total_owned_events": 2
   ///}
   /// </summary>
@@ -3128,7 +3844,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[10]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3332,8 +4048,9 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"api_key": "API_KEY", 
-  ///"event_id": "EVENT_ID" 
+  ///"api_key": "API_KEY",
+  ///"event_id": "EVENT_ID",
+  ///"webhook_id": "WEBHOOK_ID"
   ///}
   /// </summary>
   public sealed partial class RetryEventRequest : pb::IMessage<RetryEventRequest>
@@ -3350,7 +4067,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[11]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3372,6 +4089,7 @@ namespace WebhookApi.V1 {
     public RetryEventRequest(RetryEventRequest other) : this() {
       apiKey_ = other.apiKey_;
       eventId_ = other.eventId_;
+      webhookId_ = other.webhookId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3408,6 +4126,18 @@ namespace WebhookApi.V1 {
       }
     }
 
+    /// <summary>Field number for the "webhook_id" field.</summary>
+    public const int WebhookIdFieldNumber = 3;
+    private string webhookId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string WebhookId {
+      get { return webhookId_; }
+      set {
+        webhookId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -3425,6 +4155,7 @@ namespace WebhookApi.V1 {
       }
       if (ApiKey != other.ApiKey) return false;
       if (EventId != other.EventId) return false;
+      if (WebhookId != other.WebhookId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3434,6 +4165,7 @@ namespace WebhookApi.V1 {
       int hash = 1;
       if (ApiKey.Length != 0) hash ^= ApiKey.GetHashCode();
       if (EventId.Length != 0) hash ^= EventId.GetHashCode();
+      if (WebhookId.Length != 0) hash ^= WebhookId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3460,6 +4192,10 @@ namespace WebhookApi.V1 {
         output.WriteRawTag(18);
         output.WriteString(EventId);
       }
+      if (WebhookId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(WebhookId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3478,6 +4214,10 @@ namespace WebhookApi.V1 {
         output.WriteRawTag(18);
         output.WriteString(EventId);
       }
+      if (WebhookId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(WebhookId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3493,6 +4233,9 @@ namespace WebhookApi.V1 {
       }
       if (EventId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(EventId);
+      }
+      if (WebhookId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(WebhookId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3511,6 +4254,9 @@ namespace WebhookApi.V1 {
       }
       if (other.EventId.Length != 0) {
         EventId = other.EventId;
+      }
+      if (other.WebhookId.Length != 0) {
+        WebhookId = other.WebhookId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3535,6 +4281,10 @@ namespace WebhookApi.V1 {
             EventId = input.ReadString();
             break;
           }
+          case 26: {
+            WebhookId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -3556,6 +4306,10 @@ namespace WebhookApi.V1 {
           }
           case 18: {
             EventId = input.ReadString();
+            break;
+          }
+          case 26: {
+            WebhookId = input.ReadString();
             break;
           }
         }
@@ -3583,7 +4337,7 @@ namespace WebhookApi.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[12]; }
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3714,6 +4468,437 @@ namespace WebhookApi.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"api_key": "API_KEY",
+  ///"message": "MESSAGE"
+  ///}
+  /// </summary>
+  public sealed partial class PingRequest : pb::IMessage<PingRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PingRequest> _parser = new pb::MessageParser<PingRequest>(() => new PingRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PingRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingRequest(PingRequest other) : this() {
+      apiKey_ = other.apiKey_;
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingRequest Clone() {
+      return new PingRequest(this);
+    }
+
+    /// <summary>Field number for the "api_key" field.</summary>
+    public const int ApiKeyFieldNumber = 1;
+    private string apiKey_ = "";
+    /// <summary>
+    /// JWT
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ApiKey {
+      get { return apiKey_; }
+      set {
+        apiKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PingRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PingRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ApiKey != other.ApiKey) return false;
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ApiKey.Length != 0) hash ^= ApiKey.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ApiKey.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ApiKey);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ApiKey.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ApiKey);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ApiKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ApiKey);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PingRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ApiKey.Length != 0) {
+        ApiKey = other.ApiKey;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ApiKey = input.ReadString();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ApiKey = input.ReadString();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"message": "MESSAGE"
+  ///}
+  /// </summary>
+  public sealed partial class PingResponse : pb::IMessage<PingResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PingResponse> _parser = new pb::MessageParser<PingResponse>(() => new PingResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PingResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WebhookApi.V1.WebhookReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingResponse(PingResponse other) : this() {
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingResponse Clone() {
+      return new PingResponse(this);
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 1;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PingResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PingResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Message.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PingResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Message = input.ReadString();
+            break;
+          }
         }
       }
     }

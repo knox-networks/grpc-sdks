@@ -198,39 +198,43 @@ export namespace RedeemResponse {
   }
 }
 
-export class GetEmissaryRequest extends jspb.Message {
+export class GetNetworkInfoRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetEmissaryRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetEmissaryRequest): GetEmissaryRequest.AsObject;
+  toObject(includeInstance?: boolean): GetNetworkInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNetworkInfoRequest): GetNetworkInfoRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetEmissaryRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetEmissaryRequest;
-  static deserializeBinaryFromReader(message: GetEmissaryRequest, reader: jspb.BinaryReader): GetEmissaryRequest;
+  static serializeBinaryToWriter(message: GetNetworkInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNetworkInfoRequest;
+  static deserializeBinaryFromReader(message: GetNetworkInfoRequest, reader: jspb.BinaryReader): GetNetworkInfoRequest;
 }
 
-export namespace GetEmissaryRequest {
+export namespace GetNetworkInfoRequest {
   export type AsObject = {
   }
 }
 
-export class GetEmissaryResponse extends jspb.Message {
-  getVerifier(): string;
-  setVerifier(value: string): void;
+export class GetNetworkInfoResponse extends jspb.Message {
+  getEmissary(): string;
+  setEmissary(value: string): void;
+
+  getTransactionManager(): string;
+  setTransactionManager(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetEmissaryResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetEmissaryResponse): GetEmissaryResponse.AsObject;
+  toObject(includeInstance?: boolean): GetNetworkInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetNetworkInfoResponse): GetNetworkInfoResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetEmissaryResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetEmissaryResponse;
-  static deserializeBinaryFromReader(message: GetEmissaryResponse, reader: jspb.BinaryReader): GetEmissaryResponse;
+  static serializeBinaryToWriter(message: GetNetworkInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetNetworkInfoResponse;
+  static deserializeBinaryFromReader(message: GetNetworkInfoResponse, reader: jspb.BinaryReader): GetNetworkInfoResponse;
 }
 
-export namespace GetEmissaryResponse {
+export namespace GetNetworkInfoResponse {
   export type AsObject = {
-    verifier: string,
+    emissary: string,
+    transactionManager: string,
   }
 }
 

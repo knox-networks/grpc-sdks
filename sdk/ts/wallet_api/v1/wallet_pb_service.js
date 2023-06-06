@@ -48,13 +48,13 @@ WalletService.ListWallets = {
   responseType: wallet_api_v1_wallet_pb.ListWalletsResponse
 };
 
-WalletService.ListFunds = {
-  methodName: "ListFunds",
+WalletService.ListAssetFiles = {
+  methodName: "ListAssetFiles",
   service: WalletService,
   requestStream: false,
   responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.ListFundsRequest,
-  responseType: wallet_api_v1_wallet_pb.ListFundsResponse
+  requestType: wallet_api_v1_wallet_pb.ListAssetFilesRequest,
+  responseType: wallet_api_v1_wallet_pb.ListAssetFilesResponse
 };
 
 WalletService.ListWalletBalances = {
@@ -127,6 +127,15 @@ WalletService.PrepareFundsChange = {
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
   responseType: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse
+};
+
+WalletService.PrepareTwoStepPayment = {
+  methodName: "PrepareTwoStepPayment",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse
 };
 
 WalletService.GetTransaction = {
@@ -296,11 +305,11 @@ WalletServiceClient.prototype.listWallets = function listWallets(requestMessage,
   };
 };
 
-WalletServiceClient.prototype.listFunds = function listFunds(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listAssetFiles = function listAssetFiles(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WalletService.ListFunds, {
+  var client = grpc.unary(WalletService.ListAssetFiles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -549,6 +558,37 @@ WalletServiceClient.prototype.prepareFundsChange = function prepareFundsChange(r
     callback = arguments[1];
   }
   var client = grpc.unary(WalletService.PrepareFundsChange, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.prepareTwoStepPayment = function prepareTwoStepPayment(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.PrepareTwoStepPayment, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

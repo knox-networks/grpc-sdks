@@ -21,20 +21,11 @@ IssuerService.Authenticate = {
   responseType: issuer_api_v1_issuer_pb.AuthenticateResponse
 };
 
-IssuerService.Authorize = {
-  methodName: "Authorize",
-  service: IssuerService,
-  requestStream: true,
-  responseStream: true,
-  requestType: issuer_api_v1_issuer_pb.AuthorizeRequest,
-  responseType: issuer_api_v1_issuer_pb.AuthorizeResponse
-};
-
 IssuerService.Issue = {
   methodName: "Issue",
   service: IssuerService,
   requestStream: false,
-  responseStream: true,
+  responseStream: false,
   requestType: issuer_api_v1_issuer_pb.IssueRequest,
   responseType: issuer_api_v1_issuer_pb.IssueResponse
 };
@@ -95,85 +86,32 @@ IssuerServiceClient.prototype.authenticate = function authenticate(requestMessag
   };
 };
 
-IssuerServiceClient.prototype.authorize = function authorize(metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.client(IssuerService.Authorize, {
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport
-  });
-  client.onEnd(function (status, statusMessage, trailers) {
-    listeners.status.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners.end.forEach(function (handler) {
-      handler({ code: status, details: statusMessage, metadata: trailers });
-    });
-    listeners = null;
-  });
-  client.onMessage(function (message) {
-    listeners.data.forEach(function (handler) {
-      handler(message);
-    })
-  });
-  client.start(metadata);
-  return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
-    write: function (requestMessage) {
-      client.send(requestMessage);
-      return this;
-    },
-    end: function () {
-      client.finishSend();
-    },
-    cancel: function () {
-      listeners = null;
-      client.close();
-    }
-  };
-};
-
-IssuerServiceClient.prototype.issue = function issue(requestMessage, metadata) {
-  var listeners = {
-    data: [],
-    end: [],
-    status: []
-  };
-  var client = grpc.invoke(IssuerService.Issue, {
+IssuerServiceClient.prototype.issue = function issue(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(IssuerService.Issue, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport,
     debug: this.options.debug,
-    onMessage: function (responseMessage) {
-      listeners.data.forEach(function (handler) {
-        handler(responseMessage);
-      });
-    },
-    onEnd: function (status, statusMessage, trailers) {
-      listeners.status.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners.end.forEach(function (handler) {
-        handler({ code: status, details: statusMessage, metadata: trailers });
-      });
-      listeners = null;
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
     }
   });
   return {
-    on: function (type, handler) {
-      listeners[type].push(handler);
-      return this;
-    },
     cancel: function () {
-      listeners = null;
+      callback = null;
       client.close();
     }
   };

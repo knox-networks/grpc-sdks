@@ -51,6 +51,8 @@ const (
 	ServiceType_Overload ServiceType = 11
 	// The Faucet Service (Reserved).
 	ServiceType_Faucet ServiceType = 12
+	// The TransactionManager Service (Reserved).
+	ServiceType_TransactionManager ServiceType = 13
 )
 
 // Enum value maps for ServiceType.
@@ -69,21 +71,23 @@ var (
 		10: "Issuer",
 		11: "Overload",
 		12: "Faucet",
+		13: "TransactionManager",
 	}
 	ServiceType_value = map[string]int32{
-		"UnknownService":  0,
-		"Gateway":         1,
-		"Notary":          2,
-		"Authority":       3,
-		"Treasury":        4,
-		"Emissary":        5,
-		"Shared":          6,
-		"Identity":        7,
-		"Vault":           8,
-		"CustodialWallet": 9,
-		"Issuer":          10,
-		"Overload":        11,
-		"Faucet":          12,
+		"UnknownService":     0,
+		"Gateway":            1,
+		"Notary":             2,
+		"Authority":          3,
+		"Treasury":           4,
+		"Emissary":           5,
+		"Shared":             6,
+		"Identity":           7,
+		"Vault":              8,
+		"CustodialWallet":    9,
+		"Issuer":             10,
+		"Overload":           11,
+		"Faucet":             12,
+		"TransactionManager": 13,
 	}
 )
 
@@ -233,6 +237,55 @@ func (TransactionStatus) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{2}
 }
 
+type LogicalOperator int32
+
+const (
+	LogicalOperator_LOGICAL_OPERATOR_UNSPECIFIED LogicalOperator = 0
+	LogicalOperator_LOGICAL_OPERATOR_AND         LogicalOperator = 1
+	LogicalOperator_LOGICAL_OPERATOR_OR          LogicalOperator = 2
+)
+
+// Enum value maps for LogicalOperator.
+var (
+	LogicalOperator_name = map[int32]string{
+		0: "LOGICAL_OPERATOR_UNSPECIFIED",
+		1: "LOGICAL_OPERATOR_AND",
+		2: "LOGICAL_OPERATOR_OR",
+	}
+	LogicalOperator_value = map[string]int32{
+		"LOGICAL_OPERATOR_UNSPECIFIED": 0,
+		"LOGICAL_OPERATOR_AND":         1,
+		"LOGICAL_OPERATOR_OR":          2,
+	}
+)
+
+func (x LogicalOperator) Enum() *LogicalOperator {
+	p := new(LogicalOperator)
+	*p = x
+	return p
+}
+
+func (x LogicalOperator) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (LogicalOperator) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_v1_common_proto_enumTypes[3].Descriptor()
+}
+
+func (LogicalOperator) Type() protoreflect.EnumType {
+	return &file_common_v1_common_proto_enumTypes[3]
+}
+
+func (x LogicalOperator) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use LogicalOperator.Descriptor instead.
+func (LogicalOperator) EnumDescriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{3}
+}
+
 type Transaction_Role int32
 
 const (
@@ -265,11 +318,11 @@ func (x Transaction_Role) String() string {
 }
 
 func (Transaction_Role) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_common_proto_enumTypes[3].Descriptor()
+	return file_common_v1_common_proto_enumTypes[4].Descriptor()
 }
 
 func (Transaction_Role) Type() protoreflect.EnumType {
-	return &file_common_v1_common_proto_enumTypes[3]
+	return &file_common_v1_common_proto_enumTypes[4]
 }
 
 func (x Transaction_Role) Number() protoreflect.EnumNumber {
@@ -317,11 +370,11 @@ func (x Transaction_Type) String() string {
 }
 
 func (Transaction_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_v1_common_proto_enumTypes[4].Descriptor()
+	return file_common_v1_common_proto_enumTypes[5].Descriptor()
 }
 
 func (Transaction_Type) Type() protoreflect.EnumType {
-	return &file_common_v1_common_proto_enumTypes[4]
+	return &file_common_v1_common_proto_enumTypes[5]
 }
 
 func (x Transaction_Type) Number() protoreflect.EnumNumber {
@@ -333,10 +386,77 @@ func (Transaction_Type) EnumDescriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{25, 1}
 }
 
+type FilterItem_FilterOperator int32
+
+const (
+	FilterItem_FILTER_OPERATOR_UNSPECIFIED FilterItem_FilterOperator = 0
+	FilterItem_FILTER_OPERATOR_EQ          FilterItem_FilterOperator = 1
+	FilterItem_FILTER_OPERATOR_NE          FilterItem_FilterOperator = 2
+	FilterItem_FILTER_OPERATOR_GT          FilterItem_FilterOperator = 3
+	FilterItem_FILTER_OPERATOR_GTE         FilterItem_FilterOperator = 4
+	FilterItem_FILTER_OPERATOR_LT          FilterItem_FilterOperator = 5
+	FilterItem_FILTER_OPERATOR_LTE         FilterItem_FilterOperator = 6
+	FilterItem_FILTER_OPERATOR_IN          FilterItem_FilterOperator = 7
+	FilterItem_FILTER_OPERATOR_NOT_IN      FilterItem_FilterOperator = 8
+)
+
+// Enum value maps for FilterItem_FilterOperator.
+var (
+	FilterItem_FilterOperator_name = map[int32]string{
+		0: "FILTER_OPERATOR_UNSPECIFIED",
+		1: "FILTER_OPERATOR_EQ",
+		2: "FILTER_OPERATOR_NE",
+		3: "FILTER_OPERATOR_GT",
+		4: "FILTER_OPERATOR_GTE",
+		5: "FILTER_OPERATOR_LT",
+		6: "FILTER_OPERATOR_LTE",
+		7: "FILTER_OPERATOR_IN",
+		8: "FILTER_OPERATOR_NOT_IN",
+	}
+	FilterItem_FilterOperator_value = map[string]int32{
+		"FILTER_OPERATOR_UNSPECIFIED": 0,
+		"FILTER_OPERATOR_EQ":          1,
+		"FILTER_OPERATOR_NE":          2,
+		"FILTER_OPERATOR_GT":          3,
+		"FILTER_OPERATOR_GTE":         4,
+		"FILTER_OPERATOR_LT":          5,
+		"FILTER_OPERATOR_LTE":         6,
+		"FILTER_OPERATOR_IN":          7,
+		"FILTER_OPERATOR_NOT_IN":      8,
+	}
+)
+
+func (x FilterItem_FilterOperator) Enum() *FilterItem_FilterOperator {
+	p := new(FilterItem_FilterOperator)
+	*p = x
+	return p
+}
+
+func (x FilterItem_FilterOperator) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (FilterItem_FilterOperator) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_v1_common_proto_enumTypes[6].Descriptor()
+}
+
+func (FilterItem_FilterOperator) Type() protoreflect.EnumType {
+	return &file_common_v1_common_proto_enumTypes[6]
+}
+
+func (x FilterItem_FilterOperator) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use FilterItem_FilterOperator.Descriptor instead.
+func (FilterItem_FilterOperator) EnumDescriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{26, 0}
+}
+
 // [Example]
 // {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "xVERIFIERxBYTES="
 // }
 type DynamicVerifier struct {
 	state         protoimpl.MessageState
@@ -533,7 +653,7 @@ func (x *Distribution) GetValue() map[int64]int32 {
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "xVERIFIERxBYTES="
 // }
 // }
 type AuthenticationRequest struct {
@@ -586,7 +706,7 @@ func (x *AuthenticationRequest) GetVerifier() *DynamicVerifier {
 
 // [Example]
 // {
-// "challenge": "ByteLengthChallengeVariesByAlgo="
+// "challenge": "CHALLENGExBYTES="
 // }
 type AuthenticationResponse struct {
 	state         protoimpl.MessageState
@@ -681,11 +801,11 @@ func (*OneConnection) Descriptor() ([]byte, []int) {
 // "associated_verifiers": [
 // {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "VERIFIERxBYTES="
 // },
 // {
 // "signature_system": 2,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "VERIFIERxBYTES="
 // }
 // ]
 // }
@@ -741,11 +861,11 @@ func (x *ManyConnection) GetAssociatedVerifiers() []*DynamicVerifier {
 // {
 // "primary_verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "VERIFIERxBYTES="
 // },
 // "associated_verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "VERIFIERxBYTES="
 // }
 // }
 type AssociatedConnection struct {
@@ -811,7 +931,7 @@ func (x *AssociatedConnection) GetAssociatedVerifier() *DynamicVerifier {
 // "signature": {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "VERIFIERxBYTES="
 // },
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // },
@@ -924,7 +1044,7 @@ func (*ConnectionRequest_Many) isConnectionRequest_RequestType() {}
 // {
 // "verifier": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "xVERIFIERxBYTES="
 // },
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // }
@@ -987,7 +1107,7 @@ func (x *AuthenticationSignature) GetSignature() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PromissoryFileBytesLenVaries="
+// "promissory_file": "PROMISSORYFILEBYTES="
 // }
 type AuthorizedSignatureRequest struct {
 	state         protoimpl.MessageState
@@ -1039,7 +1159,7 @@ func (x *AuthorizedSignatureRequest) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "PromissoryFileBytesLenVaries="
+// "promissory_file": "PROMISSORYFILEBYTES="
 // }
 type AuthorizedSignatureResponse struct {
 	state         protoimpl.MessageState
@@ -1092,7 +1212,7 @@ func (x *AuthorizedSignatureResponse) GetPromissoryFile() []byte {
 // [Example]
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "ByteLengthDataVaries="
+// "data": "xDATAxBYTES="
 // }
 type Media struct {
 	state         protoimpl.MessageState
@@ -1176,7 +1296,7 @@ type Role struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// MultibaseEncodedVerifier.
+	// MultibaseVerifier.
 	Verifier string `protobuf:"bytes,1,opt,name=verifier,proto3" json:"verifier,omitempty"`
 	// The role granted by an Issuer to an entity to make issuance requests.
 	//
@@ -1310,7 +1430,7 @@ func (*GetVerifierRequest) Descriptor() ([]byte, []int) {
 // {
 // "bytes": {
 // "signature_system": 1,
-// "verifier": "VerifierBytesLengthVariesByAlgo="
+// "verifier": "xVERIFIERxBYTES="
 // },
 // "multibase": "MULTIBASE"
 // }
@@ -1924,11 +2044,11 @@ func (x *TransactionSnapshot) GetMessage() string {
 // "amount":100,
 // "decimals":2
 // },
-// "created": "CREATED_TIMESTAMP",
-// "updated": "UPDATED_TIMESTAMP",
+// "created": "2006-01-02T15:04:05Z",
+// "updated": "2007-01-02T15:04:05Z",
 // "memo": "MEMO",
-// "owner": "OWNER_PUBLIC_KEY",
-// "counterparty": "COUNTERPARTY_PUBLIC_KEY",
+// "owner": "zOwnerPublicKeyMultibase58Encoded",
+// "counterparty": "zCounterpartyPublicKeyMultibase58Encoded",
 // "status": 0
 // }
 type Transaction struct {
@@ -2062,6 +2182,207 @@ func (x *Transaction) GetStatus() TransactionStatus {
 	return TransactionStatus_STATE_INITIALIZING
 }
 
+// [Example]
+// {
+// "field": "FIELD",
+// "operator": 0,
+// "value": {
+// "str_value": "STRINGVAL"
+// }
+// }
+type FilterItem struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Field    string                    `protobuf:"bytes,1,opt,name=field,proto3" json:"field,omitempty"`
+	Operator FilterItem_FilterOperator `protobuf:"varint,2,opt,name=operator,proto3,enum=common.FilterItem_FilterOperator" json:"operator,omitempty"`
+	// Types that are assignable to Value:
+	//
+	//	*FilterItem_StrValue
+	//	*FilterItem_IntValue
+	//	*FilterItem_BoolValue
+	Value isFilterItem_Value `protobuf_oneof:"value"`
+}
+
+func (x *FilterItem) Reset() {
+	*x = FilterItem{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_v1_common_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FilterItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FilterItem) ProtoMessage() {}
+
+func (x *FilterItem) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FilterItem.ProtoReflect.Descriptor instead.
+func (*FilterItem) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *FilterItem) GetField() string {
+	if x != nil {
+		return x.Field
+	}
+	return ""
+}
+
+func (x *FilterItem) GetOperator() FilterItem_FilterOperator {
+	if x != nil {
+		return x.Operator
+	}
+	return FilterItem_FILTER_OPERATOR_UNSPECIFIED
+}
+
+func (m *FilterItem) GetValue() isFilterItem_Value {
+	if m != nil {
+		return m.Value
+	}
+	return nil
+}
+
+func (x *FilterItem) GetStrValue() string {
+	if x, ok := x.GetValue().(*FilterItem_StrValue); ok {
+		return x.StrValue
+	}
+	return ""
+}
+
+func (x *FilterItem) GetIntValue() int64 {
+	if x, ok := x.GetValue().(*FilterItem_IntValue); ok {
+		return x.IntValue
+	}
+	return 0
+}
+
+func (x *FilterItem) GetBoolValue() bool {
+	if x, ok := x.GetValue().(*FilterItem_BoolValue); ok {
+		return x.BoolValue
+	}
+	return false
+}
+
+type isFilterItem_Value interface {
+	isFilterItem_Value()
+}
+
+type FilterItem_StrValue struct {
+	StrValue string `protobuf:"bytes,3,opt,name=str_value,json=strValue,proto3,oneof"`
+}
+
+type FilterItem_IntValue struct {
+	IntValue int64 `protobuf:"varint,4,opt,name=int_value,json=intValue,proto3,oneof"`
+}
+
+type FilterItem_BoolValue struct {
+	BoolValue bool `protobuf:"varint,5,opt,name=bool_value,json=boolValue,proto3,oneof"`
+}
+
+func (*FilterItem_StrValue) isFilterItem_Value() {}
+
+func (*FilterItem_IntValue) isFilterItem_Value() {}
+
+func (*FilterItem_BoolValue) isFilterItem_Value() {}
+
+// [Example]
+// {
+// "filters": [
+// {
+// "field": "FIELD1",
+// "operator": 0,
+// "value": {
+// "str_value": "STRINGVAL"
+// }
+// },
+// {
+// "field": "FIELD2",
+// "operator": 0,
+// "value": {
+// "int_value": 10
+// }
+// },
+// {
+// "field": "FIELD3",
+// "operator": 0,
+// "value": {
+// "bool_value": false
+// }
+// }
+// ],
+// "operator": 0
+// }
+type Filter struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Filters  []*FilterItem   `protobuf:"bytes,1,rep,name=filters,proto3" json:"filters,omitempty"`
+	Operator LogicalOperator `protobuf:"varint,2,opt,name=operator,proto3,enum=common.LogicalOperator" json:"operator,omitempty"`
+}
+
+func (x *Filter) Reset() {
+	*x = Filter{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_v1_common_proto_msgTypes[27]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Filter) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Filter) ProtoMessage() {}
+
+func (x *Filter) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[27]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Filter.ProtoReflect.Descriptor instead.
+func (*Filter) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *Filter) GetFilters() []*FilterItem {
+	if x != nil {
+		return x.Filters
+	}
+	return nil
+}
+
+func (x *Filter) GetOperator() LogicalOperator {
+	if x != nil {
+		return x.Operator
+	}
+	return LogicalOperator_LOGICAL_OPERATOR_UNSPECIFIED
+}
+
 // Issuer Role Permissions.
 type Role_IssuePermissions struct {
 	state         protoimpl.MessageState
@@ -2075,7 +2396,7 @@ type Role_IssuePermissions struct {
 func (x *Role_IssuePermissions) Reset() {
 	*x = Role_IssuePermissions{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_common_v1_common_proto_msgTypes[27]
+		mi := &file_common_v1_common_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2088,7 +2409,7 @@ func (x *Role_IssuePermissions) String() string {
 func (*Role_IssuePermissions) ProtoMessage() {}
 
 func (x *Role_IssuePermissions) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_common_proto_msgTypes[27]
+	mi := &file_common_v1_common_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2297,40 +2618,83 @@ var file_common_v1_common_proto_rawDesc = []byte{
 	0x4f, 0x57, 0x4e, 0x10, 0x00, 0x12, 0x17, 0x0a, 0x13, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x53, 0x49,
 	0x4d, 0x50, 0x4c, 0x45, 0x5f, 0x50, 0x41, 0x59, 0x4d, 0x45, 0x4e, 0x54, 0x10, 0x01, 0x12, 0x15,
 	0x0a, 0x11, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x46, 0x55, 0x4e, 0x44, 0x53, 0x5f, 0x43, 0x48, 0x41,
-	0x4e, 0x47, 0x45, 0x10, 0x02, 0x2a, 0xc5, 0x01, 0x0a, 0x0b, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x0e, 0x55, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x47, 0x61, 0x74,
-	0x65, 0x77, 0x61, 0x79, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x6f, 0x74, 0x61, 0x72, 0x79,
-	0x10, 0x02, 0x12, 0x0d, 0x0a, 0x09, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x69, 0x74, 0x79, 0x10,
-	0x03, 0x12, 0x0c, 0x0a, 0x08, 0x54, 0x72, 0x65, 0x61, 0x73, 0x75, 0x72, 0x79, 0x10, 0x04, 0x12,
-	0x0c, 0x0a, 0x08, 0x45, 0x6d, 0x69, 0x73, 0x73, 0x61, 0x72, 0x79, 0x10, 0x05, 0x12, 0x0a, 0x0a,
-	0x06, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x10, 0x06, 0x12, 0x0c, 0x0a, 0x08, 0x49, 0x64, 0x65,
-	0x6e, 0x74, 0x69, 0x74, 0x79, 0x10, 0x07, 0x12, 0x09, 0x0a, 0x05, 0x56, 0x61, 0x75, 0x6c, 0x74,
-	0x10, 0x08, 0x12, 0x13, 0x0a, 0x0f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x64, 0x69, 0x61, 0x6c, 0x57,
-	0x61, 0x6c, 0x6c, 0x65, 0x74, 0x10, 0x09, 0x12, 0x0a, 0x0a, 0x06, 0x49, 0x73, 0x73, 0x75, 0x65,
-	0x72, 0x10, 0x0a, 0x12, 0x0c, 0x0a, 0x08, 0x4f, 0x76, 0x65, 0x72, 0x6c, 0x6f, 0x61, 0x64, 0x10,
-	0x0b, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x61, 0x75, 0x63, 0x65, 0x74, 0x10, 0x0c, 0x2a, 0x71, 0x0a,
-	0x0f, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
-	0x12, 0x20, 0x0a, 0x1c, 0x53, 0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f, 0x53, 0x59,
-	0x53, 0x54, 0x45, 0x4d, 0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44,
-	0x10, 0x00, 0x12, 0x1c, 0x0a, 0x18, 0x53, 0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f,
-	0x53, 0x59, 0x53, 0x54, 0x45, 0x4d, 0x5f, 0x45, 0x44, 0x32, 0x35, 0x35, 0x31, 0x39, 0x10, 0x01,
-	0x12, 0x1e, 0x0a, 0x1a, 0x53, 0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f, 0x53, 0x59,
-	0x53, 0x54, 0x45, 0x4d, 0x5f, 0x53, 0x45, 0x43, 0x50, 0x32, 0x35, 0x36, 0x4b, 0x31, 0x10, 0x02,
-	0x2a, 0x90, 0x01, 0x0a, 0x11, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x16, 0x0a, 0x12, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f,
-	0x49, 0x4e, 0x49, 0x54, 0x49, 0x41, 0x4c, 0x49, 0x5a, 0x49, 0x4e, 0x47, 0x10, 0x00, 0x12, 0x15,
-	0x0a, 0x11, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x41, 0x55, 0x54, 0x48, 0x4f, 0x52, 0x49, 0x5a,
-	0x49, 0x4e, 0x47, 0x10, 0x01, 0x12, 0x11, 0x0a, 0x0d, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x53,
-	0x45, 0x4e, 0x44, 0x49, 0x4e, 0x47, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x53, 0x54, 0x41, 0x54,
-	0x45, 0x5f, 0x52, 0x45, 0x43, 0x45, 0x49, 0x56, 0x49, 0x4e, 0x47, 0x10, 0x05, 0x12, 0x12, 0x0a,
-	0x0e, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x43, 0x4f, 0x4d, 0x50, 0x4c, 0x45, 0x54, 0x45, 0x10,
-	0x03, 0x12, 0x10, 0x0a, 0x0c, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45,
-	0x44, 0x10, 0x04, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x6b, 0x6e, 0x6f, 0x78, 0x2d, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x2f,
-	0x67, 0x72, 0x70, 0x63, 0x2d, 0x73, 0x64, 0x6b, 0x73, 0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x6f,
-	0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x4e, 0x47, 0x45, 0x10, 0x02, 0x22, 0xc3, 0x03, 0x0a, 0x0a, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72,
+	0x49, 0x74, 0x65, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x12, 0x3d, 0x0a, 0x08, 0x6f, 0x70,
+	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x21, 0x2e, 0x63,
+	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x49, 0x74, 0x65, 0x6d,
+	0x2e, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x52,
+	0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x1d, 0x0a, 0x09, 0x73, 0x74, 0x72,
+	0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x08,
+	0x73, 0x74, 0x72, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x1d, 0x0a, 0x09, 0x69, 0x6e, 0x74, 0x5f,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x48, 0x00, 0x52, 0x08, 0x69,
+	0x6e, 0x74, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x1f, 0x0a, 0x0a, 0x62, 0x6f, 0x6f, 0x6c, 0x5f,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x09, 0x62,
+	0x6f, 0x6f, 0x6c, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x22, 0xf7, 0x01, 0x0a, 0x0e, 0x46, 0x69, 0x6c,
+	0x74, 0x65, 0x72, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x1f, 0x0a, 0x1b, 0x46,
+	0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x55,
+	0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x16, 0x0a, 0x12,
+	0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f,
+	0x45, 0x51, 0x10, 0x01, 0x12, 0x16, 0x0a, 0x12, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f,
+	0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x4e, 0x45, 0x10, 0x02, 0x12, 0x16, 0x0a, 0x12,
+	0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f,
+	0x47, 0x54, 0x10, 0x03, 0x12, 0x17, 0x0a, 0x13, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f,
+	0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x47, 0x54, 0x45, 0x10, 0x04, 0x12, 0x16, 0x0a,
+	0x12, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52,
+	0x5f, 0x4c, 0x54, 0x10, 0x05, 0x12, 0x17, 0x0a, 0x13, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f,
+	0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x4c, 0x54, 0x45, 0x10, 0x06, 0x12, 0x16,
+	0x0a, 0x12, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f,
+	0x52, 0x5f, 0x49, 0x4e, 0x10, 0x07, 0x12, 0x1a, 0x0a, 0x16, 0x46, 0x49, 0x4c, 0x54, 0x45, 0x52,
+	0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x4e, 0x4f, 0x54, 0x5f, 0x49, 0x4e,
+	0x10, 0x08, 0x42, 0x07, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x6b, 0x0a, 0x06, 0x46,
+	0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x2c, 0x0a, 0x07, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e,
+	0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x07, 0x66, 0x69, 0x6c, 0x74,
+	0x65, 0x72, 0x73, 0x12, 0x33, 0x0a, 0x08, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x17, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x4c,
+	0x6f, 0x67, 0x69, 0x63, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x52, 0x08,
+	0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x2a, 0xdd, 0x01, 0x0a, 0x0b, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x0e, 0x55, 0x6e, 0x6b, 0x6e,
+	0x6f, 0x77, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07,
+	0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x6f, 0x74,
+	0x61, 0x72, 0x79, 0x10, 0x02, 0x12, 0x0d, 0x0a, 0x09, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x69,
+	0x74, 0x79, 0x10, 0x03, 0x12, 0x0c, 0x0a, 0x08, 0x54, 0x72, 0x65, 0x61, 0x73, 0x75, 0x72, 0x79,
+	0x10, 0x04, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x6d, 0x69, 0x73, 0x73, 0x61, 0x72, 0x79, 0x10, 0x05,
+	0x12, 0x0a, 0x0a, 0x06, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x10, 0x06, 0x12, 0x0c, 0x0a, 0x08,
+	0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x74, 0x79, 0x10, 0x07, 0x12, 0x09, 0x0a, 0x05, 0x56, 0x61,
+	0x75, 0x6c, 0x74, 0x10, 0x08, 0x12, 0x13, 0x0a, 0x0f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x64, 0x69,
+	0x61, 0x6c, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x10, 0x09, 0x12, 0x0a, 0x0a, 0x06, 0x49, 0x73,
+	0x73, 0x75, 0x65, 0x72, 0x10, 0x0a, 0x12, 0x0c, 0x0a, 0x08, 0x4f, 0x76, 0x65, 0x72, 0x6c, 0x6f,
+	0x61, 0x64, 0x10, 0x0b, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x61, 0x75, 0x63, 0x65, 0x74, 0x10, 0x0c,
+	0x12, 0x16, 0x0a, 0x12, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x4d,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x10, 0x0d, 0x2a, 0x71, 0x0a, 0x0f, 0x53, 0x69, 0x67, 0x6e,
+	0x61, 0x74, 0x75, 0x72, 0x65, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x20, 0x0a, 0x1c, 0x53,
+	0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f, 0x53, 0x59, 0x53, 0x54, 0x45, 0x4d, 0x5f,
+	0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x1c, 0x0a,
+	0x18, 0x53, 0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f, 0x53, 0x59, 0x53, 0x54, 0x45,
+	0x4d, 0x5f, 0x45, 0x44, 0x32, 0x35, 0x35, 0x31, 0x39, 0x10, 0x01, 0x12, 0x1e, 0x0a, 0x1a, 0x53,
+	0x49, 0x47, 0x4e, 0x41, 0x54, 0x55, 0x52, 0x45, 0x5f, 0x53, 0x59, 0x53, 0x54, 0x45, 0x4d, 0x5f,
+	0x53, 0x45, 0x43, 0x50, 0x32, 0x35, 0x36, 0x4b, 0x31, 0x10, 0x02, 0x2a, 0x90, 0x01, 0x0a, 0x11,
+	0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x12, 0x16, 0x0a, 0x12, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x49, 0x4e, 0x49, 0x54, 0x49,
+	0x41, 0x4c, 0x49, 0x5a, 0x49, 0x4e, 0x47, 0x10, 0x00, 0x12, 0x15, 0x0a, 0x11, 0x53, 0x54, 0x41,
+	0x54, 0x45, 0x5f, 0x41, 0x55, 0x54, 0x48, 0x4f, 0x52, 0x49, 0x5a, 0x49, 0x4e, 0x47, 0x10, 0x01,
+	0x12, 0x11, 0x0a, 0x0d, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x53, 0x45, 0x4e, 0x44, 0x49, 0x4e,
+	0x47, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x52, 0x45, 0x43,
+	0x45, 0x49, 0x56, 0x49, 0x4e, 0x47, 0x10, 0x05, 0x12, 0x12, 0x0a, 0x0e, 0x53, 0x54, 0x41, 0x54,
+	0x45, 0x5f, 0x43, 0x4f, 0x4d, 0x50, 0x4c, 0x45, 0x54, 0x45, 0x10, 0x03, 0x12, 0x10, 0x0a, 0x0c,
+	0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x45, 0x44, 0x10, 0x04, 0x2a, 0x66,
+	0x0a, 0x0f, 0x4c, 0x6f, 0x67, 0x69, 0x63, 0x61, 0x6c, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f,
+	0x72, 0x12, 0x20, 0x0a, 0x1c, 0x4c, 0x4f, 0x47, 0x49, 0x43, 0x41, 0x4c, 0x5f, 0x4f, 0x50, 0x45,
+	0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45,
+	0x44, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x4c, 0x4f, 0x47, 0x49, 0x43, 0x41, 0x4c, 0x5f, 0x4f,
+	0x50, 0x45, 0x52, 0x41, 0x54, 0x4f, 0x52, 0x5f, 0x41, 0x4e, 0x44, 0x10, 0x01, 0x12, 0x17, 0x0a,
+	0x13, 0x4c, 0x4f, 0x47, 0x49, 0x43, 0x41, 0x4c, 0x5f, 0x4f, 0x50, 0x45, 0x52, 0x41, 0x54, 0x4f,
+	0x52, 0x5f, 0x4f, 0x52, 0x10, 0x02, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b, 0x6e, 0x6f, 0x78, 0x2d, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72,
+	0x6b, 0x73, 0x2f, 0x67, 0x72, 0x70, 0x63, 0x2d, 0x73, 0x64, 0x6b, 0x73, 0x2f, 0x73, 0x64, 0x6b,
+	0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2345,71 +2709,78 @@ func file_common_v1_common_proto_rawDescGZIP() []byte {
 	return file_common_v1_common_proto_rawDescData
 }
 
-var file_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
+var file_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
+var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_common_v1_common_proto_goTypes = []interface{}{
 	(ServiceType)(0),                    // 0: common.ServiceType
 	(SignatureSystem)(0),                // 1: common.SignatureSystem
 	(TransactionStatus)(0),              // 2: common.TransactionStatus
-	(Transaction_Role)(0),               // 3: common.Transaction.Role
-	(Transaction_Type)(0),               // 4: common.Transaction.Type
-	(*DynamicVerifier)(nil),             // 5: common.DynamicVerifier
-	(*Amount)(nil),                      // 6: common.Amount
-	(*Distribution)(nil),                // 7: common.Distribution
-	(*AuthenticationRequest)(nil),       // 8: common.AuthenticationRequest
-	(*AuthenticationResponse)(nil),      // 9: common.AuthenticationResponse
-	(*OneConnection)(nil),               // 10: common.OneConnection
-	(*ManyConnection)(nil),              // 11: common.ManyConnection
-	(*AssociatedConnection)(nil),        // 12: common.AssociatedConnection
-	(*ConnectionRequest)(nil),           // 13: common.ConnectionRequest
-	(*AuthenticationSignature)(nil),     // 14: common.AuthenticationSignature
-	(*AuthorizedSignatureRequest)(nil),  // 15: common.AuthorizedSignatureRequest
-	(*AuthorizedSignatureResponse)(nil), // 16: common.AuthorizedSignatureResponse
-	(*Media)(nil),                       // 17: common.Media
-	(*Role)(nil),                        // 18: common.Role
-	(*GetVerifierRequest)(nil),          // 19: common.GetVerifierRequest
-	(*GetVerifierResponse)(nil),         // 20: common.GetVerifierResponse
-	(*GetServiceTypeRequest)(nil),       // 21: common.GetServiceTypeRequest
-	(*GetServiceTypeResponse)(nil),      // 22: common.GetServiceTypeResponse
-	(*GetInstanceRequest)(nil),          // 23: common.GetInstanceRequest
-	(*GetInstanceResponse)(nil),         // 24: common.GetInstanceResponse
-	(*StartSimplePaymentRequest)(nil),   // 25: common.StartSimplePaymentRequest
-	(*StartSimplePaymentResponse)(nil),  // 26: common.StartSimplePaymentResponse
-	(*StartFundsChangeRequest)(nil),     // 27: common.StartFundsChangeRequest
-	(*StartFundsChangeResponse)(nil),    // 28: common.StartFundsChangeResponse
-	(*TransactionSnapshot)(nil),         // 29: common.TransactionSnapshot
-	(*Transaction)(nil),                 // 30: common.Transaction
-	nil,                                 // 31: common.Distribution.ValueEntry
-	(*Role_IssuePermissions)(nil),       // 32: common.Role.IssuePermissions
+	(LogicalOperator)(0),                // 3: common.LogicalOperator
+	(Transaction_Role)(0),               // 4: common.Transaction.Role
+	(Transaction_Type)(0),               // 5: common.Transaction.Type
+	(FilterItem_FilterOperator)(0),      // 6: common.FilterItem.FilterOperator
+	(*DynamicVerifier)(nil),             // 7: common.DynamicVerifier
+	(*Amount)(nil),                      // 8: common.Amount
+	(*Distribution)(nil),                // 9: common.Distribution
+	(*AuthenticationRequest)(nil),       // 10: common.AuthenticationRequest
+	(*AuthenticationResponse)(nil),      // 11: common.AuthenticationResponse
+	(*OneConnection)(nil),               // 12: common.OneConnection
+	(*ManyConnection)(nil),              // 13: common.ManyConnection
+	(*AssociatedConnection)(nil),        // 14: common.AssociatedConnection
+	(*ConnectionRequest)(nil),           // 15: common.ConnectionRequest
+	(*AuthenticationSignature)(nil),     // 16: common.AuthenticationSignature
+	(*AuthorizedSignatureRequest)(nil),  // 17: common.AuthorizedSignatureRequest
+	(*AuthorizedSignatureResponse)(nil), // 18: common.AuthorizedSignatureResponse
+	(*Media)(nil),                       // 19: common.Media
+	(*Role)(nil),                        // 20: common.Role
+	(*GetVerifierRequest)(nil),          // 21: common.GetVerifierRequest
+	(*GetVerifierResponse)(nil),         // 22: common.GetVerifierResponse
+	(*GetServiceTypeRequest)(nil),       // 23: common.GetServiceTypeRequest
+	(*GetServiceTypeResponse)(nil),      // 24: common.GetServiceTypeResponse
+	(*GetInstanceRequest)(nil),          // 25: common.GetInstanceRequest
+	(*GetInstanceResponse)(nil),         // 26: common.GetInstanceResponse
+	(*StartSimplePaymentRequest)(nil),   // 27: common.StartSimplePaymentRequest
+	(*StartSimplePaymentResponse)(nil),  // 28: common.StartSimplePaymentResponse
+	(*StartFundsChangeRequest)(nil),     // 29: common.StartFundsChangeRequest
+	(*StartFundsChangeResponse)(nil),    // 30: common.StartFundsChangeResponse
+	(*TransactionSnapshot)(nil),         // 31: common.TransactionSnapshot
+	(*Transaction)(nil),                 // 32: common.Transaction
+	(*FilterItem)(nil),                  // 33: common.FilterItem
+	(*Filter)(nil),                      // 34: common.Filter
+	nil,                                 // 35: common.Distribution.ValueEntry
+	(*Role_IssuePermissions)(nil),       // 36: common.Role.IssuePermissions
 }
 var file_common_v1_common_proto_depIdxs = []int32{
 	1,  // 0: common.DynamicVerifier.signature_system:type_name -> common.SignatureSystem
-	31, // 1: common.Distribution.value:type_name -> common.Distribution.ValueEntry
-	5,  // 2: common.AuthenticationRequest.verifier:type_name -> common.DynamicVerifier
-	5,  // 3: common.ManyConnection.associated_verifiers:type_name -> common.DynamicVerifier
-	5,  // 4: common.AssociatedConnection.primary_verifier:type_name -> common.DynamicVerifier
-	5,  // 5: common.AssociatedConnection.associated_verifier:type_name -> common.DynamicVerifier
-	10, // 6: common.ConnectionRequest.one:type_name -> common.OneConnection
-	11, // 7: common.ConnectionRequest.many:type_name -> common.ManyConnection
-	14, // 8: common.ConnectionRequest.signature:type_name -> common.AuthenticationSignature
-	5,  // 9: common.AuthenticationSignature.verifier:type_name -> common.DynamicVerifier
-	32, // 10: common.Role.issue_permissions:type_name -> common.Role.IssuePermissions
-	5,  // 11: common.GetVerifierResponse.bytes:type_name -> common.DynamicVerifier
+	35, // 1: common.Distribution.value:type_name -> common.Distribution.ValueEntry
+	7,  // 2: common.AuthenticationRequest.verifier:type_name -> common.DynamicVerifier
+	7,  // 3: common.ManyConnection.associated_verifiers:type_name -> common.DynamicVerifier
+	7,  // 4: common.AssociatedConnection.primary_verifier:type_name -> common.DynamicVerifier
+	7,  // 5: common.AssociatedConnection.associated_verifier:type_name -> common.DynamicVerifier
+	12, // 6: common.ConnectionRequest.one:type_name -> common.OneConnection
+	13, // 7: common.ConnectionRequest.many:type_name -> common.ManyConnection
+	16, // 8: common.ConnectionRequest.signature:type_name -> common.AuthenticationSignature
+	7,  // 9: common.AuthenticationSignature.verifier:type_name -> common.DynamicVerifier
+	36, // 10: common.Role.issue_permissions:type_name -> common.Role.IssuePermissions
+	7,  // 11: common.GetVerifierResponse.bytes:type_name -> common.DynamicVerifier
 	0,  // 12: common.GetServiceTypeResponse.service_type:type_name -> common.ServiceType
-	6,  // 13: common.StartSimplePaymentRequest.amount:type_name -> common.Amount
-	6,  // 14: common.StartFundsChangeRequest.amount:type_name -> common.Amount
+	8,  // 13: common.StartSimplePaymentRequest.amount:type_name -> common.Amount
+	8,  // 14: common.StartFundsChangeRequest.amount:type_name -> common.Amount
 	2,  // 15: common.TransactionSnapshot.status:type_name -> common.TransactionStatus
-	6,  // 16: common.TransactionSnapshot.amount_transferred:type_name -> common.Amount
-	4,  // 17: common.Transaction.type:type_name -> common.Transaction.Type
-	3,  // 18: common.Transaction.role:type_name -> common.Transaction.Role
-	6,  // 19: common.Transaction.amount:type_name -> common.Amount
+	8,  // 16: common.TransactionSnapshot.amount_transferred:type_name -> common.Amount
+	5,  // 17: common.Transaction.type:type_name -> common.Transaction.Type
+	4,  // 18: common.Transaction.role:type_name -> common.Transaction.Role
+	8,  // 19: common.Transaction.amount:type_name -> common.Amount
 	2,  // 20: common.Transaction.status:type_name -> common.TransactionStatus
-	6,  // 21: common.Role.IssuePermissions.inner:type_name -> common.Amount
-	22, // [22:22] is the sub-list for method output_type
-	22, // [22:22] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	6,  // 21: common.FilterItem.operator:type_name -> common.FilterItem.FilterOperator
+	33, // 22: common.Filter.filters:type_name -> common.FilterItem
+	3,  // 23: common.Filter.operator:type_name -> common.LogicalOperator
+	8,  // 24: common.Role.IssuePermissions.inner:type_name -> common.Amount
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_common_proto_init() }
@@ -2730,7 +3101,31 @@ func file_common_v1_common_proto_init() {
 				return nil
 			}
 		}
+		file_common_v1_common_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FilterItem); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 		file_common_v1_common_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Filter); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_v1_common_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Role_IssuePermissions); i {
 			case 0:
 				return &v.state
@@ -2751,13 +3146,18 @@ func file_common_v1_common_proto_init() {
 		(*Role_Authorized)(nil),
 		(*Role_IssuePermissions_)(nil),
 	}
+	file_common_v1_common_proto_msgTypes[26].OneofWrappers = []interface{}{
+		(*FilterItem_StrValue)(nil),
+		(*FilterItem_IntValue)(nil),
+		(*FilterItem_BoolValue)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_common_v1_common_proto_rawDesc,
-			NumEnums:      5,
-			NumMessages:   28,
+			NumEnums:      7,
+			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

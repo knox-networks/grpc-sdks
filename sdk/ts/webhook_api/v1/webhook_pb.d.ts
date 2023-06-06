@@ -5,16 +5,106 @@
 
 import * as jspb from "google-protobuf";
 
+export class CreateWalletPayload extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDid(): string;
+  setDid(value: string): void;
+
+  getCreated(): string;
+  setCreated(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateWalletPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateWalletPayload): CreateWalletPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateWalletPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateWalletPayload;
+  static deserializeBinaryFromReader(message: CreateWalletPayload, reader: jspb.BinaryReader): CreateWalletPayload;
+}
+
+export namespace CreateWalletPayload {
+  export type AsObject = {
+    name: string,
+    did: string,
+    created: string,
+  }
+}
+
+export class PromissoryReceivedPayload extends jspb.Message {
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PromissoryReceivedPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: PromissoryReceivedPayload): PromissoryReceivedPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PromissoryReceivedPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PromissoryReceivedPayload;
+  static deserializeBinaryFromReader(message: PromissoryReceivedPayload, reader: jspb.BinaryReader): PromissoryReceivedPayload;
+}
+
+export namespace PromissoryReceivedPayload {
+  export type AsObject = {
+    walletId: string,
+  }
+}
+
+export class PingPayload extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PingPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: PingPayload): PingPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PingPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PingPayload;
+  static deserializeBinaryFromReader(message: PingPayload, reader: jspb.BinaryReader): PingPayload;
+}
+
+export namespace PingPayload {
+  export type AsObject = {
+    message: string,
+  }
+}
+
 export class Event extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
+  getEventType(): EventTypeMap[keyof EventTypeMap];
+  setEventType(value: EventTypeMap[keyof EventTypeMap]): void;
+
+  getSignature(): string;
+  setSignature(value: string): void;
+
+  getEventId(): string;
+  setEventId(value: string): void;
+
+  getDeliveryDate(): string;
+  setDeliveryDate(value: string): void;
 
   getOwnerId(): string;
   setOwnerId(value: string): void;
 
-  getType(): EventTypeMap[keyof EventTypeMap];
-  setType(value: EventTypeMap[keyof EventTypeMap]): void;
+  hasWalletCreatedPayload(): boolean;
+  clearWalletCreatedPayload(): void;
+  getWalletCreatedPayload(): CreateWalletPayload | undefined;
+  setWalletCreatedPayload(value?: CreateWalletPayload): void;
 
+  hasPromissoryReceivedPayload(): boolean;
+  clearPromissoryReceivedPayload(): void;
+  getPromissoryReceivedPayload(): PromissoryReceivedPayload | undefined;
+  setPromissoryReceivedPayload(value?: PromissoryReceivedPayload): void;
+
+  hasPingPayload(): boolean;
+  clearPingPayload(): void;
+  getPingPayload(): PingPayload | undefined;
+  setPingPayload(value?: PingPayload): void;
+
+  getPayloadCase(): Event.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Event.AsObject;
   static toObject(includeInstance: boolean, msg: Event): Event.AsObject;
@@ -27,9 +117,21 @@ export class Event extends jspb.Message {
 
 export namespace Event {
   export type AsObject = {
-    id: string,
+    eventType: EventTypeMap[keyof EventTypeMap],
+    signature: string,
+    eventId: string,
+    deliveryDate: string,
     ownerId: string,
-    type: EventTypeMap[keyof EventTypeMap],
+    walletCreatedPayload?: CreateWalletPayload.AsObject,
+    promissoryReceivedPayload?: PromissoryReceivedPayload.AsObject,
+    pingPayload?: PingPayload.AsObject,
+  }
+
+  export enum PayloadCase {
+    PAYLOAD_NOT_SET = 0,
+    WALLET_CREATED_PAYLOAD = 6,
+    PROMISSORY_RECEIVED_PAYLOAD = 7,
+    PING_PAYLOAD = 8,
   }
 }
 
@@ -40,13 +142,16 @@ export class CreateWebhookRequest extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getWebhookUrl(): string;
-  setWebhookUrl(value: string): void;
-
   clearSupportedEventsList(): void;
   getSupportedEventsList(): Array<EventTypeMap[keyof EventTypeMap]>;
   setSupportedEventsList(value: Array<EventTypeMap[keyof EventTypeMap]>): void;
   addSupportedEvents(value: EventTypeMap[keyof EventTypeMap], index?: number): EventTypeMap[keyof EventTypeMap];
+
+  getWebhookUrl(): string;
+  setWebhookUrl(value: string): void;
+
+  getDeliveryMethod(): DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap];
+  setDeliveryMethod(value: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateWebhookRequest.AsObject;
@@ -62,8 +167,9 @@ export namespace CreateWebhookRequest {
   export type AsObject = {
     apiKey: string,
     name: string,
-    webhookUrl: string,
     supportedEventsList: Array<EventTypeMap[keyof EventTypeMap]>,
+    webhookUrl: string,
+    deliveryMethod: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap],
   }
 }
 
@@ -158,6 +264,9 @@ export namespace ListWebhooksResponse {
     setSupportedEventsList(value: Array<EventTypeMap[keyof EventTypeMap]>): void;
     addSupportedEvents(value: EventTypeMap[keyof EventTypeMap], index?: number): EventTypeMap[keyof EventTypeMap];
 
+    getDeliveryMethod(): DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap];
+    setDeliveryMethod(value: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap]): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Webhook.AsObject;
     static toObject(includeInstance: boolean, msg: Webhook): Webhook.AsObject;
@@ -175,6 +284,7 @@ export namespace ListWebhooksResponse {
       name: string,
       webhookUrl: string,
       supportedEventsList: Array<EventTypeMap[keyof EventTypeMap]>,
+      deliveryMethod: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap],
     }
   }
 }
@@ -220,26 +330,11 @@ export namespace DeleteWebhookResponse {
 }
 
 export class EventRequest extends jspb.Message {
-  getEventType(): EventTypeMap[keyof EventTypeMap];
-  setEventType(value: EventTypeMap[keyof EventTypeMap]): void;
+  hasEvent(): boolean;
+  clearEvent(): void;
+  getEvent(): Event | undefined;
+  setEvent(value?: Event): void;
 
-  getSignature(): Uint8Array | string;
-  getSignature_asU8(): Uint8Array;
-  getSignature_asB64(): string;
-  setSignature(value: Uint8Array | string): void;
-
-  getEventId(): string;
-  setEventId(value: string): void;
-
-  getCreationDate(): string;
-  setCreationDate(value: string): void;
-
-  hasWalletPayload(): boolean;
-  clearWalletPayload(): void;
-  getWalletPayload(): EventRequest.CreateWalletPayload | undefined;
-  setWalletPayload(value?: EventRequest.CreateWalletPayload): void;
-
-  getPayloadCase(): EventRequest.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EventRequest.AsObject;
   static toObject(includeInstance: boolean, msg: EventRequest): EventRequest.AsObject;
@@ -252,32 +347,7 @@ export class EventRequest extends jspb.Message {
 
 export namespace EventRequest {
   export type AsObject = {
-    eventType: EventTypeMap[keyof EventTypeMap],
-    signature: Uint8Array | string,
-    eventId: string,
-    creationDate: string,
-    walletPayload?: EventRequest.CreateWalletPayload.AsObject,
-  }
-
-  export class CreateWalletPayload extends jspb.Message {
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): CreateWalletPayload.AsObject;
-    static toObject(includeInstance: boolean, msg: CreateWalletPayload): CreateWalletPayload.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: CreateWalletPayload, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): CreateWalletPayload;
-    static deserializeBinaryFromReader(message: CreateWalletPayload, reader: jspb.BinaryReader): CreateWalletPayload;
-  }
-
-  export namespace CreateWalletPayload {
-    export type AsObject = {
-    }
-  }
-
-  export enum PayloadCase {
-    PAYLOAD_NOT_SET = 0,
-    WALLET_PAYLOAD = 5,
+    event?: Event.AsObject,
   }
 }
 
@@ -358,6 +428,9 @@ export class RetryEventRequest extends jspb.Message {
   getEventId(): string;
   setEventId(value: string): void;
 
+  getWebhookId(): string;
+  setWebhookId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RetryEventRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RetryEventRequest): RetryEventRequest.AsObject;
@@ -372,6 +445,7 @@ export namespace RetryEventRequest {
   export type AsObject = {
     apiKey: string,
     eventId: string,
+    webhookId: string,
   }
 }
 
@@ -391,10 +465,64 @@ export namespace RetryEventResponse {
   }
 }
 
+export class PingRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PingRequest): PingRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PingRequest;
+  static deserializeBinaryFromReader(message: PingRequest, reader: jspb.BinaryReader): PingRequest;
+}
+
+export namespace PingRequest {
+  export type AsObject = {
+    apiKey: string,
+    message: string,
+  }
+}
+
+export class PingResponse extends jspb.Message {
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PingResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PingResponse): PingResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PingResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PingResponse;
+  static deserializeBinaryFromReader(message: PingResponse, reader: jspb.BinaryReader): PingResponse;
+}
+
+export namespace PingResponse {
+  export type AsObject = {
+    message: string,
+  }
+}
+
 export interface EventTypeMap {
   EVENT_TYPE_UNSPECIFIED: 0;
   EVENT_TYPE_WALLET_CREATED: 1;
+  EVENT_TYPE_PROMISSORY_RECEIVED: 2;
+  EVENT_TYPE_PING: 3;
 }
 
 export const EventType: EventTypeMap;
+
+export interface DeliveryMethodTypeMap {
+  DELIVERY_METHOD_TYPE_UNSPECIFIED: 0;
+  DELIVERY_METHOD_TYPE_HTTP: 1;
+  DELIVERY_METHOD_TYPE_GRPC: 2;
+}
+
+export const DeliveryMethodType: DeliveryMethodTypeMap;
 

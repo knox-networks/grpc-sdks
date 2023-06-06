@@ -51,6 +51,15 @@ type WebhookManagerServiceRetryEvent = {
   readonly responseType: typeof webhook_api_v1_webhook_pb.RetryEventResponse;
 };
 
+type WebhookManagerServicePing = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.PingRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.PingResponse;
+};
+
 export class WebhookManagerService {
   static readonly serviceName: string;
   static readonly CreateWebhook: WebhookManagerServiceCreateWebhook;
@@ -58,6 +67,7 @@ export class WebhookManagerService {
   static readonly DeleteWebhook: WebhookManagerServiceDeleteWebhook;
   static readonly ListEvents: WebhookManagerServiceListEvents;
   static readonly RetryEvent: WebhookManagerServiceRetryEvent;
+  static readonly Ping: WebhookManagerServicePing;
 }
 
 type EventConsumerServiceEvent = {
@@ -150,6 +160,15 @@ export class WebhookManagerServiceClient {
   retryEvent(
     requestMessage: webhook_api_v1_webhook_pb.RetryEventRequest,
     callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.RetryEventResponse|null) => void
+  ): UnaryResponse;
+  ping(
+    requestMessage: webhook_api_v1_webhook_pb.PingRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.PingResponse|null) => void
+  ): UnaryResponse;
+  ping(
+    requestMessage: webhook_api_v1_webhook_pb.PingRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.PingResponse|null) => void
   ): UnaryResponse;
 }
 

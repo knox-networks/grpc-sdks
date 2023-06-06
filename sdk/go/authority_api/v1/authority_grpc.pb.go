@@ -28,7 +28,7 @@ type AuthorityServiceClient interface {
 	// digital banknote.
 	Redeem(ctx context.Context, in *RedeemRequest, opts ...grpc.CallOption) (*RedeemResponse, error)
 	// Gets the verifier of the Emissary for this Authority.
-	GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error)
+	GetNetworkInfo(ctx context.Context, in *GetNetworkInfoRequest, opts ...grpc.CallOption) (*GetNetworkInfoResponse, error)
 	// Gets the signature of the Notary for this Authority/Notary.
 	GetNotary(ctx context.Context, in *GetNotaryRequest, opts ...grpc.CallOption) (*GetNotaryResponse, error)
 }
@@ -99,9 +99,9 @@ func (c *authorityServiceClient) Redeem(ctx context.Context, in *RedeemRequest, 
 	return out, nil
 }
 
-func (c *authorityServiceClient) GetEmissary(ctx context.Context, in *GetEmissaryRequest, opts ...grpc.CallOption) (*GetEmissaryResponse, error) {
-	out := new(GetEmissaryResponse)
-	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/GetEmissary", in, out, opts...)
+func (c *authorityServiceClient) GetNetworkInfo(ctx context.Context, in *GetNetworkInfoRequest, opts ...grpc.CallOption) (*GetNetworkInfoResponse, error) {
+	out := new(GetNetworkInfoResponse)
+	err := c.cc.Invoke(ctx, "/authority_api.v1.AuthorityService/GetNetworkInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -131,7 +131,7 @@ type AuthorityServiceServer interface {
 	// digital banknote.
 	Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error)
 	// Gets the verifier of the Emissary for this Authority.
-	GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error)
+	GetNetworkInfo(context.Context, *GetNetworkInfoRequest) (*GetNetworkInfoResponse, error)
 	// Gets the signature of the Notary for this Authority/Notary.
 	GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error)
 	mustEmbedUnimplementedAuthorityServiceServer()
@@ -153,8 +153,8 @@ func (UnimplementedAuthorityServiceServer) Authorize(AuthorityService_AuthorizeS
 func (UnimplementedAuthorityServiceServer) Redeem(context.Context, *RedeemRequest) (*RedeemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Redeem not implemented")
 }
-func (UnimplementedAuthorityServiceServer) GetEmissary(context.Context, *GetEmissaryRequest) (*GetEmissaryResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetEmissary not implemented")
+func (UnimplementedAuthorityServiceServer) GetNetworkInfo(context.Context, *GetNetworkInfoRequest) (*GetNetworkInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNetworkInfo not implemented")
 }
 func (UnimplementedAuthorityServiceServer) GetNotary(context.Context, *GetNotaryRequest) (*GetNotaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNotary not implemented")
@@ -252,20 +252,20 @@ func _AuthorityService_Redeem_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthorityService_GetEmissary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetEmissaryRequest)
+func _AuthorityService_GetNetworkInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNetworkInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthorityServiceServer).GetEmissary(ctx, in)
+		return srv.(AuthorityServiceServer).GetNetworkInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/authority_api.v1.AuthorityService/GetEmissary",
+		FullMethod: "/authority_api.v1.AuthorityService/GetNetworkInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthorityServiceServer).GetEmissary(ctx, req.(*GetEmissaryRequest))
+		return srv.(AuthorityServiceServer).GetNetworkInfo(ctx, req.(*GetNetworkInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -308,8 +308,8 @@ var AuthorityService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AuthorityService_Redeem_Handler,
 		},
 		{
-			MethodName: "GetEmissary",
-			Handler:    _AuthorityService_GetEmissary_Handler,
+			MethodName: "GetNetworkInfo",
+			Handler:    _AuthorityService_GetNetworkInfo_Handler,
 		},
 		{
 			MethodName: "GetNotary",

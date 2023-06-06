@@ -55,7 +55,7 @@ namespace Gateway {
   ///{
   ///"verifier": "VERIFIER", 
   ///"note": "NOTE", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}
@@ -576,14 +576,14 @@ namespace Gateway {
   ///{
   ///"verifier": "VERIFIER", 
   ///"note": "CreatedConnection1", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}, 
   ///{
   ///"verifier": "VERIFIER", 
   ///"note": "CreatedConnection2", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": 
   ///"CONNECTION_ID_UUID"
@@ -593,14 +593,14 @@ namespace Gateway {
   ///{
   ///"verifier": "VERIFIER", 
   ///"note": "RemovedConnection1", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}, 
   ///{
   ///"verifier": "VERIFIER", 
   ///"note": "RemovedConnection2", 
-  ///"timestamp": "TIMESTAMP", 
+  ///"timestamp": "2006-01-02T15:04:05Z", 
   ///"origin": "ORIGIN", 
   ///"connection_id": "CONNECTION_ID_UUID"
   ///}
