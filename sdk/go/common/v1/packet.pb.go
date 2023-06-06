@@ -400,7 +400,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "packet_type": 100,
-// "data": "DataVariesByteLen=",
+// "data": "LenDataVaries=",
 // "channel": "YOUR_CHANNEL",
 // "sender": {
 // "signature_system": 1,
@@ -408,9 +408,9 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // },
 // "recipient": {
 // "signature_system": 1,
-// "verifier": "RecipientLenVerifierVariesByAlgo="
+// "verifier": "AlgoVariesRecipientVerifierBytesLen="
 // },
-// "nonce": "NonceLenVariesByAlgo=",
+// "nonce": "AlgoVariesNonceLen=",
 // "transaction_header": {
 // "starter": {
 // "signature_system": 1,
@@ -418,7 +418,7 @@ func (CancelTransaction_RejectionReason) EnumDescriptor() ([]byte, []int) {
 // },
 // "responder": {
 // "signature_system": 1,
-// "verifier": "ResponderLenVerifierVariesByAlgo="
+// "verifier": "AlgoVariesResponderVerifierBytesLen="
 // },
 // "uetr": "UETR",
 // "timestamp": "TIMESTAMP",
@@ -536,15 +536,15 @@ func (x *Packet) GetTransactionHeader() *TransactionHeader {
 // {
 // "starter": {
 // "signature_system": 1,
-// "verifier": "StarterVerifierBytesLengthVariesByAlgo="
+// "verifier": "BytesLenStarterVerifierVariesByAlgo="
 // },
 // "responder": {
 // "signature_system": 1,
-// "verifier": "ResponderVerifierBytesLengthVariesByAlgo="
+// "verifier": "AlgoVariesResponderVerifierBytesLen="
 // },
 // "uetr": "UETR",
 // "timestamp": "TIMESTAMP",
-// "signature": "ByteLengthSignatureVariesByAlgo=",
+// "signature": "SignatureLenVariesByAlgo=",
 // "user_reference": "USER_REFERENCE",
 // "related_uetrs": [
 // "RELATED_UETR1",

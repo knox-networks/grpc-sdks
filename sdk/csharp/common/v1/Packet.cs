@@ -278,7 +278,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "DataVariesByteLen=", 
+  ///"data": "LenDataVaries=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 
@@ -286,9 +286,9 @@ namespace Common {
   ///}, 
   ///"recipient": {
   ///"signature_system": 1, 
-  ///"verifier": "RecipientLenVerifierVariesByAlgo="
+  ///"verifier": "AlgoVariesRecipientVerifierBytesLen="
   ///}, 
-  ///"nonce": "NonceLenVariesByAlgo=", 
+  ///"nonce": "AlgoVariesNonceLen=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 
@@ -296,7 +296,7 @@ namespace Common {
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "ResponderLenVerifierVariesByAlgo="
+  ///"verifier": "AlgoVariesResponderVerifierBytesLen="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
@@ -773,15 +773,15 @@ namespace Common {
   ///{
   ///"starter": { 
   ///"signature_system": 1, 
-  ///"verifier": "StarterVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "BytesLenStarterVerifierVariesByAlgo="
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "ResponderVerifierBytesLengthVariesByAlgo="
+  ///"verifier": "AlgoVariesResponderVerifierBytesLen="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
-  ///"signature": "ByteLengthSignatureVariesByAlgo=", 
+  ///"signature": "SignatureLenVariesByAlgo=", 
   ///"user_reference": "USER_REFERENCE", 
   ///"related_uetrs": [
   ///"RELATED_UETR1", 
