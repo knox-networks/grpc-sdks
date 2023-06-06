@@ -1411,7 +1411,7 @@ namespace AuthorityApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"promissory_file": "LengthOfFileBytesVaries", 
+  ///"promissory_file": "LengthOfFileBytesVaries=", 
   ///"verifier": "VERIFIER"
   ///}
   /// </summary>

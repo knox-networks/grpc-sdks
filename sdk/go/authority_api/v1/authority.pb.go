@@ -378,7 +378,7 @@ func (x *AuthorizeResponse) GetPromissoryFile() []byte {
 
 // [Example]
 // {
-// "promissory_file": "LengthOfFileBytesVaries",
+// "promissory_file": "LengthOfFileBytesVaries=",
 // "verifier": "VERIFIER"
 // }
 type RedeemRequest struct {

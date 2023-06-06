@@ -3797,7 +3797,7 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"events: [
+  ///"events": [
   ///{
   ///"event_type": 0,
   ///"signature": "SIGNATURE",

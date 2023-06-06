@@ -1007,7 +1007,7 @@ func (x *ListEventsRequest) GetPageSize() int32 {
 
 // [Example]
 // {
-// "events: [
+// "events": [
 // {
 // "event_type": 0,
 // "signature": "SIGNATURE",
