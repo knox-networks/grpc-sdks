@@ -119,7 +119,7 @@ func (x *RemittanceRequest) GetExchangeRate() float64 {
 // [Example]
 // {
 // "exchanged_promissory_files": [
-// "LengthBytesExchangedFileVaries="
+// "BytesLenExchangedFileVaries="
 // ],
 // "fee_amount": {
 // "currency_code":"USD",
@@ -128,8 +128,7 @@ func (x *RemittanceRequest) GetExchangeRate() float64 {
 // },
 // "exchange_rate": 1.4,
 // "refunded_promissory_files": [
-// "LengthRefund1FileBytesVaries=",
-// "LengthRefund2FileBytesVaries="
+// "LengthRefundFileBytesVaries="
 // ]
 // }
 type RemittanceResponse struct {
