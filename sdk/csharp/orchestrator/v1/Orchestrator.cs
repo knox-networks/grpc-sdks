@@ -54,7 +54,7 @@ namespace Orchestrator {
   ///{
   ///"verifier": {
   ///"signature_system": 1, 
-  ///"verifier": "VerifierBytesLengthVariesByAlgo=" 
+  ///"verifier": "xVERIFIERxBYTES=" 
   ///}, 
   ///"status": 0 
   ///}

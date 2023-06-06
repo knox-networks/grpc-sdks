@@ -53,7 +53,7 @@ namespace FaucetApi.V1 {
   ///"amount":100, 
   ///"decimals":2
   ///}, 
-  ///"recipient": "RECIPIENT"
+  ///"recipient": "zRecipientPublicKeyMultibase58Encoded"
   ///} 
   /// </summary>
   public sealed partial class FaucetRequest : pb::IMessage<FaucetRequest>

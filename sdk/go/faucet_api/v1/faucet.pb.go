@@ -28,7 +28,7 @@ const (
 // "amount":100,
 // "decimals":2
 // },
-// "recipient": "RECIPIENT"
+// "recipient": "zRecipientPublicKeyMultibase58Encoded"
 // }
 type FaucetRequest struct {
 	state         protoimpl.MessageState

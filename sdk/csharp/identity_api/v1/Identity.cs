@@ -46,8 +46,8 @@ namespace Identity {
   /// <summary>
   /// [Example]
   ///{
-  ///"subject": "ByteLengthSubjectVaries=", 
-  ///"query": "QUERY" 
+  ///"subject": "SUBJECTxBYTES=", 
+  ///"query": "?fields=[name,email]" 
   ///}
   /// </summary>
   public sealed partial class IdentityRequest : pb::IMessage<IdentityRequest>
@@ -285,15 +285,15 @@ namespace Identity {
   /// <summary>
   /// [Example]
   ///{
-  ///"subject": "ByteLengthSubjectVaries=", 
+  ///"subject": "SUBJECTxBYTES=", 
   ///"media": [
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "ByteLengthDataVaries="
+  ///"data": "DATAxBYTES="
   ///}, 
   ///{
   ///"mime_type": "MIME_TYPE", 
-  ///"data": "ByteLengthDataVaries="
+  ///"data": "DATAxBYTES="
   ///}
   ///]
   ///}

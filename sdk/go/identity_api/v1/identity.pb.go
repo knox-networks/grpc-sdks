@@ -23,8 +23,8 @@ const (
 
 // [Example]
 // {
-// "subject": "ByteLengthSubjectVaries=",
-// "query": "QUERY"
+// "subject": "SUBJECTxBYTES=",
+// "query": "?fields=[name,email]"
 // }
 type IdentityRequest struct {
 	state         protoimpl.MessageState
@@ -85,15 +85,15 @@ func (x *IdentityRequest) GetQuery() string {
 
 // [Example]
 // {
-// "subject": "ByteLengthSubjectVaries=",
+// "subject": "SUBJECTxBYTES=",
 // "media": [
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "ByteLengthDataVaries="
+// "data": "DATAxBYTES="
 // },
 // {
 // "mime_type": "MIME_TYPE",
-// "data": "ByteLengthDataVaries="
+// "data": "DATAxBYTES="
 // }
 // ]
 // }
