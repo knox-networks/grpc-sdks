@@ -192,7 +192,7 @@ func (x *CreateWalletPayload) GetCreated() string {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded
+// "wallet_id": "zWalletIDMultibase58Encoded"
 // }
 type PromissoryReceivedPayload struct {
 	state         protoimpl.MessageState

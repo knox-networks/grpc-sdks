@@ -400,7 +400,7 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded
+  ///"wallet_id": "zWalletIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class PromissoryReceivedPayload : pb::IMessage<PromissoryReceivedPayload>

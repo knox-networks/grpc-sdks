@@ -669,7 +669,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"from_wallet_id": zFromWalletIDMultibase58Encoded, 
+  ///"from_wallet_id": "zFromWalletIDMultibase58Encoded",
   ///"recipient_public_key": "zRecipientPublicKeyMultibase58Encoded", 
   ///"promissory_id": "PROMISSORY_ID", 
   ///"api_key": "API_KEY"
@@ -1863,7 +1863,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"wallet_name": "WALLET_NAME", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
   ///"did": "did:organization:zDIDMultibase58Encoded"
@@ -3074,7 +3074,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -3768,7 +3768,7 @@ namespace WalletApi.V1 {
   ///{
   ///"page": 0, 
   ///"page_size": 10000, 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY",
   ///"filters": [
   ///{
@@ -4223,7 +4223,7 @@ namespace WalletApi.V1 {
   ///"total_owned_funds": 2, 
   ///"funds": [
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"promissory": {
   ///"version": "0.1.0", 
   ///"id": "PROMISSORY_ID", 
@@ -4249,7 +4249,7 @@ namespace WalletApi.V1 {
   ///}
   ///},
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"promissory": {
   ///"version": "0.1.0", 
   ///"id": "PROMISSORY_ID", 
@@ -6128,7 +6128,7 @@ namespace WalletApi.V1 {
   ///{
   ///"page": 0, 
   ///"page_size": 10000, 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -6679,7 +6679,7 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"credential_type":"CREDENTIAL_TYPE",
-  ///"wallet_id": zWalletIDMultibase58Encoded,
+  ///"wallet_id": "zWalletIDMultibase58Encoded",
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -7156,7 +7156,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -7395,7 +7395,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"did": "did:organization:zDIDMultibase58Encoded", 
   ///"public_key": "zPublicKeyMultibase58Encoded"
   ///}
@@ -7955,7 +7955,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"wallet_name": "WALLET_NAME", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
   ///"did": "did:organization:zDIDMultibase58Encoded"
@@ -8761,7 +8761,7 @@ namespace WalletApi.V1 {
   ///}, 
   ///"recipient": "zRecipientPublicKeyMultibase58Encoded", 
   ///"user_reference": "TRANSACTION_REFERENCE", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -9389,7 +9389,7 @@ namespace WalletApi.V1 {
   ///"decimals":2
   ///}, 
   ///"user_reference": "TRANSACTION_REFERENCE", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -9978,7 +9978,7 @@ namespace WalletApi.V1 {
   ///}, 
   ///"recipient": "zRecipientPublicKeyMultibase58Encoded", 
   ///"user_reference": "TRANSACTION_REFERENCE", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -10601,7 +10601,7 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"uetr": "UETR", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -11102,7 +11102,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"id": zWalletIDMultibase58Encoded, 
+  ///"id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -11719,7 +11719,7 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"uetr": "UETR", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>
@@ -12218,7 +12218,7 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"uetr": "UETR", 
-  ///"wallet_id": zWalletIDMultibase58Encoded, 
+  ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY"
   ///}
   /// </summary>

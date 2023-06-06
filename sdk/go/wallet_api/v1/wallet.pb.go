@@ -351,7 +351,7 @@ func (x *SortBy) GetItems() []*SortItem {
 
 // [Example]
 // {
-// "from_wallet_id": zFromWalletIDMultibase58Encoded,
+// "from_wallet_id": "zFromWalletIDMultibase58Encoded",
 // "recipient_public_key": "zRecipientPublicKeyMultibase58Encoded",
 // "promissory_id": "PROMISSORY_ID",
 // "api_key": "API_KEY"
@@ -659,7 +659,7 @@ func (x *CreateWalletRequest) GetApiKey() string {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "wallet_name": "WALLET_NAME",
 // "public_key": "zPublicKeyMultibase58Encoded",
 // "did": "did:organization:zDIDMultibase58Encoded"
@@ -897,7 +897,7 @@ func (x *ListWalletsResponse) GetTotalOwnedWallets() uint32 {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type ListWalletBalancesRequest struct {
@@ -1095,7 +1095,7 @@ func (x *ListWalletBalancesResponse) GetBalances() []*WalletBalance {
 // {
 // "page": 0,
 // "page_size": 10000,
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY",
 // "filters": [
 // {
@@ -1231,7 +1231,7 @@ func (x *ListAssetFilesRequest) GetSortBy() *SortBy {
 // "total_owned_funds": 2,
 // "funds": [
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "promissory": {
 // "version": "0.1.0",
 // "id": "PROMISSORY_ID",
@@ -1257,7 +1257,7 @@ func (x *ListAssetFilesRequest) GetSortBy() *SortBy {
 // }
 // },
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "promissory": {
 // "version": "0.1.0",
 // "id": "PROMISSORY_ID",
@@ -1483,7 +1483,7 @@ func (x *RedeemResponse) GetNewLimit() *v1.Amount {
 // {
 // "page": 0,
 // "page_size": 10000,
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type ListCredentialsRequest struct {
@@ -1629,7 +1629,7 @@ func (x *ListCredentialsResponse) GetTotalOwnedCredentials() uint32 {
 // [Example]
 // {
 // "credential_type":"CREDENTIAL_TYPE",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type AddCredentialRequest struct {
@@ -1752,7 +1752,7 @@ func (x *AddCredentialResponse) GetCredential() string {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type AssociateWalletRequest struct {
@@ -1814,7 +1814,7 @@ func (x *AssociateWalletRequest) GetApiKey() string {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "did": "did:organization:zDIDMultibase58Encoded",
 // "public_key": "zPublicKeyMultibase58Encoded"
 // }
@@ -1958,7 +1958,7 @@ func (x *CreateAndAssociateWalletRequest) GetToken() string {
 
 // [Example]
 // {
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "wallet_name": "WALLET_NAME",
 // "public_key": "zPublicKeyMultibase58Encoded",
 // "did": "did:organization:zDIDMultibase58Encoded"
@@ -2171,7 +2171,7 @@ func (x *RequestPresentationResponse) GetPresentation() string {
 // },
 // "recipient": "zRecipientPublicKeyMultibase58Encoded",
 // "user_reference": "TRANSACTION_REFERENCE",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type PrepareSimplePaymentRequest struct {
@@ -2328,7 +2328,7 @@ func (x *PrepareSimplePaymentResponse) GetUetr() string {
 // "decimals":2
 // },
 // "user_reference": "TRANSACTION_REFERENCE",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type PrepareFundsChangeRequest struct {
@@ -2477,7 +2477,7 @@ func (x *PrepareFundsChangeResponse) GetUetr() string {
 // },
 // "recipient": "zRecipientPublicKeyMultibase58Encoded",
 // "user_reference": "TRANSACTION_REFERENCE",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type PrepareTwoStepPaymentRequest struct {
@@ -2629,7 +2629,7 @@ func (x *PrepareTwoStepPaymentResponse) GetUetr() string {
 // [Example]
 // {
 // "uetr": "UETR",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type GetTransactionRequest struct {
@@ -2767,7 +2767,7 @@ func (x *GetTransactionResponse) GetTransaction() *v1.Transaction {
 
 // [Example]
 // {
-// "id": zWalletIDMultibase58Encoded,
+// "id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type ListTransactionsRequest struct {
@@ -2947,7 +2947,7 @@ func (x *ListTransactionsResponse) GetTotalMatchingTransactions() uint32 {
 // [Example]
 // {
 // "uetr": "UETR",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type GetTransactionSnapshotRequest struct {
@@ -3083,7 +3083,7 @@ func (x *GetTransactionSnapshotResponse) GetSnapshot() *v1.TransactionSnapshot {
 // [Example]
 // {
 // "uetr": "UETR",
-// "wallet_id": zWalletIDMultibase58Encoded,
+// "wallet_id": "zWalletIDMultibase58Encoded",
 // "api_key": "API_KEY"
 // }
 type ListTransactionSnapshotsRequest struct {
