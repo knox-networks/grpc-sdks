@@ -956,7 +956,7 @@ func (x *ListFundsRequest) GetApiKey() string {
 // "issuer": "ISSUER_PUBLIC_KEY",
 // "issuance_date": "ISSUANCE_DATE_TIMESTAMP",
 // "block_depth": 3,
-// "authorization_signature": "ByteLengthOfAuthorizationSignatureVariesByAlgo=",
+// "authorization_signature": "ByteLengthAuthSignatureVariesByAlgo=",
 // "transfer_signature": "ByteLengthTransferSignatureVariesByAlgo="
 // }
 // }

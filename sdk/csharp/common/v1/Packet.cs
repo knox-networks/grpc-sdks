@@ -278,7 +278,7 @@ namespace Common {
   /// [Example]
   ///{
   ///"packet_type": 100, 
-  ///"data": "ByteLenDataVaries=", 
+  ///"data": "DataVariesByteLen=", 
   ///"channel": "YOUR_CHANNEL", 
   ///"sender": { 
   ///"signature_system": 1, 
@@ -286,9 +286,9 @@ namespace Common {
   ///}, 
   ///"recipient": {
   ///"signature_system": 1, 
-  ///"verifier": "BytesLenRecipientVerifierVariesByAlgo="
+  ///"verifier": "RecipientLenVerifierVariesByAlgo="
   ///}, 
-  ///"nonce": "BytesLenNonceVariesByAlgo=", 
+  ///"nonce": "NonceLenVariesByAlgo=", 
   ///"transaction_header": {
   ///"starter": { 
   ///"signature_system": 1, 
@@ -296,7 +296,7 @@ namespace Common {
   ///}, 
   ///"responder": { 
   ///"signature_system": 1, 
-  ///"verifier": "BytesLenResponderVerifierVariesByAlgo="
+  ///"verifier": "ResponderLenVerifierVariesByAlgo="
   ///}, 
   ///"uetr": "UETR", 
   ///"timestamp": "TIMESTAMP", 
