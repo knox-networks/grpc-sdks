@@ -2186,7 +2186,33 @@ namespace WalletApi.V1 {
   ///{
   ///"page": 0, 
   ///"page_size": 10, 
-  ///"api_key": "API_KEY"
+  ///"api_key": "API_KEY",
+  ///"filters": {
+  ///"filters": [
+  ///{
+  ///"field": "FIELD1",
+  ///"operator": 0,
+  ///"value": {
+  ///"str_value": "STRINGVAL"
+  ///}
+  ///}, 
+  ///{
+  ///"field": "FIELD2",
+  ///"operator": 0,
+  ///"value": {
+  ///"int_value": 10
+  ///}
+  ///},
+  ///{
+  ///"field": "FIELD3",
+  ///"operator": 0,
+  ///"value": {
+  ///"bool_value": false
+  ///}
+  ///}
+  ///],
+  ///"operator": 0
+  ///}
   ///}
   /// </summary>
   public sealed partial class ListWalletsRequest : pb::IMessage<ListWalletsRequest>
@@ -3770,6 +3796,7 @@ namespace WalletApi.V1 {
   ///"page_size": 10000, 
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"api_key": "API_KEY",
+  ///"filters": {
   ///"filters": [
   ///{
   ///"field": "FIELD1",
@@ -3793,6 +3820,8 @@ namespace WalletApi.V1 {
   ///}
   ///}
   ///],
+  ///"operator": 0
+  ///},
   ///"sort_by": {
   ///"items": [
   ///{
@@ -11103,7 +11132,33 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"id": "zWalletIDMultibase58Encoded", 
-  ///"api_key": "API_KEY"
+  ///"api_key": "API_KEY",
+  ///"filters": {
+  ///"filters": [
+  ///{
+  ///"field": "FIELD1",
+  ///"operator": 0,
+  ///"value": {
+  ///"str_value": "STRINGVAL"
+  ///}
+  ///}, 
+  ///{
+  ///"field": "FIELD2",
+  ///"operator": 0,
+  ///"value": {
+  ///"int_value": 10
+  ///}
+  ///},
+  ///{
+  ///"field": "FIELD3",
+  ///"operator": 0,
+  ///"value": {
+  ///"bool_value": false
+  ///}
+  ///}
+  ///],
+  ///"operator": 0
+  ///}
   ///}
   /// </summary>
   public sealed partial class ListTransactionsRequest : pb::IMessage<ListTransactionsRequest>
