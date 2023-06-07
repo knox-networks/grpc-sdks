@@ -169,7 +169,7 @@ func (StatusPurpose) EnumDescriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "document": "DOCUMENT"
 // }
 type CreateRequest struct {
@@ -271,7 +271,7 @@ func (*CreateResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type ResolveRequest struct {
 	state         protoimpl.MessageState
@@ -323,7 +323,7 @@ func (x *ResolveRequest) GetDid() string {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type ResolveRepresentationRequest struct {
 	state         protoimpl.MessageState
@@ -435,7 +435,7 @@ func (x *ResolutionOption) GetAccept() ResolutionOptionAccept {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "document": "DOCUMENT",
 // "metadata": {
 // "created": {
@@ -517,7 +517,7 @@ func (x *ResolveResponse) GetMetadata() *ResolutionMetadata {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "document": "DOCUMENT",
 // "metadata": {
 // "created": {
@@ -677,7 +677,7 @@ func (x *ResolutionMetadata) GetContentType() string {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "document": "DOCUMENT"
 // }
 type UpdateRequest struct {
@@ -779,7 +779,7 @@ func (*UpdateResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type RevokeRequest struct {
 	state         protoimpl.MessageState
@@ -958,7 +958,7 @@ func (x *PostalAddress) GetStreet() string {
 
 // [Example]
 // {
-// "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+// "issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
 // "email": "example@gmail.com",
 // "website": "google.com",
@@ -1061,7 +1061,7 @@ func (x *CredentialIssuer) GetStatus() IssuerStatus {
 // [Example]
 // {
 // "credential_issuer": {
-// "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+// "issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
 // "email": "example@gmail.com",
 // "website": "google.com",
@@ -1164,7 +1164,7 @@ func (*CreateCredentialIssuerResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "issuer_did": "did:organization:zDIDCredentialIssuerMultibase58Encoded"
+// "issuer_did": "did:method-name:zDIDCredentialIssuerMultibase58Encoded"
 // }
 type GetCredentialIssuerRequest struct {
 	state         protoimpl.MessageState
@@ -1216,7 +1216,7 @@ func (x *GetCredentialIssuerRequest) GetIssuerDid() string {
 // [Example]
 // {
 // "credential_issuer": {
-// "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+// "issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
 // "email": "example@gmail.com",
 // "website": "google.com",
@@ -1280,7 +1280,7 @@ func (x *GetCredentialIssuerResponse) GetCredentialIssuer() *CredentialIssuer {
 // [Example]
 // {
 // "credential_issuer": {
-// "issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+// "issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
 // "issuer_name": "ISSUER_NAME",
 // "email": "example@gmail.com",
 // "website": "google.com",
@@ -1384,7 +1384,7 @@ func (*UpdateCredentialIssuerResponse) Descriptor() ([]byte, []int) {
 // [Example]
 // {
 // "credential_id": "CREDENTIAL_ID",
-// "credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+// "credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
 // "status_purpose": 0,
 // "credential_type": "CREDENTIAL_TYPE",
 // "status_list_index": 0,
@@ -1569,7 +1569,7 @@ func (x *CreateStatusListEntryRequest) GetStatus() bool {
 // {
 // "status_list_entry": {
 // "credential_id": "CREDENTIAL_ID",
-// "credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+// "credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
 // "status_purpose": 0,
 // "credential_type": "CREDENTIAL_TYPE",
 // "status_list_index": 0,
@@ -1729,7 +1729,7 @@ func (x *GetStatusListCredentialResponse) GetStatusListCredential() string {
 // [Example]
 // {
 // "credential_id": "CREDENTIAL_ID",
-// "credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+// "credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
 // "status_purpose": 0,
 // "credential_type": "CREDENTIAL_TYPE",
 // "status": true

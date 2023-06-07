@@ -77,7 +77,7 @@ func (CredentialType) EnumDescriptor() ([]byte, []int) {
 // [Example]
 // {
 // "type": "TYPE",
-// "created": "CREATED_TIMESTAMP",
+// "created": "2006-01-02T15:04:05Z",
 // "verification_method": "VERIFICATION_METHOD",
 // "proof_purpose": "PROOF_PURPOSE",
 // "proof_value": "PROOF_VALUE"
@@ -169,7 +169,7 @@ func (x *CredentialProof) GetProofValue() string {
 // [Example]
 // {
 // "credential_type": 1,
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type CreateIssuanceChallengeRequest struct {
 	state         protoimpl.MessageState
@@ -230,7 +230,7 @@ func (x *CreateIssuanceChallengeRequest) GetDid() string {
 
 // [Example]
 // {
-// "nonce": "NONCE",
+// "nonce": "NonceLengthVariesByAlgo",
 // "endpoint": "QR_URL_ENDPOINT",
 // "credential_type": 1
 // }
@@ -303,9 +303,9 @@ func (x *CreateIssuanceChallengeResponse) GetCredentialType() CredentialType {
 // [Example]
 // {
 // "credential_type": 1,
-// "nonce": "NONCE",
-// "signature": "ByteLengthSignatureVariesByAlgo=",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "nonce": "NonceLengthVariesByAlgo",
+// "signature": "SIGNATURExBYTES=",
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type IssueVerifiableCredentialRequest struct {
 	state         protoimpl.MessageState
@@ -491,7 +491,7 @@ func (x *CreatePresentationChallengeRequest) GetCredentialTypes() []CredentialTy
 
 // [Example]
 // {
-// "nonce": "NONCE",
+// "nonce": "NonceLengthVariesByAlgo",
 // "endpoint": "QR_URL_ENDPOINT",
 // "credential_types": [
 // 0,
@@ -567,9 +567,9 @@ func (x *CreatePresentationChallengeResponse) GetCredentialTypes() []CredentialT
 // [Example]
 // {
 // "presentation": "PRESENTATION",
-// "nonce": "NONCE",
-// "signature": "ByteLengthSignatureVariesByAlgo=",
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "nonce": "NonceLengthVariesByAlgo",
+// "signature": "SIGNATURExBYTES=",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "credential_type": [
 // 0,
 // 1
@@ -701,7 +701,7 @@ func (*PresentVerifiableCredentialResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "nonce": "NONCE"
+// "nonce": "NonceLengthVariesByAlgo"
 // }
 type WaitForCompletionRequest struct {
 	state         protoimpl.MessageState
@@ -753,7 +753,7 @@ func (x *WaitForCompletionRequest) GetNonce() string {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "data": "DATA"
 // }
 type WaitForCompletionResponse struct {

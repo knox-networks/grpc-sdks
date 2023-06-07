@@ -130,7 +130,7 @@ namespace WebhookApi.V1 {
   /// [Example]
   ///{
   ///"name": "NAME", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"created": "2006-01-02T15:04:05Z"
   ///}
   /// </summary>
@@ -798,7 +798,7 @@ namespace WebhookApi.V1 {
   ///"payload": {
   ///"wallet_created_payload": {
   ///"name": "NAME", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"created": "2006-01-02T15:04:05Z"
   ///}
   ///}
@@ -3159,7 +3159,7 @@ namespace WebhookApi.V1 {
   ///"payload": {
   ///"wallet_created_payload": {
   ///"name": "NAME", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"created": "2006-01-02T15:04:05Z"
   ///}
   ///}
@@ -3807,7 +3807,7 @@ namespace WebhookApi.V1 {
   ///"payload": {
   ///"wallet_created_payload": {
   ///"name": "NAME", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"created": "2006-01-02T15:04:05Z"
   ///}
   ///}
@@ -3821,7 +3821,7 @@ namespace WebhookApi.V1 {
   ///"payload": {
   ///"wallet_created_payload": {
   ///"name": "NAME", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"created": "2006-01-02T15:04:05Z"
   ///}
   ///}

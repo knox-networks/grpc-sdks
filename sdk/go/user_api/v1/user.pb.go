@@ -190,8 +190,8 @@ func (ApiKeyStatus) EnumDescriptor() ([]byte, []int) {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -545,8 +545,8 @@ func (x *AuthToken) GetRefreshToken() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -920,8 +920,8 @@ func (x *HandleOIDCCallbackRequest) GetState() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1094,8 +1094,8 @@ func (x *FindByEmailRequest) GetEmail() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1223,8 +1223,8 @@ func (x *FindByIDRequest) GetUuid() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1362,8 +1362,8 @@ func (x *AuthnWithPasswordRequest) GetPassword() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1506,8 +1506,8 @@ func (x *RefreshAccessTokenRequest) GetRefreshToken() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1638,8 +1638,8 @@ func (*GetMeRequest) Descriptor() ([]byte, []int) {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1715,8 +1715,8 @@ func (x *GetMeResponse) GetUser() *User {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -1933,7 +1933,7 @@ func (*CreateAuthnBrowserWithWalletChallengeResponse_AuthToken) isCreateAuthnBro
 // {
 // "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type AuthnBrowserWithWalletRequest struct {
 	state         protoimpl.MessageState
@@ -2178,7 +2178,7 @@ func (*CreateRegisterWalletChallengeResponse_Ok) isCreateRegisterWalletChallenge
 // {
 // "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type RegisterWalletRequest struct {
 	state         protoimpl.MessageState
@@ -2257,8 +2257,8 @@ func (x *RegisterWalletRequest) GetDid() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -2340,7 +2340,7 @@ func (x *RegisterWalletResponse) GetAuthToken() *AuthToken {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type CreateAuthnWalletChallengeRequest struct {
 	state         protoimpl.MessageState
@@ -2446,7 +2446,7 @@ func (x *CreateAuthnWalletChallengeResponse) GetNonce() string {
 // {
 // "signature": "ByteLengthSignatureVariesByAlgo=",
 // "nonce": "NONCE",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type AuthnWalletRequest struct {
 	state         protoimpl.MessageState
@@ -2525,8 +2525,8 @@ func (x *AuthnWalletRequest) GetDid() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -2679,8 +2679,8 @@ func (x *HandleSAMLCallbackRequest) GetRelayState() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -3100,7 +3100,7 @@ func (x *GetAppSettingsResponse) GetAppSettings() *AppSettings {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type GetUserByDIDRequest struct {
 	state         protoimpl.MessageState
@@ -3161,8 +3161,8 @@ func (x *GetUserByDIDRequest) GetDid() string {
 // "avatar": "AVATAR_URL",
 // "phone": "+1 555 555 5555",
 // "dids": [
-// "did:organization:zDIDMultibase58Encoded",
-// "did:organization:zDIDMultibase58Encoded"
+// "did:method-name:zDIDMultibase58Encoded",
+// "did:method-name:zDIDMultibase58Encoded"
 // ],
 // "external_ids": [
 // {
@@ -3233,7 +3233,7 @@ func (x *GetUserByDIDResponse) GetUser() *User {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type AssociateWalletRequest struct {
 	state         protoimpl.MessageState
@@ -3325,7 +3325,7 @@ func (*AssociateWalletResponse) Descriptor() ([]byte, []int) {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type DissociateWalletRequest struct {
 	state         protoimpl.MessageState

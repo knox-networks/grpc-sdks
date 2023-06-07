@@ -112,6 +112,32 @@ export namespace TransactionHeader {
   }
 }
 
+export class LockedPromissory extends jspb.Message {
+  getPromissory(): Uint8Array | string;
+  getPromissory_asU8(): Uint8Array;
+  getPromissory_asB64(): string;
+  setPromissory(value: Uint8Array | string): void;
+
+  getLockId(): string;
+  setLockId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LockedPromissory.AsObject;
+  static toObject(includeInstance: boolean, msg: LockedPromissory): LockedPromissory.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LockedPromissory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LockedPromissory;
+  static deserializeBinaryFromReader(message: LockedPromissory, reader: jspb.BinaryReader): LockedPromissory;
+}
+
+export namespace LockedPromissory {
+  export type AsObject = {
+    promissory: Uint8Array | string,
+    lockId: string,
+  }
+}
+
 export class SimplePaymentRequest extends jspb.Message {
   hasAmount(): boolean;
   clearAmount(): void;
@@ -326,6 +352,65 @@ export namespace CancelTransaction {
   export const RejectionReason: RejectionReasonMap;
 }
 
+export class Commitment extends jspb.Message {
+  getSender(): string;
+  setSender(value: string): void;
+
+  getRecipient(): string;
+  setRecipient(value: string): void;
+
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Commitment.AsObject;
+  static toObject(includeInstance: boolean, msg: Commitment): Commitment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Commitment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Commitment;
+  static deserializeBinaryFromReader(message: Commitment, reader: jspb.BinaryReader): Commitment;
+}
+
+export namespace Commitment {
+  export type AsObject = {
+    sender: string,
+    recipient: string,
+    amount?: common_v1_common_pb.Amount.AsObject,
+  }
+}
+
+export class Contract extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<Commitment>;
+  setCommitmentsList(value: Array<Commitment>): void;
+  addCommitments(value?: Commitment, index?: number): Commitment;
+
+  getSignatoriesMap(): jspb.Map<string, Uint8Array | string>;
+  clearSignatoriesMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Contract.AsObject;
+  static toObject(includeInstance: boolean, msg: Contract): Contract.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Contract, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Contract;
+  static deserializeBinaryFromReader(message: Contract, reader: jspb.BinaryReader): Contract;
+}
+
+export namespace Contract {
+  export type AsObject = {
+    id: string,
+    commitmentsList: Array<Commitment.AsObject>,
+    signatoriesMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
 export interface PacketTypeMap {
   UNKNOWN: 0;
   UNSUPPORTED: 1;
@@ -343,12 +428,21 @@ export interface PacketTypeMap {
   AUTHORIZEANDFORWARDPROMISSORY: 102;
   ARCHIVEPROMISSORY: 103;
   PROMISSORYRECEIPT: 104;
+  LOCKPROMISSORY: 105;
+  PROMISSORYLOCKED: 106;
+  AUTHORIZELOCKEDPROMISSORIES: 107;
+  AUTHORIZATIONSTATUS: 108;
+  RETRIEVEASSETS: 109;
   IDENTITYREQUEST: 200;
   IDENTITYRESPONSE: 201;
   IDENTITYPROOF: 202;
   NOTARYNOTARIZEPROMISSORY: 300;
   NOTARYNOTARIZEANDFORWARDPROMISSORY: 301;
   EMISSARYCONNECTIONIDENTITY: 400;
+  CONTRACTPROPOSAL: 500;
+  CONTRACTACK: 501;
+  CONTRACTSIGNATURE: 502;
+  CONTRACTCOMPLETE: 503;
   REMITTANCEREQUEST: 700;
   REMITTANCERESPONSE: 701;
   SPREQUEST: 1000;
@@ -359,6 +453,13 @@ export interface PacketTypeMap {
   FCREQUEST: 1100;
   FCACK: 1101;
   FCNACK: 1102;
+  TSPREQUEST: 1200;
+  TSPACK: 1201;
+  TSPNACK: 1202;
+  TSPCONTRACT: 1203;
+  TSPCONTRACTACK: 1204;
+  TSPASSETSAUTHORIZED: 1205;
+  TSPCOMPLETE: 1206;
 }
 
 export const PacketType: PacketTypeMap;

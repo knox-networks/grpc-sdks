@@ -1866,7 +1866,7 @@ namespace WalletApi.V1 {
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"wallet_name": "WALLET_NAME", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class CreateWalletResponse : pb::IMessage<CreateWalletResponse>
@@ -2544,13 +2544,13 @@ namespace WalletApi.V1 {
   ///"wallet_name": "WALLET1", 
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}, 
   ///{
   ///"wallet_name": "WALLET2", 
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   ///], 
   ///"total_owned_wallets": 5
@@ -4267,11 +4267,11 @@ namespace WalletApi.V1 {
   ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
   ///"notaries": [
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///},
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///}
   ///]
@@ -4293,11 +4293,11 @@ namespace WalletApi.V1 {
   ///"transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
   ///"notaries": [
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///},
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"signature": "ByteLengthSignatureVariesByAlgo="
   ///}
   ///]
@@ -7425,7 +7425,7 @@ namespace WalletApi.V1 {
   /// [Example]
   ///{
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"public_key": "zPublicKeyMultibase58Encoded"
   ///}
   /// </summary>
@@ -7987,7 +7987,7 @@ namespace WalletApi.V1 {
   ///"wallet_id": "zWalletIDMultibase58Encoded", 
   ///"wallet_name": "WALLET_NAME", 
   ///"public_key": "zPublicKeyMultibase58Encoded", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///} 
   /// </summary>
   public sealed partial class CreateAndAssociateWalletResponse : pb::IMessage<CreateAndAssociateWalletResponse>
@@ -8305,7 +8305,7 @@ namespace WalletApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"credential_type": "CREDENTIAL_TYPE", 
   ///"api_key": "API_KEY"
   ///}

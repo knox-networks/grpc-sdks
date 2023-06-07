@@ -280,8 +280,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -1618,8 +1618,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -3012,8 +3012,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -3629,8 +3629,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -4059,8 +4059,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -4530,8 +4530,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -5015,8 +5015,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -5458,8 +5458,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -5690,8 +5690,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -6412,7 +6412,7 @@ namespace UserApi.V1 {
   ///{
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"nonce": "NONCE", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class AuthnBrowserWithWalletRequest : pb::IMessage<AuthnBrowserWithWalletRequest>
@@ -7277,7 +7277,7 @@ namespace UserApi.V1 {
   ///{
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"nonce": "NONCE", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class RegisterWalletRequest : pb::IMessage<RegisterWalletRequest>
@@ -7564,8 +7564,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -7842,7 +7842,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class CreateAuthnWalletChallengeRequest : pb::IMessage<CreateAuthnWalletChallengeRequest>
@@ -8240,7 +8240,7 @@ namespace UserApi.V1 {
   ///{
   ///"signature": "ByteLengthSignatureVariesByAlgo=", 
   ///"nonce": "NONCE", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class AuthnWalletRequest : pb::IMessage<AuthnWalletRequest>
@@ -8527,8 +8527,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -9053,8 +9053,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -10576,7 +10576,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///} 
   /// </summary>
   public sealed partial class GetUserByDIDRequest : pb::IMessage<GetUserByDIDRequest>
@@ -10783,8 +10783,8 @@ namespace UserApi.V1 {
   ///"avatar": "AVATAR_URL", 
   ///"phone": "+1 555 555 5555", 
   ///"dids": [
-  ///"did:organization:zDIDMultibase58Encoded", 
-  ///"did:organization:zDIDMultibase58Encoded"
+  ///"did:method-name:zDIDMultibase58Encoded", 
+  ///"did:method-name:zDIDMultibase58Encoded"
   ///], 
   ///"external_ids": [
   ///{
@@ -11010,7 +11010,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///} 
   /// </summary>
   public sealed partial class AssociateWalletRequest : pb::IMessage<AssociateWalletRequest>
@@ -11364,7 +11364,7 @@ namespace UserApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///} 
   /// </summary>
   public sealed partial class DissociateWalletRequest : pb::IMessage<DissociateWalletRequest>

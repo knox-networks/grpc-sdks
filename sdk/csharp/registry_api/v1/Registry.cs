@@ -173,7 +173,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"document": "DOCUMENT"
   ///}
   /// </summary>
@@ -568,7 +568,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class ResolveRequest : pb::IMessage<ResolveRequest>
@@ -766,7 +766,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class ResolveRepresentationRequest : pb::IMessage<ResolveRepresentationRequest>
@@ -1208,7 +1208,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"document": "DOCUMENT",
   ///"metadata": { 
   ///"created": { 
@@ -1507,7 +1507,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"document": "DOCUMENT",
   ///"metadata": { 
   ///"created": { 
@@ -2110,7 +2110,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded",
+  ///"did": "did:method-name:zDIDMultibase58Encoded",
   ///"document": "DOCUMENT"
   ///}
   /// </summary>
@@ -2505,7 +2505,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class RevokeRequest : pb::IMessage<RevokeRequest>
@@ -3206,7 +3206,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+  ///"issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
   ///"email": "example@gmail.com",
   ///"website": "google.com",
@@ -3607,7 +3607,7 @@ namespace RegistryApi.V1 {
   /// [Example]
   ///{ 
   ///"credential_issuer": {
-  ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+  ///"issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
   ///"email": "example@gmail.com",
   ///"website": "google.com",
@@ -3979,7 +3979,7 @@ namespace RegistryApi.V1 {
   /// <summary>
   /// [Example]
   ///{ 
-  ///"issuer_did": "did:organization:zDIDCredentialIssuerMultibase58Encoded"
+  ///"issuer_did": "did:method-name:zDIDCredentialIssuerMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class GetCredentialIssuerRequest : pb::IMessage<GetCredentialIssuerRequest>
@@ -4175,7 +4175,7 @@ namespace RegistryApi.V1 {
   /// [Example]
   ///{ 
   ///"credential_issuer": {
-  ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+  ///"issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
   ///"email": "example@gmail.com",
   ///"website": "google.com",
@@ -4392,7 +4392,7 @@ namespace RegistryApi.V1 {
   /// [Example]
   ///{ 
   ///"credential_issuer": {
-  ///"issuer_did": "did:organization:zDIDIssuerMultibase58Encoded",
+  ///"issuer_did": "did:method-name:zDIDIssuerMultibase58Encoded",
   ///"issuer_name": "ISSUER_NAME",
   ///"email": "example@gmail.com",
   ///"website": "google.com",
@@ -4765,7 +4765,7 @@ namespace RegistryApi.V1 {
   /// [Example]
   ///{ 
   ///"credential_id": "CREDENTIAL_ID",
-  ///"credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+  ///"credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
   ///"status_purpose": 0,
   ///"credential_type": "CREDENTIAL_TYPE",
   ///"status_list_index": 0,
@@ -5526,7 +5526,7 @@ namespace RegistryApi.V1 {
   ///{ 
   ///"status_list_entry": { 
   ///"credential_id": "CREDENTIAL_ID",
-  ///"credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+  ///"credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
   ///"status_purpose": 0,
   ///"credential_type": "CREDENTIAL_TYPE",
   ///"status_list_index": 0,
@@ -6130,7 +6130,7 @@ namespace RegistryApi.V1 {
   /// [Example]
   ///{ 
   ///"credential_id": "CREDENTIAL_ID",
-  ///"credential_issuer_id": "did:organization:zDIDCredentialIssuerMultibase58Encoded",
+  ///"credential_issuer_id": "did:method-name:zDIDCredentialIssuerMultibase58Encoded",
   ///"status_purpose": 0,
   ///"credential_type": "CREDENTIAL_TYPE",
   ///"status": true

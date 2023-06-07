@@ -662,7 +662,7 @@ func (x *CreateWalletRequest) GetApiKey() string {
 // "wallet_id": "zWalletIDMultibase58Encoded",
 // "wallet_name": "WALLET_NAME",
 // "public_key": "zPublicKeyMultibase58Encoded",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type CreateWalletResponse struct {
 	state         protoimpl.MessageState
@@ -853,13 +853,13 @@ func (x *ListWalletsRequest) GetFilters() *v1.Filter {
 // "wallet_name": "WALLET1",
 // "wallet_id": "zWalletIDMultibase58Encoded",
 // "public_key": "zPublicKeyMultibase58Encoded",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // },
 // {
 // "wallet_name": "WALLET2",
 // "wallet_id": "zWalletIDMultibase58Encoded",
 // "public_key": "zPublicKeyMultibase58Encoded",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 // ],
 // "total_owned_wallets": 5
@@ -1275,11 +1275,11 @@ func (x *ListAssetFilesRequest) GetSortBy() *SortBy {
 // "transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
 // "notaries": [
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // },
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // }
 // ]
@@ -1301,11 +1301,11 @@ func (x *ListAssetFilesRequest) GetSortBy() *SortBy {
 // "transfer_signature": "ByteLengthTransferSignatureVariesByAlgo=",
 // "notaries": [
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // },
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "signature": "ByteLengthSignatureVariesByAlgo="
 // }
 // ]
@@ -1844,7 +1844,7 @@ func (x *AssociateWalletRequest) GetApiKey() string {
 // [Example]
 // {
 // "wallet_id": "zWalletIDMultibase58Encoded",
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "public_key": "zPublicKeyMultibase58Encoded"
 // }
 type AssociateWalletResponse struct {
@@ -1990,7 +1990,7 @@ func (x *CreateAndAssociateWalletRequest) GetToken() string {
 // "wallet_id": "zWalletIDMultibase58Encoded",
 // "wallet_name": "WALLET_NAME",
 // "public_key": "zPublicKeyMultibase58Encoded",
-// "did": "did:organization:zDIDMultibase58Encoded"
+// "did": "did:method-name:zDIDMultibase58Encoded"
 // }
 type CreateAndAssociateWalletResponse struct {
 	state         protoimpl.MessageState
@@ -2069,7 +2069,7 @@ func (x *CreateAndAssociateWalletResponse) GetDid() string {
 
 // [Example]
 // {
-// "did": "did:organization:zDIDMultibase58Encoded",
+// "did": "did:method-name:zDIDMultibase58Encoded",
 // "credential_type": "CREDENTIAL_TYPE",
 // "api_key": "API_KEY"
 // }

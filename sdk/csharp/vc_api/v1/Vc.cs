@@ -101,7 +101,7 @@ namespace VcApi.V1 {
   /// [Example]
   ///{
   ///"type": "TYPE", 
-  ///"created": "CREATED_TIMESTAMP", 
+  ///"created": "2006-01-02T15:04:05Z", 
   ///"verification_method": "VERIFICATION_METHOD", 
   ///"proof_purpose": "PROOF_PURPOSE", 
   ///"proof_value": "PROOF_VALUE"
@@ -463,7 +463,7 @@ namespace VcApi.V1 {
   /// [Example]
   ///{
   ///"credential_type": 1, 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class CreateIssuanceChallengeRequest : pb::IMessage<CreateIssuanceChallengeRequest>
@@ -701,7 +701,7 @@ namespace VcApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"nonce": "NONCE", 
+  ///"nonce": "NonceLengthVariesByAlgo", 
   ///"endpoint": "QR_URL_ENDPOINT", 
   ///"credential_type": 1
   ///}
@@ -982,9 +982,9 @@ namespace VcApi.V1 {
   /// [Example]
   ///{
   ///"credential_type": 1, 
-  ///"nonce": "NONCE", 
-  ///"signature": "ByteLengthSignatureVariesByAlgo=", 
-  ///"did": "did:organization:zDIDMultibase58Encoded"
+  ///"nonce": "NonceLengthVariesByAlgo", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded"
   ///}
   /// </summary>
   public sealed partial class IssueVerifiableCredentialRequest : pb::IMessage<IssueVerifiableCredentialRequest>
@@ -1692,7 +1692,7 @@ namespace VcApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"nonce": "NONCE", 
+  ///"nonce": "NonceLengthVariesByAlgo", 
   ///"endpoint": "QR_URL_ENDPOINT", 
   ///"credential_types": [
   ///0, 
@@ -1967,9 +1967,9 @@ namespace VcApi.V1 {
   /// [Example]
   ///{
   ///"presentation": "PRESENTATION", 
-  ///"nonce": "NONCE", 
-  ///"signature": "ByteLengthSignatureVariesByAlgo=", 
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"nonce": "NonceLengthVariesByAlgo", 
+  ///"signature": "SIGNATURExBYTES=", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"credential_type": [
   ///0, 
   ///1
@@ -2478,7 +2478,7 @@ namespace VcApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"nonce": "NONCE"
+  ///"nonce": "NonceLengthVariesByAlgo"
   ///}
   /// </summary>
   public sealed partial class WaitForCompletionRequest : pb::IMessage<WaitForCompletionRequest>
@@ -2676,7 +2676,7 @@ namespace VcApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"did": "did:organization:zDIDMultibase58Encoded", 
+  ///"did": "did:method-name:zDIDMultibase58Encoded", 
   ///"data": "DATA"
   ///}
   /// </summary>
