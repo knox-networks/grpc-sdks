@@ -42,12 +42,32 @@ type IssuerServiceSetRole = {
   readonly responseType: typeof issuer_api_v1_issuer_pb.SetRoleResponse;
 };
 
+type IssuerServiceSetAssetDenominations = {
+  readonly methodName: string;
+  readonly service: typeof IssuerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof issuer_api_v1_issuer_pb.SetAssetDenominationsRequest;
+  readonly responseType: typeof issuer_api_v1_issuer_pb.SetAssetDenominationsResponse;
+};
+
+type IssuerServiceSetAssetAuthorities = {
+  readonly methodName: string;
+  readonly service: typeof IssuerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof issuer_api_v1_issuer_pb.SetAssetAuthoritiesRequest;
+  readonly responseType: typeof issuer_api_v1_issuer_pb.SetAssetAuthoritiesResponse;
+};
+
 export class IssuerService {
   static readonly serviceName: string;
   static readonly Authenticate: IssuerServiceAuthenticate;
   static readonly Issue: IssuerServiceIssue;
   static readonly GetRoles: IssuerServiceGetRoles;
   static readonly SetRole: IssuerServiceSetRole;
+  static readonly SetAssetDenominations: IssuerServiceSetAssetDenominations;
+  static readonly SetAssetAuthorities: IssuerServiceSetAssetAuthorities;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -117,6 +137,24 @@ export class IssuerServiceClient {
   setRole(
     requestMessage: issuer_api_v1_issuer_pb.SetRoleRequest,
     callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.SetRoleResponse|null) => void
+  ): UnaryResponse;
+  setAssetDenominations(
+    requestMessage: issuer_api_v1_issuer_pb.SetAssetDenominationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.SetAssetDenominationsResponse|null) => void
+  ): UnaryResponse;
+  setAssetDenominations(
+    requestMessage: issuer_api_v1_issuer_pb.SetAssetDenominationsRequest,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.SetAssetDenominationsResponse|null) => void
+  ): UnaryResponse;
+  setAssetAuthorities(
+    requestMessage: issuer_api_v1_issuer_pb.SetAssetAuthoritiesRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.SetAssetAuthoritiesResponse|null) => void
+  ): UnaryResponse;
+  setAssetAuthorities(
+    requestMessage: issuer_api_v1_issuer_pb.SetAssetAuthoritiesRequest,
+    callback: (error: ServiceError|null, responseMessage: issuer_api_v1_issuer_pb.SetAssetAuthoritiesResponse|null) => void
   ): UnaryResponse;
 }
 

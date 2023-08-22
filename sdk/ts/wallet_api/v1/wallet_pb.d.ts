@@ -5,52 +5,7 @@
 
 import * as jspb from "google-protobuf";
 import * as common_v1_common_pb from "../../common/v1/common_pb";
-
-export class SortItem extends jspb.Message {
-  getField(): string;
-  setField(value: string): void;
-
-  getDirection(): SortDirectionMap[keyof SortDirectionMap];
-  setDirection(value: SortDirectionMap[keyof SortDirectionMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SortItem.AsObject;
-  static toObject(includeInstance: boolean, msg: SortItem): SortItem.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SortItem, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SortItem;
-  static deserializeBinaryFromReader(message: SortItem, reader: jspb.BinaryReader): SortItem;
-}
-
-export namespace SortItem {
-  export type AsObject = {
-    field: string,
-    direction: SortDirectionMap[keyof SortDirectionMap],
-  }
-}
-
-export class SortBy extends jspb.Message {
-  clearItemsList(): void;
-  getItemsList(): Array<SortItem>;
-  setItemsList(value: Array<SortItem>): void;
-  addItems(value?: SortItem, index?: number): SortItem;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SortBy.AsObject;
-  static toObject(includeInstance: boolean, msg: SortBy): SortBy.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SortBy, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SortBy;
-  static deserializeBinaryFromReader(message: SortBy, reader: jspb.BinaryReader): SortBy;
-}
-
-export namespace SortBy {
-  export type AsObject = {
-    itemsList: Array<SortItem.AsObject>,
-  }
-}
+import * as common_v1_packet_pb from "../../common/v1/packet_pb";
 
 export class TransferRequest extends jspb.Message {
   getFromWalletId(): string;
@@ -219,6 +174,11 @@ export class ListWalletsRequest extends jspb.Message {
   getFilters(): common_v1_common_pb.Filter | undefined;
   setFilters(value?: common_v1_common_pb.Filter): void;
 
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWalletsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListWalletsRequest): ListWalletsRequest.AsObject;
@@ -235,6 +195,7 @@ export namespace ListWalletsRequest {
     pageSize: number,
     apiKey: string,
     filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -303,6 +264,11 @@ export class ListWalletBalancesRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWalletBalancesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListWalletBalancesRequest): ListWalletBalancesRequest.AsObject;
@@ -317,6 +283,7 @@ export namespace ListWalletBalancesRequest {
   export type AsObject = {
     walletId: string,
     apiKey: string,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -388,8 +355,8 @@ export class ListAssetFilesRequest extends jspb.Message {
 
   hasSortBy(): boolean;
   clearSortBy(): void;
-  getSortBy(): SortBy | undefined;
-  setSortBy(value?: SortBy): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAssetFilesRequest.AsObject;
@@ -408,7 +375,7 @@ export namespace ListAssetFilesRequest {
     walletId: string,
     apiKey: string,
     filters?: common_v1_common_pb.Filter.AsObject,
-    sortBy?: SortBy.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -542,6 +509,9 @@ export namespace ListAssetFilesResponse {
     getPromissory(): ListAssetFilesResponse.Promissory | undefined;
     setPromissory(value?: ListAssetFilesResponse.Promissory): void;
 
+    getReserved(): boolean;
+    setReserved(value: boolean): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Fund.AsObject;
     static toObject(includeInstance: boolean, msg: Fund): Fund.AsObject;
@@ -556,6 +526,7 @@ export namespace ListAssetFilesResponse {
     export type AsObject = {
       walletId: string,
       promissory?: ListAssetFilesResponse.Promissory.AsObject,
+      reserved: boolean,
     }
   }
 }
@@ -627,6 +598,16 @@ export class ListCredentialsRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCredentialsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCredentialsRequest): ListCredentialsRequest.AsObject;
@@ -643,6 +624,8 @@ export namespace ListCredentialsRequest {
     pageSize: number,
     walletId: string,
     apiKey: string,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -1018,72 +1001,73 @@ export namespace PrepareFundsChangeResponse {
   export const Status: StatusMap;
 }
 
-export class PrepareTwoStepPaymentRequest extends jspb.Message {
-  hasAmount(): boolean;
-  clearAmount(): void;
-  getAmount(): common_v1_common_pb.Amount | undefined;
-  setAmount(value?: common_v1_common_pb.Amount): void;
-
-  getRecipient(): string;
-  setRecipient(value: string): void;
-
-  getUserReference(): string;
-  setUserReference(value: string): void;
+export class PrepareContractTransactionRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
 
   getWalletId(): string;
   setWalletId(value: string): void;
 
-  getApiKey(): string;
-  setApiKey(value: string): void;
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
+  setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
+  addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
+
+  clearConditionsList(): void;
+  getConditionsList(): Array<common_v1_packet_pb.Condition>;
+  setConditionsList(value: Array<common_v1_packet_pb.Condition>): void;
+  addConditions(value?: common_v1_packet_pb.Condition, index?: number): common_v1_packet_pb.Condition;
+
+  getMemo(): string;
+  setMemo(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareTwoStepPaymentRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareTwoStepPaymentRequest): PrepareTwoStepPaymentRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareContractTransactionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareContractTransactionRequest): PrepareContractTransactionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareTwoStepPaymentRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareTwoStepPaymentRequest;
-  static deserializeBinaryFromReader(message: PrepareTwoStepPaymentRequest, reader: jspb.BinaryReader): PrepareTwoStepPaymentRequest;
+  static serializeBinaryToWriter(message: PrepareContractTransactionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareContractTransactionRequest;
+  static deserializeBinaryFromReader(message: PrepareContractTransactionRequest, reader: jspb.BinaryReader): PrepareContractTransactionRequest;
 }
 
-export namespace PrepareTwoStepPaymentRequest {
+export namespace PrepareContractTransactionRequest {
   export type AsObject = {
-    amount?: common_v1_common_pb.Amount.AsObject,
-    recipient: string,
-    userReference: string,
-    walletId: string,
     apiKey: string,
+    walletId: string,
+    commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
+    conditionsList: Array<common_v1_packet_pb.Condition.AsObject>,
+    memo: string,
   }
 }
 
-export class PrepareTwoStepPaymentResponse extends jspb.Message {
-  getStatus(): PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap];
-  setStatus(value: PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap]): void;
+export class PrepareContractTransactionResponse extends jspb.Message {
+  getStatus(): PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap];
+  setStatus(value: PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap]): void;
 
   getUetr(): string;
   setUetr(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareTwoStepPaymentResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareTwoStepPaymentResponse): PrepareTwoStepPaymentResponse.AsObject;
+  toObject(includeInstance?: boolean): PrepareContractTransactionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareContractTransactionResponse): PrepareContractTransactionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareTwoStepPaymentResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareTwoStepPaymentResponse;
-  static deserializeBinaryFromReader(message: PrepareTwoStepPaymentResponse, reader: jspb.BinaryReader): PrepareTwoStepPaymentResponse;
+  static serializeBinaryToWriter(message: PrepareContractTransactionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareContractTransactionResponse;
+  static deserializeBinaryFromReader(message: PrepareContractTransactionResponse, reader: jspb.BinaryReader): PrepareContractTransactionResponse;
 }
 
-export namespace PrepareTwoStepPaymentResponse {
+export namespace PrepareContractTransactionResponse {
   export type AsObject = {
-    status: PrepareTwoStepPaymentResponse.StatusMap[keyof PrepareTwoStepPaymentResponse.StatusMap],
+    status: PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap],
     uetr: string,
   }
 
   export interface StatusMap {
-    STATUS_UNSPECIFIED: 0;
-    STATUS_SUCCESS: 1;
-    STATUS_NEED_CHANGE: 2;
-    STATUS_INSUFFICIENT_FUNDS: 3;
+    UNSPECIFIED: 0;
+    SUCCESS: 1;
+    FAILURE: 2;
   }
 
   export const Status: StatusMap;
@@ -1157,6 +1141,11 @@ export class ListTransactionsRequest extends jspb.Message {
   getPageSize(): number;
   setPageSize(value: number): void;
 
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTransactionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTransactionsRequest): ListTransactionsRequest.AsObject;
@@ -1174,6 +1163,7 @@ export namespace ListTransactionsRequest {
     filters?: common_v1_common_pb.Filter.AsObject,
     page: number,
     pageSize: number,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -1200,6 +1190,118 @@ export namespace ListTransactionsResponse {
   export type AsObject = {
     transactionsList: Array<common_v1_common_pb.Transaction.AsObject>,
     totalMatchingTransactions: number,
+  }
+}
+
+export class ListContractTransactionsRequest extends jspb.Message {
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContractTransactionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContractTransactionsRequest): ListContractTransactionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContractTransactionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContractTransactionsRequest;
+  static deserializeBinaryFromReader(message: ListContractTransactionsRequest, reader: jspb.BinaryReader): ListContractTransactionsRequest;
+}
+
+export namespace ListContractTransactionsRequest {
+  export type AsObject = {
+    walletId: string,
+    apiKey: string,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    page: number,
+    pageSize: number,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+  }
+}
+
+export class ContractSummary extends jspb.Message {
+  getContractId(): string;
+  setContractId(value: string): void;
+
+  getContractType(): string;
+  setContractType(value: string): void;
+
+  getCreated(): string;
+  setCreated(value: string): void;
+
+  clearCounterpartiesList(): void;
+  getCounterpartiesList(): Array<string>;
+  setCounterpartiesList(value: Array<string>): void;
+  addCounterparties(value: string, index?: number): string;
+
+  getStatus(): string;
+  setStatus(value: string): void;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContractSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: ContractSummary): ContractSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContractSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContractSummary;
+  static deserializeBinaryFromReader(message: ContractSummary, reader: jspb.BinaryReader): ContractSummary;
+}
+
+export namespace ContractSummary {
+  export type AsObject = {
+    contractId: string,
+    contractType: string,
+    created: string,
+    counterpartiesList: Array<string>,
+    status: string,
+    memo: string,
+  }
+}
+
+export class ListContractTransactionsResponse extends jspb.Message {
+  clearContractsList(): void;
+  getContractsList(): Array<ContractSummary>;
+  setContractsList(value: Array<ContractSummary>): void;
+  addContracts(value?: ContractSummary, index?: number): ContractSummary;
+
+  getTotalcontracts(): number;
+  setTotalcontracts(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListContractTransactionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListContractTransactionsResponse): ListContractTransactionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListContractTransactionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListContractTransactionsResponse;
+  static deserializeBinaryFromReader(message: ListContractTransactionsResponse, reader: jspb.BinaryReader): ListContractTransactionsResponse;
+}
+
+export namespace ListContractTransactionsResponse {
+  export type AsObject = {
+    contractsList: Array<ContractSummary.AsObject>,
+    totalcontracts: number,
   }
 }
 
@@ -1303,11 +1405,382 @@ export namespace ListTransactionSnapshotsResponse {
   }
 }
 
-export interface SortDirectionMap {
-  SORT_DIRECTION_UNSPECIFIED: 0;
-  SORT_DIRECTION_ASCENDING: 1;
-  SORT_DIRECTION_DESCENDING: 2;
+export class BalanceDetail extends jspb.Message {
+  hasBalance(): boolean;
+  clearBalance(): void;
+  getBalance(): WalletBalance | undefined;
+  setBalance(value?: WalletBalance): void;
+
+  getKind(): BalanceDetail.KindMap[keyof BalanceDetail.KindMap];
+  setKind(value: BalanceDetail.KindMap[keyof BalanceDetail.KindMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BalanceDetail.AsObject;
+  static toObject(includeInstance: boolean, msg: BalanceDetail): BalanceDetail.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BalanceDetail, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BalanceDetail;
+  static deserializeBinaryFromReader(message: BalanceDetail, reader: jspb.BinaryReader): BalanceDetail;
 }
 
-export const SortDirection: SortDirectionMap;
+export namespace BalanceDetail {
+  export type AsObject = {
+    balance?: WalletBalance.AsObject,
+    kind: BalanceDetail.KindMap[keyof BalanceDetail.KindMap],
+  }
+
+  export interface KindMap {
+    KIND_AVAILABLE: 0;
+    KIND_RESERVED: 1;
+  }
+
+  export const Kind: KindMap;
+}
+
+export class ListWalletBalanceDetailsRequest extends jspb.Message {
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWalletBalanceDetailsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWalletBalanceDetailsRequest): ListWalletBalanceDetailsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWalletBalanceDetailsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWalletBalanceDetailsRequest;
+  static deserializeBinaryFromReader(message: ListWalletBalanceDetailsRequest, reader: jspb.BinaryReader): ListWalletBalanceDetailsRequest;
+}
+
+export namespace ListWalletBalanceDetailsRequest {
+  export type AsObject = {
+    walletId: string,
+    apiKey: string,
+  }
+}
+
+export class ListWalletBalanceDetailsResponse extends jspb.Message {
+  clearBalancesList(): void;
+  getBalancesList(): Array<BalanceDetail>;
+  setBalancesList(value: Array<BalanceDetail>): void;
+  addBalances(value?: BalanceDetail, index?: number): BalanceDetail;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListWalletBalanceDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListWalletBalanceDetailsResponse): ListWalletBalanceDetailsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListWalletBalanceDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListWalletBalanceDetailsResponse;
+  static deserializeBinaryFromReader(message: ListWalletBalanceDetailsResponse, reader: jspb.BinaryReader): ListWalletBalanceDetailsResponse;
+}
+
+export namespace ListWalletBalanceDetailsResponse {
+  export type AsObject = {
+    balancesList: Array<BalanceDetail.AsObject>,
+  }
+}
+
+export class GetContractTransactionDetailRequest extends jspb.Message {
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getUetr(): string;
+  setUetr(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContractTransactionDetailRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContractTransactionDetailRequest): GetContractTransactionDetailRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContractTransactionDetailRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContractTransactionDetailRequest;
+  static deserializeBinaryFromReader(message: GetContractTransactionDetailRequest, reader: jspb.BinaryReader): GetContractTransactionDetailRequest;
+}
+
+export namespace GetContractTransactionDetailRequest {
+  export type AsObject = {
+    walletId: string,
+    apiKey: string,
+    uetr: string,
+  }
+}
+
+export class GetContractTransactionDetailResponse extends jspb.Message {
+  getContractType(): string;
+  setContractType(value: string): void;
+
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
+  setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
+  addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
+
+  getOriginator(): string;
+  setOriginator(value: string): void;
+
+  getCreated(): string;
+  setCreated(value: string): void;
+
+  getHashPresenter(): string;
+  setHashPresenter(value: string): void;
+
+  getHash(): Uint8Array | string;
+  getHash_asU8(): Uint8Array;
+  getHash_asB64(): string;
+  setHash(value: Uint8Array | string): void;
+
+  getExpiration(): string;
+  setExpiration(value: string): void;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  clearLogList(): void;
+  getLogList(): Array<GetContractTransactionDetailResponse.LogEntry>;
+  setLogList(value: Array<GetContractTransactionDetailResponse.LogEntry>): void;
+  addLog(value?: GetContractTransactionDetailResponse.LogEntry, index?: number): GetContractTransactionDetailResponse.LogEntry;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetContractTransactionDetailResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetContractTransactionDetailResponse): GetContractTransactionDetailResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetContractTransactionDetailResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetContractTransactionDetailResponse;
+  static deserializeBinaryFromReader(message: GetContractTransactionDetailResponse, reader: jspb.BinaryReader): GetContractTransactionDetailResponse;
+}
+
+export namespace GetContractTransactionDetailResponse {
+  export type AsObject = {
+    contractType: string,
+    commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
+    originator: string,
+    created: string,
+    hashPresenter: string,
+    hash: Uint8Array | string,
+    expiration: string,
+    memo: string,
+    logList: Array<GetContractTransactionDetailResponse.LogEntry.AsObject>,
+  }
+
+  export class LogEntry extends jspb.Message {
+    getSender(): string;
+    setSender(value: string): void;
+
+    getReceiver(): string;
+    setReceiver(value: string): void;
+
+    hasAmount(): boolean;
+    clearAmount(): void;
+    getAmount(): common_v1_common_pb.Amount | undefined;
+    setAmount(value?: common_v1_common_pb.Amount): void;
+
+    getTimestamp(): string;
+    setTimestamp(value: string): void;
+
+    getKind(): string;
+    setKind(value: string): void;
+
+    getState(): string;
+    setState(value: string): void;
+
+    getEvent(): string;
+    setEvent(value: string): void;
+
+    getPromissoryId(): string;
+    setPromissoryId(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LogEntry.AsObject;
+    static toObject(includeInstance: boolean, msg: LogEntry): LogEntry.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: LogEntry, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LogEntry;
+    static deserializeBinaryFromReader(message: LogEntry, reader: jspb.BinaryReader): LogEntry;
+  }
+
+  export namespace LogEntry {
+    export type AsObject = {
+      sender: string,
+      receiver: string,
+      amount?: common_v1_common_pb.Amount.AsObject,
+      timestamp: string,
+      kind: string,
+      state: string,
+      event: string,
+      promissoryId: string,
+    }
+  }
+}
+
+export class PrepareAtomicAssetSwapRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  getRespondent(): string;
+  setRespondent(value: string): void;
+
+  hasRespondentAmount(): boolean;
+  clearRespondentAmount(): void;
+  getRespondentAmount(): common_v1_common_pb.Amount | undefined;
+  setRespondentAmount(value?: common_v1_common_pb.Amount): void;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  getTimeout(): number;
+  setTimeout(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareAtomicAssetSwapRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareAtomicAssetSwapRequest): PrepareAtomicAssetSwapRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareAtomicAssetSwapRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareAtomicAssetSwapRequest;
+  static deserializeBinaryFromReader(message: PrepareAtomicAssetSwapRequest, reader: jspb.BinaryReader): PrepareAtomicAssetSwapRequest;
+}
+
+export namespace PrepareAtomicAssetSwapRequest {
+  export type AsObject = {
+    apiKey: string,
+    walletId: string,
+    amount?: common_v1_common_pb.Amount.AsObject,
+    respondent: string,
+    respondentAmount?: common_v1_common_pb.Amount.AsObject,
+    memo: string,
+    timeout: number,
+  }
+}
+
+export class PrepareAtomicAssetSwapResponse extends jspb.Message {
+  getStatus(): PrepareAtomicAssetSwapResponse.StatusMap[keyof PrepareAtomicAssetSwapResponse.StatusMap];
+  setStatus(value: PrepareAtomicAssetSwapResponse.StatusMap[keyof PrepareAtomicAssetSwapResponse.StatusMap]): void;
+
+  getUetr(): string;
+  setUetr(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareAtomicAssetSwapResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareAtomicAssetSwapResponse): PrepareAtomicAssetSwapResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareAtomicAssetSwapResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareAtomicAssetSwapResponse;
+  static deserializeBinaryFromReader(message: PrepareAtomicAssetSwapResponse, reader: jspb.BinaryReader): PrepareAtomicAssetSwapResponse;
+}
+
+export namespace PrepareAtomicAssetSwapResponse {
+  export type AsObject = {
+    status: PrepareAtomicAssetSwapResponse.StatusMap[keyof PrepareAtomicAssetSwapResponse.StatusMap],
+    uetr: string,
+  }
+
+  export interface StatusMap {
+    UNSPECIFIED: 0;
+    SUCCESS: 1;
+    FAILURE: 2;
+  }
+
+  export const Status: StatusMap;
+}
+
+export class PrepareCrossBorderPaymentRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  getTreasury(): string;
+  setTreasury(value: string): void;
+
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  getRespondent(): string;
+  setRespondent(value: string): void;
+
+  hasRespondentAmount(): boolean;
+  clearRespondentAmount(): void;
+  getRespondentAmount(): common_v1_common_pb.Amount | undefined;
+  setRespondentAmount(value?: common_v1_common_pb.Amount): void;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  getTimeout(): number;
+  setTimeout(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareCrossBorderPaymentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareCrossBorderPaymentRequest): PrepareCrossBorderPaymentRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareCrossBorderPaymentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareCrossBorderPaymentRequest;
+  static deserializeBinaryFromReader(message: PrepareCrossBorderPaymentRequest, reader: jspb.BinaryReader): PrepareCrossBorderPaymentRequest;
+}
+
+export namespace PrepareCrossBorderPaymentRequest {
+  export type AsObject = {
+    apiKey: string,
+    walletId: string,
+    treasury: string,
+    amount?: common_v1_common_pb.Amount.AsObject,
+    respondent: string,
+    respondentAmount?: common_v1_common_pb.Amount.AsObject,
+    memo: string,
+    timeout: number,
+  }
+}
+
+export class PrepareCrossBorderPaymentResponse extends jspb.Message {
+  getStatus(): PrepareCrossBorderPaymentResponse.StatusMap[keyof PrepareCrossBorderPaymentResponse.StatusMap];
+  setStatus(value: PrepareCrossBorderPaymentResponse.StatusMap[keyof PrepareCrossBorderPaymentResponse.StatusMap]): void;
+
+  getUetr(): string;
+  setUetr(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrepareCrossBorderPaymentResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareCrossBorderPaymentResponse): PrepareCrossBorderPaymentResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PrepareCrossBorderPaymentResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareCrossBorderPaymentResponse;
+  static deserializeBinaryFromReader(message: PrepareCrossBorderPaymentResponse, reader: jspb.BinaryReader): PrepareCrossBorderPaymentResponse;
+}
+
+export namespace PrepareCrossBorderPaymentResponse {
+  export type AsObject = {
+    status: PrepareCrossBorderPaymentResponse.StatusMap[keyof PrepareCrossBorderPaymentResponse.StatusMap],
+    uetr: string,
+  }
+
+  export interface StatusMap {
+    UNSPECIFIED: 0;
+    SUCCESS: 1;
+    FAILURE: 2;
+  }
+
+  export const Status: StatusMap;
+}
 

@@ -138,6 +138,114 @@ export namespace LockedPromissory {
   }
 }
 
+export class LockPromissoryBatchData extends jspb.Message {
+  getLockId(): string;
+  setLockId(value: string): void;
+
+  clearPromissoryBatchList(): void;
+  getPromissoryBatchList(): Array<Uint8Array | string>;
+  getPromissoryBatchList_asU8(): Array<Uint8Array>;
+  getPromissoryBatchList_asB64(): Array<string>;
+  setPromissoryBatchList(value: Array<Uint8Array | string>): void;
+  addPromissoryBatch(value: Uint8Array | string, index?: number): Uint8Array | string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LockPromissoryBatchData.AsObject;
+  static toObject(includeInstance: boolean, msg: LockPromissoryBatchData): LockPromissoryBatchData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LockPromissoryBatchData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LockPromissoryBatchData;
+  static deserializeBinaryFromReader(message: LockPromissoryBatchData, reader: jspb.BinaryReader): LockPromissoryBatchData;
+}
+
+export namespace LockPromissoryBatchData {
+  export type AsObject = {
+    lockId: string,
+    promissoryBatchList: Array<Uint8Array | string>,
+  }
+}
+
+export class LockPromissoryBatchAckData extends jspb.Message {
+  getLockId(): string;
+  setLockId(value: string): void;
+
+  clearAcksList(): void;
+  getAcksList(): Array<LockedPromissoryAck>;
+  setAcksList(value: Array<LockedPromissoryAck>): void;
+  addAcks(value?: LockedPromissoryAck, index?: number): LockedPromissoryAck;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LockPromissoryBatchAckData.AsObject;
+  static toObject(includeInstance: boolean, msg: LockPromissoryBatchAckData): LockPromissoryBatchAckData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LockPromissoryBatchAckData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LockPromissoryBatchAckData;
+  static deserializeBinaryFromReader(message: LockPromissoryBatchAckData, reader: jspb.BinaryReader): LockPromissoryBatchAckData;
+}
+
+export namespace LockPromissoryBatchAckData {
+  export type AsObject = {
+    lockId: string,
+    acksList: Array<LockedPromissoryAck.AsObject>,
+  }
+}
+
+export class LockedPromissoryAck extends jspb.Message {
+  getPreviousOwner(): string;
+  setPreviousOwner(value: string): void;
+
+  getOwner(): string;
+  setOwner(value: string): void;
+
+  hasAmount(): boolean;
+  clearAmount(): void;
+  getAmount(): common_v1_common_pb.Amount | undefined;
+  setAmount(value?: common_v1_common_pb.Amount): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LockedPromissoryAck.AsObject;
+  static toObject(includeInstance: boolean, msg: LockedPromissoryAck): LockedPromissoryAck.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LockedPromissoryAck, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LockedPromissoryAck;
+  static deserializeBinaryFromReader(message: LockedPromissoryAck, reader: jspb.BinaryReader): LockedPromissoryAck;
+}
+
+export namespace LockedPromissoryAck {
+  export type AsObject = {
+    previousOwner: string,
+    owner: string,
+    amount?: common_v1_common_pb.Amount.AsObject,
+  }
+}
+
+export class BatchedPromissory extends jspb.Message {
+  clearPromissoryBatchList(): void;
+  getPromissoryBatchList(): Array<Uint8Array | string>;
+  getPromissoryBatchList_asU8(): Array<Uint8Array>;
+  getPromissoryBatchList_asB64(): Array<string>;
+  setPromissoryBatchList(value: Array<Uint8Array | string>): void;
+  addPromissoryBatch(value: Uint8Array | string, index?: number): Uint8Array | string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BatchedPromissory.AsObject;
+  static toObject(includeInstance: boolean, msg: BatchedPromissory): BatchedPromissory.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: BatchedPromissory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BatchedPromissory;
+  static deserializeBinaryFromReader(message: BatchedPromissory, reader: jspb.BinaryReader): BatchedPromissory;
+}
+
+export namespace BatchedPromissory {
+  export type AsObject = {
+    promissoryBatchList: Array<Uint8Array | string>,
+  }
+}
+
 export class SimplePaymentRequest extends jspb.Message {
   hasAmount(): boolean;
   clearAmount(): void;
@@ -382,7 +490,91 @@ export namespace Commitment {
   }
 }
 
+export class TimeoutCondition extends jspb.Message {
+  getTimeout(): number;
+  setTimeout(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeoutCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeoutCondition): TimeoutCondition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TimeoutCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeoutCondition;
+  static deserializeBinaryFromReader(message: TimeoutCondition, reader: jspb.BinaryReader): TimeoutCondition;
+}
+
+export namespace TimeoutCondition {
+  export type AsObject = {
+    timeout: number,
+  }
+}
+
+export class HashCondition extends jspb.Message {
+  getPresenter(): string;
+  setPresenter(value: string): void;
+
+  getHash(): Uint8Array | string;
+  getHash_asU8(): Uint8Array;
+  getHash_asB64(): string;
+  setHash(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HashCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: HashCondition): HashCondition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HashCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HashCondition;
+  static deserializeBinaryFromReader(message: HashCondition, reader: jspb.BinaryReader): HashCondition;
+}
+
+export namespace HashCondition {
+  export type AsObject = {
+    presenter: string,
+    hash: Uint8Array | string,
+  }
+}
+
+export class Condition extends jspb.Message {
+  hasTimeout(): boolean;
+  clearTimeout(): void;
+  getTimeout(): TimeoutCondition | undefined;
+  setTimeout(value?: TimeoutCondition): void;
+
+  hasHash(): boolean;
+  clearHash(): void;
+  getHash(): HashCondition | undefined;
+  setHash(value?: HashCondition): void;
+
+  getConditionCase(): Condition.ConditionCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Condition.AsObject;
+  static toObject(includeInstance: boolean, msg: Condition): Condition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Condition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Condition;
+  static deserializeBinaryFromReader(message: Condition, reader: jspb.BinaryReader): Condition;
+}
+
+export namespace Condition {
+  export type AsObject = {
+    timeout?: TimeoutCondition.AsObject,
+    hash?: HashCondition.AsObject,
+  }
+
+  export enum ConditionCase {
+    CONDITION_NOT_SET = 0,
+    TIMEOUT = 1,
+    HASH = 2,
+  }
+}
+
 export class Contract extends jspb.Message {
+  getUrn(): string;
+  setUrn(value: string): void;
+
   getId(): string;
   setId(value: string): void;
 
@@ -391,8 +583,16 @@ export class Contract extends jspb.Message {
   setCommitmentsList(value: Array<Commitment>): void;
   addCommitments(value?: Commitment, index?: number): Commitment;
 
+  clearConditionsList(): void;
+  getConditionsList(): Array<Condition>;
+  setConditionsList(value: Array<Condition>): void;
+  addConditions(value?: Condition, index?: number): Condition;
+
   getSignatoriesMap(): jspb.Map<string, Uint8Array | string>;
   clearSignatoriesMap(): void;
+  getMemo(): string;
+  setMemo(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Contract.AsObject;
   static toObject(includeInstance: boolean, msg: Contract): Contract.AsObject;
@@ -405,9 +605,36 @@ export class Contract extends jspb.Message {
 
 export namespace Contract {
   export type AsObject = {
+    urn: string,
     id: string,
     commitmentsList: Array<Commitment.AsObject>,
+    conditionsList: Array<Condition.AsObject>,
     signatoriesMap: Array<[string, Uint8Array | string]>,
+    memo: string,
+  }
+}
+
+export class Secret extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getSecret(): string;
+  setSecret(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Secret.AsObject;
+  static toObject(includeInstance: boolean, msg: Secret): Secret.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Secret, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Secret;
+  static deserializeBinaryFromReader(message: Secret, reader: jspb.BinaryReader): Secret;
+}
+
+export namespace Secret {
+  export type AsObject = {
+    id: string,
+    secret: string,
   }
 }
 
@@ -429,10 +656,19 @@ export interface PacketTypeMap {
   ARCHIVEPROMISSORY: 103;
   PROMISSORYRECEIPT: 104;
   LOCKPROMISSORY: 105;
-  PROMISSORYLOCKED: 106;
+  LOCKPROMISSORYACK: 106;
   AUTHORIZELOCKEDPROMISSORIES: 107;
   AUTHORIZATIONSTATUS: 108;
   RETRIEVEASSETS: 109;
+  PROMISSORYBATCH: 110;
+  LOCKPROMISSORYBATCH: 111;
+  LOCKPROMISSORYBATCHACK: 112;
+  RETRIEVEASSETSBATCH: 113;
+  ROLLBACKLOCKEDPROMISSORIES: 114;
+  ROLLBACKLOCKEDPROMISSORIESACK: 115;
+  AUTHORIZEANDFORWARDPROMISSORYBATCH: 116;
+  VALIDATIONBLOCKBATCH: 117;
+  AUTHORIZEDBLOCKBATCH: 118;
   IDENTITYREQUEST: 200;
   IDENTITYRESPONSE: 201;
   IDENTITYPROOF: 202;
@@ -453,14 +689,27 @@ export interface PacketTypeMap {
   FCREQUEST: 1100;
   FCACK: 1101;
   FCNACK: 1102;
-  TSPREQUEST: 1200;
-  TSPACK: 1201;
-  TSPNACK: 1202;
-  TSPCONTRACT: 1203;
-  TSPCONTRACTACK: 1204;
-  TSPASSETSAUTHORIZED: 1205;
-  TSPCOMPLETE: 1206;
+  CPREQUEST: 1300;
+  CPACK: 1301;
+  CPNACK: 1302;
+  CPCONTRACT: 1303;
+  CPCONTRACTACK: 1304;
+  CPASSETSAUTHORIZED: 1305;
+  CPCOMPLETE: 1306;
+  REQUESTSECRET: 1308;
+  PRESENTSECRET: 1309;
+  CPASSETSRETURNED: 1310;
 }
 
 export const PacketType: PacketTypeMap;
+
+export interface ContractTypeMap {
+  CONTRACT_TYPE_UNSPECIFIED: 0;
+  CONTRACT_TYPE_PAYMENT: 1;
+  CONTRACT_TYPE_SWAP: 2;
+  CONTRACT_TYPE_RELAY: 3;
+  CONTRACT_TYPE_CUSTOM: 4;
+}
+
+export const ContractType: ContractTypeMap;
 

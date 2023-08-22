@@ -129,15 +129,6 @@ WalletService.PrepareFundsChange = {
   responseType: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse
 };
 
-WalletService.PrepareTwoStepPayment = {
-  methodName: "PrepareTwoStepPayment",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
-  responseType: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse
-};
-
 WalletService.GetTransaction = {
   methodName: "GetTransaction",
   service: WalletService,
@@ -172,6 +163,60 @@ WalletService.ListTransactionSnapshots = {
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsRequest,
   responseType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse
+};
+
+WalletService.ListWalletBalanceDetails = {
+  methodName: "ListWalletBalanceDetails",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest,
+  responseType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse
+};
+
+WalletService.ListContractTransactions = {
+  methodName: "ListContractTransactions",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.ListContractTransactionsRequest,
+  responseType: wallet_api_v1_wallet_pb.ListContractTransactionsResponse
+};
+
+WalletService.GetContractTransactionDetail = {
+  methodName: "GetContractTransactionDetail",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.GetContractTransactionDetailRequest,
+  responseType: wallet_api_v1_wallet_pb.GetContractTransactionDetailResponse
+};
+
+WalletService.PrepareContractTransaction = {
+  methodName: "PrepareContractTransaction",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.PrepareContractTransactionRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareContractTransactionResponse
+};
+
+WalletService.PrepareAtomicAssetSwap = {
+  methodName: "PrepareAtomicAssetSwap",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapResponse
+};
+
+WalletService.PrepareCrossBorderPayment = {
+  methodName: "PrepareCrossBorderPayment",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentResponse
 };
 
 exports.WalletService = WalletService;
@@ -584,37 +629,6 @@ WalletServiceClient.prototype.prepareFundsChange = function prepareFundsChange(r
   };
 };
 
-WalletServiceClient.prototype.prepareTwoStepPayment = function prepareTwoStepPayment(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.PrepareTwoStepPayment, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 WalletServiceClient.prototype.getTransaction = function getTransaction(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -713,6 +727,192 @@ WalletServiceClient.prototype.listTransactionSnapshots = function listTransactio
     callback = arguments[1];
   }
   var client = grpc.unary(WalletService.ListTransactionSnapshots, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.listWalletBalanceDetails = function listWalletBalanceDetails(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.ListWalletBalanceDetails, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.listContractTransactions = function listContractTransactions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.ListContractTransactions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.getContractTransactionDetail = function getContractTransactionDetail(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.GetContractTransactionDetail, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.prepareContractTransaction = function prepareContractTransaction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.PrepareContractTransaction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.prepareAtomicAssetSwap = function prepareAtomicAssetSwap(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.PrepareAtomicAssetSwap, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.prepareCrossBorderPayment = function prepareCrossBorderPayment(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.PrepareCrossBorderPayment, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

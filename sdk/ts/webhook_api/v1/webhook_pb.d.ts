@@ -4,6 +4,49 @@
 // file: webhook_api/v1/webhook.proto
 
 import * as jspb from "google-protobuf";
+import * as common_v1_common_pb from "../../common/v1/common_pb";
+
+export class Webhook extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getOwnerId(): string;
+  setOwnerId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getWebhookUrl(): string;
+  setWebhookUrl(value: string): void;
+
+  clearSupportedEventsList(): void;
+  getSupportedEventsList(): Array<EventTypeMap[keyof EventTypeMap]>;
+  setSupportedEventsList(value: Array<EventTypeMap[keyof EventTypeMap]>): void;
+  addSupportedEvents(value: EventTypeMap[keyof EventTypeMap], index?: number): EventTypeMap[keyof EventTypeMap];
+
+  getDeliveryMethod(): DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap];
+  setDeliveryMethod(value: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Webhook.AsObject;
+  static toObject(includeInstance: boolean, msg: Webhook): Webhook.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Webhook, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Webhook;
+  static deserializeBinaryFromReader(message: Webhook, reader: jspb.BinaryReader): Webhook;
+}
+
+export namespace Webhook {
+  export type AsObject = {
+    id: string,
+    ownerId: string,
+    name: string,
+    webhookUrl: string,
+    supportedEventsList: Array<EventTypeMap[keyof EventTypeMap]>,
+    deliveryMethod: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap],
+  }
+}
 
 export class CreateWalletPayload extends jspb.Message {
   getName(): string;
@@ -104,6 +147,9 @@ export class Event extends jspb.Message {
   getPingPayload(): PingPayload | undefined;
   setPingPayload(value?: PingPayload): void;
 
+  getCreatedDate(): string;
+  setCreatedDate(value: string): void;
+
   getPayloadCase(): Event.PayloadCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Event.AsObject;
@@ -125,6 +171,7 @@ export namespace Event {
     walletCreatedPayload?: CreateWalletPayload.AsObject,
     promissoryReceivedPayload?: PromissoryReceivedPayload.AsObject,
     pingPayload?: PingPayload.AsObject,
+    createdDate: string,
   }
 
   export enum PayloadCase {
@@ -177,6 +224,11 @@ export class CreateWebhookResponse extends jspb.Message {
   getWebhookPublicKey(): string;
   setWebhookPublicKey(value: string): void;
 
+  hasWebhook(): boolean;
+  clearWebhook(): void;
+  getWebhook(): Webhook | undefined;
+  setWebhook(value?: Webhook): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateWebhookResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateWebhookResponse): CreateWebhookResponse.AsObject;
@@ -190,6 +242,7 @@ export class CreateWebhookResponse extends jspb.Message {
 export namespace CreateWebhookResponse {
   export type AsObject = {
     webhookPublicKey: string,
+    webhook?: Webhook.AsObject,
   }
 }
 
@@ -223,9 +276,9 @@ export namespace ListWebhooksRequest {
 
 export class ListWebhooksResponse extends jspb.Message {
   clearWebhooksList(): void;
-  getWebhooksList(): Array<ListWebhooksResponse.Webhook>;
-  setWebhooksList(value: Array<ListWebhooksResponse.Webhook>): void;
-  addWebhooks(value?: ListWebhooksResponse.Webhook, index?: number): ListWebhooksResponse.Webhook;
+  getWebhooksList(): Array<Webhook>;
+  setWebhooksList(value: Array<Webhook>): void;
+  addWebhooks(value?: Webhook, index?: number): Webhook;
 
   getTotalOwnedWebhooks(): number;
   setTotalOwnedWebhooks(value: number): void;
@@ -242,50 +295,8 @@ export class ListWebhooksResponse extends jspb.Message {
 
 export namespace ListWebhooksResponse {
   export type AsObject = {
-    webhooksList: Array<ListWebhooksResponse.Webhook.AsObject>,
+    webhooksList: Array<Webhook.AsObject>,
     totalOwnedWebhooks: number,
-  }
-
-  export class Webhook extends jspb.Message {
-    getId(): string;
-    setId(value: string): void;
-
-    getOwnerId(): string;
-    setOwnerId(value: string): void;
-
-    getName(): string;
-    setName(value: string): void;
-
-    getWebhookUrl(): string;
-    setWebhookUrl(value: string): void;
-
-    clearSupportedEventsList(): void;
-    getSupportedEventsList(): Array<EventTypeMap[keyof EventTypeMap]>;
-    setSupportedEventsList(value: Array<EventTypeMap[keyof EventTypeMap]>): void;
-    addSupportedEvents(value: EventTypeMap[keyof EventTypeMap], index?: number): EventTypeMap[keyof EventTypeMap];
-
-    getDeliveryMethod(): DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap];
-    setDeliveryMethod(value: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap]): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Webhook.AsObject;
-    static toObject(includeInstance: boolean, msg: Webhook): Webhook.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Webhook, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Webhook;
-    static deserializeBinaryFromReader(message: Webhook, reader: jspb.BinaryReader): Webhook;
-  }
-
-  export namespace Webhook {
-    export type AsObject = {
-      id: string,
-      ownerId: string,
-      name: string,
-      webhookUrl: string,
-      supportedEventsList: Array<EventTypeMap[keyof EventTypeMap]>,
-      deliveryMethod: DeliveryMethodTypeMap[keyof DeliveryMethodTypeMap],
-    }
   }
 }
 
@@ -377,6 +388,16 @@ export class ListEventsRequest extends jspb.Message {
   getPageSize(): number;
   setPageSize(value: number): void;
 
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEventsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEventsRequest): ListEventsRequest.AsObject;
@@ -392,6 +413,8 @@ export namespace ListEventsRequest {
     apiKey: string,
     page: number,
     pageSize: number,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
   }
 }
 
@@ -508,6 +531,125 @@ export namespace PingResponse {
     message: string,
   }
 }
+
+export class ListDeliveryHistoryRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDeliveryHistoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDeliveryHistoryRequest): ListDeliveryHistoryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDeliveryHistoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDeliveryHistoryRequest;
+  static deserializeBinaryFromReader(message: ListDeliveryHistoryRequest, reader: jspb.BinaryReader): ListDeliveryHistoryRequest;
+}
+
+export namespace ListDeliveryHistoryRequest {
+  export type AsObject = {
+    apiKey: string,
+    page: number,
+    pageSize: number,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+  }
+}
+
+export class ListDeliveryHistoryResponse extends jspb.Message {
+  clearDeliveryHistoryList(): void;
+  getDeliveryHistoryList(): Array<ListDeliveryHistoryResponse.DeliveryHistory>;
+  setDeliveryHistoryList(value: Array<ListDeliveryHistoryResponse.DeliveryHistory>): void;
+  addDeliveryHistory(value?: ListDeliveryHistoryResponse.DeliveryHistory, index?: number): ListDeliveryHistoryResponse.DeliveryHistory;
+
+  getTotalOwnedDeliveryHistory(): number;
+  setTotalOwnedDeliveryHistory(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListDeliveryHistoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDeliveryHistoryResponse): ListDeliveryHistoryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListDeliveryHistoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDeliveryHistoryResponse;
+  static deserializeBinaryFromReader(message: ListDeliveryHistoryResponse, reader: jspb.BinaryReader): ListDeliveryHistoryResponse;
+}
+
+export namespace ListDeliveryHistoryResponse {
+  export type AsObject = {
+    deliveryHistoryList: Array<ListDeliveryHistoryResponse.DeliveryHistory.AsObject>,
+    totalOwnedDeliveryHistory: number,
+  }
+
+  export class DeliveryHistory extends jspb.Message {
+    getId(): string;
+    setId(value: string): void;
+
+    getWebhookId(): string;
+    setWebhookId(value: string): void;
+
+    getEventId(): string;
+    setEventId(value: string): void;
+
+    getOwnerId(): string;
+    setOwnerId(value: string): void;
+
+    getDeliveryStage(): DeliveryStageMap[keyof DeliveryStageMap];
+    setDeliveryStage(value: DeliveryStageMap[keyof DeliveryStageMap]): void;
+
+    getCreated(): string;
+    setCreated(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DeliveryHistory.AsObject;
+    static toObject(includeInstance: boolean, msg: DeliveryHistory): DeliveryHistory.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DeliveryHistory, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DeliveryHistory;
+    static deserializeBinaryFromReader(message: DeliveryHistory, reader: jspb.BinaryReader): DeliveryHistory;
+  }
+
+  export namespace DeliveryHistory {
+    export type AsObject = {
+      id: string,
+      webhookId: string,
+      eventId: string,
+      ownerId: string,
+      deliveryStage: DeliveryStageMap[keyof DeliveryStageMap],
+      created: string,
+    }
+  }
+}
+
+export interface DeliveryStageMap {
+  DELIVERY_STAGE_UNSPECIFIED: 0;
+  DELIVERY_STAGE_FIRST_RETRY: 1;
+  DELIVERY_STAGE_SECOND_RETRY: 2;
+  DELIVERY_STAGE_THIRD_RETRY: 3;
+  DELIVERY_STAGE_FOURTH_RETRY: 4;
+  DELIVERY_STAGE_FIFTH_RETRY: 5;
+  DELIVERY_STAGE_FAILED: 6;
+  DELIVERY_STAGE_SUCCESS: 7;
+}
+
+export const DeliveryStage: DeliveryStageMap;
 
 export interface EventTypeMap {
   EVENT_TYPE_UNSPECIFIED: 0;

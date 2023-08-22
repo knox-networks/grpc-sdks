@@ -66,6 +66,15 @@ WebhookManagerService.Ping = {
   responseType: webhook_api_v1_webhook_pb.PingResponse
 };
 
+WebhookManagerService.ListDeliveryHistory = {
+  methodName: "ListDeliveryHistory",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.ListDeliveryHistoryRequest,
+  responseType: webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse
+};
+
 exports.WebhookManagerService = WebhookManagerService;
 
 function WebhookManagerServiceClient(serviceHost, options) {
@@ -233,6 +242,37 @@ WebhookManagerServiceClient.prototype.ping = function ping(requestMessage, metad
     callback = arguments[1];
   }
   var client = grpc.unary(WebhookManagerService.Ping, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.listDeliveryHistory = function listDeliveryHistory(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.ListDeliveryHistory, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

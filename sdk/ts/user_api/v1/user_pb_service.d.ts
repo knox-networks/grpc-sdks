@@ -195,6 +195,15 @@ type UserApiServiceGetUserByDID = {
   readonly responseType: typeof user_api_v1_user_pb.GetUserByDIDResponse;
 };
 
+type UserApiServiceListUsers = {
+  readonly methodName: string;
+  readonly service: typeof UserApiService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof user_api_v1_user_pb.ListUsersRequest;
+  readonly responseType: typeof user_api_v1_user_pb.ListUsersResponse;
+};
+
 export class UserApiService {
   static readonly serviceName: string;
   static readonly AuthnWithPassword: UserApiServiceAuthnWithPassword;
@@ -218,6 +227,7 @@ export class UserApiService {
   static readonly FindByID: UserApiServiceFindByID;
   static readonly GetMe: UserApiServiceGetMe;
   static readonly GetUserByDID: UserApiServiceGetUserByDID;
+  static readonly ListUsers: UserApiServiceListUsers;
 }
 
 type ApiKeyManagerServiceCreateApiKey = {
@@ -468,6 +478,15 @@ export class UserApiServiceClient {
   getUserByDID(
     requestMessage: user_api_v1_user_pb.GetUserByDIDRequest,
     callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.GetUserByDIDResponse|null) => void
+  ): UnaryResponse;
+  listUsers(
+    requestMessage: user_api_v1_user_pb.ListUsersRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.ListUsersResponse|null) => void
+  ): UnaryResponse;
+  listUsers(
+    requestMessage: user_api_v1_user_pb.ListUsersRequest,
+    callback: (error: ServiceError|null, responseMessage: user_api_v1_user_pb.ListUsersResponse|null) => void
   ): UnaryResponse;
 }
 

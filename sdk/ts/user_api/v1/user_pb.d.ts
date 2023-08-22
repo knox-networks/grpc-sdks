@@ -6,6 +6,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as common_v1_common_pb from "../../common/v1/common_pb";
 
 export class User extends jspb.Message {
   getUuid(): string;
@@ -1171,6 +1172,68 @@ export class DissociateWalletResponse extends jspb.Message {
 
 export namespace DissociateWalletResponse {
   export type AsObject = {
+  }
+}
+
+export class ListUsersRequest extends jspb.Message {
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): common_v1_common_pb.Filter | undefined;
+  setFilter(value?: common_v1_common_pb.Filter): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersRequest): ListUsersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersRequest;
+  static deserializeBinaryFromReader(message: ListUsersRequest, reader: jspb.BinaryReader): ListUsersRequest;
+}
+
+export namespace ListUsersRequest {
+  export type AsObject = {
+    page: number,
+    pageSize: number,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+    filter?: common_v1_common_pb.Filter.AsObject,
+  }
+}
+
+export class ListUsersResponse extends jspb.Message {
+  clearUsersList(): void;
+  getUsersList(): Array<User>;
+  setUsersList(value: Array<User>): void;
+  addUsers(value?: User, index?: number): User;
+
+  getTotalMatchingUsers(): number;
+  setTotalMatchingUsers(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersResponse): ListUsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersResponse;
+  static deserializeBinaryFromReader(message: ListUsersResponse, reader: jspb.BinaryReader): ListUsersResponse;
+}
+
+export namespace ListUsersResponse {
+  export type AsObject = {
+    usersList: Array<User.AsObject>,
+    totalMatchingUsers: number,
   }
 }
 

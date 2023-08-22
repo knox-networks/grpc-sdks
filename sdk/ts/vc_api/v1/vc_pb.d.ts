@@ -299,6 +299,50 @@ export namespace WaitForCompletionResponse {
   }
 }
 
+export class UpdateVerifiableCredentialStatusRequest extends jspb.Message {
+  getCredentialType(): CredentialTypeMap[keyof CredentialTypeMap];
+  setCredentialType(value: CredentialTypeMap[keyof CredentialTypeMap]): void;
+
+  getDid(): string;
+  setDid(value: string): void;
+
+  getUpdateType(): UpdateVerifiableCredentialStatusTypeMap[keyof UpdateVerifiableCredentialStatusTypeMap];
+  setUpdateType(value: UpdateVerifiableCredentialStatusTypeMap[keyof UpdateVerifiableCredentialStatusTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateVerifiableCredentialStatusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateVerifiableCredentialStatusRequest): UpdateVerifiableCredentialStatusRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateVerifiableCredentialStatusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateVerifiableCredentialStatusRequest;
+  static deserializeBinaryFromReader(message: UpdateVerifiableCredentialStatusRequest, reader: jspb.BinaryReader): UpdateVerifiableCredentialStatusRequest;
+}
+
+export namespace UpdateVerifiableCredentialStatusRequest {
+  export type AsObject = {
+    credentialType: CredentialTypeMap[keyof CredentialTypeMap],
+    did: string,
+    updateType: UpdateVerifiableCredentialStatusTypeMap[keyof UpdateVerifiableCredentialStatusTypeMap],
+  }
+}
+
+export class UpdateVerifiableCredentialStatusResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateVerifiableCredentialStatusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateVerifiableCredentialStatusResponse): UpdateVerifiableCredentialStatusResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateVerifiableCredentialStatusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateVerifiableCredentialStatusResponse;
+  static deserializeBinaryFromReader(message: UpdateVerifiableCredentialStatusResponse, reader: jspb.BinaryReader): UpdateVerifiableCredentialStatusResponse;
+}
+
+export namespace UpdateVerifiableCredentialStatusResponse {
+  export type AsObject = {
+  }
+}
+
 export interface CredentialTypeMap {
   CREDENTIAL_TYPE_UNSPECIFIED: 0;
   CREDENTIAL_TYPE_PERMANENT_RESIDENT_CARD: 1;
@@ -307,4 +351,12 @@ export interface CredentialTypeMap {
 }
 
 export const CredentialType: CredentialTypeMap;
+
+export interface UpdateVerifiableCredentialStatusTypeMap {
+  UPDATE_VERIFIABLE_CREDENTIAL_STATUS_TYPE_UNSPECIFIED: 0;
+  UPDATE_VERIFIABLE_CREDENTIAL_STATUS_TYPE_REVOCATION: 1;
+  UPDATE_VERIFIABLE_CREDENTIAL_STATUS_TYPE_SUSPENSION: 2;
+}
+
+export const UpdateVerifiableCredentialStatusType: UpdateVerifiableCredentialStatusTypeMap;
 

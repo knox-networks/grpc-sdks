@@ -123,15 +123,6 @@ type WalletServicePrepareFundsChange = {
   readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareFundsChangeResponse;
 };
 
-type WalletServicePrepareTwoStepPayment = {
-  readonly methodName: string;
-  readonly service: typeof WalletService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest;
-  readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse;
-};
-
 type WalletServiceGetTransaction = {
   readonly methodName: string;
   readonly service: typeof WalletService;
@@ -168,6 +159,60 @@ type WalletServiceListTransactionSnapshots = {
   readonly responseType: typeof wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse;
 };
 
+type WalletServiceListWalletBalanceDetails = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse;
+};
+
+type WalletServiceListContractTransactions = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.ListContractTransactionsRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.ListContractTransactionsResponse;
+};
+
+type WalletServiceGetContractTransactionDetail = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.GetContractTransactionDetailRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.GetContractTransactionDetailResponse;
+};
+
+type WalletServicePrepareContractTransaction = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareContractTransactionRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareContractTransactionResponse;
+};
+
+type WalletServicePrepareAtomicAssetSwap = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapResponse;
+};
+
+type WalletServicePrepareCrossBorderPayment = {
+  readonly methodName: string;
+  readonly service: typeof WalletService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentRequest;
+  readonly responseType: typeof wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentResponse;
+};
+
 export class WalletService {
   static readonly serviceName: string;
   static readonly Transfer: WalletServiceTransfer;
@@ -183,11 +228,16 @@ export class WalletService {
   static readonly RequestPresentation: WalletServiceRequestPresentation;
   static readonly PrepareSimplePayment: WalletServicePrepareSimplePayment;
   static readonly PrepareFundsChange: WalletServicePrepareFundsChange;
-  static readonly PrepareTwoStepPayment: WalletServicePrepareTwoStepPayment;
   static readonly GetTransaction: WalletServiceGetTransaction;
   static readonly ListTransactions: WalletServiceListTransactions;
   static readonly GetTransactionSnapshot: WalletServiceGetTransactionSnapshot;
   static readonly ListTransactionSnapshots: WalletServiceListTransactionSnapshots;
+  static readonly ListWalletBalanceDetails: WalletServiceListWalletBalanceDetails;
+  static readonly ListContractTransactions: WalletServiceListContractTransactions;
+  static readonly GetContractTransactionDetail: WalletServiceGetContractTransactionDetail;
+  static readonly PrepareContractTransaction: WalletServicePrepareContractTransaction;
+  static readonly PrepareAtomicAssetSwap: WalletServicePrepareAtomicAssetSwap;
+  static readonly PrepareCrossBorderPayment: WalletServicePrepareCrossBorderPayment;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -339,15 +389,6 @@ export class WalletServiceClient {
     requestMessage: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
     callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse|null) => void
   ): UnaryResponse;
-  prepareTwoStepPayment(
-    requestMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse|null) => void
-  ): UnaryResponse;
-  prepareTwoStepPayment(
-    requestMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentRequest,
-    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareTwoStepPaymentResponse|null) => void
-  ): UnaryResponse;
   getTransaction(
     requestMessage: wallet_api_v1_wallet_pb.GetTransactionRequest,
     metadata: grpc.Metadata,
@@ -383,6 +424,60 @@ export class WalletServiceClient {
   listTransactionSnapshots(
     requestMessage: wallet_api_v1_wallet_pb.ListTransactionSnapshotsRequest,
     callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse|null) => void
+  ): UnaryResponse;
+  listWalletBalanceDetails(
+    requestMessage: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse|null) => void
+  ): UnaryResponse;
+  listWalletBalanceDetails(
+    requestMessage: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse|null) => void
+  ): UnaryResponse;
+  listContractTransactions(
+    requestMessage: wallet_api_v1_wallet_pb.ListContractTransactionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListContractTransactionsResponse|null) => void
+  ): UnaryResponse;
+  listContractTransactions(
+    requestMessage: wallet_api_v1_wallet_pb.ListContractTransactionsRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.ListContractTransactionsResponse|null) => void
+  ): UnaryResponse;
+  getContractTransactionDetail(
+    requestMessage: wallet_api_v1_wallet_pb.GetContractTransactionDetailRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.GetContractTransactionDetailResponse|null) => void
+  ): UnaryResponse;
+  getContractTransactionDetail(
+    requestMessage: wallet_api_v1_wallet_pb.GetContractTransactionDetailRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.GetContractTransactionDetailResponse|null) => void
+  ): UnaryResponse;
+  prepareContractTransaction(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareContractTransactionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareContractTransactionResponse|null) => void
+  ): UnaryResponse;
+  prepareContractTransaction(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareContractTransactionRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareContractTransactionResponse|null) => void
+  ): UnaryResponse;
+  prepareAtomicAssetSwap(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapResponse|null) => void
+  ): UnaryResponse;
+  prepareAtomicAssetSwap(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareAtomicAssetSwapResponse|null) => void
+  ): UnaryResponse;
+  prepareCrossBorderPayment(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentResponse|null) => void
+  ): UnaryResponse;
+  prepareCrossBorderPayment(
+    requestMessage: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentRequest,
+    callback: (error: ServiceError|null, responseMessage: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentResponse|null) => void
   ): UnaryResponse;
 }
 

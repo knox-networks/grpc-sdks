@@ -2265,7 +2265,8 @@ proto.registry_api.v1.RevokeRequest.prototype.toObject = function(opt_includeIns
  */
 proto.registry_api.v1.RevokeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    did: jspb.Message.getFieldWithDefault(msg, 1, "")
+    did: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    document: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2306,6 +2307,10 @@ proto.registry_api.v1.RevokeRequest.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setDid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDocument(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2342,6 +2347,13 @@ proto.registry_api.v1.RevokeRequest.serializeBinaryToWriter = function(message, 
       f
     );
   }
+  f = message.getDocument();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -2360,6 +2372,24 @@ proto.registry_api.v1.RevokeRequest.prototype.getDid = function() {
  */
 proto.registry_api.v1.RevokeRequest.prototype.setDid = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string document = 2;
+ * @return {string}
+ */
+proto.registry_api.v1.RevokeRequest.prototype.getDocument = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.registry_api.v1.RevokeRequest} returns this
+ */
+proto.registry_api.v1.RevokeRequest.prototype.setDocument = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3198,7 +3228,7 @@ proto.registry_api.v1.CreateCredentialIssuerResponse.prototype.toObject = functi
  */
 proto.registry_api.v1.CreateCredentialIssuerResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    ok: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -3235,6 +3265,10 @@ proto.registry_api.v1.CreateCredentialIssuerResponse.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOk(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3264,6 +3298,31 @@ proto.registry_api.v1.CreateCredentialIssuerResponse.prototype.serializeBinary =
  */
 proto.registry_api.v1.CreateCredentialIssuerResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOk();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool ok = 1;
+ * @return {boolean}
+ */
+proto.registry_api.v1.CreateCredentialIssuerResponse.prototype.getOk = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.registry_api.v1.CreateCredentialIssuerResponse} returns this
+ */
+proto.registry_api.v1.CreateCredentialIssuerResponse.prototype.setOk = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -3731,7 +3790,7 @@ proto.registry_api.v1.UpdateCredentialIssuerResponse.prototype.toObject = functi
  */
 proto.registry_api.v1.UpdateCredentialIssuerResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    ok: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -3768,6 +3827,10 @@ proto.registry_api.v1.UpdateCredentialIssuerResponse.deserializeBinaryFromReader
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOk(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3797,6 +3860,31 @@ proto.registry_api.v1.UpdateCredentialIssuerResponse.prototype.serializeBinary =
  */
 proto.registry_api.v1.UpdateCredentialIssuerResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOk();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool ok = 1;
+ * @return {boolean}
+ */
+proto.registry_api.v1.UpdateCredentialIssuerResponse.prototype.getOk = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.registry_api.v1.UpdateCredentialIssuerResponse} returns this
+ */
+proto.registry_api.v1.UpdateCredentialIssuerResponse.prototype.setOk = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 

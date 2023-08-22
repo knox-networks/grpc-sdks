@@ -84,6 +84,9 @@ export class AuthenticationRequest extends jspb.Message {
   getVerifier(): DynamicVerifier | undefined;
   setVerifier(value?: DynamicVerifier): void;
 
+  getConnectionId(): string;
+  setConnectionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticationRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticationRequest): AuthenticationRequest.AsObject;
@@ -97,6 +100,7 @@ export class AuthenticationRequest extends jspb.Message {
 export namespace AuthenticationRequest {
   export type AsObject = {
     verifier?: DynamicVerifier.AsObject,
+    connectionId: string,
   }
 }
 
@@ -258,28 +262,6 @@ export namespace AuthenticationSignature {
   export type AsObject = {
     verifier?: DynamicVerifier.AsObject,
     signature: Uint8Array | string,
-  }
-}
-
-export class AuthorizedSignatureRequest extends jspb.Message {
-  getPromissoryFile(): Uint8Array | string;
-  getPromissoryFile_asU8(): Uint8Array;
-  getPromissoryFile_asB64(): string;
-  setPromissoryFile(value: Uint8Array | string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AuthorizedSignatureRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: AuthorizedSignatureRequest): AuthorizedSignatureRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AuthorizedSignatureRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AuthorizedSignatureRequest;
-  static deserializeBinaryFromReader(message: AuthorizedSignatureRequest, reader: jspb.BinaryReader): AuthorizedSignatureRequest;
-}
-
-export namespace AuthorizedSignatureRequest {
-  export type AsObject = {
-    promissoryFile: Uint8Array | string,
   }
 }
 
@@ -743,6 +725,16 @@ export class FilterItem extends jspb.Message {
   getBoolValue(): boolean;
   setBoolValue(value: boolean): void;
 
+  hasRfc3339DatetimeValue(): boolean;
+  clearRfc3339DatetimeValue(): void;
+  getRfc3339DatetimeValue(): string;
+  setRfc3339DatetimeValue(value: string): void;
+
+  hasUuidValue(): boolean;
+  clearUuidValue(): void;
+  getUuidValue(): string;
+  setUuidValue(value: string): void;
+
   getValueCase(): FilterItem.ValueCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FilterItem.AsObject;
@@ -761,6 +753,8 @@ export namespace FilterItem {
     strValue: string,
     intValue: number,
     boolValue: boolean,
+    rfc3339DatetimeValue: string,
+    uuidValue: string,
   }
 
   export interface FilterOperatorMap {
@@ -782,6 +776,8 @@ export namespace FilterItem {
     STR_VALUE = 3,
     INT_VALUE = 4,
     BOOL_VALUE = 5,
+    RFC3339_DATETIME_VALUE = 6,
+    UUID_VALUE = 7,
   }
 }
 
@@ -808,6 +804,102 @@ export namespace Filter {
   export type AsObject = {
     filtersList: Array<FilterItem.AsObject>,
     operator: LogicalOperatorMap[keyof LogicalOperatorMap],
+  }
+}
+
+export class SortItem extends jspb.Message {
+  getField(): string;
+  setField(value: string): void;
+
+  getDirection(): SortDirectionMap[keyof SortDirectionMap];
+  setDirection(value: SortDirectionMap[keyof SortDirectionMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SortItem.AsObject;
+  static toObject(includeInstance: boolean, msg: SortItem): SortItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SortItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SortItem;
+  static deserializeBinaryFromReader(message: SortItem, reader: jspb.BinaryReader): SortItem;
+}
+
+export namespace SortItem {
+  export type AsObject = {
+    field: string,
+    direction: SortDirectionMap[keyof SortDirectionMap],
+  }
+}
+
+export class SortBy extends jspb.Message {
+  clearItemsList(): void;
+  getItemsList(): Array<SortItem>;
+  setItemsList(value: Array<SortItem>): void;
+  addItems(value?: SortItem, index?: number): SortItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SortBy.AsObject;
+  static toObject(includeInstance: boolean, msg: SortBy): SortBy.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SortBy, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SortBy;
+  static deserializeBinaryFromReader(message: SortBy, reader: jspb.BinaryReader): SortBy;
+}
+
+export namespace SortBy {
+  export type AsObject = {
+    itemsList: Array<SortItem.AsObject>,
+  }
+}
+
+export class AssetAuthority extends jspb.Message {
+  getVerifier(): string;
+  setVerifier(value: string): void;
+
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssetAuthority.AsObject;
+  static toObject(includeInstance: boolean, msg: AssetAuthority): AssetAuthority.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssetAuthority, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssetAuthority;
+  static deserializeBinaryFromReader(message: AssetAuthority, reader: jspb.BinaryReader): AssetAuthority;
+}
+
+export namespace AssetAuthority {
+  export type AsObject = {
+    verifier: string,
+    url: string,
+  }
+}
+
+export class AssetDenomination extends jspb.Message {
+  clearDenominationsList(): void;
+  getDenominationsList(): Array<number>;
+  setDenominationsList(value: Array<number>): void;
+  addDenominations(value: number, index?: number): number;
+
+  getPrecision(): number;
+  setPrecision(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssetDenomination.AsObject;
+  static toObject(includeInstance: boolean, msg: AssetDenomination): AssetDenomination.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssetDenomination, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssetDenomination;
+  static deserializeBinaryFromReader(message: AssetDenomination, reader: jspb.BinaryReader): AssetDenomination;
+}
+
+export namespace AssetDenomination {
+  export type AsObject = {
+    denominationsList: Array<number>,
+    precision: number,
   }
 }
 
@@ -856,4 +948,12 @@ export interface LogicalOperatorMap {
 }
 
 export const LogicalOperator: LogicalOperatorMap;
+
+export interface SortDirectionMap {
+  SORT_DIRECTION_UNSPECIFIED: 0;
+  SORT_DIRECTION_ASCENDING: 1;
+  SORT_DIRECTION_DESCENDING: 2;
+}
+
+export const SortDirection: SortDirectionMap;
 

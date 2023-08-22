@@ -248,6 +248,9 @@ export class RevokeRequest extends jspb.Message {
   getDid(): string;
   setDid(value: string): void;
 
+  getDocument(): string;
+  setDocument(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RevokeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RevokeRequest): RevokeRequest.AsObject;
@@ -261,6 +264,7 @@ export class RevokeRequest extends jspb.Message {
 export namespace RevokeRequest {
   export type AsObject = {
     did: string,
+    document: string,
   }
 }
 
@@ -381,6 +385,9 @@ export namespace CreateCredentialIssuerRequest {
 }
 
 export class CreateCredentialIssuerResponse extends jspb.Message {
+  getOk(): boolean;
+  setOk(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateCredentialIssuerResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateCredentialIssuerResponse): CreateCredentialIssuerResponse.AsObject;
@@ -393,6 +400,7 @@ export class CreateCredentialIssuerResponse extends jspb.Message {
 
 export namespace CreateCredentialIssuerResponse {
   export type AsObject = {
+    ok: boolean,
   }
 }
 
@@ -461,6 +469,9 @@ export namespace UpdateCredentialIssuerRequest {
 }
 
 export class UpdateCredentialIssuerResponse extends jspb.Message {
+  getOk(): boolean;
+  setOk(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateCredentialIssuerResponse.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateCredentialIssuerResponse): UpdateCredentialIssuerResponse.AsObject;
@@ -473,6 +484,7 @@ export class UpdateCredentialIssuerResponse extends jspb.Message {
 
 export namespace UpdateCredentialIssuerResponse {
   export type AsObject = {
+    ok: boolean,
   }
 }
 

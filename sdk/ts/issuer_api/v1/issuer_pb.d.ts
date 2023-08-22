@@ -32,6 +32,9 @@ export class IssueRequest extends jspb.Message {
   getDistribution(): common_v1_common_pb.Distribution | undefined;
   setDistribution(value?: common_v1_common_pb.Distribution): void;
 
+  getSession(): string;
+  setSession(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IssueRequest.AsObject;
   static toObject(includeInstance: boolean, msg: IssueRequest): IssueRequest.AsObject;
@@ -49,6 +52,7 @@ export namespace IssueRequest {
     authority?: common_v1_common_pb.DynamicVerifier.AsObject,
     recipient?: common_v1_common_pb.DynamicVerifier.AsObject,
     distribution?: common_v1_common_pb.Distribution.AsObject,
+    session: string,
   }
 }
 
@@ -100,6 +104,9 @@ export class AuthenticateResponse extends jspb.Message {
   getChallenge_asB64(): string;
   setChallenge(value: Uint8Array | string): void;
 
+  getSession(): string;
+  setSession(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuthenticateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: AuthenticateResponse): AuthenticateResponse.AsObject;
@@ -113,6 +120,7 @@ export class AuthenticateResponse extends jspb.Message {
 export namespace AuthenticateResponse {
   export type AsObject = {
     challenge: Uint8Array | string,
+    session: string,
   }
 }
 
@@ -185,6 +193,102 @@ export class SetRoleResponse extends jspb.Message {
 }
 
 export namespace SetRoleResponse {
+  export type AsObject = {
+  }
+}
+
+export class AssetDenomination extends jspb.Message {
+  clearDenominationsList(): void;
+  getDenominationsList(): Array<number>;
+  setDenominationsList(value: Array<number>): void;
+  addDenominations(value: number, index?: number): number;
+
+  getPrecision(): number;
+  setPrecision(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssetDenomination.AsObject;
+  static toObject(includeInstance: boolean, msg: AssetDenomination): AssetDenomination.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssetDenomination, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssetDenomination;
+  static deserializeBinaryFromReader(message: AssetDenomination, reader: jspb.BinaryReader): AssetDenomination;
+}
+
+export namespace AssetDenomination {
+  export type AsObject = {
+    denominationsList: Array<number>,
+    precision: number,
+  }
+}
+
+export class SetAssetDenominationsRequest extends jspb.Message {
+  getDenominationsMap(): jspb.Map<string, AssetDenomination>;
+  clearDenominationsMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAssetDenominationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAssetDenominationsRequest): SetAssetDenominationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAssetDenominationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAssetDenominationsRequest;
+  static deserializeBinaryFromReader(message: SetAssetDenominationsRequest, reader: jspb.BinaryReader): SetAssetDenominationsRequest;
+}
+
+export namespace SetAssetDenominationsRequest {
+  export type AsObject = {
+    denominationsMap: Array<[string, AssetDenomination.AsObject]>,
+  }
+}
+
+export class SetAssetDenominationsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAssetDenominationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAssetDenominationsResponse): SetAssetDenominationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAssetDenominationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAssetDenominationsResponse;
+  static deserializeBinaryFromReader(message: SetAssetDenominationsResponse, reader: jspb.BinaryReader): SetAssetDenominationsResponse;
+}
+
+export namespace SetAssetDenominationsResponse {
+  export type AsObject = {
+  }
+}
+
+export class SetAssetAuthoritiesRequest extends jspb.Message {
+  getAuthoritiesMap(): jspb.Map<string, common_v1_common_pb.AssetAuthority>;
+  clearAuthoritiesMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAssetAuthoritiesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAssetAuthoritiesRequest): SetAssetAuthoritiesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAssetAuthoritiesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAssetAuthoritiesRequest;
+  static deserializeBinaryFromReader(message: SetAssetAuthoritiesRequest, reader: jspb.BinaryReader): SetAssetAuthoritiesRequest;
+}
+
+export namespace SetAssetAuthoritiesRequest {
+  export type AsObject = {
+    authoritiesMap: Array<[string, common_v1_common_pb.AssetAuthority.AsObject]>,
+  }
+}
+
+export class SetAssetAuthoritiesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAssetAuthoritiesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAssetAuthoritiesResponse): SetAssetAuthoritiesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAssetAuthoritiesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAssetAuthoritiesResponse;
+  static deserializeBinaryFromReader(message: SetAssetAuthoritiesResponse, reader: jspb.BinaryReader): SetAssetAuthoritiesResponse;
+}
+
+export namespace SetAssetAuthoritiesResponse {
   export type AsObject = {
   }
 }

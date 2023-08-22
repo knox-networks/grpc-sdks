@@ -60,6 +60,15 @@ type WebhookManagerServicePing = {
   readonly responseType: typeof webhook_api_v1_webhook_pb.PingResponse;
 };
 
+type WebhookManagerServiceListDeliveryHistory = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.ListDeliveryHistoryRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse;
+};
+
 export class WebhookManagerService {
   static readonly serviceName: string;
   static readonly CreateWebhook: WebhookManagerServiceCreateWebhook;
@@ -68,6 +77,7 @@ export class WebhookManagerService {
   static readonly ListEvents: WebhookManagerServiceListEvents;
   static readonly RetryEvent: WebhookManagerServiceRetryEvent;
   static readonly Ping: WebhookManagerServicePing;
+  static readonly ListDeliveryHistory: WebhookManagerServiceListDeliveryHistory;
 }
 
 type EventConsumerServiceEvent = {
@@ -169,6 +179,15 @@ export class WebhookManagerServiceClient {
   ping(
     requestMessage: webhook_api_v1_webhook_pb.PingRequest,
     callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.PingResponse|null) => void
+  ): UnaryResponse;
+  listDeliveryHistory(
+    requestMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse|null) => void
+  ): UnaryResponse;
+  listDeliveryHistory(
+    requestMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse|null) => void
   ): UnaryResponse;
 }
 

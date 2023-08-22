@@ -19,16 +19,24 @@ var global = Function('return this')();
 
 var common_v1_common_pb = require('../../common/v1/common_pb.js');
 goog.object.extend(proto, common_v1_common_pb);
+var common_v1_packet_pb = require('../../common/v1/packet_pb.js');
+goog.object.extend(proto, common_v1_packet_pb);
 goog.exportSymbol('proto.wallet_api.v1.AddCredentialRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.AddCredentialResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.AssociateWalletRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.AssociateWalletResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.BalanceDetail', null, global);
+goog.exportSymbol('proto.wallet_api.v1.BalanceDetail.Kind', null, global);
+goog.exportSymbol('proto.wallet_api.v1.ContractSummary', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateAndAssociateWalletRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateAndAssociateWalletResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateOwnerRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateOwnerResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateWalletRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.CreateWalletResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.GetContractTransactionDetailRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.GetContractTransactionDetailResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry', null, global);
 goog.exportSymbol('proto.wallet_api.v1.GetTransactionRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.GetTransactionResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.GetTransactionSnapshotRequest', null, global);
@@ -38,78 +46,43 @@ goog.exportSymbol('proto.wallet_api.v1.ListAssetFilesResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListAssetFilesResponse.Fund', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListAssetFilesResponse.Notary', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListAssetFilesResponse.Promissory', null, global);
+goog.exportSymbol('proto.wallet_api.v1.ListContractTransactionsRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.ListContractTransactionsResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListCredentialsRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListCredentialsResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListTransactionSnapshotsRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListTransactionSnapshotsResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListTransactionsRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListTransactionsResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.ListWalletBalanceDetailsRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.ListWalletBalanceDetailsResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListWalletBalancesRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListWalletBalancesResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListWalletsRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListWalletsResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.ListWalletsResponse.Wallet', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareAtomicAssetSwapRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareAtomicAssetSwapResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareContractTransactionRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareContractTransactionResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareContractTransactionResponse.Status', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareCrossBorderPaymentRequest', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareCrossBorderPaymentResponse', null, global);
+goog.exportSymbol('proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareFundsChangeRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareFundsChangeResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareFundsChangeResponse.Status', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareSimplePaymentRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareSimplePaymentResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.PrepareSimplePaymentResponse.Status', null, global);
-goog.exportSymbol('proto.wallet_api.v1.PrepareTwoStepPaymentRequest', null, global);
-goog.exportSymbol('proto.wallet_api.v1.PrepareTwoStepPaymentResponse', null, global);
-goog.exportSymbol('proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status', null, global);
 goog.exportSymbol('proto.wallet_api.v1.RedeemRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.RedeemResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.RequestPresentationRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.RequestPresentationResponse', null, global);
-goog.exportSymbol('proto.wallet_api.v1.SortBy', null, global);
-goog.exportSymbol('proto.wallet_api.v1.SortDirection', null, global);
-goog.exportSymbol('proto.wallet_api.v1.SortItem', null, global);
 goog.exportSymbol('proto.wallet_api.v1.TransferRequest', null, global);
 goog.exportSymbol('proto.wallet_api.v1.TransferResponse', null, global);
 goog.exportSymbol('proto.wallet_api.v1.WalletBalance', null, global);
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.wallet_api.v1.SortItem = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.wallet_api.v1.SortItem, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.wallet_api.v1.SortItem.displayName = 'proto.wallet_api.v1.SortItem';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.wallet_api.v1.SortBy = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.SortBy.repeatedFields_, null);
-};
-goog.inherits(proto.wallet_api.v1.SortBy, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.wallet_api.v1.SortBy.displayName = 'proto.wallet_api.v1.SortBy';
-}
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -813,16 +786,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.wallet_api.v1.PrepareContractTransactionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.PrepareContractTransactionRequest.repeatedFields_, null);
 };
-goog.inherits(proto.wallet_api.v1.PrepareTwoStepPaymentRequest, jspb.Message);
+goog.inherits(proto.wallet_api.v1.PrepareContractTransactionRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.wallet_api.v1.PrepareTwoStepPaymentRequest.displayName = 'proto.wallet_api.v1.PrepareTwoStepPaymentRequest';
+  proto.wallet_api.v1.PrepareContractTransactionRequest.displayName = 'proto.wallet_api.v1.PrepareContractTransactionRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -834,16 +807,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse = function(opt_data) {
+proto.wallet_api.v1.PrepareContractTransactionResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.wallet_api.v1.PrepareTwoStepPaymentResponse, jspb.Message);
+goog.inherits(proto.wallet_api.v1.PrepareContractTransactionResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.wallet_api.v1.PrepareTwoStepPaymentResponse.displayName = 'proto.wallet_api.v1.PrepareTwoStepPaymentResponse';
+  proto.wallet_api.v1.PrepareContractTransactionResponse.displayName = 'proto.wallet_api.v1.PrepareContractTransactionResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -939,6 +912,69 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.wallet_api.v1.ListContractTransactionsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.wallet_api.v1.ListContractTransactionsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.ListContractTransactionsRequest.displayName = 'proto.wallet_api.v1.ListContractTransactionsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.wallet_api.v1.ContractSummary = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.ContractSummary.repeatedFields_, null);
+};
+goog.inherits(proto.wallet_api.v1.ContractSummary, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.ContractSummary.displayName = 'proto.wallet_api.v1.ContractSummary';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.ListContractTransactionsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.wallet_api.v1.ListContractTransactionsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.ListContractTransactionsResponse.displayName = 'proto.wallet_api.v1.ListContractTransactionsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.wallet_api.v1.GetTransactionSnapshotRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1013,326 +1049,216 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.wallet_api.v1.ListTransactionSnapshotsResponse.displayName = 'proto.wallet_api.v1.ListTransactionSnapshotsResponse';
 }
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortItem.prototype.toObject = function(opt_includeInstance) {
-  return proto.wallet_api.v1.SortItem.toObject(opt_includeInstance, this);
+proto.wallet_api.v1.BalanceDetail = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.wallet_api.v1.SortItem} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.wallet_api.v1.SortItem.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    field: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    direction: jspb.Message.getFieldWithDefault(msg, 2, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+goog.inherits(proto.wallet_api.v1.BalanceDetail, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.BalanceDetail.displayName = 'proto.wallet_api.v1.BalanceDetail';
 }
-
-
 /**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.wallet_api.v1.SortItem}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortItem.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.wallet_api.v1.SortItem;
-  return proto.wallet_api.v1.SortItem.deserializeBinaryFromReader(msg, reader);
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.wallet_api.v1.SortItem} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.wallet_api.v1.SortItem}
- */
-proto.wallet_api.v1.SortItem.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setField(value);
-      break;
-    case 2:
-      var value = /** @type {!proto.wallet_api.v1.SortDirection} */ (reader.readEnum());
-      msg.setDirection(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.wallet_api.v1.SortItem.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.wallet_api.v1.SortItem.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.wallet_api.v1.SortItem} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.wallet_api.v1.SortItem.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getField();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getDirection();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string field = 1;
- * @return {string}
- */
-proto.wallet_api.v1.SortItem.prototype.getField = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.wallet_api.v1.SortItem} returns this
- */
-proto.wallet_api.v1.SortItem.prototype.setField = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional SortDirection direction = 2;
- * @return {!proto.wallet_api.v1.SortDirection}
- */
-proto.wallet_api.v1.SortItem.prototype.getDirection = function() {
-  return /** @type {!proto.wallet_api.v1.SortDirection} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {!proto.wallet_api.v1.SortDirection} value
- * @return {!proto.wallet_api.v1.SortItem} returns this
- */
-proto.wallet_api.v1.SortItem.prototype.setDirection = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.wallet_api.v1.SortBy.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.wallet_api.v1.SortBy.prototype.toObject = function(opt_includeInstance) {
-  return proto.wallet_api.v1.SortBy.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.wallet_api.v1.SortBy} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.wallet_api.v1.SortBy.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.wallet_api.v1.SortItem.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+goog.inherits(proto.wallet_api.v1.ListWalletBalanceDetailsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.ListWalletBalanceDetailsRequest.displayName = 'proto.wallet_api.v1.ListWalletBalanceDetailsRequest';
 }
-
-
 /**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.wallet_api.v1.SortBy}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.wallet_api.v1.SortBy;
-  return proto.wallet_api.v1.SortBy.deserializeBinaryFromReader(msg, reader);
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.ListWalletBalanceDetailsResponse.repeatedFields_, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.ListWalletBalanceDetailsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.ListWalletBalanceDetailsResponse.displayName = 'proto.wallet_api.v1.ListWalletBalanceDetailsResponse';
+}
 /**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.wallet_api.v1.SortBy} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.wallet_api.v1.SortBy}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.wallet_api.v1.SortItem;
-      reader.readMessage(value,proto.wallet_api.v1.SortItem.deserializeBinaryFromReader);
-      msg.addItems(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
+proto.wallet_api.v1.GetContractTransactionDetailRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.GetContractTransactionDetailRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.GetContractTransactionDetailRequest.displayName = 'proto.wallet_api.v1.GetContractTransactionDetailRequest';
+}
 /**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.wallet_api.v1.SortBy.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
+proto.wallet_api.v1.GetContractTransactionDetailResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.wallet_api.v1.GetContractTransactionDetailResponse.repeatedFields_, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.GetContractTransactionDetailResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.GetContractTransactionDetailResponse.displayName = 'proto.wallet_api.v1.GetContractTransactionDetailResponse';
+}
 /**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.wallet_api.v1.SortBy} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getItemsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.wallet_api.v1.SortItem.serializeBinaryToWriter
-    );
-  }
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.displayName = 'proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry';
+}
 /**
- * repeated SortItem items = 1;
- * @return {!Array<!proto.wallet_api.v1.SortItem>}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.wallet_api.v1.SortItem>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.wallet_api.v1.SortItem, 1));
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.PrepareAtomicAssetSwapRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.displayName = 'proto.wallet_api.v1.PrepareAtomicAssetSwapRequest';
+}
 /**
- * @param {!Array<!proto.wallet_api.v1.SortItem>} value
- * @return {!proto.wallet_api.v1.SortBy} returns this
-*/
-proto.wallet_api.v1.SortBy.prototype.setItemsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.wallet_api.v1.SortItem=} opt_value
- * @param {number=} opt_index
- * @return {!proto.wallet_api.v1.SortItem}
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.wallet_api.v1.SortItem, opt_index);
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.PrepareAtomicAssetSwapResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.displayName = 'proto.wallet_api.v1.PrepareAtomicAssetSwapResponse';
+}
 /**
- * Clears the list making it empty but non-null.
- * @return {!proto.wallet_api.v1.SortBy} returns this
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
  */
-proto.wallet_api.v1.SortBy.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-
-
+goog.inherits(proto.wallet_api.v1.PrepareCrossBorderPaymentRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.displayName = 'proto.wallet_api.v1.PrepareCrossBorderPaymentRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.wallet_api.v1.PrepareCrossBorderPaymentResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.displayName = 'proto.wallet_api.v1.PrepareCrossBorderPaymentResponse';
+}
 
 
 
@@ -2389,7 +2315,8 @@ proto.wallet_api.v1.ListWalletsRequest.toObject = function(includeInstance, msg)
     page: jspb.Message.getFieldWithDefault(msg, 1, 0),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
     apiKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f)
+    filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f),
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2442,6 +2369,11 @@ proto.wallet_api.v1.ListWalletsRequest.deserializeBinaryFromReader = function(ms
       var value = new common_v1_common_pb.Filter;
       reader.readMessage(value,common_v1_common_pb.Filter.deserializeBinaryFromReader);
       msg.setFilters(value);
+      break;
+    case 5:
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
+      msg.setSortBy(value);
       break;
     default:
       reader.skipField();
@@ -2499,6 +2431,14 @@ proto.wallet_api.v1.ListWalletsRequest.serializeBinaryToWriter = function(messag
       4,
       f,
       common_v1_common_pb.Filter.serializeBinaryToWriter
+    );
+  }
+  f = message.getSortBy();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
     );
   }
 };
@@ -2592,6 +2532,43 @@ proto.wallet_api.v1.ListWalletsRequest.prototype.clearFilters = function() {
  */
 proto.wallet_api.v1.ListWalletsRequest.prototype.hasFilters = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional common.SortBy sort_by = 5;
+ * @return {?proto.common.SortBy}
+ */
+proto.wallet_api.v1.ListWalletsRequest.prototype.getSortBy = function() {
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 5));
+};
+
+
+/**
+ * @param {?proto.common.SortBy|undefined} value
+ * @return {!proto.wallet_api.v1.ListWalletsRequest} returns this
+*/
+proto.wallet_api.v1.ListWalletsRequest.prototype.setSortBy = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListWalletsRequest} returns this
+ */
+proto.wallet_api.v1.ListWalletsRequest.prototype.clearSortBy = function() {
+  return this.setSortBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListWalletsRequest.prototype.hasSortBy = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -3038,7 +3015,8 @@ proto.wallet_api.v1.ListWalletBalancesRequest.prototype.toObject = function(opt_
 proto.wallet_api.v1.ListWalletBalancesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 2, "")
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3083,6 +3061,11 @@ proto.wallet_api.v1.ListWalletBalancesRequest.deserializeBinaryFromReader = func
       var value = /** @type {string} */ (reader.readString());
       msg.setApiKey(value);
       break;
+    case 3:
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
+      msg.setSortBy(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3126,6 +3109,14 @@ proto.wallet_api.v1.ListWalletBalancesRequest.serializeBinaryToWriter = function
       f
     );
   }
+  f = message.getSortBy();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -3162,6 +3153,43 @@ proto.wallet_api.v1.ListWalletBalancesRequest.prototype.getApiKey = function() {
  */
 proto.wallet_api.v1.ListWalletBalancesRequest.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional common.SortBy sort_by = 3;
+ * @return {?proto.common.SortBy}
+ */
+proto.wallet_api.v1.ListWalletBalancesRequest.prototype.getSortBy = function() {
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 3));
+};
+
+
+/**
+ * @param {?proto.common.SortBy|undefined} value
+ * @return {!proto.wallet_api.v1.ListWalletBalancesRequest} returns this
+*/
+proto.wallet_api.v1.ListWalletBalancesRequest.prototype.setSortBy = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListWalletBalancesRequest} returns this
+ */
+proto.wallet_api.v1.ListWalletBalancesRequest.prototype.clearSortBy = function() {
+  return this.setSortBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListWalletBalancesRequest.prototype.hasSortBy = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -3543,7 +3571,7 @@ proto.wallet_api.v1.ListAssetFilesRequest.toObject = function(includeInstance, m
     walletId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     apiKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
     filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f),
-    sortBy: (f = msg.getSortBy()) && proto.wallet_api.v1.SortBy.toObject(includeInstance, f)
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3602,8 +3630,8 @@ proto.wallet_api.v1.ListAssetFilesRequest.deserializeBinaryFromReader = function
       msg.setFilters(value);
       break;
     case 6:
-      var value = new proto.wallet_api.v1.SortBy;
-      reader.readMessage(value,proto.wallet_api.v1.SortBy.deserializeBinaryFromReader);
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
       msg.setSortBy(value);
       break;
     default:
@@ -3676,7 +3704,7 @@ proto.wallet_api.v1.ListAssetFilesRequest.serializeBinaryToWriter = function(mes
     writer.writeMessage(
       6,
       f,
-      proto.wallet_api.v1.SortBy.serializeBinaryToWriter
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
     );
   }
 };
@@ -3792,17 +3820,17 @@ proto.wallet_api.v1.ListAssetFilesRequest.prototype.hasFilters = function() {
 
 
 /**
- * optional SortBy sort_by = 6;
- * @return {?proto.wallet_api.v1.SortBy}
+ * optional common.SortBy sort_by = 6;
+ * @return {?proto.common.SortBy}
  */
 proto.wallet_api.v1.ListAssetFilesRequest.prototype.getSortBy = function() {
-  return /** @type{?proto.wallet_api.v1.SortBy} */ (
-    jspb.Message.getWrapperField(this, proto.wallet_api.v1.SortBy, 6));
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 6));
 };
 
 
 /**
- * @param {?proto.wallet_api.v1.SortBy|undefined} value
+ * @param {?proto.common.SortBy|undefined} value
  * @return {!proto.wallet_api.v1.ListAssetFilesRequest} returns this
 */
 proto.wallet_api.v1.ListAssetFilesRequest.prototype.setSortBy = function(value) {
@@ -4717,7 +4745,8 @@ proto.wallet_api.v1.ListAssetFilesResponse.Fund.prototype.toObject = function(op
 proto.wallet_api.v1.ListAssetFilesResponse.Fund.toObject = function(includeInstance, msg) {
   var f, obj = {
     walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    promissory: (f = msg.getPromissory()) && proto.wallet_api.v1.ListAssetFilesResponse.Promissory.toObject(includeInstance, f)
+    promissory: (f = msg.getPromissory()) && proto.wallet_api.v1.ListAssetFilesResponse.Promissory.toObject(includeInstance, f),
+    reserved: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -4763,6 +4792,10 @@ proto.wallet_api.v1.ListAssetFilesResponse.Fund.deserializeBinaryFromReader = fu
       reader.readMessage(value,proto.wallet_api.v1.ListAssetFilesResponse.Promissory.deserializeBinaryFromReader);
       msg.setPromissory(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReserved(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4805,6 +4838,13 @@ proto.wallet_api.v1.ListAssetFilesResponse.Fund.serializeBinaryToWriter = functi
       2,
       f,
       proto.wallet_api.v1.ListAssetFilesResponse.Promissory.serializeBinaryToWriter
+    );
+  }
+  f = message.getReserved();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
     );
   }
 };
@@ -4862,6 +4902,24 @@ proto.wallet_api.v1.ListAssetFilesResponse.Fund.prototype.clearPromissory = func
  */
 proto.wallet_api.v1.ListAssetFilesResponse.Fund.prototype.hasPromissory = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool reserved = 3;
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListAssetFilesResponse.Fund.prototype.getReserved = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.wallet_api.v1.ListAssetFilesResponse.Fund} returns this
+ */
+proto.wallet_api.v1.ListAssetFilesResponse.Fund.prototype.setReserved = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -5327,7 +5385,9 @@ proto.wallet_api.v1.ListCredentialsRequest.toObject = function(includeInstance, 
     page: jspb.Message.getFieldWithDefault(msg, 1, 0),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
     walletId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 4, "")
+    apiKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f),
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5379,6 +5439,16 @@ proto.wallet_api.v1.ListCredentialsRequest.deserializeBinaryFromReader = functio
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setApiKey(value);
+      break;
+    case 5:
+      var value = new common_v1_common_pb.Filter;
+      reader.readMessage(value,common_v1_common_pb.Filter.deserializeBinaryFromReader);
+      msg.setFilters(value);
+      break;
+    case 6:
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
+      msg.setSortBy(value);
       break;
     default:
       reader.skipField();
@@ -5435,6 +5505,22 @@ proto.wallet_api.v1.ListCredentialsRequest.serializeBinaryToWriter = function(me
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getFilters();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_v1_common_pb.Filter.serializeBinaryToWriter
+    );
+  }
+  f = message.getSortBy();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
     );
   }
 };
@@ -5509,6 +5595,80 @@ proto.wallet_api.v1.ListCredentialsRequest.prototype.getApiKey = function() {
  */
 proto.wallet_api.v1.ListCredentialsRequest.prototype.setApiKey = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional common.Filter filters = 5;
+ * @return {?proto.common.Filter}
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.getFilters = function() {
+  return /** @type{?proto.common.Filter} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Filter, 5));
+};
+
+
+/**
+ * @param {?proto.common.Filter|undefined} value
+ * @return {!proto.wallet_api.v1.ListCredentialsRequest} returns this
+*/
+proto.wallet_api.v1.ListCredentialsRequest.prototype.setFilters = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListCredentialsRequest} returns this
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.clearFilters = function() {
+  return this.setFilters(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.hasFilters = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional common.SortBy sort_by = 6;
+ * @return {?proto.common.SortBy}
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.getSortBy = function() {
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 6));
+};
+
+
+/**
+ * @param {?proto.common.SortBy|undefined} value
+ * @return {!proto.wallet_api.v1.ListCredentialsRequest} returns this
+*/
+proto.wallet_api.v1.ListCredentialsRequest.prototype.setSortBy = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListCredentialsRequest} returns this
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.clearSortBy = function() {
+  return this.setSortBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListCredentialsRequest.prototype.hasSortBy = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -7951,6 +8111,13 @@ proto.wallet_api.v1.PrepareFundsChangeResponse.prototype.setUetr = function(valu
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.repeatedFields_ = [3,4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -7966,8 +8133,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.wallet_api.v1.PrepareTwoStepPaymentRequest.toObject(opt_includeInstance, this);
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareContractTransactionRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7976,17 +8143,19 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} msg The msg instance to transform.
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.toObject = function(includeInstance, msg) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    amount: (f = msg.getAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
-    recipient: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    userReference: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    walletId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    apiKey: jspb.Message.getFieldWithDefault(msg, 5, "")
+    apiKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    commitmentsList: jspb.Message.toObjectList(msg.getCommitmentsList(),
+    common_v1_packet_pb.Commitment.toObject, includeInstance),
+    conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
+    common_v1_packet_pb.Condition.toObject, includeInstance),
+    memo: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -8000,23 +8169,23 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.toObject = function(includeInst
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest}
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.deserializeBinary = function(bytes) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.wallet_api.v1.PrepareTwoStepPaymentRequest;
-  return proto.wallet_api.v1.PrepareTwoStepPaymentRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.wallet_api.v1.PrepareContractTransactionRequest;
+  return proto.wallet_api.v1.PrepareContractTransactionRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} msg The message object to deserialize into.
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest}
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8024,25 +8193,26 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new common_v1_common_pb.Amount;
-      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
-      msg.setAmount(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRecipient(value);
+      msg.setWalletId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserReference(value);
+      var value = new common_v1_packet_pb.Commitment;
+      reader.readMessage(value,common_v1_packet_pb.Commitment.deserializeBinaryFromReader);
+      msg.addCommitments(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWalletId(value);
+      var value = new common_v1_packet_pb.Condition;
+      reader.readMessage(value,common_v1_packet_pb.Condition.deserializeBinaryFromReader);
+      msg.addConditions(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApiKey(value);
+      msg.setMemo(value);
       break;
     default:
       reader.skipField();
@@ -8057,9 +8227,9 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.serializeBinary = function() {
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.wallet_api.v1.PrepareTwoStepPaymentRequest.serializeBinaryToWriter(this, writer);
+  proto.wallet_api.v1.PrepareContractTransactionRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8067,42 +8237,43 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} message
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.serializeBinaryToWriter = function(message, writer) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAmount();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      common_v1_common_pb.Amount.serializeBinaryToWriter
-    );
-  }
-  f = message.getRecipient();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getUserReference();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
       f
     );
   }
   f = message.getWalletId();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      2,
       f
     );
   }
-  f = message.getApiKey();
+  f = message.getCommitmentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      common_v1_packet_pb.Commitment.serializeBinaryToWriter
+    );
+  }
+  f = message.getConditionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      common_v1_packet_pb.Condition.serializeBinaryToWriter
+    );
+  }
+  f = message.getMemo();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -8113,110 +8284,131 @@ proto.wallet_api.v1.PrepareTwoStepPaymentRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional common.Amount amount = 1;
- * @return {?proto.common.Amount}
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.getAmount = function() {
-  return /** @type{?proto.common.Amount} */ (
-    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 1));
-};
-
-
-/**
- * @param {?proto.common.Amount|undefined} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
-*/
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.setAmount = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.clearAmount = function() {
-  return this.setAmount(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.hasAmount = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string recipient = 2;
+ * optional string api_key = 1;
  * @return {string}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.getRecipient = function() {
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string wallet_id = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.getWalletId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.setRecipient = function(value) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.setWalletId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string user_reference = 3;
+ * repeated common.Commitment commitments = 3;
+ * @return {!Array<!proto.common.Commitment>}
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.getCommitmentsList = function() {
+  return /** @type{!Array<!proto.common.Commitment>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_v1_packet_pb.Commitment, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.common.Commitment>} value
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
+*/
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.setCommitmentsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.common.Commitment=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.common.Commitment}
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.addCommitments = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.common.Commitment, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.clearCommitmentsList = function() {
+  return this.setCommitmentsList([]);
+};
+
+
+/**
+ * repeated common.Condition conditions = 4;
+ * @return {!Array<!proto.common.Condition>}
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.getConditionsList = function() {
+  return /** @type{!Array<!proto.common.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_v1_packet_pb.Condition, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.common.Condition>} value
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
+*/
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.setConditionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.common.Condition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.common.Condition}
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.addConditions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.common.Condition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
+ */
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.clearConditionsList = function() {
+  return this.setConditionsList([]);
+};
+
+
+/**
+ * optional string memo = 5;
  * @return {string}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.getUserReference = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.setUserReference = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string wallet_id = 4;
- * @return {string}
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.getWalletId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.setWalletId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string api_key = 5;
- * @return {string}
- */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.getApiKey = function() {
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.getMemo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentRequest} returns this
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionRequest} returns this
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentRequest.prototype.setApiKey = function(value) {
+proto.wallet_api.v1.PrepareContractTransactionRequest.prototype.setMemo = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -8237,8 +8429,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.wallet_api.v1.PrepareTwoStepPaymentResponse.toObject(opt_includeInstance, this);
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareContractTransactionResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8247,11 +8439,11 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.toObject = function(
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse} msg The msg instance to transform.
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.toObject = function(includeInstance, msg) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: jspb.Message.getFieldWithDefault(msg, 1, 0),
     uetr: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -8268,23 +8460,23 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.toObject = function(includeIns
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse}
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionResponse}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.deserializeBinary = function(bytes) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.wallet_api.v1.PrepareTwoStepPaymentResponse;
-  return proto.wallet_api.v1.PrepareTwoStepPaymentResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.wallet_api.v1.PrepareContractTransactionResponse;
+  return proto.wallet_api.v1.PrepareContractTransactionResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse} msg The message object to deserialize into.
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse}
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionResponse}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8292,7 +8484,7 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status} */ (reader.readEnum());
+      var value = /** @type {!proto.wallet_api.v1.PrepareContractTransactionResponse.Status} */ (reader.readEnum());
       msg.setStatus(value);
       break;
     case 2:
@@ -8312,9 +8504,9 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.deserializeBinaryFromReader = 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.serializeBinary = function() {
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.wallet_api.v1.PrepareTwoStepPaymentResponse.serializeBinaryToWriter(this, writer);
+  proto.wallet_api.v1.PrepareContractTransactionResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8322,11 +8514,11 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.serializeBinary = fu
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse} message
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.serializeBinaryToWriter = function(message, writer) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getStatus();
   if (f !== 0.0) {
@@ -8348,27 +8540,26 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.serializeBinaryToWriter = func
 /**
  * @enum {number}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status = {
-  STATUS_UNSPECIFIED: 0,
-  STATUS_SUCCESS: 1,
-  STATUS_NEED_CHANGE: 2,
-  STATUS_INSUFFICIENT_FUNDS: 3
+proto.wallet_api.v1.PrepareContractTransactionResponse.Status = {
+  UNSPECIFIED: 0,
+  SUCCESS: 1,
+  FAILURE: 2
 };
 
 /**
  * optional Status status = 1;
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status}
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionResponse.Status}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.getStatus = function() {
-  return /** @type {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.getStatus = function() {
+  return /** @type {!proto.wallet_api.v1.PrepareContractTransactionResponse.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse.Status} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse} returns this
+ * @param {!proto.wallet_api.v1.PrepareContractTransactionResponse.Status} value
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionResponse} returns this
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.setStatus = function(value) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
@@ -8377,16 +8568,16 @@ proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.setStatus = function
  * optional string uetr = 2;
  * @return {string}
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.getUetr = function() {
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.getUetr = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.wallet_api.v1.PrepareTwoStepPaymentResponse} returns this
+ * @return {!proto.wallet_api.v1.PrepareContractTransactionResponse} returns this
  */
-proto.wallet_api.v1.PrepareTwoStepPaymentResponse.prototype.setUetr = function(value) {
+proto.wallet_api.v1.PrepareContractTransactionResponse.prototype.setUetr = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -8768,7 +8959,8 @@ proto.wallet_api.v1.ListTransactionsRequest.toObject = function(includeInstance,
     apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f),
     page: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8825,6 +9017,11 @@ proto.wallet_api.v1.ListTransactionsRequest.deserializeBinaryFromReader = functi
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageSize(value);
+      break;
+    case 6:
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
+      msg.setSortBy(value);
       break;
     default:
       reader.skipField();
@@ -8889,6 +9086,14 @@ proto.wallet_api.v1.ListTransactionsRequest.serializeBinaryToWriter = function(m
     writer.writeInt32(
       5,
       f
+    );
+  }
+  f = message.getSortBy();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
     );
   }
 };
@@ -9000,6 +9205,43 @@ proto.wallet_api.v1.ListTransactionsRequest.prototype.getPageSize = function() {
  */
 proto.wallet_api.v1.ListTransactionsRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional common.SortBy sort_by = 6;
+ * @return {?proto.common.SortBy}
+ */
+proto.wallet_api.v1.ListTransactionsRequest.prototype.getSortBy = function() {
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 6));
+};
+
+
+/**
+ * @param {?proto.common.SortBy|undefined} value
+ * @return {!proto.wallet_api.v1.ListTransactionsRequest} returns this
+*/
+proto.wallet_api.v1.ListTransactionsRequest.prototype.setSortBy = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListTransactionsRequest.prototype.clearSortBy = function() {
+  return this.setSortBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListTransactionsRequest.prototype.hasSortBy = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -9189,6 +9431,824 @@ proto.wallet_api.v1.ListTransactionsResponse.prototype.getTotalMatchingTransacti
  * @return {!proto.wallet_api.v1.ListTransactionsResponse} returns this
  */
 proto.wallet_api.v1.ListTransactionsResponse.prototype.setTotalMatchingTransactions = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.ListContractTransactionsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.ListContractTransactionsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    filters: (f = msg.getFilters()) && common_v1_common_pb.Filter.toObject(includeInstance, f),
+    page: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    sortBy: (f = msg.getSortBy()) && common_v1_common_pb.SortBy.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.ListContractTransactionsRequest;
+  return proto.wallet_api.v1.ListContractTransactionsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.ListContractTransactionsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    case 3:
+      var value = new common_v1_common_pb.Filter;
+      reader.readMessage(value,common_v1_common_pb.Filter.deserializeBinaryFromReader);
+      msg.setFilters(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPage(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 6:
+      var value = new common_v1_common_pb.SortBy;
+      reader.readMessage(value,common_v1_common_pb.SortBy.deserializeBinaryFromReader);
+      msg.setSortBy(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.ListContractTransactionsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.ListContractTransactionsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getFilters();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_v1_common_pb.Filter.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getSortBy();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_v1_common_pb.SortBy.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string api_key = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional common.Filter filters = 3;
+ * @return {?proto.common.Filter}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getFilters = function() {
+  return /** @type{?proto.common.Filter} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Filter, 3));
+};
+
+
+/**
+ * @param {?proto.common.Filter|undefined} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+*/
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setFilters = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.clearFilters = function() {
+  return this.setFilters(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.hasFilters = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 page = 4;
+ * @return {number}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 page_size = 5;
+ * @return {number}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional common.SortBy sort_by = 6;
+ * @return {?proto.common.SortBy}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.getSortBy = function() {
+  return /** @type{?proto.common.SortBy} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.SortBy, 6));
+};
+
+
+/**
+ * @param {?proto.common.SortBy|undefined} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+*/
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.setSortBy = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsRequest} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.clearSortBy = function() {
+  return this.setSortBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.ListContractTransactionsRequest.prototype.hasSortBy = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.wallet_api.v1.ContractSummary.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.ContractSummary.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.ContractSummary} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ContractSummary.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    contractId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    contractType: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    created: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    counterpartiesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    status: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    memo: jspb.Message.getFieldWithDefault(msg, 6, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.ContractSummary}
+ */
+proto.wallet_api.v1.ContractSummary.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.ContractSummary;
+  return proto.wallet_api.v1.ContractSummary.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.ContractSummary} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.ContractSummary}
+ */
+proto.wallet_api.v1.ContractSummary.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContractId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContractType(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreated(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addCounterparties(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMemo(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.ContractSummary.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.ContractSummary} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ContractSummary.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getContractId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getContractType();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getCreated();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCounterpartiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getMemo();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string contract_id = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getContractId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setContractId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string contract_type = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getContractType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setContractType = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string created = 3;
+ * @return {string}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getCreated = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setCreated = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated string counterparties = 4;
+ * @return {!Array<string>}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getCounterpartiesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setCounterpartiesList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.addCounterparties = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.clearCounterpartiesList = function() {
+  return this.setCounterpartiesList([]);
+};
+
+
+/**
+ * optional string status = 5;
+ * @return {string}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string memo = 6;
+ * @return {string}
+ */
+proto.wallet_api.v1.ContractSummary.prototype.getMemo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ContractSummary} returns this
+ */
+proto.wallet_api.v1.ContractSummary.prototype.setMemo = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.ListContractTransactionsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.ListContractTransactionsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    contractsList: jspb.Message.toObjectList(msg.getContractsList(),
+    proto.wallet_api.v1.ContractSummary.toObject, includeInstance),
+    totalcontracts: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsResponse}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.ListContractTransactionsResponse;
+  return proto.wallet_api.v1.ListContractTransactionsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.ListContractTransactionsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsResponse}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.wallet_api.v1.ContractSummary;
+      reader.readMessage(value,proto.wallet_api.v1.ContractSummary.deserializeBinaryFromReader);
+      msg.addContracts(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTotalcontracts(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.ListContractTransactionsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.ListContractTransactionsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getContractsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.wallet_api.v1.ContractSummary.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalcontracts();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated ContractSummary contracts = 1;
+ * @return {!Array<!proto.wallet_api.v1.ContractSummary>}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.getContractsList = function() {
+  return /** @type{!Array<!proto.wallet_api.v1.ContractSummary>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.wallet_api.v1.ContractSummary, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.wallet_api.v1.ContractSummary>} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsResponse} returns this
+*/
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.setContractsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.ContractSummary=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.wallet_api.v1.ContractSummary}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.addContracts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.wallet_api.v1.ContractSummary, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.ListContractTransactionsResponse} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.clearContractsList = function() {
+  return this.setContractsList([]);
+};
+
+
+/**
+ * optional uint32 totalContracts = 2;
+ * @return {number}
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.getTotalcontracts = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wallet_api.v1.ListContractTransactionsResponse} returns this
+ */
+proto.wallet_api.v1.ListContractTransactionsResponse.prototype.setTotalcontracts = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -9884,13 +10944,2583 @@ proto.wallet_api.v1.ListTransactionSnapshotsResponse.prototype.clearSnapshotsLis
 };
 
 
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.BalanceDetail.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.BalanceDetail} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.BalanceDetail.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    balance: (f = msg.getBalance()) && proto.wallet_api.v1.WalletBalance.toObject(includeInstance, f),
+    kind: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.BalanceDetail}
+ */
+proto.wallet_api.v1.BalanceDetail.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.BalanceDetail;
+  return proto.wallet_api.v1.BalanceDetail.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.BalanceDetail} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.BalanceDetail}
+ */
+proto.wallet_api.v1.BalanceDetail.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.wallet_api.v1.WalletBalance;
+      reader.readMessage(value,proto.wallet_api.v1.WalletBalance.deserializeBinaryFromReader);
+      msg.setBalance(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.wallet_api.v1.BalanceDetail.Kind} */ (reader.readEnum());
+      msg.setKind(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.BalanceDetail.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.BalanceDetail} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.BalanceDetail.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBalance();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.wallet_api.v1.WalletBalance.serializeBinaryToWriter
+    );
+  }
+  f = message.getKind();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+};
+
+
 /**
  * @enum {number}
  */
-proto.wallet_api.v1.SortDirection = {
-  SORT_DIRECTION_UNSPECIFIED: 0,
-  SORT_DIRECTION_ASCENDING: 1,
-  SORT_DIRECTION_DESCENDING: 2
+proto.wallet_api.v1.BalanceDetail.Kind = {
+  KIND_AVAILABLE: 0,
+  KIND_RESERVED: 1
 };
+
+/**
+ * optional WalletBalance balance = 1;
+ * @return {?proto.wallet_api.v1.WalletBalance}
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.getBalance = function() {
+  return /** @type{?proto.wallet_api.v1.WalletBalance} */ (
+    jspb.Message.getWrapperField(this, proto.wallet_api.v1.WalletBalance, 1));
+};
+
+
+/**
+ * @param {?proto.wallet_api.v1.WalletBalance|undefined} value
+ * @return {!proto.wallet_api.v1.BalanceDetail} returns this
+*/
+proto.wallet_api.v1.BalanceDetail.prototype.setBalance = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.BalanceDetail} returns this
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.clearBalance = function() {
+  return this.setBalance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.hasBalance = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Kind kind = 2;
+ * @return {!proto.wallet_api.v1.BalanceDetail.Kind}
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.getKind = function() {
+  return /** @type {!proto.wallet_api.v1.BalanceDetail.Kind} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.BalanceDetail.Kind} value
+ * @return {!proto.wallet_api.v1.BalanceDetail} returns this
+ */
+proto.wallet_api.v1.BalanceDetail.prototype.setKind = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.ListWalletBalanceDetailsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.ListWalletBalanceDetailsRequest;
+  return proto.wallet_api.v1.ListWalletBalanceDetailsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.ListWalletBalanceDetailsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest} returns this
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string api_key = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsRequest} returns this
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.ListWalletBalanceDetailsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    balancesList: jspb.Message.toObjectList(msg.getBalancesList(),
+    proto.wallet_api.v1.BalanceDetail.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.ListWalletBalanceDetailsResponse;
+  return proto.wallet_api.v1.ListWalletBalanceDetailsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.wallet_api.v1.BalanceDetail;
+      reader.readMessage(value,proto.wallet_api.v1.BalanceDetail.deserializeBinaryFromReader);
+      msg.addBalances(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.ListWalletBalanceDetailsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getBalancesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.wallet_api.v1.BalanceDetail.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated BalanceDetail balances = 1;
+ * @return {!Array<!proto.wallet_api.v1.BalanceDetail>}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.getBalancesList = function() {
+  return /** @type{!Array<!proto.wallet_api.v1.BalanceDetail>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.wallet_api.v1.BalanceDetail, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.wallet_api.v1.BalanceDetail>} value
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse} returns this
+*/
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.setBalancesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.BalanceDetail=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.wallet_api.v1.BalanceDetail}
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.addBalances = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.wallet_api.v1.BalanceDetail, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.ListWalletBalanceDetailsResponse} returns this
+ */
+proto.wallet_api.v1.ListWalletBalanceDetailsResponse.prototype.clearBalancesList = function() {
+  return this.setBalancesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.GetContractTransactionDetailRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    walletId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    apiKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    uetr: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailRequest}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.GetContractTransactionDetailRequest;
+  return proto.wallet_api.v1.GetContractTransactionDetailRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailRequest}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUetr(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.GetContractTransactionDetailRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getUetr();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string wallet_id = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailRequest} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string api_key = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailRequest} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string uetr = 3;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.getUetr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailRequest} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailRequest.prototype.setUetr = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.repeatedFields_ = [2,9];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.GetContractTransactionDetailResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    contractType: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    commitmentsList: jspb.Message.toObjectList(msg.getCommitmentsList(),
+    common_v1_packet_pb.Commitment.toObject, includeInstance),
+    originator: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    created: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    hashPresenter: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    hash: msg.getHash_asB64(),
+    expiration: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    memo: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    logList: jspb.Message.toObjectList(msg.getLogList(),
+    proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.GetContractTransactionDetailResponse;
+  return proto.wallet_api.v1.GetContractTransactionDetailResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContractType(value);
+      break;
+    case 2:
+      var value = new common_v1_packet_pb.Commitment;
+      reader.readMessage(value,common_v1_packet_pb.Commitment.deserializeBinaryFromReader);
+      msg.addCommitments(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOriginator(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreated(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHashPresenter(value);
+      break;
+    case 6:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setHash(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpiration(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMemo(value);
+      break;
+    case 9:
+      var value = new proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry;
+      reader.readMessage(value,proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.deserializeBinaryFromReader);
+      msg.addLog(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.GetContractTransactionDetailResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getContractType();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getCommitmentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_v1_packet_pb.Commitment.serializeBinaryToWriter
+    );
+  }
+  f = message.getOriginator();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCreated();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getHashPresenter();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getHash_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      6,
+      f
+    );
+  }
+  f = message.getExpiration();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getMemo();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getLogList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.serializeBinaryToWriter
+    );
+  }
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sender: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    receiver: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    amount: (f = msg.getAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    kind: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    state: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    event: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    promissoryId: jspb.Message.getFieldWithDefault(msg, 8, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry;
+  return proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSender(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReceiver(value);
+      break;
+    case 3:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTimestamp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKind(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setState(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEvent(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPromissoryId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSender();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getReceiver();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
+    );
+  }
+  f = message.getTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getKind();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getState();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getEvent();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getPromissoryId();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string sender = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getSender = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setSender = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string receiver = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getReceiver = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setReceiver = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional common.Amount amount = 3;
+ * @return {?proto.common.Amount}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getAmount = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 3));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+*/
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string timestamp = 4;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string kind = 5;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getKind = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setKind = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string state = 6;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getState = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setState = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string event = 7;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getEvent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setEvent = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string promissory_id = 8;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.getPromissoryId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry.prototype.setPromissoryId = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string contract_type = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getContractType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setContractType = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated common.Commitment commitments = 2;
+ * @return {!Array<!proto.common.Commitment>}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getCommitmentsList = function() {
+  return /** @type{!Array<!proto.common.Commitment>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_v1_packet_pb.Commitment, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.common.Commitment>} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+*/
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setCommitmentsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.common.Commitment=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.common.Commitment}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.addCommitments = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.common.Commitment, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.clearCommitmentsList = function() {
+  return this.setCommitmentsList([]);
+};
+
+
+/**
+ * optional string originator = 3;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getOriginator = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setOriginator = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string created = 4;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getCreated = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setCreated = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string hash_presenter = 5;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getHashPresenter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setHashPresenter = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bytes hash = 6;
+ * @return {!(string|Uint8Array)}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getHash = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * optional bytes hash = 6;
+ * This is a type-conversion wrapper around `getHash()`
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getHash_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getHash()));
+};
+
+
+/**
+ * optional bytes hash = 6;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getHash()`
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getHash_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getHash()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setHash = function(value) {
+  return jspb.Message.setProto3BytesField(this, 6, value);
+};
+
+
+/**
+ * optional string expiration = 7;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getExpiration = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setExpiration = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string memo = 8;
+ * @return {string}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getMemo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setMemo = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * repeated LogEntry log = 9;
+ * @return {!Array<!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry>}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.getLogList = function() {
+  return /** @type{!Array<!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry>} value
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+*/
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.setLogList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry}
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.addLog = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.wallet_api.v1.GetContractTransactionDetailResponse.LogEntry, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.wallet_api.v1.GetContractTransactionDetailResponse} returns this
+ */
+proto.wallet_api.v1.GetContractTransactionDetailResponse.prototype.clearLogList = function() {
+  return this.setLogList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    apiKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    amount: (f = msg.getAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
+    respondent: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    respondentAmount: (f = msg.getRespondentAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
+    memo: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    timeout: jspb.Message.getFieldWithDefault(msg, 7, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.PrepareAtomicAssetSwapRequest;
+  return proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 3:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRespondent(value);
+      break;
+    case 5:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setRespondentAmount(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMemo(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTimeout(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
+    );
+  }
+  f = message.getRespondent();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getRespondentAmount();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
+    );
+  }
+  f = message.getMemo();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getTimeout();
+  if (f !== 0) {
+    writer.writeUint32(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string api_key = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string wallet_id = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional common.Amount amount = 3;
+ * @return {?proto.common.Amount}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getAmount = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 3));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+*/
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string respondent = 4;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getRespondent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setRespondent = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional common.Amount respondent_amount = 5;
+ * @return {?proto.common.Amount}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getRespondentAmount = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 5));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+*/
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setRespondentAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.clearRespondentAmount = function() {
+  return this.setRespondentAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.hasRespondentAmount = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string memo = 6;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getMemo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setMemo = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional uint32 timeout = 7;
+ * @return {number}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapRequest} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapRequest.prototype.setTimeout = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uetr: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.PrepareAtomicAssetSwapResponse;
+  return proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUetr(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getUetr();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status = {
+  UNSPECIFIED: 0,
+  SUCCESS: 1,
+  FAILURE: 2
+};
+
+/**
+ * optional Status status = 1;
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.getStatus = function() {
+  return /** @type {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.Status} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string uetr = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.getUetr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareAtomicAssetSwapResponse} returns this
+ */
+proto.wallet_api.v1.PrepareAtomicAssetSwapResponse.prototype.setUetr = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    apiKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    walletId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    treasury: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    amount: (f = msg.getAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
+    respondent: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    respondentAmount: (f = msg.getRespondentAmount()) && common_v1_common_pb.Amount.toObject(includeInstance, f),
+    memo: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    timeout: jspb.Message.getFieldWithDefault(msg, 8, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.PrepareCrossBorderPaymentRequest;
+  return proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApiKey(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWalletId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTreasury(value);
+      break;
+    case 4:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setAmount(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRespondent(value);
+      break;
+    case 6:
+      var value = new common_v1_common_pb.Amount;
+      reader.readMessage(value,common_v1_common_pb.Amount.deserializeBinaryFromReader);
+      msg.setRespondentAmount(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMemo(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTimeout(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getApiKey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getWalletId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTreasury();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getAmount();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
+    );
+  }
+  f = message.getRespondent();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getRespondentAmount();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_v1_common_pb.Amount.serializeBinaryToWriter
+    );
+  }
+  f = message.getMemo();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getTimeout();
+  if (f !== 0) {
+    writer.writeUint32(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string api_key = 1;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getApiKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setApiKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string wallet_id = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getWalletId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setWalletId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string treasury = 3;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getTreasury = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setTreasury = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional common.Amount amount = 4;
+ * @return {?proto.common.Amount}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getAmount = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 4));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+*/
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.clearAmount = function() {
+  return this.setAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.hasAmount = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string respondent = 5;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getRespondent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setRespondent = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional common.Amount respondent_amount = 6;
+ * @return {?proto.common.Amount}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getRespondentAmount = function() {
+  return /** @type{?proto.common.Amount} */ (
+    jspb.Message.getWrapperField(this, common_v1_common_pb.Amount, 6));
+};
+
+
+/**
+ * @param {?proto.common.Amount|undefined} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+*/
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setRespondentAmount = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.clearRespondentAmount = function() {
+  return this.setRespondentAmount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.hasRespondentAmount = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string memo = 7;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getMemo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setMemo = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional uint32 timeout = 8;
+ * @return {number}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentRequest} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentRequest.prototype.setTimeout = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    status: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    uetr: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.wallet_api.v1.PrepareCrossBorderPaymentResponse;
+  return proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status} */ (reader.readEnum());
+      msg.setStatus(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUetr(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getUetr();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status = {
+  UNSPECIFIED: 0,
+  SUCCESS: 1,
+  FAILURE: 2
+};
+
+/**
+ * optional Status status = 1;
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.getStatus = function() {
+  return /** @type {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.Status} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * optional string uetr = 2;
+ * @return {string}
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.getUetr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.wallet_api.v1.PrepareCrossBorderPaymentResponse} returns this
+ */
+proto.wallet_api.v1.PrepareCrossBorderPaymentResponse.prototype.setUetr = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
 
 goog.object.extend(exports, proto.wallet_api.v1);

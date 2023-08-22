@@ -201,6 +201,15 @@ UserApiService.GetUserByDID = {
   responseType: user_api_v1_user_pb.GetUserByDIDResponse
 };
 
+UserApiService.ListUsers = {
+  methodName: "ListUsers",
+  service: UserApiService,
+  requestStream: false,
+  responseStream: false,
+  requestType: user_api_v1_user_pb.ListUsersRequest,
+  responseType: user_api_v1_user_pb.ListUsersResponse
+};
+
 exports.UserApiService = UserApiService;
 
 function UserApiServiceClient(serviceHost, options) {
@@ -849,6 +858,37 @@ UserApiServiceClient.prototype.getUserByDID = function getUserByDID(requestMessa
     callback = arguments[1];
   }
   var client = grpc.unary(UserApiService.GetUserByDID, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UserApiServiceClient.prototype.listUsers = function listUsers(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UserApiService.ListUsers, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

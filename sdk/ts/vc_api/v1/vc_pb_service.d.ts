@@ -51,6 +51,15 @@ type CredentialAdapterServiceWaitForCompletion = {
   readonly responseType: typeof vc_api_v1_vc_pb.WaitForCompletionResponse;
 };
 
+type CredentialAdapterServiceUpdateVerifiableCredentialStatus = {
+  readonly methodName: string;
+  readonly service: typeof CredentialAdapterService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusRequest;
+  readonly responseType: typeof vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusResponse;
+};
+
 export class CredentialAdapterService {
   static readonly serviceName: string;
   static readonly CreateIssuanceChallenge: CredentialAdapterServiceCreateIssuanceChallenge;
@@ -58,6 +67,7 @@ export class CredentialAdapterService {
   static readonly CreatePresentationChallenge: CredentialAdapterServiceCreatePresentationChallenge;
   static readonly PresentVerifiableCredential: CredentialAdapterServicePresentVerifiableCredential;
   static readonly WaitForCompletion: CredentialAdapterServiceWaitForCompletion;
+  static readonly UpdateVerifiableCredentialStatus: CredentialAdapterServiceUpdateVerifiableCredentialStatus;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -129,5 +139,14 @@ export class CredentialAdapterServiceClient {
     callback: (error: ServiceError|null, responseMessage: vc_api_v1_vc_pb.PresentVerifiableCredentialResponse|null) => void
   ): UnaryResponse;
   waitForCompletion(requestMessage: vc_api_v1_vc_pb.WaitForCompletionRequest, metadata?: grpc.Metadata): ResponseStream<vc_api_v1_vc_pb.WaitForCompletionResponse>;
+  updateVerifiableCredentialStatus(
+    requestMessage: vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusResponse|null) => void
+  ): UnaryResponse;
+  updateVerifiableCredentialStatus(
+    requestMessage: vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusRequest,
+    callback: (error: ServiceError|null, responseMessage: vc_api_v1_vc_pb.UpdateVerifiableCredentialStatusResponse|null) => void
+  ): UnaryResponse;
 }
 
