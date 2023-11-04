@@ -202,6 +202,48 @@ pub mod authority_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** List the Governed Assets for this Authority.
+*/
+        pub async fn list_governed_assets(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListGovernedAssetsRequest>,
+        ) -> Result<tonic::Response<super::ListGovernedAssetsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/authority_api.v1.AuthorityService/ListGovernedAssets",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Set the Governed Assets for this Authority.
+*/
+        pub async fn set_governed_assets(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetGovernedAssetsRequest>,
+        ) -> Result<tonic::Response<super::SetGovernedAssetsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/authority_api.v1.AuthorityService/SetGovernedAssets",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -254,6 +296,18 @@ pub mod authority_service_server {
             &self,
             request: tonic::Request<super::GetNotaryRequest>,
         ) -> Result<tonic::Response<super::GetNotaryResponse>, tonic::Status>;
+        /** List the Governed Assets for this Authority.
+*/
+        async fn list_governed_assets(
+            &self,
+            request: tonic::Request<super::ListGovernedAssetsRequest>,
+        ) -> Result<tonic::Response<super::ListGovernedAssetsResponse>, tonic::Status>;
+        /** Set the Governed Assets for this Authority.
+*/
+        async fn set_governed_assets(
+            &self,
+            request: tonic::Request<super::SetGovernedAssetsRequest>,
+        ) -> Result<tonic::Response<super::SetGovernedAssetsResponse>, tonic::Status>;
     }
     /** Entity that is the approving monetary authority- Ex Central bank or commercial bank. It can create Issuers with
  limits, approve additional issuance limits, authorize issuing of digital banknotes, and replace digital banknotes in
@@ -544,6 +598,86 @@ pub mod authority_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GetNotarySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/authority_api.v1.AuthorityService/ListGovernedAssets" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGovernedAssetsSvc<T: AuthorityService>(pub Arc<T>);
+                    impl<
+                        T: AuthorityService,
+                    > tonic::server::UnaryService<super::ListGovernedAssetsRequest>
+                    for ListGovernedAssetsSvc<T> {
+                        type Response = super::ListGovernedAssetsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListGovernedAssetsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_governed_assets(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListGovernedAssetsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/authority_api.v1.AuthorityService/SetGovernedAssets" => {
+                    #[allow(non_camel_case_types)]
+                    struct SetGovernedAssetsSvc<T: AuthorityService>(pub Arc<T>);
+                    impl<
+                        T: AuthorityService,
+                    > tonic::server::UnaryService<super::SetGovernedAssetsRequest>
+                    for SetGovernedAssetsSvc<T> {
+                        type Response = super::SetGovernedAssetsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetGovernedAssetsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).set_governed_assets(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SetGovernedAssetsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

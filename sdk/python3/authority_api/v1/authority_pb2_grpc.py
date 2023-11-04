@@ -20,6 +20,8 @@ class AuthorityServiceStub(object):
         self.Redeem = channel.unary_unary('/authority_api.v1.AuthorityService/Redeem', request_serializer=authority__api_dot_v1_dot_authority__pb2.RedeemRequest.SerializeToString, response_deserializer=authority__api_dot_v1_dot_authority__pb2.RedeemResponse.FromString)
         self.GetNetworkInfo = channel.unary_unary('/authority_api.v1.AuthorityService/GetNetworkInfo', request_serializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoRequest.SerializeToString, response_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoResponse.FromString)
         self.GetNotary = channel.unary_unary('/authority_api.v1.AuthorityService/GetNotary', request_serializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryRequest.SerializeToString, response_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryResponse.FromString)
+        self.ListGovernedAssets = channel.unary_unary('/authority_api.v1.AuthorityService/ListGovernedAssets', request_serializer=authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsRequest.SerializeToString, response_deserializer=authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsResponse.FromString)
+        self.SetGovernedAssets = channel.unary_unary('/authority_api.v1.AuthorityService/SetGovernedAssets', request_serializer=authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsRequest.SerializeToString, response_deserializer=authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsResponse.FromString)
 
 class AuthorityServiceServicer(object):
     """Entity that is the approving monetary authority- Ex Central bank or commercial bank. It can create Issuers with
@@ -70,8 +72,22 @@ class AuthorityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListGovernedAssets(self, request, context):
+        """List the Governed Assets for this Authority.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetGovernedAssets(self, request, context):
+        """Set the Governed Assets for this Authority.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_AuthorityServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'SetIssuerLimit': grpc.unary_unary_rpc_method_handler(servicer.SetIssuerLimit, request_deserializer=authority__api_dot_v1_dot_authority__pb2.SetIssuerLimitRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.SetIssuerLimitResponse.SerializeToString), 'GetIssuerLimits': grpc.unary_unary_rpc_method_handler(servicer.GetIssuerLimits, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetIssuerLimitsRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetIssuerLimitsResponse.SerializeToString), 'Authorize': grpc.stream_stream_rpc_method_handler(servicer.Authorize, request_deserializer=authority__api_dot_v1_dot_authority__pb2.AuthorizeRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.AuthorizeResponse.SerializeToString), 'Redeem': grpc.unary_unary_rpc_method_handler(servicer.Redeem, request_deserializer=authority__api_dot_v1_dot_authority__pb2.RedeemRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.RedeemResponse.SerializeToString), 'GetNetworkInfo': grpc.unary_unary_rpc_method_handler(servicer.GetNetworkInfo, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoResponse.SerializeToString), 'GetNotary': grpc.unary_unary_rpc_method_handler(servicer.GetNotary, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryResponse.SerializeToString)}
+    rpc_method_handlers = {'SetIssuerLimit': grpc.unary_unary_rpc_method_handler(servicer.SetIssuerLimit, request_deserializer=authority__api_dot_v1_dot_authority__pb2.SetIssuerLimitRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.SetIssuerLimitResponse.SerializeToString), 'GetIssuerLimits': grpc.unary_unary_rpc_method_handler(servicer.GetIssuerLimits, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetIssuerLimitsRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetIssuerLimitsResponse.SerializeToString), 'Authorize': grpc.stream_stream_rpc_method_handler(servicer.Authorize, request_deserializer=authority__api_dot_v1_dot_authority__pb2.AuthorizeRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.AuthorizeResponse.SerializeToString), 'Redeem': grpc.unary_unary_rpc_method_handler(servicer.Redeem, request_deserializer=authority__api_dot_v1_dot_authority__pb2.RedeemRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.RedeemResponse.SerializeToString), 'GetNetworkInfo': grpc.unary_unary_rpc_method_handler(servicer.GetNetworkInfo, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetNetworkInfoResponse.SerializeToString), 'GetNotary': grpc.unary_unary_rpc_method_handler(servicer.GetNotary, request_deserializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.GetNotaryResponse.SerializeToString), 'ListGovernedAssets': grpc.unary_unary_rpc_method_handler(servicer.ListGovernedAssets, request_deserializer=authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsResponse.SerializeToString), 'SetGovernedAssets': grpc.unary_unary_rpc_method_handler(servicer.SetGovernedAssets, request_deserializer=authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsRequest.FromString, response_serializer=authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('authority_api.v1.AuthorityService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -104,3 +120,11 @@ class AuthorityService(object):
     @staticmethod
     def GetNotary(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/authority_api.v1.AuthorityService/GetNotary', authority__api_dot_v1_dot_authority__pb2.GetNotaryRequest.SerializeToString, authority__api_dot_v1_dot_authority__pb2.GetNotaryResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListGovernedAssets(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/authority_api.v1.AuthorityService/ListGovernedAssets', authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsRequest.SerializeToString, authority__api_dot_v1_dot_authority__pb2.ListGovernedAssetsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetGovernedAssets(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/authority_api.v1.AuthorityService/SetGovernedAssets', authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsRequest.SerializeToString, authority__api_dot_v1_dot_authority__pb2.SetGovernedAssetsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

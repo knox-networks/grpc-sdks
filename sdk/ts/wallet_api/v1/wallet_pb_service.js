@@ -111,31 +111,13 @@ WalletService.RequestPresentation = {
   responseType: wallet_api_v1_wallet_pb.RequestPresentationResponse
 };
 
-WalletService.PrepareSimplePayment = {
-  methodName: "PrepareSimplePayment",
+WalletService.ListWalletBalanceDetails = {
+  methodName: "ListWalletBalanceDetails",
   service: WalletService,
   requestStream: false,
   responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.PrepareSimplePaymentRequest,
-  responseType: wallet_api_v1_wallet_pb.PrepareSimplePaymentResponse
-};
-
-WalletService.PrepareFundsChange = {
-  methodName: "PrepareFundsChange",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
-  responseType: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse
-};
-
-WalletService.GetTransaction = {
-  methodName: "GetTransaction",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.GetTransactionRequest,
-  responseType: wallet_api_v1_wallet_pb.GetTransactionResponse
+  requestType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest,
+  responseType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse
 };
 
 WalletService.ListTransactions = {
@@ -147,58 +129,22 @@ WalletService.ListTransactions = {
   responseType: wallet_api_v1_wallet_pb.ListTransactionsResponse
 };
 
-WalletService.GetTransactionSnapshot = {
-  methodName: "GetTransactionSnapshot",
+WalletService.GetTransactionDetail = {
+  methodName: "GetTransactionDetail",
   service: WalletService,
   requestStream: false,
   responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.GetTransactionSnapshotRequest,
-  responseType: wallet_api_v1_wallet_pb.GetTransactionSnapshotResponse
+  requestType: wallet_api_v1_wallet_pb.GetTransactionDetailRequest,
+  responseType: wallet_api_v1_wallet_pb.GetTransactionDetailResponse
 };
 
-WalletService.ListTransactionSnapshots = {
-  methodName: "ListTransactionSnapshots",
+WalletService.PrepareTransaction = {
+  methodName: "PrepareTransaction",
   service: WalletService,
   requestStream: false,
   responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsRequest,
-  responseType: wallet_api_v1_wallet_pb.ListTransactionSnapshotsResponse
-};
-
-WalletService.ListWalletBalanceDetails = {
-  methodName: "ListWalletBalanceDetails",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsRequest,
-  responseType: wallet_api_v1_wallet_pb.ListWalletBalanceDetailsResponse
-};
-
-WalletService.ListContractTransactions = {
-  methodName: "ListContractTransactions",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.ListContractTransactionsRequest,
-  responseType: wallet_api_v1_wallet_pb.ListContractTransactionsResponse
-};
-
-WalletService.GetContractTransactionDetail = {
-  methodName: "GetContractTransactionDetail",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.GetContractTransactionDetailRequest,
-  responseType: wallet_api_v1_wallet_pb.GetContractTransactionDetailResponse
-};
-
-WalletService.PrepareContractTransaction = {
-  methodName: "PrepareContractTransaction",
-  service: WalletService,
-  requestStream: false,
-  responseStream: false,
-  requestType: wallet_api_v1_wallet_pb.PrepareContractTransactionRequest,
-  responseType: wallet_api_v1_wallet_pb.PrepareContractTransactionResponse
+  requestType: wallet_api_v1_wallet_pb.PrepareTransactionRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareTransactionResponse
 };
 
 WalletService.PrepareAtomicAssetSwap = {
@@ -217,6 +163,15 @@ WalletService.PrepareCrossBorderPayment = {
   responseStream: false,
   requestType: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentRequest,
   responseType: wallet_api_v1_wallet_pb.PrepareCrossBorderPaymentResponse
+};
+
+WalletService.PrepareFundsChange = {
+  methodName: "PrepareFundsChange",
+  service: WalletService,
+  requestStream: false,
+  responseStream: false,
+  requestType: wallet_api_v1_wallet_pb.PrepareFundsChangeRequest,
+  responseType: wallet_api_v1_wallet_pb.PrepareFundsChangeResponse
 };
 
 exports.WalletService = WalletService;
@@ -567,73 +522,11 @@ WalletServiceClient.prototype.requestPresentation = function requestPresentation
   };
 };
 
-WalletServiceClient.prototype.prepareSimplePayment = function prepareSimplePayment(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.listWalletBalanceDetails = function listWalletBalanceDetails(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WalletService.PrepareSimplePayment, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.prepareFundsChange = function prepareFundsChange(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.PrepareFundsChange, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.getTransaction = function getTransaction(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.GetTransaction, {
+  var client = grpc.unary(WalletService.ListWalletBalanceDetails, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -691,11 +584,11 @@ WalletServiceClient.prototype.listTransactions = function listTransactions(reque
   };
 };
 
-WalletServiceClient.prototype.getTransactionSnapshot = function getTransactionSnapshot(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.getTransactionDetail = function getTransactionDetail(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WalletService.GetTransactionSnapshot, {
+  var client = grpc.unary(WalletService.GetTransactionDetail, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -722,135 +615,11 @@ WalletServiceClient.prototype.getTransactionSnapshot = function getTransactionSn
   };
 };
 
-WalletServiceClient.prototype.listTransactionSnapshots = function listTransactionSnapshots(requestMessage, metadata, callback) {
+WalletServiceClient.prototype.prepareTransaction = function prepareTransaction(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(WalletService.ListTransactionSnapshots, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.listWalletBalanceDetails = function listWalletBalanceDetails(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.ListWalletBalanceDetails, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.listContractTransactions = function listContractTransactions(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.ListContractTransactions, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.getContractTransactionDetail = function getContractTransactionDetail(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.GetContractTransactionDetail, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
-WalletServiceClient.prototype.prepareContractTransaction = function prepareContractTransaction(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(WalletService.PrepareContractTransaction, {
+  var client = grpc.unary(WalletService.PrepareTransaction, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -913,6 +682,37 @@ WalletServiceClient.prototype.prepareCrossBorderPayment = function prepareCrossB
     callback = arguments[1];
   }
   var client = grpc.unary(WalletService.PrepareCrossBorderPayment, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WalletServiceClient.prototype.prepareFundsChange = function prepareFundsChange(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WalletService.PrepareFundsChange, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

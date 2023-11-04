@@ -307,143 +307,6 @@ pub mod wallet_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
- be used to query more information about the transaction.
-*/
-        pub async fn prepare_simple_payment(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PrepareSimplePaymentRequest>,
-        ) -> Result<
-            tonic::Response<super::PrepareSimplePaymentResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/PrepareSimplePayment",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        /** Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
- to query more information about the transaction.
-*/
-        pub async fn prepare_funds_change(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PrepareFundsChangeRequest>,
-        ) -> Result<tonic::Response<super::PrepareFundsChangeResponse>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/PrepareFundsChange",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        /** Obtains metadata about a transaction.
-*/
-        pub async fn get_transaction(
-            &mut self,
-            request: impl tonic::IntoRequest<super::GetTransactionRequest>,
-        ) -> Result<tonic::Response<super::GetTransactionResponse>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/GetTransaction",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        /** List all transactions of a given wallet.
-*/
-        pub async fn list_transactions(
-            &mut self,
-            request: impl tonic::IntoRequest<super::ListTransactionsRequest>,
-        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/ListTransactions",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        /** Obtains current snapshot of a transaction.
-*/
-        pub async fn get_transaction_snapshot(
-            &mut self,
-            request: impl tonic::IntoRequest<super::GetTransactionSnapshotRequest>,
-        ) -> Result<
-            tonic::Response<super::GetTransactionSnapshotResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/GetTransactionSnapshot",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        /** Obtains the history of a transaction.
-*/
-        pub async fn list_transaction_snapshots(
-            &mut self,
-            request: impl tonic::IntoRequest<super::ListTransactionSnapshotsRequest>,
-        ) -> Result<
-            tonic::Response<super::ListTransactionSnapshotsResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/ListTransactionSnapshots",
-            );
-            self.inner.unary(request.into_request(), path, codec).await
-        }
         /** Lists more details about balances in a wallet such as how much funds are available vs reserved.
 */
         pub async fn list_wallet_balance_details(
@@ -468,15 +331,12 @@ pub mod wallet_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** List contract transactions
+        /** List transactions
 */
-        pub async fn list_contract_transactions(
+        pub async fn list_transactions(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListContractTransactionsRequest>,
-        ) -> Result<
-            tonic::Response<super::ListContractTransactionsResponse>,
-            tonic::Status,
-        > {
+            request: impl tonic::IntoRequest<super::ListTransactionsRequest>,
+        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -488,17 +348,17 @@ pub mod wallet_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/ListContractTransactions",
+                "/wallet_api.v1.WalletService/ListTransactions",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Get detailed information about a contract transaction.
+        /** Get detailed information about a transaction.
 */
-        pub async fn get_contract_transaction_detail(
+        pub async fn get_transaction_detail(
             &mut self,
-            request: impl tonic::IntoRequest<super::GetContractTransactionDetailRequest>,
+            request: impl tonic::IntoRequest<super::GetTransactionDetailRequest>,
         ) -> Result<
-            tonic::Response<super::GetContractTransactionDetailResponse>,
+            tonic::Response<super::GetTransactionDetailResponse>,
             tonic::Status,
         > {
             self.inner
@@ -512,19 +372,16 @@ pub mod wallet_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/GetContractTransactionDetail",
+                "/wallet_api.v1.WalletService/GetTransactionDetail",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** Create a new contract transaction
+        /** Create a new transaction
 */
-        pub async fn prepare_contract_transaction(
+        pub async fn prepare_transaction(
             &mut self,
-            request: impl tonic::IntoRequest<super::PrepareContractTransactionRequest>,
-        ) -> Result<
-            tonic::Response<super::PrepareContractTransactionResponse>,
-            tonic::Status,
-        > {
+            request: impl tonic::IntoRequest<super::PrepareTransactionRequest>,
+        ) -> Result<tonic::Response<super::PrepareTransactionResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -536,7 +393,7 @@ pub mod wallet_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/wallet_api.v1.WalletService/PrepareContractTransaction",
+                "/wallet_api.v1.WalletService/PrepareTransaction",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -587,6 +444,28 @@ pub mod wallet_service_client {
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/wallet_api.v1.WalletService/PrepareCrossBorderPayment",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+ to query more information about the transaction.
+*/
+        pub async fn prepare_funds_change(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PrepareFundsChangeRequest>,
+        ) -> Result<tonic::Response<super::PrepareFundsChangeResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/wallet_api.v1.WalletService/PrepareFundsChange",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -668,50 +547,6 @@ pub mod wallet_service_server {
             &self,
             request: tonic::Request<super::RequestPresentationRequest>,
         ) -> Result<tonic::Response<super::RequestPresentationResponse>, tonic::Status>;
-        /** Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
- be used to query more information about the transaction.
-*/
-        async fn prepare_simple_payment(
-            &self,
-            request: tonic::Request<super::PrepareSimplePaymentRequest>,
-        ) -> Result<tonic::Response<super::PrepareSimplePaymentResponse>, tonic::Status>;
-        /** Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
- to query more information about the transaction.
-*/
-        async fn prepare_funds_change(
-            &self,
-            request: tonic::Request<super::PrepareFundsChangeRequest>,
-        ) -> Result<tonic::Response<super::PrepareFundsChangeResponse>, tonic::Status>;
-        /** Obtains metadata about a transaction.
-*/
-        async fn get_transaction(
-            &self,
-            request: tonic::Request<super::GetTransactionRequest>,
-        ) -> Result<tonic::Response<super::GetTransactionResponse>, tonic::Status>;
-        /** List all transactions of a given wallet.
-*/
-        async fn list_transactions(
-            &self,
-            request: tonic::Request<super::ListTransactionsRequest>,
-        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status>;
-        /** Obtains current snapshot of a transaction.
-*/
-        async fn get_transaction_snapshot(
-            &self,
-            request: tonic::Request<super::GetTransactionSnapshotRequest>,
-        ) -> Result<
-            tonic::Response<super::GetTransactionSnapshotResponse>,
-            tonic::Status,
-        >;
-        /** Obtains the history of a transaction.
-*/
-        async fn list_transaction_snapshots(
-            &self,
-            request: tonic::Request<super::ListTransactionSnapshotsRequest>,
-        ) -> Result<
-            tonic::Response<super::ListTransactionSnapshotsResponse>,
-            tonic::Status,
-        >;
         /** Lists more details about balances in a wallet such as how much funds are available vs reserved.
 */
         async fn list_wallet_balance_details(
@@ -721,33 +556,24 @@ pub mod wallet_service_server {
             tonic::Response<super::ListWalletBalanceDetailsResponse>,
             tonic::Status,
         >;
-        /** List contract transactions
+        /** List transactions
 */
-        async fn list_contract_transactions(
+        async fn list_transactions(
             &self,
-            request: tonic::Request<super::ListContractTransactionsRequest>,
-        ) -> Result<
-            tonic::Response<super::ListContractTransactionsResponse>,
-            tonic::Status,
-        >;
-        /** Get detailed information about a contract transaction.
+            request: tonic::Request<super::ListTransactionsRequest>,
+        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status>;
+        /** Get detailed information about a transaction.
 */
-        async fn get_contract_transaction_detail(
+        async fn get_transaction_detail(
             &self,
-            request: tonic::Request<super::GetContractTransactionDetailRequest>,
-        ) -> Result<
-            tonic::Response<super::GetContractTransactionDetailResponse>,
-            tonic::Status,
-        >;
-        /** Create a new contract transaction
+            request: tonic::Request<super::GetTransactionDetailRequest>,
+        ) -> Result<tonic::Response<super::GetTransactionDetailResponse>, tonic::Status>;
+        /** Create a new transaction
 */
-        async fn prepare_contract_transaction(
+        async fn prepare_transaction(
             &self,
-            request: tonic::Request<super::PrepareContractTransactionRequest>,
-        ) -> Result<
-            tonic::Response<super::PrepareContractTransactionResponse>,
-            tonic::Status,
-        >;
+            request: tonic::Request<super::PrepareTransactionRequest>,
+        ) -> Result<tonic::Response<super::PrepareTransactionResponse>, tonic::Status>;
         /** Attempts to start an atomic asset swap. The call immediately returns with a `status` and `uetr` that can
  be used to query more information about the transaction.
 */
@@ -768,6 +594,13 @@ pub mod wallet_service_server {
             tonic::Response<super::PrepareCrossBorderPaymentResponse>,
             tonic::Status,
         >;
+        /** Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+ to query more information about the transaction.
+*/
+        async fn prepare_funds_change(
+            &self,
+            request: tonic::Request<super::PrepareFundsChangeRequest>,
+        ) -> Result<tonic::Response<super::PrepareFundsChangeResponse>, tonic::Status>;
     }
     /** Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
  a W3C Verifiable Credential (https://www.w3.org/TR/vc-data-model).  This is a server side wallet solution in lieu of
@@ -1269,25 +1102,27 @@ pub mod wallet_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/wallet_api.v1.WalletService/PrepareSimplePayment" => {
+                "/wallet_api.v1.WalletService/ListWalletBalanceDetails" => {
                     #[allow(non_camel_case_types)]
-                    struct PrepareSimplePaymentSvc<T: WalletService>(pub Arc<T>);
+                    struct ListWalletBalanceDetailsSvc<T: WalletService>(pub Arc<T>);
                     impl<
                         T: WalletService,
-                    > tonic::server::UnaryService<super::PrepareSimplePaymentRequest>
-                    for PrepareSimplePaymentSvc<T> {
-                        type Response = super::PrepareSimplePaymentResponse;
+                    > tonic::server::UnaryService<super::ListWalletBalanceDetailsRequest>
+                    for ListWalletBalanceDetailsSvc<T> {
+                        type Response = super::ListWalletBalanceDetailsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PrepareSimplePaymentRequest>,
+                            request: tonic::Request<
+                                super::ListWalletBalanceDetailsRequest,
+                            >,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).prepare_simple_payment(request).await
+                                (*inner).list_wallet_balance_details(request).await
                             };
                             Box::pin(fut)
                         }
@@ -1297,87 +1132,7 @@ pub mod wallet_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = PrepareSimplePaymentSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/PrepareFundsChange" => {
-                    #[allow(non_camel_case_types)]
-                    struct PrepareFundsChangeSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<super::PrepareFundsChangeRequest>
-                    for PrepareFundsChangeSvc<T> {
-                        type Response = super::PrepareFundsChangeResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PrepareFundsChangeRequest>,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).prepare_funds_change(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PrepareFundsChangeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/GetTransaction" => {
-                    #[allow(non_camel_case_types)]
-                    struct GetTransactionSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<super::GetTransactionRequest>
-                    for GetTransactionSvc<T> {
-                        type Response = super::GetTransactionResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::GetTransactionRequest>,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).get_transaction(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = GetTransactionSvc(inner);
+                        let method = ListWalletBalanceDetailsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1429,25 +1184,25 @@ pub mod wallet_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/wallet_api.v1.WalletService/GetTransactionSnapshot" => {
+                "/wallet_api.v1.WalletService/GetTransactionDetail" => {
                     #[allow(non_camel_case_types)]
-                    struct GetTransactionSnapshotSvc<T: WalletService>(pub Arc<T>);
+                    struct GetTransactionDetailSvc<T: WalletService>(pub Arc<T>);
                     impl<
                         T: WalletService,
-                    > tonic::server::UnaryService<super::GetTransactionSnapshotRequest>
-                    for GetTransactionSnapshotSvc<T> {
-                        type Response = super::GetTransactionSnapshotResponse;
+                    > tonic::server::UnaryService<super::GetTransactionDetailRequest>
+                    for GetTransactionDetailSvc<T> {
+                        type Response = super::GetTransactionDetailResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GetTransactionSnapshotRequest>,
+                            request: tonic::Request<super::GetTransactionDetailRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).get_transaction_snapshot(request).await
+                                (*inner).get_transaction_detail(request).await
                             };
                             Box::pin(fut)
                         }
@@ -1457,7 +1212,7 @@ pub mod wallet_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = GetTransactionSnapshotSvc(inner);
+                        let method = GetTransactionDetailSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1469,27 +1224,25 @@ pub mod wallet_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/wallet_api.v1.WalletService/ListTransactionSnapshots" => {
+                "/wallet_api.v1.WalletService/PrepareTransaction" => {
                     #[allow(non_camel_case_types)]
-                    struct ListTransactionSnapshotsSvc<T: WalletService>(pub Arc<T>);
+                    struct PrepareTransactionSvc<T: WalletService>(pub Arc<T>);
                     impl<
                         T: WalletService,
-                    > tonic::server::UnaryService<super::ListTransactionSnapshotsRequest>
-                    for ListTransactionSnapshotsSvc<T> {
-                        type Response = super::ListTransactionSnapshotsResponse;
+                    > tonic::server::UnaryService<super::PrepareTransactionRequest>
+                    for PrepareTransactionSvc<T> {
+                        type Response = super::PrepareTransactionResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<
-                                super::ListTransactionSnapshotsRequest,
-                            >,
+                            request: tonic::Request<super::PrepareTransactionRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).list_transaction_snapshots(request).await
+                                (*inner).prepare_transaction(request).await
                             };
                             Box::pin(fut)
                         }
@@ -1499,177 +1252,7 @@ pub mod wallet_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListTransactionSnapshotsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/ListWalletBalanceDetails" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListWalletBalanceDetailsSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<super::ListWalletBalanceDetailsRequest>
-                    for ListWalletBalanceDetailsSvc<T> {
-                        type Response = super::ListWalletBalanceDetailsResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<
-                                super::ListWalletBalanceDetailsRequest,
-                            >,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).list_wallet_balance_details(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = ListWalletBalanceDetailsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/ListContractTransactions" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListContractTransactionsSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<super::ListContractTransactionsRequest>
-                    for ListContractTransactionsSvc<T> {
-                        type Response = super::ListContractTransactionsResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<
-                                super::ListContractTransactionsRequest,
-                            >,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).list_contract_transactions(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = ListContractTransactionsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/GetContractTransactionDetail" => {
-                    #[allow(non_camel_case_types)]
-                    struct GetContractTransactionDetailSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<
-                        super::GetContractTransactionDetailRequest,
-                    > for GetContractTransactionDetailSvc<T> {
-                        type Response = super::GetContractTransactionDetailResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<
-                                super::GetContractTransactionDetailRequest,
-                            >,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).get_contract_transaction_detail(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = GetContractTransactionDetailSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/wallet_api.v1.WalletService/PrepareContractTransaction" => {
-                    #[allow(non_camel_case_types)]
-                    struct PrepareContractTransactionSvc<T: WalletService>(pub Arc<T>);
-                    impl<
-                        T: WalletService,
-                    > tonic::server::UnaryService<
-                        super::PrepareContractTransactionRequest,
-                    > for PrepareContractTransactionSvc<T> {
-                        type Response = super::PrepareContractTransactionResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<
-                                super::PrepareContractTransactionRequest,
-                            >,
-                        ) -> Self::Future {
-                            let inner = self.0.clone();
-                            let fut = async move {
-                                (*inner).prepare_contract_transaction(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PrepareContractTransactionSvc(inner);
+                        let method = PrepareTransactionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1753,6 +1336,46 @@ pub mod wallet_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = PrepareCrossBorderPaymentSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/wallet_api.v1.WalletService/PrepareFundsChange" => {
+                    #[allow(non_camel_case_types)]
+                    struct PrepareFundsChangeSvc<T: WalletService>(pub Arc<T>);
+                    impl<
+                        T: WalletService,
+                    > tonic::server::UnaryService<super::PrepareFundsChangeRequest>
+                    for PrepareFundsChangeSvc<T> {
+                        type Response = super::PrepareFundsChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PrepareFundsChangeRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).prepare_funds_change(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PrepareFundsChangeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

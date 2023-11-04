@@ -863,77 +863,6 @@ export namespace RequestPresentationResponse {
   }
 }
 
-export class PrepareSimplePaymentRequest extends jspb.Message {
-  hasAmount(): boolean;
-  clearAmount(): void;
-  getAmount(): common_v1_common_pb.Amount | undefined;
-  setAmount(value?: common_v1_common_pb.Amount): void;
-
-  getRecipient(): string;
-  setRecipient(value: string): void;
-
-  getUserReference(): string;
-  setUserReference(value: string): void;
-
-  getWalletId(): string;
-  setWalletId(value: string): void;
-
-  getApiKey(): string;
-  setApiKey(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareSimplePaymentRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareSimplePaymentRequest): PrepareSimplePaymentRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareSimplePaymentRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareSimplePaymentRequest;
-  static deserializeBinaryFromReader(message: PrepareSimplePaymentRequest, reader: jspb.BinaryReader): PrepareSimplePaymentRequest;
-}
-
-export namespace PrepareSimplePaymentRequest {
-  export type AsObject = {
-    amount?: common_v1_common_pb.Amount.AsObject,
-    recipient: string,
-    userReference: string,
-    walletId: string,
-    apiKey: string,
-  }
-}
-
-export class PrepareSimplePaymentResponse extends jspb.Message {
-  getStatus(): PrepareSimplePaymentResponse.StatusMap[keyof PrepareSimplePaymentResponse.StatusMap];
-  setStatus(value: PrepareSimplePaymentResponse.StatusMap[keyof PrepareSimplePaymentResponse.StatusMap]): void;
-
-  getUetr(): string;
-  setUetr(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareSimplePaymentResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareSimplePaymentResponse): PrepareSimplePaymentResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareSimplePaymentResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareSimplePaymentResponse;
-  static deserializeBinaryFromReader(message: PrepareSimplePaymentResponse, reader: jspb.BinaryReader): PrepareSimplePaymentResponse;
-}
-
-export namespace PrepareSimplePaymentResponse {
-  export type AsObject = {
-    status: PrepareSimplePaymentResponse.StatusMap[keyof PrepareSimplePaymentResponse.StatusMap],
-    uetr: string,
-  }
-
-  export interface StatusMap {
-    STATUS_UNSPECIFIED: 0;
-    STATUS_SUCCESS: 1;
-    STATUS_NEED_CHANGE: 2;
-    STATUS_INSUFFICIENT_FUNDS: 3;
-  }
-
-  export const Status: StatusMap;
-}
-
 export class PrepareFundsChangeRequest extends jspb.Message {
   hasAmount(): boolean;
   clearAmount(): void;
@@ -1001,7 +930,7 @@ export namespace PrepareFundsChangeResponse {
   export const Status: StatusMap;
 }
 
-export class PrepareContractTransactionRequest extends jspb.Message {
+export class PrepareTransactionRequest extends jspb.Message {
   getApiKey(): string;
   setApiKey(value: string): void;
 
@@ -1022,16 +951,16 @@ export class PrepareContractTransactionRequest extends jspb.Message {
   setMemo(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareContractTransactionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareContractTransactionRequest): PrepareContractTransactionRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareTransactionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareTransactionRequest): PrepareTransactionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareContractTransactionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareContractTransactionRequest;
-  static deserializeBinaryFromReader(message: PrepareContractTransactionRequest, reader: jspb.BinaryReader): PrepareContractTransactionRequest;
+  static serializeBinaryToWriter(message: PrepareTransactionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareTransactionRequest;
+  static deserializeBinaryFromReader(message: PrepareTransactionRequest, reader: jspb.BinaryReader): PrepareTransactionRequest;
 }
 
-export namespace PrepareContractTransactionRequest {
+export namespace PrepareTransactionRequest {
   export type AsObject = {
     apiKey: string,
     walletId: string,
@@ -1041,26 +970,26 @@ export namespace PrepareContractTransactionRequest {
   }
 }
 
-export class PrepareContractTransactionResponse extends jspb.Message {
-  getStatus(): PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap];
-  setStatus(value: PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap]): void;
+export class PrepareTransactionResponse extends jspb.Message {
+  getStatus(): PrepareTransactionResponse.StatusMap[keyof PrepareTransactionResponse.StatusMap];
+  setStatus(value: PrepareTransactionResponse.StatusMap[keyof PrepareTransactionResponse.StatusMap]): void;
 
   getUetr(): string;
   setUetr(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareContractTransactionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareContractTransactionResponse): PrepareContractTransactionResponse.AsObject;
+  toObject(includeInstance?: boolean): PrepareTransactionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareTransactionResponse): PrepareTransactionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareContractTransactionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareContractTransactionResponse;
-  static deserializeBinaryFromReader(message: PrepareContractTransactionResponse, reader: jspb.BinaryReader): PrepareContractTransactionResponse;
+  static serializeBinaryToWriter(message: PrepareTransactionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareTransactionResponse;
+  static deserializeBinaryFromReader(message: PrepareTransactionResponse, reader: jspb.BinaryReader): PrepareTransactionResponse;
 }
 
-export namespace PrepareContractTransactionResponse {
+export namespace PrepareTransactionResponse {
   export type AsObject = {
-    status: PrepareContractTransactionResponse.StatusMap[keyof PrepareContractTransactionResponse.StatusMap],
+    status: PrepareTransactionResponse.StatusMap[keyof PrepareTransactionResponse.StatusMap],
     uetr: string,
   }
 
@@ -1073,59 +1002,9 @@ export namespace PrepareContractTransactionResponse {
   export const Status: StatusMap;
 }
 
-export class GetTransactionRequest extends jspb.Message {
-  getUetr(): string;
-  setUetr(value: string): void;
-
+export class ListTransactionsRequest extends jspb.Message {
   getWalletId(): string;
   setWalletId(value: string): void;
-
-  getApiKey(): string;
-  setApiKey(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTransactionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTransactionRequest): GetTransactionRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTransactionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTransactionRequest;
-  static deserializeBinaryFromReader(message: GetTransactionRequest, reader: jspb.BinaryReader): GetTransactionRequest;
-}
-
-export namespace GetTransactionRequest {
-  export type AsObject = {
-    uetr: string,
-    walletId: string,
-    apiKey: string,
-  }
-}
-
-export class GetTransactionResponse extends jspb.Message {
-  hasTransaction(): boolean;
-  clearTransaction(): void;
-  getTransaction(): common_v1_common_pb.Transaction | undefined;
-  setTransaction(value?: common_v1_common_pb.Transaction): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTransactionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTransactionResponse): GetTransactionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTransactionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTransactionResponse;
-  static deserializeBinaryFromReader(message: GetTransactionResponse, reader: jspb.BinaryReader): GetTransactionResponse;
-}
-
-export namespace GetTransactionResponse {
-  export type AsObject = {
-    transaction?: common_v1_common_pb.Transaction.AsObject,
-  }
-}
-
-export class ListTransactionsRequest extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
 
   getApiKey(): string;
   setApiKey(value: string): void;
@@ -1157,76 +1036,6 @@ export class ListTransactionsRequest extends jspb.Message {
 }
 
 export namespace ListTransactionsRequest {
-  export type AsObject = {
-    id: string,
-    apiKey: string,
-    filters?: common_v1_common_pb.Filter.AsObject,
-    page: number,
-    pageSize: number,
-    sortBy?: common_v1_common_pb.SortBy.AsObject,
-  }
-}
-
-export class ListTransactionsResponse extends jspb.Message {
-  clearTransactionsList(): void;
-  getTransactionsList(): Array<common_v1_common_pb.Transaction>;
-  setTransactionsList(value: Array<common_v1_common_pb.Transaction>): void;
-  addTransactions(value?: common_v1_common_pb.Transaction, index?: number): common_v1_common_pb.Transaction;
-
-  getTotalMatchingTransactions(): number;
-  setTotalMatchingTransactions(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTransactionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTransactionsResponse): ListTransactionsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListTransactionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTransactionsResponse;
-  static deserializeBinaryFromReader(message: ListTransactionsResponse, reader: jspb.BinaryReader): ListTransactionsResponse;
-}
-
-export namespace ListTransactionsResponse {
-  export type AsObject = {
-    transactionsList: Array<common_v1_common_pb.Transaction.AsObject>,
-    totalMatchingTransactions: number,
-  }
-}
-
-export class ListContractTransactionsRequest extends jspb.Message {
-  getWalletId(): string;
-  setWalletId(value: string): void;
-
-  getApiKey(): string;
-  setApiKey(value: string): void;
-
-  hasFilters(): boolean;
-  clearFilters(): void;
-  getFilters(): common_v1_common_pb.Filter | undefined;
-  setFilters(value?: common_v1_common_pb.Filter): void;
-
-  getPage(): number;
-  setPage(value: number): void;
-
-  getPageSize(): number;
-  setPageSize(value: number): void;
-
-  hasSortBy(): boolean;
-  clearSortBy(): void;
-  getSortBy(): common_v1_common_pb.SortBy | undefined;
-  setSortBy(value?: common_v1_common_pb.SortBy): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContractTransactionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContractTransactionsRequest): ListContractTransactionsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContractTransactionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContractTransactionsRequest;
-  static deserializeBinaryFromReader(message: ListContractTransactionsRequest, reader: jspb.BinaryReader): ListContractTransactionsRequest;
-}
-
-export namespace ListContractTransactionsRequest {
   export type AsObject = {
     walletId: string,
     apiKey: string,
@@ -1279,7 +1088,7 @@ export namespace ContractSummary {
   }
 }
 
-export class ListContractTransactionsResponse extends jspb.Message {
+export class ListTransactionsResponse extends jspb.Message {
   clearContractsList(): void;
   getContractsList(): Array<ContractSummary>;
   setContractsList(value: Array<ContractSummary>): void;
@@ -1289,119 +1098,19 @@ export class ListContractTransactionsResponse extends jspb.Message {
   setTotalcontracts(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListContractTransactionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListContractTransactionsResponse): ListContractTransactionsResponse.AsObject;
+  toObject(includeInstance?: boolean): ListTransactionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTransactionsResponse): ListTransactionsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListContractTransactionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListContractTransactionsResponse;
-  static deserializeBinaryFromReader(message: ListContractTransactionsResponse, reader: jspb.BinaryReader): ListContractTransactionsResponse;
+  static serializeBinaryToWriter(message: ListTransactionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTransactionsResponse;
+  static deserializeBinaryFromReader(message: ListTransactionsResponse, reader: jspb.BinaryReader): ListTransactionsResponse;
 }
 
-export namespace ListContractTransactionsResponse {
+export namespace ListTransactionsResponse {
   export type AsObject = {
     contractsList: Array<ContractSummary.AsObject>,
     totalcontracts: number,
-  }
-}
-
-export class GetTransactionSnapshotRequest extends jspb.Message {
-  getUetr(): string;
-  setUetr(value: string): void;
-
-  getWalletId(): string;
-  setWalletId(value: string): void;
-
-  getApiKey(): string;
-  setApiKey(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTransactionSnapshotRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTransactionSnapshotRequest): GetTransactionSnapshotRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTransactionSnapshotRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTransactionSnapshotRequest;
-  static deserializeBinaryFromReader(message: GetTransactionSnapshotRequest, reader: jspb.BinaryReader): GetTransactionSnapshotRequest;
-}
-
-export namespace GetTransactionSnapshotRequest {
-  export type AsObject = {
-    uetr: string,
-    walletId: string,
-    apiKey: string,
-  }
-}
-
-export class GetTransactionSnapshotResponse extends jspb.Message {
-  hasSnapshot(): boolean;
-  clearSnapshot(): void;
-  getSnapshot(): common_v1_common_pb.TransactionSnapshot | undefined;
-  setSnapshot(value?: common_v1_common_pb.TransactionSnapshot): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTransactionSnapshotResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTransactionSnapshotResponse): GetTransactionSnapshotResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTransactionSnapshotResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTransactionSnapshotResponse;
-  static deserializeBinaryFromReader(message: GetTransactionSnapshotResponse, reader: jspb.BinaryReader): GetTransactionSnapshotResponse;
-}
-
-export namespace GetTransactionSnapshotResponse {
-  export type AsObject = {
-    snapshot?: common_v1_common_pb.TransactionSnapshot.AsObject,
-  }
-}
-
-export class ListTransactionSnapshotsRequest extends jspb.Message {
-  getUetr(): string;
-  setUetr(value: string): void;
-
-  getWalletId(): string;
-  setWalletId(value: string): void;
-
-  getApiKey(): string;
-  setApiKey(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTransactionSnapshotsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTransactionSnapshotsRequest): ListTransactionSnapshotsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListTransactionSnapshotsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTransactionSnapshotsRequest;
-  static deserializeBinaryFromReader(message: ListTransactionSnapshotsRequest, reader: jspb.BinaryReader): ListTransactionSnapshotsRequest;
-}
-
-export namespace ListTransactionSnapshotsRequest {
-  export type AsObject = {
-    uetr: string,
-    walletId: string,
-    apiKey: string,
-  }
-}
-
-export class ListTransactionSnapshotsResponse extends jspb.Message {
-  clearSnapshotsList(): void;
-  getSnapshotsList(): Array<common_v1_common_pb.TransactionSnapshot>;
-  setSnapshotsList(value: Array<common_v1_common_pb.TransactionSnapshot>): void;
-  addSnapshots(value?: common_v1_common_pb.TransactionSnapshot, index?: number): common_v1_common_pb.TransactionSnapshot;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListTransactionSnapshotsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListTransactionSnapshotsResponse): ListTransactionSnapshotsResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListTransactionSnapshotsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListTransactionSnapshotsResponse;
-  static deserializeBinaryFromReader(message: ListTransactionSnapshotsResponse, reader: jspb.BinaryReader): ListTransactionSnapshotsResponse;
-}
-
-export namespace ListTransactionSnapshotsResponse {
-  export type AsObject = {
-    snapshotsList: Array<common_v1_common_pb.TransactionSnapshot.AsObject>,
   }
 }
 
@@ -1484,7 +1193,7 @@ export namespace ListWalletBalanceDetailsResponse {
   }
 }
 
-export class GetContractTransactionDetailRequest extends jspb.Message {
+export class GetTransactionDetailRequest extends jspb.Message {
   getWalletId(): string;
   setWalletId(value: string): void;
 
@@ -1495,16 +1204,16 @@ export class GetContractTransactionDetailRequest extends jspb.Message {
   setUetr(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetContractTransactionDetailRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetContractTransactionDetailRequest): GetContractTransactionDetailRequest.AsObject;
+  toObject(includeInstance?: boolean): GetTransactionDetailRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTransactionDetailRequest): GetTransactionDetailRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetContractTransactionDetailRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetContractTransactionDetailRequest;
-  static deserializeBinaryFromReader(message: GetContractTransactionDetailRequest, reader: jspb.BinaryReader): GetContractTransactionDetailRequest;
+  static serializeBinaryToWriter(message: GetTransactionDetailRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTransactionDetailRequest;
+  static deserializeBinaryFromReader(message: GetTransactionDetailRequest, reader: jspb.BinaryReader): GetTransactionDetailRequest;
 }
 
-export namespace GetContractTransactionDetailRequest {
+export namespace GetTransactionDetailRequest {
   export type AsObject = {
     walletId: string,
     apiKey: string,
@@ -1512,7 +1221,7 @@ export namespace GetContractTransactionDetailRequest {
   }
 }
 
-export class GetContractTransactionDetailResponse extends jspb.Message {
+export class GetTransactionDetailResponse extends jspb.Message {
   getContractType(): string;
   setContractType(value: string): void;
 
@@ -1520,9 +1229,6 @@ export class GetContractTransactionDetailResponse extends jspb.Message {
   getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
   setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
   addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
-
-  getOriginator(): string;
-  setOriginator(value: string): void;
 
   getCreated(): string;
   setCreated(value: string): void;
@@ -1542,31 +1248,30 @@ export class GetContractTransactionDetailResponse extends jspb.Message {
   setMemo(value: string): void;
 
   clearLogList(): void;
-  getLogList(): Array<GetContractTransactionDetailResponse.LogEntry>;
-  setLogList(value: Array<GetContractTransactionDetailResponse.LogEntry>): void;
-  addLog(value?: GetContractTransactionDetailResponse.LogEntry, index?: number): GetContractTransactionDetailResponse.LogEntry;
+  getLogList(): Array<GetTransactionDetailResponse.LogEntry>;
+  setLogList(value: Array<GetTransactionDetailResponse.LogEntry>): void;
+  addLog(value?: GetTransactionDetailResponse.LogEntry, index?: number): GetTransactionDetailResponse.LogEntry;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetContractTransactionDetailResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetContractTransactionDetailResponse): GetContractTransactionDetailResponse.AsObject;
+  toObject(includeInstance?: boolean): GetTransactionDetailResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTransactionDetailResponse): GetTransactionDetailResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetContractTransactionDetailResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetContractTransactionDetailResponse;
-  static deserializeBinaryFromReader(message: GetContractTransactionDetailResponse, reader: jspb.BinaryReader): GetContractTransactionDetailResponse;
+  static serializeBinaryToWriter(message: GetTransactionDetailResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTransactionDetailResponse;
+  static deserializeBinaryFromReader(message: GetTransactionDetailResponse, reader: jspb.BinaryReader): GetTransactionDetailResponse;
 }
 
-export namespace GetContractTransactionDetailResponse {
+export namespace GetTransactionDetailResponse {
   export type AsObject = {
     contractType: string,
     commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
-    originator: string,
     created: string,
     hashPresenter: string,
     hash: Uint8Array | string,
     expiration: string,
     memo: string,
-    logList: Array<GetContractTransactionDetailResponse.LogEntry.AsObject>,
+    logList: Array<GetTransactionDetailResponse.LogEntry.AsObject>,
   }
 
   export class LogEntry extends jspb.Message {

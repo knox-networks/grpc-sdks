@@ -48,16 +48,7 @@ pub struct Amount {
 
 /// \[Example\]
 /// {
-/// "value": [
-/// {
-/// "key": "KEY1",
-/// "value": "VALUE1"
-/// },
-/// {
-/// "key": "KEY2",
-/// "value": "VALUE2"
-/// }
-/// ]
+/// "value": []
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -390,53 +381,6 @@ pub struct GetInstanceResponse {
     #[prost(string, tag="1")]
     pub instance_id: ::prost::alloc::string::String,
 }
-// Initiates a Simple Payment transaction. Sender is implied to be the owner of the digital banknotes to be sent.
-
-/// \[Example\]
-/// {
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "recipient": "RECIPIENT",
-/// "promissories": [
-/// "PROMISSORY_ID_1",
-/// "PROMISSORY_ID_2",
-/// "PROMISSORY_ID_3"
-/// ],
-/// "user_reference": "USER_PROVIDED_REFERENCE"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct StartSimplePaymentRequest {
-    /// The amount of the payment inclusive of currency.
-    #[prost(message, optional, tag="1")]
-    pub amount: ::core::option::Option<Amount>,
-    /// The recipient public key in multibase format.
-    #[prost(string, tag="2")]
-    pub recipient: ::prost::alloc::string::String,
-    /// Digital banknotes that make up the Simple Payment.
-    #[prost(string, repeated, tag="3")]
-    pub promissories: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    /// User provided reference.
-    #[prost(string, tag="4")]
-    pub user_reference: ::prost::alloc::string::String,
-}
-// Returns the Universal E2E Transaction Reference (UUID v4 format) of a successfully initiated Simple Payment
-// transaction.
-
-/// \[Example\]
-/// {
-/// "uetr": "UETR"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct StartSimplePaymentResponse {
-    /// Universal E2E Transaction Reference (UUID v4 format).
-    #[prost(string, tag="1")]
-    pub uetr: ::prost::alloc::string::String,
-}
 // Initiates a Funds Change transaction. Sender is implied to be the owner of the promissories to be sent. Recipient is
 // the well known Treasury verifier provided at startup.
 
@@ -477,159 +421,6 @@ pub struct StartFundsChangeResponse {
     /// Universal E2E Transaction Reference (UUID v4 format).
     #[prost(string, tag="1")]
     pub uetr: ::prost::alloc::string::String,
-}
-// Represents the status of a transaction with pertinent metadata attached.
-
-/// \[Example\]
-/// {
-/// "status": 5,
-/// "promissories": [
-/// "PROMISSORY_ID_1",
-/// "PROMISSORY_ID_2"
-/// ],
-/// "amount_transferred": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "message": "MESSAGE"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct TransactionSnapshot {
-    /// Status of the transaction.
-    #[prost(enumeration="TransactionStatus", tag="1")]
-    pub status: i32,
-    /// Digital banknote UUIDs.
-    #[prost(string, repeated, tag="3")]
-    pub promissories: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    /// The Amount transferred so far.
-    #[prost(message, optional, tag="4")]
-    pub amount_transferred: ::core::option::Option<Amount>,
-    /// Diagnostic message.
-    #[prost(string, tag="5")]
-    pub message: ::prost::alloc::string::String,
-}
-// Encapsulates a complete transaction object. Contains all required fields to decode a transaction state. This message
-// only has local significance. On the wire messages use various packet types.
-
-/// \[Example\]
-/// {
-/// "type": 1,
-/// "role": 0,
-/// "uetr": "UETR",
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "created": "2006-01-02T15:04:05Z",
-/// "updated": "2007-01-02T15:04:05Z",
-/// "memo": "MEMO",
-/// "owner": "zOwnerPublicKeyMultibase58Encoded",
-/// "counterparty": "zCounterpartyPublicKeyMultibase58Encoded",
-/// "status": 0
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Transaction {
-    /// The Type of the transaction.
-    #[prost(enumeration="transaction::Type", tag="1")]
-    pub r#type: i32,
-    /// The role of the entity represented in this record.
-    #[prost(enumeration="transaction::Role", tag="2")]
-    pub role: i32,
-    /// The Universal E2E Identifier (UUID v4) of this transaction.
-    #[prost(string, tag="3")]
-    pub uetr: ::prost::alloc::string::String,
-    /// The Amount inclusive of currency code.
-    #[prost(message, optional, tag="4")]
-    pub amount: ::core::option::Option<Amount>,
-    /// RFC 3339 Timestamp at which this entry was created.
-    #[prost(string, tag="5")]
-    pub created: ::prost::alloc::string::String,
-    /// RFC 3339 Timestamp at which this entry was last updated.
-    #[prost(string, tag="6")]
-    pub updated: ::prost::alloc::string::String,
-    /// User Reference field.
-    #[prost(string, tag="7")]
-    pub memo: ::prost::alloc::string::String,
-    /// The entity owning this data record, a public key in multibase format. The initiator and responder each get their
-    /// own separate entry, also distinguished by role.
-    #[prost(string, tag="8")]
-    pub owner: ::prost::alloc::string::String,
-    /// The counter party to the transaction from the perspective of the owner of this record. Public key in multibase
-    /// format.
-    #[prost(string, tag="9")]
-    pub counterparty: ::prost::alloc::string::String,
-    /// The status of the transaction.
-    #[prost(enumeration="TransactionStatus", tag="10")]
-    pub status: i32,
-}
-/// Nested message and enum types in `Transaction`.
-pub mod transaction {
-    /// Role in Transaction.
-    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-    #[repr(i32)]
-    pub enum Role {
-        /// Initiator of the transaction.
-        Starter = 0,
-        /// Responder in a transaction.
-        Responder = 1,
-    }
-    impl Role {
-        /// String value of the enum field names used in the ProtoBuf definition.
-        ///
-        /// The values are not transformed in any way and thus are considered stable
-        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-        pub fn as_str_name(&self) -> &'static str {
-            match self {
-                Role::Starter => "ROLE_STARTER",
-                Role::Responder => "ROLE_RESPONDER",
-            }
-        }
-        /// Creates an enum from field names used in the ProtoBuf definition.
-        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-            match value {
-                "ROLE_STARTER" => Some(Self::Starter),
-                "ROLE_RESPONDER" => Some(Self::Responder),
-                _ => None,
-            }
-        }
-    }
-    /// Type of Transaction.
-    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-    #[repr(i32)]
-    pub enum Type {
-        /// The Unknown type is used to guard against accidental use of a zero value.
-        Unknown = 0,
-        /// Simple Payment Transaction.
-        SimplePayment = 1,
-        /// Funds Change Transaction.
-        FundsChange = 2,
-    }
-    impl Type {
-        /// String value of the enum field names used in the ProtoBuf definition.
-        ///
-        /// The values are not transformed in any way and thus are considered stable
-        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-        pub fn as_str_name(&self) -> &'static str {
-            match self {
-                Type::Unknown => "TYPE_UNKNOWN",
-                Type::SimplePayment => "TYPE_SIMPLE_PAYMENT",
-                Type::FundsChange => "TYPE_FUNDS_CHANGE",
-            }
-        }
-        /// Creates an enum from field names used in the ProtoBuf definition.
-        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-            match value {
-                "TYPE_UNKNOWN" => Some(Self::Unknown),
-                "TYPE_SIMPLE_PAYMENT" => Some(Self::SimplePayment),
-                "TYPE_FUNDS_CHANGE" => Some(Self::FundsChange),
-                _ => None,
-            }
-        }
-    }
 }
 /// \[Example\]
 /// {
@@ -819,11 +610,18 @@ pub struct AssetAuthority {
     #[prost(string, tag="2")]
     pub url: ::prost::alloc::string::String,
 }
+/// \[Example\]
+/// {
+/// "denominations": [1, 5, 10, 25, 100, 200, 500, 1000],
+/// "precision": 2
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AssetDenomination {
+    /// Denominations allowed, e.g. [1, 5, 10, 25, 100, etc.].
     #[prost(int64, repeated, tag="1")]
     pub denominations: ::prost::alloc::vec::Vec<i64>,
+    /// Precision for Asset (decimals places), e.g. USD $1.00 = 2.
     #[prost(uint32, tag="2")]
     pub precision: u32,
 }
@@ -937,51 +735,6 @@ impl SignatureSystem {
             "SIGNATURE_SYSTEM_UNSPECIFIED" => Some(Self::Unspecified),
             "SIGNATURE_SYSTEM_ED25519" => Some(Self::Ed25519),
             "SIGNATURE_SYSTEM_SECP256K1" => Some(Self::Secp256k1),
-            _ => None,
-        }
-    }
-}
-/// Enumerated states of both starter and responder transaction clients at a specific point in time.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum TransactionStatus {
-    /// The transaction is initializing.
-    StateInitializing = 0,
-    /// Digital banknotes are being authorized.
-    StateAuthorizing = 1,
-    /// Digital banknotes are being sent.
-    StateSending = 2,
-    /// Digital banknotes are being received.
-    StateReceiving = 5,
-    /// The transaction has successfully completed.
-    StateComplete = 3,
-    /// Transaction has been terminated due to some failure.
-    StateFailed = 4,
-}
-impl TransactionStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            TransactionStatus::StateInitializing => "STATE_INITIALIZING",
-            TransactionStatus::StateAuthorizing => "STATE_AUTHORIZING",
-            TransactionStatus::StateSending => "STATE_SENDING",
-            TransactionStatus::StateReceiving => "STATE_RECEIVING",
-            TransactionStatus::StateComplete => "STATE_COMPLETE",
-            TransactionStatus::StateFailed => "STATE_FAILED",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "STATE_INITIALIZING" => Some(Self::StateInitializing),
-            "STATE_AUTHORIZING" => Some(Self::StateAuthorizing),
-            "STATE_SENDING" => Some(Self::StateSending),
-            "STATE_RECEIVING" => Some(Self::StateReceiving),
-            "STATE_COMPLETE" => Some(Self::StateComplete),
-            "STATE_FAILED" => Some(Self::StateFailed),
             _ => None,
         }
     }
@@ -1227,106 +980,14 @@ pub struct TransactionHeader {
     #[prost(string, repeated, tag="7")]
     pub related_uetrs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
-// Payload for `LockPromissory` and `LockPromissoryAck` packets.
-
 /// \[Example\]
 /// {
-/// "promissory": "LengthOfFileBytesVaries=",
-/// "lock_id": "00000000-0000-0000-0000-000000000000"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LockedPromissory {
-    /// Transferred promissory bytes. These are expected to be the
-    /// flatbuffer-serialized bytes of a Promissory, not protobuf.
-    #[prost(bytes="vec", tag="1")]
-    pub promissory: ::prost::alloc::vec::Vec<u8>,
-    /// UUIDv4 identifier for the lock.
-    #[prost(string, tag="2")]
-    pub lock_id: ::prost::alloc::string::String,
-}
-// Payload for `LockPromissoryBatch` packet.
-
-/// \[Example\]
-/// {
-/// "lock_id": "00000000-0000-0000-0000-000000000000",
 /// "promissory_batch": [
 /// "LengthOfFileBytesVaries=",
 /// "LengthOfFileBytesVaries=",
 /// "LengthOfFileBytesVaries="
 /// ]
 /// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LockPromissoryBatchData {
-    /// UUIDv4 identifier for the lock.
-    #[prost(string, tag="1")]
-    pub lock_id: ::prost::alloc::string::String,
-    /// List of transferred promissory bytes. These are expected to be the
-    /// flatbuffer-serialized bytes of a Promissory, not protobuf.
-    #[prost(bytes="vec", repeated, tag="2")]
-    pub promissory_batch: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
-}
-// Payload for `LockPromissoryBatchAck` packet.
-
-/// \[Example\]
-/// {
-/// "lock_id": "00000000-0000-0000-0000-000000000000",
-/// "acks": [
-/// {
-/// "previous_owner": "zPreviousOwner0PublicKey",
-/// "owner": "zOwner1PublicKey",
-/// "amount": {
-/// "currency_code": "USD",
-/// "amount": 100,
-/// "decimals": 2
-/// }
-/// },
-/// {
-/// "previous_owner": "zPreviousOwner2PublicKey",
-/// "owner": "zOwner3PublicKey",
-/// "amount": {
-/// "currency_code": "USD",
-/// "amount": 500,
-/// "decimals": 2
-/// }
-/// }
-/// ]
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LockPromissoryBatchAckData {
-    /// UUIDv4 identifier for the lock.
-    #[prost(string, tag="1")]
-    pub lock_id: ::prost::alloc::string::String,
-    /// Acknowledgements of locked transfers
-    #[prost(message, repeated, tag="2")]
-    pub acks: ::prost::alloc::vec::Vec<LockedPromissoryAck>,
-}
-/// \[Example\]
-/// {
-/// "previous_owner": "zPreviousOwnerPublicKey",
-/// "owner": "zOwnerPublicKey",
-/// "amount": {
-/// "currency_code": "USD",
-/// "amount": 100,
-/// "decimals": 2
-/// }
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct LockedPromissoryAck {
-    /// The previous owner public key in multibase format.
-    #[prost(string, tag="2")]
-    pub previous_owner: ::prost::alloc::string::String,
-    /// The owner public key in multibase format.
-    #[prost(string, tag="3")]
-    pub owner: ::prost::alloc::string::String,
-    /// The locked Amount to transfer from `previous_owner` to `owner`.
-    #[prost(message, optional, tag="4")]
-    pub amount: ::core::option::Option<Amount>,
-}
-/// Payload for `PromissoryBatch` packet.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BatchedPromissory {
@@ -1672,6 +1333,9 @@ pub struct HashCondition {
     /// negotiation.
     #[prost(bytes="vec", tag="2")]
     pub hash: ::prost::alloc::vec::Vec<u8>,
+    /// OID of algorithm used to generate hash.
+    #[prost(bytes="vec", tag="3")]
+    pub algorithm_oid: ::prost::alloc::vec::Vec<u8>,
 }
 // Represents one of the possible conditions applied to the `Contract`.
 
@@ -1773,22 +1437,44 @@ pub struct Contract {
     #[prost(string, tag="6")]
     pub memo: ::prost::alloc::string::String,
 }
-// Reveals a secret for a particular contract ID
-
 /// \[Example\]
 /// {
-/// "id": "CONTRACT_ID",
-/// "secret": "0123456789abcdef"
+/// "distribution": {
+/// "value": []
+/// },
+/// "decimals": 2,
+/// "currency_code": "USD",
+/// "issuer": {
+/// "signature_system": 1,
+/// "verifier": "BytesLengthOfSenderVerifierVariesByAlgo="
+/// },
+/// "recipient": {
+/// "signature_system": 1,
+/// "verifier": "AlgoVariesRecipientVerifierBytesLen="
+/// },
+/// "signature_system": 1
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Secret {
-    /// Contract id
-    #[prost(string, tag="1")]
-    pub id: ::prost::alloc::string::String,
-    /// Secret
-    #[prost(string, tag="2")]
-    pub secret: ::prost::alloc::string::String,
+pub struct MintRequest {
+    /// Distribution of file denominations.
+    #[prost(message, optional, tag="1")]
+    pub distribution: ::core::option::Option<Distribution>,
+    /// Decimals.
+    #[prost(uint32, tag="2")]
+    pub decimals: u32,
+    /// Currency code.
+    #[prost(string, tag="3")]
+    pub currency_code: ::prost::alloc::string::String,
+    /// Dynamic Verifier of the Issuer.
+    #[prost(message, optional, tag="4")]
+    pub issuer: ::core::option::Option<DynamicVerifier>,
+    /// Dynamic Verifier of the Recipient.
+    #[prost(message, optional, tag="5")]
+    pub recipient: ::core::option::Option<DynamicVerifier>,
+    /// Signature System.
+    #[prost(enumeration="SignatureSystem", tag="6")]
+    pub signature_system: i32,
 }
 // THIS PROTO FILE IS INTENDED FOR USE FOR KNOX AND KNOX CUSTOMERS.
 
@@ -1854,15 +1540,6 @@ pub enum PacketType {
     /// Respond with promissory receipt to a promissory request
     /// TODO: Decide if this msg or a general acknowledgement message should be used.
     PromissoryReceipt = 104,
-    /// Lock Promissory
-    /// Request to notary to lock promissory in double spend database for transaction.
-    LockPromissory = 105,
-    /// Lock Promissory Ack
-    /// Notice from notary that a promissory is locked.
-    LockPromissoryAck = 106,
-    /// Authorize Locked Promissories
-    /// Request to authorize all locked promissories for a given transaction.
-    AuthorizeLockedPromissories = 107,
     /// Authorization Status
     /// Response from Notary to sender of an `AuthorizeLockedPromissories` message. Indicates
     /// the notary has completed authorization.
@@ -1872,27 +1549,18 @@ pub enum PacketType {
     /// promissory related to a given transaction and owned by the requester.
     RetrieveAssets = 109,
     /// PromissoryBatch
-    /// Send a batch of Promissory to recipient
+    /// Send a batch of Promissory to recipient.
     PromissoryBatch = 110,
     /// Lock Promissory Batch
-    /// Request to notary to lock a batch of promissory in double spend database
-    /// for transaction.
+    /// Request to TM to submit transferred promissories toward a contract-based transaction.
     LockPromissoryBatch = 111,
     /// Lock Promissory Batch Ack
-    /// Notice from notary that the batch of promissory is locked.
+    /// Notice from TM that the batch of promissories was submitted.
     LockPromissoryBatchAck = 112,
     /// Retrieve Assets Batch
     /// Request to have a notary send PromissoryBatch packets back to the requester for each
     /// promissory related to a given transaction and owned by the requester.
     RetrieveAssetsBatch = 113,
-    /// Rollback Locked Promissories
-    /// Request sent from the Transaction Manager to the Notary to unlock promissories.
-    /// Does not authorize them, but indicates return of funds to owners that previously locked them.
-    /// Reverts locks created by `LockPromissory` and `LockPromissoryBatch`
-    RollbackLockedPromissories = 114,
-    /// Rollback Locked Promissories Ack
-    /// Acknowledgement response by the Notary to a successful completion of `RollbackLockedPromissories`
-    RollbackLockedPromissoriesAck = 115,
     /// Authorize and Forward Promissory Batch
     /// Request an authorized signature for a promissory batch and forward to the recipients.
     AuthorizeAndForwardPromissoryBatch = 116,
@@ -1902,6 +1570,10 @@ pub enum PacketType {
     /// Authorized Block Batch
     /// Response to a ValidationBlockBatch which contains a batch of AuthorizedBlock.
     AuthorizedBlockBatch = 118,
+    /// Request to the authority to mint new promissories
+    MintPromissory = 119,
+    /// Represents a batch of newly-minted and notarized promissories sent to their final recipient
+    FreshPromissoryBatch = 120,
     // ---------------------------
     // Identity Packets 200..299
     // ---------------------------
@@ -1922,10 +1594,9 @@ pub enum PacketType {
     // Notary Packets 300..399
     // ---------------------------
 
-    /// Notary Authorize Promissory
-    NotaryNotarizePromissory = 300,
-    /// Notarize and Forward Promissory
-    NotaryNotarizeAndForwardPromissory = 301,
+    /// AuthorizationFailure
+    /// Response from the Notary in the even of a failure to Notarize.
+    AuthorizationFailed = 300,
     // ---------------------------
     // Emissary Packets 400..499
     // ---------------------------
@@ -1941,14 +1612,17 @@ pub enum PacketType {
     /// Contract Commitment
     /// Update a contract with the addition of a commitment
     ContractProposal = 500,
-    /// Contract Commitment
-    /// Update a contract with the addition of a commitment
+    /// Contract Ack
+    /// Acknowledgement to participate in contract
     ContractAck = 501,
+    /// Contract Nack
+    /// Acknowledgement to reject a contract
+    ContractNack = 502,
     /// Contract Signature
     /// Updates a contract with the addition of a signature
-    ContractSignature = 502,
+    ContractSignature = 503,
     /// Holds a finalized contract in the packet data field
-    ContractComplete = 503,
+    ContractComplete = 504,
     // ---------------------------
     // Treasury Packets 700..799
     // ---------------------------
@@ -2032,7 +1706,7 @@ pub enum PacketType {
     /// indicates a request for the recipient to provide the secret.
     /// RequestSecret
     RequestSecret = 1308,
-    /// Message sent from a participant in response to receiving a `DemandSecret` packet
+    /// Message sent from a participant in response to receiving a `RequestSecret` packet
     /// PresentSecret
     PresentSecret = 1309,
     /// Message sent by the Transaction Manager to the contract participants in the event
@@ -2063,28 +1737,25 @@ impl PacketType {
             PacketType::AuthorizeAndForwardPromissory => "AuthorizeAndForwardPromissory",
             PacketType::ArchivePromissory => "ArchivePromissory",
             PacketType::PromissoryReceipt => "PromissoryReceipt",
-            PacketType::LockPromissory => "LockPromissory",
-            PacketType::LockPromissoryAck => "LockPromissoryAck",
-            PacketType::AuthorizeLockedPromissories => "AuthorizeLockedPromissories",
             PacketType::AuthorizationStatus => "AuthorizationStatus",
             PacketType::RetrieveAssets => "RetrieveAssets",
             PacketType::PromissoryBatch => "PromissoryBatch",
             PacketType::LockPromissoryBatch => "LockPromissoryBatch",
             PacketType::LockPromissoryBatchAck => "LockPromissoryBatchAck",
             PacketType::RetrieveAssetsBatch => "RetrieveAssetsBatch",
-            PacketType::RollbackLockedPromissories => "RollbackLockedPromissories",
-            PacketType::RollbackLockedPromissoriesAck => "RollbackLockedPromissoriesAck",
             PacketType::AuthorizeAndForwardPromissoryBatch => "AuthorizeAndForwardPromissoryBatch",
             PacketType::ValidationBlockBatch => "ValidationBlockBatch",
             PacketType::AuthorizedBlockBatch => "AuthorizedBlockBatch",
+            PacketType::MintPromissory => "MintPromissory",
+            PacketType::FreshPromissoryBatch => "FreshPromissoryBatch",
             PacketType::IdentityRequest => "IdentityRequest",
             PacketType::IdentityResponse => "IdentityResponse",
             PacketType::IdentityProof => "IdentityProof",
-            PacketType::NotaryNotarizePromissory => "NotaryNotarizePromissory",
-            PacketType::NotaryNotarizeAndForwardPromissory => "NotaryNotarizeAndForwardPromissory",
+            PacketType::AuthorizationFailed => "AuthorizationFailed",
             PacketType::EmissaryConnectionIdentity => "EmissaryConnectionIdentity",
             PacketType::ContractProposal => "ContractProposal",
             PacketType::ContractAck => "ContractAck",
+            PacketType::ContractNack => "ContractNack",
             PacketType::ContractSignature => "ContractSignature",
             PacketType::ContractComplete => "ContractComplete",
             PacketType::RemittanceRequest => "RemittanceRequest",
@@ -2128,28 +1799,25 @@ impl PacketType {
             "AuthorizeAndForwardPromissory" => Some(Self::AuthorizeAndForwardPromissory),
             "ArchivePromissory" => Some(Self::ArchivePromissory),
             "PromissoryReceipt" => Some(Self::PromissoryReceipt),
-            "LockPromissory" => Some(Self::LockPromissory),
-            "LockPromissoryAck" => Some(Self::LockPromissoryAck),
-            "AuthorizeLockedPromissories" => Some(Self::AuthorizeLockedPromissories),
             "AuthorizationStatus" => Some(Self::AuthorizationStatus),
             "RetrieveAssets" => Some(Self::RetrieveAssets),
             "PromissoryBatch" => Some(Self::PromissoryBatch),
             "LockPromissoryBatch" => Some(Self::LockPromissoryBatch),
             "LockPromissoryBatchAck" => Some(Self::LockPromissoryBatchAck),
             "RetrieveAssetsBatch" => Some(Self::RetrieveAssetsBatch),
-            "RollbackLockedPromissories" => Some(Self::RollbackLockedPromissories),
-            "RollbackLockedPromissoriesAck" => Some(Self::RollbackLockedPromissoriesAck),
             "AuthorizeAndForwardPromissoryBatch" => Some(Self::AuthorizeAndForwardPromissoryBatch),
             "ValidationBlockBatch" => Some(Self::ValidationBlockBatch),
             "AuthorizedBlockBatch" => Some(Self::AuthorizedBlockBatch),
+            "MintPromissory" => Some(Self::MintPromissory),
+            "FreshPromissoryBatch" => Some(Self::FreshPromissoryBatch),
             "IdentityRequest" => Some(Self::IdentityRequest),
             "IdentityResponse" => Some(Self::IdentityResponse),
             "IdentityProof" => Some(Self::IdentityProof),
-            "NotaryNotarizePromissory" => Some(Self::NotaryNotarizePromissory),
-            "NotaryNotarizeAndForwardPromissory" => Some(Self::NotaryNotarizeAndForwardPromissory),
+            "AuthorizationFailed" => Some(Self::AuthorizationFailed),
             "EmissaryConnectionIdentity" => Some(Self::EmissaryConnectionIdentity),
             "ContractProposal" => Some(Self::ContractProposal),
             "ContractAck" => Some(Self::ContractAck),
+            "ContractNack" => Some(Self::ContractNack),
             "ContractSignature" => Some(Self::ContractSignature),
             "ContractComplete" => Some(Self::ContractComplete),
             "RemittanceRequest" => Some(Self::RemittanceRequest),
@@ -2172,6 +1840,33 @@ impl PacketType {
             "RequestSecret" => Some(Self::RequestSecret),
             "PresentSecret" => Some(Self::PresentSecret),
             "CPAssetsReturned" => Some(Self::CpAssetsReturned),
+            _ => None,
+        }
+    }
+}
+/// Represents the algorithm used to derive the hash value in the `HashCondition`.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum HashAlgorithm {
+    Sha256 = 0,
+    Sha512 = 1,
+}
+impl HashAlgorithm {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            HashAlgorithm::Sha256 => "SHA256",
+            HashAlgorithm::Sha512 => "SHA512",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "SHA256" => Some(Self::Sha256),
+            "SHA512" => Some(Self::Sha512),
             _ => None,
         }
     }
@@ -2213,6 +1908,339 @@ impl ContractType {
             "CONTRACT_TYPE_SWAP" => Some(Self::Swap),
             "CONTRACT_TYPE_RELAY" => Some(Self::Relay),
             "CONTRACT_TYPE_CUSTOM" => Some(Self::Custom),
+            _ => None,
+        }
+    }
+}
+/// \[Example\]
+/// {
+/// "payload_type": 1,
+/// "data": "xDATAxBYTES="
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Payload {
+    /// Payload type.
+    #[prost(enumeration="PayloadType", tag="1")]
+    pub payload_type: i32,
+    /// Payload data.
+    #[prost(bytes="vec", tag="2")]
+    pub data: ::prost::alloc::vec::Vec<u8>,
+}
+///
+/// {
+/// "contract": {
+/// "urn": "urn:knox:swap:001",
+/// "id": "CONTRACT_ID",
+/// "commitments": [
+/// {
+/// "sender": "zSender1PublicKey",
+/// "recipient": "zRecipient1PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSender2PublicKey",
+/// "recipient": "zRecipient2PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "timeout": 1687180000
+/// }
+/// }
+/// ],
+/// "signatories": {
+/// "Key1": "BYTES=",
+/// "Key2": "BYTES="
+/// },
+/// "memo": "AtomicAssetSwap"
+/// },
+/// "owner": "zOwnerPublicKey"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct NewTransactionData {
+    /// Contract.
+    #[prost(message, optional, tag="1")]
+    pub contract: ::core::option::Option<Contract>,
+    /// Owner Public Key.
+    #[prost(string, tag="2")]
+    pub owner: ::prost::alloc::string::String,
+}
+///
+/// {
+/// "contract": {
+/// "urn": "urn:knox:swap:001",
+/// "id": "CONTRACT_ID",
+/// "commitments": [
+/// {
+/// "sender": "zSender1PublicKey",
+/// "recipient": "zRecipient1PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSender2PublicKey",
+/// "recipient": "zRecipient2PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "timeout": 1687180000
+/// }
+/// }
+/// ],
+/// "signatories": {
+/// "Key1": "BYTES=",
+/// "Key2": "BYTES="
+/// },
+/// "memo": "AtomicAssetSwap"
+/// },
+/// "owner": "zOwnerPublicKey",
+/// "originator": "zOriginatorPublicKey"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct AckProposalData {
+    /// Contract.
+    #[prost(message, optional, tag="1")]
+    pub contract: ::core::option::Option<Contract>,
+    /// Owner Public Key.
+    #[prost(string, tag="2")]
+    pub owner: ::prost::alloc::string::String,
+    /// Originator Public Key.
+    #[prost(string, tag="3")]
+    pub originator: ::prost::alloc::string::String,
+}
+///
+/// {
+/// "owner": "zOwnerPublicKey",
+/// "originator": "zOriginatorPublicKey",
+/// "contract": {
+/// "urn": "urn:knox:swap:001",
+/// "id": "CONTRACT_ID",
+/// "commitments": [
+/// {
+/// "sender": "zSender1PublicKey",
+/// "recipient": "zRecipient1PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSender2PublicKey",
+/// "recipient": "zRecipient2PublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "timeout": 1687180000
+/// }
+/// }
+/// ],
+/// "signatories": {
+/// "Key1": "BYTES=",
+/// "Key2": "BYTES="
+/// },
+/// "memo": "AtomicAssetSwap"
+/// }
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProposalAckNackData {
+    /// Owner Public Key.
+    #[prost(string, tag="1")]
+    pub owner: ::prost::alloc::string::String,
+    /// Originator Public Key.
+    #[prost(string, tag="2")]
+    pub originator: ::prost::alloc::string::String,
+    /// Contract.
+    #[prost(message, optional, tag="3")]
+    pub contract: ::core::option::Option<Contract>,
+}
+/// \[Example\]
+/// {
+/// "contract_id": "a18f7224-a7c1-41f8-b14f-75e920b8ea81",
+/// "owner": "zOwnerPublicKey"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RevealSecretData {
+    /// Contract ID.
+    #[prost(string, tag="1")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Owner Public Key.
+    #[prost(string, tag="2")]
+    pub owner: ::prost::alloc::string::String,
+}
+/// \[Example\]
+/// {
+/// "owner": "zOwnerPublicKey",
+/// "contract_id": "a18f7224-a7c1-41f8-b14f-75e920b8ea81",
+/// "secret": "SecretBytes"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SecretRevealedData {
+    /// Owner Public Key.
+    #[prost(string, tag="1")]
+    pub owner: ::prost::alloc::string::String,
+    /// Contract ID.
+    #[prost(string, tag="2")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Base64 Encoding of Secret bytes.
+    #[prost(string, tag="3")]
+    pub secret: ::prost::alloc::string::String,
+}
+/// \[Example\]
+/// {
+/// "contract_id": "a18f7224-a7c1-41f8-b14f-75e920b8ea81",
+/// "owner": "zOwnerPublicKey",
+/// "secret": "SecretBytes"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ReceiveSecretData {
+    /// Contract ID.
+    #[prost(string, tag="1")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Owner Public Key.
+    #[prost(string, tag="2")]
+    pub owner: ::prost::alloc::string::String,
+    /// Base64 Encoding of Secret bytes.
+    #[prost(string, tag="3")]
+    pub secret: ::prost::alloc::string::String,
+}
+/// \[Example\]
+/// {
+/// "contract_id": "a18f7224-a7c1-41f8-b14f-75e920b8ea81",
+/// "owner": "zOwnerPublicKey",
+/// "result": "Completed"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ReceiveTerminationData {
+    /// Contract ID.
+    #[prost(string, tag="1")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Owner Public Key.
+    #[prost(string, tag="2")]
+    pub owner: ::prost::alloc::string::String,
+    /// Result.
+    #[prost(enumeration="TerminationResult", tag="3")]
+    pub result: i32,
+}
+// THIS PROTO FILE IS INTENDED FOR USE FOR KNOX AND KNOX CUSTOMERS.
+
+/// Payload Type, subject to change.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum PayloadType {
+    /// New Transaction payload, subject to change.
+    NewTransaction = 0,
+    /// Ack Proposal payload, subject to change.
+    AckProposal = 1,
+    /// Acked Proposal payload, subject to change.
+    ProposalAcked = 2,
+    /// Nacked Proposal payload, subject to change.
+    ProposalNacked = 3,
+    /// Reveal Secret payload, subject to change.
+    RevealSecret = 4,
+    /// Revealed Secret payload, subject to change.
+    SecretRevealed = 5,
+    /// Received Secret payload, subject to change.
+    ReceiveSecret = 6,
+    /// Received Termination payload, subject to change.
+    ReceiveTermination = 7,
+}
+impl PayloadType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            PayloadType::NewTransaction => "NewTransaction",
+            PayloadType::AckProposal => "AckProposal",
+            PayloadType::ProposalAcked => "ProposalAcked",
+            PayloadType::ProposalNacked => "ProposalNacked",
+            PayloadType::RevealSecret => "RevealSecret",
+            PayloadType::SecretRevealed => "SecretRevealed",
+            PayloadType::ReceiveSecret => "ReceiveSecret",
+            PayloadType::ReceiveTermination => "ReceiveTermination",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "NewTransaction" => Some(Self::NewTransaction),
+            "AckProposal" => Some(Self::AckProposal),
+            "ProposalAcked" => Some(Self::ProposalAcked),
+            "ProposalNacked" => Some(Self::ProposalNacked),
+            "RevealSecret" => Some(Self::RevealSecret),
+            "SecretRevealed" => Some(Self::SecretRevealed),
+            "ReceiveSecret" => Some(Self::ReceiveSecret),
+            "ReceiveTermination" => Some(Self::ReceiveTermination),
+            _ => None,
+        }
+    }
+}
+/// Termination Result, subject to change.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum TerminationResult {
+    /// Contract Failed, subject to change.
+    ContractFailed = 0,
+    /// Transaction Failed, subject to change.
+    TxnFailed = 1,
+    /// Transaction Completed, subject to change.
+    TxnCompleted = 2,
+}
+impl TerminationResult {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            TerminationResult::ContractFailed => "ContractFailed",
+            TerminationResult::TxnFailed => "TxnFailed",
+            TerminationResult::TxnCompleted => "TxnCompleted",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "ContractFailed" => Some(Self::ContractFailed),
+            "TxnFailed" => Some(Self::TxnFailed),
+            "TxnCompleted" => Some(Self::TxnCompleted),
             _ => None,
         }
     }

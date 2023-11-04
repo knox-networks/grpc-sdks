@@ -5,6 +5,8 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
+import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 
 export class CreateRequest extends jspb.Message {
   getDid(): string;
@@ -50,6 +52,11 @@ export class ResolveRequest extends jspb.Message {
   getDid(): string;
   setDid(value: string): void;
 
+  hasResolutionoption(): boolean;
+  clearResolutionoption(): void;
+  getResolutionoption(): ResolutionOption | undefined;
+  setResolutionoption(value?: ResolutionOption): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ResolveRequest): ResolveRequest.AsObject;
@@ -63,6 +70,7 @@ export class ResolveRequest extends jspb.Message {
 export namespace ResolveRequest {
   export type AsObject = {
     did: string,
+    resolutionoption?: ResolutionOption.AsObject,
   }
 }
 
@@ -112,17 +120,49 @@ export namespace ResolutionOption {
   }
 }
 
+export class DidDocumentMetadata extends jspb.Message {
+  hasCreated(): boolean;
+  clearCreated(): void;
+  getCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdated(): boolean;
+  clearUpdated(): void;
+  getUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DidDocumentMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: DidDocumentMetadata): DidDocumentMetadata.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DidDocumentMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DidDocumentMetadata;
+  static deserializeBinaryFromReader(message: DidDocumentMetadata, reader: jspb.BinaryReader): DidDocumentMetadata;
+}
+
+export namespace DidDocumentMetadata {
+  export type AsObject = {
+    created?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
 export class ResolveResponse extends jspb.Message {
-  getDid(): string;
-  setDid(value: string): void;
+  hasDidresolutionmetadata(): boolean;
+  clearDidresolutionmetadata(): void;
+  getDidresolutionmetadata(): ResolutionMetadata | undefined;
+  setDidresolutionmetadata(value?: ResolutionMetadata): void;
 
-  getDocument(): string;
-  setDocument(value: string): void;
+  hasDiddocument(): boolean;
+  clearDiddocument(): void;
+  getDiddocument(): google_protobuf_struct_pb.Struct | undefined;
+  setDiddocument(value?: google_protobuf_struct_pb.Struct): void;
 
-  hasMetadata(): boolean;
-  clearMetadata(): void;
-  getMetadata(): ResolutionMetadata | undefined;
-  setMetadata(value?: ResolutionMetadata): void;
+  hasDiddocumentmetadata(): boolean;
+  clearDiddocumentmetadata(): void;
+  getDiddocumentmetadata(): DidDocumentMetadata | undefined;
+  setDiddocumentmetadata(value?: DidDocumentMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveResponse.AsObject;
@@ -136,23 +176,25 @@ export class ResolveResponse extends jspb.Message {
 
 export namespace ResolveResponse {
   export type AsObject = {
-    did: string,
-    document: string,
-    metadata?: ResolutionMetadata.AsObject,
+    didresolutionmetadata?: ResolutionMetadata.AsObject,
+    diddocument?: google_protobuf_struct_pb.Struct.AsObject,
+    diddocumentmetadata?: DidDocumentMetadata.AsObject,
   }
 }
 
 export class ResolveRepresentationResponse extends jspb.Message {
-  getDid(): string;
-  setDid(value: string): void;
+  getDiddocumentstream(): string;
+  setDiddocumentstream(value: string): void;
 
-  getDocument(): string;
-  setDocument(value: string): void;
+  hasDidresolutionmetadata(): boolean;
+  clearDidresolutionmetadata(): void;
+  getDidresolutionmetadata(): ResolutionMetadata | undefined;
+  setDidresolutionmetadata(value?: ResolutionMetadata): void;
 
-  hasMetadata(): boolean;
-  clearMetadata(): void;
-  getMetadata(): ResolutionMetadata | undefined;
-  setMetadata(value?: ResolutionMetadata): void;
+  hasDiddocumentmetadata(): boolean;
+  clearDiddocumentmetadata(): void;
+  getDiddocumentmetadata(): DidDocumentMetadata | undefined;
+  setDiddocumentmetadata(value?: DidDocumentMetadata): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolveRepresentationResponse.AsObject;
@@ -166,25 +208,32 @@ export class ResolveRepresentationResponse extends jspb.Message {
 
 export namespace ResolveRepresentationResponse {
   export type AsObject = {
-    did: string,
-    document: string,
-    metadata?: ResolutionMetadata.AsObject,
+    diddocumentstream: string,
+    didresolutionmetadata?: ResolutionMetadata.AsObject,
+    diddocumentmetadata?: DidDocumentMetadata.AsObject,
   }
 }
 
 export class ResolutionMetadata extends jspb.Message {
-  hasCreated(): boolean;
-  clearCreated(): void;
-  getCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setCreated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-  hasUpdated(): boolean;
-  clearUpdated(): void;
-  getUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setUpdated(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
+  hasContenttype(): boolean;
+  clearContenttype(): void;
   getContenttype(): string;
   setContenttype(value: string): void;
+
+  hasDuration(): boolean;
+  clearDuration(): void;
+  getDuration(): number;
+  setDuration(value: number): void;
+
+  hasDidurl(): boolean;
+  clearDidurl(): void;
+  getDidurl(): ResolutionMetadataDidUrl | undefined;
+  setDidurl(value?: ResolutionMetadataDidUrl): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): string;
+  setError(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResolutionMetadata.AsObject;
@@ -198,9 +247,38 @@ export class ResolutionMetadata extends jspb.Message {
 
 export namespace ResolutionMetadata {
   export type AsObject = {
-    created?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    updated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     contenttype: string,
+    duration: number,
+    didurl?: ResolutionMetadataDidUrl.AsObject,
+    error: string,
+  }
+}
+
+export class ResolutionMetadataDidUrl extends jspb.Message {
+  getDid(): string;
+  setDid(value: string): void;
+
+  getMethodname(): string;
+  setMethodname(value: string): void;
+
+  getMethodspecificid(): string;
+  setMethodspecificid(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResolutionMetadataDidUrl.AsObject;
+  static toObject(includeInstance: boolean, msg: ResolutionMetadataDidUrl): ResolutionMetadataDidUrl.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ResolutionMetadataDidUrl, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResolutionMetadataDidUrl;
+  static deserializeBinaryFromReader(message: ResolutionMetadataDidUrl, reader: jspb.BinaryReader): ResolutionMetadataDidUrl;
+}
+
+export namespace ResolutionMetadataDidUrl {
+  export type AsObject = {
+    did: string,
+    methodname: string,
+    methodspecificid: string,
   }
 }
 

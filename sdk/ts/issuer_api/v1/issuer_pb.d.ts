@@ -35,6 +35,9 @@ export class IssueRequest extends jspb.Message {
   getSession(): string;
   setSession(value: string): void;
 
+  getSignatureSystem(): common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap];
+  setSignatureSystem(value: common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IssueRequest.AsObject;
   static toObject(includeInstance: boolean, msg: IssueRequest): IssueRequest.AsObject;
@@ -53,6 +56,7 @@ export namespace IssueRequest {
     recipient?: common_v1_common_pb.DynamicVerifier.AsObject,
     distribution?: common_v1_common_pb.Distribution.AsObject,
     session: string,
+    signatureSystem: common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap],
   }
 }
 
@@ -197,34 +201,8 @@ export namespace SetRoleResponse {
   }
 }
 
-export class AssetDenomination extends jspb.Message {
-  clearDenominationsList(): void;
-  getDenominationsList(): Array<number>;
-  setDenominationsList(value: Array<number>): void;
-  addDenominations(value: number, index?: number): number;
-
-  getPrecision(): number;
-  setPrecision(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AssetDenomination.AsObject;
-  static toObject(includeInstance: boolean, msg: AssetDenomination): AssetDenomination.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AssetDenomination, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AssetDenomination;
-  static deserializeBinaryFromReader(message: AssetDenomination, reader: jspb.BinaryReader): AssetDenomination;
-}
-
-export namespace AssetDenomination {
-  export type AsObject = {
-    denominationsList: Array<number>,
-    precision: number,
-  }
-}
-
 export class SetAssetDenominationsRequest extends jspb.Message {
-  getDenominationsMap(): jspb.Map<string, AssetDenomination>;
+  getDenominationsMap(): jspb.Map<string, common_v1_common_pb.AssetDenomination>;
   clearDenominationsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetAssetDenominationsRequest.AsObject;
@@ -238,7 +216,7 @@ export class SetAssetDenominationsRequest extends jspb.Message {
 
 export namespace SetAssetDenominationsRequest {
   export type AsObject = {
-    denominationsMap: Array<[string, AssetDenomination.AsObject]>,
+    denominationsMap: Array<[string, common_v1_common_pb.AssetDenomination.AsObject]>,
   }
 }
 

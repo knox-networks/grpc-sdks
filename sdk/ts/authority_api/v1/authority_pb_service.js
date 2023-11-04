@@ -66,6 +66,24 @@ AuthorityService.GetNotary = {
   responseType: authority_api_v1_authority_pb.GetNotaryResponse
 };
 
+AuthorityService.ListGovernedAssets = {
+  methodName: "ListGovernedAssets",
+  service: AuthorityService,
+  requestStream: false,
+  responseStream: false,
+  requestType: authority_api_v1_authority_pb.ListGovernedAssetsRequest,
+  responseType: authority_api_v1_authority_pb.ListGovernedAssetsResponse
+};
+
+AuthorityService.SetGovernedAssets = {
+  methodName: "SetGovernedAssets",
+  service: AuthorityService,
+  requestStream: false,
+  responseStream: false,
+  requestType: authority_api_v1_authority_pb.SetGovernedAssetsRequest,
+  responseType: authority_api_v1_authority_pb.SetGovernedAssetsResponse
+};
+
 exports.AuthorityService = AuthorityService;
 
 function AuthorityServiceClient(serviceHost, options) {
@@ -247,6 +265,68 @@ AuthorityServiceClient.prototype.getNotary = function getNotary(requestMessage, 
     callback = arguments[1];
   }
   var client = grpc.unary(AuthorityService.GetNotary, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AuthorityServiceClient.prototype.listGovernedAssets = function listGovernedAssets(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(AuthorityService.ListGovernedAssets, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+AuthorityServiceClient.prototype.setGovernedAssets = function setGovernedAssets(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(AuthorityService.SetGovernedAssets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

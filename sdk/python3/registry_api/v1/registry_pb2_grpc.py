@@ -3,7 +3,7 @@ import grpc
 from ...registry_api.v1 import registry_pb2 as registry__api_dot_v1_dot_registry__pb2
 
 class RegistryServiceStub(object):
-    """Publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
+    """RegistryService is a publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
     """
 
     def __init__(self, channel):
@@ -19,7 +19,7 @@ class RegistryServiceStub(object):
         self.Revoke = channel.unary_unary('/registry_api.v1.RegistryService/Revoke', request_serializer=registry__api_dot_v1_dot_registry__pb2.RevokeRequest.SerializeToString, response_deserializer=registry__api_dot_v1_dot_registry__pb2.RevokeResponse.FromString)
 
 class RegistryServiceServicer(object):
-    """Publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
+    """RegistryService is a publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
     """
 
     def Create(self, request, context):
@@ -63,7 +63,7 @@ def add_RegistryServiceServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class RegistryService(object):
-    """Publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
+    """RegistryService is a publicly accessible repo of DID Documents for cryptographic verification of DIDs. Contains no sensitive data and default implementation of Knox DID method is operated by Knox in AWS. https:// Www.w3.org/TR/did-core/
     """
 
     @staticmethod
@@ -105,21 +105,21 @@ class CredentialIssuerRegistryServiceServicer(object):
     """
 
     def CreateCredentialIssuer(self, request, context):
-        """Creates an verifiable credential credentialIssuer
+        """Creates a verifiable credential Issuer
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCredentialIssuer(self, request, context):
-        """Gets an verifiable credential credentialIssuer
+        """Gets a verifiable credential Issuer
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateCredentialIssuer(self, request, context):
-        """Updates an verifiable credential credentialIssuer
+        """Updates a verifiable credential Issuer
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

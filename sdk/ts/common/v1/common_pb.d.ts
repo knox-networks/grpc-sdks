@@ -488,62 +488,6 @@ export namespace GetInstanceResponse {
   }
 }
 
-export class StartSimplePaymentRequest extends jspb.Message {
-  hasAmount(): boolean;
-  clearAmount(): void;
-  getAmount(): Amount | undefined;
-  setAmount(value?: Amount): void;
-
-  getRecipient(): string;
-  setRecipient(value: string): void;
-
-  clearPromissoriesList(): void;
-  getPromissoriesList(): Array<string>;
-  setPromissoriesList(value: Array<string>): void;
-  addPromissories(value: string, index?: number): string;
-
-  getUserReference(): string;
-  setUserReference(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StartSimplePaymentRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: StartSimplePaymentRequest): StartSimplePaymentRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: StartSimplePaymentRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StartSimplePaymentRequest;
-  static deserializeBinaryFromReader(message: StartSimplePaymentRequest, reader: jspb.BinaryReader): StartSimplePaymentRequest;
-}
-
-export namespace StartSimplePaymentRequest {
-  export type AsObject = {
-    amount?: Amount.AsObject,
-    recipient: string,
-    promissoriesList: Array<string>,
-    userReference: string,
-  }
-}
-
-export class StartSimplePaymentResponse extends jspb.Message {
-  getUetr(): string;
-  setUetr(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StartSimplePaymentResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: StartSimplePaymentResponse): StartSimplePaymentResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: StartSimplePaymentResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StartSimplePaymentResponse;
-  static deserializeBinaryFromReader(message: StartSimplePaymentResponse, reader: jspb.BinaryReader): StartSimplePaymentResponse;
-}
-
-export namespace StartSimplePaymentResponse {
-  export type AsObject = {
-    uetr: string,
-  }
-}
-
 export class StartFundsChangeRequest extends jspb.Message {
   hasAmount(): boolean;
   clearAmount(): void;
@@ -592,115 +536,6 @@ export namespace StartFundsChangeResponse {
   export type AsObject = {
     uetr: string,
   }
-}
-
-export class TransactionSnapshot extends jspb.Message {
-  getStatus(): TransactionStatusMap[keyof TransactionStatusMap];
-  setStatus(value: TransactionStatusMap[keyof TransactionStatusMap]): void;
-
-  clearPromissoriesList(): void;
-  getPromissoriesList(): Array<string>;
-  setPromissoriesList(value: Array<string>): void;
-  addPromissories(value: string, index?: number): string;
-
-  hasAmountTransferred(): boolean;
-  clearAmountTransferred(): void;
-  getAmountTransferred(): Amount | undefined;
-  setAmountTransferred(value?: Amount): void;
-
-  getMessage(): string;
-  setMessage(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TransactionSnapshot.AsObject;
-  static toObject(includeInstance: boolean, msg: TransactionSnapshot): TransactionSnapshot.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TransactionSnapshot, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TransactionSnapshot;
-  static deserializeBinaryFromReader(message: TransactionSnapshot, reader: jspb.BinaryReader): TransactionSnapshot;
-}
-
-export namespace TransactionSnapshot {
-  export type AsObject = {
-    status: TransactionStatusMap[keyof TransactionStatusMap],
-    promissoriesList: Array<string>,
-    amountTransferred?: Amount.AsObject,
-    message: string,
-  }
-}
-
-export class Transaction extends jspb.Message {
-  getType(): Transaction.TypeMap[keyof Transaction.TypeMap];
-  setType(value: Transaction.TypeMap[keyof Transaction.TypeMap]): void;
-
-  getRole(): Transaction.RoleMap[keyof Transaction.RoleMap];
-  setRole(value: Transaction.RoleMap[keyof Transaction.RoleMap]): void;
-
-  getUetr(): string;
-  setUetr(value: string): void;
-
-  hasAmount(): boolean;
-  clearAmount(): void;
-  getAmount(): Amount | undefined;
-  setAmount(value?: Amount): void;
-
-  getCreated(): string;
-  setCreated(value: string): void;
-
-  getUpdated(): string;
-  setUpdated(value: string): void;
-
-  getMemo(): string;
-  setMemo(value: string): void;
-
-  getOwner(): string;
-  setOwner(value: string): void;
-
-  getCounterparty(): string;
-  setCounterparty(value: string): void;
-
-  getStatus(): TransactionStatusMap[keyof TransactionStatusMap];
-  setStatus(value: TransactionStatusMap[keyof TransactionStatusMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Transaction.AsObject;
-  static toObject(includeInstance: boolean, msg: Transaction): Transaction.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Transaction, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Transaction;
-  static deserializeBinaryFromReader(message: Transaction, reader: jspb.BinaryReader): Transaction;
-}
-
-export namespace Transaction {
-  export type AsObject = {
-    type: Transaction.TypeMap[keyof Transaction.TypeMap],
-    role: Transaction.RoleMap[keyof Transaction.RoleMap],
-    uetr: string,
-    amount?: Amount.AsObject,
-    created: string,
-    updated: string,
-    memo: string,
-    owner: string,
-    counterparty: string,
-    status: TransactionStatusMap[keyof TransactionStatusMap],
-  }
-
-  export interface RoleMap {
-    ROLE_STARTER: 0;
-    ROLE_RESPONDER: 1;
-  }
-
-  export const Role: RoleMap;
-
-  export interface TypeMap {
-    TYPE_UNKNOWN: 0;
-    TYPE_SIMPLE_PAYMENT: 1;
-    TYPE_FUNDS_CHANGE: 2;
-  }
-
-  export const Type: TypeMap;
 }
 
 export class FilterItem extends jspb.Message {
@@ -929,17 +764,6 @@ export interface SignatureSystemMap {
 }
 
 export const SignatureSystem: SignatureSystemMap;
-
-export interface TransactionStatusMap {
-  STATE_INITIALIZING: 0;
-  STATE_AUTHORIZING: 1;
-  STATE_SENDING: 2;
-  STATE_RECEIVING: 5;
-  STATE_COMPLETE: 3;
-  STATE_FAILED: 4;
-}
-
-export const TransactionStatus: TransactionStatusMap;
 
 export interface LogicalOperatorMap {
   LOGICAL_OPERATOR_UNSPECIFIED: 0;

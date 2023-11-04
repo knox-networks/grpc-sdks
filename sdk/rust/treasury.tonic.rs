@@ -94,6 +94,27 @@ pub mod monetae_treasury_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** Get a list of past contract transactions.
+*/
+        pub async fn list_transactions(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListTransactionsRequest>,
+        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/treasury.MonetaeTreasury/ListTransactions",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -109,6 +130,12 @@ pub mod monetae_treasury_server {
             &self,
             request: tonic::Request<super::GetSupplyRequest>,
         ) -> Result<tonic::Response<super::GetSupplyResponse>, tonic::Status>;
+        /** Get a list of past contract transactions.
+*/
+        async fn list_transactions(
+            &self,
+            request: tonic::Request<super::ListTransactionsRequest>,
+        ) -> Result<tonic::Response<super::ListTransactionsResponse>, tonic::Status>;
     }
     /** The Treasury application implements value added functions that may be offered by the financial institution. APIs
  defined here are limited to those that are exclusively exposed via the Treasury service, e.g. APIs to manage currency
@@ -201,6 +228,46 @@ pub mod monetae_treasury_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GetSupplySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/treasury.MonetaeTreasury/ListTransactions" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListTransactionsSvc<T: MonetaeTreasury>(pub Arc<T>);
+                    impl<
+                        T: MonetaeTreasury,
+                    > tonic::server::UnaryService<super::ListTransactionsRequest>
+                    for ListTransactionsSvc<T> {
+                        type Response = super::ListTransactionsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListTransactionsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_transactions(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListTransactionsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

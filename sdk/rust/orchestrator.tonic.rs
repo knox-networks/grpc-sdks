@@ -117,6 +117,48 @@ pub mod monetae_overload_orchestrator_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** Shutdown all Overload Agents.
+*/
+        pub async fn shutdown(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ShutdownRequest>,
+        ) -> Result<tonic::Response<super::ShutdownResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orchestrator.MonetaeOverloadOrchestrator/Shutdown",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Commands Overload Agents to run test setup.
+*/
+        pub async fn setup(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetupRequest>,
+        ) -> Result<tonic::Response<super::SetupResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/orchestrator.MonetaeOverloadOrchestrator/Setup",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -144,6 +186,18 @@ pub mod monetae_overload_orchestrator_server {
             &self,
             request: tonic::Request<super::ExecuteRequest>,
         ) -> Result<tonic::Response<super::ExecuteResponse>, tonic::Status>;
+        /** Shutdown all Overload Agents.
+*/
+        async fn shutdown(
+            &self,
+            request: tonic::Request<super::ShutdownRequest>,
+        ) -> Result<tonic::Response<super::ShutdownResponse>, tonic::Status>;
+        /** Commands Overload Agents to run test setup.
+*/
+        async fn setup(
+            &self,
+            request: tonic::Request<super::SetupRequest>,
+        ) -> Result<tonic::Response<super::SetupResponse>, tonic::Status>;
     }
     /** Orchestrator Service for Managing Load Tests.
 */
@@ -278,6 +332,81 @@ pub mod monetae_overload_orchestrator_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ExecuteSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orchestrator.MonetaeOverloadOrchestrator/Shutdown" => {
+                    #[allow(non_camel_case_types)]
+                    struct ShutdownSvc<T: MonetaeOverloadOrchestrator>(pub Arc<T>);
+                    impl<
+                        T: MonetaeOverloadOrchestrator,
+                    > tonic::server::UnaryService<super::ShutdownRequest>
+                    for ShutdownSvc<T> {
+                        type Response = super::ShutdownResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ShutdownRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).shutdown(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ShutdownSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/orchestrator.MonetaeOverloadOrchestrator/Setup" => {
+                    #[allow(non_camel_case_types)]
+                    struct SetupSvc<T: MonetaeOverloadOrchestrator>(pub Arc<T>);
+                    impl<
+                        T: MonetaeOverloadOrchestrator,
+                    > tonic::server::UnaryService<super::SetupRequest> for SetupSvc<T> {
+                        type Response = super::SetupResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetupRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).setup(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SetupSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

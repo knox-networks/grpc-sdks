@@ -86,3 +86,103 @@ export namespace GetSupplyResponse {
   }
 }
 
+export class ListTransactionsRequest extends jspb.Message {
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTransactionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTransactionsRequest): ListTransactionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTransactionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTransactionsRequest;
+  static deserializeBinaryFromReader(message: ListTransactionsRequest, reader: jspb.BinaryReader): ListTransactionsRequest;
+}
+
+export namespace ListTransactionsRequest {
+  export type AsObject = {
+    page: number,
+    pageSize: number,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+    filters?: common_v1_common_pb.Filter.AsObject,
+  }
+}
+
+export class ContractSummary extends jspb.Message {
+  getContractId(): string;
+  setContractId(value: string): void;
+
+  getContractType(): string;
+  setContractType(value: string): void;
+
+  getCreated(): string;
+  setCreated(value: string): void;
+
+  clearCounterpartiesList(): void;
+  getCounterpartiesList(): Array<string>;
+  setCounterpartiesList(value: Array<string>): void;
+  addCounterparties(value: string, index?: number): string;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContractSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: ContractSummary): ContractSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContractSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContractSummary;
+  static deserializeBinaryFromReader(message: ContractSummary, reader: jspb.BinaryReader): ContractSummary;
+}
+
+export namespace ContractSummary {
+  export type AsObject = {
+    contractId: string,
+    contractType: string,
+    created: string,
+    counterpartiesList: Array<string>,
+    memo: string,
+  }
+}
+
+export class ListTransactionsResponse extends jspb.Message {
+  clearContractsList(): void;
+  getContractsList(): Array<ContractSummary>;
+  setContractsList(value: Array<ContractSummary>): void;
+  addContracts(value?: ContractSummary, index?: number): ContractSummary;
+
+  getTotalcontracts(): number;
+  setTotalcontracts(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListTransactionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListTransactionsResponse): ListTransactionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListTransactionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListTransactionsResponse;
+  static deserializeBinaryFromReader(message: ListTransactionsResponse, reader: jspb.BinaryReader): ListTransactionsResponse;
+}
+
+export namespace ListTransactionsResponse {
+  export type AsObject = {
+    contractsList: Array<ContractSummary.AsObject>,
+    totalcontracts: number,
+  }
+}
+

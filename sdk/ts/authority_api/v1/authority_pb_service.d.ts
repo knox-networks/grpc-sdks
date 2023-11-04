@@ -60,6 +60,24 @@ type AuthorityServiceGetNotary = {
   readonly responseType: typeof authority_api_v1_authority_pb.GetNotaryResponse;
 };
 
+type AuthorityServiceListGovernedAssets = {
+  readonly methodName: string;
+  readonly service: typeof AuthorityService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof authority_api_v1_authority_pb.ListGovernedAssetsRequest;
+  readonly responseType: typeof authority_api_v1_authority_pb.ListGovernedAssetsResponse;
+};
+
+type AuthorityServiceSetGovernedAssets = {
+  readonly methodName: string;
+  readonly service: typeof AuthorityService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof authority_api_v1_authority_pb.SetGovernedAssetsRequest;
+  readonly responseType: typeof authority_api_v1_authority_pb.SetGovernedAssetsResponse;
+};
+
 export class AuthorityService {
   static readonly serviceName: string;
   static readonly SetIssuerLimit: AuthorityServiceSetIssuerLimit;
@@ -68,6 +86,8 @@ export class AuthorityService {
   static readonly Redeem: AuthorityServiceRedeem;
   static readonly GetNetworkInfo: AuthorityServiceGetNetworkInfo;
   static readonly GetNotary: AuthorityServiceGetNotary;
+  static readonly ListGovernedAssets: AuthorityServiceListGovernedAssets;
+  static readonly SetGovernedAssets: AuthorityServiceSetGovernedAssets;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -147,6 +167,24 @@ export class AuthorityServiceClient {
   getNotary(
     requestMessage: authority_api_v1_authority_pb.GetNotaryRequest,
     callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.GetNotaryResponse|null) => void
+  ): UnaryResponse;
+  listGovernedAssets(
+    requestMessage: authority_api_v1_authority_pb.ListGovernedAssetsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.ListGovernedAssetsResponse|null) => void
+  ): UnaryResponse;
+  listGovernedAssets(
+    requestMessage: authority_api_v1_authority_pb.ListGovernedAssetsRequest,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.ListGovernedAssetsResponse|null) => void
+  ): UnaryResponse;
+  setGovernedAssets(
+    requestMessage: authority_api_v1_authority_pb.SetGovernedAssetsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.SetGovernedAssetsResponse|null) => void
+  ): UnaryResponse;
+  setGovernedAssets(
+    requestMessage: authority_api_v1_authority_pb.SetGovernedAssetsRequest,
+    callback: (error: ServiceError|null, responseMessage: authority_api_v1_authority_pb.SetGovernedAssetsResponse|null) => void
   ): UnaryResponse;
 }
 

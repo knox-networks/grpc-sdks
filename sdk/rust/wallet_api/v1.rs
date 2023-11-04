@@ -819,92 +819,6 @@ pub struct RequestPresentationResponse {
 /// "amount":100,
 /// "decimals":2
 /// },
-/// "recipient": "zRecipientPublicKeyMultibase58Encoded",
-/// "user_reference": "TRANSACTION_REFERENCE",
-/// "wallet_id": "zWalletIDMultibase58Encoded",
-/// "api_key": "API_KEY"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PrepareSimplePaymentRequest {
-    /// Amount object representing the transfer amount.
-    #[prost(message, optional, tag="1")]
-    pub amount: ::core::option::Option<super::super::common::Amount>,
-    /// Public key of the recipient.
-    #[prost(string, tag="2")]
-    pub recipient: ::prost::alloc::string::String,
-    /// Human-readable memo field
-    #[prost(string, tag="3")]
-    pub user_reference: ::prost::alloc::string::String,
-    /// UUID of the wallet.
-    #[prost(string, tag="4")]
-    pub wallet_id: ::prost::alloc::string::String,
-    /// API key given to the wallet owner at the time of owner creation.
-    #[prost(string, tag="5")]
-    pub api_key: ::prost::alloc::string::String,
-}
-/// \[Example\]
-/// {
-/// "status": 0,
-/// "uetr": "UETR"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PrepareSimplePaymentResponse {
-    /// Status of the transaction.
-    #[prost(enumeration="prepare_simple_payment_response::Status", tag="1")]
-    pub status: i32,
-    /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
-    #[prost(string, tag="2")]
-    pub uetr: ::prost::alloc::string::String,
-}
-/// Nested message and enum types in `PrepareSimplePaymentResponse`.
-pub mod prepare_simple_payment_response {
-    /// Status of Simple Payment
-    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-    #[repr(i32)]
-    pub enum Status {
-        /// Simple Payment Unspecified.
-        Unspecified = 0,
-        /// Simple Payment Successful.
-        Success = 1,
-        /// Simple Payment Currently Needs Change.
-        NeedChange = 2,
-        /// Simple Payment Has Insufficient Funds.
-        InsufficientFunds = 3,
-    }
-    impl Status {
-        /// String value of the enum field names used in the ProtoBuf definition.
-        ///
-        /// The values are not transformed in any way and thus are considered stable
-        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-        pub fn as_str_name(&self) -> &'static str {
-            match self {
-                Status::Unspecified => "STATUS_UNSPECIFIED",
-                Status::Success => "STATUS_SUCCESS",
-                Status::NeedChange => "STATUS_NEED_CHANGE",
-                Status::InsufficientFunds => "STATUS_INSUFFICIENT_FUNDS",
-            }
-        }
-        /// Creates an enum from field names used in the ProtoBuf definition.
-        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-            match value {
-                "STATUS_UNSPECIFIED" => Some(Self::Unspecified),
-                "STATUS_SUCCESS" => Some(Self::Success),
-                "STATUS_NEED_CHANGE" => Some(Self::NeedChange),
-                "STATUS_INSUFFICIENT_FUNDS" => Some(Self::InsufficientFunds),
-                _ => None,
-            }
-        }
-    }
-}
-/// \[Example\]
-/// {
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
 /// "user_reference": "TRANSACTION_REFERENCE",
 /// "wallet_id": "zWalletIDMultibase58Encoded",
 /// "api_key": "API_KEY"
@@ -1008,7 +922,7 @@ pub mod prepare_funds_change_response {
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PrepareContractTransactionRequest {
+pub struct PrepareTransactionRequest {
     /// API key given to the wallet owner at the time of owner creation.
     #[prost(string, tag="1")]
     pub api_key: ::prost::alloc::string::String,
@@ -1032,16 +946,16 @@ pub struct PrepareContractTransactionRequest {
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct PrepareContractTransactionResponse {
+pub struct PrepareTransactionResponse {
     /// Status of the transaction
-    #[prost(enumeration="prepare_contract_transaction_response::Status", tag="1")]
+    #[prost(enumeration="prepare_transaction_response::Status", tag="1")]
     pub status: i32,
     /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
     #[prost(string, tag="2")]
     pub uetr: ::prost::alloc::string::String,
 }
-/// Nested message and enum types in `PrepareContractTransactionResponse`.
-pub mod prepare_contract_transaction_response {
+/// Nested message and enum types in `PrepareTransactionResponse`.
+pub mod prepare_transaction_response {
     /// Prepare Contract Transaction Status.
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
@@ -1078,52 +992,7 @@ pub mod prepare_contract_transaction_response {
 }
 /// \[Example\]
 /// {
-/// "uetr": "UETR",
 /// "wallet_id": "zWalletIDMultibase58Encoded",
-/// "api_key": "API_KEY"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetTransactionRequest {
-    /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
-    #[prost(string, tag="1")]
-    pub uetr: ::prost::alloc::string::String,
-    /// UUID of the wallet.
-    #[prost(string, tag="2")]
-    pub wallet_id: ::prost::alloc::string::String,
-    /// API key given to the wallet owner at the time of owner creation.
-    #[prost(string, tag="3")]
-    pub api_key: ::prost::alloc::string::String,
-}
-/// \[Example\]
-/// {
-/// "transaction": {
-/// "type": 1,
-/// "role": 0,
-/// "uetr": "UETR",
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "created": "2006-01-02T15:04:05Z",
-/// "updated": "2007-01-02T15:04:05Z",
-/// "memo": "MEMO",
-/// "owner": "zOwnerPublicKeyMultibase58Encoded",
-/// "counterparty": "zCounterpartyPublicKeyMultibase58Encoded",
-/// "status": 0
-/// }
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetTransactionResponse {
-    /// Transaction objects.
-    #[prost(message, optional, tag="1")]
-    pub transaction: ::core::option::Option<super::super::common::Transaction>,
-}
-/// \[Example\]
-/// {
-/// "id": "zWalletIDMultibase58Encoded",
 /// "api_key": "API_KEY",
 /// "filters": {
 /// "filters": [
@@ -1169,121 +1038,6 @@ pub struct GetTransactionResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListTransactionsRequest {
-    /// Wallet_id as UUID or public_key as multibase.
-    #[prost(string, tag="1")]
-    pub id: ::prost::alloc::string::String,
-    /// API key given to the wallet owner at the time of owner creation.
-    #[prost(string, tag="2")]
-    pub api_key: ::prost::alloc::string::String,
-    /// Filters applied to list of transactions.
-    #[prost(message, optional, tag="3")]
-    pub filters: ::core::option::Option<super::super::common::Filter>,
-    /// Page number for pagination.
-    #[prost(int32, tag="4")]
-    pub page: i32,
-    /// Size of the page for pagination.
-    #[prost(int32, tag="5")]
-    pub page_size: i32,
-    /// Sort By
-    #[prost(message, optional, tag="6")]
-    pub sort_by: ::core::option::Option<super::super::common::SortBy>,
-}
-/// \[Example\]
-/// {
-/// "transactions": [
-/// {
-/// "type": 1,
-/// "role": 0,
-/// "uetr": "UETR",
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "created": "2006-01-02T15:04:05Z",
-/// "updated": "2007-01-02T15:04:05Z",
-/// "memo": "MEMO",
-/// "owner": "zOwnerPublicKeyMultibase58Encoded",
-/// "counterparty": "zCounterpartyPublicKeyMultibase58Encoded",
-/// "status": 0
-/// },
-/// {
-/// "type": 2,
-/// "role": 0,
-/// "uetr": "UETR",
-/// "amount": {
-/// "currency_code":"USD",
-/// "amount":500,
-/// "decimals":2
-/// },
-/// "created": "2006-01-02T15:04:05Z",
-/// "updated": "2007-01-02T15:04:05Z",
-/// "memo": "MEMO",
-/// "owner": "zOwnerPublicKeyMultibase58Encoded",
-/// "counterparty": "zCounterpartyPublicKeyMultibase58Encoded",
-/// "status": 1
-/// }
-/// ],
-/// "total_matching_transactions": 2
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListTransactionsResponse {
-    /// Transaction objects.
-    #[prost(message, repeated, tag="1")]
-    pub transactions: ::prost::alloc::vec::Vec<super::super::common::Transaction>,
-    /// Total number of returned transactions.
-    #[prost(uint32, tag="2")]
-    pub total_matching_transactions: u32,
-}
-/// \[Example\]
-/// {
-/// "wallet_id": "zWalletIDMultibase58Encoded",
-/// "api_key": "API_KEY",
-/// "filters": {
-/// "filters": [
-/// {
-/// "field": "FIELD1",
-/// "operator": 0,
-/// "value": {
-/// "str_value": "STRINGVAL"
-/// }
-/// },
-/// {
-/// "field": "FIELD2",
-/// "operator": 0,
-/// "value": {
-/// "int_value": 10
-/// }
-/// },
-/// {
-/// "field": "FIELD3",
-/// "operator": 0,
-/// "value": {
-/// "bool_value": false
-/// }
-/// }
-/// ],
-/// "operator": 0
-/// },
-/// "page": 0,
-/// "page_size": 10000,
-/// "sort_by": {
-/// "items": [
-/// {
-/// "field": "FIELD1",
-/// "direction": 0
-/// },
-/// {
-/// "field": "FIELD2",
-/// "direction": 0
-/// }
-/// ]
-/// }
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListContractTransactionsRequest {
     /// Wallet_id as UUID or public_key as multibase.
     #[prost(string, tag="1")]
     pub wallet_id: ::prost::alloc::string::String,
@@ -1365,112 +1119,13 @@ pub struct ContractSummary {
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListContractTransactionsResponse {
+pub struct ListTransactionsResponse {
     /// List of contracts with status metadata
     #[prost(message, repeated, tag="1")]
     pub contracts: ::prost::alloc::vec::Vec<ContractSummary>,
     /// Total number of contracts in paginated set
     #[prost(uint32, tag="2")]
     pub total_contracts: u32,
-}
-/// \[Example\]
-/// {
-/// "uetr": "UETR",
-/// "wallet_id": "zWalletIDMultibase58Encoded",
-/// "api_key": "API_KEY"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetTransactionSnapshotRequest {
-    /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
-    #[prost(string, tag="1")]
-    pub uetr: ::prost::alloc::string::String,
-    /// UUID of the wallet.
-    #[prost(string, tag="2")]
-    pub wallet_id: ::prost::alloc::string::String,
-    /// API key given to the wallet owner at the time of owner creation.
-    #[prost(string, tag="3")]
-    pub api_key: ::prost::alloc::string::String,
-}
-/// \[Example\]
-/// {
-/// "snapshot": {
-/// "status": 5,
-/// "promissories": [
-/// "PROMISSORY_ID_1",
-/// "PROMISSORY_ID_2"
-/// ],
-/// "amount_transferred": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "message": "MESSAGE"
-/// }
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetTransactionSnapshotResponse {
-    /// Transaction snapshots.
-    #[prost(message, optional, tag="1")]
-    pub snapshot: ::core::option::Option<super::super::common::TransactionSnapshot>,
-}
-/// \[Example\]
-/// {
-/// "uetr": "UETR",
-/// "wallet_id": "zWalletIDMultibase58Encoded",
-/// "api_key": "API_KEY"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListTransactionSnapshotsRequest {
-    /// A Unique End-to-end Transaction Reference, string of 36 unique characters.
-    #[prost(string, tag="1")]
-    pub uetr: ::prost::alloc::string::String,
-    /// UUID of the wallet.
-    #[prost(string, tag="2")]
-    pub wallet_id: ::prost::alloc::string::String,
-    /// API key given to the wallet owner at the time of owner creation.
-    #[prost(string, tag="3")]
-    pub api_key: ::prost::alloc::string::String,
-}
-/// \[Example\]
-/// {
-/// "snapshots": [
-/// {
-/// "status": 5,
-/// "promissories": [
-/// "PROMISSORY_ID_1",
-/// "PROMISSORY_ID_2"
-/// ],
-/// "amount_transferred": {
-/// "currency_code":"USD",
-/// "amount":100,
-/// "decimals":2
-/// },
-/// "message": "MESSAGE"
-/// },
-/// {
-/// "status": 3,
-/// "promissories": [
-/// "PROMISSORY_ID_3",
-/// "PROMISSORY_ID_4"
-/// ],
-/// "amount_transferred": {
-/// "currency_code":"USD",
-/// "amount":500,
-/// "decimals":2
-/// },
-/// "message": "MESSAGE2"
-/// }
-/// ]
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ListTransactionSnapshotsResponse {
-    /// Transaction snapshots.
-    #[prost(message, repeated, tag="1")]
-    pub snapshots: ::prost::alloc::vec::Vec<super::super::common::TransactionSnapshot>,
 }
 /// \[Example\]
 /// {
@@ -1572,7 +1227,7 @@ pub struct ListWalletBalanceDetailsResponse {
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetContractTransactionDetailRequest {
+pub struct GetTransactionDetailRequest {
     /// UUID of the wallet.
     #[prost(string, tag="1")]
     pub wallet_id: ::prost::alloc::string::String,
@@ -1606,7 +1261,6 @@ pub struct GetContractTransactionDetailRequest {
 /// }
 /// }
 /// ],
-/// "originator": "zSender1PublicKey",
 /// "created": "2023-12-19T16:39:56-08:00",
 /// "hash_presenter": "zSender1PublicKey",
 /// "hash": "d04b98f48e8f8bcc15c6ae5ac050801cd6dcfd428fb5f9e65c4e16e7807340fa",
@@ -1631,16 +1285,13 @@ pub struct GetContractTransactionDetailRequest {
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetContractTransactionDetailResponse {
+pub struct GetTransactionDetailResponse {
     /// Type of this contract
     #[prost(string, tag="1")]
     pub contract_type: ::prost::alloc::string::String,
     /// Lists all fund transfers specified in the contract
     #[prost(message, repeated, tag="2")]
     pub commitments: ::prost::alloc::vec::Vec<super::super::common::Commitment>,
-    /// \[MultibaseVerifier\] Participant that created the contract
-    #[prost(string, tag="3")]
-    pub originator: ::prost::alloc::string::String,
     /// [RFC3339 Timestamp] Time the contract was created
     #[prost(string, tag="4")]
     pub created: ::prost::alloc::string::String,
@@ -1658,10 +1309,10 @@ pub struct GetContractTransactionDetailResponse {
     pub memo: ::prost::alloc::string::String,
     /// Log of all interactions of this contract
     #[prost(message, repeated, tag="9")]
-    pub log: ::prost::alloc::vec::Vec<get_contract_transaction_detail_response::LogEntry>,
+    pub log: ::prost::alloc::vec::Vec<get_transaction_detail_response::LogEntry>,
 }
-/// Nested message and enum types in `GetContractTransactionDetailResponse`.
-pub mod get_contract_transaction_detail_response {
+/// Nested message and enum types in `GetTransactionDetailResponse`.
+pub mod get_transaction_detail_response {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
     pub struct LogEntry {

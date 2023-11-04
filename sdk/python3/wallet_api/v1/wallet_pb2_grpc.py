@@ -26,18 +26,13 @@ class WalletServiceStub(object):
         self.AddCredential = channel.unary_unary('/wallet_api.v1.WalletService/AddCredential', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialResponse.FromString)
         self.AssociateWallet = channel.unary_unary('/wallet_api.v1.WalletService/AssociateWallet', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletResponse.FromString)
         self.RequestPresentation = channel.unary_unary('/wallet_api.v1.WalletService/RequestPresentation', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationResponse.FromString)
-        self.PrepareSimplePayment = channel.unary_unary('/wallet_api.v1.WalletService/PrepareSimplePayment', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentResponse.FromString)
-        self.PrepareFundsChange = channel.unary_unary('/wallet_api.v1.WalletService/PrepareFundsChange', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.FromString)
-        self.GetTransaction = channel.unary_unary('/wallet_api.v1.WalletService/GetTransaction', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionResponse.FromString)
-        self.ListTransactions = channel.unary_unary('/wallet_api.v1.WalletService/ListTransactions', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsResponse.FromString)
-        self.GetTransactionSnapshot = channel.unary_unary('/wallet_api.v1.WalletService/GetTransactionSnapshot', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotResponse.FromString)
-        self.ListTransactionSnapshots = channel.unary_unary('/wallet_api.v1.WalletService/ListTransactionSnapshots', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsResponse.FromString)
         self.ListWalletBalanceDetails = channel.unary_unary('/wallet_api.v1.WalletService/ListWalletBalanceDetails', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsResponse.FromString)
-        self.ListContractTransactions = channel.unary_unary('/wallet_api.v1.WalletService/ListContractTransactions', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsResponse.FromString)
-        self.GetContractTransactionDetail = channel.unary_unary('/wallet_api.v1.WalletService/GetContractTransactionDetail', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailResponse.FromString)
-        self.PrepareContractTransaction = channel.unary_unary('/wallet_api.v1.WalletService/PrepareContractTransaction', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionResponse.FromString)
+        self.ListTransactions = channel.unary_unary('/wallet_api.v1.WalletService/ListTransactions', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsResponse.FromString)
+        self.GetTransactionDetail = channel.unary_unary('/wallet_api.v1.WalletService/GetTransactionDetail', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailResponse.FromString)
+        self.PrepareTransaction = channel.unary_unary('/wallet_api.v1.WalletService/PrepareTransaction', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionResponse.FromString)
         self.PrepareAtomicAssetSwap = channel.unary_unary('/wallet_api.v1.WalletService/PrepareAtomicAssetSwap', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapResponse.FromString)
         self.PrepareCrossBorderPayment = channel.unary_unary('/wallet_api.v1.WalletService/PrepareCrossBorderPayment', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentResponse.FromString)
+        self.PrepareFundsChange = channel.unary_unary('/wallet_api.v1.WalletService/PrepareFundsChange', request_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.SerializeToString, response_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.FromString)
 
 class WalletServiceServicer(object):
     """Transacts and holds digital banknotes and bank customer information required for financial compliance, in the form of
@@ -126,50 +121,6 @@ class WalletServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PrepareSimplePayment(self, request, context):
-        """Attempts to start a `StartSimplePaymentRequest`. The call immediately returns with a `status` and `uetr` that can
-        be used to query more information about the transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def PrepareFundsChange(self, request, context):
-        """Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
-        to query more information about the transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetTransaction(self, request, context):
-        """Obtains metadata about a transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListTransactions(self, request, context):
-        """List all transactions of a given wallet.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetTransactionSnapshot(self, request, context):
-        """Obtains current snapshot of a transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListTransactionSnapshots(self, request, context):
-        """Obtains the history of a transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ListWalletBalanceDetails(self, request, context):
         """Lists more details about balances in a wallet such as how much funds are available vs reserved.
         """
@@ -177,22 +128,22 @@ class WalletServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListContractTransactions(self, request, context):
-        """List contract transactions
+    def ListTransactions(self, request, context):
+        """List transactions
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetContractTransactionDetail(self, request, context):
-        """Get detailed information about a contract transaction.
+    def GetTransactionDetail(self, request, context):
+        """Get detailed information about a transaction.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PrepareContractTransaction(self, request, context):
-        """Create a new contract transaction
+    def PrepareTransaction(self, request, context):
+        """Create a new transaction
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -214,8 +165,16 @@ class WalletServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PrepareFundsChange(self, request, context):
+        """Attempts to start a funds change request. The call immediately returns with a `status` and `uetr` that can be used
+        to query more information about the transaction.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_WalletServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'Transfer': grpc.unary_unary_rpc_method_handler(servicer.Transfer, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.TransferRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.TransferResponse.SerializeToString), 'CreateOwner': grpc.unary_unary_rpc_method_handler(servicer.CreateOwner, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.CreateOwnerRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.CreateOwnerResponse.SerializeToString), 'CreateWallet': grpc.unary_unary_rpc_method_handler(servicer.CreateWallet, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.CreateWalletRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.CreateWalletResponse.SerializeToString), 'ListWallets': grpc.unary_unary_rpc_method_handler(servicer.ListWallets, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletsResponse.SerializeToString), 'ListAssetFiles': grpc.unary_unary_rpc_method_handler(servicer.ListAssetFiles, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListAssetFilesRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListAssetFilesResponse.SerializeToString), 'ListWalletBalances': grpc.unary_unary_rpc_method_handler(servicer.ListWalletBalances, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalancesRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalancesResponse.SerializeToString), 'Redeem': grpc.unary_unary_rpc_method_handler(servicer.Redeem, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.RedeemRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.RedeemResponse.SerializeToString), 'ListCredentials': grpc.unary_unary_rpc_method_handler(servicer.ListCredentials, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListCredentialsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListCredentialsResponse.SerializeToString), 'AddCredential': grpc.unary_unary_rpc_method_handler(servicer.AddCredential, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialResponse.SerializeToString), 'AssociateWallet': grpc.unary_unary_rpc_method_handler(servicer.AssociateWallet, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletResponse.SerializeToString), 'RequestPresentation': grpc.unary_unary_rpc_method_handler(servicer.RequestPresentation, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationResponse.SerializeToString), 'PrepareSimplePayment': grpc.unary_unary_rpc_method_handler(servicer.PrepareSimplePayment, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentResponse.SerializeToString), 'PrepareFundsChange': grpc.unary_unary_rpc_method_handler(servicer.PrepareFundsChange, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.SerializeToString), 'GetTransaction': grpc.unary_unary_rpc_method_handler(servicer.GetTransaction, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionResponse.SerializeToString), 'ListTransactions': grpc.unary_unary_rpc_method_handler(servicer.ListTransactions, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsResponse.SerializeToString), 'GetTransactionSnapshot': grpc.unary_unary_rpc_method_handler(servicer.GetTransactionSnapshot, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotResponse.SerializeToString), 'ListTransactionSnapshots': grpc.unary_unary_rpc_method_handler(servicer.ListTransactionSnapshots, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsResponse.SerializeToString), 'ListWalletBalanceDetails': grpc.unary_unary_rpc_method_handler(servicer.ListWalletBalanceDetails, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsResponse.SerializeToString), 'ListContractTransactions': grpc.unary_unary_rpc_method_handler(servicer.ListContractTransactions, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsResponse.SerializeToString), 'GetContractTransactionDetail': grpc.unary_unary_rpc_method_handler(servicer.GetContractTransactionDetail, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailResponse.SerializeToString), 'PrepareContractTransaction': grpc.unary_unary_rpc_method_handler(servicer.PrepareContractTransaction, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionResponse.SerializeToString), 'PrepareAtomicAssetSwap': grpc.unary_unary_rpc_method_handler(servicer.PrepareAtomicAssetSwap, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapResponse.SerializeToString), 'PrepareCrossBorderPayment': grpc.unary_unary_rpc_method_handler(servicer.PrepareCrossBorderPayment, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentResponse.SerializeToString)}
+    rpc_method_handlers = {'Transfer': grpc.unary_unary_rpc_method_handler(servicer.Transfer, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.TransferRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.TransferResponse.SerializeToString), 'CreateOwner': grpc.unary_unary_rpc_method_handler(servicer.CreateOwner, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.CreateOwnerRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.CreateOwnerResponse.SerializeToString), 'CreateWallet': grpc.unary_unary_rpc_method_handler(servicer.CreateWallet, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.CreateWalletRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.CreateWalletResponse.SerializeToString), 'ListWallets': grpc.unary_unary_rpc_method_handler(servicer.ListWallets, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletsResponse.SerializeToString), 'ListAssetFiles': grpc.unary_unary_rpc_method_handler(servicer.ListAssetFiles, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListAssetFilesRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListAssetFilesResponse.SerializeToString), 'ListWalletBalances': grpc.unary_unary_rpc_method_handler(servicer.ListWalletBalances, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalancesRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalancesResponse.SerializeToString), 'Redeem': grpc.unary_unary_rpc_method_handler(servicer.Redeem, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.RedeemRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.RedeemResponse.SerializeToString), 'ListCredentials': grpc.unary_unary_rpc_method_handler(servicer.ListCredentials, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListCredentialsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListCredentialsResponse.SerializeToString), 'AddCredential': grpc.unary_unary_rpc_method_handler(servicer.AddCredential, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.AddCredentialResponse.SerializeToString), 'AssociateWallet': grpc.unary_unary_rpc_method_handler(servicer.AssociateWallet, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.AssociateWalletResponse.SerializeToString), 'RequestPresentation': grpc.unary_unary_rpc_method_handler(servicer.RequestPresentation, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationResponse.SerializeToString), 'ListWalletBalanceDetails': grpc.unary_unary_rpc_method_handler(servicer.ListWalletBalanceDetails, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsResponse.SerializeToString), 'ListTransactions': grpc.unary_unary_rpc_method_handler(servicer.ListTransactions, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsResponse.SerializeToString), 'GetTransactionDetail': grpc.unary_unary_rpc_method_handler(servicer.GetTransactionDetail, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailResponse.SerializeToString), 'PrepareTransaction': grpc.unary_unary_rpc_method_handler(servicer.PrepareTransaction, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionResponse.SerializeToString), 'PrepareAtomicAssetSwap': grpc.unary_unary_rpc_method_handler(servicer.PrepareAtomicAssetSwap, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareAtomicAssetSwapResponse.SerializeToString), 'PrepareCrossBorderPayment': grpc.unary_unary_rpc_method_handler(servicer.PrepareCrossBorderPayment, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentResponse.SerializeToString), 'PrepareFundsChange': grpc.unary_unary_rpc_method_handler(servicer.PrepareFundsChange, request_deserializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.FromString, response_serializer=wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('wallet_api.v1.WalletService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -271,44 +230,20 @@ class WalletService(object):
         return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/RequestPresentation', wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.RequestPresentationResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PrepareSimplePayment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareSimplePayment', wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareSimplePaymentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def PrepareFundsChange(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareFundsChange', wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetTransaction(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/GetTransaction', wallet__api_dot_v1_dot_wallet__pb2.GetTransactionRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.GetTransactionResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def ListWalletBalanceDetails(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/ListWalletBalanceDetails', wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListTransactions(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/ListTransactions', wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.ListTransactionsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetTransactionSnapshot(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/GetTransactionSnapshot', wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.GetTransactionSnapshotResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def GetTransactionDetail(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/GetTransactionDetail', wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.GetTransactionDetailResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListTransactionSnapshots(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/ListTransactionSnapshots', wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.ListTransactionSnapshotsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListWalletBalanceDetails(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/ListWalletBalanceDetails', wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.ListWalletBalanceDetailsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListContractTransactions(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/ListContractTransactions', wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.ListContractTransactionsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetContractTransactionDetail(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/GetContractTransactionDetail', wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.GetContractTransactionDetailResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def PrepareContractTransaction(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareContractTransaction', wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareContractTransactionResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def PrepareTransaction(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareTransaction', wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareTransactionResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareAtomicAssetSwap(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
@@ -317,3 +252,7 @@ class WalletService(object):
     @staticmethod
     def PrepareCrossBorderPayment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareCrossBorderPayment', wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareCrossBorderPaymentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PrepareFundsChange(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/wallet_api.v1.WalletService/PrepareFundsChange', wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeRequest.SerializeToString, wallet__api_dot_v1_dot_wallet__pb2.PrepareFundsChangeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

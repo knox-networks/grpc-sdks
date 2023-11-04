@@ -15,9 +15,19 @@ type MonetaeTreasuryGetSupply = {
   readonly responseType: typeof treasury_v1_treasury_pb.GetSupplyResponse;
 };
 
+type MonetaeTreasuryListTransactions = {
+  readonly methodName: string;
+  readonly service: typeof MonetaeTreasury;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof treasury_v1_treasury_pb.ListTransactionsRequest;
+  readonly responseType: typeof treasury_v1_treasury_pb.ListTransactionsResponse;
+};
+
 export class MonetaeTreasury {
   static readonly serviceName: string;
   static readonly GetSupply: MonetaeTreasuryGetSupply;
+  static readonly ListTransactions: MonetaeTreasuryListTransactions;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -60,6 +70,15 @@ export class MonetaeTreasuryClient {
   getSupply(
     requestMessage: treasury_v1_treasury_pb.GetSupplyRequest,
     callback: (error: ServiceError|null, responseMessage: treasury_v1_treasury_pb.GetSupplyResponse|null) => void
+  ): UnaryResponse;
+  listTransactions(
+    requestMessage: treasury_v1_treasury_pb.ListTransactionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: treasury_v1_treasury_pb.ListTransactionsResponse|null) => void
+  ): UnaryResponse;
+  listTransactions(
+    requestMessage: treasury_v1_treasury_pb.ListTransactionsRequest,
+    callback: (error: ServiceError|null, responseMessage: treasury_v1_treasury_pb.ListTransactionsResponse|null) => void
   ): UnaryResponse;
 }
 

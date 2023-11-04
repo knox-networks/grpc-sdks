@@ -3,65 +3,10 @@ import grpc
 from ...common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
 from ...common.v1 import service_pb2 as common_dot_v1_dot_service__pb2
 
-class TransactionServiceStub(object):
-    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
-
-    The Transaction Service is a common service implemented by applications that play a role in payment transactions. For
-    example, the Wallet application and the Treasury application both implement the Transaction service.
-    """
-
-    def __init__(self, channel):
-        """Constructor.
-
-        Args:
-            channel: A grpc.Channel.
-        """
-        self.NewSimplePayment = channel.unary_unary('/common.TransactionService/NewSimplePayment', request_serializer=common_dot_v1_dot_common__pb2.StartSimplePaymentRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.StartSimplePaymentResponse.FromString)
-        self.NewFundsChange = channel.unary_unary('/common.TransactionService/NewFundsChange', request_serializer=common_dot_v1_dot_common__pb2.StartFundsChangeRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.StartFundsChangeResponse.FromString)
-
-class TransactionServiceServicer(object):
-    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
-
-    The Transaction Service is a common service implemented by applications that play a role in payment transactions. For
-    example, the Wallet application and the Treasury application both implement the Transaction service.
-    """
-
-    def NewSimplePayment(self, request, context):
-        """initiates a Simple Payment transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def NewFundsChange(self, request, context):
-        """initiates a Funds Change transaction.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-def add_TransactionServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'NewSimplePayment': grpc.unary_unary_rpc_method_handler(servicer.NewSimplePayment, request_deserializer=common_dot_v1_dot_common__pb2.StartSimplePaymentRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.StartSimplePaymentResponse.SerializeToString), 'NewFundsChange': grpc.unary_unary_rpc_method_handler(servicer.NewFundsChange, request_deserializer=common_dot_v1_dot_common__pb2.StartFundsChangeRequest.FromString, response_serializer=common_dot_v1_dot_common__pb2.StartFundsChangeResponse.SerializeToString)}
-    generic_handler = grpc.method_handlers_generic_handler('common.TransactionService', rpc_method_handlers)
-    server.add_generic_rpc_handlers((generic_handler,))
-
-class TransactionService(object):
-    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
-
-    The Transaction Service is a common service implemented by applications that play a role in payment transactions. For
-    example, the Wallet application and the Treasury application both implement the Transaction service.
-    """
-
-    @staticmethod
-    def NewSimplePayment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/common.TransactionService/NewSimplePayment', common_dot_v1_dot_common__pb2.StartSimplePaymentRequest.SerializeToString, common_dot_v1_dot_common__pb2.StartSimplePaymentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def NewFundsChange(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/common.TransactionService/NewFundsChange', common_dot_v1_dot_common__pb2.StartFundsChangeRequest.SerializeToString, common_dot_v1_dot_common__pb2.StartFundsChangeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
 class ServiceInfoStub(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
+    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
+
+    ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
     determine the type of service and its public key (i.e. verifier).
     """
 
@@ -76,7 +21,9 @@ class ServiceInfoStub(object):
         self.GetInstance = channel.unary_unary('/common.ServiceInfo/GetInstance', request_serializer=common_dot_v1_dot_common__pb2.GetInstanceRequest.SerializeToString, response_deserializer=common_dot_v1_dot_common__pb2.GetInstanceResponse.FromString)
 
 class ServiceInfoServicer(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
+    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
+
+    ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
     determine the type of service and its public key (i.e. verifier).
     """
 
@@ -107,7 +54,9 @@ def add_ServiceInfoServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class ServiceInfo(object):
-    """ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
+    """THIS PROTO FILE IS INTENDED FOR INTERNAL KNOX USE ONLY.
+
+    ServiceInfo is a common service implemented by several applications so that a service endpoint can be queried to
     determine the type of service and its public key (i.e. verifier).
     """
 

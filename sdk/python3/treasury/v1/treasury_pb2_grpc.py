@@ -16,6 +16,7 @@ class MonetaeTreasuryStub(object):
             channel: A grpc.Channel.
         """
         self.GetSupply = channel.unary_unary('/treasury.MonetaeTreasury/GetSupply', request_serializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyRequest.SerializeToString, response_deserializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyResponse.FromString)
+        self.ListTransactions = channel.unary_unary('/treasury.MonetaeTreasury/ListTransactions', request_serializer=treasury_dot_v1_dot_treasury__pb2.ListTransactionsRequest.SerializeToString, response_deserializer=treasury_dot_v1_dot_treasury__pb2.ListTransactionsResponse.FromString)
 
 class MonetaeTreasuryServicer(object):
     """The Treasury application implements value added functions that may be offered by the financial institution. APIs
@@ -31,8 +32,15 @@ class MonetaeTreasuryServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListTransactions(self, request, context):
+        """Get a list of past contract transactions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_MonetaeTreasuryServicer_to_server(servicer, server):
-    rpc_method_handlers = {'GetSupply': grpc.unary_unary_rpc_method_handler(servicer.GetSupply, request_deserializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyRequest.FromString, response_serializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyResponse.SerializeToString)}
+    rpc_method_handlers = {'GetSupply': grpc.unary_unary_rpc_method_handler(servicer.GetSupply, request_deserializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyRequest.FromString, response_serializer=treasury_dot_v1_dot_treasury__pb2.GetSupplyResponse.SerializeToString), 'ListTransactions': grpc.unary_unary_rpc_method_handler(servicer.ListTransactions, request_deserializer=treasury_dot_v1_dot_treasury__pb2.ListTransactionsRequest.FromString, response_serializer=treasury_dot_v1_dot_treasury__pb2.ListTransactionsResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('treasury.MonetaeTreasury', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -46,3 +54,7 @@ class MonetaeTreasury(object):
     @staticmethod
     def GetSupply(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/treasury.MonetaeTreasury/GetSupply', treasury_dot_v1_dot_treasury__pb2.GetSupplyRequest.SerializeToString, treasury_dot_v1_dot_treasury__pb2.GetSupplyResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTransactions(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/treasury.MonetaeTreasury/ListTransactions', treasury_dot_v1_dot_treasury__pb2.ListTransactionsRequest.SerializeToString, treasury_dot_v1_dot_treasury__pb2.ListTransactionsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

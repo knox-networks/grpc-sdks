@@ -5,6 +5,7 @@
 
 import * as jspb from "google-protobuf";
 import * as common_v1_common_pb from "../../common/v1/common_pb";
+import * as common_v1_packet_pb from "../../common/v1/packet_pb";
 
 export class Webhook extends jspb.Message {
   getId(): string;
@@ -116,6 +117,74 @@ export namespace PingPayload {
   }
 }
 
+export class ContractProposalCompletedPayload extends jspb.Message {
+  getContractId(): string;
+  setContractId(value: string): void;
+
+  getOwnerId(): string;
+  setOwnerId(value: string): void;
+
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
+  setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
+  addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContractProposalCompletedPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: ContractProposalCompletedPayload): ContractProposalCompletedPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContractProposalCompletedPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContractProposalCompletedPayload;
+  static deserializeBinaryFromReader(message: ContractProposalCompletedPayload, reader: jspb.BinaryReader): ContractProposalCompletedPayload;
+}
+
+export namespace ContractProposalCompletedPayload {
+  export type AsObject = {
+    contractId: string,
+    ownerId: string,
+    walletId: string,
+    commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
+  }
+}
+
+export class ContractPaymentCompletedPayload extends jspb.Message {
+  getContractId(): string;
+  setContractId(value: string): void;
+
+  getOwnerId(): string;
+  setOwnerId(value: string): void;
+
+  getWalletId(): string;
+  setWalletId(value: string): void;
+
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
+  setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
+  addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContractPaymentCompletedPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: ContractPaymentCompletedPayload): ContractPaymentCompletedPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContractPaymentCompletedPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContractPaymentCompletedPayload;
+  static deserializeBinaryFromReader(message: ContractPaymentCompletedPayload, reader: jspb.BinaryReader): ContractPaymentCompletedPayload;
+}
+
+export namespace ContractPaymentCompletedPayload {
+  export type AsObject = {
+    contractId: string,
+    ownerId: string,
+    walletId: string,
+    commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
+  }
+}
+
 export class Event extends jspb.Message {
   getEventType(): EventTypeMap[keyof EventTypeMap];
   setEventType(value: EventTypeMap[keyof EventTypeMap]): void;
@@ -147,6 +216,16 @@ export class Event extends jspb.Message {
   getPingPayload(): PingPayload | undefined;
   setPingPayload(value?: PingPayload): void;
 
+  hasContractProposalCompletedPayload(): boolean;
+  clearContractProposalCompletedPayload(): void;
+  getContractProposalCompletedPayload(): ContractProposalCompletedPayload | undefined;
+  setContractProposalCompletedPayload(value?: ContractProposalCompletedPayload): void;
+
+  hasContractPaymentCompletedPayload(): boolean;
+  clearContractPaymentCompletedPayload(): void;
+  getContractPaymentCompletedPayload(): ContractPaymentCompletedPayload | undefined;
+  setContractPaymentCompletedPayload(value?: ContractPaymentCompletedPayload): void;
+
   getCreatedDate(): string;
   setCreatedDate(value: string): void;
 
@@ -171,6 +250,8 @@ export namespace Event {
     walletCreatedPayload?: CreateWalletPayload.AsObject,
     promissoryReceivedPayload?: PromissoryReceivedPayload.AsObject,
     pingPayload?: PingPayload.AsObject,
+    contractProposalCompletedPayload?: ContractProposalCompletedPayload.AsObject,
+    contractPaymentCompletedPayload?: ContractPaymentCompletedPayload.AsObject,
     createdDate: string,
   }
 
@@ -179,6 +260,8 @@ export namespace Event {
     WALLET_CREATED_PAYLOAD = 6,
     PROMISSORY_RECEIVED_PAYLOAD = 7,
     PING_PAYLOAD = 8,
+    CONTRACT_PROPOSAL_COMPLETED_PAYLOAD = 10,
+    CONTRACT_PAYMENT_COMPLETED_PAYLOAD = 11,
   }
 }
 
@@ -638,6 +721,543 @@ export namespace ListDeliveryHistoryResponse {
   }
 }
 
+export class ScheduledReaction extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getReactionType(): ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap];
+  setReactionType(value: ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap]): void;
+
+  getCronTab(): string;
+  setCronTab(value: string): void;
+
+  hasCreateContractPayload(): boolean;
+  clearCreateContractPayload(): void;
+  getCreateContractPayload(): CreateContractReactionPayload | undefined;
+  setCreateContractPayload(value?: CreateContractReactionPayload): void;
+
+  getReactionPayloadCase(): ScheduledReaction.ReactionPayloadCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScheduledReaction.AsObject;
+  static toObject(includeInstance: boolean, msg: ScheduledReaction): ScheduledReaction.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ScheduledReaction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScheduledReaction;
+  static deserializeBinaryFromReader(message: ScheduledReaction, reader: jspb.BinaryReader): ScheduledReaction;
+}
+
+export namespace ScheduledReaction {
+  export type AsObject = {
+    id: string,
+    name: string,
+    reactionType: ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap],
+    cronTab: string,
+    createContractPayload?: CreateContractReactionPayload.AsObject,
+  }
+
+  export enum ReactionPayloadCase {
+    REACTION_PAYLOAD_NOT_SET = 0,
+    CREATE_CONTRACT_PAYLOAD = 5,
+  }
+}
+
+export class CreateContractReactionPayload extends jspb.Message {
+  getSenderWalletId(): string;
+  setSenderWalletId(value: string): void;
+
+  clearCommitmentsList(): void;
+  getCommitmentsList(): Array<common_v1_packet_pb.Commitment>;
+  setCommitmentsList(value: Array<common_v1_packet_pb.Commitment>): void;
+  addCommitments(value?: common_v1_packet_pb.Commitment, index?: number): common_v1_packet_pb.Commitment;
+
+  clearConditionsList(): void;
+  getConditionsList(): Array<common_v1_packet_pb.Condition>;
+  setConditionsList(value: Array<common_v1_packet_pb.Condition>): void;
+  addConditions(value?: common_v1_packet_pb.Condition, index?: number): common_v1_packet_pb.Condition;
+
+  getTimeoutSecs(): number;
+  setTimeoutSecs(value: number): void;
+
+  getMemo(): string;
+  setMemo(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateContractReactionPayload.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateContractReactionPayload): CreateContractReactionPayload.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateContractReactionPayload, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateContractReactionPayload;
+  static deserializeBinaryFromReader(message: CreateContractReactionPayload, reader: jspb.BinaryReader): CreateContractReactionPayload;
+}
+
+export namespace CreateContractReactionPayload {
+  export type AsObject = {
+    senderWalletId: string,
+    commitmentsList: Array<common_v1_packet_pb.Commitment.AsObject>,
+    conditionsList: Array<common_v1_packet_pb.Condition.AsObject>,
+    timeoutSecs: number,
+    memo: string,
+  }
+}
+
+export class CreateScheduledReactionRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getReactionType(): ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap];
+  setReactionType(value: ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap]): void;
+
+  getCronTab(): string;
+  setCronTab(value: string): void;
+
+  hasCreateContractPayload(): boolean;
+  clearCreateContractPayload(): void;
+  getCreateContractPayload(): CreateContractReactionPayload | undefined;
+  setCreateContractPayload(value?: CreateContractReactionPayload): void;
+
+  getReactionPayloadCase(): CreateScheduledReactionRequest.ReactionPayloadCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateScheduledReactionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateScheduledReactionRequest): CreateScheduledReactionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateScheduledReactionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateScheduledReactionRequest;
+  static deserializeBinaryFromReader(message: CreateScheduledReactionRequest, reader: jspb.BinaryReader): CreateScheduledReactionRequest;
+}
+
+export namespace CreateScheduledReactionRequest {
+  export type AsObject = {
+    apiKey: string,
+    name: string,
+    reactionType: ScheduleReactionTypeMap[keyof ScheduleReactionTypeMap],
+    cronTab: string,
+    createContractPayload?: CreateContractReactionPayload.AsObject,
+  }
+
+  export enum ReactionPayloadCase {
+    REACTION_PAYLOAD_NOT_SET = 0,
+    CREATE_CONTRACT_PAYLOAD = 5,
+  }
+}
+
+export class CreateScheduledReactionResponse extends jspb.Message {
+  hasScheduledReaction(): boolean;
+  clearScheduledReaction(): void;
+  getScheduledReaction(): ScheduledReaction | undefined;
+  setScheduledReaction(value?: ScheduledReaction): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateScheduledReactionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateScheduledReactionResponse): CreateScheduledReactionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateScheduledReactionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateScheduledReactionResponse;
+  static deserializeBinaryFromReader(message: CreateScheduledReactionResponse, reader: jspb.BinaryReader): CreateScheduledReactionResponse;
+}
+
+export namespace CreateScheduledReactionResponse {
+  export type AsObject = {
+    scheduledReaction?: ScheduledReaction.AsObject,
+  }
+}
+
+export class ListScheduledReactionsRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListScheduledReactionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListScheduledReactionsRequest): ListScheduledReactionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListScheduledReactionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListScheduledReactionsRequest;
+  static deserializeBinaryFromReader(message: ListScheduledReactionsRequest, reader: jspb.BinaryReader): ListScheduledReactionsRequest;
+}
+
+export namespace ListScheduledReactionsRequest {
+  export type AsObject = {
+    apiKey: string,
+    page: number,
+    pageSize: number,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+  }
+}
+
+export class ListScheduledReactionsResponse extends jspb.Message {
+  clearScheduledReactionsList(): void;
+  getScheduledReactionsList(): Array<ScheduledReaction>;
+  setScheduledReactionsList(value: Array<ScheduledReaction>): void;
+  addScheduledReactions(value?: ScheduledReaction, index?: number): ScheduledReaction;
+
+  getTotalOwnedScheduledReactions(): number;
+  setTotalOwnedScheduledReactions(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListScheduledReactionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListScheduledReactionsResponse): ListScheduledReactionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListScheduledReactionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListScheduledReactionsResponse;
+  static deserializeBinaryFromReader(message: ListScheduledReactionsResponse, reader: jspb.BinaryReader): ListScheduledReactionsResponse;
+}
+
+export namespace ListScheduledReactionsResponse {
+  export type AsObject = {
+    scheduledReactionsList: Array<ScheduledReaction.AsObject>,
+    totalOwnedScheduledReactions: number,
+  }
+}
+
+export class DeleteScheduledReactionRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getScheduledReactionId(): string;
+  setScheduledReactionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteScheduledReactionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteScheduledReactionRequest): DeleteScheduledReactionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteScheduledReactionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteScheduledReactionRequest;
+  static deserializeBinaryFromReader(message: DeleteScheduledReactionRequest, reader: jspb.BinaryReader): DeleteScheduledReactionRequest;
+}
+
+export namespace DeleteScheduledReactionRequest {
+  export type AsObject = {
+    apiKey: string,
+    scheduledReactionId: string,
+  }
+}
+
+export class DeleteScheduledReactionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteScheduledReactionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteScheduledReactionResponse): DeleteScheduledReactionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteScheduledReactionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteScheduledReactionResponse;
+  static deserializeBinaryFromReader(message: DeleteScheduledReactionResponse, reader: jspb.BinaryReader): DeleteScheduledReactionResponse;
+}
+
+export namespace DeleteScheduledReactionResponse {
+  export type AsObject = {
+  }
+}
+
+export class Prevalidation extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  hasConsideringContractPrevalidation(): boolean;
+  clearConsideringContractPrevalidation(): void;
+  getConsideringContractPrevalidation(): ConsideringContractPrevalidation | undefined;
+  setConsideringContractPrevalidation(value?: ConsideringContractPrevalidation): void;
+
+  getTriggerCase(): Prevalidation.TriggerCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Prevalidation.AsObject;
+  static toObject(includeInstance: boolean, msg: Prevalidation): Prevalidation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Prevalidation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Prevalidation;
+  static deserializeBinaryFromReader(message: Prevalidation, reader: jspb.BinaryReader): Prevalidation;
+}
+
+export namespace Prevalidation {
+  export type AsObject = {
+    id: string,
+    name: string,
+    consideringContractPrevalidation?: ConsideringContractPrevalidation.AsObject,
+  }
+
+  export enum TriggerCase {
+    TRIGGER_NOT_SET = 0,
+    CONSIDERING_CONTRACT_PREVALIDATION = 3,
+  }
+}
+
+export class ConsideringContractPrevalidation extends jspb.Message {
+  clearConditionList(): void;
+  getConditionList(): Array<ConsideringContractPrevalidation.ValidationCondition>;
+  setConditionList(value: Array<ConsideringContractPrevalidation.ValidationCondition>): void;
+  addCondition(value?: ConsideringContractPrevalidation.ValidationCondition, index?: number): ConsideringContractPrevalidation.ValidationCondition;
+
+  getOutcome(): ConsideringContractPrevalidation.ValidationOutcomeMap[keyof ConsideringContractPrevalidation.ValidationOutcomeMap];
+  setOutcome(value: ConsideringContractPrevalidation.ValidationOutcomeMap[keyof ConsideringContractPrevalidation.ValidationOutcomeMap]): void;
+
+  getLogicalBase(): common_v1_common_pb.LogicalOperatorMap[keyof common_v1_common_pb.LogicalOperatorMap];
+  setLogicalBase(value: common_v1_common_pb.LogicalOperatorMap[keyof common_v1_common_pb.LogicalOperatorMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsideringContractPrevalidation.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsideringContractPrevalidation): ConsideringContractPrevalidation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsideringContractPrevalidation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsideringContractPrevalidation;
+  static deserializeBinaryFromReader(message: ConsideringContractPrevalidation, reader: jspb.BinaryReader): ConsideringContractPrevalidation;
+}
+
+export namespace ConsideringContractPrevalidation {
+  export type AsObject = {
+    conditionList: Array<ConsideringContractPrevalidation.ValidationCondition.AsObject>,
+    outcome: ConsideringContractPrevalidation.ValidationOutcomeMap[keyof ConsideringContractPrevalidation.ValidationOutcomeMap],
+    logicalBase: common_v1_common_pb.LogicalOperatorMap[keyof common_v1_common_pb.LogicalOperatorMap],
+  }
+
+  export class ValidationCondition extends jspb.Message {
+    getTarget(): ConsideringContractPrevalidation.ValidationTargetMap[keyof ConsideringContractPrevalidation.ValidationTargetMap];
+    setTarget(value: ConsideringContractPrevalidation.ValidationTargetMap[keyof ConsideringContractPrevalidation.ValidationTargetMap]): void;
+
+    getOperator(): ValidationOperatorMap[keyof ValidationOperatorMap];
+    setOperator(value: ValidationOperatorMap[keyof ValidationOperatorMap]): void;
+
+    hasAmountValue(): boolean;
+    clearAmountValue(): void;
+    getAmountValue(): common_v1_common_pb.Amount | undefined;
+    setAmountValue(value?: common_v1_common_pb.Amount): void;
+
+    getValueCase(): ValidationCondition.ValueCase;
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ValidationCondition.AsObject;
+    static toObject(includeInstance: boolean, msg: ValidationCondition): ValidationCondition.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ValidationCondition, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ValidationCondition;
+    static deserializeBinaryFromReader(message: ValidationCondition, reader: jspb.BinaryReader): ValidationCondition;
+  }
+
+  export namespace ValidationCondition {
+    export type AsObject = {
+      target: ConsideringContractPrevalidation.ValidationTargetMap[keyof ConsideringContractPrevalidation.ValidationTargetMap],
+      operator: ValidationOperatorMap[keyof ValidationOperatorMap],
+      amountValue?: common_v1_common_pb.Amount.AsObject,
+    }
+
+    export enum ValueCase {
+      VALUE_NOT_SET = 0,
+      AMOUNT_VALUE = 3,
+    }
+  }
+
+  export interface ValidationTargetMap {
+    VALIDATION_TARGET_UNSPECIFIED: 0;
+    VALIDATION_TARGET_RECIPIENT_BALANCE: 1;
+  }
+
+  export const ValidationTarget: ValidationTargetMap;
+
+  export interface ValidationOutcomeMap {
+    CONSIDERING_CONTRACT_OUTCOME_UNSPECIFIED: 0;
+    CONSIDERING_CONTRACT_OUTCOME_ACCEPTED: 1;
+    CONSIDERING_CONTRACT_OUTCOME_REJECTED: 2;
+  }
+
+  export const ValidationOutcome: ValidationOutcomeMap;
+}
+
+export class CreatePrevalidationRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  hasConsideringContractPrevalidation(): boolean;
+  clearConsideringContractPrevalidation(): void;
+  getConsideringContractPrevalidation(): ConsideringContractPrevalidation | undefined;
+  setConsideringContractPrevalidation(value?: ConsideringContractPrevalidation): void;
+
+  getTriggerCase(): CreatePrevalidationRequest.TriggerCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePrevalidationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePrevalidationRequest): CreatePrevalidationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePrevalidationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePrevalidationRequest;
+  static deserializeBinaryFromReader(message: CreatePrevalidationRequest, reader: jspb.BinaryReader): CreatePrevalidationRequest;
+}
+
+export namespace CreatePrevalidationRequest {
+  export type AsObject = {
+    apiKey: string,
+    name: string,
+    consideringContractPrevalidation?: ConsideringContractPrevalidation.AsObject,
+  }
+
+  export enum TriggerCase {
+    TRIGGER_NOT_SET = 0,
+    CONSIDERING_CONTRACT_PREVALIDATION = 3,
+  }
+}
+
+export class CreatePrevalidationResponse extends jspb.Message {
+  hasPrevalidation(): boolean;
+  clearPrevalidation(): void;
+  getPrevalidation(): Prevalidation | undefined;
+  setPrevalidation(value?: Prevalidation): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreatePrevalidationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePrevalidationResponse): CreatePrevalidationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreatePrevalidationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePrevalidationResponse;
+  static deserializeBinaryFromReader(message: CreatePrevalidationResponse, reader: jspb.BinaryReader): CreatePrevalidationResponse;
+}
+
+export namespace CreatePrevalidationResponse {
+  export type AsObject = {
+    prevalidation?: Prevalidation.AsObject,
+  }
+}
+
+export class ListPrevalidationsRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getPage(): number;
+  setPage(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  hasFilters(): boolean;
+  clearFilters(): void;
+  getFilters(): common_v1_common_pb.Filter | undefined;
+  setFilters(value?: common_v1_common_pb.Filter): void;
+
+  hasSortBy(): boolean;
+  clearSortBy(): void;
+  getSortBy(): common_v1_common_pb.SortBy | undefined;
+  setSortBy(value?: common_v1_common_pb.SortBy): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPrevalidationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPrevalidationsRequest): ListPrevalidationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPrevalidationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPrevalidationsRequest;
+  static deserializeBinaryFromReader(message: ListPrevalidationsRequest, reader: jspb.BinaryReader): ListPrevalidationsRequest;
+}
+
+export namespace ListPrevalidationsRequest {
+  export type AsObject = {
+    apiKey: string,
+    page: number,
+    pageSize: number,
+    filters?: common_v1_common_pb.Filter.AsObject,
+    sortBy?: common_v1_common_pb.SortBy.AsObject,
+  }
+}
+
+export class ListPrevalidationsResponse extends jspb.Message {
+  clearPrevalidationsList(): void;
+  getPrevalidationsList(): Array<Prevalidation>;
+  setPrevalidationsList(value: Array<Prevalidation>): void;
+  addPrevalidations(value?: Prevalidation, index?: number): Prevalidation;
+
+  getTotalOwnedPrevalidations(): number;
+  setTotalOwnedPrevalidations(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPrevalidationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPrevalidationsResponse): ListPrevalidationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPrevalidationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPrevalidationsResponse;
+  static deserializeBinaryFromReader(message: ListPrevalidationsResponse, reader: jspb.BinaryReader): ListPrevalidationsResponse;
+}
+
+export namespace ListPrevalidationsResponse {
+  export type AsObject = {
+    prevalidationsList: Array<Prevalidation.AsObject>,
+    totalOwnedPrevalidations: number,
+  }
+}
+
+export class DeletePrevalidationRequest extends jspb.Message {
+  getApiKey(): string;
+  setApiKey(value: string): void;
+
+  getPrevalidationId(): string;
+  setPrevalidationId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePrevalidationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePrevalidationRequest): DeletePrevalidationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePrevalidationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePrevalidationRequest;
+  static deserializeBinaryFromReader(message: DeletePrevalidationRequest, reader: jspb.BinaryReader): DeletePrevalidationRequest;
+}
+
+export namespace DeletePrevalidationRequest {
+  export type AsObject = {
+    apiKey: string,
+    prevalidationId: string,
+  }
+}
+
+export class DeletePrevalidationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeletePrevalidationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeletePrevalidationResponse): DeletePrevalidationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeletePrevalidationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeletePrevalidationResponse;
+  static deserializeBinaryFromReader(message: DeletePrevalidationResponse, reader: jspb.BinaryReader): DeletePrevalidationResponse;
+}
+
+export namespace DeletePrevalidationResponse {
+  export type AsObject = {
+  }
+}
+
 export interface DeliveryStageMap {
   DELIVERY_STAGE_UNSPECIFIED: 0;
   DELIVERY_STAGE_FIRST_RETRY: 1;
@@ -656,6 +1276,8 @@ export interface EventTypeMap {
   EVENT_TYPE_WALLET_CREATED: 1;
   EVENT_TYPE_PROMISSORY_RECEIVED: 2;
   EVENT_TYPE_PING: 3;
+  EVENT_TYPE_CONTRACT_PROPOSAL_COMPLETED: 4;
+  EVENT_TYPE_CONTRACT_PAYMENT_COMPLETED: 5;
 }
 
 export const EventType: EventTypeMap;
@@ -667,4 +1289,22 @@ export interface DeliveryMethodTypeMap {
 }
 
 export const DeliveryMethodType: DeliveryMethodTypeMap;
+
+export interface ScheduleReactionTypeMap {
+  SCHEDULE_REACTION_TYPE_UNSPECIFIED: 0;
+  SCHEDULE_REACTION_TYPE_CREATE_CONTRACT: 1;
+}
+
+export const ScheduleReactionType: ScheduleReactionTypeMap;
+
+export interface ValidationOperatorMap {
+  VALIDATION_OPERATOR_UNSPECIFIED: 0;
+  VALIDATION_OPERATOR_EQUAL: 1;
+  VALIDATION_OPERATOR_GREATER_THAN: 2;
+  VALIDATION_OPERATOR_GREATER_THAN_OR_EQUAL: 3;
+  VALIDATION_OPERATOR_LESS_THAN: 4;
+  VALIDATION_OPERATOR_LESS_THAN_OR_EQUAL: 5;
+}
+
+export const ValidationOperator: ValidationOperatorMap;
 

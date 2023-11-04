@@ -69,6 +69,60 @@ type WebhookManagerServiceListDeliveryHistory = {
   readonly responseType: typeof webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse;
 };
 
+type WebhookManagerServiceCreateScheduledReaction = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.CreateScheduledReactionRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.CreateScheduledReactionResponse;
+};
+
+type WebhookManagerServiceListScheduledReactions = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.ListScheduledReactionsRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.ListScheduledReactionsResponse;
+};
+
+type WebhookManagerServiceDeleteScheduledReaction = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.DeleteScheduledReactionRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.DeleteScheduledReactionResponse;
+};
+
+type WebhookManagerServiceCreatePrevalidation = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.CreatePrevalidationRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.CreatePrevalidationResponse;
+};
+
+type WebhookManagerServiceListPrevalidations = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.ListPrevalidationsRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.ListPrevalidationsResponse;
+};
+
+type WebhookManagerServiceDeletePrevalidation = {
+  readonly methodName: string;
+  readonly service: typeof WebhookManagerService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof webhook_api_v1_webhook_pb.DeletePrevalidationRequest;
+  readonly responseType: typeof webhook_api_v1_webhook_pb.DeletePrevalidationResponse;
+};
+
 export class WebhookManagerService {
   static readonly serviceName: string;
   static readonly CreateWebhook: WebhookManagerServiceCreateWebhook;
@@ -78,6 +132,12 @@ export class WebhookManagerService {
   static readonly RetryEvent: WebhookManagerServiceRetryEvent;
   static readonly Ping: WebhookManagerServicePing;
   static readonly ListDeliveryHistory: WebhookManagerServiceListDeliveryHistory;
+  static readonly CreateScheduledReaction: WebhookManagerServiceCreateScheduledReaction;
+  static readonly ListScheduledReactions: WebhookManagerServiceListScheduledReactions;
+  static readonly DeleteScheduledReaction: WebhookManagerServiceDeleteScheduledReaction;
+  static readonly CreatePrevalidation: WebhookManagerServiceCreatePrevalidation;
+  static readonly ListPrevalidations: WebhookManagerServiceListPrevalidations;
+  static readonly DeletePrevalidation: WebhookManagerServiceDeletePrevalidation;
 }
 
 type EventConsumerServiceEvent = {
@@ -188,6 +248,60 @@ export class WebhookManagerServiceClient {
   listDeliveryHistory(
     requestMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryRequest,
     callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse|null) => void
+  ): UnaryResponse;
+  createScheduledReaction(
+    requestMessage: webhook_api_v1_webhook_pb.CreateScheduledReactionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.CreateScheduledReactionResponse|null) => void
+  ): UnaryResponse;
+  createScheduledReaction(
+    requestMessage: webhook_api_v1_webhook_pb.CreateScheduledReactionRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.CreateScheduledReactionResponse|null) => void
+  ): UnaryResponse;
+  listScheduledReactions(
+    requestMessage: webhook_api_v1_webhook_pb.ListScheduledReactionsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListScheduledReactionsResponse|null) => void
+  ): UnaryResponse;
+  listScheduledReactions(
+    requestMessage: webhook_api_v1_webhook_pb.ListScheduledReactionsRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListScheduledReactionsResponse|null) => void
+  ): UnaryResponse;
+  deleteScheduledReaction(
+    requestMessage: webhook_api_v1_webhook_pb.DeleteScheduledReactionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.DeleteScheduledReactionResponse|null) => void
+  ): UnaryResponse;
+  deleteScheduledReaction(
+    requestMessage: webhook_api_v1_webhook_pb.DeleteScheduledReactionRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.DeleteScheduledReactionResponse|null) => void
+  ): UnaryResponse;
+  createPrevalidation(
+    requestMessage: webhook_api_v1_webhook_pb.CreatePrevalidationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.CreatePrevalidationResponse|null) => void
+  ): UnaryResponse;
+  createPrevalidation(
+    requestMessage: webhook_api_v1_webhook_pb.CreatePrevalidationRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.CreatePrevalidationResponse|null) => void
+  ): UnaryResponse;
+  listPrevalidations(
+    requestMessage: webhook_api_v1_webhook_pb.ListPrevalidationsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListPrevalidationsResponse|null) => void
+  ): UnaryResponse;
+  listPrevalidations(
+    requestMessage: webhook_api_v1_webhook_pb.ListPrevalidationsRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.ListPrevalidationsResponse|null) => void
+  ): UnaryResponse;
+  deletePrevalidation(
+    requestMessage: webhook_api_v1_webhook_pb.DeletePrevalidationRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.DeletePrevalidationResponse|null) => void
+  ): UnaryResponse;
+  deletePrevalidation(
+    requestMessage: webhook_api_v1_webhook_pb.DeletePrevalidationRequest,
+    callback: (error: ServiceError|null, responseMessage: webhook_api_v1_webhook_pb.DeletePrevalidationResponse|null) => void
   ): UnaryResponse;
 }
 

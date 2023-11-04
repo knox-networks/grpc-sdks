@@ -78,6 +78,46 @@ pub struct PingPayload {
 }
 /// \[Example\]
 /// {
+/// "contract_id": "CONTRACT_ID"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ContractProposalCompletedPayload {
+    /// Contract ID.
+    #[prost(string, tag="1")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Owner ID
+    #[prost(string, tag="2")]
+    pub owner_id: ::prost::alloc::string::String,
+    /// Wallet ID
+    #[prost(string, tag="3")]
+    pub wallet_id: ::prost::alloc::string::String,
+    /// Contract Proposals
+    #[prost(message, repeated, tag="4")]
+    pub commitments: ::prost::alloc::vec::Vec<super::super::common::Commitment>,
+}
+/// \[Example\]
+/// {
+/// "contract_id": "CONTRACT_ID"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ContractPaymentCompletedPayload {
+    /// Contract ID.
+    #[prost(string, tag="1")]
+    pub contract_id: ::prost::alloc::string::String,
+    /// Owner ID
+    #[prost(string, tag="2")]
+    pub owner_id: ::prost::alloc::string::String,
+    /// Wallet ID
+    #[prost(string, tag="3")]
+    pub wallet_id: ::prost::alloc::string::String,
+    /// Contract Proposals
+    #[prost(message, repeated, tag="4")]
+    pub commitments: ::prost::alloc::vec::Vec<super::super::common::Commitment>,
+}
+/// \[Example\]
+/// {
 /// "event_type": 0,
 /// "signature": "SignatureLenVariesByAlgorithm",
 /// "event_id": "EVENT_ID",
@@ -114,7 +154,7 @@ pub struct Event {
     #[prost(string, tag="9")]
     pub created_date: ::prost::alloc::string::String,
     /// Event payload.
-    #[prost(oneof="event::Payload", tags="6, 7, 8")]
+    #[prost(oneof="event::Payload", tags="6, 7, 8, 10, 11")]
     pub payload: ::core::option::Option<event::Payload>,
 }
 /// Nested message and enum types in `Event`.
@@ -132,6 +172,12 @@ pub mod event {
         /// Event Payload for pinging.
         #[prost(message, tag="8")]
         PingPayload(super::PingPayload),
+        /// Event Payload for contract proposal completed.
+        #[prost(message, tag="10")]
+        ContractProposalCompletedPayload(super::ContractProposalCompletedPayload),
+        /// Event Payload for contract payment completed.
+        #[prost(message, tag="11")]
+        ContractPaymentCompletedPayload(super::ContractPaymentCompletedPayload),
     }
 }
 /// \[Example\]
@@ -563,6 +609,322 @@ pub mod list_delivery_history_response {
         pub created: ::prost::alloc::string::String,
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ScheduledReaction {
+    #[prost(string, tag="1")]
+    pub id: ::prost::alloc::string::String,
+    /// Webhook name.
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    /// Reaction type.
+    #[prost(enumeration="ScheduleReactionType", tag="3")]
+    pub reaction_type: i32,
+    /// Cron tab. Requires 5 asterisks/values. (e.g. * * * * *). Only supports minute granularity.
+    #[prost(string, tag="4")]
+    pub cron_tab: ::prost::alloc::string::String,
+    #[prost(oneof="scheduled_reaction::ReactionPayload", tags="5")]
+    pub reaction_payload: ::core::option::Option<scheduled_reaction::ReactionPayload>,
+}
+/// Nested message and enum types in `ScheduledReaction`.
+pub mod scheduled_reaction {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum ReactionPayload {
+        /// Reaction Payload for sending payment.
+        #[prost(message, tag="5")]
+        CreateContractPayload(super::CreateContractReactionPayload),
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateContractReactionPayload {
+    /// Wallet ID.
+    #[prost(string, tag="1")]
+    pub sender_wallet_id: ::prost::alloc::string::String,
+    /// List of commitments
+    #[prost(message, repeated, tag="2")]
+    pub commitments: ::prost::alloc::vec::Vec<super::super::common::Commitment>,
+    /// List of conditions
+    #[prost(message, repeated, tag="3")]
+    pub conditions: ::prost::alloc::vec::Vec<super::super::common::Condition>,
+    /// Timeout in seconds for contracts created by the scheduled reaction
+    #[prost(uint32, tag="4")]
+    pub timeout_secs: u32,
+    /// Memo for contracts created by the scheduled reaction
+    #[prost(string, tag="5")]
+    pub memo: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateScheduledReactionRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Webhook name.
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    /// Reaction type.
+    #[prost(enumeration="ScheduleReactionType", tag="3")]
+    pub reaction_type: i32,
+    /// *
+    /// Recurring schedule is in the form of a crontab, requiring five values. This example will execute once per minute.
+    /// ┌───────────── minute (0 - 59)
+    /// │ ┌───────────── hour (0 - 23)
+    /// │ │ ┌───────────── day of the month (1 - 31)
+    /// │ │ │ ┌───────────── month (1 - 12)
+    /// │ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday
+    /// │ │ │ │ │
+    /// │ │ │ │ │
+    /// * * * *
+    #[prost(string, tag="4")]
+    pub cron_tab: ::prost::alloc::string::String,
+    #[prost(oneof="create_scheduled_reaction_request::ReactionPayload", tags="5")]
+    pub reaction_payload: ::core::option::Option<create_scheduled_reaction_request::ReactionPayload>,
+}
+/// Nested message and enum types in `CreateScheduledReactionRequest`.
+pub mod create_scheduled_reaction_request {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum ReactionPayload {
+        /// Reaction Payload for sending payment.
+        #[prost(message, tag="5")]
+        CreateContractPayload(super::CreateContractReactionPayload),
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreateScheduledReactionResponse {
+    #[prost(message, optional, tag="1")]
+    pub scheduled_reaction: ::core::option::Option<ScheduledReaction>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListScheduledReactionsRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Page number for pagination.
+    #[prost(int32, tag="2")]
+    pub page: i32,
+    /// Size of the page for pagination.
+    #[prost(int32, tag="3")]
+    pub page_size: i32,
+    /// Potential filters to apply to the list of scheduled reactions.
+    #[prost(message, optional, tag="4")]
+    pub filters: ::core::option::Option<super::super::common::Filter>,
+    /// Potential sort to apply to the list of scheduled reactions.
+    #[prost(message, optional, tag="5")]
+    pub sort_by: ::core::option::Option<super::super::common::SortBy>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListScheduledReactionsResponse {
+    #[prost(message, repeated, tag="1")]
+    pub scheduled_reactions: ::prost::alloc::vec::Vec<ScheduledReaction>,
+    #[prost(uint32, tag="2")]
+    pub total_owned_scheduled_reactions: u32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteScheduledReactionRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Scheduled Reaction ID.
+    #[prost(string, tag="2")]
+    pub scheduled_reaction_id: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeleteScheduledReactionResponse {
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Prevalidation {
+    /// UUID ID
+    #[prost(string, tag="1")]
+    pub id: ::prost::alloc::string::String,
+    /// Name
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    /// Trigger for the prevalidation.
+    #[prost(oneof="prevalidation::Trigger", tags="3")]
+    pub trigger: ::core::option::Option<prevalidation::Trigger>,
+}
+/// Nested message and enum types in `Prevalidation`.
+pub mod prevalidation {
+    /// Trigger for the prevalidation.
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Trigger {
+        #[prost(message, tag="3")]
+        ConsideringContractPrevalidation(super::ConsideringContractPrevalidation),
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ConsideringContractPrevalidation {
+    /// Conditions to be evaluated
+    #[prost(message, repeated, tag="1")]
+    pub condition: ::prost::alloc::vec::Vec<considering_contract_prevalidation::ValidationCondition>,
+    /// Outcome of the prevalidation if the condition is true
+    #[prost(enumeration="considering_contract_prevalidation::ValidationOutcome", tag="2")]
+    pub outcome: i32,
+    #[prost(enumeration="super::super::common::LogicalOperator", tag="3")]
+    pub logical_base: i32,
+}
+/// Nested message and enum types in `ConsideringContractPrevalidation`.
+pub mod considering_contract_prevalidation {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+    pub struct ValidationCondition {
+        #[prost(enumeration="ValidationTarget", tag="1")]
+        pub target: i32,
+        #[prost(enumeration="super::ValidationOperator", tag="2")]
+        pub operator: i32,
+        #[prost(oneof="validation_condition::Value", tags="3")]
+        pub value: ::core::option::Option<validation_condition::Value>,
+    }
+    /// Nested message and enum types in `ValidationCondition`.
+    pub mod validation_condition {
+        #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+        pub enum Value {
+            #[prost(message, tag="3")]
+            AmountValue(super::super::super::super::common::Amount),
+        }
+    }
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[repr(i32)]
+    pub enum ValidationTarget {
+        Unspecified = 0,
+        /// balance of the account receiving the assets
+        RecipientBalance = 1,
+    }
+    impl ValidationTarget {
+        /// String value of the enum field names used in the ProtoBuf definition.
+        ///
+        /// The values are not transformed in any way and thus are considered stable
+        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+        pub fn as_str_name(&self) -> &'static str {
+            match self {
+                ValidationTarget::Unspecified => "VALIDATION_TARGET_UNSPECIFIED",
+                ValidationTarget::RecipientBalance => "VALIDATION_TARGET_RECIPIENT_BALANCE",
+            }
+        }
+        /// Creates an enum from field names used in the ProtoBuf definition.
+        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+            match value {
+                "VALIDATION_TARGET_UNSPECIFIED" => Some(Self::Unspecified),
+                "VALIDATION_TARGET_RECIPIENT_BALANCE" => Some(Self::RecipientBalance),
+                _ => None,
+            }
+        }
+    }
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[repr(i32)]
+    pub enum ValidationOutcome {
+        ConsideringContractOutcomeUnspecified = 0,
+        ConsideringContractOutcomeAccepted = 1,
+        ConsideringContractOutcomeRejected = 2,
+    }
+    impl ValidationOutcome {
+        /// String value of the enum field names used in the ProtoBuf definition.
+        ///
+        /// The values are not transformed in any way and thus are considered stable
+        /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+        pub fn as_str_name(&self) -> &'static str {
+            match self {
+                ValidationOutcome::ConsideringContractOutcomeUnspecified => "CONSIDERING_CONTRACT_OUTCOME_UNSPECIFIED",
+                ValidationOutcome::ConsideringContractOutcomeAccepted => "CONSIDERING_CONTRACT_OUTCOME_ACCEPTED",
+                ValidationOutcome::ConsideringContractOutcomeRejected => "CONSIDERING_CONTRACT_OUTCOME_REJECTED",
+            }
+        }
+        /// Creates an enum from field names used in the ProtoBuf definition.
+        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+            match value {
+                "CONSIDERING_CONTRACT_OUTCOME_UNSPECIFIED" => Some(Self::ConsideringContractOutcomeUnspecified),
+                "CONSIDERING_CONTRACT_OUTCOME_ACCEPTED" => Some(Self::ConsideringContractOutcomeAccepted),
+                "CONSIDERING_CONTRACT_OUTCOME_REJECTED" => Some(Self::ConsideringContractOutcomeRejected),
+                _ => None,
+            }
+        }
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreatePrevalidationRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Name of the prevalidation.
+    #[prost(string, tag="2")]
+    pub name: ::prost::alloc::string::String,
+    /// Trigger for the prevalidation.
+    #[prost(oneof="create_prevalidation_request::Trigger", tags="3")]
+    pub trigger: ::core::option::Option<create_prevalidation_request::Trigger>,
+}
+/// Nested message and enum types in `CreatePrevalidationRequest`.
+pub mod create_prevalidation_request {
+    /// Trigger for the prevalidation.
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Trigger {
+        #[prost(message, tag="3")]
+        ConsideringContractPrevalidation(super::ConsideringContractPrevalidation),
+    }
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CreatePrevalidationResponse {
+    /// Prevalidation.
+    #[prost(message, optional, tag="1")]
+    pub prevalidation: ::core::option::Option<Prevalidation>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListPrevalidationsRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Page number for pagination.
+    #[prost(int32, tag="2")]
+    pub page: i32,
+    /// Size of the page for pagination.
+    #[prost(int32, tag="3")]
+    pub page_size: i32,
+    /// Potential filters to apply to the list of prevalidations.
+    #[prost(message, optional, tag="4")]
+    pub filters: ::core::option::Option<super::super::common::Filter>,
+    /// Potential sort to apply to the list of prevalidations.
+    #[prost(message, optional, tag="5")]
+    pub sort_by: ::core::option::Option<super::super::common::SortBy>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListPrevalidationsResponse {
+    /// List of Prevalidations returned.
+    #[prost(message, repeated, tag="1")]
+    pub prevalidations: ::prost::alloc::vec::Vec<Prevalidation>,
+    /// Total number of owned prevalidations returned.
+    #[prost(uint32, tag="2")]
+    pub total_owned_prevalidations: u32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeletePrevalidationRequest {
+    /// API Key as a JWT
+    #[prost(string, tag="1")]
+    pub api_key: ::prost::alloc::string::String,
+    /// Prevalidation ID.
+    #[prost(string, tag="2")]
+    pub prevalidation_id: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeletePrevalidationResponse {
+}
 /// Delivery Stage Options.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -628,6 +990,10 @@ pub enum EventType {
     PromissoryReceived = 2,
     /// Event Type Ping.
     Ping = 3,
+    /// Event Type Contract Proposal Completed.
+    ContractProposalCompleted = 4,
+    /// Event Type Contract Payment Completed.
+    ContractPaymentCompleted = 5,
 }
 impl EventType {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -640,6 +1006,8 @@ impl EventType {
             EventType::WalletCreated => "EVENT_TYPE_WALLET_CREATED",
             EventType::PromissoryReceived => "EVENT_TYPE_PROMISSORY_RECEIVED",
             EventType::Ping => "EVENT_TYPE_PING",
+            EventType::ContractProposalCompleted => "EVENT_TYPE_CONTRACT_PROPOSAL_COMPLETED",
+            EventType::ContractPaymentCompleted => "EVENT_TYPE_CONTRACT_PAYMENT_COMPLETED",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -649,6 +1017,8 @@ impl EventType {
             "EVENT_TYPE_WALLET_CREATED" => Some(Self::WalletCreated),
             "EVENT_TYPE_PROMISSORY_RECEIVED" => Some(Self::PromissoryReceived),
             "EVENT_TYPE_PING" => Some(Self::Ping),
+            "EVENT_TYPE_CONTRACT_PROPOSAL_COMPLETED" => Some(Self::ContractProposalCompleted),
+            "EVENT_TYPE_CONTRACT_PAYMENT_COMPLETED" => Some(Self::ContractPaymentCompleted),
             _ => None,
         }
     }
@@ -682,6 +1052,72 @@ impl DeliveryMethodType {
             "DELIVERY_METHOD_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
             "DELIVERY_METHOD_TYPE_HTTP" => Some(Self::Http),
             "DELIVERY_METHOD_TYPE_GRPC" => Some(Self::Grpc),
+            _ => None,
+        }
+    }
+}
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ScheduleReactionType {
+    /// Scheduled Reaction Type Unspecified.
+    Unspecified = 0,
+    /// Scheduled Reaction Type Wallet Created.
+    CreateContract = 1,
+}
+impl ScheduleReactionType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            ScheduleReactionType::Unspecified => "SCHEDULE_REACTION_TYPE_UNSPECIFIED",
+            ScheduleReactionType::CreateContract => "SCHEDULE_REACTION_TYPE_CREATE_CONTRACT",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "SCHEDULE_REACTION_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "SCHEDULE_REACTION_TYPE_CREATE_CONTRACT" => Some(Self::CreateContract),
+            _ => None,
+        }
+    }
+}
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ValidationOperator {
+    Unspecified = 0,
+    Equal = 1,
+    GreaterThan = 2,
+    GreaterThanOrEqual = 3,
+    LessThan = 4,
+    LessThanOrEqual = 5,
+}
+impl ValidationOperator {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            ValidationOperator::Unspecified => "VALIDATION_OPERATOR_UNSPECIFIED",
+            ValidationOperator::Equal => "VALIDATION_OPERATOR_EQUAL",
+            ValidationOperator::GreaterThan => "VALIDATION_OPERATOR_GREATER_THAN",
+            ValidationOperator::GreaterThanOrEqual => "VALIDATION_OPERATOR_GREATER_THAN_OR_EQUAL",
+            ValidationOperator::LessThan => "VALIDATION_OPERATOR_LESS_THAN",
+            ValidationOperator::LessThanOrEqual => "VALIDATION_OPERATOR_LESS_THAN_OR_EQUAL",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "VALIDATION_OPERATOR_UNSPECIFIED" => Some(Self::Unspecified),
+            "VALIDATION_OPERATOR_EQUAL" => Some(Self::Equal),
+            "VALIDATION_OPERATOR_GREATER_THAN" => Some(Self::GreaterThan),
+            "VALIDATION_OPERATOR_GREATER_THAN_OR_EQUAL" => Some(Self::GreaterThanOrEqual),
+            "VALIDATION_OPERATOR_LESS_THAN" => Some(Self::LessThan),
+            "VALIDATION_OPERATOR_LESS_THAN_OR_EQUAL" => Some(Self::LessThanOrEqual),
             _ => None,
         }
     }

@@ -112,116 +112,6 @@ export namespace TransactionHeader {
   }
 }
 
-export class LockedPromissory extends jspb.Message {
-  getPromissory(): Uint8Array | string;
-  getPromissory_asU8(): Uint8Array;
-  getPromissory_asB64(): string;
-  setPromissory(value: Uint8Array | string): void;
-
-  getLockId(): string;
-  setLockId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LockedPromissory.AsObject;
-  static toObject(includeInstance: boolean, msg: LockedPromissory): LockedPromissory.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LockedPromissory, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LockedPromissory;
-  static deserializeBinaryFromReader(message: LockedPromissory, reader: jspb.BinaryReader): LockedPromissory;
-}
-
-export namespace LockedPromissory {
-  export type AsObject = {
-    promissory: Uint8Array | string,
-    lockId: string,
-  }
-}
-
-export class LockPromissoryBatchData extends jspb.Message {
-  getLockId(): string;
-  setLockId(value: string): void;
-
-  clearPromissoryBatchList(): void;
-  getPromissoryBatchList(): Array<Uint8Array | string>;
-  getPromissoryBatchList_asU8(): Array<Uint8Array>;
-  getPromissoryBatchList_asB64(): Array<string>;
-  setPromissoryBatchList(value: Array<Uint8Array | string>): void;
-  addPromissoryBatch(value: Uint8Array | string, index?: number): Uint8Array | string;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LockPromissoryBatchData.AsObject;
-  static toObject(includeInstance: boolean, msg: LockPromissoryBatchData): LockPromissoryBatchData.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LockPromissoryBatchData, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LockPromissoryBatchData;
-  static deserializeBinaryFromReader(message: LockPromissoryBatchData, reader: jspb.BinaryReader): LockPromissoryBatchData;
-}
-
-export namespace LockPromissoryBatchData {
-  export type AsObject = {
-    lockId: string,
-    promissoryBatchList: Array<Uint8Array | string>,
-  }
-}
-
-export class LockPromissoryBatchAckData extends jspb.Message {
-  getLockId(): string;
-  setLockId(value: string): void;
-
-  clearAcksList(): void;
-  getAcksList(): Array<LockedPromissoryAck>;
-  setAcksList(value: Array<LockedPromissoryAck>): void;
-  addAcks(value?: LockedPromissoryAck, index?: number): LockedPromissoryAck;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LockPromissoryBatchAckData.AsObject;
-  static toObject(includeInstance: boolean, msg: LockPromissoryBatchAckData): LockPromissoryBatchAckData.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LockPromissoryBatchAckData, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LockPromissoryBatchAckData;
-  static deserializeBinaryFromReader(message: LockPromissoryBatchAckData, reader: jspb.BinaryReader): LockPromissoryBatchAckData;
-}
-
-export namespace LockPromissoryBatchAckData {
-  export type AsObject = {
-    lockId: string,
-    acksList: Array<LockedPromissoryAck.AsObject>,
-  }
-}
-
-export class LockedPromissoryAck extends jspb.Message {
-  getPreviousOwner(): string;
-  setPreviousOwner(value: string): void;
-
-  getOwner(): string;
-  setOwner(value: string): void;
-
-  hasAmount(): boolean;
-  clearAmount(): void;
-  getAmount(): common_v1_common_pb.Amount | undefined;
-  setAmount(value?: common_v1_common_pb.Amount): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LockedPromissoryAck.AsObject;
-  static toObject(includeInstance: boolean, msg: LockedPromissoryAck): LockedPromissoryAck.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LockedPromissoryAck, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LockedPromissoryAck;
-  static deserializeBinaryFromReader(message: LockedPromissoryAck, reader: jspb.BinaryReader): LockedPromissoryAck;
-}
-
-export namespace LockedPromissoryAck {
-  export type AsObject = {
-    previousOwner: string,
-    owner: string,
-    amount?: common_v1_common_pb.Amount.AsObject,
-  }
-}
-
 export class BatchedPromissory extends jspb.Message {
   clearPromissoryBatchList(): void;
   getPromissoryBatchList(): Array<Uint8Array | string>;
@@ -519,6 +409,11 @@ export class HashCondition extends jspb.Message {
   getHash_asB64(): string;
   setHash(value: Uint8Array | string): void;
 
+  getAlgorithmOid(): Uint8Array | string;
+  getAlgorithmOid_asU8(): Uint8Array;
+  getAlgorithmOid_asB64(): string;
+  setAlgorithmOid(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): HashCondition.AsObject;
   static toObject(includeInstance: boolean, msg: HashCondition): HashCondition.AsObject;
@@ -533,6 +428,7 @@ export namespace HashCondition {
   export type AsObject = {
     presenter: string,
     hash: Uint8Array | string,
+    algorithmOid: Uint8Array | string,
   }
 }
 
@@ -614,27 +510,49 @@ export namespace Contract {
   }
 }
 
-export class Secret extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
+export class MintRequest extends jspb.Message {
+  hasDistribution(): boolean;
+  clearDistribution(): void;
+  getDistribution(): common_v1_common_pb.Distribution | undefined;
+  setDistribution(value?: common_v1_common_pb.Distribution): void;
 
-  getSecret(): string;
-  setSecret(value: string): void;
+  getDecimals(): number;
+  setDecimals(value: number): void;
+
+  getCurrencyCode(): string;
+  setCurrencyCode(value: string): void;
+
+  hasIssuer(): boolean;
+  clearIssuer(): void;
+  getIssuer(): common_v1_common_pb.DynamicVerifier | undefined;
+  setIssuer(value?: common_v1_common_pb.DynamicVerifier): void;
+
+  hasRecipient(): boolean;
+  clearRecipient(): void;
+  getRecipient(): common_v1_common_pb.DynamicVerifier | undefined;
+  setRecipient(value?: common_v1_common_pb.DynamicVerifier): void;
+
+  getSignatureSystem(): common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap];
+  setSignatureSystem(value: common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Secret.AsObject;
-  static toObject(includeInstance: boolean, msg: Secret): Secret.AsObject;
+  toObject(includeInstance?: boolean): MintRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: MintRequest): MintRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Secret, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Secret;
-  static deserializeBinaryFromReader(message: Secret, reader: jspb.BinaryReader): Secret;
+  static serializeBinaryToWriter(message: MintRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MintRequest;
+  static deserializeBinaryFromReader(message: MintRequest, reader: jspb.BinaryReader): MintRequest;
 }
 
-export namespace Secret {
+export namespace MintRequest {
   export type AsObject = {
-    id: string,
-    secret: string,
+    distribution?: common_v1_common_pb.Distribution.AsObject,
+    decimals: number,
+    currencyCode: string,
+    issuer?: common_v1_common_pb.DynamicVerifier.AsObject,
+    recipient?: common_v1_common_pb.DynamicVerifier.AsObject,
+    signatureSystem: common_v1_common_pb.SignatureSystemMap[keyof common_v1_common_pb.SignatureSystemMap],
   }
 }
 
@@ -655,30 +573,27 @@ export interface PacketTypeMap {
   AUTHORIZEANDFORWARDPROMISSORY: 102;
   ARCHIVEPROMISSORY: 103;
   PROMISSORYRECEIPT: 104;
-  LOCKPROMISSORY: 105;
-  LOCKPROMISSORYACK: 106;
-  AUTHORIZELOCKEDPROMISSORIES: 107;
   AUTHORIZATIONSTATUS: 108;
   RETRIEVEASSETS: 109;
   PROMISSORYBATCH: 110;
   LOCKPROMISSORYBATCH: 111;
   LOCKPROMISSORYBATCHACK: 112;
   RETRIEVEASSETSBATCH: 113;
-  ROLLBACKLOCKEDPROMISSORIES: 114;
-  ROLLBACKLOCKEDPROMISSORIESACK: 115;
   AUTHORIZEANDFORWARDPROMISSORYBATCH: 116;
   VALIDATIONBLOCKBATCH: 117;
   AUTHORIZEDBLOCKBATCH: 118;
+  MINTPROMISSORY: 119;
+  FRESHPROMISSORYBATCH: 120;
   IDENTITYREQUEST: 200;
   IDENTITYRESPONSE: 201;
   IDENTITYPROOF: 202;
-  NOTARYNOTARIZEPROMISSORY: 300;
-  NOTARYNOTARIZEANDFORWARDPROMISSORY: 301;
+  AUTHORIZATIONFAILED: 300;
   EMISSARYCONNECTIONIDENTITY: 400;
   CONTRACTPROPOSAL: 500;
   CONTRACTACK: 501;
-  CONTRACTSIGNATURE: 502;
-  CONTRACTCOMPLETE: 503;
+  CONTRACTNACK: 502;
+  CONTRACTSIGNATURE: 503;
+  CONTRACTCOMPLETE: 504;
   REMITTANCEREQUEST: 700;
   REMITTANCERESPONSE: 701;
   SPREQUEST: 1000;
@@ -702,6 +617,13 @@ export interface PacketTypeMap {
 }
 
 export const PacketType: PacketTypeMap;
+
+export interface HashAlgorithmMap {
+  SHA256: 0;
+  SHA512: 1;
+}
+
+export const HashAlgorithm: HashAlgorithmMap;
 
 export interface ContractTypeMap {
   CONTRACT_TYPE_UNSPECIFIED: 0;

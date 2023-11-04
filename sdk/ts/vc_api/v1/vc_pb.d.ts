@@ -4,6 +4,7 @@
 // file: vc_api/v1/vc.proto
 
 import * as jspb from "google-protobuf";
+import * as google_api_annotations_pb from "../../google/api/annotations_pb";
 
 export class CredentialProof extends jspb.Message {
   getType(): string;

@@ -217,6 +217,141 @@ pub mod webhook_manager_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** Creates a Scheduled Reaction.
+*/
+        pub async fn create_scheduled_reaction(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreateScheduledReactionRequest>,
+        ) -> Result<
+            tonic::Response<super::CreateScheduledReactionResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/CreateScheduledReaction",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Lists Scheduled Reactions.
+*/
+        pub async fn list_scheduled_reactions(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListScheduledReactionsRequest>,
+        ) -> Result<
+            tonic::Response<super::ListScheduledReactionsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/ListScheduledReactions",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Deletes a Scheduled Reaction.
+*/
+        pub async fn delete_scheduled_reaction(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DeleteScheduledReactionRequest>,
+        ) -> Result<
+            tonic::Response<super::DeleteScheduledReactionResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/DeleteScheduledReaction",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Create Prevalidation
+*/
+        pub async fn create_prevalidation(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreatePrevalidationRequest>,
+        ) -> Result<tonic::Response<super::CreatePrevalidationResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/CreatePrevalidation",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** List Prevalidations
+*/
+        pub async fn list_prevalidations(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListPrevalidationsRequest>,
+        ) -> Result<tonic::Response<super::ListPrevalidationsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/ListPrevalidations",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** Delete Prevalidation
+*/
+        pub async fn delete_prevalidation(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DeletePrevalidationRequest>,
+        ) -> Result<tonic::Response<super::DeletePrevalidationResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/webhook_api.v1.WebhookManagerService/DeletePrevalidation",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -268,6 +403,51 @@ pub mod webhook_manager_service_server {
             &self,
             request: tonic::Request<super::ListDeliveryHistoryRequest>,
         ) -> Result<tonic::Response<super::ListDeliveryHistoryResponse>, tonic::Status>;
+        /** Creates a Scheduled Reaction.
+*/
+        async fn create_scheduled_reaction(
+            &self,
+            request: tonic::Request<super::CreateScheduledReactionRequest>,
+        ) -> Result<
+            tonic::Response<super::CreateScheduledReactionResponse>,
+            tonic::Status,
+        >;
+        /** Lists Scheduled Reactions.
+*/
+        async fn list_scheduled_reactions(
+            &self,
+            request: tonic::Request<super::ListScheduledReactionsRequest>,
+        ) -> Result<
+            tonic::Response<super::ListScheduledReactionsResponse>,
+            tonic::Status,
+        >;
+        /** Deletes a Scheduled Reaction.
+*/
+        async fn delete_scheduled_reaction(
+            &self,
+            request: tonic::Request<super::DeleteScheduledReactionRequest>,
+        ) -> Result<
+            tonic::Response<super::DeleteScheduledReactionResponse>,
+            tonic::Status,
+        >;
+        /** Create Prevalidation
+*/
+        async fn create_prevalidation(
+            &self,
+            request: tonic::Request<super::CreatePrevalidationRequest>,
+        ) -> Result<tonic::Response<super::CreatePrevalidationResponse>, tonic::Status>;
+        /** List Prevalidations
+*/
+        async fn list_prevalidations(
+            &self,
+            request: tonic::Request<super::ListPrevalidationsRequest>,
+        ) -> Result<tonic::Response<super::ListPrevalidationsResponse>, tonic::Status>;
+        /** Delete Prevalidation
+*/
+        async fn delete_prevalidation(
+            &self,
+            request: tonic::Request<super::DeletePrevalidationRequest>,
+        ) -> Result<tonic::Response<super::DeletePrevalidationResponse>, tonic::Status>;
     }
     /** The Service Manages the Lifecycle of Webhooks.
 */
@@ -593,6 +773,256 @@ pub mod webhook_manager_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ListDeliveryHistorySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/CreateScheduledReaction" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateScheduledReactionSvc<T: WebhookManagerService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::CreateScheduledReactionRequest>
+                    for CreateScheduledReactionSvc<T> {
+                        type Response = super::CreateScheduledReactionResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::CreateScheduledReactionRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).create_scheduled_reaction(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateScheduledReactionSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/ListScheduledReactions" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListScheduledReactionsSvc<T: WebhookManagerService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::ListScheduledReactionsRequest>
+                    for ListScheduledReactionsSvc<T> {
+                        type Response = super::ListScheduledReactionsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListScheduledReactionsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_scheduled_reactions(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListScheduledReactionsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/DeleteScheduledReaction" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteScheduledReactionSvc<T: WebhookManagerService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::DeleteScheduledReactionRequest>
+                    for DeleteScheduledReactionSvc<T> {
+                        type Response = super::DeleteScheduledReactionResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::DeleteScheduledReactionRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).delete_scheduled_reaction(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeleteScheduledReactionSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/CreatePrevalidation" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreatePrevalidationSvc<T: WebhookManagerService>(pub Arc<T>);
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::CreatePrevalidationRequest>
+                    for CreatePrevalidationSvc<T> {
+                        type Response = super::CreatePrevalidationResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CreatePrevalidationRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).create_prevalidation(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreatePrevalidationSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/ListPrevalidations" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListPrevalidationsSvc<T: WebhookManagerService>(pub Arc<T>);
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::ListPrevalidationsRequest>
+                    for ListPrevalidationsSvc<T> {
+                        type Response = super::ListPrevalidationsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListPrevalidationsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_prevalidations(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListPrevalidationsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/webhook_api.v1.WebhookManagerService/DeletePrevalidation" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeletePrevalidationSvc<T: WebhookManagerService>(pub Arc<T>);
+                    impl<
+                        T: WebhookManagerService,
+                    > tonic::server::UnaryService<super::DeletePrevalidationRequest>
+                    for DeletePrevalidationSvc<T> {
+                        type Response = super::DeletePrevalidationResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DeletePrevalidationRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).delete_prevalidation(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeletePrevalidationSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

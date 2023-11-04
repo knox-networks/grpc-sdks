@@ -1,6 +1,9 @@
 pub mod authority_api {
   pub mod v1;
 }
+pub mod business_api {
+  pub mod v1;
+}
 pub mod common;
 pub mod control_plane_api {
   pub mod v1;

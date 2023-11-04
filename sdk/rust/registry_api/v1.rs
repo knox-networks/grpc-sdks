@@ -26,7 +26,10 @@ pub struct CreateResponse {
 }
 /// \[Example\]
 /// {
-/// "did": "did:method-name:zDIDMultibase58Encoded"
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "resolutionOption": {
+/// "accept": 0
+/// }
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -34,10 +37,16 @@ pub struct ResolveRequest {
     /// W3C Decentralized Identifier (DID) of the wallet.
     #[prost(string, tag="1")]
     pub did: ::prost::alloc::string::String,
+    /// W3C metadata structure for did resolution
+    #[prost(message, optional, tag="2")]
+    pub resolution_option: ::core::option::Option<ResolutionOption>,
 }
 /// \[Example\]
 /// {
-/// "did": "did:method-name:zDIDMultibase58Encoded"
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "resolutionOption": {
+/// "accept": 0
+/// }
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -62,9 +71,6 @@ pub struct ResolutionOption {
 }
 /// \[Example\]
 /// {
-/// "did": "did:method-name:zDIDMultibase58Encoded",
-/// "document": "DOCUMENT",
-/// "metadata": { 
 /// "created": { 
 /// "seconds": 0, 
 /// "nanos": 0 
@@ -72,76 +78,137 @@ pub struct ResolutionOption {
 /// "updated": { 
 /// "seconds": 0, 
 /// "nanos": 0 
-/// }, 
-/// "contentType": "MEDIA_TYPE"
 /// }
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ResolveResponse {
-    /// W3C Decentralized Identifier (DID) of the wallet.
-    #[prost(string, tag="1")]
-    pub did: ::prost::alloc::string::String,
-    /// A set of data containing mechanisms to verify the DID and discover related services. 
-    #[prost(string, tag="2")]
-    pub document: ::prost::alloc::string::String,
-    /// Resolution Metadata object, with defined timestamps and content type.
-    #[prost(message, optional, tag="3")]
-    pub metadata: ::core::option::Option<ResolutionMetadata>,
-}
-/// \[Example\]
-/// {
-/// "did": "did:method-name:zDIDMultibase58Encoded",
-/// "document": "DOCUMENT",
-/// "metadata": { 
-/// "created": { 
-/// "seconds": 0, 
-/// "nanos": 0 
-/// }, 
-/// "updated": { 
-/// "seconds": 0, 
-/// "nanos": 0 
-/// }, 
-/// "contentType": "MEDIA_TYPE"
-/// }
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ResolveRepresentationResponse {
-    /// W3C Decentralized Identifier (DID) of the wallet.
-    #[prost(string, tag="1")]
-    pub did: ::prost::alloc::string::String,
-    /// A set of data containing mechanisms to verify the DID and discover related services.
-    #[prost(string, tag="2")]
-    pub document: ::prost::alloc::string::String,
-    /// Resolution Metadata object, with defined timestamps and content type.
-    #[prost(message, optional, tag="3")]
-    pub metadata: ::core::option::Option<ResolutionMetadata>,
-}
-/// \[Example\]
-/// {
-/// "created": { 
-/// "seconds": 0, 
-/// "nanos": 0 
-/// }, 
-/// "updated": { 
-/// "seconds": 0, 
-/// "nanos": 0 
-/// }, 
-/// "contentType": "MEDIA_TYPE"
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ResolutionMetadata {
+pub struct DidDocumentMetadata {
     /// Timestamp representing the DID document creation time.
     #[prost(message, optional, tag="1")]
     pub created: ::core::option::Option<::prost_types::Timestamp>,
     /// Timestamp representing the DID document last update time.
     #[prost(message, optional, tag="2")]
     pub updated: ::core::option::Option<::prost_types::Timestamp>,
-    /// Media type of the W3C DID Document. 
+}
+/// \[Example\]
+/// {
+/// "didResolutionMetadata": {
+/// "contentType": "MEDIA_TYPE",
+/// "duration": 1000,
+/// "didUrl": {
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "methodName": "EXAMPLE_METHOD_NAME",
+/// "methodSpecificId": "METHOD_SPECIFIC_IDENTIFIER"
+/// },
+/// "error": "OPTIONAL_ERROR_MESSAGE"
+/// },
+/// "didDocument": {},
+/// "didDocumentMetadata": { 
+/// "created": { 
+/// "seconds": 0, 
+/// "nanos": 0 
+/// }, 
+/// "updated": { 
+/// "seconds": 0, 
+/// "nanos": 0 
+/// }
+/// }
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResolveResponse {
+    /// Resolution Metadata object, with defined timestamps and content type.
+    #[prost(message, optional, tag="1")]
+    pub did_resolution_metadata: ::core::option::Option<ResolutionMetadata>,
+    /// A set of data containing mechanisms to verify the DID and discover related services.
+    #[prost(message, optional, tag="2")]
+    pub did_document: ::core::option::Option<::prost_types::Struct>,
+    /// This structure contains metadata about the DID document contained in the didDocument property
+    #[prost(message, optional, tag="3")]
+    pub did_document_metadata: ::core::option::Option<DidDocumentMetadata>,
+}
+/// \[Example\]
+/// {
+/// "didDocumentStream": "DID_DOCUMENT_STREAM",
+/// "didResolutionMetadata": {
+/// "contentType": "MEDIA_TYPE",
+/// "duration": 1000,
+/// "didUrl": {
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "methodName": "EXAMPLE_METHOD_NAME",
+/// "methodSpecificId": "METHOD_SPECIFIC_IDENTIFIER"
+/// },
+/// "error": "OPTIONAL_ERROR_MESSAGE"
+/// },
+/// "didDocumentMetadata": { 
+/// "created": { 
+/// "seconds": 0, 
+/// "nanos": 0 
+/// }, 
+/// "updated": { 
+/// "seconds": 0, 
+/// "nanos": 0 
+/// }
+/// }
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResolveRepresentationResponse {
+    /// A set of data containing mechanisms to verify the DID and discover related services.
+    #[prost(string, tag="1")]
+    pub did_document_stream: ::prost::alloc::string::String,
+    /// Resolution Metadata object, with defined timestamps and content type.
+    #[prost(message, optional, tag="2")]
+    pub did_resolution_metadata: ::core::option::Option<ResolutionMetadata>,
+    /// This structure contains metadata about the DID document contained in the didDocument property
+    #[prost(message, optional, tag="3")]
+    pub did_document_metadata: ::core::option::Option<DidDocumentMetadata>,
+}
+/// \[Example\]
+/// {
+/// "contentType": "MEDIA_TYPE",
+/// "duration": 1000,
+/// "didUrl": {
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "methodName": "EXAMPLE_METHOD_NAME",
+/// "methodSpecificId": "METHOD_SPECIFIC_IDENTIFIER"
+/// },
+/// "error": "OPTIONAL_ERROR_MESSAGE"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResolutionMetadata {
+    /// Media type of the W3C DID Document.
+    #[prost(string, optional, tag="1")]
+    pub content_type: ::core::option::Option<::prost::alloc::string::String>,
+    /// Duration of the Resolution.
+    #[prost(int64, optional, tag="2")]
+    pub duration: ::core::option::Option<i64>,
+    /// Resolution DID URL.
+    #[prost(message, optional, tag="3")]
+    pub did_url: ::core::option::Option<ResolutionMetadataDidUrl>,
+    /// Error Message.
+    #[prost(string, optional, tag="4")]
+    pub error: ::core::option::Option<::prost::alloc::string::String>,
+}
+/// \[Example\]
+/// {
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "methodName": "EXAMPLE_METHOD_NAME",
+/// "methodSpecificId": "METHOD_SPECIFIC_IDENTIFIER"
+/// }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResolutionMetadataDidUrl {
+    /// W3C Decentralized Identifier (DID) of the wallet.
+    #[prost(string, tag="1")]
+    pub did: ::prost::alloc::string::String,
+    /// W3C Decentralized Scheme.
+    #[prost(string, tag="2")]
+    pub method_name: ::prost::alloc::string::String,
+    /// Method specific identifier.
     #[prost(string, tag="3")]
-    pub content_type: ::prost::alloc::string::String,
+    pub method_specific_id: ::prost::alloc::string::String,
 }
 /// \[Example\]
 /// {
@@ -168,7 +235,8 @@ pub struct UpdateResponse {
 }
 /// \[Example\]
 /// {
-/// "did": "did:method-name:zDIDMultibase58Encoded"
+/// "did": "did:method-name:zDIDMultibase58Encoded",
+/// "document": "DOCUMENT"
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -280,3 +280,73 @@ export namespace GetNotaryResponse {
   }
 }
 
+export class ListGovernedAssetsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListGovernedAssetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListGovernedAssetsRequest): ListGovernedAssetsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListGovernedAssetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListGovernedAssetsRequest;
+  static deserializeBinaryFromReader(message: ListGovernedAssetsRequest, reader: jspb.BinaryReader): ListGovernedAssetsRequest;
+}
+
+export namespace ListGovernedAssetsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListGovernedAssetsResponse extends jspb.Message {
+  getAssetDataMap(): jspb.Map<string, common_v1_common_pb.AssetDenomination>;
+  clearAssetDataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListGovernedAssetsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListGovernedAssetsResponse): ListGovernedAssetsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListGovernedAssetsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListGovernedAssetsResponse;
+  static deserializeBinaryFromReader(message: ListGovernedAssetsResponse, reader: jspb.BinaryReader): ListGovernedAssetsResponse;
+}
+
+export namespace ListGovernedAssetsResponse {
+  export type AsObject = {
+    assetDataMap: Array<[string, common_v1_common_pb.AssetDenomination.AsObject]>,
+  }
+}
+
+export class SetGovernedAssetsRequest extends jspb.Message {
+  getAssetDataMap(): jspb.Map<string, common_v1_common_pb.AssetDenomination>;
+  clearAssetDataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetGovernedAssetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetGovernedAssetsRequest): SetGovernedAssetsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetGovernedAssetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetGovernedAssetsRequest;
+  static deserializeBinaryFromReader(message: SetGovernedAssetsRequest, reader: jspb.BinaryReader): SetGovernedAssetsRequest;
+}
+
+export namespace SetGovernedAssetsRequest {
+  export type AsObject = {
+    assetDataMap: Array<[string, common_v1_common_pb.AssetDenomination.AsObject]>,
+  }
+}
+
+export class SetGovernedAssetsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetGovernedAssetsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetGovernedAssetsResponse): SetGovernedAssetsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetGovernedAssetsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetGovernedAssetsResponse;
+  static deserializeBinaryFromReader(message: SetGovernedAssetsResponse, reader: jspb.BinaryReader): SetGovernedAssetsResponse;
+}
+
+export namespace SetGovernedAssetsResponse {
+  export type AsObject = {
+  }
+}
+

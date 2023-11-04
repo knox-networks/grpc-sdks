@@ -223,8 +223,6 @@ pub struct UpdateVerifiableCredentialStatusRequest {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateVerifiableCredentialStatusResponse {
 }
-// THIS PROTO FILE IS INTENDED FOR USE FOR KNOX AND KNOX CUSTOMERS.
-
 /// Type of Credential.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]

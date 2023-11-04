@@ -31,7 +31,8 @@ pub struct SetIssuerLimitRequest {
 /// {
 /// "limit": {
 /// "currency_code":"USD",
-/// "amount":100, "decimals":2
+/// "amount":100,
+/// "decimals":2
 /// },
 /// "signature": "ByteLengthSignatureVariesByAlgo="
 /// }
@@ -157,7 +158,7 @@ pub struct GetNetworkInfoRequest {
 /// \[Example\]
 /// {
 /// "emissary": "EmissaryVerifierLengthVariesByAlgo",
-/// "transaction_manager": "TRANSACTION_MANAGER_VERIFIER"
+/// "transaction_manager": "TransactionManagerVerifierLengthVariesByAlgo"
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -178,7 +179,7 @@ pub struct GetNetworkInfoResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetNotaryRequest {
-    /// The public key of the Notary
+    /// The Public Key of the Notary.
     #[prost(string, tag="1")]
     pub verifier: ::prost::alloc::string::String,
 }
@@ -194,6 +195,36 @@ pub struct GetNotaryResponse {
     /// The signature of the Notary created by signing the Notary Public key with the Authority keypair
     #[prost(bytes="vec", tag="1")]
     pub signature: ::prost::alloc::vec::Vec<u8>,
+}
+/// \[Example\]
+/// {}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListGovernedAssetsRequest {
+}
+/// \[Example\]
+/// {}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ListGovernedAssetsResponse {
+    /// List of currently Governed Assets.
+    #[prost(map="string, message", tag="1")]
+    pub asset_data: ::std::collections::HashMap<::prost::alloc::string::String, super::super::common::AssetDenomination>,
+}
+/// \[Example\]
+/// {}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetGovernedAssetsRequest {
+    /// List of requested Governed Assets.
+    #[prost(map="string, message", tag="1")]
+    pub asset_data: ::std::collections::HashMap<::prost::alloc::string::String, super::super::common::AssetDenomination>,
+}
+/// \[Example\]
+/// {}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetGovernedAssetsResponse {
 }
 include!("v1.tonic.rs");
 // @@protoc_insertion_point(module)

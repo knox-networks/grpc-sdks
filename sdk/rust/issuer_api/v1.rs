@@ -43,6 +43,8 @@ pub struct IssueRequest {
     /// Authentication session ID that should match the one given by the AuthenticationResponse
     #[prost(string, tag="6")]
     pub session: ::prost::alloc::string::String,
+    #[prost(enumeration="super::super::common::SignatureSystem", tag="7")]
+    pub signature_system: i32,
 }
 // Responds to request with a count of generated promissory files
 
@@ -162,28 +164,14 @@ pub struct SetRoleResponse {
 }
 /// \[Example\]
 /// {
-/// "denominations": [1, 5, 10, 25, 100, 200, 500, 1000],
-/// "precision": 2
-/// }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct AssetDenomination {
-    /// Denominations allowed, e.g. [1, 5, 10, 25, 100, etc.].
-    #[prost(int64, repeated, tag="1")]
-    pub denominations: ::prost::alloc::vec::Vec<i64>,
-    /// Precision for Asset (decimals places), e.g. USD $1.00 = 2.
-    #[prost(uint32, tag="2")]
-    pub precision: u32,
-}
-/// \[Example\]
-/// {
 /// "denominations": []
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SetAssetDenominationsRequest {
+    /// Asset Denominations to Set.
     #[prost(map="string, message", tag="1")]
-    pub denominations: ::std::collections::HashMap<::prost::alloc::string::String, AssetDenomination>,
+    pub denominations: ::std::collections::HashMap<::prost::alloc::string::String, super::super::common::AssetDenomination>,
 }
 /// \[Example\]
 /// {}

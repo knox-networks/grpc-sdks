@@ -75,6 +75,60 @@ WebhookManagerService.ListDeliveryHistory = {
   responseType: webhook_api_v1_webhook_pb.ListDeliveryHistoryResponse
 };
 
+WebhookManagerService.CreateScheduledReaction = {
+  methodName: "CreateScheduledReaction",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.CreateScheduledReactionRequest,
+  responseType: webhook_api_v1_webhook_pb.CreateScheduledReactionResponse
+};
+
+WebhookManagerService.ListScheduledReactions = {
+  methodName: "ListScheduledReactions",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.ListScheduledReactionsRequest,
+  responseType: webhook_api_v1_webhook_pb.ListScheduledReactionsResponse
+};
+
+WebhookManagerService.DeleteScheduledReaction = {
+  methodName: "DeleteScheduledReaction",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.DeleteScheduledReactionRequest,
+  responseType: webhook_api_v1_webhook_pb.DeleteScheduledReactionResponse
+};
+
+WebhookManagerService.CreatePrevalidation = {
+  methodName: "CreatePrevalidation",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.CreatePrevalidationRequest,
+  responseType: webhook_api_v1_webhook_pb.CreatePrevalidationResponse
+};
+
+WebhookManagerService.ListPrevalidations = {
+  methodName: "ListPrevalidations",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.ListPrevalidationsRequest,
+  responseType: webhook_api_v1_webhook_pb.ListPrevalidationsResponse
+};
+
+WebhookManagerService.DeletePrevalidation = {
+  methodName: "DeletePrevalidation",
+  service: WebhookManagerService,
+  requestStream: false,
+  responseStream: false,
+  requestType: webhook_api_v1_webhook_pb.DeletePrevalidationRequest,
+  responseType: webhook_api_v1_webhook_pb.DeletePrevalidationResponse
+};
+
 exports.WebhookManagerService = WebhookManagerService;
 
 function WebhookManagerServiceClient(serviceHost, options) {
@@ -273,6 +327,192 @@ WebhookManagerServiceClient.prototype.listDeliveryHistory = function listDeliver
     callback = arguments[1];
   }
   var client = grpc.unary(WebhookManagerService.ListDeliveryHistory, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.createScheduledReaction = function createScheduledReaction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.CreateScheduledReaction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.listScheduledReactions = function listScheduledReactions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.ListScheduledReactions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.deleteScheduledReaction = function deleteScheduledReaction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.DeleteScheduledReaction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.createPrevalidation = function createPrevalidation(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.CreatePrevalidation, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.listPrevalidations = function listPrevalidations(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.ListPrevalidations, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+WebhookManagerServiceClient.prototype.deletePrevalidation = function deletePrevalidation(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(WebhookManagerService.DeletePrevalidation, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

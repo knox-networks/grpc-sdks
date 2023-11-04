@@ -21,6 +21,15 @@ MonetaeTreasury.GetSupply = {
   responseType: treasury_v1_treasury_pb.GetSupplyResponse
 };
 
+MonetaeTreasury.ListTransactions = {
+  methodName: "ListTransactions",
+  service: MonetaeTreasury,
+  requestStream: false,
+  responseStream: false,
+  requestType: treasury_v1_treasury_pb.ListTransactionsRequest,
+  responseType: treasury_v1_treasury_pb.ListTransactionsResponse
+};
+
 exports.MonetaeTreasury = MonetaeTreasury;
 
 function MonetaeTreasuryClient(serviceHost, options) {
@@ -33,6 +42,37 @@ MonetaeTreasuryClient.prototype.getSupply = function getSupply(requestMessage, m
     callback = arguments[1];
   }
   var client = grpc.unary(MonetaeTreasury.GetSupply, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+MonetaeTreasuryClient.prototype.listTransactions = function listTransactions(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(MonetaeTreasury.ListTransactions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
