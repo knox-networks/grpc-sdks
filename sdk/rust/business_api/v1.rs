@@ -138,7 +138,7 @@ pub struct SendProposalAckedRequest {
     /// Contract ID.
     #[prost(string, tag="2")]
     pub contract_id: ::prost::alloc::string::String,
-    /// Secret.
+    /// Base64 Encoding of Secret bytes.
     #[prost(string, tag="3")]
     pub secret: ::prost::alloc::string::String,
     /// Hash Algorithm.
@@ -187,7 +187,7 @@ pub struct SendSecretRevealedRequest {
     /// Contract ID.
     #[prost(string, tag="2")]
     pub contract_id: ::prost::alloc::string::String,
-    /// Secret.
+    /// Base64 Encoding of Secret bytes.
     #[prost(string, tag="3")]
     pub secret: ::prost::alloc::string::String,
 }
