@@ -48,7 +48,20 @@ pub struct Amount {
 
 /// \[Example\]
 /// {
-/// "value": []
+/// "value": [
+/// {
+/// "key": 20,
+/// "value": 2
+/// },
+/// {
+/// "key": 50,
+/// "value": 1
+/// },
+/// {
+/// "key": 10,
+/// "value": 1
+/// }
+/// ]
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1440,7 +1453,20 @@ pub struct Contract {
 /// \[Example\]
 /// {
 /// "distribution": {
-/// "value": []
+/// "value": [
+/// {
+/// "key": 20,
+/// "value": 2
+/// },
+/// {
+/// "key": 50,
+/// "value": 1
+/// },
+/// {
+/// "key": 10,
+/// "value": 1
+/// }
+/// ]
 /// },
 /// "decimals": 2,
 /// "currency_code": "USD",

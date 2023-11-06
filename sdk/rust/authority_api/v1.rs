@@ -203,7 +203,24 @@ pub struct GetNotaryResponse {
 pub struct ListGovernedAssetsRequest {
 }
 /// \[Example\]
-/// {}
+/// {
+/// "asset_data": [
+/// {
+/// "key": "USD",
+/// "value": {
+/// "denominations": [1, 5, 10, 25, 100, 200, 500, 1000, 2000, 5000, 10000, 50000],
+/// "precision": 2
+/// }
+/// },
+/// {
+/// "key": "JPY",
+/// "value": {
+/// "denominations": [1, 5, 10, 50, 100, 500, 1000, 2000, 5000, 10000, 50000, 100000],
+/// "precision": 0
+/// }
+/// }
+/// ]
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListGovernedAssetsResponse {
@@ -212,7 +229,24 @@ pub struct ListGovernedAssetsResponse {
     pub asset_data: ::std::collections::HashMap<::prost::alloc::string::String, super::super::common::AssetDenomination>,
 }
 /// \[Example\]
-/// {}
+/// {
+/// "asset_data": [
+/// {
+/// "key": "USD",
+/// "value": {
+/// "denominations": [1, 5, 10, 25, 100, 200, 500, 1000, 2000, 5000, 10000, 50000],
+/// "precision": 2
+/// }
+/// },
+/// {
+/// "key": "JPY",
+/// "value": {
+/// "denominations": [1, 5, 10, 50, 100, 500, 1000, 2000, 5000, 10000, 50000, 100000],
+/// "precision": 0
+/// }
+/// }
+/// ]
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SetGovernedAssetsRequest {

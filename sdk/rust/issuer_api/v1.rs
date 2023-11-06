@@ -20,6 +20,22 @@
 /// "authority": {
 /// "signature_system": 1,
 /// "verifier": "VerifierLengthChangesByAlgo="
+/// },
+/// "distribution": {
+/// "value": [
+/// {
+/// "key": 20,
+/// "value": 2
+/// },
+/// {
+/// "key": 50,
+/// "value": 1
+/// },
+/// {
+/// "key": 10,
+/// "value": 1
+/// }
+/// ]
 /// }
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -43,6 +59,7 @@ pub struct IssueRequest {
     /// Authentication session ID that should match the one given by the AuthenticationResponse
     #[prost(string, tag="6")]
     pub session: ::prost::alloc::string::String,
+    /// Signature system used.
     #[prost(enumeration="super::super::common::SignatureSystem", tag="7")]
     pub signature_system: i32,
 }
@@ -107,12 +124,12 @@ pub struct GetRolesRequest {
 /// {
 /// "roles": [
 /// {
-/// "key": "KEY1",
-/// "value": "VALUE1"
+/// "key": "verifier1",
+/// "value": "<authorized/unauthorized>: <currency limits>"
 /// },
 /// {
-/// "key": "KEY2",
-/// "value": "VALUE2"
+/// "key": "verifier2",
+/// "value": "<authorized/unauthorized>: <currency limits>"
 /// }
 /// ]
 /// }
@@ -164,7 +181,22 @@ pub struct SetRoleResponse {
 }
 /// \[Example\]
 /// {
-/// "denominations": []
+/// "denominations": [
+/// {
+/// "key": "USD",
+/// "value": {
+/// "denominations": [1, 5, 10, 25, 100, 200, 500, 1000, 2000, 5000, 10000, 50000],
+/// "precision": 2
+/// }
+/// },
+/// {
+/// "key": "JPY",
+/// "value": {
+/// "denominations": [1, 5, 10, 50, 100, 500, 1000, 2000, 5000, 10000, 50000, 100000],
+/// "precision": 0
+/// }
+/// }
+/// ]
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -183,7 +215,22 @@ pub struct SetAssetDenominationsResponse {
 }
 /// \[Example\]
 /// {
-/// "authorities": []
+/// "authorities": [
+/// {
+/// "key": "AuthorityKey",
+/// "value": {
+/// "verifier": "VerifierLengthVariesByAlgo",
+/// "url": "AUTHORITY_URL"
+/// }
+/// },
+/// {
+/// "key": "AuthorityKey2",
+/// "value": {
+/// "verifier": "VerifierLengthVariesByAlgo",
+/// "url": "AUTHORITY2_URL"
+/// }
+/// }
+/// ]
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

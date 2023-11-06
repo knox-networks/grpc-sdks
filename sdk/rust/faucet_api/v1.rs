@@ -10,7 +10,23 @@
 /// "amount":100,
 /// "decimals":2
 /// },
-/// "recipient": "zRecipientPublicKeyMultibase58Encoded"
+/// "recipient": "zRecipientPublicKeyMultibase58Encoded",
+/// "distribution": {
+/// "value": [
+/// {
+/// "key": 20,
+/// "value": 2
+/// },
+/// {
+/// "key": 50,
+/// "value": 1
+/// },
+/// {
+/// "key": 10,
+/// "value": 1
+/// }
+/// ]
+/// }
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
