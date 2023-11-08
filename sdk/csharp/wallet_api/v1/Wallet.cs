@@ -10420,6 +10420,19 @@ namespace WalletApi.V1 {
 
   }
 
+  /// <summary>
+  /// [Example]
+  ///{
+  ///"contract_id": "9628a2d9-f932-41f0-b2da-b9de3103d945",
+  ///"contract_type": "Swap",
+  ///"created": "2022-12-19T16:39:57-08:00",
+  ///"counterparties": [
+  ///"zCounterpartyPublicKeyMultibase58Encoded",
+  ///"zCounterpartyPublicKeyMultibase58Encoded2",
+  ///],
+  ///"status": 1,
+  ///}
+  /// </summary>
   public sealed partial class ContractSummary : pb::IMessage<ContractSummary>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage

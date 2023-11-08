@@ -5,10 +5,9 @@ from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
-from ...common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
 from ...common.v1 import packet_pb2 as common_dot_v1_dot_packet__pb2
 from ...common.v1 import amqp_pb2 as common_dot_v1_dot_amqp__pb2
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ebusiness_api/v1/business.proto\x12\x0fbusiness_api.v1\x1a\x16common/v1/common.proto\x1a\x16common/v1/packet.proto\x1a\x14common/v1/amqp.proto"\r\n\x0bListRequest"\x1c\n\x0cListResponse\x12\x0c\n\x04list\x18\x01 \x03(\t"\x0e\n\x0cClearRequest"\x0f\n\rClearResponse"6\n\x12SendPayloadRequest\x12 \n\x07payload\x18\x01 \x01(\x0b2\x0f.common.Payload"\x15\n\x13SendPayloadResponse"\x88\x01\n\x19SendNewTransactionRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x0c\n\x04memo\x18\x02 \x01(\t\x12\'\n\x0bcommitments\x18\x03 \x03(\x0b2\x12.common.Commitment\x12%\n\nconditions\x18\x04 \x03(\x0b2\x11.common.Condition"1\n\x1aSendNewTransactionResponse\x12\x13\n\x0bcontract_id\x18\x01 \x01(\t"x\n\x18SendProposalAckedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t\x12(\n\talgorithm\x18\x04 \x01(\x0e2\x15.common.HashAlgorithm"\x1b\n\x19SendProposalAckedResponse"?\n\x19SendProposalNackedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t"\x1c\n\x1aSendProposalNackedResponse"O\n\x19SendSecretRevealedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t"\x1c\n\x1aSendSecretRevealedResponse2\xb1\x05\n\x0fBusinessService\x12C\n\x04List\x12\x1c.business_api.v1.ListRequest\x1a\x1d.business_api.v1.ListResponse\x12F\n\x05Clear\x12\x1d.business_api.v1.ClearRequest\x1a\x1e.business_api.v1.ClearResponse\x12X\n\x0bSendPayload\x12#.business_api.v1.SendPayloadRequest\x1a$.business_api.v1.SendPayloadResponse\x12m\n\x12SendNewTransaction\x12*.business_api.v1.SendNewTransactionRequest\x1a+.business_api.v1.SendNewTransactionResponse\x12j\n\x11SendProposalAcked\x12).business_api.v1.SendProposalAckedRequest\x1a*.business_api.v1.SendProposalAckedResponse\x12m\n\x12SendProposalNacked\x12*.business_api.v1.SendProposalNackedRequest\x1a+.business_api.v1.SendProposalNackedResponse\x12m\n\x12SendSecretRevealed\x12*.business_api.v1.SendSecretRevealedRequest\x1a+.business_api.v1.SendSecretRevealedResponseB;Z9github.com/knox-networks/grpc-sdks/sdk/go/business_api/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1ebusiness_api/v1/business.proto\x12\x0fbusiness_api.v1\x1a\x16common/v1/packet.proto\x1a\x14common/v1/amqp.proto"\r\n\x0bListRequest"\x1c\n\x0cListResponse\x12\x0c\n\x04list\x18\x01 \x03(\t"\x0e\n\x0cClearRequest"\x0f\n\rClearResponse"6\n\x12SendPayloadRequest\x12 \n\x07payload\x18\x01 \x01(\x0b2\x0f.common.Payload"\x15\n\x13SendPayloadResponse"\x88\x01\n\x19SendNewTransactionRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x0c\n\x04memo\x18\x02 \x01(\t\x12\'\n\x0bcommitments\x18\x03 \x03(\x0b2\x12.common.Commitment\x12%\n\nconditions\x18\x04 \x03(\x0b2\x11.common.Condition"1\n\x1aSendNewTransactionResponse\x12\x13\n\x0bcontract_id\x18\x01 \x01(\t"x\n\x18SendProposalAckedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t\x12(\n\talgorithm\x18\x04 \x01(\x0e2\x15.common.HashAlgorithm"\x1b\n\x19SendProposalAckedResponse"?\n\x19SendProposalNackedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t"\x1c\n\x1aSendProposalNackedResponse"O\n\x19SendSecretRevealedRequest\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bcontract_id\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t"\x1c\n\x1aSendSecretRevealedResponse2\xb1\x05\n\x0fBusinessService\x12C\n\x04List\x12\x1c.business_api.v1.ListRequest\x1a\x1d.business_api.v1.ListResponse\x12F\n\x05Clear\x12\x1d.business_api.v1.ClearRequest\x1a\x1e.business_api.v1.ClearResponse\x12X\n\x0bSendPayload\x12#.business_api.v1.SendPayloadRequest\x1a$.business_api.v1.SendPayloadResponse\x12m\n\x12SendNewTransaction\x12*.business_api.v1.SendNewTransactionRequest\x1a+.business_api.v1.SendNewTransactionResponse\x12j\n\x11SendProposalAcked\x12).business_api.v1.SendProposalAckedRequest\x1a*.business_api.v1.SendProposalAckedResponse\x12m\n\x12SendProposalNacked\x12*.business_api.v1.SendProposalNackedRequest\x1a+.business_api.v1.SendProposalNackedResponse\x12m\n\x12SendSecretRevealed\x12*.business_api.v1.SendSecretRevealedRequest\x1a+.business_api.v1.SendSecretRevealedResponseB;Z9github.com/knox-networks/grpc-sdks/sdk/go/business_api/v1b\x06proto3')
 _LISTREQUEST = DESCRIPTOR.message_types_by_name['ListRequest']
 _LISTRESPONSE = DESCRIPTOR.message_types_by_name['ListResponse']
 _CLEARREQUEST = DESCRIPTOR.message_types_by_name['ClearRequest']
@@ -55,33 +54,33 @@ _BUSINESSSERVICE = DESCRIPTOR.services_by_name['BusinessService']
 if _descriptor._USE_C_DESCRIPTORS == False:
     DESCRIPTOR._options = None
     DESCRIPTOR._serialized_options = b'Z9github.com/knox-networks/grpc-sdks/sdk/go/business_api/v1'
-    _LISTREQUEST._serialized_start = 121
-    _LISTREQUEST._serialized_end = 134
-    _LISTRESPONSE._serialized_start = 136
-    _LISTRESPONSE._serialized_end = 164
-    _CLEARREQUEST._serialized_start = 166
-    _CLEARREQUEST._serialized_end = 180
-    _CLEARRESPONSE._serialized_start = 182
-    _CLEARRESPONSE._serialized_end = 197
-    _SENDPAYLOADREQUEST._serialized_start = 199
-    _SENDPAYLOADREQUEST._serialized_end = 253
-    _SENDPAYLOADRESPONSE._serialized_start = 255
-    _SENDPAYLOADRESPONSE._serialized_end = 276
-    _SENDNEWTRANSACTIONREQUEST._serialized_start = 279
-    _SENDNEWTRANSACTIONREQUEST._serialized_end = 415
-    _SENDNEWTRANSACTIONRESPONSE._serialized_start = 417
-    _SENDNEWTRANSACTIONRESPONSE._serialized_end = 466
-    _SENDPROPOSALACKEDREQUEST._serialized_start = 468
-    _SENDPROPOSALACKEDREQUEST._serialized_end = 588
-    _SENDPROPOSALACKEDRESPONSE._serialized_start = 590
-    _SENDPROPOSALACKEDRESPONSE._serialized_end = 617
-    _SENDPROPOSALNACKEDREQUEST._serialized_start = 619
-    _SENDPROPOSALNACKEDREQUEST._serialized_end = 682
-    _SENDPROPOSALNACKEDRESPONSE._serialized_start = 684
-    _SENDPROPOSALNACKEDRESPONSE._serialized_end = 712
-    _SENDSECRETREVEALEDREQUEST._serialized_start = 714
-    _SENDSECRETREVEALEDREQUEST._serialized_end = 793
-    _SENDSECRETREVEALEDRESPONSE._serialized_start = 795
-    _SENDSECRETREVEALEDRESPONSE._serialized_end = 823
-    _BUSINESSSERVICE._serialized_start = 826
-    _BUSINESSSERVICE._serialized_end = 1515
+    _LISTREQUEST._serialized_start = 97
+    _LISTREQUEST._serialized_end = 110
+    _LISTRESPONSE._serialized_start = 112
+    _LISTRESPONSE._serialized_end = 140
+    _CLEARREQUEST._serialized_start = 142
+    _CLEARREQUEST._serialized_end = 156
+    _CLEARRESPONSE._serialized_start = 158
+    _CLEARRESPONSE._serialized_end = 173
+    _SENDPAYLOADREQUEST._serialized_start = 175
+    _SENDPAYLOADREQUEST._serialized_end = 229
+    _SENDPAYLOADRESPONSE._serialized_start = 231
+    _SENDPAYLOADRESPONSE._serialized_end = 252
+    _SENDNEWTRANSACTIONREQUEST._serialized_start = 255
+    _SENDNEWTRANSACTIONREQUEST._serialized_end = 391
+    _SENDNEWTRANSACTIONRESPONSE._serialized_start = 393
+    _SENDNEWTRANSACTIONRESPONSE._serialized_end = 442
+    _SENDPROPOSALACKEDREQUEST._serialized_start = 444
+    _SENDPROPOSALACKEDREQUEST._serialized_end = 564
+    _SENDPROPOSALACKEDRESPONSE._serialized_start = 566
+    _SENDPROPOSALACKEDRESPONSE._serialized_end = 593
+    _SENDPROPOSALNACKEDREQUEST._serialized_start = 595
+    _SENDPROPOSALNACKEDREQUEST._serialized_end = 658
+    _SENDPROPOSALNACKEDRESPONSE._serialized_start = 660
+    _SENDPROPOSALNACKEDRESPONSE._serialized_end = 688
+    _SENDSECRETREVEALEDREQUEST._serialized_start = 690
+    _SENDSECRETREVEALEDREQUEST._serialized_end = 769
+    _SENDSECRETREVEALEDRESPONSE._serialized_start = 771
+    _SENDSECRETREVEALEDRESPONSE._serialized_end = 799
+    _BUSINESSSERVICE._serialized_start = 802
+    _BUSINESSSERVICE._serialized_end = 1491

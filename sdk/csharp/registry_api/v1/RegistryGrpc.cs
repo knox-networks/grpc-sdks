@@ -135,7 +135,7 @@ namespace RegistryApi.V1 {
       }
 
       /// <summary>
-      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -147,7 +147,7 @@ namespace RegistryApi.V1 {
       }
 
       /// <summary>
-      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -260,7 +260,7 @@ namespace RegistryApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Create, null, options, request);
       }
       /// <summary>
-      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -273,7 +273,7 @@ namespace RegistryApi.V1 {
         return Resolve(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -284,7 +284,7 @@ namespace RegistryApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_Resolve, null, options, request);
       }
       /// <summary>
-      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -297,7 +297,7 @@ namespace RegistryApi.V1 {
         return ResolveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a DID document entry for a given DID in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -308,7 +308,7 @@ namespace RegistryApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_Resolve, null, options, request);
       }
       /// <summary>
-      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -321,7 +321,7 @@ namespace RegistryApi.V1 {
         return ResolveRepresentation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -332,7 +332,7 @@ namespace RegistryApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ResolveRepresentation, null, options, request);
       }
       /// <summary>
-      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -345,7 +345,7 @@ namespace RegistryApi.V1 {
         return ResolveRepresentationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+      /// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

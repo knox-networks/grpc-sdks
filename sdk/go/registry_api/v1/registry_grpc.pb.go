@@ -20,9 +20,9 @@ const _ = grpc.SupportPackageIsVersion7
 type RegistryServiceClient interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
-	// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+	// Returns a DID document entry for a given DID in the Knox Registry Management Service.
 	Resolve(ctx context.Context, in *ResolveRequest, opts ...grpc.CallOption) (*ResolveResponse, error)
-	// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+	// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
 	ResolveRepresentation(ctx context.Context, in *ResolveRepresentationRequest, opts ...grpc.CallOption) (*ResolveRepresentationResponse, error)
 	// Updates a DID document entry for a given DID in the Knox Registry Management Service.
 	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*UpdateResponse, error)
@@ -89,9 +89,9 @@ func (c *registryServiceClient) Revoke(ctx context.Context, in *RevokeRequest, o
 type RegistryServiceServer interface {
 	// Creates a new DID document entry for a given DID in the Knox Registry Management Service.
 	Create(context.Context, *CreateRequest) (*CreateResponse, error)
-	// Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+	// Returns a DID document entry for a given DID in the Knox Registry Management Service.
 	Resolve(context.Context, *ResolveRequest) (*ResolveResponse, error)
-	// Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+	// Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
 	ResolveRepresentation(context.Context, *ResolveRepresentationRequest) (*ResolveRepresentationResponse, error)
 	// Updates a DID document entry for a given DID in the Knox Registry Management Service.
 	Update(context.Context, *UpdateRequest) (*UpdateResponse, error)

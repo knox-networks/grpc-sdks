@@ -9,11 +9,10 @@
 package v1
 
 import (
-	_ "google.golang.org/genproto/googleapis/api/annotations"
+	_ "github.com/knox-networks/grpc-sdks/sdk/go/google/api"
+	protobuf "github.com/knox-networks/grpc-sdks/sdk/go/google/protobuf"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	structpb "google.golang.org/protobuf/types/known/structpb"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -479,9 +478,9 @@ type DidDocumentMetadata struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Timestamp representing the DID document creation time.
-	Created *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=created,proto3" json:"created,omitempty"`
+	Created *protobuf.Timestamp `protobuf:"bytes,1,opt,name=created,proto3" json:"created,omitempty"`
 	// Timestamp representing the DID document last update time.
-	Updated *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=updated,proto3" json:"updated,omitempty"`
+	Updated *protobuf.Timestamp `protobuf:"bytes,2,opt,name=updated,proto3" json:"updated,omitempty"`
 }
 
 func (x *DidDocumentMetadata) Reset() {
@@ -516,14 +515,14 @@ func (*DidDocumentMetadata) Descriptor() ([]byte, []int) {
 	return file_registry_api_v1_registry_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *DidDocumentMetadata) GetCreated() *timestamppb.Timestamp {
+func (x *DidDocumentMetadata) GetCreated() *protobuf.Timestamp {
 	if x != nil {
 		return x.Created
 	}
 	return nil
 }
 
-func (x *DidDocumentMetadata) GetUpdated() *timestamppb.Timestamp {
+func (x *DidDocumentMetadata) GetUpdated() *protobuf.Timestamp {
 	if x != nil {
 		return x.Updated
 	}
@@ -562,7 +561,7 @@ type ResolveResponse struct {
 	// Resolution Metadata object, with defined timestamps and content type.
 	DidResolutionMetadata *ResolutionMetadata `protobuf:"bytes,1,opt,name=didResolutionMetadata,proto3" json:"didResolutionMetadata,omitempty"`
 	// A set of data containing mechanisms to verify the DID and discover related services.
-	DidDocument *structpb.Struct `protobuf:"bytes,2,opt,name=didDocument,proto3" json:"didDocument,omitempty"`
+	DidDocument *protobuf.Struct `protobuf:"bytes,2,opt,name=didDocument,proto3" json:"didDocument,omitempty"`
 	// This structure contains metadata about the DID document contained in the didDocument property
 	DidDocumentMetadata *DidDocumentMetadata `protobuf:"bytes,3,opt,name=didDocumentMetadata,proto3" json:"didDocumentMetadata,omitempty"`
 }
@@ -606,7 +605,7 @@ func (x *ResolveResponse) GetDidResolutionMetadata() *ResolutionMetadata {
 	return nil
 }
 
-func (x *ResolveResponse) GetDidDocument() *structpb.Struct {
+func (x *ResolveResponse) GetDidDocument() *protobuf.Struct {
 	if x != nil {
 		return x.DidDocument
 	}
@@ -2537,8 +2536,8 @@ var file_registry_api_v1_registry_proto_goTypes = []interface{}{
 	(*GetStatusListCredentialResponse)(nil), // 29: registry_api.v1.GetStatusListCredentialResponse
 	(*UpdateStatusListEntryRequest)(nil),    // 30: registry_api.v1.UpdateStatusListEntryRequest
 	(*UpdateStatusListEntryResponse)(nil),   // 31: registry_api.v1.UpdateStatusListEntryResponse
-	(*timestamppb.Timestamp)(nil),           // 32: google.protobuf.Timestamp
-	(*structpb.Struct)(nil),                 // 33: google.protobuf.Struct
+	(*protobuf.Timestamp)(nil),              // 32: google.protobuf.Timestamp
+	(*protobuf.Struct)(nil),                 // 33: google.protobuf.Struct
 }
 var file_registry_api_v1_registry_proto_depIdxs = []int32{
 	7,  // 0: registry_api.v1.ResolveRequest.resolutionOption:type_name -> registry_api.v1.ResolutionOption

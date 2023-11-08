@@ -4,6 +4,7 @@ from . import common
 from . import control_plane_api
 from . import faucet_api
 from . import gateway
+from . import google
 from . import identity_api
 from . import issuer_api
 from . import orchestrator

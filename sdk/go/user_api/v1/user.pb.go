@@ -10,10 +10,9 @@ package v1
 
 import (
 	v1 "github.com/knox-networks/grpc-sdks/sdk/go/common/v1"
+	protobuf "github.com/knox-networks/grpc-sdks/sdk/go/google/protobuf"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	structpb "google.golang.org/protobuf/types/known/structpb"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -251,7 +250,7 @@ type User struct {
 	// External system identifiers associated to the user. Ex UserID from the user's financial institution.
 	ExternalIds map[string]string `protobuf:"bytes,11,rep,name=external_ids,json=externalIds,proto3" json:"external_ids,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Additional data about the user such as account, address, branch, routing info, etc.
-	Metadata *structpb.Struct `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Metadata *protobuf.Struct `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata,omitempty"`
 }
 
 func (x *User) Reset() {
@@ -349,7 +348,7 @@ func (x *User) GetExternalIds() map[string]string {
 	return nil
 }
 
-func (x *User) GetMetadata() *structpb.Struct {
+func (x *User) GetMetadata() *protobuf.Struct {
 	if x != nil {
 		return x.Metadata
 	}
@@ -748,7 +747,7 @@ type AuthnWithProviderRequest struct {
 	// Used by client to identify origin of the request initiating authentication.
 	RequestOrigin string `protobuf:"bytes,3,opt,name=request_origin,json=requestOrigin,proto3" json:"request_origin,omitempty"`
 	// Used by client to store state.
-	ClientState *structpb.Struct `protobuf:"bytes,4,opt,name=client_state,json=clientState,proto3" json:"client_state,omitempty"`
+	ClientState *protobuf.Struct `protobuf:"bytes,4,opt,name=client_state,json=clientState,proto3" json:"client_state,omitempty"`
 }
 
 func (x *AuthnWithProviderRequest) Reset() {
@@ -804,7 +803,7 @@ func (x *AuthnWithProviderRequest) GetRequestOrigin() string {
 	return ""
 }
 
-func (x *AuthnWithProviderRequest) GetClientState() *structpb.Struct {
+func (x *AuthnWithProviderRequest) GetClientState() *protobuf.Struct {
 	if x != nil {
 		return x.ClientState
 	}
@@ -977,7 +976,7 @@ type HandleOIDCCallbackResponse struct {
 	// Used by client to identify origin of the request initiating authentication.
 	RequestOrigin string `protobuf:"bytes,4,opt,name=request_origin,json=requestOrigin,proto3" json:"request_origin,omitempty"`
 	// Used by client to store state.
-	ClientState *structpb.Struct `protobuf:"bytes,5,opt,name=client_state,json=clientState,proto3" json:"client_state,omitempty"`
+	ClientState *protobuf.Struct `protobuf:"bytes,5,opt,name=client_state,json=clientState,proto3" json:"client_state,omitempty"`
 }
 
 func (x *HandleOIDCCallbackResponse) Reset() {
@@ -1040,7 +1039,7 @@ func (x *HandleOIDCCallbackResponse) GetRequestOrigin() string {
 	return ""
 }
 
-func (x *HandleOIDCCallbackResponse) GetClientState() *structpb.Struct {
+func (x *HandleOIDCCallbackResponse) GetClientState() *protobuf.Struct {
 	if x != nil {
 		return x.ClientState
 	}
@@ -3698,7 +3697,7 @@ type ApiKeyEntity struct {
 	// API Key Status.
 	Status ApiKeyStatus `protobuf:"varint,4,opt,name=status,proto3,enum=user_api.v1.ApiKeyStatus" json:"status,omitempty"`
 	// API Key Expiry Timestamp.
-	ExpiryDate *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=expiry_date,json=expiryDate,proto3" json:"expiry_date,omitempty"`
+	ExpiryDate *protobuf.Timestamp `protobuf:"bytes,5,opt,name=expiry_date,json=expiryDate,proto3" json:"expiry_date,omitempty"`
 }
 
 func (x *ApiKeyEntity) Reset() {
@@ -3761,7 +3760,7 @@ func (x *ApiKeyEntity) GetStatus() ApiKeyStatus {
 	return ApiKeyStatus_API_KEY_STATUS_UNSPECIFIED
 }
 
-func (x *ApiKeyEntity) GetExpiryDate() *timestamppb.Timestamp {
+func (x *ApiKeyEntity) GetExpiryDate() *protobuf.Timestamp {
 	if x != nil {
 		return x.ExpiryDate
 	}
@@ -4798,10 +4797,10 @@ var file_user_api_v1_user_proto_goTypes = []interface{}{
 	(*CheckApiKeyRequest)(nil),                            // 59: user_api.v1.CheckApiKeyRequest
 	(*CheckApiKeyResponse)(nil),                           // 60: user_api.v1.CheckApiKeyResponse
 	nil,                                                   // 61: user_api.v1.User.ExternalIdsEntry
-	(*structpb.Struct)(nil),                               // 62: google.protobuf.Struct
+	(*protobuf.Struct)(nil),                               // 62: google.protobuf.Struct
 	(*v1.SortBy)(nil),                                     // 63: common.SortBy
 	(*v1.Filter)(nil),                                     // 64: common.Filter
-	(*timestamppb.Timestamp)(nil),                         // 65: google.protobuf.Timestamp
+	(*protobuf.Timestamp)(nil),                            // 65: google.protobuf.Timestamp
 }
 var file_user_api_v1_user_proto_depIdxs = []int32{
 	1,  // 0: user_api.v1.User.role:type_name -> user_api.v1.Role

@@ -30,14 +30,14 @@ class RegistryServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Resolve(self, request, context):
-        """Resolves a DID document entry for a given DID in the Knox Registry Management Service.
+        """Returns a DID document entry for a given DID in the Knox Registry Management Service.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ResolveRepresentation(self, request, context):
-        """Resolves and presents a DID document entry for a given DID in the Knox Registry Management Service.
+        """Returns a byte stream of a DID document instead of a map in the Knox Registry Management Service.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

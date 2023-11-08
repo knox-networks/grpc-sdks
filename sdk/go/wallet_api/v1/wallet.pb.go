@@ -2687,6 +2687,17 @@ func (x *ListTransactionsRequest) GetSortBy() *v1.SortBy {
 	return nil
 }
 
+// [Example]
+// {
+// "contract_id": "9628a2d9-f932-41f0-b2da-b9de3103d945",
+// "contract_type": "Swap",
+// "created": "2022-12-19T16:39:57-08:00",
+// "counterparties": [
+// "zCounterpartyPublicKeyMultibase58Encoded",
+// "zCounterpartyPublicKeyMultibase58Encoded2",
+// ],
+// "status": 1,
+// }
 type ContractSummary struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

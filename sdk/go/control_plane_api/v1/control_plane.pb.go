@@ -9,9 +9,9 @@
 package v1
 
 import (
+	protobuf "github.com/knox-networks/grpc-sdks/sdk/go/google/protobuf"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	structpb "google.golang.org/protobuf/types/known/structpb"
 	reflect "reflect"
 	sync "sync"
 )
@@ -436,7 +436,7 @@ type ServiceDetails struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Values
-	Values *structpb.Struct `protobuf:"bytes,1,opt,name=values,proto3" json:"values,omitempty"`
+	Values *protobuf.Struct `protobuf:"bytes,1,opt,name=values,proto3" json:"values,omitempty"`
 }
 
 func (x *ServiceDetails) Reset() {
@@ -471,7 +471,7 @@ func (*ServiceDetails) Descriptor() ([]byte, []int) {
 	return file_control_plane_api_v1_control_plane_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ServiceDetails) GetValues() *structpb.Struct {
+func (x *ServiceDetails) GetValues() *protobuf.Struct {
 	if x != nil {
 		return x.Values
 	}
@@ -1012,7 +1012,7 @@ type ServiceConfigurations struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Check Service Configuations.
-	Values *structpb.Struct `protobuf:"bytes,1,opt,name=values,proto3" json:"values,omitempty"`
+	Values *protobuf.Struct `protobuf:"bytes,1,opt,name=values,proto3" json:"values,omitempty"`
 }
 
 func (x *ServiceConfigurations) Reset() {
@@ -1047,7 +1047,7 @@ func (*ServiceConfigurations) Descriptor() ([]byte, []int) {
 	return file_control_plane_api_v1_control_plane_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *ServiceConfigurations) GetValues() *structpb.Struct {
+func (x *ServiceConfigurations) GetValues() *protobuf.Struct {
 	if x != nil {
 		return x.Values
 	}
@@ -1447,7 +1447,7 @@ var file_control_plane_api_v1_control_plane_proto_goTypes = []interface{}{
 	(*ServiceConfigurations)(nil), // 13: control_plane_api.v1.ServiceConfigurations
 	(*UpdateServiceRequest)(nil),  // 14: control_plane_api.v1.UpdateServiceRequest
 	(*UpdateServiceResponse)(nil), // 15: control_plane_api.v1.UpdateServiceResponse
-	(*structpb.Struct)(nil),       // 16: google.protobuf.Struct
+	(*protobuf.Struct)(nil),       // 16: google.protobuf.Struct
 }
 var file_control_plane_api_v1_control_plane_proto_depIdxs = []int32{
 	0,  // 0: control_plane_api.v1.CreateServiceRequest.service_type:type_name -> control_plane_api.v1.ServiceType
