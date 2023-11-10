@@ -24,28 +24,28 @@ class CredentialAdapterServiceServicer(object):
     """
 
     def CreateIssuanceChallenge(self, request, context):
-        """Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
+        """Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def IssueVerifiableCredential(self, request, context):
-        """Called by the holder to the VC issuer to answer the challenge and receive the credential.
+        """Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreatePresentationChallenge(self, request, context):
-        """Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
+        """Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PresentVerifiableCredential(self, request, context):
-        """Called by the holder to the verifier to verify the presentation with the verifier.
+        """Service run by the VC Verifier. Called by the holder to have the presentation verified.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

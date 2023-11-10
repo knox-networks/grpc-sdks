@@ -2694,9 +2694,9 @@ func (x *ListTransactionsRequest) GetSortBy() *v1.SortBy {
 // "created": "2022-12-19T16:39:57-08:00",
 // "counterparties": [
 // "zCounterpartyPublicKeyMultibase58Encoded",
-// "zCounterpartyPublicKeyMultibase58Encoded2",
+// "zCounterpartyPublicKeyMultibase58Encoded2"
 // ],
-// "status": 1,
+// "status": 1
 // }
 type ContractSummary struct {
 	state         protoimpl.MessageState
