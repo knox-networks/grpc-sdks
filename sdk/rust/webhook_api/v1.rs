@@ -926,7 +926,7 @@ pub struct DeleteScheduledReactionResponse {
 /// }
 /// ],
 /// "outcome": 1,
-/// "lcgical_base": 10
+/// "logical_base": 10
 /// }
 /// }
 /// }
@@ -973,7 +973,7 @@ pub mod prevalidation {
 /// }
 /// ],
 /// "outcome": 1,
-/// "lcgical_base": 10
+/// "logical_base": 10
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1134,7 +1134,7 @@ pub mod create_prevalidation_request {
 /// }
 /// ],
 /// "outcome": 1,
-/// "lcgical_base": 10
+/// "logical_base": 10
 /// }
 /// }
 /// }
