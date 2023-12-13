@@ -926,7 +926,7 @@ pub struct DeleteScheduledReactionResponse {
 /// }
 /// ],
 /// "outcome": 1,
-/// "logical_base": 10
+/// "logical_base": 1
 /// }
 /// }
 /// }
@@ -973,7 +973,7 @@ pub mod prevalidation {
 /// }
 /// ],
 /// "outcome": 1,
-/// "logical_base": 10
+/// "logical_base": 1
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -984,7 +984,7 @@ pub struct ConsideringContractPrevalidation {
     /// Outcome of the prevalidation if the condition is true
     #[prost(enumeration="considering_contract_prevalidation::ValidationOutcome", tag="2")]
     pub outcome: i32,
-    /// Logical base operator.
+    /// Logical Operator.
     #[prost(enumeration="super::super::common::LogicalOperator", tag="3")]
     pub logical_base: i32,
 }
