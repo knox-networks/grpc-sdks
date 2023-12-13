@@ -1235,7 +1235,76 @@ pub struct ListPrevalidationsRequest {
 }
 /// \[Example\] 
 /// {
-/// "prevalidations": ,
+/// "prevalidations": [
+/// {
+/// "id": "PREVALIDATION_ID1",
+/// "name": "PREVALIDATION_NAME1",
+/// "trigger": {
+/// "considering_contract_prevalidation": {
+/// "condition": [
+/// {
+/// "target": 1,
+/// "operator": 2,
+/// "value": {
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// }
+/// },
+/// {
+/// "target": 1,
+/// "operator": 4,
+/// "value": {
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":1000,
+/// "decimals":2
+/// }
+/// }
+/// }
+/// ],
+/// "outcome": 1,
+/// "logical_base": 1
+/// }
+/// }
+/// },
+/// {
+/// "id": "PREVALIDATION_ID2",
+/// "name": "PREVALIDATION_NAME2",
+/// "trigger": {
+/// "considering_contract_prevalidation": {
+/// "condition": [
+/// {
+/// "target": 1,
+/// "operator": 2,
+/// "value": {
+/// "amount_value": {
+/// "currency_code":"MXN",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// }
+/// },
+/// {
+/// "target": 1,
+/// "operator": 4,
+/// "value": {
+/// "amount_value": {
+/// "currency_code":"MXN",
+/// "amount":1000,
+/// "decimals":2
+/// }
+/// }
+/// }
+/// ],
+/// "outcome": 1,
+/// "logical_base": 1
+/// }
+/// }
+/// }
+/// ],
 /// "total_owned_prevalidations": 2
 /// }
 #[allow(clippy::derive_partial_eq_without_eq)]
