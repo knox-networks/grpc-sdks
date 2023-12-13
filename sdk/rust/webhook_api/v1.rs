@@ -921,7 +921,11 @@ pub struct DeleteScheduledReactionResponse {
 /// "target": 1,
 /// "operator": 4,
 /// "value": {
-/// "amount_value": 100
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":1000,
+/// "decimals":2
+/// }
 /// }
 /// }
 /// ],
@@ -961,14 +965,22 @@ pub mod prevalidation {
 /// "target": 1,
 /// "operator": 2,
 /// "value": {
-/// "amount_value": 10
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
 /// }
 /// },
 /// {
 /// "target": 1,
 /// "operator": 4,
 /// "value": {
-/// "amount_value": 100
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":1000,
+/// "decimals":2
+/// }
 /// }
 /// }
 /// ],
@@ -1122,14 +1134,22 @@ pub mod create_prevalidation_request {
 /// "target": 1,
 /// "operator": 2,
 /// "value": {
-/// "amount_value": 10
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
 /// }
 /// },
 /// {
 /// "target": 1,
 /// "operator": 4,
 /// "value": {
-/// "amount_value": 100
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":1000,
+/// "decimals":2
+/// }
 /// }
 /// }
 /// ],
