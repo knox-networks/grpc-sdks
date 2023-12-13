@@ -616,7 +616,7 @@ pub mod list_delivery_history_response {
 /// "name": "REACTION_NAME1",
 /// "reaction_type": 1,
 /// "cron_tab": "*****",
-/// "reaction_paylod": {
+/// "reaction_payload": {
 /// "create_contract_payload": {
 /// "sender_wallet_id": "SENDER_WALLET_ID1",
 /// "commitments": [
@@ -761,7 +761,7 @@ pub struct CreateContractReactionPayload {
 /// "name": "REACTION_NAME1",
 /// "reaction_type": 1,
 /// "cron_tab": "*****",
-/// "reaction_paylod": {
+/// "reaction_payload": {
 /// "create_contract_payload": {
 /// "sender_wallet_id": "SENDER_WALLET_ID1",
 /// "commitments": [
