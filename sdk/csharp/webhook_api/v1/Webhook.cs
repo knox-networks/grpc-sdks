@@ -159,50 +159,52 @@ namespace WebhookApi.V1 {
             "Q0lGSUVEEAASHQoZREVMSVZFUllfTUVUSE9EX1RZUEVfSFRUUBABEh0KGURF",
             "TElWRVJZX01FVEhPRF9UWVBFX0dSUEMQAipqChRTY2hlZHVsZVJlYWN0aW9u",
             "VHlwZRImCiJTQ0hFRFVMRV9SRUFDVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAAS",
-            "KgomU0NIRURVTEVfUkVBQ1RJT05fVFlQRV9DUkVBVEVfQ09OVFJBQ1QQASr8",
-            "AQoSVmFsaWRhdGlvbk9wZXJhdG9yEiMKH1ZBTElEQVRJT05fT1BFUkFUT1Jf",
-            "VU5TUEVDSUZJRUQQABIdChlWQUxJREFUSU9OX09QRVJBVE9SX0VRVUFMEAES",
-            "JAogVkFMSURBVElPTl9PUEVSQVRPUl9HUkVBVEVSX1RIQU4QAhItCilWQUxJ",
-            "REFUSU9OX09QRVJBVE9SX0dSRUFURVJfVEhBTl9PUl9FUVVBTBADEiEKHVZB",
-            "TElEQVRJT05fT1BFUkFUT1JfTEVTU19USEFOEAQSKgomVkFMSURBVElPTl9P",
-            "UEVSQVRPUl9MRVNTX1RIQU5fT1JfRVFVQUwQBTLJCgoVV2ViaG9va01hbmFn",
-            "ZXJTZXJ2aWNlElwKDUNyZWF0ZVdlYmhvb2sSJC53ZWJob29rX2FwaS52MS5D",
-            "cmVhdGVXZWJob29rUmVxdWVzdBolLndlYmhvb2tfYXBpLnYxLkNyZWF0ZVdl",
-            "Ymhvb2tSZXNwb25zZRJZCgxMaXN0V2ViaG9va3MSIy53ZWJob29rX2FwaS52",
-            "MS5MaXN0V2ViaG9va3NSZXF1ZXN0GiQud2ViaG9va19hcGkudjEuTGlzdFdl",
-            "Ymhvb2tzUmVzcG9uc2USXAoNRGVsZXRlV2ViaG9vaxIkLndlYmhvb2tfYXBp",
-            "LnYxLkRlbGV0ZVdlYmhvb2tSZXF1ZXN0GiUud2ViaG9va19hcGkudjEuRGVs",
-            "ZXRlV2ViaG9va1Jlc3BvbnNlElMKCkxpc3RFdmVudHMSIS53ZWJob29rX2Fw",
-            "aS52MS5MaXN0RXZlbnRzUmVxdWVzdBoiLndlYmhvb2tfYXBpLnYxLkxpc3RF",
-            "dmVudHNSZXNwb25zZRJTCgpSZXRyeUV2ZW50EiEud2ViaG9va19hcGkudjEu",
-            "UmV0cnlFdmVudFJlcXVlc3QaIi53ZWJob29rX2FwaS52MS5SZXRyeUV2ZW50",
-            "UmVzcG9uc2USQQoEUGluZxIbLndlYmhvb2tfYXBpLnYxLlBpbmdSZXF1ZXN0",
-            "Ghwud2ViaG9va19hcGkudjEuUGluZ1Jlc3BvbnNlEm4KE0xpc3REZWxpdmVy",
-            "eUhpc3RvcnkSKi53ZWJob29rX2FwaS52MS5MaXN0RGVsaXZlcnlIaXN0b3J5",
-            "UmVxdWVzdBorLndlYmhvb2tfYXBpLnYxLkxpc3REZWxpdmVyeUhpc3RvcnlS",
-            "ZXNwb25zZRJ6ChdDcmVhdGVTY2hlZHVsZWRSZWFjdGlvbhIuLndlYmhvb2tf",
-            "YXBpLnYxLkNyZWF0ZVNjaGVkdWxlZFJlYWN0aW9uUmVxdWVzdBovLndlYmhv",
-            "b2tfYXBpLnYxLkNyZWF0ZVNjaGVkdWxlZFJlYWN0aW9uUmVzcG9uc2USdwoW",
-            "TGlzdFNjaGVkdWxlZFJlYWN0aW9ucxItLndlYmhvb2tfYXBpLnYxLkxpc3RT",
-            "Y2hlZHVsZWRSZWFjdGlvbnNSZXF1ZXN0Gi4ud2ViaG9va19hcGkudjEuTGlz",
-            "dFNjaGVkdWxlZFJlYWN0aW9uc1Jlc3BvbnNlEnoKF0RlbGV0ZVNjaGVkdWxl",
-            "ZFJlYWN0aW9uEi4ud2ViaG9va19hcGkudjEuRGVsZXRlU2NoZWR1bGVkUmVh",
-            "Y3Rpb25SZXF1ZXN0Gi8ud2ViaG9va19hcGkudjEuRGVsZXRlU2NoZWR1bGVk",
-            "UmVhY3Rpb25SZXNwb25zZRJuChNDcmVhdGVQcmV2YWxpZGF0aW9uEioud2Vi",
-            "aG9va19hcGkudjEuQ3JlYXRlUHJldmFsaWRhdGlvblJlcXVlc3QaKy53ZWJo",
-            "b29rX2FwaS52MS5DcmVhdGVQcmV2YWxpZGF0aW9uUmVzcG9uc2USawoSTGlz",
-            "dFByZXZhbGlkYXRpb25zEikud2ViaG9va19hcGkudjEuTGlzdFByZXZhbGlk",
-            "YXRpb25zUmVxdWVzdBoqLndlYmhvb2tfYXBpLnYxLkxpc3RQcmV2YWxpZGF0",
-            "aW9uc1Jlc3BvbnNlEm4KE0RlbGV0ZVByZXZhbGlkYXRpb24SKi53ZWJob29r",
-            "X2FwaS52MS5EZWxldGVQcmV2YWxpZGF0aW9uUmVxdWVzdBorLndlYmhvb2tf",
-            "YXBpLnYxLkRlbGV0ZVByZXZhbGlkYXRpb25SZXNwb25zZTJcChRFdmVudENv",
-            "bnN1bWVyU2VydmljZRJECgVFdmVudBIcLndlYmhvb2tfYXBpLnYxLkV2ZW50",
-            "UmVxdWVzdBodLndlYmhvb2tfYXBpLnYxLkV2ZW50UmVzcG9uc2VCOlo4Z2l0",
-            "aHViLmNvbS9rbm94LW5ldHdvcmtzL2dycGMtc2Rrcy9zZGsvZ28vd2ViaG9v",
-            "a19hcGkvdjFiBnByb3RvMw=="));
+            "KgomU0NIRURVTEVfUkVBQ1RJT05fVFlQRV9DUkVBVEVfQ09OVFJBQ1QQASpx",
+            "ChhQcmV2YWxpZGF0aW9uVHJpZ2dlclR5cGUSJQohUFJFVkFMSURBVElPTl9U",
+            "UklHR0VSX1VOU1BFQ0lGSUVEEAASLgoqUFJFVkFMSURBVElPTl9UUklHR0VS",
+            "X0NPTlNJREVSSU5HX0NPTlRSQUNUEAEq/AEKElZhbGlkYXRpb25PcGVyYXRv",
+            "chIjCh9WQUxJREFUSU9OX09QRVJBVE9SX1VOU1BFQ0lGSUVEEAASHQoZVkFM",
+            "SURBVElPTl9PUEVSQVRPUl9FUVVBTBABEiQKIFZBTElEQVRJT05fT1BFUkFU",
+            "T1JfR1JFQVRFUl9USEFOEAISLQopVkFMSURBVElPTl9PUEVSQVRPUl9HUkVB",
+            "VEVSX1RIQU5fT1JfRVFVQUwQAxIhCh1WQUxJREFUSU9OX09QRVJBVE9SX0xF",
+            "U1NfVEhBThAEEioKJlZBTElEQVRJT05fT1BFUkFUT1JfTEVTU19USEFOX09S",
+            "X0VRVUFMEAUyyQoKFVdlYmhvb2tNYW5hZ2VyU2VydmljZRJcCg1DcmVhdGVX",
+            "ZWJob29rEiQud2ViaG9va19hcGkudjEuQ3JlYXRlV2ViaG9va1JlcXVlc3Qa",
+            "JS53ZWJob29rX2FwaS52MS5DcmVhdGVXZWJob29rUmVzcG9uc2USWQoMTGlz",
+            "dFdlYmhvb2tzEiMud2ViaG9va19hcGkudjEuTGlzdFdlYmhvb2tzUmVxdWVz",
+            "dBokLndlYmhvb2tfYXBpLnYxLkxpc3RXZWJob29rc1Jlc3BvbnNlElwKDURl",
+            "bGV0ZVdlYmhvb2sSJC53ZWJob29rX2FwaS52MS5EZWxldGVXZWJob29rUmVx",
+            "dWVzdBolLndlYmhvb2tfYXBpLnYxLkRlbGV0ZVdlYmhvb2tSZXNwb25zZRJT",
+            "CgpMaXN0RXZlbnRzEiEud2ViaG9va19hcGkudjEuTGlzdEV2ZW50c1JlcXVl",
+            "c3QaIi53ZWJob29rX2FwaS52MS5MaXN0RXZlbnRzUmVzcG9uc2USUwoKUmV0",
+            "cnlFdmVudBIhLndlYmhvb2tfYXBpLnYxLlJldHJ5RXZlbnRSZXF1ZXN0GiIu",
+            "d2ViaG9va19hcGkudjEuUmV0cnlFdmVudFJlc3BvbnNlEkEKBFBpbmcSGy53",
+            "ZWJob29rX2FwaS52MS5QaW5nUmVxdWVzdBocLndlYmhvb2tfYXBpLnYxLlBp",
+            "bmdSZXNwb25zZRJuChNMaXN0RGVsaXZlcnlIaXN0b3J5Eioud2ViaG9va19h",
+            "cGkudjEuTGlzdERlbGl2ZXJ5SGlzdG9yeVJlcXVlc3QaKy53ZWJob29rX2Fw",
+            "aS52MS5MaXN0RGVsaXZlcnlIaXN0b3J5UmVzcG9uc2USegoXQ3JlYXRlU2No",
+            "ZWR1bGVkUmVhY3Rpb24SLi53ZWJob29rX2FwaS52MS5DcmVhdGVTY2hlZHVs",
+            "ZWRSZWFjdGlvblJlcXVlc3QaLy53ZWJob29rX2FwaS52MS5DcmVhdGVTY2hl",
+            "ZHVsZWRSZWFjdGlvblJlc3BvbnNlEncKFkxpc3RTY2hlZHVsZWRSZWFjdGlv",
+            "bnMSLS53ZWJob29rX2FwaS52MS5MaXN0U2NoZWR1bGVkUmVhY3Rpb25zUmVx",
+            "dWVzdBouLndlYmhvb2tfYXBpLnYxLkxpc3RTY2hlZHVsZWRSZWFjdGlvbnNS",
+            "ZXNwb25zZRJ6ChdEZWxldGVTY2hlZHVsZWRSZWFjdGlvbhIuLndlYmhvb2tf",
+            "YXBpLnYxLkRlbGV0ZVNjaGVkdWxlZFJlYWN0aW9uUmVxdWVzdBovLndlYmhv",
+            "b2tfYXBpLnYxLkRlbGV0ZVNjaGVkdWxlZFJlYWN0aW9uUmVzcG9uc2USbgoT",
+            "Q3JlYXRlUHJldmFsaWRhdGlvbhIqLndlYmhvb2tfYXBpLnYxLkNyZWF0ZVBy",
+            "ZXZhbGlkYXRpb25SZXF1ZXN0Gisud2ViaG9va19hcGkudjEuQ3JlYXRlUHJl",
+            "dmFsaWRhdGlvblJlc3BvbnNlEmsKEkxpc3RQcmV2YWxpZGF0aW9ucxIpLndl",
+            "Ymhvb2tfYXBpLnYxLkxpc3RQcmV2YWxpZGF0aW9uc1JlcXVlc3QaKi53ZWJo",
+            "b29rX2FwaS52MS5MaXN0UHJldmFsaWRhdGlvbnNSZXNwb25zZRJuChNEZWxl",
+            "dGVQcmV2YWxpZGF0aW9uEioud2ViaG9va19hcGkudjEuRGVsZXRlUHJldmFs",
+            "aWRhdGlvblJlcXVlc3QaKy53ZWJob29rX2FwaS52MS5EZWxldGVQcmV2YWxp",
+            "ZGF0aW9uUmVzcG9uc2UyXAoURXZlbnRDb25zdW1lclNlcnZpY2USRAoFRXZl",
+            "bnQSHC53ZWJob29rX2FwaS52MS5FdmVudFJlcXVlc3QaHS53ZWJob29rX2Fw",
+            "aS52MS5FdmVudFJlc3BvbnNlQjpaOGdpdGh1Yi5jb20va25veC1uZXR3b3Jr",
+            "cy9ncnBjLXNka3Mvc2RrL2dvL3dlYmhvb2tfYXBpL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, global::Common.PacketReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WebhookApi.V1.DeliveryStage), typeof(global::WebhookApi.V1.EventType), typeof(global::WebhookApi.V1.DeliveryMethodType), typeof(global::WebhookApi.V1.ScheduleReactionType), typeof(global::WebhookApi.V1.ValidationOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WebhookApi.V1.DeliveryStage), typeof(global::WebhookApi.V1.EventType), typeof(global::WebhookApi.V1.DeliveryMethodType), typeof(global::WebhookApi.V1.ScheduleReactionType), typeof(global::WebhookApi.V1.PrevalidationTriggerType), typeof(global::WebhookApi.V1.ValidationOperator), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.Webhook), global::WebhookApi.V1.Webhook.Parser, new[]{ "Id", "OwnerId", "Name", "WebhookUrl", "SupportedEvents", "DeliveryMethod" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.CreateWalletPayload), global::WebhookApi.V1.CreateWalletPayload.Parser, new[]{ "Name", "Did", "Created" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WebhookApi.V1.PromissoryReceivedPayload), global::WebhookApi.V1.PromissoryReceivedPayload.Parser, new[]{ "WalletId" }, null, null, null, null),
@@ -346,6 +348,17 @@ namespace WebhookApi.V1 {
     /// Scheduled Reaction Type Wallet Created.
     /// </summary>
     [pbr::OriginalName("SCHEDULE_REACTION_TYPE_CREATE_CONTRACT")] CreateContract = 1,
+  }
+
+  public enum PrevalidationTriggerType {
+    /// <summary>
+    /// Prevalidation Trigger Unspecified.
+    /// </summary>
+    [pbr::OriginalName("PREVALIDATION_TRIGGER_UNSPECIFIED")] PrevalidationTriggerUnspecified = 0,
+    /// <summary>
+    /// Prevalidation Trigger Considering Contract.
+    /// </summary>
+    [pbr::OriginalName("PREVALIDATION_TRIGGER_CONSIDERING_CONTRACT")] PrevalidationTriggerConsideringContract = 1,
   }
 
   /// <summary>
@@ -6665,15 +6678,25 @@ namespace WebhookApi.V1 {
   /// <summary>
   /// [Example]
   ///{
-  ///"delivery_history": [{
+  ///"delivery_history": [
+  ///{
   ///"id": "ID1",
   ///"webhook_id": "WEBHOOK_ID1",
   ///"event_id": "EVENT_ID1",
   ///"owner_id": "OWNER_ID1",
   ///"delivery_stage": 0,
   ///"created": "2019-10-12T07:20:50.52Z"
-  ///}],
-  ///"total_owned_delivery_history": 1
+  ///},
+  ///{
+  ///"id": "ID2",
+  ///"webhook_id": "WEBHOOK_ID2",
+  ///"event_id": "EVENT_ID2",
+  ///"owner_id": "OWNER_ID2",
+  ///"delivery_stage": 0,
+  ///"created": "2019-10-12T07:20:50.52Z"
+  ///}
+  ///],
+  ///"total_owned_delivery_history": 2
   ///}
   /// </summary>
   public sealed partial class ListDeliveryHistoryResponse : pb::IMessage<ListDeliveryHistoryResponse>
@@ -8280,14 +8303,16 @@ namespace WebhookApi.V1 {
     /// <summary>
     ///*
     ///Recurring schedule is in the form of a crontab, requiring five values. This example will execute once per minute.
-    ///┌───────────── minute (0 - 59)
-    ///│ ┌───────────── hour (0 - 23)
-    ///│ │ ┌───────────── day of the month (1 - 31)
-    ///│ │ │ ┌───────────── month (1 - 12)
-    ///│ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday
-    ///│ │ │ │ │
-    ///│ │ │ │ │
-    /// * * * *
+    ///```
+    ///┌───────────── minute (0 - 59)\n
+    ///⏐ ┌───────────── hour (0 - 23)\n
+    ///⏐ ⏐ ┌───────────── day of the month (1 - 31)\n
+    ///⏐ ⏐ ⏐ ┌───────────── month (1 - 12)\n
+    ///⏐ ⏐ ⏐ ⏐ ┌───────────── day of the week (0 - 6) (Sunday to Saturday\n
+    ///⏐ ⏐ ⏐ ⏐ ⏐\n
+    ///⏐ ⏐ ⏐ ⏐ ⏐\n
+    /// * * * *\n
+    ///```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8582,7 +8607,59 @@ namespace WebhookApi.V1 {
 
   /// <summary>
   /// [Example]
-  ///{}
+  ///{
+  ///"scheduled_reaction": {
+  ///"id": "REACTION_ID2",
+  ///"name": "REACTION_NAME2",
+  ///"reaction_type": 1,
+  ///"cron_tab": "*****",
+  ///"reaction_payload": {
+  ///"create_contract_payload": {
+  ///"sender_wallet_id": "SENDER_WALLET_ID2",
+  ///"commitments": [
+  ///{
+  ///"sender": "zSenderPublicKey",
+  ///"recipient": "zRecipientPublicKey",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":100,
+  ///"decimals":2
+  ///}
+  ///},
+  ///{
+  ///"sender": "zSenderPublicKey2",
+  ///"recipient": "zRecipientPublicKey2",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":500,
+  ///"decimals":2
+  ///}
+  ///}
+  ///],
+  ///"conditions": [
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///},
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///}
+  ///],
+  ///"timeout_secs": 10000,
+  ///"memo": "MEMO"
+  ///}
+  ///}
+  ///}
+  ///}
   /// </summary>
   public sealed partial class CreateScheduledReactionResponse : pb::IMessage<CreateScheduledReactionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8631,6 +8708,9 @@ namespace WebhookApi.V1 {
     /// <summary>Field number for the "scheduled_reaction" field.</summary>
     public const int ScheduledReactionFieldNumber = 1;
     private global::WebhookApi.V1.ScheduledReaction scheduledReaction_;
+    /// <summary>
+    /// Scheduled Reaction.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::WebhookApi.V1.ScheduledReaction ScheduledReaction {
@@ -8784,7 +8864,49 @@ namespace WebhookApi.V1 {
 
   /// <summary>
   /// [Example] 
-  ///{}
+  ///{
+  ///"api_key": "API_KEY",
+  ///"page": 0,
+  ///"page_size": 10000,
+  ///"filters": {
+  ///"filters": [
+  ///{
+  ///"field": "FIELD1",
+  ///"operator": 0,
+  ///"value": {
+  ///"str_value": "STRINGVAL"
+  ///}
+  ///},
+  ///{
+  ///"field": "FIELD2",
+  ///"operator": 0,
+  ///"value": {
+  ///"int_value": 10
+  ///}
+  ///},
+  ///{
+  ///"field": "FIELD3",
+  ///"operator": 0,
+  ///"value": {
+  ///"bool_value": false
+  ///}
+  ///}
+  ///],
+  ///"operator": 0
+  ///},
+  ///"sort_by": {
+  ///"items": [
+  ///{
+  ///"field": "FIELD1",
+  ///"direction": 0
+  ///},
+  ///{
+  ///"field": "FIELD2",
+  ///"direction": 0
+  ///}
+  ///]
+  ///}
+  ///}
   /// </summary>
   public sealed partial class ListScheduledReactionsRequest : pb::IMessage<ListScheduledReactionsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9158,7 +9280,113 @@ namespace WebhookApi.V1 {
 
   /// <summary>
   /// [Example] 
-  ///{}
+  ///{
+  ///"scheduled_reactions": [
+  ///{
+  ///"id": "REACTION_ID1",
+  ///"name": "REACTION_NAME1",
+  ///"reaction_type": 1,
+  ///"cron_tab": "*****",
+  ///"reaction_payload": {
+  ///"create_contract_payload": {
+  ///"sender_wallet_id": "SENDER_WALLET_ID1",
+  ///"commitments": [
+  ///{
+  ///"sender": "zSenderPublicKey",
+  ///"recipient": "zRecipientPublicKey",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":100,
+  ///"decimals":2
+  ///}
+  ///},
+  ///{
+  ///"sender": "zSenderPublicKey2",
+  ///"recipient": "zRecipientPublicKey2",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":500,
+  ///"decimals":2
+  ///}
+  ///}
+  ///],
+  ///"conditions": [
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///},
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///}
+  ///],
+  ///"timeout_secs": 10000,
+  ///"memo": "MEMO"
+  ///}
+  ///}
+  ///},
+  ///{
+  ///"id": "REACTION_ID2",
+  ///"name": "REACTION_NAME2",
+  ///"reaction_type": 1,
+  ///"cron_tab": "*****",
+  ///"reaction_payload": {
+  ///"create_contract_payload": {
+  ///"sender_wallet_id": "SENDER_WALLET_ID2",
+  ///"commitments": [
+  ///{
+  ///"sender": "zSenderPublicKey",
+  ///"recipient": "zRecipientPublicKey",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":100,
+  ///"decimals":2
+  ///}
+  ///},
+  ///{
+  ///"sender": "zSenderPublicKey2",
+  ///"recipient": "zRecipientPublicKey2",
+  ///"amount": {
+  ///"currency_code":"USD",
+  ///"amount":500,
+  ///"decimals":2
+  ///}
+  ///}
+  ///],
+  ///"conditions": [
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///},
+  ///{
+  ///"condition": {
+  ///"hash": {
+  ///"presenter": "PresenterPublicKey",
+  ///"hash": "13550350a8681c84"
+  ///}
+  ///}
+  ///}
+  ///],
+  ///"timeout_secs": 10000,
+  ///"memo": "MEMO"
+  ///}
+  ///}
+  ///}
+  ///],
+  ///"total_owned_scheduled_reactions": 2
+  ///}
   /// </summary>
   public sealed partial class ListScheduledReactionsResponse : pb::IMessage<ListScheduledReactionsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9210,6 +9438,9 @@ namespace WebhookApi.V1 {
     private static readonly pb::FieldCodec<global::WebhookApi.V1.ScheduledReaction> _repeated_scheduledReactions_codec
         = pb::FieldCodec.ForMessage(10, global::WebhookApi.V1.ScheduledReaction.Parser);
     private readonly pbc::RepeatedField<global::WebhookApi.V1.ScheduledReaction> scheduledReactions_ = new pbc::RepeatedField<global::WebhookApi.V1.ScheduledReaction>();
+    /// <summary>
+    /// List of Scheduled Reactions.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::WebhookApi.V1.ScheduledReaction> ScheduledReactions {
@@ -9219,6 +9450,9 @@ namespace WebhookApi.V1 {
     /// <summary>Field number for the "total_owned_scheduled_reactions" field.</summary>
     public const int TotalOwnedScheduledReactionsFieldNumber = 2;
     private uint totalOwnedScheduledReactions_;
+    /// <summary>
+    /// Total Owned Scheduled Reactions.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TotalOwnedScheduledReactions {
@@ -9377,7 +9611,10 @@ namespace WebhookApi.V1 {
 
   /// <summary>
   /// [Example] 
-  ///{}
+  ///{
+  ///"api_key": "API_KEY",
+  ///"scheduled_reaction_id": "SCHEDULED_REACTION_ID1"
+  ///}
   /// </summary>
   public sealed partial class DeleteScheduledReactionRequest : pb::IMessage<DeleteScheduledReactionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10773,7 +11010,32 @@ namespace WebhookApi.V1 {
   ///"name": "NAME",
   ///"trigger": {
   ///"considering_contract_prevalidation": {
-  ///
+  ///"condition": [
+  ///{
+  ///"target": 1,
+  ///"operator": 2,
+  ///"value": {
+  ///"amount_value": {
+  ///"currency_code":"USD",
+  ///"amount":100,
+  ///"decimals":2
+  ///}
+  ///}
+  ///},
+  ///{
+  ///"target": 1,
+  ///"operator": 4,
+  ///"value": {
+  ///"amount_value": {
+  ///"currency_code":"USD",
+  ///"amount":1000,
+  ///"decimals":2
+  ///}
+  ///}
+  ///}
+  ///],
+  ///"outcome": 1,
+  ///"logical_base": 1
   ///}
   ///}
   ///}
