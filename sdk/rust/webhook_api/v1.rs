@@ -570,7 +570,8 @@ pub struct ListDeliveryHistoryRequest {
 /// "webhook_id": "WEBHOOK_ID1",
 /// "event_id": "EVENT_ID1",
 /// "owner_id": "OWNER_ID1",
-/// "delivery_stage": 0
+/// "delivery_stage": 0,
+/// "created": "2019-10-12T07:20:50.52Z"
 /// }],
 /// "total_owned_delivery_history": 1
 /// }
@@ -609,12 +610,65 @@ pub mod list_delivery_history_response {
         pub created: ::prost::alloc::string::String,
     }
 }
+/// \[Example\]
+/// {
+/// "id": "REACTION_ID1",
+/// "name": "REACTION_NAME1",
+/// "reaction_type": 1,
+/// "cron_tab": "*****",
+/// "reaction_paylod": {
+/// create_contract_payload: {
+/// "sender_wallet_id": "SENDER_WALLET_ID1",
+/// "commitments": [
+/// {
+/// "sender": "zSenderPublicKey",
+/// "recipient": "zRecipientPublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSenderPublicKey2",
+/// "recipient": "zRecipientPublicKey2",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":500,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// },
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// }
+/// ],
+/// "timeout_secs": 10000,
+/// "memo": "MEMO"
+/// }
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ScheduledReaction {
+    /// Reaction id.
     #[prost(string, tag="1")]
     pub id: ::prost::alloc::string::String,
-    /// Webhook name.
+    /// Reaction name.
     #[prost(string, tag="2")]
     pub name: ::prost::alloc::string::String,
     /// Reaction type.
@@ -623,11 +677,13 @@ pub struct ScheduledReaction {
     /// Cron tab. Requires 5 asterisks/values. (e.g. * * * * *). Only supports minute granularity.
     #[prost(string, tag="4")]
     pub cron_tab: ::prost::alloc::string::String,
+    /// Reaction Payload
     #[prost(oneof="scheduled_reaction::ReactionPayload", tags="5")]
     pub reaction_payload: ::core::option::Option<scheduled_reaction::ReactionPayload>,
 }
 /// Nested message and enum types in `ScheduledReaction`.
 pub mod scheduled_reaction {
+    /// Reaction Payload
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum ReactionPayload {
@@ -636,25 +692,121 @@ pub mod scheduled_reaction {
         CreateContractPayload(super::CreateContractReactionPayload),
     }
 }
+/// \[Example\]
+/// {
+/// "sender_wallet_id": "SENDER_WALLET_ID1",
+/// "commitments": [
+/// {
+/// "sender": "zSenderPublicKey",
+/// "recipient": "zRecipientPublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSenderPublicKey2",
+/// "recipient": "zRecipientPublicKey2",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":500,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// },
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// }
+/// ],
+/// "timeout_secs": 10000,
+/// "memo": "MEMO"
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateContractReactionPayload {
     /// Wallet ID.
     #[prost(string, tag="1")]
     pub sender_wallet_id: ::prost::alloc::string::String,
-    /// List of commitments
+    /// List of commitments.
     #[prost(message, repeated, tag="2")]
     pub commitments: ::prost::alloc::vec::Vec<super::super::common::Commitment>,
-    /// List of conditions
+    /// List of conditions.
     #[prost(message, repeated, tag="3")]
     pub conditions: ::prost::alloc::vec::Vec<super::super::common::Condition>,
-    /// Timeout in seconds for contracts created by the scheduled reaction
+    /// Timeout in seconds for contracts created by the scheduled reaction.
     #[prost(uint32, tag="4")]
     pub timeout_secs: u32,
-    /// Memo for contracts created by the scheduled reaction
+    /// Memo for contracts created by the scheduled reaction.
     #[prost(string, tag="5")]
     pub memo: ::prost::alloc::string::String,
 }
+/// \[Example\]
+/// {
+/// "api_key": "API_KEY",
+/// "name": "REACTION_NAME1",
+/// "reaction_type": 1,
+/// "cron_tab": "*****",
+/// "reaction_paylod": {
+/// create_contract_payload: {
+/// "sender_wallet_id": "SENDER_WALLET_ID1",
+/// "commitments": [
+/// {
+/// "sender": "zSenderPublicKey",
+/// "recipient": "zRecipientPublicKey",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
+/// },
+/// {
+/// "sender": "zSenderPublicKey2",
+/// "recipient": "zRecipientPublicKey2",
+/// "amount": {
+/// "currency_code":"USD",
+/// "amount":500,
+/// "decimals":2
+/// }
+/// }
+/// ],
+/// "conditions": [
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// },
+/// {
+/// "condition": {
+/// "hash": {
+/// "presenter": "PresenterPublicKey",
+/// "hash": "13550350a8681c84"
+/// }
+/// }
+/// }
+/// ],
+/// "timeout_secs": 10000,
+/// "memo": "MEMO"
+/// }
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateScheduledReactionRequest {
@@ -679,11 +831,13 @@ pub struct CreateScheduledReactionRequest {
     /// * * * *
     #[prost(string, tag="4")]
     pub cron_tab: ::prost::alloc::string::String,
+    /// Reaction Payload.
     #[prost(oneof="create_scheduled_reaction_request::ReactionPayload", tags="5")]
     pub reaction_payload: ::core::option::Option<create_scheduled_reaction_request::ReactionPayload>,
 }
 /// Nested message and enum types in `CreateScheduledReactionRequest`.
 pub mod create_scheduled_reaction_request {
+    /// Reaction Payload.
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum ReactionPayload {
@@ -692,12 +846,16 @@ pub mod create_scheduled_reaction_request {
         CreateContractPayload(super::CreateContractReactionPayload),
     }
 }
+/// \[Example\]
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateScheduledReactionResponse {
     #[prost(message, optional, tag="1")]
     pub scheduled_reaction: ::core::option::Option<ScheduledReaction>,
 }
+/// \[Example\] 
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListScheduledReactionsRequest {
@@ -717,6 +875,8 @@ pub struct ListScheduledReactionsRequest {
     #[prost(message, optional, tag="5")]
     pub sort_by: ::core::option::Option<super::super::common::SortBy>,
 }
+/// \[Example\] 
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListScheduledReactionsResponse {
@@ -725,6 +885,8 @@ pub struct ListScheduledReactionsResponse {
     #[prost(uint32, tag="2")]
     pub total_owned_scheduled_reactions: u32,
 }
+/// \[Example\] 
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteScheduledReactionRequest {
@@ -735,14 +897,43 @@ pub struct DeleteScheduledReactionRequest {
     #[prost(string, tag="2")]
     pub scheduled_reaction_id: ::prost::alloc::string::String,
 }
+/// \[Example\] 
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteScheduledReactionResponse {
 }
+/// \[Example\] 
+/// {
+/// "id": "PREVALIDATION_ID1",
+/// "name": "PREVALIDATION_NAME1",
+/// "trigger": {
+/// "considering_contract_prevalidation": {
+/// "condition": [
+/// {
+/// "target": 1,
+/// "operator": 2,
+/// "value": {
+/// "amount_value": 10
+/// }
+/// },
+/// {
+/// "target": 1,
+/// "operator": 4,
+/// "value": {
+/// "amount_value": 100
+/// }
+/// }
+/// ],
+/// "outcome": 1,
+/// "lcgical_base": 10
+/// }
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Prevalidation {
-    /// UUID ID
+    /// UUID
     #[prost(string, tag="1")]
     pub id: ::prost::alloc::string::String,
     /// Name
@@ -758,10 +949,32 @@ pub mod prevalidation {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Trigger {
+        /// Considering Contract Prevalidation.
         #[prost(message, tag="3")]
         ConsideringContractPrevalidation(super::ConsideringContractPrevalidation),
     }
 }
+/// \[Example\]
+/// {
+/// "condition": [
+/// {
+/// "target": 1,
+/// "operator": 2,
+/// "value": {
+/// "amount_value": 10
+/// }
+/// },
+/// {
+/// "target": 1,
+/// "operator": 4,
+/// "value": {
+/// "amount_value": 100
+/// }
+/// }
+/// ],
+/// "outcome": 1,
+/// "lcgical_base": 10
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConsideringContractPrevalidation {
@@ -771,6 +984,7 @@ pub struct ConsideringContractPrevalidation {
     /// Outcome of the prevalidation if the condition is true
     #[prost(enumeration="considering_contract_prevalidation::ValidationOutcome", tag="2")]
     pub outcome: i32,
+    /// Logical base operator.
     #[prost(enumeration="super::super::common::LogicalOperator", tag="3")]
     pub logical_base: i32,
 }
@@ -779,27 +993,34 @@ pub mod considering_contract_prevalidation {
     #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
     pub struct ValidationCondition {
+        /// Validation Target.
         #[prost(enumeration="ValidationTarget", tag="1")]
         pub target: i32,
+        /// Validation Operator.
         #[prost(enumeration="super::ValidationOperator", tag="2")]
         pub operator: i32,
+        /// Value.
         #[prost(oneof="validation_condition::Value", tags="3")]
         pub value: ::core::option::Option<validation_condition::Value>,
     }
     /// Nested message and enum types in `ValidationCondition`.
     pub mod validation_condition {
+        /// Value.
         #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Oneof)]
         pub enum Value {
+            /// Value.
             #[prost(message, tag="3")]
             AmountValue(super::super::super::super::common::Amount),
         }
     }
+    /// Validation Target.
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum ValidationTarget {
+        /// Validation target unspecified.
         Unspecified = 0,
-        /// balance of the account receiving the assets
+        /// Balance of the account receiving the assets.
         RecipientBalance = 1,
     }
     impl ValidationTarget {
@@ -822,11 +1043,15 @@ pub mod considering_contract_prevalidation {
             }
         }
     }
+    /// Validation Outcome.
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum ValidationOutcome {
+        /// Considering Contract Unspecified.
         ConsideringContractOutcomeUnspecified = 0,
+        /// Considering Contract Accepted.
         ConsideringContractOutcomeAccepted = 1,
+        /// Considering Contract Rejected.
         ConsideringContractOutcomeRejected = 2,
     }
     impl ValidationOutcome {
@@ -852,6 +1077,16 @@ pub mod considering_contract_prevalidation {
         }
     }
 }
+/// \[Example\]
+/// {
+/// "api_key": "API_KEY",
+/// "name": "NAME",
+/// "trigger": {
+/// "considering_contract_prevalidation": {
+///
+/// }
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreatePrevalidationRequest {
@@ -875,6 +1110,35 @@ pub mod create_prevalidation_request {
         ConsideringContractPrevalidation(super::ConsideringContractPrevalidation),
     }
 }
+/// \[Example\]
+/// {
+/// "prevalidation": {
+/// "id": "PREVALIDATION_ID1",
+/// "name": "PREVALIDATION_NAME1",
+/// "trigger": {
+/// "considering_contract_prevalidation": {
+/// "condition": [
+/// {
+/// "target": 1,
+/// "operator": 2,
+/// "value": {
+/// "amount_value": 10
+/// }
+/// },
+/// {
+/// "target": 1,
+/// "operator": 4,
+/// "value": {
+/// "amount_value": 100
+/// }
+/// }
+/// ],
+/// "outcome": 1,
+/// "lcgical_base": 10
+/// }
+/// }
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreatePrevalidationResponse {
@@ -882,6 +1146,50 @@ pub struct CreatePrevalidationResponse {
     #[prost(message, optional, tag="1")]
     pub prevalidation: ::core::option::Option<Prevalidation>,
 }
+/// \[Example\]
+/// {
+/// "api_key": "API_KEY",
+/// "page": 0,
+/// "page_size": 10000,
+/// "filters": {
+/// "filters": [
+/// {
+/// "field": "FIELD1",
+/// "operator": 0,
+/// "value": {
+/// "str_value": "STRINGVAL"
+/// }
+/// },
+/// {
+/// "field": "FIELD2",
+/// "operator": 0,
+/// "value": {
+/// "int_value": 10
+/// }
+/// },
+/// {
+/// "field": "FIELD3",
+/// "operator": 0,
+/// "value": {
+/// "bool_value": false
+/// }
+/// }
+/// ],
+/// "operator": 0
+/// },
+/// "sort_by": {
+/// "items": [
+/// {
+/// "field": "FIELD1",
+/// "direction": 0
+/// },
+/// {
+/// "field": "FIELD2",
+/// "direction": 0
+/// }
+/// ]
+/// }
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListPrevalidationsRequest {
@@ -901,6 +1209,11 @@ pub struct ListPrevalidationsRequest {
     #[prost(message, optional, tag="5")]
     pub sort_by: ::core::option::Option<super::super::common::SortBy>,
 }
+/// \[Example\] 
+/// {
+/// "prevalidations": ,
+/// "total_owned_prevalidations": 2
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListPrevalidationsResponse {
@@ -911,6 +1224,11 @@ pub struct ListPrevalidationsResponse {
     #[prost(uint32, tag="2")]
     pub total_owned_prevalidations: u32,
 }
+/// \[Example\] 
+/// {
+/// "api_key": "API_KEY",
+/// "prevalidation_id": "PREVALIDATION_ID1"
+/// }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeletePrevalidationRequest {
@@ -921,6 +1239,8 @@ pub struct DeletePrevalidationRequest {
     #[prost(string, tag="2")]
     pub prevalidation_id: ::prost::alloc::string::String,
 }
+/// \[Example\] 
+/// {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeletePrevalidationResponse {
@@ -1056,6 +1376,7 @@ impl DeliveryMethodType {
         }
     }
 }
+/// Schedule Reaction Type
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum ScheduleReactionType {
@@ -1084,14 +1405,21 @@ impl ScheduleReactionType {
         }
     }
 }
+/// Validation Operator
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum ValidationOperator {
+    /// Validation Operator Unspecified.
     Unspecified = 0,
+    /// Validation Operator Equal (=).
     Equal = 1,
+    /// Validation Operator Greater Than (>).
     GreaterThan = 2,
+    /// Validation Operator Greater Than or Equal (>=).
     GreaterThanOrEqual = 3,
+    /// Validation Operator Less Than (<).
     LessThan = 4,
+    /// Validation Operator Less Than or Equal (<=).
     LessThanOrEqual = 5,
 }
 impl ValidationOperator {
