@@ -914,7 +914,11 @@ pub struct DeleteScheduledReactionResponse {
 /// "target": 1,
 /// "operator": 2,
 /// "value": {
-/// "amount_value": 10
+/// "amount_value": {
+/// "currency_code":"USD",
+/// "amount":100,
+/// "decimals":2
+/// }
 /// }
 /// },
 /// {
@@ -1154,7 +1158,7 @@ pub mod create_prevalidation_request {
 /// }
 /// ],
 /// "outcome": 1,
-/// "logical_base": 10
+/// "logical_base": 1
 /// }
 /// }
 /// }
