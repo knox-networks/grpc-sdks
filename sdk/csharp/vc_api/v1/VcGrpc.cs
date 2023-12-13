@@ -134,7 +134,7 @@ namespace VcApi.V1 {
     public abstract partial class CredentialAdapterServiceBase
     {
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+      /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -146,7 +146,7 @@ namespace VcApi.V1 {
       }
 
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+      /// Called by the holder to the VC issuer to answer the challenge and receive the credential.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -158,7 +158,7 @@ namespace VcApi.V1 {
       }
 
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+      /// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -170,7 +170,7 @@ namespace VcApi.V1 {
       }
 
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+      /// Called by the holder to the verifier to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -236,7 +236,7 @@ namespace VcApi.V1 {
       }
 
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+      /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -249,7 +249,7 @@ namespace VcApi.V1 {
         return CreateIssuanceChallenge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+      /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -260,7 +260,7 @@ namespace VcApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateIssuanceChallenge, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+      /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -273,7 +273,7 @@ namespace VcApi.V1 {
         return CreateIssuanceChallengeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+      /// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -284,7 +284,7 @@ namespace VcApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateIssuanceChallenge, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+      /// Called by the holder to the VC issuer to answer the challenge and receive the credential.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -297,7 +297,7 @@ namespace VcApi.V1 {
         return IssueVerifiableCredential(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+      /// Called by the holder to the VC issuer to answer the challenge and receive the credential.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -308,7 +308,7 @@ namespace VcApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_IssueVerifiableCredential, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+      /// Called by the holder to the VC issuer to answer the challenge and receive the credential.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -321,7 +321,7 @@ namespace VcApi.V1 {
         return IssueVerifiableCredentialAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+      /// Called by the holder to the VC issuer to answer the challenge and receive the credential.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -332,7 +332,7 @@ namespace VcApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_IssueVerifiableCredential, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+      /// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -345,7 +345,7 @@ namespace VcApi.V1 {
         return CreatePresentationChallenge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+      /// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -356,7 +356,7 @@ namespace VcApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreatePresentationChallenge, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+      /// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -369,7 +369,7 @@ namespace VcApi.V1 {
         return CreatePresentationChallengeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+      /// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -380,7 +380,7 @@ namespace VcApi.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreatePresentationChallenge, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+      /// Called by the holder to the verifier to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -393,7 +393,7 @@ namespace VcApi.V1 {
         return PresentVerifiableCredential(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+      /// Called by the holder to the verifier to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -404,7 +404,7 @@ namespace VcApi.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_PresentVerifiableCredential, null, options, request);
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+      /// Called by the holder to the verifier to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -417,7 +417,7 @@ namespace VcApi.V1 {
         return PresentVerifiableCredentialAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+      /// Called by the holder to the verifier to verify the presentation with the verifier.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

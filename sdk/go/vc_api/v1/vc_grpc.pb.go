@@ -18,13 +18,13 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CredentialAdapterServiceClient interface {
-	// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+	// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
 	CreateIssuanceChallenge(ctx context.Context, in *CreateIssuanceChallengeRequest, opts ...grpc.CallOption) (*CreateIssuanceChallengeResponse, error)
-	// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+	// Called by the holder to the VC issuer to answer the challenge and receive the credential.
 	IssueVerifiableCredential(ctx context.Context, in *IssueVerifiableCredentialRequest, opts ...grpc.CallOption) (*IssueVerifiableCredentialResponse, error)
-	// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+	// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
 	CreatePresentationChallenge(ctx context.Context, in *CreatePresentationChallengeRequest, opts ...grpc.CallOption) (*CreatePresentationChallengeResponse, error)
-	// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+	// Called by the holder to the verifier to verify the presentation with the verifier.
 	PresentVerifiableCredential(ctx context.Context, in *PresentVerifiableCredentialRequest, opts ...grpc.CallOption) (*PresentVerifiableCredentialResponse, error)
 	// Called by the browser to initialize a stream with the server to listen for events such as challenge completion.
 	WaitForCompletion(ctx context.Context, in *WaitForCompletionRequest, opts ...grpc.CallOption) (CredentialAdapterService_WaitForCompletionClient, error)
@@ -121,13 +121,13 @@ func (c *credentialAdapterServiceClient) UpdateVerifiableCredentialStatus(ctx co
 // All implementations must embed UnimplementedCredentialAdapterServiceServer
 // for forward compatibility
 type CredentialAdapterServiceServer interface {
-	// Service run by the VC Issuer. Called by the holder to initiate the challenge needed for credential issuance.
+	// Called by the holder to the VC issuer to initiate the challenge needed for credential issuance.
 	CreateIssuanceChallenge(context.Context, *CreateIssuanceChallengeRequest) (*CreateIssuanceChallengeResponse, error)
-	// Service run by the VC Issuer. Called by the holder to answer the challenge and receive the credential.
+	// Called by the holder to the VC issuer to answer the challenge and receive the credential.
 	IssueVerifiableCredential(context.Context, *IssueVerifiableCredentialRequest) (*IssueVerifiableCredentialResponse, error)
-	// Service run by the VC Verifier. Called by the holder to initiate the challenge needed to have the presentation verified.
+	// Called by the holder to the verifier to initiate the challenge needed to verify the presentation with the verifier.
 	CreatePresentationChallenge(context.Context, *CreatePresentationChallengeRequest) (*CreatePresentationChallengeResponse, error)
-	// Service run by the VC Verifier. Called by the holder to have the presentation verified.
+	// Called by the holder to the verifier to verify the presentation with the verifier.
 	PresentVerifiableCredential(context.Context, *PresentVerifiableCredentialRequest) (*PresentVerifiableCredentialResponse, error)
 	// Called by the browser to initialize a stream with the server to listen for events such as challenge completion.
 	WaitForCompletion(*WaitForCompletionRequest, CredentialAdapterService_WaitForCompletionServer) error
