@@ -14,7 +14,12 @@ With the SDKs downloaded, you will be able to interact with the Knox API.
 
 Everything in the `sdk/` folder is generated automatically from `.proto` files. Currently, the generated SDKs are provided for the following languages in the `sdk` folder:
 
+- [C++](./sdk/cpp)
 - [C#/.NET](./sdk/csharp)
 - [Go](./sdk/go)
 - [Java](./sdk/java)
-- [TypeScript/JavaScript](./sdk/ts)
+- [JavaScript](./sdk/js)
+- [Kotlin](./sdk/kotlin)
+- [Python](./sdk/python)
+- [Rust](./sdk/rust) - EXPERIMENTAL
+- [TypeScript](./sdk/ts)
