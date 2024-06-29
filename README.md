@@ -1,4 +1,4 @@
-![image](https://github.com/knox-networks/grpc-sdks/assets/33649265/1a04bbcf-87ce-41f3-909b-ff60d7fea599)
+![image](https://github.com/knox-networks/grpc-sdks/assets/33649265/06710c6f-86ea-4eb7-a056-338dd0e15e60)
 
 # Knox Networks gRPC-generated SDKs
 
